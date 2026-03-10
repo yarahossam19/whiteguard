@@ -95,7 +95,6 @@ export function Header() {
           ))}
         </div>
 
-        {/* CTA Button - Figma 400:3955/3956 */}
         <div className="hidden lg:block">
           <HoverSwapButton
             href="/contact"

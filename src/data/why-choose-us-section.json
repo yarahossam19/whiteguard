@@ -1,0 +1,34 @@
+{
+  "heading": {
+    "line1": "Why Leading",
+    "line2": "Organizations",
+    "line3": "Choose Us."
+  },
+  "description": "We combine deep expertise, innovative technology, and a client-first approach to deliver cybersecurity that actually works.",
+  "cards": [
+    {
+      "id": "global-standards",
+      "title": "Global Standards, Local Expertise",
+      "description": "We align with international frameworks like ISO 27001, NIST, and PCI DSS, while deeply understanding regional regulations such as SAMA CSF and NCA ECC.",
+      "icon": "/images/why-choose-us/global-standards.svg"
+    },
+    {
+      "id": "end-to-end",
+      "title": "End-to-End Coverage",
+      "description": "From penetration testing to compliance audits, from SOC operations to employee training — we cover every facet of your cybersecurity lifecycle.",
+      "icon": "/images/why-choose-us/end-to-end.svg"
+    },
+    {
+      "id": "ai-driven",
+      "title": "AI-Driven Intelligence",
+      "description": "Our White Hawk platform leverages machine learning to predict threats, automate responses, and provide actionable intelligence in real-time.",
+      "icon": "/images/why-choose-us/ai-driven.svg"
+    },
+    {
+      "id": "trusted",
+      "title": "Trusted by Industry Leaders",
+      "description": "Financial institutions, government agencies, and Fortune 500 companies trust WHITEGUARD to protect their most critical digital assets.",
+      "icon": "/images/why-choose-us/trusted.svg"
+    }
+  ]
+}

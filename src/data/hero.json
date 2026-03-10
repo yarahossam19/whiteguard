@@ -1,0 +1,29 @@
+{
+  "headline": {
+    "line1": { "bold": "Cybersecurity ", "light": "Simplified", "end": ". " },
+    "line2": { "bold": "Protection ", "light": "Amplified", "end": "." }
+  },
+  "description": "WHITEGUARD provides a new era of cybersecurity — visualized, simplified, and under your control.",
+  "ctas": [
+    {
+      "href": "/contact",
+      "label": "Book a Consultation",
+      "hoverLabel": "Book a Consultation",
+      "variant": "cta"
+    },
+    {
+      "href": "/services",
+      "label": "Explore Services",
+      "hoverLabel": "Explore Services",
+      "variant": "secondary"
+    }
+  ],
+  "decorations": {
+    "sparkleTop": "https://api.builder.io/api/v1/image/assets/TEMP/489fd4fbc0c2620b6054dfc3bfa60d74a3fa9088?width=130",
+    "sparkleBottom": "https://api.builder.io/api/v1/image/assets/TEMP/8dbe930ef8404aef89a8f08298bd988e3af5972e?width=130"
+  },
+  "rightPanel": {
+    "backgroundImage": "/images/banner-bg.png",
+    "videoSrc": "/videos/banner.mp4"
+  }
+}

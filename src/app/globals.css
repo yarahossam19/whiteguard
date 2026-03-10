@@ -14,7 +14,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  /* Figma design tokens - White Guard */
+  --UI-Colors-Background-main-bg: #fff;
   --primary-950: #002439;
   --primary-800: #003859;
   --primary-600: #006dad;
@@ -26,6 +26,7 @@
   --button-inner: #d2eaff;
   --Primary-100: #ABE0FF !important;
   --Primary-200: #81D0FF !important;
+  --Primary-400: #02A1FF;
   --font-ano: "Ano Regular", sans-serif;
   /* Hover/click: Dissolve, Ease out, 300ms */
   --transition-dissolve: 300ms ease-out;
@@ -80,4 +81,33 @@ button,
 
 .font-ano {
   font-family: var(--font-ano), sans-serif !important;
+}
+
+@keyframes services-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-services-marquee {
+  animation: services-marquee 20s linear infinite;
+}
+
+.testimonials-section .swiper-button-prev, .swiper-button-next {
+  color: var(--primary-600);
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--primary-600);
+  background: var(--UI-Colors-Background-main-bg);
+  transition: all 0.3s ease;
+}
+
+.testimonials-section .swiper-button-prev:hover, .swiper-button-next:hover {
+  background: var(--primary-600);
+  color: var(--UI-Colors-Background-main-bg);
+  transition: all 0.3s ease;
 }

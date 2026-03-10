@@ -1,0 +1,47 @@
+{
+  "heading": "Trusted by Industry Leaders.",
+  "subtitle": "See what leading organizations across the MENA region have to say about working with WHITEGUARD.",
+  "testimonials": [
+    {
+      "id": "1",
+      "quote": "WHITEGUARD transformed our security posture from reactive to proactive. Their SOC team detected a critical vulnerability that had gone unnoticed for months.",
+      "name": "Ahmed Al-Rashidi",
+      "title": "CISO, National Bank Group",
+      "rating": 5
+    },
+    {
+      "id": "2",
+      "quote": "The White Hawk platform gives us real-time visibility we never had before. It's like having a 24/7 command center for our entire infrastructure.",
+      "name": "Sarah Mahmoud",
+      "title": "VP of Technology, Gulf Holdings",
+      "rating": 5
+    },
+    {
+      "id": "3",
+      "quote": "Their GRC consulting helped us achieve ISO 27001 and SAMA CSF compliance in record time. Highly professional and deeply knowledgeable.",
+      "name": "Khalid Al-Fahad",
+      "title": "Director of IT, Riyadh Medical Center",
+      "rating": 5
+    },
+    {
+      "id": "4",
+      "quote": "The penetration testing uncovered vulnerabilities our previous vendor missed entirely. WHITEGUARD's offensive team is world-class.",
+      "name": "Layla Hasan",
+      "title": "CTO, Emirates Logistics Co.",
+      "rating": 5
+    },
+    {
+      "id": "5",
+      "quote": "Their training program fundamentally changed how our employees think about security. Phishing click rates dropped by 87% in three months.",
+      "name": "Omar Saleh",
+      "title": "HR Director, Cairo Tech Solutions",
+      "rating": 5
+    }
+  ],
+  "ctaCard": {
+    "title": "Your Story Could Be Next.",
+    "body": "Join hundreds of organizations that trust WHITEGUARD with their cybersecurity.",
+    "buttonLabel": "Get Started",
+    "buttonHref": "/contact"
+  }
+}
