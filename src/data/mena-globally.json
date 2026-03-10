@@ -1,0 +1,41 @@
+{
+  "heading": {
+    "line1": "MENA-Rooted.",
+    "line2": "Globally Proven."
+  },
+  "paragraphs": [
+    "Born in the heart of the Middle East, WHITEGUARD combines deep regional expertise with world-class cybersecurity frameworks. We understand the unique regulatory landscape of MENA while delivering services that meet the highest global standards.",
+    "With offices across Egypt, Saudi Arabia, and the UAE, we're strategically positioned to protect organizations across all sectors — from financial institutions to government agencies."
+  ],
+  "certifications": [
+    {
+      "id": 1,
+      "name": "Certification 1",
+      "src": "/images/certifications/certification-1.png"
+    },
+    {
+      "id": 2,
+      "name": "PCI DSS Compliant",
+      "src": "/images/certifications/certification-2.png"
+    },
+    {
+      "id": 3,
+      "name": "ISO 27001 Annex A",
+      "src": "/images/certifications/certification-3.png"
+    },
+    {
+      "id": 4,
+      "name": "NCA ECC-1:2018",
+      "src": "/images/certifications/certification-4.png"
+    },
+    {
+      "id": 5,
+      "name": "NCA ECC-1:2018",
+      "src": "/images/certifications/certification-5.png"
+    }
+  ],
+  "map": {
+    "src": "/images/map.png",
+    "alt": "WHITEGUARD global presence map"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "heading": {
+    "line1": "Cybersecurity Powered",
+    "line2": "by Innovation."
+  },
+  "description": "White Hawk is our proprietary threat intelligence and security operations platform. It provides real-time visibility into your security posture, automates response workflows, and leverages AI to predict emerging threats before they materialize.",
+  "features": [
+    "Real-time threat detection & automated response",
+    "AI-powered vulnerability prediction engine",
+    "Unified compliance dashboard across all frameworks"
+  ],
+  "cta": {
+    "variant": "secondary",
+    "label": "Visit White Hawk Platform",
+    "href": "https://www.whitehwk.com",
+    "hoverLabel": "Visit White Hawk Platform",
+    "disclaimer": "You will leave this website and go to White Hawk website"
+  },
+  "dashboardImage": "/images/white-hawk-dashboard.png",
+  "variant": "secondary"
+}
