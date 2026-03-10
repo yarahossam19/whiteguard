@@ -8,6 +8,7 @@ import type { TestimonialsSectionData } from "@/data/testimonials-section";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import { HoverSwapButton } from "../ui/HoverSwapButton";
 
 interface TestimonialsSectionProps {
   data: TestimonialsSectionData;
@@ -60,9 +61,11 @@ export default function TestimonialsSection({
           spaceBetween={28}
           slidesPerView={1.1}
           loop={false}
+          
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
           speed={1000}
           loopPreventsSliding={true}
@@ -114,9 +117,9 @@ export default function TestimonialsSection({
             <div
               className="flex min-h-[370px] w-[340px] max-w-full flex-col justify-between rounded-[28px] border p-7"
               style={{
-                borderColor: "#fde68a",
+                borderColor: "#abe0ff",
                 background:
-                  "linear-gradient(135.75deg, rgb(255,251,235) 0%, rgb(254,243,199) 100%)",
+                  "linear-gradient(135.75deg, #e8f7ff 75%, #abe0ff 100%)",
                 boxShadow:
                   "0px 10px 15px rgba(0,56,89,0.05), 0px 4px 6px rgba(0,56,89,0.05)",
               }}
@@ -125,19 +128,22 @@ export default function TestimonialsSection({
                 <span className="text-2xl" aria-hidden>
                   ✨
                 </span>
-                <h3 className="mt-3 font-jakarta text-xl font-bold leading-[1.5] text-[#92400e]">
+                <h3 className="mt-3 font-jakarta text-xl font-bold leading-[1.5] text-[#006dad]">
                   {ctaCard.title}
                 </h3>
-                <p className="mt-2 font-jakarta text-sm leading-[1.6] text-[#92400e]/60">
+                <p className="mt-2 font-jakarta text-sm leading-[1.6] text-[#006dad]/60">
                   {ctaCard.body}
                 </p>
               </div>
-              <Link
-                href={ctaCard.buttonHref}
-                className="mt-6 inline-flex w-fit items-center justify-center rounded-lg bg-[#92400e] px-6 py-3 font-jakarta text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
-              >
-                {ctaCard.buttonLabel}
-              </Link>
+              <div className="flex justify-start">
+                <HoverSwapButton
+                  href={ctaCard.buttonHref}
+                  label={ctaCard.buttonLabel}
+                  hoverLabel={ctaCard.buttonLabel}
+                  variant="cta"
+                  showChevrons={false}
+                />
+              </div>
             </div>
           </SwiperSlide>
         </Swiper>
