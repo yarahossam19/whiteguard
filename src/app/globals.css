@@ -97,6 +97,34 @@ button,
   animation: services-marquee 20s linear infinite;
 }
 
+/* Vertical marquee - left column: bottom to top */
+@keyframes marquee-vertical-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+/* Vertical marquee - right column: top to bottom */
+@keyframes marquee-vertical-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-marquee-up {
+  animation: marquee-vertical-up 25s linear infinite;
+}
+
+.animate-marquee-down {
+  animation: marquee-vertical-down 25s linear infinite;
+}
+
 .testimonials-section .swiper-button-prev, .swiper-button-next {
   color: var(--primary-600);
   padding: 10px;
