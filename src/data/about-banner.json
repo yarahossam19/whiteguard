@@ -1,31 +1,29 @@
 {
   "headline": {
-    "line1": { "bold": "About ", "light": "WHITEGUARD", "end": "" },
-    "line2": {
-      "bold": "Your Trusted ",
-      "light": "Security Partner",
-      "end": "."
-    }
+    "line1": "Our commitment is",
+    "line2": "our way"
   },
-  "description": "We combine AI-driven monitoring, expert-led consulting, and end-to-end solutions to protect organizations across the MENA region. Trusted by industry leaders.",
+  "stats": [
+    { "value": "200+", "label": "Enterprise Clients" },
+    { "value": "99.9%", "label": "Uptime SLA" },
+    { "value": "8+", "label": "Countries Secured" }
+  ],
+  "description": "We believe cybersecurity isn't just a service — it's a promise. Every protocol, every platform, and every partnership we build is grounded in an unwavering dedication to protecting what matters most to you.",
   "ctas": [
     {
       "href": "/contact",
-      "label": "Get in Touch",
-      "hoverLabel": "Get in Touch",
+      "label": "Secure Your Future",
+      "hoverLabel": "Secure Your Future",
       "variant": "cta"
     },
     {
-      "href": "/services",
-      "label": "Explore Services",
-      "hoverLabel": "Explore Services",
-      "variant": "secondary"
+      "href": "/about",
+      "label": "Our Story",
+      "hoverLabel": "Our Story",
+      "variant": "outline",
+      "showArrow": true
     }
   ],
-  "decorations": {
-    "sparkleTop": "https://api.builder.io/api/v1/image/assets/TEMP/489fd4fbc0c2620b6054dfc3bfa60d74a3fa9088?width=130",
-    "sparkleBottom": "https://api.builder.io/api/v1/image/assets/TEMP/8dbe930ef8404aef89a8f08298bd988e3af5972e?width=130"
-  },
   "columnBackground": "/images/icons/column.svg",
   "leftColumnImages": [
     "/images/about-us/banner-1.png",

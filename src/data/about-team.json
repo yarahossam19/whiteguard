@@ -1,0 +1,33 @@
+{
+  "heading": {
+    "line1": "From here emerged the first ",
+    "line2": "will and ambition"
+  },
+  "description": "The minds shaping WHITEGUARD's strategy, culture, and commitment to security excellence.",
+  "members": [
+    {
+      "id": "youssef",
+      "name": "Youssef S. Ghoniem",
+      "title": "Chief Executive Officer",
+      "image": "/images/team/youssef.png",
+      "pillLabel": "Founder",
+      "circleLabel": "CEO"
+    },
+    {
+      "id": "mohamed",
+      "name": "Mohamed Mamdouh",
+      "title": "Chief Operating Officer",
+      "image": "/images/team/mohamed.png",
+      "pillLabel": "Operations",
+      "circleLabel": "COO"
+    },
+    {
+      "id": "ali",
+      "name": "Ali Elsawy",
+      "title": "Marketing & Growth Director",
+      "image": "/images/team/ali.png",
+      "pillLabel": "Growth",
+      "circleLabel": "MGD"
+    }
+  ]
+}

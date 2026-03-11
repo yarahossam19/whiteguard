@@ -1,0 +1,38 @@
+{
+  "heading": {
+    "line1": "Why Organizations Across Industries ",
+    "line2": "Choose ",
+    "line3": "WHITEGUARD"
+  },
+  "subtitle": "We don't just protect infrastructure. We build resilient security cultures that endure long after the engagement ends.",
+  "cards": [
+    {
+      "id": "unified-protection",
+      "tag": "Holistic Coverage",
+      "title": "Unified Protection",
+      "description": "Unified protection across people, process, and technology — closing gaps that isolated tools miss.",
+      "icon": "/images/icons/why-choose-1.svg"
+    },
+    {
+      "id": "regional-expertise",
+      "tag": "MENA-First",
+      "title": "Regional Expertise",
+      "description": "Regional expertise with global security standards — MENA-first insights combined with world-class frameworks.",
+      "icon": "/images/icons/why-choose-2.svg"
+    },
+    {
+      "id": "ai-powered",
+      "tag": "White Hawk Platform",
+      "title": "AI-Powered Visibility",
+      "description": "AI-powered visibility through the White Hawk platform — real-time threat intelligence and executive dashboards.",
+      "icon": "/images/icons/why-choose-3.svg"
+    },
+    {
+      "id": "proven-track",
+      "tag": "Verified Results",
+      "title": "Proven Track Record",
+      "description": "Proven track record across MENA — hundreds of organizations secured, with measurable risk reduction outcomes.",
+      "icon": "/images/icons/why-choose-4.svg"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "headline": {
+    "line1": "Cybersecurity expertise",
+    "line2": "across every",
+    "line3": "industry"
+  },
+  "description": "From fintech to healthcare, we deliver industry-specific cybersecurity solutions that meet regulatory requirements and protect what matters most.",
+  "ctas": [
+    {
+      "href": "/contact",
+      "label": "Get Started",
+      "hoverLabel": "Get Started",
+      "variant": "cta"
+    },
+    {
+      "href": "/solutions/fintech",
+      "label": "Explore Solutions",
+      "hoverLabel": "Explore Solutions",
+      "variant": "secondary"
+    }
+  ],
+  "videoSrc": "/videos/industries-bg.mp4"
+}

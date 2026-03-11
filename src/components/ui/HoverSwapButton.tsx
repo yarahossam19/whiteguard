@@ -8,6 +8,7 @@ interface HoverSwapButtonProps {
   label: string;
   hoverLabel: string;
   showChevrons?: boolean;
+  showArrow?: boolean;
   variant?: "nav" | "cta" | "secondary";
   className?: string;
 }
@@ -25,6 +26,19 @@ function ChevronIcon() {
   );
 }
 
+function ArrowDownIcon() {
+  return (
+    <Image
+      src="/images/icons/arrow-down.svg"
+      alt=""
+      width={20}
+      height={20}
+      className="shrink-0"
+      aria-hidden
+    />
+  );
+}
+
 /**
  * Button with hover text swap.
  * cta (dark): gradient + glow. secondary (light): white bg + blue border.
@@ -34,6 +48,7 @@ export function HoverSwapButton({
   label,
   hoverLabel,
   showChevrons = true,
+  showArrow = false,
   variant = "nav",
   className = "",
 }: HoverSwapButtonProps) {
@@ -52,7 +67,7 @@ export function HoverSwapButton({
         <span
           className={`flex items-center justify-center gap-2 rounded-[5px] bg-white px-6 py-3 text-lg transition-colors duration-300 ease-out group-hover:bg-[#ABE0FF]/30 ${className}`}
         >
-          {showChevrons && <ChevronIcon />}
+          {showChevrons && !showArrow && <ChevronIcon />}
           <span className="relative h-6 overflow-hidden">
             <span className="flex flex-col transition-transform duration-300 ease-out group-hover:-translate-y-1/2">
               <span className="flex h-6 items-center justify-center">
@@ -63,7 +78,7 @@ export function HoverSwapButton({
               </span>
             </span>
           </span>
-          {showChevrons && <ChevronIcon />}
+          {showArrow ? <ArrowDownIcon /> : showChevrons && <ChevronIcon />}
         </span>
       </Link>
     );

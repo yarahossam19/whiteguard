@@ -1,18 +1,33 @@
+import CTASection from "@/components/home/CTASection";
+import IndustriesBannerSection from "@/components/industries/IndustriesBannerSection";
+import IndustriesSectionsSection from "@/components/industries/IndustriesSectionsSection";
+import IndustriesProcessSection from "@/components/industries/IndustriesProcessSection";
+import IndustriesWhySection from "@/components/industries/IndustriesWhySection";
+import { getCtaSectionData } from "@/data/cta-section";
+import { getIndustriesBannerData } from "@/data/industries-banner";
+import { getIndustriesProcessData } from "@/data/industries-process";
+import { getIndustriesSectionsData } from "@/data/industries-sections";
+import { getIndustriesWhyData } from "@/data/industries-why";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Industries | WHITEGUARD",
-  description:
-    "Security solutions tailored for your industry.",
+  description: "Security solutions tailored for your industry.",
 };
 
 export default function IndustriesPage() {
+  const bannerData = getIndustriesBannerData();
+  const sectionsData = getIndustriesSectionsData();
+  const whyData = getIndustriesWhyData();
+  const processData = getIndustriesProcessData();
+  const ctaData = getCtaSectionData();
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold text-slate-900">Industries</h1>
-      <p className="mt-4 text-slate-600">
-        Content coming soon...
-      </p>
-    </div>
+    <>
+      <IndustriesBannerSection data={bannerData} />
+      <IndustriesSectionsSection data={sectionsData} />
+      <IndustriesWhySection data={whyData} />
+      <IndustriesProcessSection data={processData} />
+      <CTASection data={ctaData} />
+    </>
   );
 }

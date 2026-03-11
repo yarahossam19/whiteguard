@@ -24,11 +24,8 @@ export const mainNav = [
     ],
   },
   { label: "Industries", href: "/industries" },
-  // {
-  //   label: "Partners",
-  //   href: "/partners",
-  //   hoverLabel: "View Partners",
-  // },
+  { label: "Partners", href: "/partners" },
+   
   { label: "Resources", href: "/resources" },
   { label: "White Hawk", href: "/white-hawk" },
 ] as const;
