@@ -1,6 +1,6 @@
 import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
 import type { HeroData } from "@/data/hero";
-import ClientLogos from "../shared/ClientLogos";
+import ClientLogos from "@/components/shared/ClientLogos";
 
 interface HeroSectionProps {
   data: HeroData;

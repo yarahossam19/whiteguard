@@ -1,0 +1,28 @@
+{
+  "steps": [
+    {
+      "id": "assess",
+      "number": 1,
+      "title": "Assess",
+      "icon": "/images/icons/assess.svg"
+    },
+    {
+      "id": "defend",
+      "number": 2,
+      "title": "Defend",
+      "icon": "/images/icons/defend.svg"
+    },
+    {
+      "id": "comply",
+      "number": 3,
+      "title": "Comply",
+      "icon": "/images/icons/comply.svg"
+    },
+    {
+      "id": "manage",
+      "number": 4,
+      "title": "Manage",
+      "icon": "/images/icons/manage.svg"
+    }
+  ]
+}

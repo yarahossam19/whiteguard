@@ -1,0 +1,97 @@
+{
+  "header": {
+    "title": "Industries We Serve",
+    "subtitle": "Tailored cybersecurity solutions built for the unique challenges, compliance requirements, and threat landscapes of your sector."
+  },
+  "industries": [
+    {
+      "id": "financial-services",
+      "title": "Financial Services",
+      "description": "Banks, fintechs, and insurance providers face relentless cyber threats and growing regulatory pressure. WHITEGUARD helps financial institutions comply with frameworks like FRA 139, CBE, and SAMA CSF, while enhancing resilience against fraud, data breaches, and ransomware.",
+      "bullets": [
+        "Continuous vulnerability assessment and incident readiness",
+        "SOC and SIEM monitoring tailored to financial systems",
+        "Compliance alignment with regional and global standards",
+        "Employee awareness programs for phishing and fraud prevention"
+      ],
+      "ctaLabel": "Secure Your Financial Operation",
+      "ctaHref": "/contact",
+      "icon": "wallet",
+      "image": "/images/industries/financial.png"
+    },
+    {
+      "id": "healthcare",
+      "title": "Healthcare",
+      "description": "The protection of patient data and clinical systems is now a matter of life, trust, and compliance. WHITEGUARD enables hospitals, healthcare networks, and medtech providers to meet standards like HIPAA, FDA, and ISO 27001, ensuring sensitive data and connected devices remain protected.",
+      "bullets": [
+        "Data protection and breach prevention across clinical systems",
+        "Cloud and IoT device security assessments",
+        "Incident response and digital forensics for healthcare environments",
+        "Compliance readiness for HIPAA, FDA, and regional data protection laws"
+      ],
+      "ctaLabel": "Protect Your Patient Data",
+      "ctaHref": "/contact",
+      "icon": "healthcare",
+      "image": "/images/industries/healthcare.png"
+    },
+    {
+      "id": "manufacturing",
+      "title": "Manufacturing",
+      "description": "Modern factories rely on interconnected OT (Operational Technology) and IT systems that, if compromised, can halt production and disrupt global supply chains. WHITEGUARD safeguards industrial networks and critical systems through proactive risk detection, red team assessments, and continuous monitoring.",
+      "bullets": [
+        "Industrial network segmentation and risk assessments",
+        "OT/ICS (Industrial Control Systems) cybersecurity audits and compliance with NCA and ISO",
+        "Business continuity and incident response plans",
+        "Real-time monitoring and threat intelligence for operational continuity"
+      ],
+      "ctaLabel": "Strengthen Your Industrial Defenses",
+      "ctaHref": "/contact",
+      "icon": "manufacturing",
+      "image": "/images/industries/manufacturing.png"
+    },
+    {
+      "id": "insurance-leasing",
+      "title": "Insurance & Leasing",
+      "description": "As digital platforms reshape the financial ecosystem, insurers and leasing companies are increasingly exposed to data breaches, fraud, and compliance risk. WHITEGUARD supports this sector through data protection, system hardening, and compliance alignment with FRA 139 and PCI-DSS.",
+      "bullets": [
+        "Endpoint and cloud security for underwriting and claims systems",
+        "Regulatory mapping for FRA, PCI, and privacy frameworks",
+        "Continuous monitoring of customer and transaction data",
+        "Executive visibility dashboards through White Hawk"
+      ],
+      "ctaLabel": "Build Your Compliance Confidence",
+      "ctaHref": "/contact",
+      "icon": "insurance",
+      "image": "/images/industries/insurance.png"
+    },
+    {
+      "id": "automotive",
+      "title": "Automotive",
+      "description": "The automotive industry is evolving into a digital ecosystem — connected vehicles, smart factories, and global supply chains. WHITEGUARD helps in source code reviewing for embedded systems, secure cloud integrations, and threat modeling and compliance support.",
+      "bullets": [
+        "Secure software and firmware audits for connected vehicles",
+        "Red team and penetration testing for automotive control systems",
+        "Supply chain cybersecurity assessments and vendor risk mapping"
+      ],
+      "ctaLabel": "Drive Your Secure Innovation",
+      "ctaHref": "/contact",
+      "icon": "automotive",
+      "image": "/images/industries/automotive.png"
+    },
+    {
+      "id": "technology-cloud",
+      "title": "Technology & Cloud",
+      "description": "In the cloud-first era, every technology company is a potential target. WHITEGUARD works with SaaS providers, datacenters, and cloud operators to secure platforms, APIs, and customer environments against evolving cyber threats.",
+      "bullets": [
+        "Cloud security and configuration audits (AWS, Azure, GCP)",
+        "Application and API penetration testing",
+        "SOC-as-a-Service and continuous threat detection",
+        "Compliance readiness for SOC 2, ISO 27001, and privacy frameworks"
+      ],
+      "ctaLabel": "Secure Your Cloud",
+      "ctaHref": "/contact",
+      "icon": "cloud",
+      "image": "/images/industries/technology.png"
+    }
+  ]
+}

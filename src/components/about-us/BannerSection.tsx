@@ -1,11 +1,36 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
 import type { AboutBannerData } from "@/data/about-banner";
 
 interface BannerSectionProps {
   data: AboutBannerData;
+}
+
+function OutlineButton({
+  href,
+  label,
+  showArrow = false,
+}: {
+  href: string;
+  label: string;
+  showArrow?: boolean;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group inline-flex items-center justify-center gap-2 rounded-[12px] border border-[#9CA3AF] bg-white px-6 py-3.5 font-ano text-base font-normal text-[#002439] transition-colors hover:border-[#6B7280] hover:bg-gray-50"
+    >
+      {label}
+      {showArrow && (
+        <span className="text-[#002439]" aria-hidden>
+          ↓
+        </span>
+      )}
+    </Link>
+  );
 }
 
 function ImageColumn({
@@ -55,79 +80,97 @@ function ImageColumn({
 export default function BannerSection({ data }: BannerSectionProps) {
   const {
     headline,
+    stats,
     description,
     ctas,
-    decorations,
     leftColumnImages,
     rightColumnImages,
     columnBackground,
   } = data;
 
   return (
-    <section className="relative w-full overflow-hidden">
-      <div className="flex min-h-screen flex-col lg:flex-row overflow-hidden relative  ">
-        {/*  Content */}
-        <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-14 sm:px-12 sm:py-16 lg:px-[7vw] lg:py-0">
-          <img
-            src={decorations.sparkleTop}
-            alt=""
-            aria-hidden
-            className="pointer-events-none absolute right-[12%] top-[18%] hidden h-[68px] w-[65px] select-none object-contain lg:block"
-          />
-
+    <section className="relative z-1 mb-20 w-full overflow-hidden">
+      <div className="flex min-h-screen flex-col lg:flex-row overflow-hidden relative">
+        {/* LEFT - Content (Figma node 1592-20175) - Dark theme */}
+        <div className="relative z-10 flex flex-1 flex-col items-center justify-center  px-6 pt-24 sm:px-12 sm:py-16 lg:px-[7vw]  ">
           <div
-            className="flex w-full max-w-[560px] flex-col text-center lg:text-left"
+            className="flex w-full  flex-col text-center lg:text-left"
             style={{ gap: 40 }}
           >
-            <div className="flex flex-col" style={{ gap: 24 }}>
-              <h1
-                className="font-jakarta font-extrabold leading-[1.18] tracking-[-0.03em]"
-                style={{ fontSize: "clamp(36px, 5vw, 58px)" }}
-              >
-                <span className="text-[#003859]">{headline.line1.bold}</span>
-                <span className="font-light text-[#0087D7]">
-                  {headline.line1.light}
-                </span>
-                <span className="text-[#003859]">{headline.line1.end}</span>
-                <br />
-                <span className="text-[#003859]">{headline.line2.bold}</span>
-                <span className="inline-flex items-baseline gap-0">
-                  <span className="font-light text-[#0087D7]">
-                    {headline.line2.light}
-                  </span>
-                  <span className="text-[#003859]">{headline.line2.end}</span>
-                  <img
-                    src={decorations.sparkleBottom}
-                    alt=""
-                    aria-hidden
-                    className="ms-2 hidden h-[70px] w-[65px] shrink-0 select-none object-contain lg:block"
-                  />
-                </span>
-              </h1>
+            {/* Heading */}
+            <h1
+              className="font-jakarta font-semibold leading-[86.4px] "
+              style={{
+                fontSize: "clamp(36px, 5vw, 58px)",
+                color: "#003859",
+              }}
+            >
+              {headline.line1}
+              <br />
+              {headline.line2}
+            </h1>
+
+            <div className="flex flex-col gap-[81px]">
+              {/* Stats */}
+              <div className="flex flex-wrap justify-center gap-4 lg:justify-start lg:gap-6">
+                {stats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="flex flex-col items-center justify-center gap-1"
+                  >
+                    <span
+                      className="font-jakarta text-[clamp(22px,2.5vw,32px)] font-extrabold leading-tight"
+                      style={{ color: "#003859" }}
+                    >
+                      {stat.value}
+                    </span>
+                    <span className="font-jakarta text-base font-medium leading-snug text-[#52697A">
+                      {stat.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Description */}
               <p
                 className="font-jakarta font-normal leading-[1.7] text-[#52697A]"
-                style={{ fontSize: "clamp(16px, 1.25vw, 20px)" }}
+                style={{ fontSize: "clamp(16px, 1.25vw, 22px)" }}
               >
                 {description}
               </p>
             </div>
-
+            {/* CTAs */}
             <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
-              {ctas.map((cta) => (
-                <HoverSwapButton
-                  key={cta.href}
-                  href={cta.href}
-                  label={cta.label}
-                  hoverLabel={cta.hoverLabel}
-                  variant={cta.variant as "cta" | "secondary"}
-                  showChevrons={false}
-                  className="font-ano px-6 py-3.5 text-base lg:text-lg"
-                />
-              ))}
+              {ctas.map((cta) =>
+                cta.variant === "outline" ? (
+                  <HoverSwapButton
+                    key={cta.href}
+                    href={cta.href}
+                    label={cta.label}
+                    hoverLabel={cta.hoverLabel}
+                    variant="secondary"
+                    showChevrons={false}
+                    showArrow={"showArrow" in cta && cta.showArrow}
+                    className="font-ano px-6 py-3.5 text-base lg:text-lg"
+                  />
+                ) : (
+                  <HoverSwapButton
+                    key={cta.href}
+                    href={cta.href}
+                    label={cta.label}
+                    hoverLabel={cta.hoverLabel}
+                    variant="cta"
+                    showChevrons={false}
+                    className="font-ano px-6 py-3.5 text-base lg:text-lg"
+                  />
+                ),
+              )}
             </div>
           </div>
         </div>
-        <div className="flex relative  w-1/2">
+
+        {/* RIGHT - Image columns (hidden on mobile, shown below) */}
+        <div className="relative hidden w-full lg:flex lg:w-1/2">
           <div
             className="flex absolute  w-full  left-[30%] -top-[50%]"
             style={{
