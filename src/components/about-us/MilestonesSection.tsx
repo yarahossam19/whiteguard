@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import type { AboutMilestonesData } from "@/data/about-milestones";
 import { SectionVideoSeparator } from "../ui/SectionVideoSeparator";
@@ -10,7 +11,7 @@ interface MilestonesSectionProps {
 
 const ICONS: Record<
   string,
-  (props: { className?: string; color?: string }) => JSX.Element
+  (props: { className?: string; color?: string }) => React.ReactElement
 > = {
   flag: ({ className = "", color = "currentColor" }) => (
     <svg
