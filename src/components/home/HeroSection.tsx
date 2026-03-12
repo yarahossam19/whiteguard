@@ -15,7 +15,7 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
     <section className="relative w-full  ">
       <div className="min-h-screen flex flex-col lg:flex-row  ">
         {/*  LEFT CONTENT */}
-        <div className="relative flex-1 flex items-center justify-start px-8 sm:px-12 lg:px-[7vw] py-16 lg:py-0 z-10  ">
+        <div className="relative z-10 flex flex-1 items-center justify-start px-4 py-16 sm:px-8 sm:py-16 lg:px-[7vw] lg:py-0">
           <img
             src={decorations.sparkleTop}
             alt=""
@@ -70,7 +70,7 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
         {/* ─── RIGHT PANEL ─── */}
         <div
           className="relative z-10 w-full lg:w-[50%]  lg:min-h-full  
-			 "
+			 hidden lg:block"
           style={{ background: "transparent" }}
         >
           <div

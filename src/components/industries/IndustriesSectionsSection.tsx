@@ -290,7 +290,7 @@ export default function IndustriesSectionsSection({
   return (
     <section className="relative min-h-screen w-full ">
       {/* Top header - dark background */}
-      <div className="px-6 pt-0 pb-8 text-center sm:px-12 lg:px-[7vw]">
+      <div className="px-4 py-6 text-center pb-8 pt-0 sm:px-8 sm:py-8 lg:px-[7vw]">
         <h2 className="font-jakarta text-lg font-bold uppercase tracking-widest  text-[#003859] sm:text-2xl">
           {header.title}
         </h2>
@@ -383,7 +383,7 @@ export default function IndustriesSectionsSection({
                   <div className="flex min-h-0 shrink flex-1 flex-col justify-between lg:min-h-[600px]">
                     <div className="flex flex-col gap-12">
                       <div className="flex flex-col justify-stretch gap-6">
-                        <h3 className="font-jakarta text-4xl font-bold text-[#003859]">
+                        <h3 className="font-jakarta text-2xl font-bold text-[#003859] sm:text-3xl lg:text-4xl">
                           {industry.title}
                         </h3>
                         <p className="font-jakarta text-base leading-relaxed text-[#52697A]">

@@ -5,10 +5,7 @@ import { siteConfig, footerNav, footerLegal, socialLinks } from "@/config/site";
 export function Footer() {
   return (
     <footer className="  bg-white" style={{ backdropFilter: "blur(8px)" }}>
-      <div
-        className="mx-auto max-w-[1506px] px-4 py-12 sm:px-6 lg:px-[50px] lg:py-16"
-        style={{ padding: "65px 113px 24px 113px" }}
-      >
+      <div className="mx-auto max-w-[1506px] px-4 py-12 sm:px-6 lg:px-[50px] lg:py-16 xl:px-[113px] xl:pt-[65px] xl:pb-6">
         {/* Upper Section */}
         <div className="grid gap-8 lg:grid-cols-4 lg:gap-12">
           {/* Company Info */}

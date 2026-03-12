@@ -110,7 +110,7 @@ export default function BannerSection({ data }: BannerSectionProps) {
               {headline.line2}
             </h1>
 
-            <div className="flex flex-col gap-[81px]">
+            <div className="flex flex-col gap-8 lg:gap-[81px]">
               {/* Stats */}
               <div className="flex flex-wrap justify-center gap-4 lg:justify-start lg:gap-6">
                 {stats.map((stat) => (

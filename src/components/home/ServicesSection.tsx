@@ -43,7 +43,7 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
         {/* Sticky viewport */}
         <div className="sticky top-0 flex h-screen flex-col ">
           {/* Header - fixed at top of sticky area */}
-          <div className="shrink-0  flex flex-col items-center gap-4 px-6 pt-0 lg:px-[7vw] lg:pt-0">
+          <div className="shrink-0 flex flex-col items-center gap-4 px-4 pt-0 sm:px-6 lg:px-[7vw] lg:pt-0">
             <div className="flex flex-col items-center gap-0">
               <h2 className="font-jakarta text-[clamp(32px,4vw,44px)] font-extrabold leading-[1.15] text-[#003859]">
                 {heading.line1}
@@ -58,7 +58,7 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
           </div>
 
           {/* Card + background area - flex grow, center card vertically */}
-          <div className="relative flex min-h-[577px] min-w-0 flex-1 items-center justify-center overflow-hidden px-6 lg:px-[7vw]">
+          <div className="relative flex min-h-[400px] min-w-0 flex-1 items-center justify-center overflow-hidden px-4 sm:min-h-[577px] sm:px-6 lg:px-[7vw]">
             {/* Background text - large, faded, marquee horizontal, behind card, never disappears */}
             <div
               className="absolute inset-0 flex items-center overflow-hidden pointer-events-none z-0"
@@ -80,7 +80,7 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
             </div>
 
             {/* Cards - swipe from behind (new card slides up and overlays previous) */}
-            <div className="relative z-10 h-[577px] w-full max-w-[400px] shrink-0 overflow-hidden self-center translate-y-12 pt-20">
+            <div className="relative z-10 h-[340px] w-full max-w-[340px] shrink-0 translate-y-8 overflow-hidden self-center pt-12 sm:h-[420px] sm:max-w-[380px] sm:translate-y-12 sm:pt-16 lg:h-[577px] lg:max-w-[400px] lg:pt-20">
               {services.map((service, i) => {
                 const slideFromBottom = 600;
                 const isFirst = i === 0;
@@ -149,16 +149,12 @@ function CardMotion({
   return (
     <motion.div className="absolute inset-0 w-full" style={{ y, opacity }}>
       <div
-        className="inline-flex flex-col items-start"
+        className="inline-flex flex-col items-start gap-4 p-6 sm:p-8 lg:gap-[15px] lg:px-10 lg:py-[60px]"
         style={{
           borderRadius: "60.075px",
           border: `2.503px solid ${service.borderColor}`,
           borderColor: service.borderColor,
           background: " #FFF",
-          // boxShadow:
-          //   "0 25.031px 37.547px -7.509px rgba(0, 56, 89, 0.05), 0 10.012px 15.019px -10.012px rgba(0, 56, 89, 0.05)",
-          padding: "60px 40px",
-          gap: "15.193px",
         }}
       >
         <div className="flex flex-col items-start" style={{ gap: "15.193px" }}>
@@ -172,10 +168,10 @@ function CardMotion({
             />
           </div>
           <div>
-            <h2 className="font-jakarta text-2xl font-bold text-[#003859]">
+            <h2 className="font-jakarta text-xl font-bold text-[#003859] sm:text-2xl">
               {service.title}
             </h2>
-            <p className="mt-3 font-jakarta text-lg font-normal leading-normal text-[#52697A]">
+            <p className="mt-2 font-jakarta text-base font-normal leading-normal text-[#52697A] sm:mt-3 sm:text-lg">
               {service.description}
             </p>
           </div>

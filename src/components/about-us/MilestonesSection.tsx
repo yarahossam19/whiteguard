@@ -130,14 +130,14 @@ export default function MilestonesSection({ data }: MilestonesSectionProps) {
                 return (
                   <div
                     key={milestone.id}
-                    className="relative flex min-h-[200px] items-stretch lg:min-h-[180px]"
+                    className="relative flex min-h-[200px] flex-col items-stretch gap-4 lg:min-h-[180px] lg:flex-row lg:gap-0"
                   >
                     {/* Left area: card when left, empty when right */}
                     <div
                       className={`flex flex-1 items-center ${
                         isLeft
-                          ? "justify-end gap-2 pr-2 lg:gap-3 lg:pr-4"
-                          : "justify-center lg:justify-end"
+                          ? "order-2 justify-end gap-2 pr-2 lg:order-1 lg:gap-3 lg:pr-4"
+                          : "order-2 justify-center lg:justify-end"
                       }`}
                     >
                       {isLeft && (
@@ -170,7 +170,7 @@ export default function MilestonesSection({ data }: MilestonesSectionProps) {
                     </div>
 
                     {/* Center: timeline node */}
-                    <div className="relative mx-10 z-10 flex shrink-0 -translate-y-29 items-center justify-center">
+                    <div className="relative z-10 order-1 flex shrink-0 -translate-y-29 items-center justify-center lg:order-none lg:mx-10">
                       <div
                         className="relative flex items-center justify-center"
                         style={{
@@ -203,8 +203,8 @@ export default function MilestonesSection({ data }: MilestonesSectionProps) {
                     <div
                       className={`flex flex-1 items-center ${
                         isLeft
-                          ? "justify-center lg:justify-start"
-                          : "justify-start gap-2 lg:gap-3 lg:pl-2"
+                          ? "order-3 justify-center lg:justify-start"
+                          : "order-2 justify-start gap-2 lg:order-none lg:gap-3 lg:pl-2"
                       }`}
                     >
                       {!isLeft && (

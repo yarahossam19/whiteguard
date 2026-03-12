@@ -13,7 +13,7 @@ export default function TeamSection({ data }: TeamSectionProps) {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   return (
-    <section className="relative w-full bg-white px-6   lg:px-[7vw] lg:pt-0 mb-60">
+    <section className="relative w-full bg-white px-4 pb-16 sm:px-6 lg:mb-60 lg:px-[7vw] lg:pt-0">
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-12 lg:gap-16">
         {/* Heading */}
         <div className="flex flex-col items-center gap-6 text-center">

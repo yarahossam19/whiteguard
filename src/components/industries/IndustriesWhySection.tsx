@@ -11,7 +11,7 @@ export default function IndustriesWhySection({
   const { heading, subtitle, cards } = data;
 
   return (
-    <section className="relative w-full bg-white px-6 py-16 lg:px-[5vw] lg:py-24">
+    <section className="relative w-full bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-[5vw] lg:py-24">
       <div className="mx-auto flex max-w-[1360px] flex-col items-center gap-16">
         {/* Heading + Subtitle */}
         <div className="flex flex-col items-center gap-4 text-center">
