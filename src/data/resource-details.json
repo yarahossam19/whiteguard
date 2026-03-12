@@ -1,0 +1,35 @@
+{
+  "1": {
+    "id": "1",
+    "title": "How a visual artist redefines success in graphic design",
+    "heroImage": "https://picsum.photos/seed/rd1/1506/345",
+    "sections": [
+      {
+        "id": "headline-1",
+        "headline": "Lorem ipsum dolor sit amet consectetur.",
+        "body": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique. Arcu amet eu in vitae enim adipiscing pharetra. Vitae tortor risus adipiscing eros adipiscing faucibus. Euismod non eu euismod libero diam. A vitae commodo fames amet pulvinar dapibus hendrerit tempus cursus. Convallis a leo adipiscing magna justo pellentesque vitae elementum. Ridiculus vitae dolor nulla pharetra blandit vitae. Purus tempor enim elementum nisi vel. Sed dui dignissim convallis vulputate quis integer ut adipiscing orci. Lorem aliquam enim eget viverra diam sed. Aliquet sapien posuere tellus duis nibh facilisis commodo. Sit tellus suscipit aliquet aliquam hac donec est facilisi. Quis faucibus phasellus dignissim egestas nibh morbi eget consectetur."
+      },
+      {
+        "id": "headline-2",
+        "headline": "Lorem ipsum dolor sit amet consectetur.",
+        "body": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique. Arcu amet eu in vitae enim adipiscing pharetra. Vitae tortor risus adipiscing eros adipiscing faucibus. Euismod non eu euismod libero diam. A vitae commodo fames amet pulvinar dapibus hendrerit tempus cursus. Convallis a leo adipiscing magna justo pellentesque vitae elementum. Ridiculus vitae dolor nulla pharetra blandit vitae. Purus tempor enim elementum nisi vel. Sed dui dignissim convallis vulputate quis integer ut adipiscing orci. Lorem aliquam enim eget viverra diam sed. Aliquet sapien posuere tellus duis nibh facilisis commodo. Sit tellus suscipit aliquet aliquam hac donec est facilisi. Quis faucibus phasellus dignissim egestas nibh morbi eget consectetur."
+      },
+      {
+        "id": "headline-3",
+        "headline": "Lorem ipsum dolor sit amet consectetur.",
+        "body": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique. Arcu amet eu in vitae enim adipiscing pharetra. Vitae tortor risus adipiscing eros adipiscing faucibus. Euismod non eu euismod libero diam. A vitae commodo fames amet pulvinar dapibus hendrerit tempus cursus. Convallis a leo adipiscing magna justo pellentesque vitae elementum. Ridiculus vitae dolor nulla pharetra blandit vitae. Purus tempor enim elementum nisi vel. Sed dui dignissim convallis vulputate quis integer ut adipiscing orci. Lorem aliquam enim eget viverra diam sed. Aliquet sapien posuere tellus duis nibh facilisis commodo. Sit tellus suscipit aliquet aliquam hac donec est facilisi. Quis faucibus phasellus dignissim egestas nibh morbi eget consectetur."
+      },
+      {
+        "id": "headline-4",
+        "headline": "Lorem ipsum dolor sit amet consectetur.",
+        "body": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique. Arcu amet eu in vitae enim adipiscing pharetra. Vitae tortor risus adipiscing eros adipiscing faucibus. Euismod non eu euismod libero diam. A vitae commodo fames amet pulvinar dapibus hendrerit tempus cursus. Convallis a leo adipiscing magna justo pellentesque vitae elementum. Ridiculus vitae dolor nulla pharetra blandit vitae. Purus tempor enim elementum nisi vel. Sed dui dignissim convallis vulputate quis integer ut adipiscing orci. Lorem aliquam enim eget viverra diam sed. Aliquet sapien posuere tellus duis nibh facilisis commodo. Sit tellus suscipit aliquet aliquam hac donec est facilisi. Quis faucibus phasellus dignissim egestas nibh morbi eget consectetur."
+      }
+    ],
+    "toc": [
+      { "id": "headline-1", "label": "Headline Number 1" },
+      { "id": "headline-2", "label": "Headline Number 2" },
+      { "id": "headline-3", "label": "Headline Number 3" },
+      { "id": "headline-4", "label": "Headline Number 4" }
+    ]
+  }
+}
