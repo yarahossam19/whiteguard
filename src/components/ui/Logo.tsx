@@ -18,14 +18,14 @@ export function Logo({}: LogoProps) {
         alt="WHITEGUARD Logo Text"
         width={145}
         height={14}
-        style={{ width: "145px", height: "14px" }}
+        className="h-3 w-24 sm:h-3.5 sm:w-[130px] lg:h-[14px] lg:w-[145px]"
       />
       <Image
         src="/images/logo-icon.svg"
         alt="WHITEGUARD Logo Icon"
         width={26}
         height={20}
-        style={{ width: "26px", height: "20px" }}
+        className="h-4 w-5 sm:h-5 sm:w-6 lg:h-5 lg:w-[26px]"
       />
     </Link>
   );

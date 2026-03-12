@@ -16,7 +16,7 @@ export default function PartnersHeroSection({
   const { headline, description, ctas } = data;
 
   return (
-    <section className="relative w-full  flex flex-col gap-20  px-8 sm:px-12 lg:px-[7vw] py-10 lg:py-14">
+    <section className="relative flex w-full flex-col gap-12 px-4 py-10 sm:gap-16 sm:px-8 lg:gap-20 lg:px-[7vw] lg:py-14">
       <div className="lg:max-h-screen flex flex-col lg:flex-row  ">
         {/*  LEFT CONTENT */}
         <div className="relative flex-1 flex items-center justify-center z-10  ">

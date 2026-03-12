@@ -43,14 +43,14 @@ export default function PartnersCallToActionSection({
               <br />
               {heading2}
             </h2>
-            <p className="font-jakarta text-[17px] ة font-normal leading-[29.75px] text-white">
+            <p className="font-jakarta text-[17px] font-normal leading-[29.75px] text-white">
               {subtitle}
             </p>
           </div>
         </div>
 
         {/* Buttons - gap 16px */}
-        <div className="grid grid-cols-2 items-center justify-center gap-4">
+        <div className="grid w-full max-w-md grid-cols-1 items-center justify-center gap-4 sm:max-w-none sm:grid-cols-2">
           <Link
             href={primaryCta.href}
             className="flex h-[57px]  flex-1 items-center justify-center gap-3 rounded-full bg-white px-10 py-[15px] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.15)] transition-opacity hover:opacity-95"
@@ -68,7 +68,7 @@ export default function PartnersCallToActionSection({
           </Link>
           <Link
             href={secondaryCta.href}
-            className="flex h-[57px] min-w-[280px] max-w-[310px] flex-1 items-center justify-center rounded-full border border-white/30 px-[33px] py-[17px] transition-opacity hover:bg-white/10"
+            className="flex h-[57px] w-full flex-1 items-center justify-center rounded-full border border-white/30 px-[33px] py-[17px] transition-opacity hover:bg-white/10 sm:min-w-[200px] lg:min-w-[280px] lg:max-w-[310px]"
           >
             <span className="font-jakarta text-[15px] font-semibold leading-[22.5px] text-white/85">
               {secondaryCta.label}

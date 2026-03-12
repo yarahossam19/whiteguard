@@ -66,7 +66,7 @@ export default function MenaGloballySection({
         </div>
 
         {/* Right: Map */}
-        <div className="relative w-full max-w-[50%] shrink-0">
+        <div className="relative w-full shrink-0 lg:max-w-[50%]">
           <img
             src={mapData.src}
             alt={mapData.alt}

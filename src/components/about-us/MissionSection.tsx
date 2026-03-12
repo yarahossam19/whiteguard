@@ -106,7 +106,7 @@ export default function MissionSection({ data }: MissionSectionProps) {
           >
             {/* Vision Card - initial active */}
             <div
-              className="flex flex-col items-center   p-[50px] transition-all duration-300"
+              className="flex flex-col items-center p-6 transition-all duration-300 lg:p-[50px]"
               style={{
                 background: isVisionActive ? "transparent" : "#E9EDF1",
                 boxShadow: !isVisionActive
@@ -147,7 +147,7 @@ export default function MissionSection({ data }: MissionSectionProps) {
 
             {/* Mission Card */}
             <div
-              className={`flex flex-col items-center   p-[50px] transition-all duration-300 `}
+              className="flex flex-col items-center p-6 transition-all duration-300 lg:p-[50px]"
               style={{
                 background: isMissionActive ? "transparent" : "#E9EDF1",
                 boxShadow: !isMissionActive

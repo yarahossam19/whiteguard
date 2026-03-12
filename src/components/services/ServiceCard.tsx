@@ -11,7 +11,7 @@ export default function ServiceCard({ card }: ServiceCardProps) {
 
   const contentBlock = (
     <div
-      className={`flex flex-col gap-6   ${imageLeft ? "pe-25 ps-8" : "pe-40"}`}
+      className={`flex flex-col gap-6 px-4 sm:px-6 lg:px-8 ${imageLeft ? "lg:pe-12 lg:ps-8" : "lg:pe-16"}`}
     >
       <div className="flex flex-col gap-4">
         <h2 className="font-jakarta text-[24px] font-semibold leading-[36px] text-[#003859] lg:text-[24px]">

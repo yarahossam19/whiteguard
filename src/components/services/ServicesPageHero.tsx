@@ -28,7 +28,7 @@ export default function ServicesPageHero({
         {/* Background: wave + gradient overlay */}
         <div className="absolute inset-0 overflow-hidden">
           <div
-            className="absolute left-1/2 top-[calc(50%+200px)] h-[404px] w-full max-w-[1536px] -translate-x-1/2 -translate-y-1/2"
+            className="absolute left-1/2 top-[calc(50%+200px)] h-[404px] w-full -translate-x-1/2 -translate-y-1/2"
             style={{
               backgroundImage: "url('/images/wave-light-blue-bg.png')",
               backgroundSize: "cover",

@@ -13,11 +13,11 @@ export default function IndustriesProcessSection({
   const { steps } = data;
 
   return (
-    <section className="relative w-full overflow-hidden bg-white px-6 py-20 lg:px-[7vw] lg:py-28">
-      <h3 className="font-jakarta text-4xl mb-20 font-bold leading-[1.3] tracking-[-0.36px] text-[#0f2233]">
+    <section className="relative w-full overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-[7vw] lg:py-28">
+      <h3 className="mb-12 font-jakarta text-2xl font-bold leading-[1.3] tracking-[-0.36px] text-[#0f2233] sm:mb-16 sm:text-3xl lg:mb-20 lg:text-4xl">
         End-to-End Lifecycle
       </h3>
-      <div className="relative mx-auto max-w-[60%]">
+      <div className="relative mx-auto w-full max-w-full lg:max-w-[60%]">
         {/* Dashed wavy path connecting the steps */}
         <svg
           className="absolute left-0 top-1/2 h-[120px] w-full -translate-y-1/2"
@@ -36,7 +36,7 @@ export default function IndustriesProcessSection({
         </svg>
 
         {/* Steps - 4 columns */}
-        <div className="relative grid grid-cols-4 gap-4 lg:gap-8">
+        <div className="relative grid grid-cols-2 gap-4 sm:grid-cols-4 lg:gap-8">
           {steps.map((step) => (
             <div
               key={step.id}

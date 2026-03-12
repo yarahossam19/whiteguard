@@ -87,7 +87,7 @@ function ServicesPageContent() {
       <ServicesPageHero data={data} activeTab={activeTab} />
 
       {/* Service cards */}
-      <section className="mx-auto  px-6 lg:px-[7vw] pb-40">
+      <section className="mx-auto px-4 pb-24 sm:px-6 lg:px-[7vw] lg:pb-40">
         <div className="flex flex-col gap-16 lg:gap-[128px]">
           {cards.map((card) => (
             <ServiceCard key={card.id} card={card} />

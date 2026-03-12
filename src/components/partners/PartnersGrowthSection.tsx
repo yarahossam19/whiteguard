@@ -59,11 +59,11 @@ export default function PartnersGrowthSection({
           </div>
 
           {/* Bar Chart  */}
-          <div className=" relative flex w-full items-end justify-between gap-4 lg:gap-2">
+          <div className="relative flex w-full items-end justify-between gap-2 overflow-x-auto pb-2 sm:gap-4 lg:overflow-visible lg:gap-2">
             {items.map((item, idx) => (
               <div
                 key={item.id}
-                className="relative z-10 flex flex-1 flex-col   justify-end"
+                className="relative z-10 flex min-w-[70px] flex-1 flex-col justify-end sm:min-w-0"
               >
                 {/* Icon centered above first bar (leftmost) */}
                 <div
