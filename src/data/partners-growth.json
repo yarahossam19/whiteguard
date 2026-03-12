@@ -1,0 +1,47 @@
+{
+  "heading": {
+    "line1": "Everything you need to ",
+    "line2": "win together"
+  },
+  "subtitle": "WHITEGUARD's partner program is engineered from the ground up to be your most profitable and strategic technology alliance.",
+  "sectionTitle": "Profitable Growth Opportunities",
+  "growthIcon": "/images/icons/insight-arrow.svg",
+  "items": [
+    {
+      "id": "account-manager",
+      "label": "Dedicated Account Manager",
+      "icon": "/images/icons/check.svg",
+      "bars": [
+        { "color": "dark", "height": 22.391 },
+        { "color": "light", "height": 33.594 },
+        { "color": "light", "height": 28.797 }
+      ]
+    },
+    {
+      "id": "co-marketing",
+      "label": "Co-Marketing Support",
+      "icon": "/images/icons/megaphone.svg",
+      "bars": [
+        { "color": "dark", "height": 46.391 },
+        { "color": "light", "height": 40 },
+        { "color": "light", "height": 69 }
+      ]
+    },
+    {
+      "id": "technical-enablement-1",
+      "label": "Technical Enablement",
+      "icon": "/images/icons/book.svg",
+      "bars": [
+        { "color": "dark", "height": 93 },
+        { "color": "light", "height": 109 },
+        { "color": "light", "height": 93 }
+      ]
+    },
+    {
+      "id": "technical-enablement-2",
+      "label": "Technical Enablement",
+      "icon": "/images/icons/check-doc-blue.svg",
+      "bars": [{ "color": "gradient", "height": 145 }]
+    }
+  ]
+}

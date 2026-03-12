@@ -91,7 +91,7 @@ export default function BannerSection({ data }: BannerSectionProps) {
   return (
     <section className="relative z-1 mb-20 w-full overflow-hidden">
       <div className="flex min-h-screen flex-col lg:flex-row overflow-hidden relative">
-        {/* LEFT - Content (Figma node 1592-20175) - Dark theme */}
+        {/* LEFT - Content  */}
         <div className="relative z-10 flex flex-1 flex-col items-center justify-center  px-6 pt-24 sm:px-12 sm:py-16 lg:px-[7vw]  ">
           <div
             className="flex w-full  flex-col text-center lg:text-left"

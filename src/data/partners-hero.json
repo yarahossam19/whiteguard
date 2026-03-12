@@ -1,0 +1,29 @@
+{
+  "headline": {
+    "line1": "Partner with WHITEGUARD.",
+    "line2": "Grow Together."
+  },
+  "description": "Join a network of 240+ elite technology and solution partners across the MENA region. Co-sell, co-market, and unlock a new revenue stream backed by the region's most trusted cybersecurity brand.",
+  "ctas": [
+    {
+      "href": "/contact",
+      "label": "Become a Partner",
+      "hoverLabel": "Become a Partner",
+      "variant": "cta"
+    },
+    {
+      "href": "/services",
+      "label": "Explore Program",
+      "hoverLabel": "Explore Program",
+      "variant": "secondary"
+    }
+  ],
+  "decorations": {
+    "sparkleTop": "https://api.builder.io/api/v1/image/assets/TEMP/489fd4fbc0c2620b6054dfc3bfa60d74a3fa9088?width=130",
+    "sparkleBottom": "https://api.builder.io/api/v1/image/assets/TEMP/8dbe930ef8404aef89a8f08298bd988e3af5972e?width=130"
+  },
+  "rightPanel": {
+    "backgroundImage": "/images/banner-bg.png",
+    "videoSrc": "/videos/banner.mp4"
+  }
+}

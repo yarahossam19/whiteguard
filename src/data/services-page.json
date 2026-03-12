@@ -1,0 +1,510 @@
+{
+  "tabs": [
+    { "id": "all", "label": "All Services" },
+    { "id": "offensive", "label": "Offensive" },
+    { "id": "defensive", "label": "Defensive" },
+    { "id": "grc", "label": "GRC" },
+    { "id": "training", "label": "Awareness Training" }
+  ],
+  "categories": {
+    "all": {
+      "hero": {
+        "heading": "Comprehensive Cybersecurity",
+        "headingAccent": "Services.",
+        "subtitle": "An interconnected ecosystem of security services designed to protect every layer of your organization. From offensive testing to defensive operations, GRC, and training.",
+        "ctaPrimary": { "label": "Request an Assessment", "href": "#" },
+        "ctaSecondary": { "label": "Talk to a Security Expert", "href": "#" }
+      },
+      "bottomCta": {
+        "heading": "Ready to Strengthen Your Security?",
+        "headingAccent": "Let's Talk.",
+        "subtitle": "Our team is ready to help you build a comprehensive security program.",
+        "buttonLabel": "Book a Consultation",
+        "href": "#"
+      }
+    },
+    "offensive": {
+      "hero": {
+        "heading": "Simulate the Threat.",
+        "headingAccent": "Strengthen the Defense.",
+        "subtitle": "WHITEGUARD's Red Team services expose your blind spots before real attackers do. We simulate real-world threats across people, processes, and systems to help you validate defenses, test detection, and harden your entire security posture.",
+        "ctaPrimary": { "label": "Request an Assessment", "href": "#" },
+        "ctaSecondary": { "label": "Talk to a Security Expert", "href": "#" }
+      },
+      "cards": [
+        {
+          "id": "penetration-testing",
+          "title": "Penetration Testing",
+          "description": "Find vulnerabilities, Exploit them safely, Fix them fast. We simulate internal and external cyberattacks across networks, apps, APIs, wireless, POS, cloud, ITM&ATM, and OT environments.",
+          "features": [
+            {
+              "icon": "/images/services/icons/icon-1.svg",
+              "label": "Black/Grey/White Box"
+            },
+            {
+              "icon": "/images/services/icons/icon-2.svg",
+              "label": "Exploitation PoCs"
+            },
+            {
+              "icon": "/images/services/icons/icon-3.svg",
+              "label": "Remediation Roadmap"
+            }
+          ],
+          "cta": { "label": "Talk to a Security Expert", "href": "#" },
+          "image": "/images/services/offensive.png",
+          "imageLeft": true
+        },
+        {
+          "id": "vulnerability-assessment",
+          "title": "Vulnerability Assessment",
+          "description": "Scan your systems. Prioritize what matters. We conduct comprehensive scans across your digital infrastructure, identifying known vulnerabilities mapped to CVEs and MITRE ATT&CK.",
+          "features": [
+            {
+              "icon": "/images/services/icons/icon-4.svg",
+              "label": "Asset Discovery"
+            },
+            {
+              "icon": "/images/services/icons/icon-5.svg",
+              "label": "Risk Scoring"
+            },
+            {
+              "icon": "/images/services/icons/icon-6.svg",
+              "label": "Remediation Checklist"
+            }
+          ],
+          "cta": { "label": "Run a Vulnerability Scan Now", "href": "#" },
+          "image": "/images/services/offensive-2.png",
+          "imageLeft": false
+        },
+        {
+          "id": "red-team-assessment",
+          "title": "Red Team Assessment",
+          "description": "Go beyond testing. Simulate a real-world breach. WHITEGUARD's red team engagements emulate persistent threat actors targeting your defenses across people, technology, and process.",
+          "features": [
+            {
+              "icon": "/images/services/icons/icon-7.svg",
+              "label": "Threat Modeling"
+            },
+            {
+              "icon": "/images/services/icons/icon-8.svg",
+              "label": "Social Engineering"
+            },
+            {
+              "icon": "/images/services/icons/icon-9.svg",
+              "label": "Detection Eval"
+            },
+            {
+              "icon": "/images/services/icons/icon-10.svg",
+              "label": "Executive Debrief"
+            }
+          ],
+          "cta": { "label": "Request a Red Team Exercise Now", "href": "#" },
+          "image": "/images/services/offensive-3.png",
+          "imageLeft": true
+        },
+        {
+          "id": "cis-benchmarks",
+          "title": "CIS Benchmarks Assessment",
+          "description": "Audit your systems against the CIS hardening standards. We evaluate your configurations against CIS benchmarks and PCI DSS security standards to ensure you are securely configured.",
+          "features": [
+            {
+              "icon": "/images/services/icons/icon-11.svg",
+              "label": "Secure Baseline"
+            },
+            {
+              "icon": "/images/services/icons/icon-12.svg",
+              "label": "Gap Analysis"
+            },
+            {
+              "icon": "/images/services/icons/icon-13.svg",
+              "label": "Recommendations"
+            }
+          ],
+          "cta": { "label": "Run CIS Compliance Check Now", "href": "#" },
+          "image": "/images/services/offensive-4.png",
+          "imageLeft": false
+        },
+        {
+          "id": "source-code-review",
+          "title": "Source Code Review",
+          "description": "Secure your software before attackers find the flaws. We combine automated scanners with manual analysis to detect logic bugs in your custom code.",
+          "features": [
+            {
+              "icon": "/images/services/icons/icon-14.svg",
+              "label": "OWASP Top 10"
+            },
+            {
+              "icon": "/images/services/icons/icon-15.svg",
+              "label": "Backend Review"
+            },
+            {
+              "icon": "/images/services/icons/icon-16.svg",
+              "label": "Risk Assessment"
+            }
+          ],
+          "cta": { "label": "Get Your Code Reviewed Now", "href": "#" },
+          "image": "/images/services/offensive-5.png",
+          "imageLeft": true
+        },
+        {
+          "id": "cloud-security-assessment",
+          "title": "Cloud Security Assessment",
+          "description": "Misconfigured cloud = open door, Let's close it. We review your cloud environment across AWS, Azure, GCP, and hybrid setups for identity, network, and storage misconfigurations.",
+          "features": [
+            {
+              "icon": "/images/services/icons/icon-17.svg",
+              "label": "CSPM & IAM"
+            },
+            {
+              "icon": "/images/services/icons/icon-18.svg",
+              "label": "Storage & Firewalls"
+            },
+            {
+              "icon": "/images/services/icons/icon-19.svg",
+              "label": "Secure Architecture"
+            }
+          ],
+          "cta": { "label": "Audit Your Cloud Setup Now", "href": "#" },
+          "image": "/images/services/offensive-6.png",
+          "imageLeft": false
+        }
+      ],
+      "bottomCta": {
+        "heading": "Let Our Red Team Simulate the Breach.",
+        "headingAccent": "Before the Real One Happens.",
+        "subtitle": "All offensive services are delivered by certified professionals with real-world experience in threat simulation and enterprise security.",
+        "buttonLabel": "Book an Offensive Service Consultation",
+        "href": "#"
+      }
+    },
+    "defensive": {
+      "hero": {
+        "heading": "Detect. Respond. Recover.",
+        "headingAccent": "Defend Your Digital Assets.",
+        "subtitle": "WHITEGUARD's Defensive Security services help you build resilient security operations. From SOC design to incident response, we ensure you're ready when threats strike.",
+        "ctaPrimary": { "label": "Request an Assessment", "href": "#" },
+        "ctaSecondary": { "label": "Talk to a Security Expert", "href": "#" }
+      },
+      "cards": [
+        {
+          "id": "soc-design",
+          "title": "SOC Service",
+          "description": "Your virtual security operations center — always on  We provide 24/7 monitoring, alert triage, threat detection, and response, all without the overhead of building your own SOC. ",
+          "features": [
+            {
+              "icon": "/images/services/defensive-icons/icon-1.svg",
+              "label": "Centralized Visibility"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-2.svg",
+              "label": "Tier 1–3 Analyst Support"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-3.svg",
+              "label": "Threat Detection & Hunting"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-4.svg",
+              "label": "Real-time Dashboards"
+            }
+          ],
+          "cta": { "label": "Start with Managed SOC Now", "href": "#" },
+          "image": "/images/services/defensive-1.png",
+          "imageLeft": true
+        },
+        {
+          "id": "siem-deployment",
+          "title": "SIEM Deployment",
+          "description": "Visibility is the first step to control Deploy the right SIEM, Deploy it right. We help you implement, configure, and optimize leading SIEM platforms (e.g., ELK, Splunk, IBM QRadar, Azure Sentinel) to meet your environment's unique needs.",
+          "features": [
+            {
+              "icon": "/images/services/defensive-icons/icon-5.svg",
+              "label": "SIEM Selection"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-6.svg",
+              "label": "End-to-end Setup"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-7.svg",
+              "label": "Architecture Design"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-8.svg",
+              "label": "Log Aggregation"
+            }
+          ],
+          "cta": { "label": "Deploy Your SIEM Now", "href": "#" },
+          "image": "/images/services/defensive-2.png",
+          "imageLeft": false
+        },
+        {
+          "id": "siem-use-case-lifecycle-management",
+          "title": "SIEM Use Case Lifecycle Management",
+          "description": "SIEM without use cases is just storage We build and manage detection logic tailored to your threats, ensuring your SIEM actually detects what matters.",
+          "features": [
+            {
+              "icon": "/images/services/defensive-icons/icon-9.svg",
+              "label": "Threat Modeling"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-10.svg",
+              "label": "Detection Rule Tuning"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-11.svg",
+              "label": "Response Playbooks"
+            }
+          ],
+          "cta": { "label": "Optimize Your SIEM Now", "href": "#" },
+          "image": "/images/services/defensive-3.png",
+          "imageLeft": true
+        },
+        {
+          "id": "dfir-services",
+          "title": "Digital Forensics & Incident Response (DFIR)",
+          "description": "When seconds matter, our response team delivers Investigate and contain breaches fast. Our DFIR team brings deep forensic expertise to uncover what happened, how, and how to recover.",
+          "features": [
+            {
+              "icon": "/images/services/defensive-icons/icon-12.svg",
+              "label": "Compromise Assessment"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-13.svg",
+              "label": "Root-cause Analysis"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-14.svg",
+              "label": "Legal-ready Reports"
+            }
+          ],
+          "cta": { "label": "Request Incident Response Now", "href": "#" },
+          "image": "/images/services/defensive-4.png",
+          "imageLeft": false
+        },
+        {
+          "id": "threat-intelligence-brand-protection",
+          "title": "Threat Intelligence & Brand Protection",
+          "description": "What's said about you on the dark web matters We monitor underground forums, breach databases, and the surface web for signs of leaked data, impersonation, or brand abuse.",
+          "features": [
+            {
+              "icon": "/images/services/defensive-icons/icon-15.svg",
+              "label": "Infostealer Detections"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-16.svg",
+              "label": "Dark Web Monitoring"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-17.svg",
+              "label": "Credential Leak Detection"
+            }
+          ],
+          "cta": { "label": "Monitor Your Digital Risk", "href": "#" },
+          "image": "/images/services/defensive-5.png",
+          "imageLeft": true
+        },
+        {
+          "id": "managed-phishing-simulation-awareness",
+          "title": "Managed Phishing Simulation & Awareness",
+          "description": "Test and train your people — before attackers do We simulate real phishing attacks to identify weak points and build ongoing user awareness.",
+          "features": [
+            {
+              "icon": "/images/services/defensive-icons/icon-18.svg",
+              "label": "Custom Phishing Campaigns"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-19.svg",
+              "label": "Training Modules"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-20.svg",
+              "label": "Department Reporting"
+            }
+          ],
+          "cta": { "label": "Start Your Awareness Program Now", "href": "#" },
+          "image": "/images/services/defensive-6.png",
+          "imageLeft": false
+        },
+        {
+          "id": "managed-threat-hunting",
+          "title": "Incident Response & Handling",
+          "description": "Be ready when an incident happens From playbook development to tabletop exercises, we help your team respond fast, decisively, and correctly under pressure.",
+          "features": [
+            {
+              "icon": "/images/services/defensive-icons/icon-21.svg",
+              "label": "IR Playbook Creation"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-22.svg",
+              "label": "Team Enablement"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-23.svg",
+              "label": "Simulation & Training"
+            }
+          ],
+          "cta": { "label": "Build Your IR Plan Now", "href": "#" },
+          "image": "/images/services/defensive-7.png",
+          "imageLeft": true
+        },
+        {
+          "id": "business-continuity-recovery",
+          "title": "Business Continuity & Recovery",
+          "description": "Recover with resilience, Operate without pause We help you build and test business continuity plans so you can minimize downtime and meet regulatory expectations.",
+          "features": [
+            {
+              "icon": "/images/services/defensive-icons/icon-24.svg",
+              "label": "BCP Framework Design"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-25.svg",
+              "label": "Impact Analysis"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-26.svg",
+              "label": "Backup Validation"
+            }
+          ],
+          "cta": {
+            "label": "Strengthen Your Continuity Plan Now",
+            "href": "#"
+          },
+          "image": "/images/services/defensive-8.png",
+          "imageLeft": false
+        }
+      ],
+      "bottomCta": {
+        "heading": "Build a Security Operations Center",
+        "headingAccent": "That Works Around the Clock.",
+        "subtitle": "Our defensive services are delivered by experienced SOC analysts and incident responders.",
+        "buttonLabel": "Book a Defensive Service Consultation",
+        "href": "#"
+      }
+    },
+    "grc": {
+      "hero": {
+        "heading": "Govern. Assess. Comply.",
+        "headingAccent": "Align Security with Business.",
+        "subtitle": "WHITEGUARD's GRC services help you navigate complex regulatory landscapes. From ISO 27001 to SAMA CSF and NCA ECC, we guide you to compliance.",
+        "ctaPrimary": { "label": "Request an Assessment", "href": "#" },
+        "ctaSecondary": { "label": "Talk to a Compliance Expert", "href": "#" }
+      },
+      "cards": [
+        {
+          "id": "iso-27001",
+          "title": "ISO 27001 Certification",
+          "description": "Achieve international recognition for your information security management system. We guide you through gap assessment, implementation, and certification.",
+          "features": [
+            {
+              "icon": "/images/icons/benefit-pricing.svg",
+              "label": "Gap Assessment"
+            },
+            {
+              "icon": "/images/icons/benefit-incentives.svg",
+              "label": "ISMS Design"
+            },
+            {
+              "icon": "/images/icons/benefit-resources.svg",
+              "label": "Certification Support"
+            }
+          ],
+          "cta": { "label": "Start Your Journey", "href": "#" },
+          "image": "/images/services/grc.png",
+          "imageLeft": true
+        },
+        {
+          "id": "sama-csf",
+          "title": "SAMA CSF Compliance",
+          "description": "Meet Saudi Arabia's Cybersecurity Framework requirements. We help financial institutions align with SAMA regulations and pass audits.",
+          "features": [
+            {
+              "icon": "/images/icons/benefit-pricing.svg",
+              "label": "Readiness Assessment"
+            },
+            {
+              "icon": "/images/icons/benefit-incentives.svg",
+              "label": "Control Mapping"
+            },
+            {
+              "icon": "/images/icons/benefit-resources.svg",
+              "label": "Audit Preparation"
+            }
+          ],
+          "cta": { "label": "Get SAMA Ready", "href": "#" },
+          "image": "/images/services/grc.png",
+          "imageLeft": false
+        }
+      ],
+      "bottomCta": {
+        "heading": "Navigate Compliance with Confidence.",
+        "headingAccent": "We Know the Frameworks.",
+        "subtitle": "Our GRC experts have helped organizations across MENA achieve and maintain compliance.",
+        "buttonLabel": "Book a GRC Consultation",
+        "href": "#"
+      }
+    },
+    "training": {
+      "hero": {
+        "heading": "Train. Simulate. Empower.",
+        "headingAccent": "Build a Security-First Culture.",
+        "subtitle": "WHITEGUARD's Awareness Training programs turn your employees into your first line of defense. From phishing simulations to hands-on workshops.",
+        "ctaPrimary": { "label": "Request a Demo", "href": "#" },
+        "ctaSecondary": { "label": "Talk to a Training Expert", "href": "#" }
+      },
+      "cards": [
+        {
+          "id": "phishing-simulation",
+          "title": "Phishing Simulation",
+          "description": "Test your employees' ability to spot phishing. We run realistic campaigns and provide detailed reporting to improve awareness.",
+          "features": [
+            {
+              "icon": "/images/icons/benefit-pricing.svg",
+              "label": "Custom Campaigns"
+            },
+            {
+              "icon": "/images/icons/benefit-incentives.svg",
+              "label": "Real-time Reporting"
+            },
+            {
+              "icon": "/images/icons/benefit-resources.svg",
+              "label": "Remediation Training"
+            }
+          ],
+          "cta": { "label": "Run a Phishing Test", "href": "#" },
+          "image": "/images/services/training.png",
+          "imageLeft": true
+        },
+        {
+          "id": "security-workshops",
+          "title": "Security Workshops",
+          "description": "Hands-on training for developers, IT teams, and executives. We deliver tailored workshops that build practical security skills.",
+          "features": [
+            {
+              "icon": "/images/icons/benefit-pricing.svg",
+              "label": "Developer Training"
+            },
+            {
+              "icon": "/images/icons/benefit-incentives.svg",
+              "label": "Executive Briefings"
+            },
+            {
+              "icon": "/images/icons/benefit-resources.svg",
+              "label": "Custom Curricula"
+            }
+          ],
+          "cta": { "label": "Schedule a Workshop", "href": "#" },
+          "image": "/images/services/training.png",
+          "imageLeft": false
+        }
+      ],
+      "bottomCta": {
+        "heading": "Your People Are Your Best Defense.",
+        "headingAccent": "Let's Train Them.",
+        "subtitle": "Our training programs are designed by security practitioners for real-world impact.",
+        "buttonLabel": "Book a Training Consultation",
+        "href": "#"
+      }
+    }
+  }
+}

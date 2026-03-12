@@ -17,17 +17,17 @@ export const mainNav = [
     href: "/services",
     hasDropdown: true,
     subLinks: [
-      { label: "Offensive Security", href: "/services/offensive-security" },
-      { label: "Defensive Security", href: "/services/defensive-security" },
-      { label: "GRC", href: "/services/grc" },
-      { label: "Training", href: "/services/training" },
+      { label: "Offensive Security", href: "/services?tab=offensive" },
+      { label: "Defensive Security", href: "/services?tab=defensive" },
+      { label: "GRC", href: "/services?tab=grc" },
+      { label: "Training", href: "/services?tab=training" },
     ],
   },
   { label: "Industries", href: "/industries" },
   { label: "Partners", href: "/partners" },
    
   { label: "Resources", href: "/resources" },
-  { label: "White Hawk", href: "/white-hawk" },
+  { label: "White Hawk", href: "https://www.whitehwk.com" },
 ] as const;
 
 export const footerNav = {
