@@ -1,12 +1,14 @@
 import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
 import type { HeroData } from "@/data/hero";
+import type { ClientLogosData } from "@/data/client-logos";
 import ClientLogos from "../shared/ClientLogos";
 
 interface HeroSectionProps {
   data: HeroData;
+  logos: ClientLogosData;
 }
 
-export default function HeroSection({ data }: HeroSectionProps) {
+export default function HeroSection({ data, logos }: HeroSectionProps) {
   const { headline, description, ctas, decorations, rightPanel } = data;
 
   return (
@@ -111,7 +113,7 @@ export default function HeroSection({ data }: HeroSectionProps) {
           />
         </div>
       </div>
-      <ClientLogos />
+      <ClientLogos logos={logos} />
     </section>
   );
 }

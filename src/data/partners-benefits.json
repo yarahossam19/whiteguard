@@ -1,0 +1,34 @@
+{
+  "badge": "PARTNER BENEFITS",
+  "heading": {
+    "line1": "Boost your business at ",
+    "line2": "every level"
+  },
+  "subtitle": "From your first deal to your hundredth, WHITEGUARD gives you the tools, pricing power, and people to grow confidently — and profitably.",
+  "cards": [
+    {
+      "id": "resources",
+      "title": "World-Class Resources",
+      "description": "Everything your team needs to position, demo, and close. Available 24/7 through the Partner Portal.",
+      "icon": "/images/icons/benefits/icon-3.svg"
+    },
+    {
+      "id": "pricing",
+      "title": "Competitive Pricing & Margins",
+      "description": "Transparent, predictable margins with structured tiers that reward performance — no surprises.",
+      "icon": "/images/icons/benefits/icon-1.svg"
+    },
+    {
+      "id": "incentives",
+      "title": "Incentives That Scale With You",
+      "description": "Our incentives program is designed to compound — the more you grow with us, the more we invest back in you.",
+      "icon": "/images/icons/benefits/icon.svg"
+    },
+    {
+      "id": "support",
+      "title": "Dedicated Partner Support",
+      "description": "You're never alone in a deal. Our partner success team is a phone call away, with technical and commercial backup at every stage.",
+      "icon": "/images/icons/benefits/icon-2.svg"
+    }
+  ]
+}

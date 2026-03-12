@@ -1,0 +1,30 @@
+{
+  "heading": {
+    "line1": "Which kind of partner ",
+    "line2": "are you?"
+  },
+  "subtitle": "We work with three distinct partner archetypes, each with a custom program designed around how they sell, build, or deliver.",
+  "cards": [
+    {
+      "id": "solution-providers",
+      "tag": "VARs & Resellers",
+      "title": "Solution Providers",
+      "description": "You advise and resell technology to your enterprise and mid-market clients. Adding WHITEGUARD to your portfolio means offering the region's most trusted cybersecurity suite — and earning protected margins on every deal.",
+      "icon": "/images/icons/cta/icon-2.svg"
+    },
+    {
+      "id": "tech-partners",
+      "tag": "ISVs & Platform Partners",
+      "title": "Tech Partners",
+      "description": "You build software, platforms, or technology products. WHITEGUARD's open API and integration layer makes it easy to embed security capabilities into your product — and co-sell to our shared customer base.",
+      "icon": "/images/icons/cta/icon-1.svg"
+    },
+    {
+      "id": "msps",
+      "tag": "Managed Service Providers",
+      "title": "MSPs & MSSPs",
+      "description": "You manage security for your clients on an ongoing basis. WHITEGUARD's multi-tenant platform, white-label reporting, and 24/7 SOC integration make us the ideal engine for your managed security services.",
+      "icon": "/images/icons/cta/icon.svg"
+    }
+  ]
+}

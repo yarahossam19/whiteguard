@@ -1,29 +1,107 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { footerNav } from "@/config/site";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Services | WHITEGUARD",
-  description:
-    "Explore our security services: Offensive Security, Defensive Security, GRC, and Training.",
-};
+import { useState, useMemo, useEffect } from "react";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import ServicesPageHero from "@/components/services/ServicesPageHero";
+import ServicesPageTabs from "@/components/services/ServicesPageTabs";
+import ServiceCard from "@/components/services/ServiceCard";
+import ServicesPageBottomCTA from "@/components/services/ServicesPageBottomCTA";
+import { getServicesPageData } from "@/data/services-page";
+import type { ServiceCard as ServiceCardType } from "@/data/services-page";
+
+const VALID_TABS = [
+  "all",
+  "offensive",
+  "defensive",
+  "grc",
+  "training",
+] as const;
+type TabId = (typeof VALID_TABS)[number];
+
+function isValidTab(tab: string | null): tab is TabId {
+  return tab !== null && VALID_TABS.includes(tab as TabId);
+}
 
 export default function ServicesPage() {
+  const data = getServicesPageData();
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const tabFromUrl = searchParams.get("tab");
+
+  const [activeTab, setActiveTab] = useState<TabId>("offensive");
+
+  useEffect(() => {
+    if (isValidTab(tabFromUrl)) {
+      setActiveTab(tabFromUrl);
+    }
+  }, [tabFromUrl]);
+
+  const { cards, bottomCta } = useMemo(() => {
+    if (activeTab === "all") {
+      const allCards: ServiceCardType[] = [];
+      const categories = ["offensive", "defensive", "grc", "training"] as const;
+      for (const cat of categories) {
+        const c = data.categories[cat];
+        if (c && "cards" in c) {
+          allCards.push(...(c.cards as ServiceCardType[]));
+        }
+      }
+      return {
+        cards: allCards,
+        bottomCta: data.categories.all.bottomCta,
+      };
+    }
+    const cat = data.categories[activeTab];
+    if (!cat || !("cards" in cat)) {
+      return { cards: [], bottomCta: data.categories.offensive.bottomCta };
+    }
+    return {
+      cards: cat.cards as ServiceCardType[],
+      bottomCta: cat.bottomCta,
+    };
+  }, [activeTab, data]);
+
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold text-slate-900">Services</h1>
-      <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {footerNav.services.map((service) => (
-          <Link
-            key={service.href}
-            href={service.href}
-            className="rounded-lg border border-slate-200 p-6 transition-shadow hover:shadow-md"
-          >
-            <h2 className="font-semibold text-slate-900">{service.label}</h2>
-            <p className="mt-2 text-sm text-slate-600">Learn more →</p>
-          </Link>
-        ))}
-      </div>
+    <div className="bg-white">
+      {/* Sticky tabs - become sticky only when user scrolls past the hero */}
+      <ServicesPageTabs
+        tabs={data.tabs}
+        activeTab={activeTab}
+        onTabChange={(tab) => {
+          const tabId = tab as TabId;
+          setActiveTab(tabId);
+          const params = new URLSearchParams(searchParams.toString());
+          if (tabId === "all") {
+            params.delete("tab");
+          } else {
+            params.set("tab", tabId);
+          }
+          const query = params.toString();
+          router.push(query ? `${pathname}?${query}` : pathname, {
+            scroll: false,
+          });
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      />
+      <ServicesPageHero data={data} activeTab={activeTab} />
+
+      {/* Service cards */}
+      <section className="mx-auto  px-6 lg:px-[7vw] pb-40">
+        <div className="flex flex-col gap-16 lg:gap-[128px]">
+          {cards.map((card) => (
+            <ServiceCard key={card.id} card={card} />
+          ))}
+        </div>
+      </section>
+
+      <ServicesPageBottomCTA
+        heading={bottomCta.heading}
+        headingAccent={bottomCta.headingAccent}
+        subtitle={bottomCta.subtitle}
+        buttonLabel={bottomCta.buttonLabel}
+        href={bottomCta.href}
+      />
     </div>
   );
 }

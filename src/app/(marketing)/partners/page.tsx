@@ -1,4 +1,17 @@
 import type { Metadata } from "next";
+import HeroSection from "@/components/partners/HeroSection";
+import PartnersGrowthSection from "@/components/partners/PartnersGrowthSection";
+import PartnersHowItWorksSection from "@/components/partners/PartnersHowItWorksSection";
+import PartnersBenefitsSection from "@/components/partners/PartnersBenefitsSection";
+import PartnersTypesSection from "@/components/partners/PartnersTypesSection";
+import PartnersCallToActionSection from "@/components/partners/PartnersCallToActionSection";
+import { getPartnersHeroData } from "@/data/partners-hero";
+import { getPartnersLogosData } from "@/data/partners-logos";
+import { getPartnersGrowthData } from "@/data/partners-growth";
+import { getPartnersHowItWorksData } from "@/data/partners-how-it-works";
+import { getPartnersBenefitsData } from "@/data/partners-benefits";
+import { getPartnersTypesData } from "@/data/partners-types";
+import { getPartnersCtaData } from "@/data/partners-cta";
 
 export const metadata: Metadata = {
   title: "Partners | WHITEGUARD",
@@ -6,10 +19,21 @@ export const metadata: Metadata = {
 };
 
 export default function PartnersPage() {
+  const partnersHeroData = getPartnersHeroData();
+  const partnersLogosData = getPartnersLogosData();
+  const partnersGrowthData = getPartnersGrowthData();
+  const partnersHowItWorksData = getPartnersHowItWorksData();
+  const partnersBenefitsData = getPartnersBenefitsData();
+  const partnersTypesData = getPartnersTypesData();
+  const partnersCtaData = getPartnersCtaData();
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold text-slate-900">Partners</h1>
-      <p className="mt-4 text-slate-600">Content coming soon...</p>
-    </div>
+    <>
+      <HeroSection data={partnersHeroData} logos={partnersLogosData} />
+      <PartnersGrowthSection data={partnersGrowthData} />
+      <PartnersHowItWorksSection data={partnersHowItWorksData} />
+      <PartnersBenefitsSection data={partnersBenefitsData} />
+      <PartnersTypesSection data={partnersTypesData} />
+      <PartnersCallToActionSection data={partnersCtaData} />
+    </>
   );
 }

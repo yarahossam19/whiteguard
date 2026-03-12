@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import type { WhiteHawkSectionData } from "@/data/white-hawk-section";
 import { HoverSwapButton } from "../ui/HoverSwapButton";
 import { SectionImageSeparator } from "../ui/SectionImageSeparator";
@@ -27,6 +30,7 @@ function PlayIcon() {
 
 export default function WhiteHawkSection({ data }: WhiteHawkSectionProps) {
   const { heading, description, features, cta, dashboardImage } = data;
+  const [showVideo, setShowVideo] = useState(false);
 
   return (
     <>
@@ -116,7 +120,8 @@ export default function WhiteHawkSection({ data }: WhiteHawkSectionProps) {
             >
               <button
                 type="button"
-                className="flex cursor-pointer items-center justify-center rounded-full bg-white  px-4 py-3.5 transition-all hover:scale-110 hover:bg-white/90"
+                onClick={() => setShowVideo(true)}
+                className="relative z-10 flex cursor-pointer items-center justify-center rounded-full bg-white px-4 py-3.5 transition-all hover:scale-110 hover:bg-white/90"
                 aria-label="Play video"
               >
                 <PlayIcon />
@@ -125,6 +130,49 @@ export default function WhiteHawkSection({ data }: WhiteHawkSectionProps) {
           </div>
         </div>
       </section>
+      {/* Video modal */}
+      {showVideo && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setShowVideo(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Video player"
+        >
+          <div
+            className="relative max-h-[90vh] w-full max-w-4xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setShowVideo(false)}
+              className="absolute -top-10 right-0 text-white hover:text-red-500 hover:opacity-50 cursor-pointer"
+              aria-label="Close video"
+            >
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  d="M18 6L6 18M6 6l12 12"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            <video
+              src="/videos/whiehwk.mp4"
+              controls
+              autoPlay
+              className="w-full rounded-lg"
+            />
+          </div>
+        </div>
+      )}
       <SectionImageSeparator direction="bottom" />
     </>
   );

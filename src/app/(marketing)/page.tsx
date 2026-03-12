@@ -13,6 +13,7 @@ import { getWhiteHawkSectionData } from "@/data/white-hawk-section";
 import { getWhyChooseUsSectionData } from "@/data/why-choose-us-section";
 import { getTestimonialsSectionData } from "@/data/testimonials-section";
 import { getCtaSectionData } from "@/data/cta-section";
+import { getClientLogosData } from "@/data/client-logos";
 import { SectionImageSeparator } from "@/components/ui/SectionImageSeparator";
 export const metadata: Metadata = {
   title: "Home",
@@ -33,10 +34,11 @@ export default function HomePage() {
   const whyChooseUsSectionData = getWhyChooseUsSectionData();
   const testimonialsSectionData = getTestimonialsSectionData();
   const ctaSectionData = getCtaSectionData();
+  const clientLogosData = getClientLogosData();
 
   return (
     <>
-      <HeroSection data={heroData} />
+      <HeroSection data={heroData} logos={clientLogosData} />
       <MenaGloballySection data={menaGloballyData} />
       <ServicesSection data={servicesSectionData} />
       <WhiteHawkSection data={whiteHawkSectionData} />

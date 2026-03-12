@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { Logo } from "@/components/ui/Logo";
 import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
 import { mainNav } from "@/config/site";
@@ -11,6 +11,8 @@ import { useState } from "react";
 
 export function Header() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const tabParam = searchParams.get("tab");
   const { isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useUIStore();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
@@ -75,19 +77,26 @@ export function Header() {
                 openDropdown === item.label && (
                   <div className="absolute left-0 top-full pt-1">
                     <div className="min-w-[220px] rounded-lg border border-[var(--button-border)] bg-white py-2 shadow-lg">
-                      {item.subLinks.map((sub) => (
-                        <Link
-                          key={sub.href}
-                          href={sub.href}
-                          className={`block px-4 py-2.5 text-base text-[var(--primary-950)] rounded-lg duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] ${
-                            pathname === sub.href
-                              ? "bg-[var(--Primary-200)]"
-                              : ""
-                          }`}
-                        >
-                          {sub.label}
-                        </Link>
-                      ))}
+                      {item.subLinks.map((sub) => {
+                        const subTab = sub.href.includes("tab=")
+                          ? sub.href.split("tab=")[1]
+                          : null;
+                        const isActive =
+                          pathname === "/services" &&
+                          subTab &&
+                          tabParam === subTab;
+                        return (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            className={`block px-4 py-2.5 text-base text-[var(--primary-950)] rounded-lg duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] ${
+                              isActive ? "bg-[var(--Primary-200)]" : ""
+                            }`}
+                          >
+                            {sub.label}
+                          </Link>
+                        );
+                      })}
                     </div>
                   </div>
                 )}
@@ -139,18 +148,27 @@ export function Header() {
                   {item.label}
                 </Link>
                 {"subLinks" in item &&
-                  item.subLinks?.map((sub) => (
-                    <Link
-                      key={sub.href}
-                      href={sub.href}
-                      onClick={closeMobileMenu}
-                      className={`block rounded-lg px-6 py-2 text-sm text-[var(--primary-950)] duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] ${
-                        pathname === sub.href ? "bg-[var(--Primary-200)]" : ""
-                      }`}
-                    >
-                      {sub.label}
-                    </Link>
-                  ))}
+                  item.subLinks?.map((sub) => {
+                    const subTab = sub.href.includes("tab=")
+                      ? sub.href.split("tab=")[1]
+                      : null;
+                    const isActive =
+                      pathname === "/services" &&
+                      subTab &&
+                      tabParam === subTab;
+                    return (
+                      <Link
+                        key={sub.href}
+                        href={sub.href}
+                        onClick={closeMobileMenu}
+                        className={`block rounded-lg px-6 py-2 text-sm text-[var(--primary-950)] duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] ${
+                          isActive ? "bg-[var(--Primary-200)]" : ""
+                        }`}
+                      >
+                        {sub.label}
+                      </Link>
+                    );
+                  })}
               </div>
             ))}
             <Link

@@ -43,7 +43,7 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
         {/* Sticky viewport */}
         <div className="sticky top-0 flex h-screen flex-col ">
           {/* Header - fixed at top of sticky area */}
-          <div className="shrink-0  flex flex-col items-center gap-4 px-6 pt-12 lg:px-[7vw] lg:pt-16">
+          <div className="shrink-0  flex flex-col items-center gap-4 px-6 pt-0 lg:px-[7vw] lg:pt-0">
             <div className="flex flex-col items-center gap-0">
               <h2 className="font-jakarta text-[clamp(32px,4vw,44px)] font-extrabold leading-[1.15] text-[#003859]">
                 {heading.line1}

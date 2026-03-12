@@ -1,49 +1,127 @@
 import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
-import type { HeroData } from "@/data/hero";
+import type { PartnersHeroData } from "@/data/partners-hero";
+import type { PartnersLogosData } from "@/data/partners-logos";
 import ClientLogos from "@/components/shared/ClientLogos";
+import Image from "next/image";
 
-interface HeroSectionProps {
-  data: HeroData;
+interface PartnersHeroSectionProps {
+  data: PartnersHeroData;
+  logos: PartnersLogosData;
 }
 
-export default function HeroSection({ data }: HeroSectionProps) {
-  const { headline, description, ctas, decorations, rightPanel } = data;
+export default function PartnersHeroSection({
+  data,
+  logos,
+}: PartnersHeroSectionProps) {
+  const { headline, description, ctas } = data;
 
   return (
-    <section className="relative w-full  ">
-      <div className="min-h-screen flex flex-col lg:flex-row  ">
+    <section className="relative w-full  flex flex-col gap-20  px-8 sm:px-12 lg:px-[7vw] py-10 lg:py-14">
+      <div className="lg:max-h-screen flex flex-col lg:flex-row  ">
         {/*  LEFT CONTENT */}
-        <div className="relative flex-1 flex items-center justify-start px-8 sm:px-12 lg:px-[7vw] py-16 lg:py-0 z-10  ">
-          <img
-            src={decorations.sparkleTop}
-            alt=""
-            aria-hidden="true"
-            className="hidden lg:block absolute right-[28%] top-[25%] w-[65px] h-[68px] object-contain   pointer-events-none select-none"
-          />
-
-          <div className="flex flex-col gap-10 max-w-[560px] text-[#003859]">
+        <div className="relative flex-1 flex items-center justify-center z-10  ">
+          <div className="flex flex-col gap-10 max-w-[932px] items-center text-[#003859]">
             {/* Headline */}
-            <div className="flex flex-col gap-5">
-              <h1 className="font-jakarta leading-[1.18] tracking-[-0.03em] text-[clamp(36px,5vw,58px)] ">
-                <span className=" font-extrabold">{headline.line1.bold}</span>
-                <span className="font-light">{headline.line1.light}</span>
-                <span className=" font-extrabold">{headline.line1.end}</span>
-                <br />
-                <span className=" font-extrabold">{headline.line2.bold}</span>
-                <div className="flex items-center gap-0">
-                  <span className="font-light">{headline.line2.light}</span>
-                  <span className=" font-extrabold">
-                    {headline.line2.end}
-                  </span>{" "}
-                  <img
-                    src={decorations.sparkleBottom}
-                    alt=""
-                    aria-hidden="true"
-                    className="hidden ms-4 lg:block  w-[65px] h-[70px] object-contain -rotate-[0deg] pointer-events-none select-none"
-                  />
+            <div className="flex flex-col items-center gap-5">
+              <h1 className="font-jakarta leading-[1.18] tracking-[-0.03em] text-[clamp(36px,6vw,64px)] ">
+                <span className=" font-extrabold">{headline.line1}</span>
+
+                <div className="relative  flex items-center justify-center text-center mt-5 gap-0">
+                  <span
+                    className="z-10 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.15)] bg-[rgba(150, 220, 255, 0.35)]"
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "12%",
+                      transform: "translateY( -50%)",
+                      borderRadius: "345px",
+                      background: "rgba(150, 220, 255, 0.35)",
+                      backgroundColor: "rgba(150, 220, 255, 0.35)",
+                      display: "flex",
+                      width: "46px",
+                      height: "46px",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      zIndex: 1,
+                    }}
+                  >
+                    <Image
+                      src="/images/icons/check.svg"
+                      alt="check"
+                      width={23}
+                      height={23}
+                    />
+                  </span>
+                  <span
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      width: "80%",
+                      height: "90%",
+                      borderRadius: "50%",
+                      backgroundColor: "transparent",
+                      border: "2px solid #57C1FF",
+                      padding: "10px 20px",
+                    }}
+                  ></span>
+                  <span
+                    className="z-10 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.15)] bg-[rgba(150, 220, 255, 0.35)]"
+                    style={{
+                      position: "absolute",
+                      top: "5%",
+                      left: "46%",
+                      transform: "translate(50%, -50%)",
+                      borderRadius: "345px",
+                      background: "rgba(150, 220, 255, 0.35)",
+                      backgroundColor: "rgba(150, 220, 255, 0.35)",
+                      display: "flex",
+                      width: "46px",
+                      height: "46px",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      zIndex: 2,
+                    }}
+                  >
+                    <Image
+                      src="/images/icons/check-doc.svg"
+                      alt="check"
+                      width={28}
+                      height={28}
+                    />
+                  </span>
+                  <span
+                    className="z-10 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.15)] bg-[rgba(150, 220, 255, 0.35)]"
+                    style={{
+                      position: "absolute",
+                      top: "50%%",
+                      right: "12%",
+                      transform: "translateY(50%)",
+                      borderRadius: "345px",
+                      background: "rgba(150, 220, 255, 0.36)",
+                      backgroundColor: "rgba(150, 220, 255, 0.36)",
+                      display: "flex",
+                      width: "46px",
+                      height: "46px",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      zIndex: 2,
+                    }}
+                  >
+                    <Image
+                      src="/images/icons/forward.svg"
+                      alt="check"
+                      width={19}
+                      height={19}
+                    />
+                  </span>
+                  <span className="text-[#0087D7]   font-extrabold">
+                    {headline.line2}
+                  </span>
                 </div>
               </h1>
-              <p className="font-Jakarta   text-[clamp(16px,20px,20px)] font-normal leading-[1.7]">
+              <p className="font-Jakarta text-[#52697A]  text-center  text-[clamp(14px,1.8px,18px)] font-normal leading-[27px]">
                 {description}
               </p>{" "}
             </div>
@@ -64,54 +142,8 @@ export default function HeroSection({ data }: HeroSectionProps) {
             </div>
           </div>
         </div>
-
-        {/* ─── RIGHT PANEL ─── */}
-        <div
-          className="relative z-10 w-full lg:w-[50%]  lg:min-h-full  
-			 "
-          style={{ background: "transparent" }}
-        >
-          <div
-            className="absolute inset-0 bg-cover bg-bottom-right bg-no-repeat h-[135vh]"
-            style={{ backgroundImage: `url(${rightPanel.backgroundImage})` }}
-            aria-hidden
-          />
-          <video
-            src={rightPanel.videoSrc}
-            autoPlay
-            loop
-            muted
-            playsInline
-            style={{
-              width: "60%",
-              height: "60%",
-              left: "60%",
-              top: "38%",
-              zIndex: 1,
-              transform: "translate(-50%, -50%)",
-            }}
-            className="absolute inset-0  object-cover"
-            aria-hidden
-          />
-
-          {/* Overlay gradient for readability */}
-          <div
-            className="absolute pointer-events-none"
-            aria-hidden
-            style={{
-              height: "80%",
-              width: "100%",
-              right: 0,
-
-              background:
-                "radial-gradient(circle, #003859 50%,transparent 70%, transparent 70%)",
-              left: "unset",
-              zIndex: 0,
-            }}
-          />
-        </div>
       </div>
-      <ClientLogos />
+      <ClientLogos logos={logos} className="pt-0 lg:pt-0" />
     </section>
   );
 }
