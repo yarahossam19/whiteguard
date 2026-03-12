@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { Suspense, useState, useMemo, useEffect } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import ServicesPageHero from "@/components/services/ServicesPageHero";
 import ServicesPageTabs from "@/components/services/ServicesPageTabs";
@@ -22,7 +22,7 @@ function isValidTab(tab: string | null): tab is TabId {
   return tab !== null && VALID_TABS.includes(tab as TabId);
 }
 
-export default function ServicesPage() {
+function ServicesPageContent() {
   const data = getServicesPageData();
   const router = useRouter();
   const pathname = usePathname();
@@ -103,5 +103,19 @@ export default function ServicesPage() {
         href={bottomCta.href}
       />
     </div>
+  );
+}
+
+export default function ServicesPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="bg-white min-h-[60vh] flex items-center justify-center">
+          <div className="animate-pulse text-[var(--primary-600)]">Loading...</div>
+        </div>
+      }
+    >
+      <ServicesPageContent />
+    </Suspense>
   );
 }
