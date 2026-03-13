@@ -32,7 +32,7 @@ export default function ResourcesHeroSection({
             <p className="max-w-[752px] font-jakarta text-[16px] font-normal leading-[30.6px] text-[#52697A] lg:text-[20px]">
               {subtitle}
             </p>
-            {/* Decorative icons - from Figma */}
+            {/* Decorative icons  */}
             <div
               className="pointer-events-none absolute -left-[5%]  top-[50%] -translate-y-1/2 hidden h-[73px] w-[77px] lg:block"
               aria-hidden

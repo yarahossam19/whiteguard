@@ -11,6 +11,8 @@ interface HoverSwapButtonProps {
   showArrow?: boolean;
   variant?: "nav" | "cta" | "secondary";
   className?: string;
+  showImg?: boolean;
+  imgSrc?: string;
 }
 
 function ChevronIcon() {
@@ -50,6 +52,8 @@ export function HoverSwapButton({
   showChevrons = true,
   showArrow = false,
   variant = "nav",
+  showImg = false,
+  imgSrc = "/images/icons/download.svg",
   className = "",
 }: HoverSwapButtonProps) {
   const isNav = variant === "nav";
@@ -65,9 +69,18 @@ export function HoverSwapButton({
         }}
       >
         <span
-          className={`flex items-center justify-center gap-2 rounded-[5px] bg-white px-6 py-3 text-lg transition-colors duration-300 ease-out group-hover:bg-[#ABE0FF]/30 ${className}`}
+          className={`flex items-center justify-center gap-2 rounded-[5px] bg-white px-6 py-2 text-lg transition-colors duration-300 ease-out group-hover:bg-[#ABE0FF]/30 ${className}`}
         >
           {showChevrons && !showArrow && <ChevronIcon />}
+          {showImg && (
+            <Image
+              src={imgSrc}
+              alt={label}
+              width={20}
+              height={20}
+              className="shrink-0"
+            />
+          )}
           <span className="relative h-6 overflow-hidden">
             <span className="flex flex-col transition-transform duration-300 ease-out group-hover:-translate-y-1/2">
               <span className="flex h-6 items-center justify-center">

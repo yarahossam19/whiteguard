@@ -32,10 +32,10 @@ export const mainNav = [
 
 export const footerNav = {
   services: [
-    { label: "Offensive Security", href: "/services/offensive-security" },
-    { label: "Defensive Security", href: "/services/defensive-security" },
-    { label: "GRC", href: "/services/grc" },
-    { label: "Training", href: "/services/training" },
+    { label: "Offensive Security", href: "/services?tab=offensive" },
+    { label: "Defensive Security", href: "/services?tab=defensive" },
+    { label: "GRC", href: "/services?tab=grc" },
+    { label: "Training", href: "/services?tab=training" },
   ],
   platform: [
     { label: "Offensive", href: "/platform/offensive" },

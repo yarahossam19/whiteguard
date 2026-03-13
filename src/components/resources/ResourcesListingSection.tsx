@@ -21,7 +21,7 @@ export default function ResourcesListingSection({
 
   return (
     <section className="w-full bg-white">
-      {/* Section heading - pixel-perfect from Figma */}
+      {/* Section heading */}
       <div className="mx-auto flex  flex-col items-center gap-0 px-4 pt-0 text-center sm:px-6 lg:px-[96px]">
         <h2 className="font-jakarta text-[24px] font-bold leading-[36px] text-[#003859] lg:text-[30px]">
           {listing.heading}
@@ -31,7 +31,7 @@ export default function ResourcesListingSection({
         </p>
       </div>
 
-      {/* Cards grid - 3 columns, gap 50px rows, 49px between grid and pagination */}
+      {/* Cards grid - 3 columns, and pagination */}
       <div className="mx-auto mt-[49px] flex max-w-[1313px] flex-col items-center gap-[49px] px-4 sm:px-6 lg:px-[96px]">
         <div className="grid w-full grid-cols-1 gap-y-[50px] sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-[57px] lg:gap-y-[50px]">
           {visibleItems.map((item) => (
