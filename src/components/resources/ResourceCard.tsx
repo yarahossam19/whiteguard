@@ -19,7 +19,7 @@ export default function ResourceCard({ item }: ResourceCardProps) {
       href={item.href}
       className="group flex w-full flex-col overflow-hidden rounded-[8px]  gap-4 transition-opacity hover:opacity-95 lg:max-w-[400px]"
     >
-      {/* Image - 228px height, 400px width per Figma */}
+      {/* Image */}
       <div className="relative h-[228px] w-full shrink-0 overflow-hidden rounded-[8px]  ">
         <Image
           src={item.image}

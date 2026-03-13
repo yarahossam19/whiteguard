@@ -33,7 +33,7 @@
       },
       "cards": [
         {
-          "id": "penetration-testing",
+          "link": "penetration-testing",
           "title": "Penetration Testing",
           "description": "Find vulnerabilities, Exploit them safely, Fix them fast. We simulate internal and external cyberattacks across networks, apps, APIs, wireless, POS, cloud, ITM&ATM, and OT environments.",
           "features": [
@@ -50,12 +50,15 @@
               "label": "Remediation Roadmap"
             }
           ],
-          "cta": { "label": "Talk to a Security Expert", "href": "#" },
+          "cta": {
+            "label": "Talk to a Security Expert",
+            "href": "/services/penetration-testing"
+          },
           "image": "/images/services/offensive.png",
           "imageLeft": true
         },
         {
-          "id": "vulnerability-assessment",
+          "link": "vulnerability-assessment",
           "title": "Vulnerability Assessment",
           "description": "Scan your systems. Prioritize what matters. We conduct comprehensive scans across your digital infrastructure, identifying known vulnerabilities mapped to CVEs and MITRE ATT&CK.",
           "features": [
@@ -72,12 +75,15 @@
               "label": "Remediation Checklist"
             }
           ],
-          "cta": { "label": "Run a Vulnerability Scan Now", "href": "#" },
+          "cta": {
+            "label": "Run a Vulnerability Scan Now",
+            "href": "/services/vulnerability-assessment"
+          },
           "image": "/images/services/offensive-2.png",
           "imageLeft": false
         },
         {
-          "id": "red-team-assessment",
+          "link": "red-team-assessment",
           "title": "Red Team Assessment",
           "description": "Go beyond testing. Simulate a real-world breach. WHITEGUARD's red team engagements emulate persistent threat actors targeting your defenses across people, technology, and process.",
           "features": [
@@ -98,7 +104,10 @@
               "label": "Executive Debrief"
             }
           ],
-          "cta": { "label": "Request a Red Team Exercise Now", "href": "#" },
+          "cta": {
+            "label": "Request a Red Team Exercise Now",
+            "href": "/services/red-team-assessment"
+          },
           "image": "/images/services/offensive-3.png",
           "imageLeft": true
         },
@@ -120,12 +129,15 @@
               "label": "Recommendations"
             }
           ],
-          "cta": { "label": "Run CIS Compliance Check Now", "href": "#" },
+          "cta": {
+            "label": "Run CIS Compliance Check Now",
+            "href": "/services/cis-benchmarks"
+          },
           "image": "/images/services/offensive-4.png",
           "imageLeft": false
         },
         {
-          "id": "source-code-review",
+          "link": "source-code-review",
           "title": "Source Code Review",
           "description": "Secure your software before attackers find the flaws. We combine automated scanners with manual analysis to detect logic bugs in your custom code.",
           "features": [
@@ -142,12 +154,15 @@
               "label": "Risk Assessment"
             }
           ],
-          "cta": { "label": "Get Your Code Reviewed Now", "href": "#" },
+          "cta": {
+            "label": "Talk to a Security Expert",
+            "href": "/services/source-code-review"
+          },
           "image": "/images/services/offensive-5.png",
           "imageLeft": true
         },
         {
-          "id": "cloud-security-assessment",
+          "link": "cloud-security-assessment",
           "title": "Cloud Security Assessment",
           "description": "Misconfigured cloud = open door, Let's close it. We review your cloud environment across AWS, Azure, GCP, and hybrid setups for identity, network, and storage misconfigurations.",
           "features": [
@@ -164,7 +179,10 @@
               "label": "Secure Architecture"
             }
           ],
-          "cta": { "label": "Audit Your Cloud Setup Now", "href": "#" },
+          "cta": {
+            "label": "Audit Your Cloud Setup Now",
+            "href": "/services/cloud-security-assessment"
+          },
           "image": "/images/services/offensive-6.png",
           "imageLeft": false
         }
@@ -187,7 +205,7 @@
       },
       "cards": [
         {
-          "id": "soc-design",
+          "link": "soc-design",
           "title": "SOC Service",
           "description": "Your virtual security operations center — always on  We provide 24/7 monitoring, alert triage, threat detection, and response, all without the overhead of building your own SOC. ",
           "features": [
@@ -208,12 +226,15 @@
               "label": "Real-time Dashboards"
             }
           ],
-          "cta": { "label": "Start with Managed SOC Now", "href": "#" },
+          "cta": {
+            "label": "Start with Managed SOC Now",
+            "href": "/services/soc-design"
+          },
           "image": "/images/services/defensive-1.png",
           "imageLeft": true
         },
         {
-          "id": "siem-deployment",
+          "link": "siem-deployment",
           "title": "SIEM Deployment",
           "description": "Visibility is the first step to control Deploy the right SIEM, Deploy it right. We help you implement, configure, and optimize leading SIEM platforms (e.g., ELK, Splunk, IBM QRadar, Azure Sentinel) to meet your environment's unique needs.",
           "features": [
@@ -234,12 +255,15 @@
               "label": "Log Aggregation"
             }
           ],
-          "cta": { "label": "Deploy Your SIEM Now", "href": "#" },
+          "cta": {
+            "label": "Deploy Your SIEM Now",
+            "href": "/services/siem-deployment"
+          },
           "image": "/images/services/defensive-2.png",
           "imageLeft": false
         },
         {
-          "id": "siem-use-case-lifecycle-management",
+          "link": "siem-use-case-lifecycle-management",
           "title": "SIEM Use Case Lifecycle Management",
           "description": "SIEM without use cases is just storage We build and manage detection logic tailored to your threats, ensuring your SIEM actually detects what matters.",
           "features": [
@@ -256,7 +280,10 @@
               "label": "Response Playbooks"
             }
           ],
-          "cta": { "label": "Optimize Your SIEM Now", "href": "#" },
+          "cta": {
+            "label": "Optimize Your SIEM Now",
+            "href": "/services/siem-use-case-lifecycle-management"
+          },
           "image": "/images/services/defensive-3.png",
           "imageLeft": true
         },
@@ -278,12 +305,15 @@
               "label": "Legal-ready Reports"
             }
           ],
-          "cta": { "label": "Request Incident Response Now", "href": "#" },
+          "cta": {
+            "label": "Request Incident Response Now",
+            "href": "/services/dfir-services"
+          },
           "image": "/images/services/defensive-4.png",
           "imageLeft": false
         },
         {
-          "id": "threat-intelligence-brand-protection",
+          "link": "threat-intelligence-brand-protection",
           "title": "Threat Intelligence & Brand Protection",
           "description": "What's said about you on the dark web matters We monitor underground forums, breach databases, and the surface web for signs of leaked data, impersonation, or brand abuse.",
           "features": [
@@ -300,12 +330,15 @@
               "label": "Credential Leak Detection"
             }
           ],
-          "cta": { "label": "Monitor Your Digital Risk", "href": "#" },
+          "cta": {
+            "label": "Monitor Your Digital Risk",
+            "href": "/services/threat-intelligence-brand-protection"
+          },
           "image": "/images/services/defensive-5.png",
           "imageLeft": true
         },
         {
-          "id": "managed-phishing-simulation-awareness",
+          "link": "managed-phishing-simulation-awareness",
           "title": "Managed Phishing Simulation & Awareness",
           "description": "Test and train your people — before attackers do We simulate real phishing attacks to identify weak points and build ongoing user awareness.",
           "features": [
@@ -322,12 +355,15 @@
               "label": "Department Reporting"
             }
           ],
-          "cta": { "label": "Start Your Awareness Program Now", "href": "#" },
+          "cta": {
+            "label": "Start Your Awareness Program Now",
+            "href": "/services/managed-phishing-simulation-awareness"
+          },
           "image": "/images/services/defensive-6.png",
           "imageLeft": false
         },
         {
-          "id": "managed-threat-hunting",
+          "link": "managed-threat-hunting",
           "title": "Incident Response & Handling",
           "description": "Be ready when an incident happens From playbook development to tabletop exercises, we help your team respond fast, decisively, and correctly under pressure.",
           "features": [
@@ -344,12 +380,15 @@
               "label": "Simulation & Training"
             }
           ],
-          "cta": { "label": "Build Your IR Plan Now", "href": "#" },
+          "cta": {
+            "label": "Build Your IR Plan Now",
+            "href": "/services/managed-threat-hunting"
+          },
           "image": "/images/services/defensive-7.png",
           "imageLeft": true
         },
         {
-          "id": "business-continuity-recovery",
+          "link": "business-continuity-recovery",
           "title": "Business Continuity & Recovery",
           "description": "Recover with resilience, Operate without pause We help you build and test business continuity plans so you can minimize downtime and meet regulatory expectations.",
           "features": [
@@ -368,7 +407,7 @@
           ],
           "cta": {
             "label": "Strengthen Your Continuity Plan Now",
-            "href": "#"
+            "href": "/services/business-continuity-recovery"
           },
           "image": "/images/services/defensive-8.png",
           "imageLeft": false
@@ -409,12 +448,15 @@
               "label": "Certification Support"
             }
           ],
-          "cta": { "label": "Start Your Journey", "href": "#" },
+          "cta": {
+            "label": "Start Your Journey",
+            "href": "/services/iso-27001"
+          },
           "image": "/images/services/grc.png",
           "imageLeft": true
         },
         {
-          "id": "sama-csf",
+          "link": "sama-csf",
           "title": "SAMA CSF Compliance",
           "description": "Meet Saudi Arabia's Cybersecurity Framework requirements. We help financial institutions align with SAMA regulations and pass audits.",
           "features": [
@@ -431,7 +473,7 @@
               "label": "Audit Preparation"
             }
           ],
-          "cta": { "label": "Get SAMA Ready", "href": "#" },
+          "cta": { "label": "Get SAMA Ready", "href": "/services/sama-csf" },
           "image": "/images/services/grc.png",
           "imageLeft": false
         }
@@ -454,7 +496,7 @@
       },
       "cards": [
         {
-          "id": "phishing-simulation",
+          "link": "phishing-simulation",
           "title": "Phishing Simulation",
           "description": "Test your employees' ability to spot phishing. We run realistic campaigns and provide detailed reporting to improve awareness.",
           "features": [
@@ -471,12 +513,15 @@
               "label": "Remediation Training"
             }
           ],
-          "cta": { "label": "Run a Phishing Test", "href": "#" },
+          "cta": {
+            "label": "Run a Phishing Test",
+            "href": "/services/phishing-simulation"
+          },
           "image": "/images/services/training.png",
           "imageLeft": true
         },
         {
-          "id": "security-workshops",
+          "link": "security-workshops",
           "title": "Security Workshops",
           "description": "Hands-on training for developers, IT teams, and executives. We deliver tailored workshops that build practical security skills.",
           "features": [
@@ -493,7 +538,10 @@
               "label": "Custom Curricula"
             }
           ],
-          "cta": { "label": "Schedule a Workshop", "href": "#" },
+          "cta": {
+            "label": "Schedule a Workshop",
+            "href": "/services/security-workshops"
+          },
           "image": "/images/services/training.png",
           "imageLeft": false
         }

@@ -1,0 +1,291 @@
+{
+  "penetration-testing": {
+    "title": "Penetration Testing",
+    "hero": {
+      "headline": "Penetration Testing — Validate Your Defenses Under Real Attack Conditions",
+      "subtitle": "Simulate the full attack chain to reveal exploitable weaknesses, validate controls, and prioritize fixes with evidence-based findings and remediation guidance.",
+      "ctaPrimary": {
+        "label": "Request a Penetration Test",
+        "href": "/contact"
+      },
+      "ctaSecondary": { "label": "Download Sample Report (PDF)", "href": "#" }
+    },
+    "whatIs": {
+      "heading": "What is Penetration Testing?",
+      "body": "Penetration testing is more than a scan — it's a controlled cyberattack designed to expose real weaknesses in your environment. At WHITEGUARD, we deliver tailored penetration testing engagements across networks, web/mobile/desktop apps, APIs, wireless, POS, cloud, ITM & ATM, and OT environments. Whether you're meeting compliance, validating new deployments, or securing legacy systems, our certified testers reveal the exploitable paths attackers could take — so you can close them with confidence.",
+      "ctaLabel": "Get A Quote",
+      "ctaHref": "/contact"
+    },
+    "whoNeeds": {
+      "heading": "Who Needs a Penetration Test?",
+      "subtitle": "Ideal for security teams, IT leaders, product owners, and compliance officers who need to:",
+      "cards": [
+        {
+          "title": "Verify Environment Resilience",
+          "subtitle": "Before go-live or release",
+          "iconBg": "#dbeafe",
+          "cardBg": "#eff6ff"
+        },
+        {
+          "title": "Meet Compliance Requirements",
+          "subtitle": "Contractual or regulatory testing",
+          "iconBg": "#dcfce7",
+          "cardBg": "#f0fdf4"
+        },
+        {
+          "title": "Reduce Breach Risk",
+          "subtitle": "Prioritize high-impact fixes",
+          "iconBg": "#fef3c6",
+          "cardBg": "#fffbeb"
+        },
+        {
+          "title": "Demonstrate Security",
+          "subtitle": "To auditors, customers, and partners",
+          "iconBg": "#f3e8ff",
+          "cardBg": "#faf5ff"
+        }
+      ],
+      "examples": "Short Examples: Startups launching MVPs | SaaS vendors preparing SOC/ISO audits | Banks and fintechs requiring regulatory assurance | Healthcare & MedTech firms protecting PHI | Enterprises validating network and cloud changes"
+    },
+    "whatWeTest": {
+      "heading": "What We Test",
+      "subtitle": "Typical Pen Testing Coverage",
+      "items": [
+        {
+          "title": "Web & API Applications",
+          "description": "OWASP Top 10, authentication & session management, business logic, API misuse, SSRF, injection, broken access control."
+        },
+        {
+          "title": "Mobile Applications (iOS/Android)",
+          "description": "Local storage, insecure communication, reverse engineering, improper platform usage, API-backed endpoint security."
+        },
+        {
+          "title": "Network & Infrastructure",
+          "description": "External perimeter, internal segmentation, VPN, firewalls, exposed services, misconfigurations."
+        },
+        {
+          "title": "Cloud & Container Environments",
+          "description": "IAM, misconfigurations (S3, buckets), insecure cloud services, Kubernetes cluster security, IaC (Terraform) review."
+        },
+        {
+          "title": "Internal/External Hybrid Tests",
+          "description": "Internal network/lateral movement tests, internal app assessments, endpoint exploitation paths."
+        }
+      ]
+    },
+    "whatYouReceive": {
+      "heading": "What You Receive",
+      "subtitle": "Clear, Actionable Outputs",
+      "items": [
+        {
+          "number": "01",
+          "imgSrc": "/images/icons/output-1.svg",
+          "title": "Executive Summary",
+          "description": "Business impact, risk posture, prioritized recommendations for executives and boards.",
+          "bg": "#eff6ff"
+        },
+        {
+          "number": "02",
+          "imgSrc": "/images/icons/output-2.svg",
+          "title": "Technical Report",
+          "description": "Full findings with PoC, screenshots, exploit steps, affected assets, and CVSS/OWASP mappings.",
+          "bg": "#f0fdf4"
+        },
+        {
+          "number": "03",
+          "imgSrc": "/images/icons/output-3.svg",
+          "title": "Remediation Roadmap",
+          "description": "Prioritized fix list with difficulty, estimated effort, and suggested timelines.",
+          "bg": "#fffbeb"
+        },
+        {
+          "number": "04",
+          "imgSrc": "/images/icons/output-4.svg",
+          "title": "Retest Report",
+          "description": "Verification of remediation for closed vulnerabilities.",
+          "bg": "#faf5ff"
+        },
+        {
+          "number": "05",
+          "imgSrc": "/images/icons/output-5.svg",
+          "title": "Developer Pack",
+          "description": "Code snippets, secure configuration examples, and test cases for DevOps.",
+          "bg": "#fff1f2"
+        }
+      ],
+      "linkLabel": "See Pen Test Cost",
+      "linkHref": "/contact"
+    },
+    "methodology": {
+      "heading": "Methodology & Process",
+      "subtitle": "How We Work — Fast, Transparent, Safe",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Scope & Rules of Engagement",
+          "description": "Agree targets, exclusions, test windows, legal sign-off, and emergency contacts."
+        },
+        {
+          "number": 2,
+          "title": "Reconnaissance & Enumeration",
+          "description": "Passive and active discovery to build an asset inventory and threat surface map."
+        },
+        {
+          "number": 3,
+          "title": "Vulnerability Identification",
+          "description": "Automated scanning + manual verification to reduce false positives."
+        },
+        {
+          "number": 4,
+          "title": "Exploitation & Impact Validation",
+          "description": "Attempt safe exploitation to demonstrate impact (PoC) while avoiding destructive tests."
+        },
+        {
+          "number": 5,
+          "title": "Post-Exploitation & Lateral Movement",
+          "description": "If allowed, identify escalation paths and business-impact scenarios."
+        },
+        {
+          "number": 6,
+          "title": "Reporting & Walkthrough",
+          "description": "Deliver technical & executive reports; walk your teams through findings."
+        },
+        {
+          "number": 7,
+          "title": "Remediation Support & Retest",
+          "description": "Validate fixes and issue final closure report."
+        }
+      ]
+    },
+    "whenToRun": {
+      "heading": "When Should You Run a PenTest?",
+      "items": [
+        "Pre-production launch or major release",
+        "After major infrastructure change or cloud migration",
+        "Following a security incident or suspicious activity",
+        "As part of compliance audits (PCI-DSS, FRA, SAMA requirements)",
+        "Quarterly/annual assurance program for critical systems"
+      ]
+    },
+    "pricing": {
+      "heading": "Pricing Guide & Options",
+      "subtitle": "Flexible Pricing — From Targeted Tests to Full Assessments",
+      "plans": [
+        {
+          "id": "baseline-web-app-test",
+          "title": "Baseline Web App Test",
+          "iconSrc": "/images/icons/pricing/icon-1.svg",
+          "description": "Fixed-scope test for single web application (recommended for SMBs and SaaS features)."
+        },
+        {
+          "id": "standard-pentest",
+          "title": "Standard PenTest",
+          "iconSrc": "/images/icons/pricing/icon-2.svg",
+          "description": "Multi-application or small network tests (mid-market)."
+        },
+        {
+          "id": "advanced-enterprise-assessment",
+          "title": "Advanced Enterprise Assessment",
+          "iconSrc": "/images/icons/pricing/icon-3.svg",
+          "description": "External + internal + cloud + API + mobile + social engineering (large organizations)."
+        },
+        {
+          "id": "red-team-add-on",
+          "title": "Red Team Add-on",
+          "iconSrc": "/images/icons/pricing/icon-4.svg",
+          "description": "Full adversary emulation for detection/response validation."
+        },
+        {
+          "id": "retest-and-continuous-testing",
+          "title": "Retest & Continuous Testing",
+          "iconSrc": "/images/icons/pricing/icon-5.svg",
+          "description": "Subscription-based retesting, prioritized scans and triage workflows via White Hawk."
+        }
+      ],
+      "ctaLabel": "Request Pricing Proposal",
+      "ctaHref": "/contact"
+    },
+    "standards": {
+      "heading": "Standards & Mappings",
+      "cards": [
+        {
+          "id": "methodology-and-process-aligned-with",
+          "title": "Methodology & Process Aligned With",
+          "description": "OWASP, MITRE ATT&CK, NIST SP 800-115, and CIS benchmarks.",
+          "iconSrc": "/images/icons/mapping/BookOpen.svg"
+        },
+        {
+          "id": "mapped-to-compliance-controls",
+          "title": "Mapped To Compliance Controls",
+          "description": "ISO 27001, PCI-DSS, SAMA CSF, FRA 139, HIPAA, SOC 2.",
+          "iconSrc": "/images/icons/mapping/ShieldCheck.svg"
+        }
+      ],
+      "certifications": {
+        "heading": "Certifications & Tools",
+        "items": [
+          {
+            "id": "oscp-ceh-crest-certified-testers",
+            "title": "OSCP / CEH / CREST-certified testers",
+            "iconSrc": "/images/icons/mapping/Award.svg"
+          },
+          {
+            "id": "manual-automated-toolchains",
+            "title": "Manual + automated toolchains: Burp Suite, Metasploit, Nmap, Nessus, etc.",
+            "iconSrc": "/images/icons/mapping/Wrench.svg"
+          },
+          {
+            "id": "engagements-tailored-to-black-box-grey-box-or-white-box-approaches",
+            "title": "Engagements tailored to black-box, grey-box, or white-box approaches",
+            "iconSrc": "/images/icons/mapping/Eye.svg"
+          }
+        ]
+      }
+    },
+    "testimonials": [
+      {
+        "quote": "WHITEGUARD exposed critical paths we didn't know existed. Highly professional.",
+        "name": "Ahmed R.",
+        "title": "CISO"
+      },
+      {
+        "quote": "Their methodology was thorough and findings were actionable. We closed 90% of gaps within two weeks.",
+        "name": "Sarah M.",
+        "title": "VP of Engineering"
+      },
+      {
+        "quote": "We needed PCI-DSS compliance fast. WHITEGUARD delivered a clear report that satisfied our auditors.",
+        "name": "Omar K.",
+        "title": "IT Director"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How long does a penetration test take?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+      },
+      {
+        "question": "Will testing disrupt my production systems?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      },
+      {
+        "question": "Do you offer remediation help?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      },
+      {
+        "question": "How do you prioritize findings?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+      },
+      {
+        "question": "Can results feed into our SIEM/Issue Tracker?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores."
+      }
+    ],
+    "cta": {
+      "heading": "Ready to uncover what your attackers already see?",
+      "subtitle": "Get a penetration testing engagement tailored to your risks and business goals.",
+      "buttonLabel": "Request a Free Scoping Call",
+      "buttonHref": "tel:+123456789"
+    }
+  }
+}

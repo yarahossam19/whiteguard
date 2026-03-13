@@ -55,9 +55,9 @@ export default function ServiceCard({ card }: ServiceCardProps) {
         </div>
       </div>
 
-      {/* CTA link*/}
+      {/* CTA link - uses card link for details page */}
       <Link
-        href={cta.href}
+        href={`/services/${card.link}`}
         className="inline-flex items-center gap-4 font-ano text-[14px] font-normal tracking-[0.48px] text-[#006DAD] transition-colors hover:text-[#0087D7] lg:text-[18px]"
       >
         <span>{cta.label}</span>
@@ -66,7 +66,7 @@ export default function ServiceCard({ card }: ServiceCardProps) {
           alt=""
           width={24}
           height={24}
-          className="shrink-0"
+          className="shrink-0 rotate-180"
         />
       </Link>
     </div>
