@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Logo } from "@/components/ui/Logo";
 import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
+import { ServicesDropdown } from "@/components/layout/ServicesDropdown";
 import { mainNav } from "@/config/site";
 import { useUIStore } from "@/lib/stores/ui-store";
 import { useState } from "react";
@@ -75,30 +76,14 @@ export function Header() {
               {"hasDropdown" in item &&
                 item.subLinks &&
                 openDropdown === item.label && (
-                  <div className="absolute left-0 top-full pt-1">
-                    <div className="min-w-[220px] rounded-lg border border-[var(--button-border)] bg-white py-2 shadow-lg">
-                      {item.subLinks.map((sub) => {
-                        const subTab = sub.href.includes("tab=")
-                          ? sub.href.split("tab=")[1]
-                          : null;
-                        const isActive =
-                          pathname === "/services" &&
-                          subTab &&
-                          tabParam === subTab;
-                        return (
-                          <Link
-                            key={sub.href}
-                            href={sub.href}
-                            className={`block px-4 py-2.5 text-base text-[var(--primary-950)] rounded-lg duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] ${
-                              isActive ? "bg-[var(--Primary-200)]" : ""
-                            }`}
-                          >
-                            {sub.label}
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </div>
+                  <ServicesDropdown
+                    items={item.subLinks.map((s) => ({
+                      label: s.label,
+                      description: "description" in s ? s.description : undefined,
+                      href: s.href,
+                      icon: "icon" in s ? s.icon : undefined,
+                    }))}
+                  />
                 )}
             </div>
           ))}

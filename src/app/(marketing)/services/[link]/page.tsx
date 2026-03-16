@@ -40,8 +40,14 @@ export async function generateMetadata({
   const detail = getServiceDetailByLink(link);
   const card = getServiceCardByLink(link);
   const service = footerNav.services.find((s) => s.href.endsWith(link));
-  const title = detail?.title ?? card?.title ?? service?.label ?? "Service";
+  const title =
+    (detail as { seo?: { title?: string } })?.seo?.title ??
+    detail?.title ??
+    card?.title ??
+    service?.label ??
+    "Service";
   const description =
+    (detail as { seo?: { description?: string } })?.seo?.description ??
     detail?.hero?.subtitle ??
     `Learn about our ${card?.title ?? service?.label ?? "service"} services.`;
   return { title, description };

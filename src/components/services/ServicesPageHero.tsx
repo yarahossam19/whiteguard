@@ -36,7 +36,7 @@ export default function ServicesPageHero({
             }}
           />
           <div
-            className="absolute  h-[250px] left-0 right-0 w-full bottom-0"
+            className="absolute  h-[550px] left-0 right-0 w-full bottom-0"
             style={{
               background:
                 "linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #ABE1FF 100%)",

@@ -44,7 +44,7 @@ export default function ServiceDetailMethodology({
           <div className="relative w-full max-w-[848px]">
             {/* Center vertical line */}
             <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-px bg-[#c2cdd6] lg:block" />
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col pt-30 lg:pt-0 gap-16 lg:gap-4">
               {steps.map((step, i) => {
                 const isLeft = i % 2 === 0;
                 return (
@@ -55,7 +55,7 @@ export default function ServiceDetailMethodology({
                     <div
                       className={`flex flex-col gap-1 rounded-[16px] bg-white p-5 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)] ${
                         isLeft
-                          ? "text-right lg:col-start-1"
+                          ? "lg:text-right lg:col-start-1"
                           : "order-3 text-left lg:order-none lg:col-start-3"
                       }`}
                     >
@@ -66,7 +66,7 @@ export default function ServiceDetailMethodology({
                         {step.description}
                       </p>
                     </div>
-                    <div className="absolute left-1/2 top-1/2 flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#003859] text-[14px] font-bold text-white shadow-[0px_10px_15px_0px_rgba(0,56,89,0.2),0px_4px_6px_0px_rgba(0,56,89,0.2)] lg:relative lg:left-0 lg:top-0 lg:col-start-2 lg:row-start-1 lg:translate-x-0 lg:translate-y-0">
+                    <div className="absolute left-1/2 -top-[20px] flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#003859] text-[14px] font-bold text-white shadow-[0px_10px_15px_0px_rgba(0,56,89,0.2),0px_4px_6px_0px_rgba(0,56,89,0.2)] lg:relative lg:left-0 lg:top-0 lg:col-start-2 lg:row-start-1 lg:translate-x-0 lg:translate-y-0">
                       {step.number}
                     </div>
                   </div>

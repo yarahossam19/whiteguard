@@ -18,13 +18,12 @@ export function SectionImageSeparator({
   transform = "rotateX(0)",
   imageSrc = DEFAULT_WAVE_SRC,
   className = "",
-  height = 103,
+  height = 380,
 }: SectionImageSeparatorProps) {
   return (
     <div
-      className={`relative z-0 overflow-hidden ${direction === "top" ? "mt-[0]" : ""} ${className}`}
+      className={`relative z-0 overflow-hidden  wave-container ${direction === "top" ? "mt-[0]" : ""} ${className}`}
       style={{
-        height: `${height}px`,
         alignSelf: "stretch",
         transform: transform,
       }}
@@ -35,7 +34,7 @@ export function SectionImageSeparator({
         alt=""
         width={1506}
         height={88}
-        className="absolute inset-0 h-full w-full object-contain object-bottom"
+        className="absolute inset-0 h-full w-full wave-image object-bottom"
         style={direction === "bottom" ? { transform: "scaleY(-1)" } : undefined}
       />
     </div>

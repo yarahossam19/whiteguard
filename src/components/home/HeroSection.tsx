@@ -2,6 +2,7 @@ import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
 import type { HeroData } from "@/data/hero";
 import type { ClientLogosData } from "@/data/client-logos";
 import ClientLogos from "../shared/ClientLogos";
+import Image from "next/image";
 
 interface HeroSectionProps {
   data: HeroData;
@@ -15,7 +16,7 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
     <section className="relative w-full  ">
       <div className="min-h-screen flex flex-col lg:flex-row  ">
         {/*  LEFT CONTENT */}
-        <div className="relative z-10 flex flex-1 items-center justify-start px-4 py-16 sm:px-8 sm:py-16 lg:px-[7vw] lg:py-0">
+        <div className="relative z-10 flex flex-1 items-center justify-start px-4 py-16 sm:px-8 sm:py-16 lg:ps-[7vw] lg:py-0">
           <img
             src={decorations.sparkleTop}
             alt=""
@@ -69,16 +70,29 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
 
         {/* ─── RIGHT PANEL ─── */}
         <div
-          className="relative z-10 w-full lg:w-[50%]  lg:min-h-full  
-			 hidden lg:block"
-          style={{ background: "transparent" }}
+          className="relative inset-0 z-10 w-full lg:w-[50%] min-[1600px]:w-[50%]! lg:min-h-[100vh] hidden lg:block "
+          style={{
+            backgroundImage: `url(${rightPanel.backgroundImage})`,
+            backgroundSize: "100% 100%",
+            backgroundPosition: "top center",
+            backgroundRepeat: "no-repeat",
+          }}
         >
-          <div
-            className="absolute inset-0 bg-cover bg-bottom-right bg-no-repeat h-[135vh]"
-            style={{ backgroundImage: `url(${rightPanel.backgroundImage})` }}
-            aria-hidden
+          <Image
+            src="/images/logo-white.svg"
+            alt="Hero Video"
+            width={500}
+            height={500}
+            className="absolute w-[50%] h-[50%] object-contain left-[50%] top-[30%] translate-x-[-50%] translate-y-[-50%] animate-ping"
           />
-          <video
+          <Image
+            src="/images/logo-white.svg"
+            alt="Hero Video"
+            width={500}
+            height={500}
+            className="absolute     w-[50%] h-[50%]   object-contain left-[50%] top-[30%] translate-x-[-50%] translate-y-[-50%]"
+          />
+          {/* <video
             src={rightPanel.videoSrc}
             autoPlay
             loop
@@ -92,12 +106,12 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
               zIndex: 1,
               transform: "translate(-50%, -50%)",
             }}
-            className="absolute inset-0  object-cover"
+            className="absolute inset-0 w-[40%]  h-[100%] min-[1600px]:w-[60%]! min-[1600px]:h-[60%]! object-cover"
             aria-hidden
-          />
+          /> */}
 
           {/* Overlay gradient for readability */}
-          <div
+          {/* <div
             className="absolute pointer-events-none"
             aria-hidden
             style={{
@@ -110,7 +124,7 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
               left: "unset",
               zIndex: 0,
             }}
-          />
+          /> */}
         </div>
       </div>
       <ClientLogos logos={logos} />

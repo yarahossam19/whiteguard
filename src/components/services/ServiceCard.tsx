@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ServiceCard as ServiceCardType } from "@/data/services-page";
+import { HoverSwapButton } from "../ui/HoverSwapButton";
 
 interface ServiceCardProps {
   card: ServiceCardType;
@@ -56,11 +57,21 @@ export default function ServiceCard({ card }: ServiceCardProps) {
       </div>
 
       {/* CTA link - uses card link for details page */}
+      <HoverSwapButton
+        href={`#.`}
+        label={cta.label}
+        hoverLabel={cta.label}
+        variant="secondary"
+        showChevrons={false}
+        showImg={false}
+        // imgSrc="/images/icons/arrow-right-2.svg"
+        className="px-6 py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano w-full flex-row-reverse"
+      />
       <Link
         href={`/services/${card.link}`}
-        className="inline-flex items-center gap-4 font-ano text-[14px] font-normal tracking-[0.48px] text-[#006DAD] transition-colors hover:text-[#0087D7] lg:text-[18px]"
+        className="inline-flex items-center justify-center gap-4 font-ano text-[14px] font-normal tracking-[0.48px] text-[#006DAD] transition-colors hover:text-[#0087D7] lg:text-[18px]"
       >
-        <span>{cta.label}</span>
+        <span>Learn More</span>
         <Image
           src="/images/icons/arrow-right-2.svg"
           alt=""
@@ -73,7 +84,7 @@ export default function ServiceCard({ card }: ServiceCardProps) {
   );
 
   const imageBlock = (
-    <div className="relative h-[320px] w-full shrink-0 overflow-hidden rounded-[24px] shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] lg:h-[400px] lg:w-[646px]">
+    <div className="relative h-[320px] w-full shrink-0 overflow-hidden rounded-[24px] shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] lg:h-[400px] lg:w-[50%]">
       <Image
         src={image}
         alt={title}
