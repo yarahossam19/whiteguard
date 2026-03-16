@@ -16,7 +16,7 @@ export default function ServicesPageTabs({
   onTabChange,
 }: ServicesPageTabsProps) {
   return (
-    <div className="sticky top-[10%] z-40 mx-auto flex w-full   flex-wrap items-center justify-center gap-1 lg:rounded-full bg-white/95 px-2 py-3 shadow-sm sm:justify-between lg:top-[20vh] lg:w-[55%] lg:px-4 lg:py-3">
+    <div className="sticky  z-40 mx-auto flex w-full flex-wrap items-center justify-center gap-1 bg-white/95 px-2 py-3 shadow-sm sm:justify-between lg:rounded-full lg:w-[80%] 2xl:w-[55%] lg:px-4 lg:py-3  top-[10%] lg:top-[20vh] 2xl:top-[16vh]  min-[1600px]:top-[14vh]!">
       {tabs.map((tab) => {
         const isActive = activeTab === tab.id;
         return (

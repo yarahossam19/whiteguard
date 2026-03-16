@@ -4,9 +4,10 @@ export type ServiceDetailData = (typeof serviceDetails)["penetration-testing"];
 
 const data = serviceDetails as Record<string, ServiceDetailData>;
 
-/** Footer slugs that map to a card link */
+/** URL slugs that map to a service key (e.g. legacy URLs) */
 const linkAliases: Record<string, string> = {
   "offensive-security": "penetration-testing",
+  "cis-benchmarks": "cis-benchmarks-assessment",
 };
 
 export function getServiceDetailByLink(link: string): ServiceDetailData | null {

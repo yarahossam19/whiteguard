@@ -112,7 +112,7 @@
           "imageLeft": true
         },
         {
-          "id": "cis-benchmarks",
+          "link": "cis-benchmarks-assessment",
           "title": "CIS Benchmarks Assessment",
           "description": "Audit your systems against the CIS hardening standards. We evaluate your configurations against CIS benchmarks and PCI DSS security standards to ensure you are securely configured.",
           "features": [
@@ -131,7 +131,7 @@
           ],
           "cta": {
             "label": "Run CIS Compliance Check Now",
-            "href": "/services/cis-benchmarks"
+            "href": "/services/cis-benchmarks-assessment"
           },
           "image": "/images/services/offensive-4.png",
           "imageLeft": false
@@ -288,7 +288,7 @@
           "imageLeft": true
         },
         {
-          "id": "dfir-services",
+          "link": "dfir-services",
           "title": "Digital Forensics & Incident Response (DFIR)",
           "description": "When seconds matter, our response team delivers Investigate and contain breaches fast. Our DFIR team brings deep forensic expertise to uncover what happened, how, and how to recover.",
           "features": [

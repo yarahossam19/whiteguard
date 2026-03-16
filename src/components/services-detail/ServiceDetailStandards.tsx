@@ -63,7 +63,9 @@ export default function ServiceDetailStandards({
           <h3 className="mb-6 text-center font-jakarta text-[17px] font-normal leading-[25.5px] text-[#003859]">
             {certifications.heading}
           </h3>
-          <div className="grid gap-6 sm:grid-cols-3">
+          <div
+            className={`grid gap-6 sm:grid-cols-${certifications.items.length}`}
+          >
             {certifications.items.map((item, i) => (
               <div key={item.id} className="flex gap-4">
                 <div

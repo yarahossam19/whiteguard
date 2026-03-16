@@ -42,13 +42,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
@@ -102,6 +95,7 @@ button,
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(-50%);
   }
@@ -112,6 +106,7 @@ button,
   0% {
     transform: translateY(-50%);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -123,6 +118,37 @@ button,
 
 .animate-marquee-down {
   animation: marquee-vertical-down 25s linear infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.animate-ping {
+  /* animation: animate-spin 40s linear infinite !important; */
+  animation-duration: 5s !important;
+  opacity: 0.1;
+
+  animation-iteration-count: infinite !important;
+  animation-timing-function: linear !important;
+  animation-delay: 0s !important;
+  animation-direction: normal !important;
+  animation-fill-mode: forwards !important;
+  animation-play-state: running !important;
+  animation-name: ping !important;
+  animation-timing-function: linear !important;
+  animation-duration: 5s !important;
+}
+
+
+.animate-ping-slow {
+  animation: ping-slow 4s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 .testimonials-section .swiper-button-prev, .swiper-button-next {
@@ -138,4 +164,23 @@ button,
   background: var(--primary-600);
   color: var(--UI-Colors-Background-main-bg);
   transition: all 0.3s ease;
+}
+
+.wave-container {
+  height: 107px;
+
+}
+
+.wave-image {
+  object-fit: contain;
+}
+
+@media (min-width: 1920px) {
+  .wave-container {
+    height: 107px;
+  }
+
+  .wave-image {
+    object-fit: cover;
+  }
 }

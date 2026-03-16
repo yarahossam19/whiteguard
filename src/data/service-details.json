@@ -1,6 +1,10 @@
 {
   "penetration-testing": {
     "title": "Penetration Testing",
+    "seo": {
+      "title": "Penetration Testing Services | Web, API, Network & Cloud | WHITEGUARD",
+      "description": "Identify and remediate real-world vulnerabilities with WHITEGUARD's Penetration Testing service — web, mobile, API, network, and cloud testing with evidence-backed findings, prioritized remediation, and retest."
+    },
     "hero": {
       "headline": "Penetration Testing — Validate Your Defenses Under Real Attack Conditions",
       "subtitle": "Simulate the full attack chain to reveal exploitable weaknesses, validate controls, and prioritize fixes with evidence-based findings and remediation guidance.",
@@ -262,30 +266,1470 @@
     "faqs": [
       {
         "question": "How long does a penetration test take?",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+        "description": "Typical engagement length is 1–4 weeks. A simple web app often takes 7–10 business days; enterprise scopes take longer depending on assets and retest windows."
       },
       {
         "question": "Will testing disrupt my production systems?",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+        "description": "We tailor testing to risk tolerance. Destructive actions are avoided; a safe testing plan and back-out procedures are agreed beforehand."
       },
       {
         "question": "Do you offer remediation help?",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        "description": "Yes. We provide developer-friendly remediation guidance and offer follow-up retesting and verification."
       },
       {
         "question": "How do you prioritize findings?",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+        "description": "Findings are risk-ranked by business impact (high/medium/low), exploitability, and presence in critical assets. We map to CVSS and business context."
       },
       {
         "question": "Can results feed into our SIEM/Issue Tracker?",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores."
+        "description": "Yes — we can integrate findings into White Hawk, JIRA, or your ticketing system for continuous remediation tracking."
       }
     ],
     "cta": {
       "heading": "Ready to uncover what your attackers already see?",
       "subtitle": "Get a penetration testing engagement tailored to your risks and business goals.",
       "buttonLabel": "Request a Free Scoping Call",
-      "buttonHref": "tel:+123456789"
+      "buttonHref": "/contact"
+    }
+  },
+  "vulnerability-assessment": {
+    "title": "Vulnerability Assessment",
+    "seo": {
+      "title": "Vulnerability Assessment Services | Identify, Prioritize & Remediate Security Risks | WHITEGUARD",
+      "description": "WHITEGUARD's Vulnerability Assessment service identifies, analyzes, and prioritizes security weaknesses across systems, networks, and applications. Get actionable insights, clear risk ratings, and a remediation roadmap to enhance resilience and compliance."
+    },
+    "hero": {
+      "headline": "Vulnerability Assessment — See Your Risks Before Attackers Do",
+      "subtitle": "Systematic identification and prioritization of security gaps, enabling faster decisions, smarter remediation, and stronger protection.",
+      "ctaPrimary": { "label": "Request a Vulnerability Scan", "href": "/contact" },
+      "ctaSecondary": { "label": "Download Sample Report (PDF)", "href": "#" }
+    },
+    "whatIs": {
+      "heading": "What Is a Vulnerability Assessment?",
+      "body": "A Vulnerability Assessment (VA) is the foundation of every robust cybersecurity program. It's a structured process to identify, analyze, and rank weaknesses across your IT assets before they can be exploited. At WHITEGUARD, we go beyond automated scanning, combining intelligent analysis, manual verification, and expert interpretation to eliminate noise and deliver actionable insights. From endpoints and applications to cloud and network layers, we help you see your vulnerabilities clearly, prioritize remediation, and maintain compliance with evolving standards.",
+      "ctaLabel": "Get A Quote",
+      "ctaHref": "/contact"
+    },
+    "whoNeeds": {
+      "heading": "Who Needs a Vulnerability Assessment?",
+      "subtitle": "Perfect for organizations that want visibility, assurance, and compliance readiness.",
+      "cards": [
+        { "title": "Identify Weaknesses", "subtitle": "Before they turn into exploitable threats", "iconBg": "#dbeafe", "cardBg": "#eff6ff" },
+        { "title": "Prioritize Remediation", "subtitle": "Based on real business risk", "iconBg": "#dcfce7", "cardBg": "#f0fdf4" },
+        { "title": "Satisfy Compliance", "subtitle": "Audits and regulatory frameworks", "iconBg": "#fef3c6", "cardBg": "#fffbeb" },
+        { "title": "Benchmark Progress", "subtitle": "Of your security posture over time", "iconBg": "#f3e8ff", "cardBg": "#faf5ff" }
+      ],
+      "examples": "SMBs seeking baseline assessments • Enterprises validating security controls quarterly • FinTech's preparing for FRA or SAMA audits • Healthcare and manufacturing organizations protecting critical systems"
+    },
+    "whatWeTest": {
+      "heading": "What We Assess",
+      "subtitle": "Typical Assessment Coverage",
+      "items": [
+        { "title": "Network Infrastructure", "description": "Firewalls, servers, routers, VPN gateways, and wireless networks — scanned and analyzed for misconfigurations, patch gaps, and outdated services." },
+        { "title": "Web Applications", "description": "Covers OWASP Top 10 vulnerabilities, input validation, authentication, and configuration issues." },
+        { "title": "Cloud Environments", "description": "Assess cloud configurations (AWS, Azure, GCP) for misconfigurations, over-permissive access, and noncompliant setups." },
+        { "title": "Endpoints & Servers", "description": "Review operating systems, endpoint protection, and third-party software vulnerabilities using authenticated scans." },
+        { "title": "Databases & Middleware", "description": "Evaluate encryption, authentication, and exposure of sensitive data across your databases and middleware components." }
+      ]
+    },
+    "whatYouReceive": {
+      "heading": "What You Receive",
+      "subtitle": "Clear Insights. Actionable Outcomes.",
+      "items": [
+        { "number": "01", "imgSrc": "/images/icons/output-1.svg", "title": "Executive Summary", "description": "Risk overview, business impact, and top vulnerabilities ranked by severity for non-technical stakeholders.", "bg": "#eff6ff" },
+        { "number": "02", "imgSrc": "/images/icons/output-2.svg", "title": "Technical Report", "description": "Comprehensive list of vulnerabilities with CVSS/CWE mapping, screenshots, and recommendations.", "bg": "#f0fdf4" },
+        { "number": "03", "imgSrc": "/images/icons/output-3.svg", "title": "Remediation Plan", "description": "Prioritized roadmap with fix recommendations, timelines, and responsible parties.", "bg": "#fffbeb" },
+        { "number": "04", "imgSrc": "/images/icons/output-4.svg", "title": "Validation Scan (Retest)", "description": "A re-scan to confirm vulnerabilities were resolved correctly.", "bg": "#faf5ff" },
+        { "number": "05", "imgSrc": "/images/icons/output-5.svg", "title": "Continuous Monitoring Add-On", "description": "Optional subscription for monthly vulnerability scanning with trend analytics via White Hawk.", "bg": "#fff1f2" }
+      ],
+      "linkLabel": "See VA Pricing",
+      "linkHref": "/contact"
+    },
+    "methodology": {
+      "heading": "Methodology & Process",
+      "subtitle": "How We Work — Precise, Transparent, Repeatable",
+      "steps": [
+        { "number": 1, "title": "Asset Scoping", "description": "Define scope and coverage: IP ranges, apps, databases, or endpoints." },
+        { "number": 2, "title": "Discovery & Scanning", "description": "Perform network and application scans using certified commercial and open-source tools." },
+        { "number": 3, "title": "Verification & Analysis", "description": "Manual validation of high-risk findings; remove false positives." },
+        { "number": 4, "title": "Risk Scoring", "description": "Assign CVSS-based severity and business impact scores." },
+        { "number": 5, "title": "Reporting & Consultation", "description": "Deliver detailed reports, executive summaries, and conduct walkthrough sessions." },
+        { "number": 6, "title": "Remediation Support & Reassessment", "description": "Assist in mitigation planning and conduct follow-up validation scans." }
+      ]
+    },
+    "whenToRun": {
+      "heading": "When Should You Run a Vulnerability Assessment?",
+      "items": [
+        "Before annual compliance audits (ISO 27001, SAMA, FRA, PCI-DSS, HIPAA)",
+        "After major system or infrastructure upgrades",
+        "Post-incident, to identify root-cause weaknesses",
+        "As a monthly or quarterly proactive security routine",
+        "Before mergers, acquisitions, or third-party onboarding"
+      ]
+    },
+    "pricing": {
+      "heading": "Pricing Guide & Options",
+      "subtitle": "Flexible Packages for Every Organization",
+      "plans": [
+        { "id": "basic-scan", "title": "Basic Scan Package", "iconSrc": "/images/icons/pricing/icon-1.svg", "description": "Single network or small web application scan; quick risk overview for SMBs." },
+        { "id": "standard-assessment", "title": "Standard Assessment", "iconSrc": "/images/icons/pricing/icon-2.svg", "description": "Comprehensive internal/external network scan + validation; ideal for mid-size enterprises." },
+        { "id": "enterprise-program", "title": "Enterprise Program", "iconSrc": "/images/icons/pricing/icon-3.svg", "description": "Continuous vulnerability scanning across hybrid environments with monthly reporting and dashboards." },
+        { "id": "compliance-addon", "title": "Compliance Add-On", "iconSrc": "/images/icons/pricing/icon-4.svg", "description": "Mapping vulnerabilities to ISO/SAMA/FRA controls for audit reporting." },
+        { "id": "retesting-monitoring", "title": "Retesting & Managed Monitoring", "iconSrc": "/images/icons/pricing/icon-5.svg", "description": "Continuous validation via White Hawk integration." }
+      ],
+      "ctaLabel": "Request Pricing Proposal",
+      "ctaHref": "/contact"
+    },
+    "standards": {
+      "heading": "Standards & Mappings",
+      "cards": [
+        { "id": "methodology-aligned", "title": "Methodology & Process Aligned With", "description": "OWASP, NIST SP 800-115, CVSS, CIS Benchmarks, and ISO 27001.", "iconSrc": "/images/icons/mapping/BookOpen.svg" },
+        { "id": "compliance-mapped", "title": "Mapped To Compliance Controls", "description": "ISO 27001 • SAMA • FRA 139 • PCI-DSS • HIPAA • SOC 2", "iconSrc": "/images/icons/mapping/ShieldCheck.svg" }
+      ],
+      "certifications": {
+        "heading": "Certifications & Tools",
+        "items": [
+          { "id": "cissp-ceh-oscp", "title": "CISSP / CEH / OSCP-certified analysts", "iconSrc": "/images/icons/mapping/Award.svg" },
+          { "id": "tools", "title": "Nessus, Qualys, OpenVAS, Nmap, and proprietary scripts", "iconSrc": "/images/icons/mapping/Wrench.svg" },
+          { "id": "manual-validation", "title": "Manual validation and context scoring", "iconSrc": "/images/icons/mapping/Eye.svg" }
+        ]
+      }
+    },
+    "testimonials": [
+      { "quote": "WHITEGUARD's VA gave us clarity we never had. Clear priorities, actionable fixes.", "name": "Client", "title": "CISO, Financial Services" }
+    ],
+    "faqs": [
+      { "question": "How often should we run vulnerability assessments?", "description": "Ideally quarterly, or whenever major changes occur in your IT environment." },
+      { "question": "What's the difference between vulnerability assessment and penetration testing?", "description": "A vulnerability assessment identifies and prioritizes weaknesses; a penetration test actively exploits them to prove impact." },
+      { "question": "Will this disrupt production systems?", "description": "No. We coordinate testing windows and use safe scanning techniques to minimize operational impact." },
+      { "question": "Can you integrate reports into our tools?", "description": "Yes — reports and findings can integrate directly into White Hawk, SIEM, or JIRA." },
+      { "question": "Do you offer managed vulnerability services?", "description": "Yes — we offer monthly or continuous scanning programs under our Managed Security offering." }
+    ],
+    "cta": {
+      "heading": "Ready to Eliminate Blind Spots Before Attackers Find Them?",
+      "subtitle": "WHITEGUARD's Vulnerability Assessment delivers clarity, compliance, and confidence — helping you stay one step ahead of threats.",
+      "buttonLabel": "Request a Free Scoping Call",
+      "buttonHref": "/contact"
+    }
+  },
+  "red-team-assessment": {
+    "title": "Red Team Assessment",
+    "seo": {
+      "title": "Red Team Assessment Services | Real-World Simulation & Attack Emulation | WHITEGUARD",
+      "description": "WHITEGUARD's Red Team Assessment simulates real-world cyberattacks to test your detection, response, and defense maturity. Validate readiness, uncover blind spots, and strengthen resilience through realistic multi-stage attack simulations."
+    },
+    "hero": {
+      "headline": "Red Team Assessment — Test Detection. Strengthen Response. Prove Resilience.",
+      "subtitle": "A real-world cyberattack simulation that reveals how effectively your organization can detect, respond, and recover from advanced threats.",
+      "ctaPrimary": { "label": "Request a Red Team Simulation", "href": "/contact" },
+      "ctaSecondary": { "label": "Download Sample Report (PDF)", "href": "#" }
+    },
+    "whatIs": {
+      "heading": "What Is a Red Team Assessment?",
+      "body": "A Red Team Assessment goes beyond traditional penetration testing — it's a strategic simulation of real adversaries targeting your people, processes, and technologies. At WHITEGUARD, we emulate advanced attack techniques across multiple vectors (network, phishing, social engineering, and cloud) to evaluate how prepared your defenses truly are. This approach measures not just technical vulnerabilities, but your organization's detection, response, and decision-making capabilities under pressure. The result: actionable insights that help you build stronger incident response processes, refine playbooks, and improve SOC performance.",
+      "ctaLabel": "Get A Quote",
+      "ctaHref": "/contact"
+    },
+    "whoNeeds": {
+      "heading": "Who Needs a Red Team Assessment?",
+      "subtitle": "Ideal for mature organizations aiming to validate their end-to-end cybersecurity posture.",
+      "cards": [
+        { "title": "Enterprises with SOC/SIEM", "subtitle": "Established detection capabilities", "iconBg": "#dbeafe", "cardBg": "#eff6ff" },
+        { "title": "Measure Response Effectiveness", "subtitle": "Real-time response validation", "iconBg": "#dcfce7", "cardBg": "#f0fdf4" },
+        { "title": "Regulated Industries", "subtitle": "FRA, SAMA, ISO periodic simulation", "iconBg": "#fef3c6", "cardBg": "#fffbeb" },
+        { "title": "Board-Level Reporting", "subtitle": "Cyber resilience readiness", "iconBg": "#f3e8ff", "cardBg": "#faf5ff" }
+      ],
+      "examples": "Financial institutions testing blue-team readiness • Healthcare providers validating incident response playbooks • Manufacturers ensuring OT resilience • Enterprises conducting annual cyber drills"
+    },
+    "whatWeTest": {
+      "heading": "What We Simulate",
+      "subtitle": "Realistic, Multi-Stage Attack Scenarios",
+      "items": [
+        { "title": "External Intrusion Simulation", "description": "Assess perimeter defenses by simulating threat actor techniques, including phishing, credential harvesting, and initial compromise." },
+        { "title": "Lateral Movement & Privilege Escalation", "description": "Emulate advanced attackers navigating through your internal network, escalating privileges, and maintaining persistence." },
+        { "title": "Data Exfiltration Scenarios", "description": "Simulate targeted data theft attempts to test your detection and response containment measures." },
+        { "title": "Social Engineering Campaigns", "description": "Assess human and procedural weaknesses through spear-phishing, pretexting, and physical access simulation." },
+        { "title": "Cloud & Hybrid Attacks", "description": "Evaluate misconfigurations and access controls across multi-cloud environments (AWS, Azure, GCP)." }
+      ]
+    },
+    "whatYouReceive": {
+      "heading": "What You Receive",
+      "subtitle": "Measurable Results. Operational Improvements.",
+      "items": [
+        { "number": "01", "imgSrc": "/images/icons/output-1.svg", "title": "Executive Summary", "description": "High-level overview of simulated attack paths, detection timelines, and response performance metrics.", "bg": "#eff6ff" },
+        { "number": "02", "imgSrc": "/images/icons/output-2.svg", "title": "Attack Narrative Report", "description": "Step-by-step breakdown of executed attack chains, techniques used (MITRE ATT&CK), and achieved objectives.", "bg": "#f0fdf4" },
+        { "number": "03", "imgSrc": "/images/icons/output-3.svg", "title": "Detection & Response Gaps Report", "description": "Detailed visibility into missed alerts, delayed responses, and visibility gaps.", "bg": "#fffbeb" },
+        { "number": "04", "imgSrc": "/images/icons/output-4.svg", "title": "Remediation & Improvement Plan", "description": "Tailored recommendations for improving SOC playbooks, response procedures, and control tuning.", "bg": "#faf5ff" },
+        { "number": "05", "imgSrc": "/images/icons/output-5.svg", "title": "Retest & Validation", "description": "Optional follow-up exercise to verify improvements and validate new defensive measures.", "bg": "#fff1f2" }
+      ],
+      "linkLabel": "See Red Team Pricing",
+      "linkHref": "/contact"
+    },
+    "methodology": {
+      "heading": "Methodology & Process",
+      "subtitle": "How We Work — Controlled, Safe, and Goal-Focused",
+      "steps": [
+        { "number": 1, "title": "Planning & Intelligence Gathering", "description": "Define objectives, attack scope, and acceptable boundaries. Conduct OSINT and reconnaissance on digital and physical targets." },
+        { "number": 2, "title": "Initial Compromise Simulation", "description": "Execute realistic phishing, web exploits, or credential attacks to establish a foothold." },
+        { "number": 3, "title": "Privilege Escalation & Lateral Movement", "description": "Move through the environment, identify critical systems, and escalate access." },
+        { "number": 4, "title": "Persistence & Data Exfiltration Testing", "description": "Simulate data theft and persistence mechanisms to evaluate detection effectiveness." },
+        { "number": 5, "title": "Detection & Response Evaluation", "description": "Collaborate with your Blue Team or SOC to measure speed, accuracy, and procedure execution." },
+        { "number": 6, "title": "Reporting & Executive Workshop", "description": "Deliver full narrative reports and hold tabletop debriefs to present findings and maturity scores." }
+      ]
+    },
+    "whenToRun": {
+      "heading": "When Should You Conduct a Red Team Assessment?",
+      "items": [
+        "To test SOC readiness and improve detection efficiency",
+        "Before major audits or board-level cyber resilience reviews",
+        "After implementing new security tools or SIEM platforms",
+        "As part of annual security assurance and compliance validation",
+        "Following significant incidents or infrastructure transformations"
+      ]
+    },
+    "pricing": {
+      "heading": "Pricing Guide & Options",
+      "subtitle": "Flexible Engagements Tailored to Your Security Maturity",
+      "plans": [
+        { "id": "light-simulation", "title": "Light Simulation", "iconSrc": "/images/icons/pricing/icon-1.svg", "description": "Targeted scenario (phishing + privilege escalation) for quick maturity validation." },
+        { "id": "full-scope", "title": "Full-Scope Red Team", "iconSrc": "/images/icons/pricing/icon-2.svg", "description": "Multi-vector engagement covering external, internal, and social engineering." },
+        { "id": "purple-team", "title": "Purple Team Engagement", "iconSrc": "/images/icons/pricing/icon-3.svg", "description": "Collaborative red-blue exercise for detection tuning and skill transfer." },
+        { "id": "bas", "title": "Continuous Adversary Simulation (BAS)", "iconSrc": "/images/icons/pricing/icon-4.svg", "description": "Subscription-based testing integrated with White Hawk." },
+        { "id": "retest-maturity", "title": "Retest & Maturity Tracking", "iconSrc": "/images/icons/pricing/icon-5.svg", "description": "Repeat engagements to benchmark improvement over time." }
+      ],
+      "ctaLabel": "Request Pricing Proposal",
+      "ctaHref": "/contact"
+    },
+    "standards": {
+      "heading": "Standards & Mappings",
+      "cards": [
+        { "id": "aligned-with", "title": "Aligned With", "description": "MITRE ATT&CK • NIST SP 800-115 • OSSTMM • TIBER-EU • OWASP Testing Guide", "iconSrc": "/images/icons/mapping/BookOpen.svg" },
+        { "id": "compliance-mapped", "title": "Mapped To Compliance Controls", "description": "ISO 27001 • SAMA CSF • FRA 139 • NCA ECC • PCI-DSS • SOC 2", "iconSrc": "/images/icons/mapping/ShieldCheck.svg" }
+      ],
+      "certifications": {
+        "heading": "Certifications & Tools",
+        "items": [
+          { "id": "certs", "title": "OSCP / OSCE / CRTO / CREST-certified operators", "iconSrc": "/images/icons/mapping/Award.svg" },
+          { "id": "tools", "title": "Cobalt Strike, Metasploit, Covenant, Empire, and custom frameworks", "iconSrc": "/images/icons/mapping/Wrench.svg" },
+          { "id": "manual", "title": "Manual validation and controlled impact techniques", "iconSrc": "/images/icons/mapping/Eye.svg" }
+        ]
+      }
+    },
+    "testimonials": [
+      { "quote": "The Red Team exercise revealed gaps we didn't know existed. Highly valuable.", "name": "Client", "title": "Head of Cyber Defense" }
+    ],
+    "faqs": [
+      { "question": "How is the Red Team different from a Penetration Test?", "description": "Penetration testing focuses on vulnerabilities and exploitation. Red Teaming simulates real attackers to test detection, response, and resilience." },
+      { "question": "Will this cause system downtime?", "description": "No. All actions are coordinated and non-destructive. WHITEGUARD uses controlled simulation within pre-approved boundaries." },
+      { "question": "Can we involve our Blue Team during testing?", "description": "Yes. We can run either covert (blind) or cooperative (Purple Team) engagements based on your objective." },
+      { "question": "How long does an engagement take?", "description": "Typically 2–6 weeks, depending on scope, complexity, and reporting depth." },
+      { "question": "Do you provide after-action support?", "description": "Yes. We conduct post-engagement workshops and help teams integrate improvements into detection and response workflows." }
+    ],
+    "cta": {
+      "heading": "Ready to Simulate a Real Cyberattack Safely?",
+      "subtitle": "WHITEGUARD's Red Team Assessments help you uncover weaknesses, enhance response speed, and validate true cyber resilience.",
+      "buttonLabel": "Request a Free Scoping Call",
+      "buttonHref": "/contact"
+    }
+  },
+  "cis-benchmarks-assessment": {
+    "title": "CIS Benchmarks Assessment",
+    "seo": {
+      "title": "CIS Benchmarks Assessment Services | System Hardening & Configuration Compliance | WHITEGUARD",
+      "description": "WHITEGUARD's CIS Benchmarks Assessment evaluates your servers, operating systems, databases, and cloud environments against global configuration best practices. Identify misconfigurations, reduce risk, and achieve compliance across your infrastructure."
+    },
+    "hero": {
+      "headline": "CIS Benchmarks Assessment — Strengthen Your Foundation. Secure Every System.",
+      "subtitle": "Comprehensive hardening assessments aligned with the Center for Internet Security (CIS) Benchmarks to eliminate misconfigurations and enforce global best practices.",
+      "ctaPrimary": { "label": "Request a CIS Assessment", "href": "/contact" },
+      "ctaSecondary": { "label": "Download Sample Report (PDF)", "href": "#" }
+    },
+    "whatIs": {
+      "heading": "What Is a CIS Benchmarks Assessment?",
+      "body": "CIS Benchmarks are globally recognized configuration standards developed by the Center for Internet Security (CIS). They define how to securely configure operating systems, databases, and cloud services to minimize vulnerabilities and reduce attack surfaces. WHITEGUARD's CIS Benchmarks Assessment measures your systems against these standards, identifies configuration gaps, and provides step-by-step remediation guidance. Our experts combine automated scanning with manual validation to deliver actionable insights, ensuring your infrastructure meets both security and compliance expectations.",
+      "ctaLabel": "Get A Quote",
+      "ctaHref": "/contact"
+    },
+    "whoNeeds": {
+      "heading": "Who Needs CIS Benchmark Assessments?",
+      "subtitle": "Perfect for organizations building a secure baseline or maintaining continuous compliance.",
+      "cards": [
+        { "title": "Standardize Configurations", "subtitle": "Across hybrid environments", "iconBg": "#dbeafe", "cardBg": "#eff6ff" },
+        { "title": "Regulated Industries", "subtitle": "Banking, Healthcare, Manufacturing", "iconBg": "#dcfce7", "cardBg": "#f0fdf4" },
+        { "title": "IT & Infrastructure Teams", "subtitle": "Preparing for ISO, SAMA, PCI-DSS, HIPAA", "iconBg": "#fef3c6", "cardBg": "#fffbeb" },
+        { "title": "Cloud & DevOps Teams", "subtitle": "Validating secure configurations at scale", "iconBg": "#f3e8ff", "cardBg": "#faf5ff" }
+      ],
+      "examples": "Banks ensuring CIS Level 1 compliance • Cloud-based businesses securing multi-tenant infrastructure • Healthcare providers protecting medical devices and servers • Government entities validating secure configurations"
+    },
+    "whatWeTest": {
+      "heading": "What We Assess",
+      "subtitle": "Complete Coverage Across Your Environment",
+      "items": [
+        { "title": "Operating Systems", "description": "Windows Server, Linux (Ubuntu, CentOS, RHEL), and macOS hardening checks aligned with CIS Level 1 and Level 2 benchmarks." },
+        { "title": "Databases", "description": "Assess MySQL, MSSQL, PostgreSQL, Oracle, and MongoDB configurations for authentication, auditing, and encryption compliance." },
+        { "title": "Network Devices", "description": "Evaluate firewalls, routers, and switches for rule management, logging, and access control against CIS controls." },
+        { "title": "Cloud Platforms", "description": "Review AWS, Azure, and Google Cloud configurations including IAM, network segmentation, storage, and monitoring services." },
+        { "title": "Virtualization & Containers", "description": "Assess VMware, Docker, and Kubernetes setups to ensure secure isolation, resource limits, and least-privilege configurations." }
+      ]
+    },
+    "whatYouReceive": {
+      "heading": "What You Receive",
+      "subtitle": "Detailed Hardening Reports with Remediation Clarity",
+      "items": [
+        { "number": "01", "imgSrc": "/images/icons/output-1.svg", "title": "Executive Summary", "description": "Business-level overview of risk posture, compliance score, and key remediation priorities.", "bg": "#eff6ff" },
+        { "number": "02", "imgSrc": "/images/icons/output-2.svg", "title": "Technical Benchmark Report", "description": "Comprehensive list of benchmark tests with pass/fail status, evidence screenshots, and deviation analysis.", "bg": "#f0fdf4" },
+        { "number": "03", "imgSrc": "/images/icons/output-3.svg", "title": "Remediation Plan", "description": "Actionable recommendations categorized by risk level and business priority.", "bg": "#fffbeb" },
+        { "number": "04", "imgSrc": "/images/icons/output-4.svg", "title": "Compliance Mapping", "description": "Benchmark findings mapped to ISO 27001 Annex A, SAMA, FRA, PCI-DSS, and NCA ECC controls.", "bg": "#faf5ff" },
+        { "number": "05", "imgSrc": "/images/icons/output-5.svg", "title": "Validation & Retesting", "description": "Post-remediation reassessment to verify closure of identified gaps.", "bg": "#fff1f2" }
+      ],
+      "linkLabel": "See CIS Assessment Pricing",
+      "linkHref": "/contact"
+    },
+    "methodology": {
+      "heading": "Methodology & Process",
+      "subtitle": "How We Deliver Repeatable Hardening at Scale",
+      "steps": [
+        { "number": 1, "title": "Scoping & Asset Inventory", "description": "Define system scope: OS, databases, cloud services, and network devices." },
+        { "number": 2, "title": "Automated Benchmark Scanning", "description": "Run CIS-certified tools and scripts to evaluate compliance with benchmark controls." },
+        { "number": 3, "title": "Manual Verification & Contextual Review", "description": "Validate results, eliminate false positives, and ensure contextual accuracy." },
+        { "number": 4, "title": "Scoring & Prioritization", "description": "Assign risk and severity levels based on criticality and deviation from CIS baselines." },
+        { "number": 5, "title": "Reporting & Presentation", "description": "Deliver detailed technical reports and executive dashboards." },
+        { "number": 6, "title": "Remediation & Revalidation", "description": "Guide your teams through remediation and conduct retests to confirm improvement." }
+      ]
+    },
+    "whenToRun": {
+      "heading": "When Should You Conduct a CIS Benchmarks Assessment?",
+      "items": [
+        "During initial infrastructure setup or migration",
+        "After major patch cycles or configuration changes",
+        "As part of ISO, SAMA, or FRA readiness audits",
+        "Following system hardening or automation projects",
+        "Quarterly or semi-annually as part of baseline review"
+      ]
+    },
+    "pricing": {
+      "heading": "Pricing Guide & Options",
+      "subtitle": "Flexible Packages for Different Environments",
+      "plans": [
+        { "id": "single-system", "title": "Single System Package", "iconSrc": "/images/icons/pricing/icon-1.svg", "description": "One-time assessment of OS or database instance." },
+        { "id": "enterprise", "title": "Enterprise Infrastructure Package", "iconSrc": "/images/icons/pricing/icon-2.svg", "description": "Multi-system, hybrid environment coverage with detailed compliance mapping." },
+        { "id": "cloud-hardening", "title": "Cloud Hardening Package", "iconSrc": "/images/icons/pricing/icon-3.svg", "description": "Comprehensive CIS alignment for AWS, Azure, or GCP." },
+        { "id": "continuous", "title": "Continuous Compliance Program", "iconSrc": "/images/icons/pricing/icon-4.svg", "description": "Quarterly assessments integrated with White Hawk dashboards." },
+        { "id": "retesting", "title": "Retesting & Validation Add-On", "iconSrc": "/images/icons/pricing/icon-5.svg", "description": "Post-remediation re-assessment to confirm control improvement." }
+      ],
+      "ctaLabel": "Request Pricing Proposal",
+      "ctaHref": "/contact"
+    },
+    "standards": {
+      "heading": "Standards & Mappings",
+      "cards": [
+        { "id": "aligned", "title": "Aligned With", "description": "CIS Benchmarks • NIST 800-53 • ISO 27001 Annex A • SAMA Cybersecurity Framework • FRA 139 • PCI-DSS", "iconSrc": "/images/icons/mapping/BookOpen.svg" },
+        { "id": "mapped", "title": "Mapped To Compliance Controls", "description": "ISO 27001 • SAMA • FRA 139 • PCI-DSS • NCA ECC", "iconSrc": "/images/icons/mapping/ShieldCheck.svg" }
+      ],
+      "certifications": {
+        "heading": "Certifications & Tools",
+        "items": [
+          { "id": "certs", "title": "CISSP / CISA / OSCP-certified assessors", "iconSrc": "/images/icons/mapping/Award.svg" },
+          { "id": "tools", "title": "CIS-CAT Pro, OpenSCAP, and proprietary automation scripts", "iconSrc": "/images/icons/mapping/Wrench.svg" },
+          { "id": "integration", "title": "Integration with White Hawk for real-time compliance dashboards", "iconSrc": "/images/icons/mapping/Eye.svg" }
+        ]
+      }
+    },
+    "testimonials": [
+      { "quote": "CIS assessment gave us a clear roadmap. We closed 95% of gaps in 6 weeks.", "name": "Client", "title": "Head of IT Infrastructure, Manufacturing" }
+    ],
+    "faqs": [
+      { "question": "How is a CIS Benchmark Assessment different from a vulnerability scan?", "description": "A vulnerability scan identifies software flaws. CIS assessment checks configuration weaknesses and security posture alignment with global benchmarks." },
+      { "question": "Do you fix the findings or only report them?", "description": "We provide a prioritized remediation roadmap and can assist with implementation upon request." },
+      { "question": "Can assessments run remotely?", "description": "Yes. Assessments can be performed securely using remote access or on-premise agents." },
+      { "question": "Do you support CIS Level 2 hardening?", "description": "Yes. We assess both Level 1 (baseline) and Level 2 (high-security) configurations." },
+      { "question": "How often should we perform this assessment?", "description": "Recommended quarterly or semi-annually, especially before compliance audits or infrastructure changes." }
+    ],
+    "cta": {
+      "heading": "Ready to Benchmark and Harden Your Systems?",
+      "subtitle": "WHITEGUARD's CIS Benchmarks Assessment delivers visibility, structure, and control, so your configurations stay secure and compliant.",
+      "buttonLabel": "Request a Free Consultation",
+      "buttonHref": "/contact"
+    }
+  },
+  "source-code-review": {
+    "title": "Source Code Review",
+    "seo": {
+      "title": "Source Code Review Services | Secure Coding & Vulnerability Detection | WHITEGUARD",
+      "description": "WHITEGUARD's Source Code Review service identifies hidden security flaws within application code. Strengthen your software's security posture through manual and automated code analysis aligned with OWASP and secure SDLC best practices."
+    },
+    "hero": {
+      "headline": "Source Code Review — Secure Your Applications from the Inside Out",
+      "subtitle": "Uncover vulnerabilities, logic flaws, and insecure practices at the code level, before they reach production.",
+      "ctaPrimary": { "label": "Request a Code Review", "href": "/contact" },
+      "ctaSecondary": { "label": "Download Sample Report (PDF)", "href": "#" }
+    },
+    "whatIs": {
+      "heading": "What Is a Source Code Review?",
+      "body": "A Source Code Review (also known as Secure Code Analysis) is a deep dive into your application's source code to detect security weaknesses early in the development cycle. Unlike black-box testing, this process evaluates the code itself — identifying logic flaws, insecure libraries, and misconfigurations that automated scanners often miss. At WHITEGUARD, we combine manual review by certified secure code analysts with automated scanning tools to ensure comprehensive coverage and accurate results. Our approach strengthens your Secure Software Development Lifecycle (SSDLC), improves DevSecOps maturity, and eliminates vulnerabilities before they become production risks.",
+      "ctaLabel": "Get A Quote",
+      "ctaHref": "/contact"
+    },
+    "whoNeeds": {
+      "heading": "Who Needs a Source Code Review?",
+      "subtitle": "Built for teams developing or managing custom applications, APIs, or products.",
+      "cards": [
+        { "title": "Development & DevOps", "subtitle": "Embedding security into SDLC", "iconBg": "#dbeafe", "cardBg": "#eff6ff" },
+        { "title": "Pre-Release Audits", "subtitle": "Secure certification validation", "iconBg": "#dcfce7", "cardBg": "#f0fdf4" },
+        { "title": "SaaS Companies", "subtitle": "Product security before onboarding", "iconBg": "#fef3c6", "cardBg": "#fffbeb" },
+        { "title": "Regulated Industries", "subtitle": "FRA, HIPAA, PCI, SAMA compliance", "iconBg": "#f3e8ff", "cardBg": "#faf5ff" }
+      ],
+      "examples": "Fintechs validating payment code security • Healthcare software vendors ensuring PHI protection • Automotive systems meeting UN R155 • Cloud-native apps validating authentication logic"
+    },
+    "whatWeTest": {
+      "heading": "What We Review",
+      "subtitle": "Comprehensive Code-Level Coverage",
+      "items": [
+        { "title": "Web Applications & APIs", "description": "Review logic, authentication, authorization, and data validation mechanisms; detect OWASP Top 10 and API vulnerabilities." },
+        { "title": "Mobile Applications (iOS & Android)", "description": "Identify insecure storage, improper permissions, hardcoded secrets, and insecure communication." },
+        { "title": "Backend Services & APIs", "description": "Inspect frameworks, database queries, and input handling for SQLi, path traversal, RCE, and privilege escalation." },
+        { "title": "Source Code & Third-Party Libraries", "description": "Review source code in supported languages (Java, Python, PHP, C#, JavaScript, Go, Kotlin, Swift) and assess third-party dependencies for CVEs and outdated versions." },
+        { "title": "Cloud & Infrastructure-as-Code (IaC)", "description": "Assess configuration files (Terraform, CloudFormation, Kubernetes manifests) for misconfigurations and secret exposures." }
+      ]
+    },
+    "whatYouReceive": {
+      "heading": "What You Receive",
+      "subtitle": "Actionable Findings That Empower Developers",
+      "items": [
+        { "number": "01", "imgSrc": "/images/icons/output-1.svg", "title": "Executive Summary", "description": "High-level overview for leadership, including business impact, risk metrics, and top remediation priorities.", "bg": "#eff6ff" },
+        { "number": "02", "imgSrc": "/images/icons/output-2.svg", "title": "Technical Code Review Report", "description": "Detailed line-by-line findings with references to CWE/OWASP categories, severity levels, and vulnerable code snippets.", "bg": "#f0fdf4" },
+        { "number": "03", "imgSrc": "/images/icons/output-3.svg", "title": "Remediation Guidance", "description": "Secure coding recommendations and best practices aligned with language and framework specifics.", "bg": "#fffbeb" },
+        { "number": "04", "imgSrc": "/images/icons/output-4.svg", "title": "Developer Workshop (Optional)", "description": "Post-review session with your engineering team to explain issues, fixes, and prevention measures.", "bg": "#faf5ff" },
+        { "number": "05", "imgSrc": "/images/icons/output-5.svg", "title": "Retest & Verification", "description": "Re-review after fixes are applied to ensure vulnerabilities have been eliminated.", "bg": "#fff1f2" }
+      ],
+      "linkLabel": "See Code Review Pricing",
+      "linkHref": "/contact"
+    },
+    "methodology": {
+      "heading": "Methodology & Process",
+      "subtitle": "A Proven Blend of Automation, Expertise, and Context",
+      "steps": [
+        { "number": 1, "title": "Source Collection", "description": "Secure transfer of source code via encrypted channels or onsite review." },
+        { "number": 2, "title": "Automated Scanning", "description": "Run industry-standard SAST tools to detect common vulnerabilities and code patterns." },
+        { "number": 3, "title": "Manual Analysis", "description": "Human-led review by certified analysts to find logic flaws, insecure patterns, and false negatives missed by scanners." },
+        { "number": 4, "title": "Correlation & Prioritization", "description": "Consolidate results, eliminate noise, and rank issues by exploitability and business impact." },
+        { "number": 5, "title": "Reporting & Developer Session", "description": "Deliver technical reports and conduct remediation workshops with developers." },
+        { "number": 6, "title": "Validation & Retest", "description": "Verify fixes and provide closure confirmation with improved security metrics." }
+      ]
+    },
+    "whenToRun": {
+      "heading": "When Should You Perform a Source Code Review?",
+      "items": [
+        "Before deploying or releasing an application to production",
+        "After major updates, feature additions, or framework migrations",
+        "During secure SDLC checkpoints or pre-audit reviews",
+        "After discovering security incidents or data leaks",
+        "When integrating third-party code or libraries"
+      ]
+    },
+    "pricing": {
+      "heading": "Pricing Guide & Options",
+      "subtitle": "Flexible Options for All Development Models",
+      "plans": [
+        { "id": "single-app", "title": "Single Application Review", "iconSrc": "/images/icons/pricing/icon-1.svg", "description": "Targeted one-time review for web or mobile apps." },
+        { "id": "comprehensive", "title": "Comprehensive Application Suite Review", "iconSrc": "/images/icons/pricing/icon-2.svg", "description": "Covers multiple applications and APIs under one engagement." },
+        { "id": "continuous", "title": "Continuous Review (DevSecOps Model)", "iconSrc": "/images/icons/pricing/icon-3.svg", "description": "Embedded secure code analysis at every release cycle." },
+        { "id": "developer-enablement", "title": "Developer Enablement Add-On", "iconSrc": "/images/icons/pricing/icon-4.svg", "description": "Workshops and best-practice training for in-house teams." },
+        { "id": "revalidation", "title": "Revalidation Service", "iconSrc": "/images/icons/pricing/icon-5.svg", "description": "Retest and verification post-fix for closure validation." }
+      ],
+      "ctaLabel": "Request Pricing Proposal",
+      "ctaHref": "/contact"
+    },
+    "standards": {
+      "heading": "Standards & Mappings",
+      "cards": [
+        { "id": "aligned", "title": "Aligned With", "description": "OWASP Code Review Guide • OWASP ASVS • NIST SP 800-115 • CIS Controls • CWE/SANS Top 25", "iconSrc": "/images/icons/mapping/BookOpen.svg" },
+        { "id": "mapped", "title": "Mapped To Compliance Frameworks", "description": "ISO 27001 • PCI-DSS • HIPAA • SAMA • FRA • SOC 2 • NCA ECC", "iconSrc": "/images/icons/mapping/ShieldCheck.svg" }
+      ],
+      "certifications": {
+        "heading": "Certifications & Tools",
+        "items": [
+          { "id": "certs", "title": "OSWE / OSCP / CSSLP / CEH-certified reviewers", "iconSrc": "/images/icons/mapping/Award.svg" },
+          { "id": "tools", "title": "Tools: SonarQube, Checkmarx, Fortify, Semgrep, and custom scripts", "iconSrc": "/images/icons/mapping/Wrench.svg" },
+          { "id": "manual", "title": "Manual secure pattern review by senior code auditors", "iconSrc": "/images/icons/mapping/Eye.svg" }
+        ]
+      }
+    },
+    "testimonials": [
+      { "quote": "Found critical issues our scanners missed. The developer workshop was invaluable.", "name": "Client", "title": "Engineering Director, SaaS Company" }
+    ],
+    "faqs": [
+      { "question": "What's the difference between Source Code Review and Penetration Testing?", "description": "Penetration Testing simulates external attacks, while Source Code Review inspects the actual codebase to uncover deep, logic-level vulnerabilities." },
+      { "question": "How do you handle confidentiality?", "description": "All reviews are performed under strict NDAs. Code is accessed through secure channels and deleted post-engagement." },
+      { "question": "Can you review third-party or outsourced code?", "description": "Yes — we can assess vendor-provided or open-source components to ensure supply chain integrity." },
+      { "question": "Do you cover all programming languages?", "description": "Yes — we support major web, mobile, and backend languages (Java, Python, PHP, C#, JavaScript, Go, Kotlin, Swift)." },
+      { "question": "How long does a review take?", "description": "Depends on project size — typically 1–3 weeks for standard applications and 3–5 weeks for complex systems." }
+    ],
+    "cta": {
+      "heading": "Build Security Into Every Line of Code.",
+      "subtitle": "Protect your software and your customers with WHITEGUARD's comprehensive Source Code Review services.",
+      "buttonLabel": "Request a Free Scoping Call",
+      "buttonHref": "/contact"
+    }
+  },
+  "cloud-security-assessment": {
+    "title": "Cloud Security Assessment",
+    "seo": {
+      "title": "Cloud Security Assessment | AWS, Azure & GCP Configuration Review | WHITEGUARD",
+      "description": "WHITEGUARD's Cloud Security Assessment identifies misconfigurations, excessive permissions, and architectural risks across AWS, Azure, and GCP environments. Gain visibility, strengthen compliance, and secure your cloud infrastructure."
+    },
+    "hero": {
+      "headline": "Cloud Security Assessment — Secure the Cloud. Protect What Matters.",
+      "subtitle": "Uncover misconfigurations, identity risks, and policy gaps across your cloud environments before attackers do.",
+      "ctaPrimary": { "label": "Request a Cloud Assessment", "href": "/contact" },
+      "ctaSecondary": { "label": "Download Sample Report (PDF)", "href": "#" }
+    },
+    "whatIs": {
+      "heading": "What Is a Cloud Security Assessment?",
+      "body": "A Cloud Security Assessment is a comprehensive review of your cloud infrastructure, configurations, and policies to detect vulnerabilities and misconfigurations that threaten data integrity, compliance, and business continuity. At WHITEGUARD, we evaluate your AWS, Azure, and Google Cloud environments against industry benchmarks (CIS, NIST, ISO) and best practices to ensure your assets are secure, compliant, and resilient. Our experts identify IAM privilege issues, storage exposures, unprotected APIs, insecure networking, and logging gaps — delivering a clear path to a hardened and auditable cloud environment.",
+      "ctaLabel": "Get A Quote",
+      "ctaHref": "/contact"
+    },
+    "whoNeeds": {
+      "heading": "Who Needs a Cloud Security Assessment?",
+      "subtitle": "Built for modern organizations operating in cloud, hybrid, or multi-tenant environments.",
+      "cards": [
+        { "title": "Critical Workloads", "subtitle": "AWS, Azure, GCP enterprises", "iconBg": "#dbeafe", "cardBg": "#eff6ff" },
+        { "title": "SaaS Providers", "subtitle": "Security validation before onboarding", "iconBg": "#dcfce7", "cardBg": "#f0fdf4" },
+        { "title": "Compliance Readiness", "subtitle": "ISO 27001, SAMA, PCI-DSS", "iconBg": "#fef3c6", "cardBg": "#fffbeb" },
+        { "title": "Sensitive Data", "subtitle": "Fintech, healthcare, manufacturing", "iconBg": "#f3e8ff", "cardBg": "#faf5ff" }
+      ],
+      "examples": "FinTech's protecting payment APIs • Healthcare providers securing patient records in hybrid clouds • Manufacturers safeguarding OT cloud integrations • SMEs ensuring compliance before audits"
+    },
+    "whatWeTest": {
+      "heading": "What We Assess",
+      "subtitle": "Full-Spectrum Coverage of Your Cloud Infrastructure",
+      "items": [
+        { "title": "Identity & Access Management (IAM)", "description": "Analyze user roles, service accounts, and policies for privilege escalation and least-privilege violations." },
+        { "title": "Network Security", "description": "Inspect VPCs, subnets, security groups, and firewall rules to eliminate open access or misconfigured routes." },
+        { "title": "Storage & Databases", "description": "Identify public buckets, exposed storage endpoints, and weak encryption or logging configurations." },
+        { "title": "Compute & Containers", "description": "Review virtual machines, Kubernetes clusters, and container registries for isolation and vulnerability management." },
+        { "title": "Monitoring & Logging", "description": "Validate CloudTrail, GuardDuty, Azure Sentinel, and GCP Logging configurations to ensure event traceability." }
+      ]
+    },
+    "whatYouReceive": {
+      "heading": "What You Receive",
+      "subtitle": "Actionable Cloud Security Insights for Executives and Engineers",
+      "items": [
+        { "number": "01", "imgSrc": "/images/icons/output-1.svg", "title": "Executive Summary", "description": "Cloud risk posture overview, top misconfigurations, and key remediation priorities.", "bg": "#eff6ff" },
+        { "number": "02", "imgSrc": "/images/icons/output-2.svg", "title": "Technical Report", "description": "Detailed findings with affected assets, screenshots, and remediation recommendations categorized by severity.", "bg": "#f0fdf4" },
+        { "number": "03", "imgSrc": "/images/icons/output-3.svg", "title": "Remediation Roadmap", "description": "Prioritized fix plan with effort estimates and compliance mapping.", "bg": "#fffbeb" },
+        { "number": "04", "imgSrc": "/images/icons/output-4.svg", "title": "Architecture Review Add-On", "description": "Optional service for validating cloud architecture design and workload segmentation.", "bg": "#faf5ff" },
+        { "number": "05", "imgSrc": "/images/icons/output-5.svg", "title": "Continuous Monitoring Option", "description": "Integrate findings and cloud posture data into WHITEHAWK for ongoing visibility and automated alerts.", "bg": "#fff1f2" }
+      ],
+      "linkLabel": "See Cloud Security Pricing",
+      "linkHref": "/contact"
+    },
+    "methodology": {
+      "heading": "Methodology & Process",
+      "subtitle": "How We Secure the Cloud — Step by Step",
+      "steps": [
+        { "number": 1, "title": "Scoping & Access Setup", "description": "Define target cloud platforms, permissions, and data access boundaries." },
+        { "number": 2, "title": "Data Collection & Configuration Review", "description": "Collect configuration data from AWS, Azure, or GCP using automated tools and manual validation." },
+        { "number": 3, "title": "Security Posture Evaluation", "description": "Identify misconfigurations, weak access policies, and architectural exposures." },
+        { "number": 4, "title": "Risk Prioritization & Mapping", "description": "Score findings using risk impact metrics and map them to compliance frameworks." },
+        { "number": 5, "title": "Reporting & Executive Debrief", "description": "Deliver reports and walkthrough sessions for security and DevOps teams." },
+        { "number": 6, "title": "Remediation & Verification", "description": "Support your teams with fix validation and improved control baselines." }
+      ]
+    },
+    "whenToRun": {
+      "heading": "When Should You Conduct a Cloud Security Assessment?",
+      "items": [
+        "After migrating workloads to the cloud or adding new regions",
+        "Before audits or certifications (ISO, SAMA, PCI-DSS, HIPAA)",
+        "Following configuration or identity changes",
+        "After incidents or suspicious activity in cloud environments",
+        "On a quarterly or semi-annual cycle for continuous assurance"
+      ]
+    },
+    "pricing": {
+      "heading": "Pricing Guide & Options",
+      "subtitle": "Scalable Options for Every Cloud Footprint",
+      "plans": [
+        { "id": "single-cloud", "title": "Single-Cloud Review", "iconSrc": "/images/icons/pricing/icon-1.svg", "description": "Focused assessment for AWS, Azure, or GCP environments." },
+        { "id": "hybrid", "title": "Hybrid Infrastructure Assessment", "iconSrc": "/images/icons/pricing/icon-2.svg", "description": "Covers multi-cloud or on-prem-to-cloud integrations." },
+        { "id": "enterprise", "title": "Enterprise Cloud Security Program", "iconSrc": "/images/icons/pricing/icon-3.svg", "description": "Continuous monitoring and periodic reassessment through WHITEHAWK." },
+        { "id": "compliance", "title": "Compliance Add-On", "iconSrc": "/images/icons/pricing/icon-4.svg", "description": "Framework mapping for ISO 27017, PCI-DSS, and SAMA alignment." },
+        { "id": "architecture", "title": "Architecture & DevSecOps Review", "iconSrc": "/images/icons/pricing/icon-5.svg", "description": "Evaluate secure deployment pipelines and IaC templates." }
+      ],
+      "ctaLabel": "Request Pricing Proposal",
+      "ctaHref": "/contact"
+    },
+    "standards": {
+      "heading": "Standards & Mappings",
+      "cards": [
+        { "id": "aligned", "title": "Aligned With", "description": "CIS Cloud Benchmarks • ISO 27017/27018 • NIST SP 800-53 • SAMA CSF • NCA ECC • CSA Cloud Controls Matrix", "iconSrc": "/images/icons/mapping/BookOpen.svg" },
+        { "id": "mapped", "title": "Mapped To Compliance Controls", "description": "ISO 27001 • SAMA • FRA 139 • PCI-DSS • SOC 2", "iconSrc": "/images/icons/mapping/ShieldCheck.svg" }
+      ],
+      "certifications": {
+        "heading": "Certifications & Tools",
+        "items": [
+          { "id": "certs", "title": "AWS Certified Security – Specialty / Azure Security Engineer / GCP Professional Cloud Security Engineer", "iconSrc": "/images/icons/mapping/Award.svg" },
+          { "id": "tools", "title": "Prisma Cloud, ScoutSuite, Prowler, Steampipe, Checkov, custom scripts", "iconSrc": "/images/icons/mapping/Wrench.svg" },
+          { "id": "integration", "title": "Integration with WHITEHAWK dashboards for visibility and compliance metrics", "iconSrc": "/images/icons/mapping/Eye.svg" }
+        ]
+      }
+    },
+    "testimonials": [
+      { "quote": "Cloud assessment uncovered critical IAM issues we had no visibility into.", "name": "Client", "title": "IT Infrastructure Manager, Financial Services" }
+    ],
+    "faqs": [
+      { "question": "How is a Cloud Security Assessment different from a cloud audit?", "description": "An assessment focuses on identifying security risks and misconfigurations, while an audit validates compliance against specific frameworks." },
+      { "question": "Do you need access to our cloud environment?", "description": "Yes — limited read-only access is required for scanning and configuration review." },
+      { "question": "Can you cover multi-cloud or hybrid setups?", "description": "Absolutely. WHITEGUARD assesses all major cloud providers and integrated hybrid networks." },
+      { "question": "How long does the assessment take?", "description": "Typically 1–3 weeks, depending on environment size and scope." },
+      { "question": "Do you fix issues or just report them?", "description": "We provide detailed remediation guidance and can assist with implementation or validation upon request." }
+    ],
+    "cta": {
+      "heading": "Gain Control. Achieve Visibility. Secure the Cloud.",
+      "subtitle": "WHITEGUARD's Cloud Security Assessment gives you the clarity and confidence to operate safely in the cloud.",
+      "buttonLabel": "Request a Free Scoping Call",
+      "buttonHref": "/contact"
+    }
+  },
+  "soc-design": {
+    "title": "SOC-as-a-Service",
+    "seo": {
+      "title": "SOC-as-a-Service | 24/7 Threat Monitoring, Detection & Response | WHITEGUARD",
+      "description": "WHITEGUARD's SOC-as-a-Service delivers 24/7 threat detection, investigation, and incident response powered by expert analysts, automation, and intelligence. Gain visibility, speed, and control over your security operations."
+    },
+    "hero": {
+      "headline": "SOC-as-a-Service — Continuous Defense. Instant Response. Proven Resilience.",
+      "subtitle": "A fully managed Security Operations Center that detects, investigates, and responds to cyber threats, so you can focus on running your business.",
+      "ctaPrimary": { "label": "Request a SOC Service", "href": "/contact" },
+      "ctaSecondary": { "label": "Download Service Overview (PDF)", "href": "#" }
+    },
+    "whatIs": {
+      "heading": "What Is SOC-as-a-Service?",
+      "body": "A Security Operations Center (SOC) is the backbone of modern cyber defense, but building and maintaining one internally can be complex, costly, and resource intensive. WHITEGUARD's SOC-as-a-Service gives you all the capabilities of a world-class SOC without the overhead. Our certified analysts, advanced SIEM technology, and AI-driven automation deliver 24/7 visibility, real-time detection, and rapid response across your on-prem, cloud, and hybrid environments. With WHITEGUARD, you get proactive protection that scales with your business.",
+      "ctaLabel": "Get A Quote",
+      "ctaHref": "/contact"
+    },
+    "whoNeeds": {
+      "heading": "Who Needs SOC-as-a-Service?",
+      "subtitle": "Designed for organizations that demand visibility, speed, and assurance.",
+      "cards": [
+        { "title": "Continuous Threat Monitoring", "subtitle": "Enterprises seeking 24/7 response", "iconBg": "#dbeafe", "cardBg": "#eff6ff" },
+        { "title": "Mid-Sized Organizations", "subtitle": "Without internal SOC resources", "iconBg": "#dcfce7", "cardBg": "#f0fdf4" },
+        { "title": "Regulated Industries", "subtitle": "SAMA, FRA, PCI-DSS, ISO compliance", "iconBg": "#fef3c6", "cardBg": "#fffbeb" },
+        { "title": "Cloud-Driven Businesses", "subtitle": "Hybrid visibility across environments", "iconBg": "#f3e8ff", "cardBg": "#faf5ff" }
+      ],
+      "examples": "Banks monitoring critical financial transactions • Healthcare providers protecting patient data • Manufacturers securing OT networks • SaaS companies enabling 24/7 uptime protection"
+    },
+    "whatWeTest": {
+      "heading": "What It Covers",
+      "subtitle": "End-to-End Managed Detection & Response (MDR) Capabilities",
+      "items": [
+        { "title": "24/7 Threat Monitoring", "description": "Real-time visibility across endpoints, networks, and cloud workloads through advanced SIEM and SOAR platforms." },
+        { "title": "Incident Detection & Triage", "description": "Immediate alert analysis and classification by Tier 1 and Tier 2 analysts to remove false positives and prioritize critical threats." },
+        { "title": "Incident Response (IR)", "description": "Containment, investigation, and mitigation by expert responders minimizing business impact." },
+        { "title": "Threat Intelligence Integration", "description": "Continuous enrichment with global, regional, and sector-specific threat feeds." },
+        { "title": "Log Management & Compliance Reporting", "description": "Centralized log collection and storage to support audits and regulatory requirements (ISO, SAMA, FRA, PCI-DSS)." },
+        { "title": "Continuous Improvement", "description": "Periodic SOC health checks, detection tuning, and playbook optimization." }
+      ]
+    },
+    "whatYouReceive": {
+      "heading": "What You Receive",
+      "subtitle": "Operational Assurance and Executive Visibility",
+      "items": [
+        { "number": "01", "imgSrc": "/images/icons/output-1.svg", "title": "Executive Summary", "description": "Quarterly threat posture overview, incident statistics, and business impact metrics for leadership.", "bg": "#eff6ff" },
+        { "number": "02", "imgSrc": "/images/icons/output-2.svg", "title": "Technical Reports", "description": "Real-time dashboards and detailed incident logs with MITRE ATT&CK mappings and response notes.", "bg": "#f0fdf4" },
+        { "number": "03", "imgSrc": "/images/icons/output-3.svg", "title": "Compliance Alignment", "description": "Reports mapped to ISO 27001, SAMA, NCA ECC, and PCI-DSS requirements.", "bg": "#fffbeb" },
+        { "number": "04", "imgSrc": "/images/icons/output-4.svg", "title": "Security Advisory & Continuous Optimization", "description": "Monthly threat briefings and improvement sessions with WHITEGUARD analysts.", "bg": "#faf5ff" },
+        { "number": "05", "imgSrc": "/images/icons/output-5.svg", "title": "Portal Access via WHITEHAWK (Optional)", "description": "Full visibility of alerts, response actions, and threat intelligence via the WHITEHAWK platform.", "bg": "#fff1f2" }
+      ],
+      "linkLabel": "See SOC Service Pricing",
+      "linkHref": "/contact"
+    },
+    "methodology": {
+      "heading": "Methodology & Process",
+      "subtitle": "How Our SOC Works — Transparent, Continuous, and Scalable",
+      "steps": [
+        { "number": 1, "title": "Integration & Onboarding", "description": "Connect your infrastructure, cloud, and endpoints to our SOC through secure log forwarding and agent deployment." },
+        { "number": 2, "title": "Baseline & Tuning", "description": "Establish normal behavior baselines and tune alert thresholds to reduce noise." },
+        { "number": 3, "title": "Monitoring & Detection", "description": "24/7 surveillance by Tier 1–2 analysts supported by automation for immediate threat detection." },
+        { "number": 4, "title": "Investigation & Response", "description": "Correlate alerts, identify root causes, and execute containment or mitigation actions." },
+        { "number": 5, "title": "Reporting & Insights", "description": "Provide executive and technical summaries with incident trends, false-positive ratios, and detection metrics." },
+        { "number": 6, "title": "Continuous Improvement", "description": "Refine rules, playbooks, and detection logic based on lessons learned and threat evolution." }
+      ]
+    },
+    "whenToRun": {
+      "heading": "When Should You Deploy SOC-as-a-Service?",
+      "items": [
+        "When in-house SOC build costs exceed ROI",
+        "When regulatory requirements demand continuous monitoring",
+        "After a major cloud migration or digital transformation",
+        "Following a breach or incident that revealed detection gaps",
+        "As part of a proactive MDR strategy for business continuity"
+      ]
+    },
+    "pricing": {
+      "heading": "Pricing Guide & Options",
+      "subtitle": "Flexible Plans to Match Your Environment",
+      "plans": [
+        { "id": "essential", "title": "Essential SOC Plan", "iconSrc": "/images/icons/pricing/icon-1.svg", "description": "24/7 monitoring for key assets and endpoints, ideal for SMBs." },
+        { "id": "advanced", "title": "Advanced SOC Plan", "iconSrc": "/images/icons/pricing/icon-2.svg", "description": "Full SIEM + SOAR integration with dedicated Tier 2 analysts." },
+        { "id": "enterprise", "title": "Enterprise SOC Plan", "iconSrc": "/images/icons/pricing/icon-3.svg", "description": "Custom rule sets, multi-cloud monitoring, and IR retainers." },
+        { "id": "co-managed", "title": "Co-Managed SOC", "iconSrc": "/images/icons/pricing/icon-4.svg", "description": "Hybrid collaboration model between WHITEGUARD and your in-house team." },
+        { "id": "retainer", "title": "Retainer Add-On", "iconSrc": "/images/icons/pricing/icon-5.svg", "description": "On-demand incident response, malware analysis, and threat hunting." }
+      ],
+      "ctaLabel": "Request Pricing Proposal",
+      "ctaHref": "/contact"
+    },
+    "standards": {
+      "heading": "Standards & Mappings",
+      "cards": [
+        { "id": "methodology-aligned", "title": "Methodology & Process Aligned With", "description": "MITRE ATT&CK • NIST 800-61 (Computer Security Incident Handling Guide) • ISO 27035 • SAMA CSF • NCA ECC", "iconSrc": "/images/icons/mapping/BookOpen.svg" },
+        { "id": "compliance-mapped", "title": "Mapped To Compliance Controls", "description": "ISO 27001 • SAMA • FRA 139 • PCI-DSS • NCA ECC", "iconSrc": "/images/icons/mapping/ShieldCheck.svg" }
+      ],
+      "certifications": {
+        "heading": "Certifications & Tools",
+        "items": [
+          { "id": "certs", "title": "SOC analysts certified in ECDFP, ECIR, CTIA, CSA, ECTHP", "iconSrc": "/images/icons/mapping/Award.svg" },
+          { "id": "whitehawk", "title": "Integration with WHITEHAWK for unified dashboarding and automation (Optional)", "iconSrc": "/images/icons/mapping/Wrench.svg" }
+        ]
+      }
+    },
+    "testimonials": [
+      { "quote": "WHITEGUARD's SOC gave us 24/7 peace of mind. Response times are exceptional.", "name": "Client", "title": "CISO, Regional Bank" }
+    ],
+    "faqs": [
+      { "question": "How fast does WHITEGUARD's SOC detect and respond to threats?", "description": "Our analysts monitor 24/7 and typically respond to verified alerts within 10–15 minutes." },
+      { "question": "Can we integrate our existing SIEM or tools?", "description": "Yes — our SOC supports integration with existing SIEM, EDR, and XDR platforms." },
+      { "question": "Is data stored securely?", "description": "All logs are encrypted in transit and at rest, following ISO 27001 and regional data sovereignty requirements." },
+      { "question": "Can we choose a co-managed model?", "description": "Yes — we offer full or hybrid SOC models depending on your internal capabilities." },
+      { "question": "Do you provide IR retainers?", "description": "Yes — clients can include a dedicated incident response retainer for faster escalation and onsite support." }
+    ],
+    "cta": {
+      "heading": "Stay Protected 24/7. Detect Threats Before They Impact.",
+      "subtitle": "WHITEGUARD's SOC-as-a-Service delivers continuous monitoring, rapid response, and full visibility — all managed by experts.",
+      "buttonLabel": "Request SOC-as-a-Service Now",
+      "buttonHref": "/contact"
+    }
+  },
+  "siem-deployment": {
+    "title": "SIEM Deployment & Use Case Management",
+    "seo": {
+      "title": "SIEM Deployment & Use Case Management | Real-Time Threat Detection & Compliance | WHITEGUARD",
+      "description": "WHITEGUARD's SIEM Deployment and Use Case Management services help organizations implement and optimize SIEM solutions for better threat detection, response, and compliance. Tailored integration for your environment."
+    },
+    "hero": {
+      "headline": "SIEM Deployment & Use Case Management — Detect, Respond, Comply.",
+      "subtitle": "Get full visibility into your network and systems with SIEM deployment, customized use case management, and real-time threat detection powered by WHITEGUARD experts.",
+      "ctaPrimary": { "label": "Request a SIEM Consultation", "href": "/contact" },
+      "ctaSecondary": { "label": "Download SIEM Overview (PDF)", "href": "#" }
+    },
+    "whatIs": {
+      "heading": "What Is SIEM?",
+      "body": "A Security Information and Event Management (SIEM) system helps organizations aggregate logs, monitor network traffic, and detect suspicious activity — all from a centralized platform. At WHITEGUARD, we deploy, configure, and manage SIEM solutions tailored to your business needs, ensuring that you have complete visibility into your digital infrastructure, so you can respond to threats faster and improve your overall security posture.",
+      "ctaLabel": "Get A Quote",
+      "ctaHref": "/contact"
+    },
+    "whoNeeds": {
+      "heading": "Who Needs SIEM Deployment?",
+      "subtitle": "Ideal for businesses looking to centralize security monitoring and improve compliance.",
+      "cards": [
+        { "title": "Centralized Monitoring", "subtitle": "Across cloud, network, and endpoints", "iconBg": "#dbeafe", "cardBg": "#eff6ff" },
+        { "title": "Regulated Industries", "subtitle": "ISO 27001, SAMA, PCI-DSS, HIPAA", "iconBg": "#dcfce7", "cardBg": "#f0fdf4" },
+        { "title": "Cloud Transition", "subtitle": "Cloud-native SIEM integration", "iconBg": "#fef3c6", "cardBg": "#fffbeb" },
+        { "title": "SMBs", "subtitle": "Cost-effective enterprise-grade visibility", "iconBg": "#f3e8ff", "cardBg": "#faf5ff" }
+      ],
+      "examples": "Financial institutions requiring 24/7 monitoring • Healthcare providers managing sensitive data logs • SaaS businesses ensuring compliance with SOC 2 • Enterprises validating cloud infrastructures and endpoints"
+    },
+    "whatWeTest": {
+      "heading": "What It Covers",
+      "subtitle": "Full SIEM Deployment with Tailored Use Cases and Compliance Support",
+      "items": [
+        { "title": "Real-Time Threat Monitoring & Detection", "description": "Deploy and integrate SIEM systems such as Splunk, Microsoft Sentinel, LogRhythm, or QRadar for real-time detection of network anomalies, malicious behavior, and compliance violations." },
+        { "title": "Custom Use Case Development", "description": "Create use cases and correlation rules tailored to your environment. From network traffic analysis to privilege escalation detection, we ensure your SIEM is aligned with business priorities." },
+        { "title": "Log Management & Retention", "description": "Ensure compliance with regulatory requirements by setting up automated log collection, retention, and archiving per PCI-DSS, HIPAA, and ISO 27001 standards." },
+        { "title": "Alert Tuning & Optimization", "description": "Fine-tune alert thresholds and severity levels to minimize false positives, ensuring that your team focuses on genuine threats." },
+        { "title": "Compliance Reporting", "description": "Generate audit-ready reports and dashboards, aligned with industry standards and regulatory requirements." },
+        { "title": "Continuous SIEM Health Checks", "description": "Monthly or quarterly SOC reviews to ensure that your SIEM deployment is optimized for current threat landscapes and evolving business needs." }
+      ]
+    },
+    "whatYouReceive": {
+      "heading": "What You Receive",
+      "subtitle": "Clear Insights. Actionable Outcomes.",
+      "items": [
+        { "number": "01", "imgSrc": "/images/icons/output-1.svg", "title": "Executive Summary", "description": "Risk overview, business impact, and top findings for leadership.", "bg": "#eff6ff" },
+        { "number": "02", "imgSrc": "/images/icons/output-2.svg", "title": "Technical Report", "description": "Comprehensive SIEM configuration, use cases, and detection rules.", "bg": "#f0fdf4" },
+        { "number": "03", "imgSrc": "/images/icons/output-3.svg", "title": "Compliance Mapping", "description": "Reports mapped to ISO 27001, SOC 2, PCI-DSS, HIPAA.", "bg": "#fffbeb" },
+        { "number": "04", "imgSrc": "/images/icons/output-4.svg", "title": "Ongoing Optimization", "description": "Monthly tuning and incident response support.", "bg": "#faf5ff" },
+        { "number": "05", "imgSrc": "/images/icons/output-5.svg", "title": "WHITEHAWK Integration", "description": "Centralized dashboarding and incident tracking (Optional).", "bg": "#fff1f2" }
+      ],
+      "linkLabel": "See SIEM Deployment Pricing",
+      "linkHref": "/contact"
+    },
+    "methodology": {
+      "heading": "Methodology & Process",
+      "subtitle": "How We Deploy SIEM — Transparent, Collaborative, and Scalable",
+      "steps": [
+        { "number": 1, "title": "Needs Assessment & Tool Selection", "description": "Identify business goals, compliance requirements, and technical specifications to choose the right SIEM solution (Splunk, Sentinel, etc.)." },
+        { "number": 2, "title": "Deployment & Configuration", "description": "Implement your SIEM system with comprehensive log sources integration (network, servers, applications) and compliance setups (PCI, HIPAA, etc.)." },
+        { "number": 3, "title": "Use Case Development & Customization", "description": "Develop custom detection rules based on risk analysis, environment complexity, and threat vectors specific to your industry." },
+        { "number": 4, "title": "Alerting & Correlation Setup", "description": "Configure alerts for key events such as privilege escalation, network breaches, and unauthorized access. Customize thresholds to eliminate noise." },
+        { "number": 5, "title": "Compliance Reporting Setup", "description": "Ensure the system generates real-time reports mapped to regulatory standards (e.g., SOC 2, ISO 27001, PCI-DSS)." },
+        { "number": 6, "title": "Ongoing Optimization & Retuning", "description": "Continually improve your SIEM's detection capabilities by reviewing trends, fine-tuning alerts, and updating use cases based on new threat intelligence." }
+      ]
+    },
+    "whenToRun": {
+      "heading": "When Should You Deploy SIEM?",
+      "items": [
+        "During a major infrastructure overhaul or migration (on-prem → cloud)",
+        "Before undergoing a compliance audit or certification process (ISO, PCI-DSS, SOC 2)",
+        "When integrating a new business-critical application or system that requires continuous monitoring",
+        "After a significant data breach or security incident to improve detection capabilities",
+        "For proactive risk reduction and continuous improvement in security posture"
+      ]
+    },
+    "pricing": {
+      "heading": "Pricing Guide & Options",
+      "subtitle": "Flexible Pricing Options Based on Your Security Needs",
+      "plans": [
+        { "id": "basic", "title": "Basic SIEM Deployment", "iconSrc": "/images/icons/pricing/icon-1.svg", "description": "For small to medium-sized environments, with essential log collection, alerting, and compliance mapping." },
+        { "id": "standard", "title": "Standard SIEM Setup", "iconSrc": "/images/icons/pricing/icon-2.svg", "description": "For larger organizations or multi-cloud environments, with advanced analytics, tuning, and custom rule development." },
+        { "id": "enterprise", "title": "Enterprise SIEM Program", "iconSrc": "/images/icons/pricing/icon-3.svg", "description": "Full implementation with 24/7 monitoring, use case development, compliance reporting, and continuous optimization." },
+        { "id": "health-check", "title": "SIEM Health Check & Tuning", "iconSrc": "/images/icons/pricing/icon-4.svg", "description": "Quarterly reviews and optimization to ensure SIEM efficiency and threat coverage." },
+        { "id": "compliance", "title": "Compliance Add-On", "iconSrc": "/images/icons/pricing/icon-5.svg", "description": "Framework mappings for ISO 27001, SOC 2, PCI-DSS, and HIPAA for audit readiness." }
+      ],
+      "ctaLabel": "Request Pricing Proposal",
+      "ctaHref": "/contact"
+    },
+    "standards": {
+      "heading": "Standards & Mappings",
+      "cards": [
+        { "id": "aligned", "title": "Aligned With", "description": "MITRE ATT&CK • NIST 800-53 • ISO 27001 Annex A • PCI-DSS • SOC 2 • HIPAA", "iconSrc": "/images/icons/mapping/BookOpen.svg" },
+        { "id": "certs", "title": "Certifications", "description": "SOC analysts certified in ECDFP, ECIR, CTIA, CSA, ECTHP • Integration with WHITEHAWK (Optional)", "iconSrc": "/images/icons/mapping/ShieldCheck.svg" }
+      ],
+      "certifications": {
+        "heading": "Certifications & Tools",
+        "items": [
+          { "id": "certs", "title": "SOC analysts certified in ECDFP, ECIR, CTIA, CSA, ECTHP", "iconSrc": "/images/icons/mapping/Award.svg" },
+          { "id": "whitehawk", "title": "Integration with WHITEHAWK for centralized dashboarding and incident tracking (Optional)", "iconSrc": "/images/icons/mapping/Wrench.svg" }
+        ]
+      }
+    },
+    "testimonials": [
+      { "quote": "SIEM deployment was seamless. We now have full visibility across our hybrid environment.", "name": "Client", "title": "IT Security Manager, Healthcare" }
+    ],
+    "faqs": [
+      { "question": "What SIEM tools do you support?", "description": "We support leading SIEM tools like Splunk, Microsoft Sentinel, QRadar, LogRhythm, and Elastic Stack (ELK)." },
+      { "question": "How long does the SIEM deployment process take?", "description": "Typically, it takes 2-6 weeks depending on scope, complexity, and environment size." },
+      { "question": "Do you offer ongoing support after deployment?", "description": "Yes, we offer monthly optimization reviews, tuning, and incident response support as part of our Managed Security Services." },
+      { "question": "Can you integrate SIEM with our existing systems?", "description": "Yes, we can integrate SIEM with your existing infrastructure, SIEM, and ticketing systems (JIRA, ServiceNow)." },
+      { "question": "Do you provide incident response with SIEM?", "description": "Yes, our SOC-as-a-Service provides 24/7 incident detection, response, and forensic support." }
+    ],
+    "cta": {
+      "heading": "Achieve 360° Security Monitoring with WHITEGUARD's SIEM Solutions",
+      "subtitle": "Our expert SIEM deployment and optimization services give you visibility, control, and proactive protection.",
+      "buttonLabel": "Request a Free SIEM Consultation",
+      "buttonHref": "/contact"
+    }
+  },
+  "dfir-services": {
+    "title": "Digital Forensics & Incident Response (DFIR)",
+    "seo": {
+      "title": "Digital Forensics & Incident Response (DFIR) Services | Threat Investigation & Data Recovery | WHITEGUARD",
+      "description": "WHITEGUARD's Digital Forensics & Incident Response services help organizations investigate breaches, recover data, and strengthen security postures. From containment to forensics, we provide expert support when you need it most."
+    },
+    "hero": {
+      "headline": "Digital Forensics & Incident Response (DFIR) — Investigate. Contain. Recover.",
+      "subtitle": "Uncover the full scope of a cyberattack, respond effectively, and recover quickly with WHITEGUARD's expert DFIR services.",
+      "ctaPrimary": { "label": "Request Incident Response Support", "href": "/contact" },
+      "ctaSecondary": { "label": "Download DFIR Overview (PDF)", "href": "#" }
+    },
+    "whatIs": {
+      "heading": "What Is Digital Forensics & Incident Response (DFIR)?",
+      "body": "Digital Forensics involves the collection, preservation, and analysis of digital evidence from compromised systems to determine the source, methods, and impact of an attack. Incident Response (IR) is the organized approach to detecting, containing, mitigating, and recovering from security incidents to minimize damage and restore normal operations. At WHITEGUARD, we combine both disciplines to ensure your organization responds effectively and recovers swiftly. Our expert DFIR team works alongside your internal teams to handle security incidents, analyze affected systems, and mitigate further damage. We provide real-time containment, detailed forensic analysis, and evidence gathering to help you meet compliance, maintain business continuity, and prevent future incidents.",
+      "ctaLabel": "Get A Quote",
+      "ctaHref": "/contact"
+    },
+    "whoNeeds": {
+      "heading": "Who Needs DFIR?",
+      "subtitle": "Critical for organizations needing rapid response, investigation, and data recovery after a breach or attack.",
+      "cards": [
+        { "title": "Cyberattack Victims", "subtitle": "Ransomware, APTs, phishing, data exfiltration", "iconBg": "#dbeafe", "cardBg": "#eff6ff" },
+        { "title": "Sensitive Data Managers", "subtitle": "Customer data, financial transactions", "iconBg": "#dcfce7", "cardBg": "#f0fdf4" },
+        { "title": "Regulated Industries", "subtitle": "HIPAA, PCI-DSS, SAMA compliance", "iconBg": "#fef3c6", "cardBg": "#fffbeb" },
+        { "title": "Post-Incident Analysis", "subtitle": "Strengthen defenses after breach", "iconBg": "#f3e8ff", "cardBg": "#faf5ff" }
+      ],
+      "examples": "Financial institutions responding to data theft • Healthcare organizations recovering from ransomware • Government agencies investigating data breaches • SMBs needing immediate forensic support after an attack"
+    },
+    "whatWeTest": {
+      "heading": "What It Covers",
+      "subtitle": "Immediate Response. Thorough Analysis. Long-Term Resilience.",
+      "items": [
+        { "title": "Incident Containment & Mitigation", "description": "Identify and isolate affected systems, stopping the spread of attacks while preserving evidence." },
+        { "title": "Root Cause & Impact Analysis", "description": "Understand how the attack occurred, its impact, and the attacker's methods using industry-leading forensic tools." },
+        { "title": "Data Recovery & Restoration", "description": "Recover compromised data, analyze logs, and restore systems while maintaining data integrity." },
+        { "title": "Post-Incident Reporting & Documentation", "description": "Prepare comprehensive incident reports for stakeholders, auditors, and regulatory bodies." },
+        { "title": "Compliance Reporting", "description": "Ensure compliance with industry-specific requirements (HIPAA, PCI-DSS, FRA, ISO 27001) through documented evidence and mitigation steps." },
+        { "title": "Ongoing Monitoring & Preparedness", "description": "Post-incident support with threat hunting, continuous monitoring, and security posture improvement." }
+      ]
+    },
+    "whatYouReceive": {
+      "heading": "What You Receive",
+      "subtitle": "Comprehensive DFIR Deliverables",
+      "items": [
+        { "number": "01", "imgSrc": "/images/icons/output-1.svg", "title": "Executive Summary", "description": "Incident overview, business impact, and key findings for leadership.", "bg": "#eff6ff" },
+        { "number": "02", "imgSrc": "/images/icons/output-2.svg", "title": "Technical Forensic Report", "description": "Detailed analysis with evidence, timeline, and attacker TTPs.", "bg": "#f0fdf4" },
+        { "number": "03", "imgSrc": "/images/icons/output-3.svg", "title": "Remediation Plan", "description": "Prioritized actions to close gaps and prevent recurrence.", "bg": "#fffbeb" },
+        { "number": "04", "imgSrc": "/images/icons/output-4.svg", "title": "Compliance Documentation", "description": "Audit-ready evidence and regulatory reporting.", "bg": "#faf5ff" },
+        { "number": "05", "imgSrc": "/images/icons/output-5.svg", "title": "Post-Incident Support", "description": "Threat hunting and security posture improvement.", "bg": "#fff1f2" }
+      ],
+      "linkLabel": "Request DFIR Consultation",
+      "linkHref": "/contact"
+    },
+    "methodology": {
+      "heading": "Methodology & Process",
+      "subtitle": "How We Investigate & Respond — Proven, Transparent, and Thorough",
+      "steps": [
+        { "number": 1, "title": "Incident Notification & Triage", "description": "Immediately respond to the initial alert or breach notification, prioritizing the severity and business impact." },
+        { "number": 2, "title": "Containment & Remediation", "description": "Isolate affected systems, analyze attack vectors, and implement countermeasures to stop the incident from escalating." },
+        { "number": 3, "title": "Evidence Collection & Preservation", "description": "Use industry-leading tools to capture and preserve evidence for later analysis, including disk images, memory dumps, and log data." },
+        { "number": 4, "title": "Forensic Investigation & Analysis", "description": "Conduct a deep dive into the affected systems to determine the attack's source, techniques, and impacted assets." },
+        { "number": 5, "title": "Incident Recovery & Remediation", "description": "Restore systems, recover lost data, patch vulnerabilities, and implement long-term security measures to prevent future incidents." },
+        { "number": 6, "title": "Reporting & Continuous Improvement", "description": "Prepare an executive summary, technical report, and post-mortem analysis. Provide actionable insights to improve detection, response, and prevention." }
+      ]
+    },
+    "whenToRun": {
+      "heading": "When Should You Request DFIR Services?",
+      "items": [
+        "After experiencing a data breach, ransomware attack, or targeted intrusion",
+        "When suspicious activity or compromised systems are detected in your network",
+        "Following significant malware incidents or financial fraud",
+        "When regulatory or compliance bodies require incident documentation (HIPAA, SOC 2, PCI-DSS)",
+        "As part of a proactive security incident preparedness plan"
+      ]
+    },
+    "pricing": {
+      "heading": "Pricing Guide & Options",
+      "subtitle": "Tailored Pricing Based on Your Incident & Organization's Needs",
+      "plans": [
+        { "id": "basic-ir", "title": "Basic Incident Response", "iconSrc": "/images/icons/pricing/icon-1.svg", "description": "Immediate containment and investigation for small to medium incidents." },
+        { "id": "comprehensive", "title": "Comprehensive IR & Forensics", "iconSrc": "/images/icons/pricing/icon-2.svg", "description": "Full-scale incident management, root cause analysis, and recovery for large enterprises." },
+        { "id": "retainer", "title": "Ongoing IR Retainer", "iconSrc": "/images/icons/pricing/icon-3.svg", "description": "Subscription-based, with dedicated responders available for rapid deployment during incidents." },
+        { "id": "compliance", "title": "Compliance & Reporting Add-On", "iconSrc": "/images/icons/pricing/icon-4.svg", "description": "Post-incident reports aligned with regulatory and audit requirements." },
+        { "id": "threat-hunting", "title": "Continuous Threat Hunting", "iconSrc": "/images/icons/pricing/icon-5.svg", "description": "Ongoing, proactive hunting for emerging threats and vulnerabilities in your environment." }
+      ],
+      "ctaLabel": "Request Pricing Proposal",
+      "ctaHref": "/contact"
+    },
+    "standards": {
+      "heading": "Standards & Mappings",
+      "cards": [
+        { "id": "aligned", "title": "Aligned With", "description": "NIST SP 800-61 (Incident Handling), NIST 800-53, ISO 27001, PCI-DSS, SAMA CSF, HIPAA, MITRE ATT&CK", "iconSrc": "/images/icons/mapping/BookOpen.svg" },
+        { "id": "mapped", "title": "Mapped To Compliance Controls", "description": "ISO 27001 • SAMA • FRA 139 • PCI-DSS • HIPAA", "iconSrc": "/images/icons/mapping/ShieldCheck.svg" }
+      ],
+      "certifications": {
+        "heading": "Certifications & Tools",
+        "items": [
+          { "id": "certs", "title": "SOC analysts certified in ECDFP, ECIR, CTIA, CSA, ECTHP", "iconSrc": "/images/icons/mapping/Award.svg" },
+          { "id": "whitehawk", "title": "Integration with WHITEHAWK for real-time alerts, dashboards, and incident tracking (Optional)", "iconSrc": "/images/icons/mapping/Wrench.svg" }
+        ]
+      }
+    },
+    "testimonials": [
+      { "quote": "DFIR team contained the breach in hours. Forensic report was exceptional.", "name": "Client", "title": "IT Security Director, Healthcare" }
+    ],
+    "faqs": [
+      { "question": "How quickly can WHITEGUARD respond to an incident?", "description": "Our DFIR team is available 24/7, with an average response time of 1-2 hours for critical incidents." },
+      { "question": "What kind of incidents do you handle?", "description": "We respond to all types of security incidents, including data breaches, ransomware, insider threats, financial fraud, and malware attacks." },
+      { "question": "Do you provide post-incident support?", "description": "Yes, we offer post-incident support including incident validation, recovery, root cause analysis, and security posture improvement." },
+      { "question": "Is evidence preserved for compliance audits?", "description": "Yes, we follow industry standards for evidence preservation, ensuring everything is compliant with legal, regulatory, and audit requirements." }
+    ],
+    "cta": {
+      "heading": "Respond Faster. Recover Smarter. Strengthen Your Defenses.",
+      "subtitle": "WHITEGUARD's DFIR services deliver rapid response, expert analysis, and recovery strategies to help your organization bounce back stronger than ever.",
+      "buttonLabel": "Request a Free DFIR Consultation",
+      "buttonHref": "/contact"
+    }
+  },
+  "threat-intelligence-brand-protection": {
+    "title": "Threat Intelligence, Data Breach Monitoring & Brand Protection",
+    "seo": {
+      "title": "Threat Intelligence & Data Breach Monitoring | Proactive Brand Protection | WHITEGUARD",
+      "description": "WHITEGUARD's Threat Intelligence, Data Breach Monitoring, and Brand Protection services provide continuous monitoring of your digital environment to detect early signs of attack and prevent brand abuse. Stay ahead of threats with actionable intelligence."
+    },
+    "hero": {
+      "headline": "Threat Intelligence, Data Breach Monitoring & Brand Protection — Stay One Step Ahead",
+      "subtitle": "Gain continuous visibility and actionable intelligence to protect your brand, prevent data breaches, and mitigate emerging threats.",
+      "ctaPrimary": { "label": "Request a Threat Intelligence Briefing", "href": "/contact" },
+      "ctaSecondary": { "label": "Download Overview (PDF)", "href": "#" }
+    },
+    "whatIs": {
+      "heading": "What Is Threat Intelligence & Data Breach Monitoring?",
+      "body": "Threat Intelligence involves the collection, analysis, and sharing of information about potential or actual cyber threats that could impact your organization. Data Breach Monitoring provides early detection of exposed personal, financial, and sensitive data across the dark web and other online channels. Brand Protection ensures your digital reputation remains intact by monitoring for impersonation, domain misuse, and phishing attacks targeting your customers or employees. At WHITEGUARD, we combine these services into a unified offering that gives your organization the visibility, protection, and response capabilities it needs to stay secure in an increasingly hostile digital environment.",
+      "ctaLabel": "Get A Quote",
+      "ctaHref": "/contact"
+    },
+    "whoNeeds": {
+      "heading": "Who Needs Threat Intelligence & Data Breach Monitoring?",
+      "subtitle": "Essential for organizations seeking proactive threat defense and brand reputation protection.",
+      "cards": [
+        { "title": "Large Digital Footprints", "subtitle": "Websites, mobile apps, cloud services", "iconBg": "#dbeafe", "cardBg": "#eff6ff" },
+        { "title": "Financial & Fintech", "subtitle": "Protecting customer financial data", "iconBg": "#dcfce7", "cardBg": "#f0fdf4" },
+        { "title": "E-Commerce", "subtitle": "Brand impersonation and phishing detection", "iconBg": "#fef3c6", "cardBg": "#fffbeb" },
+        { "title": "Healthcare & SaaS", "subtitle": "Sensitive data, HIPAA compliance", "iconBg": "#f3e8ff", "cardBg": "#faf5ff" }
+      ],
+      "examples": "Banks preventing financial fraud • Healthcare providers safeguarding PHI • E-commerce companies fighting brand impersonation • SaaS businesses securing customer data"
+    },
+    "whatWeTest": {
+      "heading": "What We Deliver",
+      "subtitle": "Actionable Intelligence, Early Detection, and Brand Integrity",
+      "items": [
+        { "title": "Proactive Threat Intelligence", "description": "Gather, analyze, and act on the latest threat intelligence — from dark web monitoring to open-source intelligence (OSINT)." },
+        { "title": "Data Breach Detection", "description": "Monitor for exposed sensitive data such as email addresses, login credentials, credit card details, and customer PII. Alerts trigger when personal data is found in breach forums or compromised data dumps." },
+        { "title": "Brand Protection & Fraud Detection", "description": "Monitor the web for domain spoofing, phishing attempts, and brand impersonation, ensuring your digital brand remains protected from malicious actors." },
+        { "title": "Security Incident Early Warning", "description": "Real-time alerts on new threats, vulnerabilities, and breaches with a focus on identifying evolving attack techniques and emerging risks." },
+        { "title": "Executive Reporting & Alerts", "description": "Receive regular reports with actionable insights, trending risks, and remediation advice for your leadership team." },
+        { "title": "Threat Landscape & Actor Profiling", "description": "Analyze the threat landscape for your region and industry to identify APT groups and cybercriminal organizations targeting similar environments. Tailor proactive defenses and detection rules using MITRE ATT&CK." }
+      ]
+    },
+    "whatYouReceive": {
+      "heading": "What You Receive",
+      "subtitle": "Comprehensive Threat Intelligence Deliverables",
+      "items": [
+        { "number": "01", "imgSrc": "/images/icons/output-1.svg", "title": "Executive Summary", "description": "Threat landscape overview, breach alerts, and brand risk metrics.", "bg": "#eff6ff" },
+        { "number": "02", "imgSrc": "/images/icons/output-2.svg", "title": "Technical Intelligence Reports", "description": "Detailed threat actor TTPs, breach data analysis, and remediation guidance.", "bg": "#f0fdf4" },
+        { "number": "03", "imgSrc": "/images/icons/output-3.svg", "title": "Brand Protection Alerts", "description": "Real-time notifications for impersonation, phishing, and domain abuse.", "bg": "#fffbeb" },
+        { "number": "04", "imgSrc": "/images/icons/output-4.svg", "title": "Remediation Support", "description": "Actionable recommendations and incident response support.", "bg": "#faf5ff" },
+        { "number": "05", "imgSrc": "/images/icons/output-5.svg", "title": "WHITEHAWK Dashboard", "description": "24/7 visibility with threat and breach alerts delivered to your security team.", "bg": "#fff1f2" }
+      ],
+      "linkLabel": "See Threat Intelligence Pricing",
+      "linkHref": "/contact"
+    },
+    "methodology": {
+      "heading": "Methodology & Process",
+      "subtitle": "How We Deliver Threat Intelligence & Brand Protection",
+      "steps": [
+        { "number": 1, "title": "Data Collection & OSINT", "description": "Leverage dark web scanning tools, threat feeds, and open-source intelligence to gather data on emerging threats." },
+        { "number": 2, "title": "Threat Analysis & Enrichment", "description": "Enrich raw data with contextual analysis, categorize threats, and determine business impact." },
+        { "number": 3, "title": "Breach Detection & Monitoring", "description": "Implement continuous scanning for exposed data using proprietary tools, breach detection systems, and alert mechanisms." },
+        { "number": 4, "title": "Brand Monitoring & Fraud Detection", "description": "Monitor the surface web, dark web, and social media channels for brand abuse, impersonation, and phishing attempts." },
+        { "number": 5, "title": "Threat Landscape Mapping & Actor Profiling", "description": "Assess geographic and sector-specific exposure. Identify relevant APT groups, analyze TTPs, and develop tailored detection rules aligned with MITRE ATT&CK." },
+        { "number": 6, "title": "Reporting & Remediation", "description": "Provide actionable recommendations, remediation steps, and incident response support as threats evolve." },
+        { "number": 7, "title": "Continuous Improvement", "description": "Monitor trends, adapt to new threats, and optimize security measures to prevent future breaches." }
+      ]
+    },
+    "whenToRun": {
+      "heading": "When Should You Deploy Threat Intelligence & Data Breach Monitoring?",
+      "items": [
+        "After launching a new product, service, or website that could attract customer attention",
+        "During or after a cyberattack or data breach, to assess compromised information",
+        "As part of compliance efforts (PCI-DSS, GDPR, HIPAA)",
+        "Prior to or after a public-facing marketing campaign to monitor for brand impersonation",
+        "On a continuous basis as part of proactive threat management and risk reduction"
+      ]
+    },
+    "pricing": {
+      "heading": "Pricing Guide & Options",
+      "subtitle": "Flexible Packages for Scalable Protection",
+      "plans": [
+        { "id": "basic", "title": "Basic Threat Monitoring", "iconSrc": "/images/icons/pricing/icon-1.svg", "description": "Covers single domain or small online footprint; alerts for breached data." },
+        { "id": "advanced", "title": "Advanced Brand Protection", "iconSrc": "/images/icons/pricing/icon-2.svg", "description": "Includes social media monitoring, domain abuse, phishing, and online fraud detection." },
+        { "id": "comprehensive", "title": "Comprehensive Threat Intelligence", "iconSrc": "/images/icons/pricing/icon-3.svg", "description": "Full suite of proactive intelligence gathering, dark web monitoring, and real-time alerting for multiple domains." },
+        { "id": "continuous", "title": "Continuous Monitoring Program", "iconSrc": "/images/icons/pricing/icon-4.svg", "description": "Monthly subscription with continuous scanning and threat intelligence reports." },
+        { "id": "enterprise", "title": "Enterprise Threat Management", "iconSrc": "/images/icons/pricing/icon-5.svg", "description": "Custom intelligence feeds, 24/7 monitoring, and executive-level reporting for large organizations." }
+      ],
+      "ctaLabel": "Request Pricing Proposal",
+      "ctaHref": "/contact"
+    },
+    "standards": {
+      "heading": "Standards & Mappings",
+      "cards": [
+        { "id": "aligned", "title": "Aligned With", "description": "NIST Cybersecurity Framework • MITRE ATT&CK • GDPR • ISO 27001 • PCI-DSS • SAMA CSF", "iconSrc": "/images/icons/mapping/BookOpen.svg" },
+        { "id": "mapped", "title": "Mapped To Compliance Controls", "description": "ISO 27001 • SAMA • FRA 139 • PCI-DSS • GDPR", "iconSrc": "/images/icons/mapping/ShieldCheck.svg" }
+      ],
+      "certifications": {
+        "heading": "Certifications & Tools",
+        "items": [
+          { "id": "certs", "title": "SOC analysts certified in ECDFP, ECIR, CTIA, CSA, ECTHP", "iconSrc": "/images/icons/mapping/Award.svg" },
+          { "id": "whitehawk", "title": "Integration with WHITEHAWK for visibility and reporting (Optional)", "iconSrc": "/images/icons/mapping/Wrench.svg" }
+        ]
+      }
+    },
+    "testimonials": [
+      { "quote": "Threat intelligence caught a breach before we knew it. Invaluable.", "name": "Client", "title": "CISO, E-Commerce" }
+    ],
+    "faqs": [
+      { "question": "How is threat intelligence different from traditional security monitoring?", "description": "Threat intelligence proactively seeks out emerging threats and vulnerabilities, while traditional monitoring focuses on detecting known threats in real-time." },
+      { "question": "Do you monitor the dark web for our data?", "description": "Yes — we monitor dark web marketplaces and breach forums for compromised data, such as email addresses, credit card details, and PII." },
+      { "question": "How quickly do you provide alerts for data breaches?", "description": "Alerts are issued as soon as compromised data is identified, allowing you to act immediately." },
+      { "question": "Can you protect our brand from phishing or impersonation?", "description": "Yes — our brand protection service monitors domains, social media, and email for fraudulent activity, ensuring your brand integrity remains intact." },
+      { "question": "Can threat intelligence feed into our SIEM?", "description": "Yes — we integrate threat intelligence with your SIEM or security tools for seamless alerts and incident management." }
+    ],
+    "cta": {
+      "heading": "Stay Ahead of Cyber Threats and Protect Your Brand",
+      "subtitle": "WHITEGUARD's Threat Intelligence and Data Breach Monitoring service provides continuous visibility, proactive defense, and brand protection.",
+      "buttonLabel": "Request a Free Consultation Now",
+      "buttonHref": "/contact"
+    }
+  },
+  "managed-phishing-simulation-awareness": {
+    "title": "Managed Phishing Simulation & Awareness",
+    "seo": {
+      "title": "Managed Phishing Simulation & Awareness Training | Employee Security Education | WHITEGUARD",
+      "description": "WHITEGUARD's Managed Phishing Simulation & Awareness service helps organizations reduce human risk by simulating real-world phishing attacks and educating employees on security best practices. Strengthen your human firewall today."
+    },
+    "hero": {
+      "headline": "Managed Phishing Simulation & Awareness — Build a Resilient Human Firewall",
+      "subtitle": "Simulate real-world phishing attacks and build a security-conscious culture with continuous training and behavior analysis.",
+      "ctaPrimary": { "label": "Start a Phishing Simulation Campaign", "href": "/contact" },
+      "ctaSecondary": { "label": "Download Awareness Program Overview (PDF)", "href": "#" }
+    },
+    "whatIs": {
+      "heading": "What Is Managed Phishing Simulation & Awareness?",
+      "body": "Managed Phishing Simulation & Awareness is a comprehensive program designed to test your employees' susceptibility to phishing attacks, raise awareness about common cyber threats, and improve your organization's overall security posture. At WHITEGUARD, we simulate real-world phishing campaigns that mirror current attack tactics, test responses, and provide tailored training to help employees recognize and report threats. Our continuous learning approach ensures that your team stays updated on the latest attack vectors and builds a strong cybersecurity awareness culture that reduces the risk of social engineering breaches.",
+      "ctaLabel": "Get A Quote",
+      "ctaHref": "/contact"
+    },
+    "whoNeeds": {
+      "heading": "Who Needs Managed Phishing Simulation & Awareness?",
+      "subtitle": "Ideal for organizations looking to reduce human error and strengthen their defense against social engineering.",
+      "cards": [
+        { "title": "Large Employee Bases", "subtitle": "Enterprises with diverse teams", "iconBg": "#dbeafe", "cardBg": "#eff6ff" },
+        { "title": "Financial & Healthcare", "subtitle": "Protecting sensitive data", "iconBg": "#dcfce7", "cardBg": "#f0fdf4" },
+        { "title": "SaaS Providers", "subtitle": "Onboarding with secure practices", "iconBg": "#fef3c6", "cardBg": "#fffbeb" },
+        { "title": "Regulated Industries", "subtitle": "ISO 27001, SAMA, HIPAA compliance", "iconBg": "#f3e8ff", "cardBg": "#faf5ff" }
+      ],
+      "examples": "Banks securing financial transactions • Healthcare providers protecting PHI • Fintech companies training employees on phishing and ransomware threats • Global enterprises standardizing cybersecurity practices across offices"
+    },
+    "whatWeTest": {
+      "heading": "What We Deliver",
+      "subtitle": "Comprehensive Phishing Simulations & Engaging Training Programs",
+      "items": [
+        { "title": "Phishing Simulations", "description": "We design and execute realistic phishing campaigns based on the latest attack trends (spear-phishing, business email compromise, whaling, etc.), testing your employees' ability to spot suspicious emails, links, and attachments." },
+        { "title": "Employee Awareness Training", "description": "Provide tailored security awareness training modules that educate employees on phishing techniques, social engineering, secure data handling, and password best practices." },
+        { "title": "Security Awareness Reports", "description": "Receive comprehensive reporting on employee performance, click rates, and vulnerability to phishing attacks. This helps you identify areas for improvement and track progress over time." },
+        { "title": "Behavioral Change Insights", "description": "Gain insights into employee behavior and risk patterns, allowing you to create targeted awareness campaigns and reduce overall risk." },
+        { "title": "Customized Training Content", "description": "Build personalized awareness training programs based on your organizational culture, industry, and threat landscape." }
+      ]
+    },
+    "whatYouReceive": {
+      "heading": "What You Receive",
+      "subtitle": "Actionable Awareness Outcomes",
+      "items": [
+        { "number": "01", "imgSrc": "/images/icons/output-1.svg", "title": "Campaign Reports", "description": "Click rates, employee performance, and vulnerability metrics.", "bg": "#eff6ff" },
+        { "number": "02", "imgSrc": "/images/icons/output-2.svg", "title": "Training Modules", "description": "Tailored security awareness content for your organization.", "bg": "#f0fdf4" },
+        { "number": "03", "imgSrc": "/images/icons/output-3.svg", "title": "Progress Tracking", "description": "Long-term improvement metrics and recommendations.", "bg": "#fffbeb" },
+        { "number": "04", "imgSrc": "/images/icons/output-4.svg", "title": "Follow-Up Training", "description": "Immediate training for employees who fail simulations.", "bg": "#faf5ff" },
+        { "number": "05", "imgSrc": "/images/icons/output-5.svg", "title": "Platform Integration", "description": "Results integrated into WHITEHAWK or your SIEM.", "bg": "#fff1f2" }
+      ],
+      "linkLabel": "Start My Phishing Campaign",
+      "linkHref": "/contact"
+    },
+    "methodology": {
+      "heading": "Methodology & Process",
+      "subtitle": "How We Conduct Phishing Simulations & Drive Behavior Change",
+      "steps": [
+        { "number": 1, "title": "Planning & Customization", "description": "Define campaign goals, targeted employee groups, and simulation types. Customize content to align with your organization's environment and risk factors." },
+        { "number": 2, "title": "Phishing Attack Simulation", "description": "Launch phishing simulations with various tactics (email, SMS, voice phishing) to measure employee awareness and engagement." },
+        { "number": 3, "title": "Analysis & Reporting", "description": "Provide detailed reports with click rates, employee performance, and areas requiring improvement." },
+        { "number": 4, "title": "Awareness Training", "description": "Deliver tailored security training programs, focusing on phishing prevention and recognizing other social engineering tactics." },
+        { "number": 5, "title": "Follow-Up Simulations & Retesting", "description": "Run periodic phishing campaigns and retests to track improvements and reinforce learning." },
+        { "number": 6, "title": "Continuous Improvement", "description": "Provide ongoing education and updates to keep your team aware of the latest threats, vulnerabilities, and best practices." }
+      ]
+    },
+    "whenToRun": {
+      "heading": "When Should You Run Phishing Simulations & Awareness Campaigns?",
+      "items": [
+        "Onboarding new employees to ensure security practices are followed from day one",
+        "After a major infrastructure or technology change that could introduce new attack vectors",
+        "As part of compliance audits (PCI-DSS, HIPAA, ISO 27001)",
+        "To validate and improve the effectiveness of your existing security awareness training",
+        "As a proactive defense mechanism for quarterly or annual risk assessments"
+      ]
+    },
+    "pricing": {
+      "heading": "Pricing Guide & Options",
+      "subtitle": "Flexible Pricing Based on Your Organizational Needs",
+      "plans": [
+        { "id": "single", "title": "Single Campaign Package", "iconSrc": "/images/icons/pricing/icon-1.svg", "description": "One-off phishing simulation with targeted awareness training for smaller teams or specific departments." },
+        { "id": "standard", "title": "Standard Awareness Program", "iconSrc": "/images/icons/pricing/icon-2.svg", "description": "Monthly phishing simulations and quarterly awareness training with reporting." },
+        { "id": "continuous", "title": "Continuous Awareness Campaign", "iconSrc": "/images/icons/pricing/icon-3.svg", "description": "Year-round subscription with monthly simulations, training updates, and comprehensive reports." },
+        { "id": "compliance", "title": "Compliance Add-On", "iconSrc": "/images/icons/pricing/icon-4.svg", "description": "Tailored awareness training to meet specific regulatory requirements (e.g., PCI-DSS, HIPAA)." },
+        { "id": "retesting", "title": "Phishing Retesting & Continuous Monitoring", "iconSrc": "/images/icons/pricing/icon-5.svg", "description": "Ongoing email security tests and campaign adjustments." }
+      ],
+      "ctaLabel": "Request Pricing Proposal",
+      "ctaHref": "/contact"
+    },
+    "standards": {
+      "heading": "Standards & Mappings",
+      "cards": [
+        { "id": "aligned", "title": "Aligned With", "description": "NIST Cybersecurity Framework • ISO 27001 • PCI-DSS • HIPAA", "iconSrc": "/images/icons/mapping/BookOpen.svg" },
+        { "id": "mapped", "title": "Mapped To Compliance Controls", "description": "ISO 27001 • SAMA • PCI-DSS • HIPAA", "iconSrc": "/images/icons/mapping/ShieldCheck.svg" }
+      ],
+      "certifications": {
+        "heading": "Certifications & Tools",
+        "items": [
+          { "id": "certs", "title": "Security awareness specialists and certified trainers", "iconSrc": "/images/icons/mapping/Award.svg" },
+          { "id": "whitehawk", "title": "Integration with WHITEHAWK for centralized tracking and reporting", "iconSrc": "/images/icons/mapping/Wrench.svg" }
+        ]
+      }
+    },
+    "testimonials": [
+      { "quote": "Phishing click rates dropped 60% in 6 months. Highly effective program.", "name": "Client", "title": "Security Manager, Global Retail" }
+    ],
+    "faqs": [
+      { "question": "How often should we run phishing simulations?", "description": "We recommend monthly phishing campaigns to ensure continuous engagement and improvement. However, a quarterly schedule can also be effective for most organizations." },
+      { "question": "Can you customize the phishing emails for our business?", "description": "Yes. We tailor the phishing simulations to mirror industry-specific attacks, ensuring relevance to your organization's daily operations." },
+      { "question": "What happens if employees fail the phishing simulation?", "description": "We provide immediate follow-up training for employees who fall for simulated attacks, with additional resources to help them recognize similar threats." },
+      { "question": "Do you integrate the results with our security platform?", "description": "Yes. The results can be automatically integrated into WHITEHAWK or your existing SIEM platform for centralized tracking and reporting." },
+      { "question": "Do you track long-term progress?", "description": "Yes. We provide detailed reports on your team's progress over time, with recommendations for continued improvement." }
+    ],
+    "cta": {
+      "heading": "Strengthen Your Human Firewall Against Phishing Attacks",
+      "subtitle": "WHITEGUARD's Managed Phishing Simulation and Awareness service helps organizations build a resilient workforce capable of spotting, preventing, and reporting phishing attacks.",
+      "buttonLabel": "Start My Phishing Simulation Campaign Now",
+      "buttonHref": "/contact"
+    }
+  },
+  "managed-threat-hunting": {
+    "title": "Incident Response & Handling",
+    "seo": {
+      "title": "Incident Response & Handling Services | Cyber Attack Containment & Recovery | WHITEGUARD",
+      "description": "WHITEGUARD's Incident Response & Handling services provide fast containment, in-depth investigation, and recovery support to minimize the impact of security incidents. Get expert guidance and recovery strategies after a cyber-attack."
+    },
+    "hero": {
+      "headline": "Incident Response & Handling — Investigate, Contain, Recover.",
+      "subtitle": "Respond quickly to cyber threats with expert containment, thorough investigation, and recovery guidance. Minimize damage and enhance future resilience.",
+      "ctaPrimary": { "label": "Request Incident Response Support", "href": "/contact" },
+      "ctaSecondary": { "label": "Download IR Overview (PDF)", "href": "#" }
+    },
+    "whatIs": {
+      "heading": "What Is Incident Response & Handling?",
+      "body": "Incident Response (IR) is the process of identifying, containing, eradicating, and recovering from a cyberattack or security breach. Incident Handling involves the structured steps taken to manage an ongoing attack, including identifying the source, understanding its impact, and ensuring that any vulnerabilities are addressed to prevent further incidents. At WHITEGUARD, our Incident Response & Handling services are designed to minimize business downtime and protect your organization's reputation. Our certified experts rapidly respond to data breaches, ransomware, APTs (Advanced Persistent Threats), and other cyber threats. We work alongside your teams to ensure full recovery and help you implement a stronger defense against future incidents.",
+      "ctaLabel": "Get A Quote",
+      "ctaHref": "/contact"
+    },
+    "whoNeeds": {
+      "heading": "Who Needs Incident Response & Handling?",
+      "subtitle": "Critical for organizations facing or recovering from security incidents or those looking to prepare their teams for future threats.",
+      "cards": [
+        { "title": "Cyberattack Victims", "subtitle": "Experiencing or anticipating breach", "iconBg": "#dbeafe", "cardBg": "#eff6ff" },
+        { "title": "Financial Institutions", "subtitle": "PCI-DSS, FRA, SAMA compliance", "iconBg": "#dcfce7", "cardBg": "#f0fdf4" },
+        { "title": "Healthcare Providers", "subtitle": "Ransomware recovery, HIPAA", "iconBg": "#fef3c6", "cardBg": "#fffbeb" },
+        { "title": "SMBs", "subtitle": "Cost-effective expert-led response", "iconBg": "#f3e8ff", "cardBg": "#faf5ff" }
+      ],
+      "examples": "Banks responding to financial fraud • Healthcare organizations recovering from ransomware attacks • SMBs ensuring fast response times for potential data breaches • Technology companies protecting cloud and customer data"
+    },
+    "whatWeTest": {
+      "heading": "What We Deliver",
+      "subtitle": "Fast, Effective Response, Tailored to Your Business Needs",
+      "items": [
+        { "title": "Incident Containment & Analysis", "description": "Our expert team responds immediately to contain the threat and assess its scope, preventing further damage." },
+        { "title": "Root Cause Analysis", "description": "We perform an in-depth forensic analysis to identify the attack vector, how the breach occurred, and the data affected." },
+        { "title": "Malware & Data Recovery", "description": "Recover critical data lost during an attack, from encrypted files to compromised databases, ensuring business continuity." },
+        { "title": "Communication & Reporting", "description": "Prepare detailed reports and executive summaries for internal stakeholders, regulators, and clients. We ensure compliance with industry standards (ISO, SOC 2, PCI-DSS, HIPAA)." },
+        { "title": "Regulatory Compliance & Reporting", "description": "Support compliance with regulatory requirements and prepare documentation needed for audits and legal matters." },
+        { "title": "Forensics & Evidence Preservation", "description": "We secure and preserve all forensic data for potential legal proceedings, including log files, system images, and data recoveries." },
+        { "title": "Post-Incident Improvements & Threat Hunting", "description": "After the attack is contained, we provide recommendations and assistance to strengthen your defenses and conduct proactive threat hunting for future risks." }
+      ]
+    },
+    "whatYouReceive": {
+      "heading": "What You Receive",
+      "subtitle": "Comprehensive IR Deliverables",
+      "items": [
+        { "number": "01", "imgSrc": "/images/icons/output-1.svg", "title": "Executive Summary", "description": "Incident overview, business impact, and key findings for leadership.", "bg": "#eff6ff" },
+        { "number": "02", "imgSrc": "/images/icons/output-2.svg", "title": "Technical Report", "description": "Forensic analysis, attack timeline, and remediation steps.", "bg": "#f0fdf4" },
+        { "number": "03", "imgSrc": "/images/icons/output-3.svg", "title": "Compliance Documentation", "description": "Audit-ready reports for HIPAA, PCI-DSS, SOC 2, and other frameworks.", "bg": "#fffbeb" },
+        { "number": "04", "imgSrc": "/images/icons/output-4.svg", "title": "Evidence Preservation", "description": "Legal-ready forensic data and chain of custody.", "bg": "#faf5ff" },
+        { "number": "05", "imgSrc": "/images/icons/output-5.svg", "title": "Post-Incident Support", "description": "Threat hunting and security posture improvement.", "bg": "#fff1f2" }
+      ],
+      "linkLabel": "Request Incident Response Consultation",
+      "linkHref": "/contact"
+    },
+    "methodology": {
+      "heading": "Methodology & Process",
+      "subtitle": "How We Respond — Swift, Transparent, and Effective",
+      "steps": [
+        { "number": 1, "title": "Preparation", "description": "We ensure response readiness by establishing playbooks, tooling, contacts, communication channels, and understanding your critical systems before an incident occurs." },
+        { "number": 2, "title": "Identification & Triage", "description": "We detect, confirm, and evaluate the incident. This includes defining the scope, severity, and potential business impact to prioritize the response." },
+        { "number": 3, "title": "Containment", "description": "We isolate affected systems and stop the attack from spreading. Temporary controls stabilize the environment while preserving evidence." },
+        { "number": 4, "title": "Eradication", "description": "We remove malicious artifacts, disable attacker access, close exploited vulnerabilities, and ensure no persistence mechanisms remain." },
+        { "number": 5, "title": "Recovery", "description": "We restore systems and services to secure operation, recover data if necessary, and monitor for signs of reinfection during reintroduction to production." },
+        { "number": 6, "title": "Reporting & Lessons Learned", "description": "We review the incident, document findings, and provide recommendations to strengthen defenses, update playbooks, and improve detection going forward." }
+      ]
+    },
+    "whenToRun": {
+      "heading": "When Should You Engage Incident Response Services?",
+      "items": [
+        "After experiencing a cyberattack (ransomware, data breach, insider threat)",
+        "When unusual activity or suspicious behavior is detected in your network",
+        "Before conducting a vulnerability scan or patching exercise (to ensure no breach has occurred)",
+        "As part of regular incident response tabletop exercises to test your readiness",
+        "When you need to comply with regulatory bodies or audit requirements after an incident"
+      ]
+    },
+    "pricing": {
+      "heading": "Pricing Guide & Options",
+      "subtitle": "Flexible Engagement Options Tailored to Your Incident Needs",
+      "plans": [
+        { "id": "basic", "title": "Basic Incident Response", "iconSrc": "/images/icons/pricing/icon-1.svg", "description": "Initial containment and triage for small to mid-sized incidents." },
+        { "id": "full", "title": "Full Incident Response & Recovery", "iconSrc": "/images/icons/pricing/icon-2.svg", "description": "Comprehensive attack containment, investigation, remediation, and recovery for large incidents." },
+        { "id": "retainer", "title": "Continuous IR Retainer", "iconSrc": "/images/icons/pricing/icon-3.svg", "description": "Dedicated incident response team on call for immediate deployment during critical incidents." },
+        { "id": "compliance", "title": "Compliance & Reporting Add-On", "iconSrc": "/images/icons/pricing/icon-4.svg", "description": "Post-incident reporting, regulatory compliance documentation, and audit support." },
+        { "id": "threat-hunting", "title": "Proactive Threat Hunting", "iconSrc": "/images/icons/pricing/icon-5.svg", "description": "Subscription-based proactive threat analysis to detect hidden or dormant threats across your infrastructure." }
+      ],
+      "ctaLabel": "Request Pricing Proposal",
+      "ctaHref": "/contact"
+    },
+    "standards": {
+      "heading": "Standards & Mappings",
+      "cards": [
+        { "id": "aligned", "title": "Aligned With", "description": "NIST SP 800-61 (Incident Handling), ISO 27035 (Incident Management), SANS, SOC 2, PCI-DSS, HIPAA, and SAMA CSF", "iconSrc": "/images/icons/mapping/BookOpen.svg" },
+        { "id": "mapped", "title": "Mapped To Compliance Controls", "description": "ISO 27001 • SAMA • FRA 139 • PCI-DSS • HIPAA", "iconSrc": "/images/icons/mapping/ShieldCheck.svg" }
+      ],
+      "certifications": {
+        "heading": "Certifications & Tools",
+        "items": [
+          { "id": "certs", "title": "SOC analysts certified in ECDFP, ECIR, CTIA, CSA, ECTHP", "iconSrc": "/images/icons/mapping/Award.svg" },
+          { "id": "whitehawk", "title": "Integration with WHITEHAWK for alert tracking, investigation, and incident reporting (Optional)", "iconSrc": "/images/icons/mapping/Wrench.svg" }
+        ]
+      }
+    },
+    "testimonials": [
+      { "quote": "Response time was under 2 hours. Team was exceptional.", "name": "Client", "title": "CISO, Healthcare Provider" }
+    ],
+    "faqs": [
+      { "question": "How quickly can WHITEGUARD respond to an incident?", "description": "Our team is available 24/7. The average response time for critical incidents is 1-2 hours, with on-site support for severe breaches." },
+      { "question": "What types of incidents do you handle?", "description": "We handle all types of security incidents including ransomware, data breaches, malware infections, insider threats, and cyber fraud." },
+      { "question": "Do you provide post-incident support?", "description": "Yes, we offer ongoing support to improve your defenses, monitor for new threats, and optimize response plans." },
+      { "question": "Can we integrate the incident response data into our existing systems?", "description": "Yes, findings can be integrated with your SIEM, ticketing system (JIRA, ServiceNow), or WHITEHAWK for continuous tracking." },
+      { "question": "Do you provide compliance support for regulatory reporting?", "description": "Yes, we prepare compliance reports for HIPAA, PCI-DSS, SOC 2, and other regulatory bodies." }
+    ],
+    "cta": {
+      "heading": "Respond Faster. Recover Smarter. Strengthen Your Security.",
+      "subtitle": "WHITEGUARD's Incident Response & Handling services help you quickly manage and recover from attacks while strengthening your defenses for the future.",
+      "buttonLabel": "Request a Free Incident Response Consultation",
+      "buttonHref": "/contact"
+    }
+  },
+  "business-continuity-recovery": {
+    "title": "Business Continuity & Disaster Recovery (BCDR)",
+    "seo": {
+      "title": "Business Continuity & Disaster Recovery Services | Incident Recovery, DRP, BCP | WHITEGUARD",
+      "description": "WHITEGUARD's Business Continuity & Disaster Recovery (BCDR) services help organizations plan, implement, and test effective recovery strategies. Minimize downtime, reduce risk, and ensure rapid recovery after incidents or disruptions."
+    },
+    "hero": {
+      "headline": "Business Continuity & Disaster Recovery (BCDR) — Ensure Resilience. Guarantee Recovery.",
+      "subtitle": "Plan for the unexpected, recover quickly, and continue business operations with WHITEGUARD's tailored Business Continuity and Disaster Recovery solutions.",
+      "ctaPrimary": { "label": "Request a BCDR Consultation", "href": "/contact" },
+      "ctaSecondary": { "label": "Download BCDR Overview (PDF)", "href": "#" }
+    },
+    "whatIs": {
+      "heading": "What Is Business Continuity & Disaster Recovery (BCDR)?",
+      "body": "Business Continuity ensures that critical business functions continue during and after a disaster, while Disaster Recovery focuses on restoring IT infrastructure and data after a disruptive event. At WHITEGUARD, we help organizations design, implement, and test BCP (Business Continuity Plans) and DRP (Disaster Recovery Plans) to prepare for worst-case scenarios. Our comprehensive approach enables you to: Minimize downtime during incidents; Recover critical data and infrastructure; Meet regulatory compliance for risk management and operational continuity. We combine risk assessment, business impact analysis, failover strategies, and recovery procedures into a tailored, actionable plan.",
+      "ctaLabel": "Get A Quote",
+      "ctaHref": "/contact"
+    },
+    "whoNeeds": {
+      "heading": "Who Needs BCDR?",
+      "subtitle": "Essential for organizations in every industry that need to safeguard business operations and maintain compliance.",
+      "cards": [
+        { "title": "Financial Institutions", "subtitle": "Rapid recovery of customer data and systems", "iconBg": "#dbeafe", "cardBg": "#eff6ff" },
+        { "title": "Healthcare Providers", "subtitle": "Patient records and medical devices under HIPAA", "iconBg": "#dcfce7", "cardBg": "#f0fdf4" },
+        { "title": "Technology Companies", "subtitle": "Cloud-based services and customer-facing platforms", "iconBg": "#fef3c6", "cardBg": "#fffbeb" },
+        { "title": "Manufacturing & Logistics", "subtitle": "Operational systems and supply chain continuity", "iconBg": "#f3e8ff", "cardBg": "#faf5ff" }
+      ],
+      "examples": "Banks and insurance companies recovering financial systems • Healthcare systems ensuring patient data access post-crisis • SaaS platforms maintaining 24/7 availability • Manufacturing sectors securing OT environments from downtime"
+    },
+    "whatWeTest": {
+      "heading": "What We Deliver",
+      "subtitle": "Full Continuity Planning, Testing, and Post-Incident Support",
+      "items": [
+        { "title": "Business Continuity Plan (BCP) Development", "description": "Create and implement a robust BCP that identifies critical business functions, recovery strategies, and employee roles during incidents." },
+        { "title": "Disaster Recovery Plan (DRP) Development", "description": "Establish procedures for restoring IT infrastructure, applications, and data after cyberattacks, hardware failure, or natural disasters." },
+        { "title": "Risk Assessment & Business Impact Analysis (BIA)", "description": "Identify risks, vulnerabilities, and critical assets to prioritize recovery efforts. Assess potential downtime and business losses during disruptions." },
+        { "title": "Failover & Recovery Solutions", "description": "Design and implement failover mechanisms (backup servers, cloud failover) to ensure systems are restored quickly and seamlessly." },
+        { "title": "Testing & Drills", "description": "Test BCP and DRP plans through regular tabletop exercises, simulations, and live drills to identify weaknesses and improve response readiness." },
+        { "title": "Post-Incident Support & Improvement", "description": "After an incident, we support incident response efforts, assess recovery performance, and improve continuity plans for future resilience." }
+      ]
+    },
+    "whatYouReceive": {
+      "heading": "What You Receive",
+      "subtitle": "Comprehensive BCDR Deliverables",
+      "items": [
+        { "number": "01", "imgSrc": "/images/icons/output-1.svg", "title": "BCP & DRP Documents", "description": "Tailored continuity and recovery plans for your organization.", "bg": "#eff6ff" },
+        { "number": "02", "imgSrc": "/images/icons/output-2.svg", "title": "Risk & BIA Report", "description": "Risk assessment and business impact analysis with prioritization.", "bg": "#f0fdf4" },
+        { "number": "03", "imgSrc": "/images/icons/output-3.svg", "title": "Failover Architecture", "description": "Design and implementation guidance for redundancy and recovery.", "bg": "#fffbeb" },
+        { "number": "04", "imgSrc": "/images/icons/output-4.svg", "title": "Test Results & Recommendations", "description": "Drill outcomes and improvement recommendations.", "bg": "#faf5ff" },
+        { "number": "05", "imgSrc": "/images/icons/output-5.svg", "title": "WHITEHAWK Integration", "description": "Continuous monitoring, reporting, and resilience metrics.", "bg": "#fff1f2" }
+      ],
+      "linkLabel": "Request BCDR Consultation",
+      "linkHref": "/contact"
+    },
+    "methodology": {
+      "heading": "Methodology & Process",
+      "subtitle": "How We Build Resilience — Proven Strategies, Comprehensive Support",
+      "steps": [
+        { "number": 1, "title": "Risk Assessment & BIA", "description": "Conduct risk assessments and business impact analyses to prioritize critical functions and identify threats." },
+        { "number": 2, "title": "Plan Development", "description": "Design tailored BCP and DRP frameworks based on risk analysis, ensuring that systems, people, and processes are covered." },
+        { "number": 3, "title": "Failover & Redundancy Implementation", "description": "Implement failover technologies, backups, and recovery sites to ensure rapid recovery in the event of a disaster." },
+        { "number": 4, "title": "Testing & Simulation", "description": "Run simulated disaster scenarios, crisis drills, and full-scale recovery tests to ensure that employees and systems are prepared." },
+        { "number": 5, "title": "Incident Response & Recovery", "description": "When disaster strikes, we assist in recovery efforts, guiding you through containment, mitigation, and business resumption." },
+        { "number": 6, "title": "Ongoing Review & Optimization", "description": "Review BCP and DRP plans regularly to optimize them based on new technologies, business changes, and evolving risks." }
+      ]
+    },
+    "whenToRun": {
+      "heading": "When Should You Implement BCDR?",
+      "items": [
+        "During major IT infrastructure upgrades, cloud migration, or technology adoption",
+        "Before regulatory compliance audits (ISO 22301, SOC 2, PCI-DSS)",
+        "After experiencing a security breach or natural disaster that impacts operations",
+        "As part of ongoing risk management and resilience initiatives",
+        "When launching new business-critical services or products that must be continuously available"
+      ]
+    },
+    "pricing": {
+      "heading": "Pricing Guide & Options",
+      "subtitle": "Tailored Solutions for Every Organization's Continuity Needs",
+      "plans": [
+        { "id": "basic", "title": "Basic BCDR Plan", "iconSrc": "/images/icons/pricing/icon-1.svg", "description": "Simple continuity planning and IT recovery strategies for small to mid-sized businesses." },
+        { "id": "advanced", "title": "Advanced BCDR Program", "iconSrc": "/images/icons/pricing/icon-2.svg", "description": "Comprehensive BCP, DRP, and failover strategies for larger enterprises and critical infrastructures." },
+        { "id": "continuous", "title": "Continuous BCDR Monitoring", "iconSrc": "/images/icons/pricing/icon-3.svg", "description": "Ongoing risk analysis, recovery drills, and system health checks with real-time updates through WHITEHAWK." },
+        { "id": "compliance", "title": "Compliance & Audit Add-On", "iconSrc": "/images/icons/pricing/icon-4.svg", "description": "Customized reporting for compliance with ISO 22301, PCI-DSS, and SOC 2." },
+        { "id": "incident-recovery", "title": "Incident Recovery & Testing Add-On", "iconSrc": "/images/icons/pricing/icon-5.svg", "description": "Subscription for post-incident support, testing, and recovery optimization." }
+      ],
+      "ctaLabel": "Request Pricing Proposal",
+      "ctaHref": "/contact"
+    },
+    "standards": {
+      "heading": "Standards & Mappings",
+      "cards": [
+        { "id": "aligned", "title": "Aligned With", "description": "ISO 22301 (Business Continuity Management) • NIST 800-34 (IT Contingency Planning) • PCI-DSS (Disaster Recovery) • SOC 2 (Availability)", "iconSrc": "/images/icons/mapping/BookOpen.svg" },
+        { "id": "mapped", "title": "Mapped To Compliance Controls", "description": "ISO 22301 • PCI-DSS • SOC 2 • SAMA", "iconSrc": "/images/icons/mapping/ShieldCheck.svg" }
+      ],
+      "certifications": {
+        "heading": "Certifications & Tools",
+        "items": [
+          { "id": "certs", "title": "SOC analysts certified in ECDFP, ECIR, CTIA, CSA, ECTHP", "iconSrc": "/images/icons/mapping/Award.svg" },
+          { "id": "whitehawk", "title": "Integration with WHITEHAWK for continuous monitoring, reporting, and resilience metrics", "iconSrc": "/images/icons/mapping/Wrench.svg" }
+        ]
+      }
+    },
+    "testimonials": [
+      { "quote": "BCDR plan saved us during a ransomware attack. Recovery was seamless.", "name": "Client", "title": "IT Director, Manufacturing" }
+    ],
+    "faqs": [
+      { "question": "What's the difference between Business Continuity and Disaster Recovery?", "description": "Business Continuity is about keeping essential business functions running during a disaster, while Disaster Recovery focuses on restoring IT systems and data after an event." },
+      { "question": "Can you implement a BCDR plan for cloud-only environments?", "description": "Yes, we specialize in both hybrid and cloud-only BCDR planning, ensuring your cloud resources are fully protected." },
+      { "question": "How often should we test our BCDR plan?", "description": "We recommend testing your plan quarterly to ensure your team and systems are prepared for unexpected disruptions." },
+      { "question": "Do you offer BCDR services for regulated industries?", "description": "Yes, we provide tailored BCDR solutions for regulated industries such as finance, healthcare, and government, helping you meet compliance standards." },
+      { "question": "How long does it take to implement a BCDR plan?", "description": "Implementation time varies depending on scope and environment size, but typically takes 4-8 weeks for complete development and testing." }
+    ],
+    "cta": {
+      "heading": "Be Prepared for the Unexpected.",
+      "subtitle": "WHITEGUARD's Business Continuity & Disaster Recovery services help you stay resilient and recover faster — minimizing downtime and protecting what matters most.",
+      "buttonLabel": "Request a Free BCDR Consultation",
+      "buttonHref": "/contact"
     }
   }
 }
