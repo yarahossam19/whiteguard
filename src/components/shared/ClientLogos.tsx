@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import type { ClientLogosData } from "@/data/client-logos";
 import type { PartnersLogosData } from "@/data/partners-logos";
+import Image from "next/image";
 
 type LogosData = ClientLogosData | PartnersLogosData;
 
@@ -13,10 +14,12 @@ function LogoGrid({ items }: { items: LogosData }) {
           key={`${logo.id}-${i}`}
           className="flex items-center justify-center opacity-90 transition hover:opacity-100"
         >
-          <img
+          <Image
             src={logo.src}
             alt={logo.alt}
-            className={`${logo.width} h-auto max-h-[56px] object-contain`}
+            width={120}
+            height={100}
+            className={`w-[${parseInt(logo.width)}px] h-auto max-h-[56px] object-contain`}
           />
         </div>
       ))}

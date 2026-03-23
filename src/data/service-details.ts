@@ -8,6 +8,9 @@ const data = serviceDetails as Record<string, ServiceDetailData>;
 const linkAliases: Record<string, string> = {
   "offensive-security": "penetration-testing",
   "cis-benchmarks": "cis-benchmarks-assessment",
+  "ssdlc-training": "ssdlt-training",
+  "hipaa-gdpr-readiness": "hipaa-compliance",
+  "central-bank-sector-specific-compliance": "cbe-compliance",
 };
 
 export function getServiceDetailByLink(link: string): ServiceDetailData | null {

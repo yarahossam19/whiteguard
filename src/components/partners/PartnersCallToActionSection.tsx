@@ -50,10 +50,10 @@ export default function PartnersCallToActionSection({
         </div>
 
         {/* Buttons - gap 16px */}
-        <div className="grid w-full max-w-md grid-cols-1 items-center justify-center gap-4 sm:max-w-none sm:grid-cols-2">
+        <div className=" w-full max-w-md flex flex-col lg:flex-row items-center justify-center gap-4 sm:max-w-none sm:grid-cols-2">
           <Link
             href={primaryCta.href}
-            className="flex h-[57px]  flex-1 items-center justify-center gap-3 rounded-full bg-white px-10 py-[15px] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.15)] transition-opacity hover:opacity-95"
+            className="flex h-[57px]  flex-1 items-center justify-center gap-3 rounded-full bg-white px-10 py-[15px] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.15)] transition-opacity hover:opacity-95 sm:min-w-[200px] lg:min-w-[280px] lg:max-w-[310px]"
           >
             <span className="font-jakarta text-[16px] font-extrabold leading-[24px] text-[#003859]">
               {primaryCta.label}
