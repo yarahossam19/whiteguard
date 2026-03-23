@@ -197,11 +197,11 @@
     },
     "defensive": {
       "hero": {
-        "heading": "Detect. Respond. Recover.",
-        "headingAccent": "Defend Your Digital Assets.",
-        "subtitle": "WHITEGUARD's Defensive Security services help you build resilient security operations. From SOC design to incident response, we ensure you're ready when threats strike.",
-        "ctaPrimary": { "label": "Request an Assessment", "href": "#" },
-        "ctaSecondary": { "label": "Talk to a Security Expert", "href": "#" }
+        "heading": "Real-Time Defense. Rapid ",
+        "headingAccent": "Response. Reliable Protection.",
+        "subtitle": "WHITEGUARD’s Blue Team services help organizations detect threats, respond with speed, and recover with confidence. From SOC-as-a-Service to incident response and forensics, we design defense systems that scale, adapt, and protect — 24/7.",
+        "ctaPrimary": { "label": null, "href": "#" },
+        "ctaSecondary": { "label": null, "href": "#" }
       },
       "cards": [
         {
@@ -423,133 +423,390 @@
     },
     "grc": {
       "hero": {
-        "heading": "Govern. Assess. Comply.",
-        "headingAccent": "Align Security with Business.",
-        "subtitle": "WHITEGUARD's GRC services help you navigate complex regulatory landscapes. From ISO 27001 to SAMA CSF and NCA ECC, we guide you to compliance.",
-        "ctaPrimary": { "label": "Request an Assessment", "href": "#" },
-        "ctaSecondary": { "label": "Talk to a Compliance Expert", "href": "#" }
+        "heading": "Governance, Risk, Compliance,",
+        "headingAccent": " Covered.",
+        "subtitle": "Compliance doesn’t start with checklists. It starts with strategy WHITEGUARD’s GRC services help you design, implement, and manage security frameworks aligned to local and international standards. Whether you're pursuing ISO 27001 certification, preparing for a SAMA audit, or aligning to PCI-DSS or GDPR, our team ensures you meet regulatory demands without disrupting business.",
+        "ctaPrimary": { "label": null, "href": "#" },
+        "ctaSecondary": { "label": null, "href": "#" }
       },
       "cards": [
         {
-          "id": "iso-27001",
-          "title": "ISO 27001 Certification",
-          "description": "Achieve international recognition for your information security management system. We guide you through gap assessment, implementation, and certification.",
+          "link": "iso-27001",
+          "title": "ISO/IEC 27001 Readiness",
+          "description": "From policy to audit — we guide you to certification  We design and implement full ISMS programs aligned to ISO 27001 and PIMS aligned to ISO 27701.",
           "features": [
             {
-              "icon": "/images/icons/benefit-pricing.svg",
-              "label": "Gap Assessment"
+              "icon": "/images/services/grc-icons/icon-1.svg",
+              "label": "Gap Assessment & Risk Plan"
             },
             {
-              "icon": "/images/icons/benefit-incentives.svg",
-              "label": "ISMS Design"
+              "icon": "/images/services/grc-icons/icon-2.svg",
+              "label": "Policy Development"
             },
             {
-              "icon": "/images/icons/benefit-resources.svg",
-              "label": "Certification Support"
+              "icon": "/images/services/grc-icons/icon-3.svg",
+              "label": "Internal Audit Support"
             }
           ],
           "cta": {
-            "label": "Start Your Journey",
+            "label": "Start Your ISO 27001 Prep Now",
             "href": "/services/iso-27001"
           },
-          "image": "/images/services/grc.png",
+          "image": "/images/services/grc-1.png",
           "imageLeft": true
         },
         {
-          "link": "sama-csf",
-          "title": "SAMA CSF Compliance",
-          "description": "Meet Saudi Arabia's Cybersecurity Framework requirements. We help financial institutions align with SAMA regulations and pass audits.",
+          "link": "sama-readiness",
+          "title": "SAMA Compliance Program",
+          "description": "Meet Saudi Arabia's strictest cybersecurity framework  WHITEGUARD helps financial institutions implement the SAMA CSF and navigate regulatory audits with confidence.",
           "features": [
             {
-              "icon": "/images/icons/benefit-pricing.svg",
+              "icon": "/images/services/grc-icons/icon-4.svg",
+              "label": "SAMA Gap Analysis"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-5.svg",
+              "label": "Control & Risk Register"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-6.svg",
+              "label": "Board-level Reporting"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-7.svg",
+              "label": "Staff Awareness"
+            }
+          ],
+          "cta": {
+            "label": "Achieve SAMA Compliance",
+            "href": "/services/sama-readiness"
+          },
+          "image": "/images/services/grc-2.png",
+          "imageLeft": false
+        },
+        {
+          "link": "nca-compliance",
+          "title": "NCA Compliance",
+          "description": "Secure national assets. Comply with KSA's NCA mandates  We support public & private sector entities to align with NCA Essential Cybersecurity Controls (ECC) and CCC standards.",
+          "features": [
+            {
+              "icon": "/images/services/grc-icons/icon-8.svg",
               "label": "Readiness Assessment"
             },
             {
-              "icon": "/images/icons/benefit-incentives.svg",
+              "icon": "/images/services/grc-icons/icon-9.svg",
+              "label": "Policy Alignment"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-10.svg",
+              "label": "Audit Trail & Advisory"
+            }
+          ],
+          "cta": {
+            "label": "Prepare for Your NCA Assessment",
+            "href": "/services/nca-compliance"
+          },
+          "image": "/images/services/grc-3.png",
+          "imageLeft": true
+        },
+        {
+          "link": "pci-dss-pin-security-compliance",
+          "title": "PCI-DSS / PIN Security Compliance",
+          "description": "Protect cardholder data and reduce fraud risk  We guide merchants, processors, and fintech's in securing environments and achieving PCI compliance.",
+          "features": [
+            {
+              "icon": "/images/services/grc-icons/icon-11.svg",
+              "label": "SAQ Support"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-12.svg",
+              "label": "Network Segmentation"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-13.svg",
+              "label": "Scan Management"
+            }
+          ],
+          "cta": {
+            "label": "Secure Cardholder Data",
+            "href": "/services/pci-dss-pin-security-compliance"
+          },
+          "image": "/images/services/grc-4.png",
+          "imageLeft": false
+        },
+        {
+          "link": "soc-2-compliance",
+          "title": "SOC 2",
+          "description": "Build trust with customers and partners through SOC 2 compliance  WHITEGUARD designs and implements SOC 2 control environments across trust principles: security, availability, processing integrity, confidentiality, and privacy.",
+          "features": [
+            {
+              "icon": "/images/services/grc-icons/icon-14.svg",
+              "label": "Gap Assessment"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-15.svg",
+              "label": "Control Documentation"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-16.svg",
+              "label": "Audit Readiness"
+            }
+          ],
+          "cta": {
+            "label": "Launch SOC 2 Readiness Program",
+            "href": "/services/soc-2-compliance"
+          },
+          "image": "/images/services/grc-5.png",
+          "imageLeft": true
+        },
+        {
+          "link": "hipaa-gdpr-readiness",
+          "title": "HIPAA & GDPR Readiness",
+          "description": "Protect patient personal data and avoid penalties  Our team helps healthcare providers, SaaS platforms, and processors meet privacy regulations across geographies.",
+          "features": [
+            {
+              "icon": "/images/services/grc-icons/icon-17.svg",
+              "label": "PHI/PII Data Mapping"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-18.svg",
+              "label": "Privacy Policy Dev"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-19.svg",
+              "label": "Consent & DSR Workflows"
+            }
+          ],
+          "cta": {
+            "label": "Start Data Privacy Alignment",
+            "href": "/services/hipaa-gdpr-readiness"
+          },
+          "image": "/images/services/grc-6.png",
+          "imageLeft": false
+        },
+        {
+          "link": "aramco-ccc",
+          "title": "Aramco Cybersecurity Compliance Certificate (CCC)",
+          "description": "Earn and maintain vendor trust with Aramco-aligned controls We support organizations working with Aramco in meeting CCC standards and controls.",
+          "features": [
+            {
+              "icon": "/images/services/grc-icons/icon-20.svg",
+              "label": "CCC Gap Assessment"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-21.svg",
+              "label": "Remediation Planning"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-22.svg",
+              "label": "Ongoing Advisory"
+            }
+          ],
+          "cta": {
+            "label": "Get CCC-Ready",
+            "href": "/services/aramco-ccc"
+          },
+          "image": "/images/services/grc-7.png",
+          "imageLeft": true
+        },
+        {
+          "link": "cbe-compliance",
+          "title": "Central Bank of Egypt (CBE) Compliance",
+          "description": "Meet CBE Cybersecurity Framework requirements for banks, fintechs, and insurers in Egypt. We help you achieve regulatory compliance and audit readiness.",
+          "features": [
+            {
+              "icon": "/images/services/grc-icons/icon-23.svg",
+              "label": "CBE Gap Analysis"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-24.svg",
+              "label": "Control Implementation"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-25.svg",
+              "label": "Audit Readiness"
+            }
+          ],
+          "cta": {
+            "label": "Align with CBE Regulations",
+            "href": "/services/cbe-compliance"
+          },
+          "image": "/images/services/grc-8.png",
+          "imageLeft": false
+        },
+        {
+          "link": "cbl-compliance",
+          "title": "Central Bank of Libya (CBL) Compliance",
+          "description": "Achieve CBL Cybersecurity Compliance for financial institutions in Libya. We support banks, insurers, and fintechs with gap assessment and implementation.",
+          "features": [
+            {
+              "icon": "/images/services/grc-icons/icon-23.svg",
+              "label": "CBL Gap Analysis"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-24.svg",
+              "label": "Policy Development"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-25.svg",
+              "label": "Audit Support"
+            }
+          ],
+          "cta": {
+            "label": "Align with CBL Regulations",
+            "href": "/services/cbl-compliance"
+          },
+          "image": "/images/services/grc-7.png",
+          "imageLeft": true
+        },
+        {
+          "link": "fra-139-compliance",
+          "title": "FRA 139 Compliance",
+          "description": "Meet FRA 139 cybersecurity requirements for non-banking financial institutions (NBFIs) in Egypt. Insurance, fintech, and securities firms.",
+          "features": [
+            {
+              "icon": "/images/services/grc-icons/icon-23.svg",
+              "label": "FRA 139 Gap Analysis"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-24.svg",
               "label": "Control Mapping"
             },
             {
-              "icon": "/images/icons/benefit-resources.svg",
-              "label": "Audit Preparation"
+              "icon": "/images/services/grc-icons/icon-25.svg",
+              "label": "Regulatory Submission"
             }
           ],
-          "cta": { "label": "Get SAMA Ready", "href": "/services/sama-csf" },
-          "image": "/images/services/grc.png",
+          "cta": {
+            "label": "Align with FRA 139",
+            "href": "/services/fra-139-compliance"
+          },
+          "image": "/images/services/grc-8.png",
           "imageLeft": false
         }
       ],
       "bottomCta": {
-        "heading": "Navigate Compliance with Confidence.",
-        "headingAccent": "We Know the Frameworks.",
-        "subtitle": "Our GRC experts have helped organizations across MENA achieve and maintain compliance.",
-        "buttonLabel": "Book a GRC Consultation",
+        "heading": "Why Leading Organizations",
+        "headingAccent": "Trust WHITEGUARD",
+        "subtitle": "All offensive services are delivered by certified professionals with real-world experience in threat simulation and enterprise security.",
+        "buttonLabel": "Request Custom Training Plan",
         "href": "#"
       }
     },
     "training": {
       "hero": {
-        "heading": "Train. Simulate. Empower.",
-        "headingAccent": "Build a Security-First Culture.",
-        "subtitle": "WHITEGUARD's Awareness Training programs turn your employees into your first line of defense. From phishing simulations to hands-on workshops.",
-        "ctaPrimary": { "label": "Request a Demo", "href": "#" },
-        "ctaSecondary": { "label": "Talk to a Training Expert", "href": "#" }
+        "heading": "Your people are your first line of ",
+        "headingAccent": "defense, make them your strongest",
+        "subtitle": "WHITEGUARD’s Cybersecurity Training & Awareness programs help organizations reduce human error, build internal security capabilities, and foster a proactive security culture. From entry-level awareness to advanced red and blue team training, we tailor each program to your teams, threats, and industry",
+        "ctaPrimary": { "label": "Request Custom Training Plan", "href": "#" },
+        "ctaSecondary": { "label": "Explore Training Programs", "href": "#" }
       },
       "cards": [
         {
-          "link": "phishing-simulation",
-          "title": "Phishing Simulation",
-          "description": "Test your employees' ability to spot phishing. We run realistic campaigns and provide detailed reporting to improve awareness.",
+          "link": "security-awareness-training",
+          "title": "Security Awareness Training (for Non-Technical Staff)",
+          "description": "Make every employee your first line of defense We deliver engaging, multilingual training that turns complex cyber threats into simple, memorable lessons for all staff levels.",
           "features": [
             {
-              "icon": "/images/icons/benefit-pricing.svg",
-              "label": "Custom Campaigns"
+              "icon": "/images/services/training-icons/icon-1.svg",
+              "label": "Phishing Awareness"
             },
             {
-              "icon": "/images/icons/benefit-incentives.svg",
-              "label": "Real-time Reporting"
+              "icon": "/images/services/training-icons/icon-2.svg",
+              "label": "Device Security"
             },
             {
-              "icon": "/images/icons/benefit-resources.svg",
-              "label": "Remediation Training"
+              "icon": "/images/services/training-icons/icon-3.svg",
+              "label": "Compliance Modules"
             }
           ],
           "cta": {
-            "label": "Run a Phishing Test",
-            "href": "/services/phishing-simulation"
+            "label": "Train Your Team Now",
+            "href": "/services/security-awareness-training"
           },
-          "image": "/images/services/training.png",
+          "image": "/images/services/training-1.png",
           "imageLeft": true
         },
         {
-          "link": "security-workshops",
-          "title": "Security Workshops",
-          "description": "Hands-on training for developers, IT teams, and executives. We deliver tailored workshops that build practical security skills.",
+          "link": "ssdlt-training",
+          "title": "Secure Software Development Lifecycle (SSDLC) Training",
+          "description": "Secure your code — from the first line Train your dev teams to write secure code and integrate security into every stage of the software lifecycle.",
           "features": [
             {
-              "icon": "/images/icons/benefit-pricing.svg",
-              "label": "Developer Training"
+              "icon": "/images/services/training-icons/icon-4.svg",
+              "label": "OWASP / CWE"
             },
             {
-              "icon": "/images/icons/benefit-incentives.svg",
-              "label": "Executive Briefings"
+              "icon": "/images/services/training-icons/icon-5.svg",
+              "label": "Threat Modeling"
             },
             {
-              "icon": "/images/icons/benefit-resources.svg",
-              "label": "Custom Curricula"
+              "icon": "/images/services/training-icons/icon-6.svg",
+              "label": "DevSecOps"
             }
           ],
           "cta": {
             "label": "Schedule a Workshop",
-            "href": "/services/security-workshops"
+            "href": "/services/ssdlt-training"
           },
-          "image": "/images/services/training.png",
+          "image": "/images/services/training-2.png",
+          "imageLeft": false
+        },
+        {
+          "link": "vapt-training",
+          "title": "VAPT Training for Technical Employees",
+          "description": "Sharpen your red team skills from real red teamers Hands-on workshops on vulnerability discovery, exploitation, and reporting for your in-house technical or security staff.",
+          "features": [
+            {
+              "icon": "/images/services/training-icons/icon-7.svg",
+              "label": "Practical Labs"
+            },
+            {
+              "icon": "/images/services/training-icons/icon-8.svg",
+              "label": "Tool Mastery"
+            },
+            {
+              "icon": "/images/services/training-icons/icon-9.svg",
+              "label": "Report Writing"
+            }
+          ],
+          "cta": {
+            "label": "Train Your Security Team Now",
+            "href": "/services/vapt-training"
+          },
+          "image": "/images/services/training-3.png",
+          "imageLeft": true
+        },
+        {
+          "link": "soc-training",
+          "title": "SOC Training for Technical Employees",
+          "description": "Turn alerts into action with expert-led SOC training Develop your team's monitoring, detection, and response capabilities with live simulations and platform-specific training.",
+          "features": [
+            {
+              "icon": "/images/services/training-icons/icon-10.svg",
+              "label": "SIEM Rules"
+            },
+            {
+              "icon": "/images/services/training-icons/icon-11.svg",
+              "label": "MITRE ATT&CK"
+            },
+            {
+              "icon": "/images/services/training-icons/icon-12.svg",
+              "label": "IR Scenarios"
+            }
+          ],
+          "cta": {
+            "label": "Train Your SOC Analysts",
+            "href": "/services/soc-training"
+          },
+          "image": "/images/services/training-4.png",
           "imageLeft": false
         }
       ],
       "bottomCta": {
-        "heading": "Your People Are Your Best Defense.",
-        "headingAccent": "Let's Train Them.",
-        "subtitle": "Our training programs are designed by security practitioners for real-world impact.",
+        "heading": "Why Leading Organizations",
+        "headingAccent": "Trust WHITEGUARD",
+        "subtitle": "All offensive services are delivered by certified professionals with real-world experience in threat simulation and enterprise security.",
         "buttonLabel": "Book a Training Consultation",
         "href": "#"
       }

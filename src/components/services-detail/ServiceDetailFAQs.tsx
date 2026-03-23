@@ -20,11 +20,11 @@ export default function ServiceDetailFAQs({ faqs }: ServiceDetailFAQsProps) {
           {faqs.map((faq, i) => (
             <div
               key={faq.question}
-              className="overflow-hidden rounded-[14px] bg-[rgba(224,230,235,0.25)]"
+              className="overflow-hidden rounded-[14px] bg-[rgba(224,230,235,0.25)] "
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left transition-colors hover:bg-[rgba(224,230,235,0.4)]"
+                className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left transition-colors hover:bg-[rgba(224,230,235,0.4)] cursor-pointer"
               >
                 <span className="font-jakarta text-[15px] font-normal leading-[22.5px] text-[#003859]">
                   {faq.question}

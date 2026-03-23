@@ -1,6 +1,4 @@
 "use client";
-
-import Link from "next/link";
 import type { ServicesPageData } from "@/data/services-page";
 import { SectionVideoSeparator } from "../ui/SectionVideoSeparator";
 import { HoverSwapButton } from "../ui/HoverSwapButton";
@@ -59,22 +57,26 @@ export default function ServicesPageHero({
 
           {/* CTAs  */}
           <div className="flex flex-wrap items-center justify-center gap-4 pb-24">
-            <HoverSwapButton
-              href={hero.ctaPrimary.href}
-              label={hero.ctaPrimary.label}
-              hoverLabel={hero.ctaPrimary.label}
-              variant={"cta"}
-              showChevrons={false}
-              className="px-6 py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano"
-            />
-            <HoverSwapButton
-              href={hero.ctaSecondary.href}
-              label={hero.ctaSecondary.label}
-              hoverLabel={hero.ctaSecondary.label}
-              variant={"secondary"}
-              showChevrons={false}
-              className="px-6 py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano"
-            />
+            {hero.ctaPrimary.label && (
+              <HoverSwapButton
+                href={hero.ctaPrimary.href}
+                label={hero.ctaPrimary.label}
+                hoverLabel={hero.ctaPrimary.label}
+                variant={"cta"}
+                showChevrons={false}
+                className="px-6 py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano"
+              />
+            )}
+            {hero.ctaSecondary?.label && (
+              <HoverSwapButton
+                href={hero.ctaSecondary.href}
+                label={hero.ctaSecondary.label}
+                hoverLabel={hero.ctaSecondary.label}
+                variant={"secondary"}
+                showChevrons={false}
+                className="px-6 py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano"
+              />
+            )}
           </div>
         </div>
       </section>

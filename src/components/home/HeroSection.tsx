@@ -17,8 +17,10 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
       <div className="min-h-screen flex flex-col lg:flex-row  ">
         {/*  LEFT CONTENT */}
         <div className="relative z-10 flex flex-1 items-center justify-start px-4 py-16 sm:px-8 sm:py-16 lg:ps-[7vw] lg:py-0">
-          <img
+          <Image
             src={decorations.sparkleTop}
+            width={65}
+            height={68}
             alt=""
             aria-hidden="true"
             className="hidden lg:block absolute right-[28%] top-[25%] w-[65px] h-[68px] object-contain   pointer-events-none select-none"
@@ -38,7 +40,9 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
                   <span className=" font-extrabold">
                     {headline.line2.end}
                   </span>{" "}
-                  <img
+                  <Image
+                    width={65}
+                    height={70}
                     src={decorations.sparkleBottom}
                     alt=""
                     aria-hidden="true"
@@ -70,7 +74,7 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
 
         {/* ─── RIGHT PANEL ─── */}
         <div
-          className="relative inset-0 z-10 w-full lg:w-[50%] min-[1600px]:w-[50%]! lg:min-h-[100vh] hidden lg:block "
+          className="relative inset-0 z-10 w-full lg:w-[50%] min-[1600px]:w-[50%]! lg:min-h-screen hidden lg:block "
           style={{
             backgroundImage: `url(${rightPanel.backgroundImage})`,
             backgroundSize: "100% 100%",

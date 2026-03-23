@@ -20,7 +20,7 @@ export default function ResourcesPagination({
             key={page}
             type="button"
             onClick={() => onPageChange?.(page)}
-            className={`flex h-[55px] w-[55px] shrink-0 items-center justify-center rounded-[8px] font-jakarta text-[20px] font-bold leading-[24px] tracking-[0px] transition-colors ${
+            className={`flex h-[55px] w-[55px] shrink-0 items-center justify-center rounded-[8px] font-jakarta text-[20px] font-bold leading-[24px] tracking-[0px] transition-colors cursor-pointer ${
               isActive
                 ? "bg-[var(--primary-950,#002439)] text-white"
                 : "bg-white text-[#52697A] hover:bg-gray-50"

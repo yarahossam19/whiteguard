@@ -32,7 +32,7 @@ export default function ServiceDetailPricing({
         className="pt-100 z-[-1]"
       />
       <section
-        className="flex w-full flex-col items-center gap-12 px-4 py-16 lg:gap-16 lg:py-20"
+        className="flex w-full flex-col items-center mx-auto gap-12 px-4 py-16 lg:gap-16 lg:py-20"
         style={{
           background:
             "linear-gradient(180deg, rgb(171, 225, 255) 0%, rgb(231, 246, 255) 20%, rgb(231, 246, 255) 80%, rgb(171, 224, 255) 100%)",
@@ -46,7 +46,9 @@ export default function ServiceDetailPricing({
             {subtitle}
           </p>
         </div>
-        <div className="mx-auto grid w-full max-w-[1312px] gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div
+          className={`mx-auto grid w-full max-w-[1312px] gap-6 sm:grid-cols-2 lg:grid-cols-${plans?.length <= 5 ? plans?.length : 5} xl:grid-cols-${plans?.length <= 5 ? plans?.length : 5}`}
+        >
           {plans.map((plan) => (
             <div
               key={plan.id}

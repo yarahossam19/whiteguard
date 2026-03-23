@@ -146,6 +146,9 @@ button,
   animation-duration: 5s !important;
 }
 
+button, a {
+  cursor: pointer;
+}
 
 .animate-ping-slow {
   animation: ping-slow 4s cubic-bezier(0, 0, 0.2, 1) infinite;
