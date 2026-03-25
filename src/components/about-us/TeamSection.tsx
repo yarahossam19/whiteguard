@@ -28,7 +28,7 @@ export default function TeamSection({ data }: TeamSectionProps) {
 
         {/* Team Cards */}
         <div
-          className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid w-full grid-cols-1 gap-8 sm:grid-cols-3 lg:grid-cols-3"
           onMouseLeave={() => setActiveIndex(0)}
         >
           {members.map((member, index) => {

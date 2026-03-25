@@ -1,8 +1,10 @@
+"use client";
 import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
 import type { PartnersHeroData } from "@/data/partners-hero";
 import type { PartnersLogosData } from "@/data/partners-logos";
 import ClientLogos from "@/components/shared/ClientLogos";
 import Image from "next/image";
+import { useMediaQuery } from "react-responsive";
 
 interface PartnersHeroSectionProps {
   data: PartnersHeroData;
@@ -14,7 +16,8 @@ export default function PartnersHeroSection({
   logos,
 }: PartnersHeroSectionProps) {
   const { headline, description, ctas } = data;
-
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
   return (
     <section className="relative flex w-full flex-col gap-12 px-4 py-10 sm:gap-16 sm:px-8 lg:gap-20 lg:px-[7vw] lg:py-14">
       <div className="lg:max-h-screen flex flex-col lg:flex-row  ">
@@ -22,7 +25,7 @@ export default function PartnersHeroSection({
         <div className="relative flex-1 flex items-center justify-center z-10  ">
           <div className="flex flex-col gap-10 max-w-[932px] items-center text-[#003859]">
             {/* Headline */}
-            <div className="flex flex-col items-center gap-5">
+            <div className="flex flex-col items-center gap-5 text-center  ">
               <h1 className="font-jakarta leading-[1.18] tracking-[-0.03em] text-[clamp(36px,6vw,64px)] ">
                 <span className=" font-extrabold">{headline.line1}</span>
 
@@ -32,7 +35,7 @@ export default function PartnersHeroSection({
                     style={{
                       position: "absolute",
                       top: "50%",
-                      left: "12%",
+                      left: isMobile ? "0%" : "12%",
                       transform: "translateY( -50%)",
                       borderRadius: "345px",
                       background: "rgba(150, 220, 255, 0.35)",
@@ -76,7 +79,7 @@ export default function PartnersHeroSection({
                       borderRadius: "345px",
                       background: "rgba(150, 220, 255, 0.35)",
                       backgroundColor: "rgba(150, 220, 255, 0.35)",
-                      display: "flex",
+                      display: isMobile ? "none" : "flex",
                       width: "46px",
                       height: "46px",
                       justifyContent: "center",
@@ -95,8 +98,8 @@ export default function PartnersHeroSection({
                     className="z-10 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.15)] bg-[rgba(150, 220, 255, 0.35)]"
                     style={{
                       position: "absolute",
-                      top: "50%%",
-                      right: "12%",
+                      top: isMobile || isTablet ? "-50%" : "-15%",
+                      right: isMobile ? "0%" : "12%",
                       transform: "translateY(50%)",
                       borderRadius: "345px",
                       background: "rgba(150, 220, 255, 0.36)",
@@ -136,7 +139,7 @@ export default function PartnersHeroSection({
                   hoverLabel={cta.hoverLabel}
                   variant={cta.variant as "cta" | "secondary"}
                   showChevrons={false}
-                  className="px-6 py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano"
+                  className="px-6 py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano w-full md:w-auto"
                 />
               ))}
             </div>

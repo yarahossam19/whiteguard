@@ -53,6 +53,7 @@ export default function ServiceDetailCTA({
             showChevrons={false}
             showImg={true}
             imgSrc="/images/icons/tel.svg"
+            className="w-full md:w-auto text-sm md:text-base lg:text-lg  font-ano"
           />
         </div>
       </section>

@@ -302,7 +302,7 @@ export default function IndustriesSectionsSection({
       {/* Main layout: sticky nav + content */}
       <div className="relative flex flex-col lg:flex-row gap-50">
         {/* Sticky left nav - circles - scrolls with page, click scrolls to section */}
-        <div className="sticky top-24 z-20 shrink-0 self-start">
+        <div className="sticky top-24 z-20 shrink-0 self-start hidden lg:block">
           <nav
             className="flex flex-row justify-center gap-4 py-4 lg:flex-col lg:items-center lg:gap-6 lg:py-8 lg:pl-[4vw]"
             aria-label="Industry sections"
@@ -351,12 +351,12 @@ export default function IndustriesSectionsSection({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.5 }}
                   transition={{ duration: 1, ease: "easeOut" }}
-                  className="flex flex-col gap-10 px-6 py-12 lg:flex-row lg:items-stretch lg:gap-12 lg:px-5"
+                  className="flex flex-col gap-10 px-6 py-12 md:flex-row lg:items-stretch lg:gap-12 lg:px-5"
                 >
                   {/* Left: Industry image */}
-                  <div className="relative flex shrink-0 items-center justify-center lg:w-1/2">
+                  <div className="relative flex shrink-0 items-center justify-center w-full md:w-1/2">
                     <div
-                      className="relative  "
+                      className="relative h-[300px]  md:h-[600px]  "
                       style={{
                         borderRadius: "16px",
                         background: "#FFF",
@@ -364,7 +364,7 @@ export default function IndustriesSectionsSection({
                           "0 121px 34px 0 rgba(0, 0, 0, 0.00), 0 77px 31px 0 rgba(0, 0, 0, 0.01), 0 44px 26px 0 rgba(0, 0, 0, 0.05), 0 19px 19px 0 rgba(0, 0, 0, 0.09), 0 5px 11px 0 rgba(0, 0, 0, 0.10)",
                         display: "flex",
                         width: "100%",
-                        height: "600px",
+
                         flexDirection: "column",
                         justifyContent: "center",
                         alignItems: "center",
@@ -408,6 +408,7 @@ export default function IndustriesSectionsSection({
                       hoverLabel={industry.ctaLabel}
                       variant="cta"
                       showChevrons={false}
+                      className="w-full mt-5 lg:mt-0 md:w-auto text-sm md:text-base lg:text-lg  font-ano"
                     />
                   </div>
                 </motion.article>

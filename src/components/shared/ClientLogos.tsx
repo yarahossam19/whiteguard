@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import type { ClientLogosData } from "@/data/client-logos";
 import type { PartnersLogosData } from "@/data/partners-logos";
 import Image from "next/image";
-
+import { useMediaQuery } from "react-responsive";
 type LogosData = ClientLogosData | PartnersLogosData;
 
 function LogoGrid({ items }: { items: LogosData }) {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 items-center gap-8">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 items-center justify-center gap-8">
       {items.map((logo, i) => (
         <div
           key={`${logo.id}-${i}`}
@@ -28,8 +28,14 @@ function LogoGrid({ items }: { items: LogosData }) {
 }
 
 function getLogosForPage(logos: LogosData, pageIndex: number) {
-  const start = (pageIndex * 7) % logos.length;
-  return Array.from({ length: 7 }, (_, i) => logos[(start + i) % logos.length]);
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
+  const numLogos = isMobile ? 2 : isTablet ? 4 : 7;
+  const start = (pageIndex * numLogos) % logos.length;
+  return Array.from(
+    { length: numLogos },
+    (_, i) => logos[(start + i) % logos.length],
+  );
 }
 
 export default function ClientLogos({
@@ -41,7 +47,7 @@ export default function ClientLogos({
 }) {
   const [pageIndex, setPageIndex] = useState(0);
   const [flip, setFlip] = useState(false);
-
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const visible = getLogosForPage(logos, pageIndex);
   const next = getLogosForPage(logos, pageIndex + 1);
 
@@ -50,21 +56,21 @@ export default function ClientLogos({
       setFlip(true);
 
       setTimeout(() => {
-        setPageIndex((p) => (p + 1) % Math.ceil(logos.length / 7));
+        setPageIndex((p) => (p + 1) % Math.ceil(logos.length / visible.length));
         setFlip(false);
       }, 350);
     }, 3000);
     return () => clearInterval(interval);
-  }, [logos.length]);
+  }, [logos.length, visible.length]);
 
   return (
     <div
       className={`w-full bg-white relative z-9 pb-10 px-4 sm:px-6 lg:px-12 ${className}`}
     >
-      <div className="mx-auto container px-4 sm:px-8 lg:px-16 xl:px-24">
+      <div className="mx-auto  container px-4 sm:px-8 lg:px-16 xl:px-24">
         <div className="perspective-[1000px]">
           <div
-            className="relative transform-3d transition-transform duration-300 ease-in-out"
+            className="relative  transform-3d transition-transform duration-300 ease-in-out"
             style={{ transform: flip ? "rotateX(270deg)" : "rotateX(180deg)" }}
           >
             <div className="backface-hidden">

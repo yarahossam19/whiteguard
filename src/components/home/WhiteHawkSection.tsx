@@ -37,7 +37,7 @@ export default function WhiteHawkSection({ data }: WhiteHawkSectionProps) {
       {" "}
       <SectionImageSeparator direction="top" />
       <section
-        className="relative flex w-full flex-col items-center justify-between gap-16 overflow-hidden px-6 py-20 lg:flex-row lg:gap-16 lg:px-[7vw] lg:py-24"
+        className="relative flex w-full flex-col-reverse items-center justify-between gap-16 overflow-hidden px-6 py-20 lg:flex-row lg:gap-16 lg:px-[7vw] lg:py-24"
         style={{
           background:
             "linear-gradient(180deg, #003859 0%, #001f33 20%, #001f33 80%, #003859 100%)",
@@ -89,7 +89,7 @@ export default function WhiteHawkSection({ data }: WhiteHawkSectionProps) {
               hoverLabel={cta.hoverLabel}
               variant={cta.variant as "cta" | "secondary"}
               showChevrons={false}
-              className="px-6 py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano"
+              className="px-6 py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano w-full lg:w-auto"
             />
 
             <p
