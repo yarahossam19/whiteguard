@@ -9,7 +9,7 @@ export function Footer() {
         {/* Upper Section */}
         <div className="grid gap-8 lg:grid-cols-4 lg:gap-12">
           {/* Company Info */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 text-center lg:text-left flex flex-col items-center lg:items-start ">
             <div className="mb-4">
               <Logo />
             </div>

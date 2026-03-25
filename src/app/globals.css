@@ -170,7 +170,7 @@ button, a {
 }
 
 .wave-container {
-  height: 107px;
+  height: 130px;
 
 }
 
@@ -180,7 +180,7 @@ button, a {
 
 @media (min-width: 1920px) {
   .wave-container {
-    height: 107px;
+    height: 150px;
   }
 
   .wave-image {

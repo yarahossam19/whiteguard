@@ -25,7 +25,9 @@ interface HoverSwapButtonSubmitProps extends HoverSwapButtonBaseProps {
   disabled?: boolean;
 }
 
-type HoverSwapButtonProps = HoverSwapButtonLinkProps | HoverSwapButtonSubmitProps;
+type HoverSwapButtonProps =
+  | HoverSwapButtonLinkProps
+  | HoverSwapButtonSubmitProps;
 
 function ChevronIcon() {
   return (
@@ -132,7 +134,7 @@ export function HoverSwapButton(props: HoverSwapButtonProps) {
     return (
       <Link
         href={href ?? "#"}
-        className="group inline-flex rounded-lg p-[2.5px] font-ano font-normal text-[#002439]"
+        className="group w-full md:w-auto inline-flex rounded-lg p-[2.5px] font-ano font-normal text-[#002439]"
         style={{
           background: "linear-gradient(180deg, #0087D7 0%, #81D0FF 100%)",
         }}

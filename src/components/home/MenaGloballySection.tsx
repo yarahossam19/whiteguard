@@ -20,14 +20,14 @@ export default function MenaGloballySection({
         videoSrc="/videos/wave.mp4"
       />
       <section
-        className="relative flex w-full flex-col items-center justify-between gap-12 overflow-hidden px-6 py-16 lg:flex-row lg:gap-16 lg:px-[7vw] lg:py-24"
+        className="relative flex w-full flex-col-reverse items-center justify-between gap-12 overflow-hidden px-6 py-16 lg:flex-row lg:gap-16 lg:px-[7vw] lg:py-24"
         style={{
           background:
             "linear-gradient(180deg, #ABE0FF 0%, #E7F6FF 20%, #E7F6FF 80%, #ABE0FF 100%)",
         }}
       >
         {/* Left: Text + Certifications */}
-        <div className="flex max-w-[571px] flex-col gap-6">
+        <div className="flex lg:max-w-[571px] flex-col gap-6 text-center lg:text-left">
           <div className="flex flex-col gap-0">
             <h2 className="font-jakarta text-[clamp(32px,4vw,44px)] font-extrabold leading-[1.15] text-[#003859]">
               {heading.line1}

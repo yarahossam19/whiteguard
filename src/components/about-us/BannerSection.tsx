@@ -89,8 +89,8 @@ export default function BannerSection({ data }: BannerSectionProps) {
   } = data;
 
   return (
-    <section className="relative z-1 mb-20 w-full overflow-hidden">
-      <div className="flex min-h-screen flex-col lg:flex-row overflow-hidden relative">
+    <section className="relative z-1 mb-20 w-full overflow-hidden flex flex-col-reverse">
+      <div className="flex lg:min-h-screen flex-col lg:flex-row overflow-hidden relative">
         {/* LEFT - Content  */}
         <div className="relative z-10 flex flex-1 flex-col items-center justify-center  px-6 pt-24 sm:px-12 sm:py-16 lg:px-[7vw]  ">
           <div
@@ -151,7 +151,7 @@ export default function BannerSection({ data }: BannerSectionProps) {
                     variant="secondary"
                     showChevrons={false}
                     showArrow={"showArrow" in cta && cta.showArrow}
-                    className="font-ano px-6 py-3.5 text-base lg:text-lg"
+                    className="font-ano px-6 py-3.5 text-base lg:text-lg w-full md:w-auto"
                   />
                 ) : (
                   <HoverSwapButton
@@ -161,7 +161,7 @@ export default function BannerSection({ data }: BannerSectionProps) {
                     hoverLabel={cta.hoverLabel}
                     variant="cta"
                     showChevrons={false}
-                    className="font-ano px-6 py-3.5 text-base lg:text-lg"
+                    className="font-ano px-6 py-3.5 text-base lg:text-lg w-full md:w-auto"
                   />
                 ),
               )}

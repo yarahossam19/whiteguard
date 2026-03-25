@@ -5,6 +5,48 @@ interface PartnersHowItWorksSectionProps {
   data: PartnersHowItWorksData;
 }
 
+function MobileStepIsometricIcon({
+  iconSrc,
+  title,
+}: {
+  iconSrc: string;
+  title: string;
+}) {
+  return (
+    <div className="relative flex h-[71px] w-[110px] shrink-0 items-center justify-center">
+      <Image
+        src={iconSrc}
+        alt={title}
+        width={64}
+        height={64}
+        className="absolute top-[-10%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 object-contain w-[64px] h-[64px]"
+        sizes="64px"
+      />
+      <div
+        className="absolute bottom-0 left-1/2 z-0 -translate-x-1/2"
+        style={{
+          background: "url(/images/icons/under-cover.svg)",
+          width: "100px",
+          height: "100px",
+          // transform: "rotate(-45deg)",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <Image
+          className="absolute left-1/2 top-[50%] z-10 w-[60px] -translate-x-1/2 -translate-y-1/2 object-contain"
+          src="/images/icons/dot.svg"
+          alt=""
+          width={40}
+          height={52}
+          aria-hidden
+        />
+      </div>
+    </div>
+  );
+}
+
 // Isometric cube path block
 function PathCube({ style }: { style?: React.CSSProperties }) {
   return (
@@ -38,26 +80,30 @@ export default function PartnersHowItWorksSection({
   const { badge, heading, steps } = data;
 
   return (
-    <section className="relative z-10 w-full overflow-hidden bg-white px-6 py-16 lg:px-[7vw] lg:py-24 lg:pb-40">
+    <section className="relative z-10 w-full overflow-hidden bg-white px-5 py-8 lg:px-[7vw] lg:py-24 lg:pb-40">
       <div className="relative mx-auto max-w-[1252px]">
-        {/* Header */}
-        <div className="mb-4 flex flex-col items-center gap-2">
+        {/* Header  */}
+        <div className="mx-auto mb-16 flex max-w-[353px] flex-col items-center gap-2 lg:mb-4 lg:max-w-none">
           <div
-            className="rounded-full border px-5 py-1.5"
+            className="flex h-8 items-center justify-center rounded-full border px-5"
             style={{
               backgroundColor: "#F0F6F9",
               borderColor: "rgba(0, 56, 89, 0.1)",
-              height: 32,
             }}
           >
             <p className="font-jakarta text-[12px] font-bold leading-[18px] tracking-[0.84px] text-[#003859]">
               {badge}
             </p>
           </div>
-          <h2 className="max-w-[872px] px-8 text-center font-jakarta text-[clamp(28px,4vw,42px)] font-extrabold leading-[1.15] tracking-[-1.05px] text-[#003859]">
+          <h2 className="hidden max-w-[872px] px-8 text-center font-jakarta text-[clamp(28px,4vw,42px)] font-extrabold leading-[1.15] tracking-[-1.05px] text-[#003859] lg:block">
             {heading.line1}
             <span className="text-[#0087D7]">{heading.line2}</span>
             {heading.line3}
+          </h2>
+          <h2 className="w-full text-center font-jakarta text-[32px] font-extrabold leading-[1.2] tracking-[-0.8px] text-[#003859] lg:hidden">
+            <span className="block">{heading.line1.trimEnd()}</span>
+            <span className="block text-[#0087D7]">{heading.line2}</span>
+            <span className="block">{heading.line3.trimStart()}</span>
           </h2>
         </div>
 
@@ -335,54 +381,48 @@ export default function PartnersHowItWorksSection({
           </div>
         </div>
 
-        {/* Mobile: stacked layout */}
-        <div className="flex flex-col gap-16 lg:hidden">
-          {steps.map((step) => (
-            <div
-              key={step.id}
-              className="flex flex-col items-center gap-6 text-center"
-            >
+        <div className="mx-auto flex w-full max-w-[353px] flex-col gap-[50px] lg:hidden">
+          {steps.map((step, index) => {
+            const textOnLeft = index % 2 === 0;
+            const headerBlock = (
               <div
-                className="flex h-[100px] w-[100px] items-center justify-center rounded-full"
-                style={{
-                  background:
-                    "radial-gradient(circle, rgba(186, 230, 253, 0.7) 0%, rgba(186, 230, 253, 0.3) 60%, transparent 100%)",
-                  boxShadow:
-                    "0 0 0 1px rgba(0, 56, 89, 0.06), 0 4px 20px rgba(0, 56, 89, 0.08)",
-                }}
+                className={`flex min-w-0 flex-1 flex-col gap-1 ${
+                  textOnLeft ? "items-end text-right" : "items-start text-left"
+                }`}
               >
-                <div
-                  className="flex h-16 w-16 items-center justify-center rounded-full"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #003859 0%, #004A73 100%)",
-                    boxShadow: "0 4px 12px rgba(0, 56, 89, 0.3)",
-                  }}
-                >
-                  <div style={{ filter: "brightness(0) invert(1)" }}>
-                    <Image
-                      src={step.icon}
-                      alt=""
-                      width={32}
-                      height={32}
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col gap-1">
                 <p className="font-jakarta text-[14px] font-bold leading-[15px] tracking-[0.8px] text-[#00A3E0]">
                   {step.label}
                 </p>
-                <h3 className="font-jakarta text-[20px] font-bold leading-[24px] text-[#003859]">
+                <h3 className="font-jakarta text-[18px] font-bold leading-[1.2] text-[#003859]">
                   {step.title}
                 </h3>
-                <p className="font-jakarta text-[14px] font-normal leading-[25.2px] text-[#52697A]">
+              </div>
+            );
+            const iconBlock = (
+              <MobileStepIsometricIcon iconSrc={step.icon} title={step.title} />
+            );
+
+            return (
+              <div key={step.id} className="flex w-full flex-col gap-0">
+                <div className="flex w-full items-start gap-3">
+                  {textOnLeft ? (
+                    <>
+                      {headerBlock}
+                      {iconBlock}
+                    </>
+                  ) : (
+                    <>
+                      {iconBlock}
+                      {headerBlock}
+                    </>
+                  )}
+                </div>
+                <p className="mt-[13px] max-w-[250px] font-jakarta text-[14px] font-normal leading-[1.5] text-[#52697A]">
                   {step.description}
                 </p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

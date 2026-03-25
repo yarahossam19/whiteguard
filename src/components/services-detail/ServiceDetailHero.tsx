@@ -17,7 +17,7 @@ export default function ServiceDetailHero({
 }: ServiceDetailHeroProps) {
   return (
     <>
-      <section className="relative flex min-h-[90vh] lg:h-[50vh] w-full flex-col items-center justify-center overflow-hidden bg-white px-4 py-16 lg:py-30">
+      <section className="relative flex min-h-screen lg:h-[50vh] w-full flex-col items-center justify-center overflow-hidden bg-white px-4 py-16 lg:py-30">
         {/* Optional decorative background - light wave texture */}
         <div
           className="pointer-events-none absolute  w-full"
@@ -52,6 +52,7 @@ export default function ServiceDetailHero({
               hoverLabel={ctaPrimary.label}
               showChevrons={false}
               variant="cta"
+              className="w-full md:w-auto"
             />
             <HoverSwapButton
               href={ctaSecondary.href}
@@ -61,6 +62,7 @@ export default function ServiceDetailHero({
               showChevrons={false}
               showImg={true}
               imgSrc="/images/icons/download.svg"
+              className="w-full md:w-auto"
             />
           </div>
         </div>

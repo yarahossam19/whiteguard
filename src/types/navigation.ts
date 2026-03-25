@@ -22,3 +22,4 @@ export interface SocialLink {
   href: string;
   icon: "x" | "linkedin" | "facebook";
 }
+

@@ -37,14 +37,14 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
   const segment = 1 / N;
 
   return (
-    <section ref={ref} className="relative bg-white mb-50">
+    <section ref={ref} className="relative bg-white lg:mb-50">
       {/* Tall scroll area - each service gets 1/N of the scroll */}
       <div className="relative " style={{ height: `${N * 100}vh` }}>
         {/* Sticky viewport */}
         <div className="sticky top-0 flex h-screen flex-col ">
           {/* Header - fixed at top of sticky area */}
           <div className="shrink-0 flex flex-col items-center gap-4 px-4 pt-0 sm:px-6 lg:px-[7vw] lg:pt-0">
-            <div className="flex flex-col items-center gap-0">
+            <div className="flex flex-col items-center gap-0 text-center ">
               <h2 className="font-jakarta text-[clamp(32px,4vw,44px)] font-extrabold leading-[1.15] text-[#003859]">
                 {heading.line1}
               </h2>
@@ -52,7 +52,7 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
                 {heading.line2}
               </h2>
             </div>
-            <p className="mt-4   font-jakarta text-base leading-[1.8] text-[#52697A]">
+            <p className="mt-4   text-center  font-jakarta text-base leading-[1.8] text-[#52697A]">
               {subtitle}
             </p>
           </div>
@@ -80,7 +80,7 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
             </div>
 
             {/* Cards - swipe from behind (new card slides up and overlays previous) */}
-            <div className="relative z-10 h-[340px] w-full max-w-[340px] shrink-0 translate-y-8 overflow-hidden self-center pt-12 sm:h-[420px] sm:max-w-[380px] sm:translate-y-12 sm:pt-16 lg:h-[577px] lg:max-w-[400px] lg:pt-20">
+            <div className="relative z-10 h-[340px] w-full max-w-[90%] shrink-0 translate-y-8 overflow-hidden self-center pt-12 sm:h-[420px] sm:max-w-[90%] sm:translate-y-12 sm:pt-16 lg:h-[577px] lg:max-w-[400px] lg:pt-20">
               {services.map((service, i) => {
                 const slideFromBottom = 600;
                 const isFirst = i === 0;

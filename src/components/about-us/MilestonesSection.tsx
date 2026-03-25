@@ -105,7 +105,7 @@ export default function MilestonesSection({ data }: MilestonesSectionProps) {
             "linear-gradient(180deg, #ABE1FF 0%, #E7F6FF 20%, #E7F6FF 80%, #ABE0FF 100%)",
         }}
       >
-        <div className="mx-auto max-w-[900px]">
+        <div className="mx-auto lg:max-w-[900px]">
           {/* Heading */}
           <div className="mb-16 flex flex-col items-center gap-6 text-center">
             <h2 className="font-jakarta text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15]">
@@ -137,7 +137,7 @@ export default function MilestonesSection({ data }: MilestonesSectionProps) {
                     <div
                       className={`flex flex-1 items-center ${
                         isLeft
-                          ? "justify-end gap-2 pr-2 lg:gap-3 lg:pr-4"
+                          ? "justify-end  gap-2 pr-2 lg:gap-3 lg:pr-4"
                           : "justify-center lg:justify-end"
                       }`}
                     >

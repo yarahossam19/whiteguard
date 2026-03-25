@@ -10,10 +10,10 @@ export default function WhyChooseUsSection({ data }: WhyChooseUsSectionProps) {
 
   return (
     <section className="relative w-full bg-white px-6 py-16 lg:px-[7vw] lg:py-24">
-      <div className="mx-auto flex max-w-[1200px] flex-col gap-16 lg:flex-row lg:gap-16">
+      <div className="mx-auto flex lg:max-w-[1200px] flex-col gap-16 lg:flex-row lg:gap-16">
         {/* Left: Heading + Description - sticky while scrolling through cards */}
-        <div className="flex w-full max-w-[443px] flex-col gap-6 lg:sticky lg:top-28 lg:w-[443px] lg:shrink-0 lg:self-start">
-          <div className="flex flex-col gap-0">
+        <div className="flex w-full lg:max-w-[443px] flex-col gap-6 lg:sticky lg:top-28 lg:w-[443px] lg:shrink-0 lg:self-start">
+          <div className="flex flex-col text-center lg:text-left gap-0">
             <h2 className="font-jakarta text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15] text-[#003859]">
               {heading.line1}
             </h2>
@@ -24,7 +24,7 @@ export default function WhyChooseUsSection({ data }: WhyChooseUsSectionProps) {
               {heading.line3}
             </h2>
           </div>
-          <p className="font-jakarta text-base leading-[1.8] text-[#52697A]">
+          <p className="font-jakarta text-base text-center lg:text-left leading-[1.8] text-[#52697A]">
             {description}
           </p>
         </div>

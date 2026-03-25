@@ -1,5 +1,7 @@
 "use client";
 
+import { useMediaQuery } from "react-responsive";
+
 interface SectionSeparatorProps {
   /** Optional video source. If provided, video is used; otherwise SVG wave is shown. */
   videoSrc?: string;
@@ -15,11 +17,12 @@ export function SectionVideoSeparator({
   className = "",
 }: SectionSeparatorProps) {
   const height = 300;
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   if (videoSrc) {
     return (
       <div
-        className={`relative ${direction === "top" ? "mt-[-240px]" : " "} z-0 overflow-hidden ${className} `}
+        className={`relative ${direction === "top" ? (!isMobile ? "mt-[-240px]" : "mt-[-100px]") : " "} z-0 overflow-hidden ${className} `}
         style={{
           height: `${height}px`,
           alignSelf: "stretch",

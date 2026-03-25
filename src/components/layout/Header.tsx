@@ -8,7 +8,7 @@ import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
 import { ServicesDropdown } from "@/components/layout/ServicesDropdown";
 import { mainNav } from "@/config/site";
 import { useUIStore } from "@/lib/stores/ui-store";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Header() {
   const pathname = usePathname();
@@ -16,6 +16,11 @@ export function Header() {
   const tabParam = searchParams.get("tab");
   const { isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useUIStore();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) setMobileServicesOpen(false);
+  }, [isMobileMenuOpen]);
 
   /* Hover: bg Primary-100 | Selected: bg Primary-200 | border-radius: 8px */
   const navLinkClass = (href: string) =>
@@ -79,7 +84,8 @@ export function Header() {
                   <ServicesDropdown
                     items={item.subLinks.map((s) => ({
                       label: s.label,
-                      description: "description" in s ? s.description : undefined,
+                      description:
+                        "description" in s ? s.description : undefined,
                       href: s.href,
                       icon: "icon" in s ? s.icon : undefined,
                     }))}
@@ -119,43 +125,90 @@ export function Header() {
       {isMobileMenuOpen && (
         <div className="border-t border-[var(--button-border)] bg-white lg:hidden">
           <div className="space-y-1 px-4 py-4">
-            {mainNav.map((item) => (
-              <div key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={closeMobileMenu}
-                  className={`block rounded-lg px-4 py-3 text-base font-medium duration-300 ease-out transition-[background-color] ${
-                    pathname === item.href
-                      ? "bg-[var(--Primary-200)] text-[var(--primary-950)]"
-                      : "text-[var(--primary-950)] hover:bg-[#ABE0FF]"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-                {"subLinks" in item &&
-                  item.subLinks?.map((sub) => {
-                    const subTab = sub.href.includes("tab=")
-                      ? sub.href.split("tab=")[1]
-                      : null;
-                    const isActive =
-                      pathname === "/services" &&
-                      subTab &&
-                      tabParam === subTab;
-                    return (
+            {mainNav.map((item) => {
+              const hasSubLinks =
+                "subLinks" in item && item.subLinks && item.subLinks.length > 0;
+
+              if (hasSubLinks) {
+                return (
+                  <div key={item.href}>
+                    <div className="flex items-stretch gap-1 rounded-lg">
                       <Link
-                        key={sub.href}
-                        href={sub.href}
+                        href={item.href}
                         onClick={closeMobileMenu}
-                        className={`block rounded-lg px-6 py-2 text-sm text-[var(--primary-950)] duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] ${
-                          isActive ? "bg-[var(--Primary-200)]" : ""
+                        className={`min-w-0 flex-1 px-4 py-3 text-base font-medium duration-300 ease-out transition-[background-color] ${
+                          pathname === item.href
+                            ? "bg-[var(--Primary-200)] text-[var(--primary-950)]"
+                            : "text-[var(--primary-950)] hover:bg-[#ABE0FF]"
                         }`}
                       >
-                        {sub.label}
+                        {item.label}
                       </Link>
-                    );
-                  })}
-              </div>
-            ))}
+                      <button
+                        type="button"
+                        onClick={() => setMobileServicesOpen((open) => !open)}
+                        className="flex shrink-0 items-center justify-center  px-3 text-[var(--primary-950)] duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] border-l border-[#ccc]"
+                        aria-expanded={mobileServicesOpen}
+                        aria-label={
+                          mobileServicesOpen
+                            ? "Hide services submenu"
+                            : "Show services submenu"
+                        }
+                      >
+                        <Image
+                          src="/images/icons/arrow-bottom.png"
+                          alt=""
+                          width={22}
+                          height={22}
+                          className={`transition-transform duration-300 ${
+                            mobileServicesOpen ? "rotate-180" : ""
+                          }`}
+                          aria-hidden
+                        />
+                      </button>
+                    </div>
+                    {mobileServicesOpen &&
+                      item.subLinks?.map((sub) => {
+                        const subTab = sub.href.includes("tab=")
+                          ? sub.href.split("tab=")[1]
+                          : null;
+                        const isActive =
+                          pathname === "/services" &&
+                          subTab &&
+                          tabParam === subTab;
+                        return (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            onClick={closeMobileMenu}
+                            className={`block rounded-lg px-6 py-2 text-sm text-[var(--primary-950)] duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] ${
+                              isActive ? "bg-[var(--Primary-200)]" : ""
+                            }`}
+                          >
+                            {sub.label}
+                          </Link>
+                        );
+                      })}
+                  </div>
+                );
+              }
+
+              return (
+                <div key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={closeMobileMenu}
+                    className={`block rounded-lg px-4 py-3 text-base font-medium duration-300 ease-out transition-[background-color] ${
+                      pathname === item.href
+                        ? "bg-[var(--Primary-200)] text-[var(--primary-950)]"
+                        : "text-[var(--primary-950)] hover:bg-[#ABE0FF]"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </div>
+              );
+            })}
             <Link
               href="/contact"
               onClick={closeMobileMenu}
