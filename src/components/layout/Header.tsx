@@ -147,7 +147,7 @@ export function Header() {
                       <button
                         type="button"
                         onClick={() => setMobileServicesOpen((open) => !open)}
-                        className="flex shrink-0 items-center justify-center  px-3 text-[var(--primary-950)] duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] border-l border-[#ccc]"
+                        className="flex shrink-0 items-center justify-center  px-3 text-primary-950 duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] border-l border-[#ccc]"
                         aria-expanded={mobileServicesOpen}
                         aria-label={
                           mobileServicesOpen

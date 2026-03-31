@@ -89,19 +89,19 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
             backgroundRepeat: "no-repeat",
           }}
         >
-          <Image
+          {/* <Image
             src="/images/logo-white.svg"
             alt="Hero Video"
             width={500}
             height={500}
             className="absolute  w-full h-[50%] object-contain left-[50%] lg:top-[30%] top-[50%] translate-x-[-50%] translate-y-[-50%] animate-ping"
-          />
+          /> */}
           <Image
             src="/images/logo-white.svg"
             alt="Hero Video"
             width={500}
             height={500}
-            className="absolute     w-[50%] h-[50%]   object-contain left-[50%] lg:top-[30%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
+            className="absolute     w-[50%]    object-contain left-[50%] lg:left-[52.5%] lg:top-[30%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
           />
           {/* <video
             src={rightPanel.videoSrc}
