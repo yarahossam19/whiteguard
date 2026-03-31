@@ -53,7 +53,7 @@ export default function ResourceDetailContent({
   }, [toc]);
 
   return (
-    <div className="container py-12">
+    <div className="container my-14">
       {/* Back + Title row - gap 200px, pl 97px */}
       <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-[200px] lg:pl-0">
         <Link

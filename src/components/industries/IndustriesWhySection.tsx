@@ -11,8 +11,8 @@ export default function IndustriesWhySection({
   const { heading, subtitle, cards } = data;
 
   return (
-    <section className="relative w-full bg-white py-12 sm:py-16 lg:py-24">
-      <div className="container flex flex-col items-center gap-16">
+    <section className="relative  w-full bg-white py-12 sm:py-16 lg:py-24">
+      <div className="container overflow-hidden flex flex-col items-center gap-16">
         {/* Heading + Subtitle */}
         <div className="flex flex-col items-center gap-4 text-center">
           <h2 className="font-jakarta text-[clamp(32px,5vw,56px)] font-bold leading-[1.1] tracking-[-0.04em] text-[#003859]">
@@ -27,13 +27,13 @@ export default function IndustriesWhySection({
         </div>
 
         {/* Cards Grid */}
-        <div className="flex flex-wrap justify-center gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 overflow-x-hidden">
           {cards.map((card) => (
             <div
               key={card.id}
-              className="flex w-full max-w-[313px] flex-col gap-4 rounded-[20px] border border-[rgba(0,56,89,0.08)] bg-white px-4 pb-8 pt-4 shadow-[0px_4px_24px_0px_rgba(0,56,89,0.06)]"
+              className="flex     flex-col gap-4 rounded-[20px] border border-[rgba(0,56,89,0.08)] bg-white px-4 pb-8 pt-4 shadow-[0px_4px_24px_0px_rgba(0,56,89,0.06)]"
             >
-              <div className="flex w-full items-start justify-between">
+              <div className="flex  items-start justify-between">
                 <div
                   className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[14px] shadow-[0px_6px_18px_0px_rgba(0,56,89,0.22)]"
                   style={{
