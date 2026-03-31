@@ -99,13 +99,14 @@ export default function MilestonesSection({ data }: MilestonesSectionProps) {
         className="z-[-1]"
       />
       <section
-        className="relative w-full px-6 py-16 lg:px-[7vw] lg:py-24"
+        className="relative w-full py-16 lg:py-24"
         style={{
           background:
             "linear-gradient(180deg, #ABE1FF 0%, #E7F6FF 20%, #E7F6FF 80%, #ABE0FF 100%)",
         }}
       >
-        <div className="mx-auto lg:max-w-[900px]">
+        <div className="container">
+          <div className="mx-auto lg:max-w-[900px]">
           {/* Heading */}
           <div className="mb-16 flex flex-col items-center gap-6 text-center">
             <h2 className="font-jakarta text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15]">
@@ -234,6 +235,7 @@ export default function MilestonesSection({ data }: MilestonesSectionProps) {
               })}
             </div>
           </div>
+        </div>
         </div>
       </section>
       <SectionVideoSeparator

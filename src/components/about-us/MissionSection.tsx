@@ -86,13 +86,13 @@ export default function MissionSection({ data }: MissionSectionProps) {
       />
       <section
         id="about-story"
-        className="relative z-0 w-full px-6 py-16 lg:px-[7vw] lg:py-24"
+        className="relative z-0 w-full py-16 lg:py-24"
         style={{
           background:
             "linear-gradient(180deg, #ABE0FF 0%, #E7F6FF 20%, #E7F6FF 80%, #ABE0FF 100%)",
         }}
       >
-        <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-12 lg:gap-16">
+        <div className="container flex flex-col items-center gap-12 lg:gap-16">
           {/* Heading */}
           <h2 className="text-center font-jakarta text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15]">
             <span className="text-[#003859]">{heading.line1}</span>

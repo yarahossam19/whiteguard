@@ -43,13 +43,13 @@ export default function PartnersGrowthSection({
         videoSrc="/videos/wave.mp4"
       />
       <section
-        className="relative w-full overflow-hidden [--chart-scale:0.285] md:[--chart-scale:0.633] lg:[--chart-scale:1]"
+        className="relative w-full overflow-hidden py-[50px] md:py-16 lg:py-24 [--chart-scale:0.285] md:[--chart-scale:0.633] lg:[--chart-scale:1]"
         style={{
           background:
             "linear-gradient(180deg, #ABE1FF 0%, #E7F6FF 20%, #E7F6FF 80%, #ABE0FF 100%)",
         }}
       >
-        <div className="mx-auto flex max-w-[1328px] flex-col items-center px-5 py-[50px] md:px-11 md:py-16 lg:px-[7vw] lg:py-24">
+        <div className="container flex flex-col items-center ">
           {/* Heading + Subtitle  */}
           <div className="mb-12 flex max-w-[353px] flex-col items-center gap-2 text-center md:mb-16 md:max-w-[746px] md:gap-4 lg:max-w-none">
             <h2 className="font-jakarta text-[32px] font-extrabold leading-[1.2] tracking-[-0.8px] text-[#003859] md:text-[40px] md:tracking-[-1.05px] lg:text-[42px]">

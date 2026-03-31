@@ -20,13 +20,13 @@ export default function PartnersBenefitsSection({
       />
 
       <section
-        className="relative w-full overflow-hidden px-6 py-20 lg:px-[7vw] lg:py-24"
+        className="relative w-full overflow-hidden py-20 lg:py-24"
         style={{
           background:
             "linear-gradient(180deg, #ABE1FF 0%, #E7F6FF 20%, #E7F6FF 80%, #ABE0FF 100%)",
         }}
       >
-        <div className="mx-auto max-w-[1308px]">
+        <div className="container">
           {/* Header */}
           <div className="mb-16 flex flex-col items-center gap-4 text-center">
             <div

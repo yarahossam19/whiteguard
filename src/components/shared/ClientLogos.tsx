@@ -64,10 +64,8 @@ export default function ClientLogos({
   }, [logos.length, visible.length]);
 
   return (
-    <div
-      className={`w-full bg-white relative z-9 pb-10 px-4 sm:px-6 lg:px-12 ${className}`}
-    >
-      <div className="mx-auto  container px-4 sm:px-8 lg:px-16 xl:px-24">
+    <div className={`w-full bg-white relative z-9 pb-10 ${className}`}>
+      <div className="container">
         <div className="perspective-[1000px]">
           <div
             className="relative  transform-3d transition-transform duration-300 ease-in-out"

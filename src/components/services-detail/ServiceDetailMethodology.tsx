@@ -26,13 +26,14 @@ export default function ServiceDetailMethodology({
         className="z-[-1]"
       />
       <section
-        className="flex w-full flex-col items-center px-4 py-16 lg:py-20"
+        className="flex w-full flex-col items-center py-16 lg:py-20"
         style={{
           background:
             "linear-gradient(180deg, rgb(171, 225, 255) 0%, rgb(231, 246, 255) 20%, rgb(231, 246, 255) 80%, rgb(171, 224, 255) 100%)",
         }}
       >
-        <div className="mx-auto flex max-w-[896px] flex-col items-center">
+        <div className="container flex flex-col items-center">
+        <div className="mx-auto flex w-full max-w-[896px] flex-col items-center">
           <div className="mb-12 flex flex-col items-center gap-2 text-center">
             <h2 className="font-jakarta text-[28px] font-normal leading-[41.6px] text-[#003859] lg:text-[32px]">
               {heading}
@@ -74,6 +75,7 @@ export default function ServiceDetailMethodology({
               })}
             </div>
           </div>
+        </div>
         </div>
       </section>
       <SectionVideoSeparator

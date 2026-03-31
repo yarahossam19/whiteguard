@@ -80,8 +80,8 @@ export default function PartnersHowItWorksSection({
   const { badge, heading, steps } = data;
 
   return (
-    <section className="relative z-10 w-full overflow-hidden bg-white px-5 py-8 lg:px-[7vw] lg:py-24 lg:pb-40">
-      <div className="relative mx-auto max-w-[1252px]">
+    <section className="relative z-10 w-full overflow-hidden bg-white pb-8  lg:pb-40">
+      <div className="container relative">
         {/* Header  */}
         <div className="mx-auto mb-16 flex max-w-[353px] flex-col items-center gap-2 lg:mb-4 lg:max-w-none">
           <div

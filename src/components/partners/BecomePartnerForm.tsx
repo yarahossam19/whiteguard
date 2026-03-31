@@ -68,7 +68,7 @@ export default function BecomePartnerForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-auto flex w-full max-w-[850px] flex-col gap-[71px]"
+      className="flex w-full max-w-[850px] flex-col gap-[71px]"
     >
       <div className="flex flex-col gap-[32px]">
         <h1 className="font-jakarta text-[28px] font-normal pb-4 leading-[40px] tracking-[1.5px] text-[#003859] mb-4">

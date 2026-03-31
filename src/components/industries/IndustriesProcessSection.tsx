@@ -13,7 +13,8 @@ export default function IndustriesProcessSection({
   const { steps } = data;
 
   return (
-    <section className="relative w-full overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-[7vw] lg:py-28">
+    <section className="relative w-full overflow-hidden bg-white py-16 sm:py-20 lg:py-28">
+      <div className="container">
       <h3 className="mb-12 font-jakarta text-2xl font-bold leading-[1.3] tracking-[-0.36px] text-[#0f2233] sm:mb-16 sm:text-3xl lg:mb-20 lg:text-4xl">
         End-to-End Lifecycle
       </h3>
@@ -67,6 +68,7 @@ export default function IndustriesProcessSection({
             </div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

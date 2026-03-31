@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import type { IndustriesSectionsData } from "@/data/industries-sections";
 import { HoverSwapButton } from "../ui/HoverSwapButton";
@@ -13,7 +12,7 @@ interface IndustriesSectionsSectionProps {
 
 const INDUSTRY_ICONS: Record<
   string,
-  (props: React.SVGProps<SVGSVGElement>) => React.ReactNode
+  (props: { className?: string; color?: string }) => React.ReactNode
 > = {
   wallet: ({ className = "", color = "currentColor" }) => (
     <svg
@@ -95,7 +94,7 @@ const INDUSTRY_ICONS: Record<
       </defs>
     </svg>
   ),
-  manufacturing: ({ className = "" }) => (
+  manufacturing: ({ className = "", color = "currentColor" }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="14"
@@ -129,7 +128,7 @@ const INDUSTRY_ICONS: Record<
       </defs>
     </svg>
   ),
-  insurance: ({ className = "" }) => (
+  insurance: ({ className = "", color = "currentColor" }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="14"
@@ -167,7 +166,7 @@ const INDUSTRY_ICONS: Record<
       </defs>
     </svg>
   ),
-  automotive: ({ className = "" }) => (
+  automotive: ({ className = "", color = "currentColor" }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="14"
@@ -221,7 +220,7 @@ const INDUSTRY_ICONS: Record<
       </defs>
     </svg>
   ),
-  cloud: ({ className = "" }) => (
+  cloud: ({ className = "", color = "currentColor" }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="14"
@@ -263,157 +262,210 @@ export default function IndustriesSectionsSection({
   const { header, industries } = data;
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+  const intersectionRatiosRef = useRef(new Map<Element, number>());
+  const skipObserverScrollSpyUntilRef = useRef(0);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const thresholds = [0, 0.05, 0.1, 0.2, 0.35, 0.5, 0.65, 0.8, 0.95, 1];
+    const ratios = intersectionRatiosRef.current;
+    ratios.clear();
+
+    const pickBestIndex = () => {
+      if (performance.now() < skipObserverScrollSpyUntilRef.current) return;
+
+      let bestIndex = -1;
+      let bestRatio = 0;
+      sectionRefs.current.forEach((el, i) => {
+        if (!el) return;
+        const r = ratios.get(el) ?? 0;
+        if (r > bestRatio) {
+          bestRatio = r;
+          bestIndex = i;
+        }
+      });
+      if (bestIndex !== -1 && bestRatio > 0) setActiveIndex(bestIndex);
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = sectionRefs.current.findIndex(
-              (ref) => ref === entry.target,
-            );
-            if (index !== -1) setActiveIndex(index);
-          }
+          ratios.set(entry.target, entry.intersectionRatio);
         });
+        pickBestIndex();
       },
-      { threshold: 0.3, rootMargin: "-100px 0px -50% 0px" },
+      {
+        threshold: thresholds,
+        rootMargin: "-96px 0px -28% 0px",
+      },
     );
 
-    sectionRefs.current.forEach((el) => el && observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+    const observeAll = () => {
+      sectionRefs.current.forEach((el) => {
+        if (el) observer.observe(el);
+      });
+    };
+
+    observeAll();
+    const raf = requestAnimationFrame(observeAll);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      observer.disconnect();
+    };
+  }, [industries.length]);
 
   const scrollToSection = (index: number) => {
-    sectionRefs.current[index]?.scrollIntoView({ behavior: "smooth" });
+    setActiveIndex(index);
+    skipObserverScrollSpyUntilRef.current = performance.now() + 900;
+    sectionRefs.current[index]?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   return (
-    <section className="relative min-h-screen w-full ">
-      {/* Top header - dark background */}
-      <div className="px-4 py-6 text-center pb-8 pt-0 sm:px-8 sm:py-8 lg:px-[7vw]">
-        <h2 className="font-jakarta text-lg font-bold uppercase tracking-widest  text-[#003859] sm:text-2xl">
-          {header.title}
-        </h2>
-        <p className="mx-auto mt-4 lg:max-w-[636px] font-jakarta text-base font-normal leading-relaxed text-[#52697A] sm:text-lg">
-          {header.subtitle}
-        </p>
-      </div>
-
-      {/* Main layout: sticky nav + content */}
-      <div className="relative flex flex-col lg:flex-row gap-50">
-        {/* Sticky left nav - circles - scrolls with page, click scrolls to section */}
-        <div className="sticky top-24 z-20 shrink-0 self-start hidden lg:block">
-          <nav
-            className="flex flex-row justify-center gap-4 py-4 lg:flex-col lg:items-center lg:gap-6 lg:py-8 lg:pl-[4vw]"
-            aria-label="Industry sections"
-          >
-            {industries.map((industry, index) => {
-              const IconComponent =
-                INDUSTRY_ICONS[industry.icon] || INDUSTRY_ICONS.cloud;
-              return (
-                <button
-                  key={industry.id}
-                  type="button"
-                  onClick={() => scrollToSection(index)}
-                  className={`group flex h-10 w-10 items-center justify-center rounded-full border border-[#C2CDD6] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-[#0a1628] ${
-                    activeIndex === index
-                      ? "scale-110 bg-[#003859] text-white"
-                      : "bg-transparent text-[#859CAD] hover:scale-105 hover:text-[#859CAD]"
-                  }`}
-                  aria-label={`Go to ${industry.title}`}
-                  aria-current={activeIndex === index ? "true" : undefined}
-                >
-                  <IconComponent className="h-5 w-5 shrink-0" />
-                </button>
-              );
-            })}
-          </nav>
+    <section className="relative w-full bg-white py-12 sm:py-16 lg:py-24">
+      <div className="container">
+        {/* Top header - dark background */}
+        <div className="flex flex-col items-center text-center pb-24">
+          <h2 className="font-jakarta text-lg font-bold uppercase tracking-widest  text-[#003859] sm:text-2xl">
+            {header.title}
+          </h2>
+          <p className="mx-auto mt-4 lg:max-w-[636px] font-jakarta text-base font-normal leading-relaxed text-[#52697A] sm:text-lg">
+            {header.subtitle}
+          </p>
         </div>
 
-        {/* Main white content block */}
-        <div className="flex-1 px-4 pb-24 sm:px-6 lg:px-8">
-          <div className="mx-auto  rounded-2xl   ">
-            {industries.map((industry, index) => {
-              const IconComponent =
-                INDUSTRY_ICONS[industry.icon] || INDUSTRY_ICONS.cloud;
-              const imageSrc =
-                "image" in industry && typeof industry.image === "string"
-                  ? industry.image
-                  : "/images/industries/technology.png";
-              return (
-                <motion.article
-                  key={industry.id}
-                  ref={(el) => {
-                    sectionRefs.current[index] = el;
-                  }}
-                  id={industry.id}
-                  initial={{ opacity: 0, y: 100 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 1, ease: "easeOut" }}
-                  className="flex flex-col gap-10 px-6 py-12 md:flex-row lg:items-stretch lg:gap-12 lg:px-5"
-                >
-                  {/* Left: Industry image */}
-                  <div className="relative flex shrink-0 items-center justify-center w-full md:w-1/2">
-                    <div
-                      className="relative h-[300px]  md:h-[600px]  "
-                      style={{
-                        borderRadius: "16px",
-                        background: "#FFF",
-                        boxShadow:
-                          "0 121px 34px 0 rgba(0, 0, 0, 0.00), 0 77px 31px 0 rgba(0, 0, 0, 0.01), 0 44px 26px 0 rgba(0, 0, 0, 0.05), 0 19px 19px 0 rgba(0, 0, 0, 0.09), 0 5px 11px 0 rgba(0, 0, 0, 0.10)",
-                        display: "flex",
-                        width: "100%",
-
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
+        {/* Main layout: sticky nav + content */}
+        <div className="relative flex flex-col lg:flex-row gap-20 items-center justify-center">
+          {/* Sticky left nav - circles - scrolls with page, click scrolls to section */}
+          <div className="sticky top-24 z-20 shrink-0 self-start hidden lg:block">
+            <nav
+              className="flex flex-row justify-start gap-4 py-4 lg:flex-col lg:items-start lg:gap-6 lg:py-8"
+              aria-label="Industry sections"
+            >
+              {industries.map((industry, index) => {
+                const IconComponent =
+                  INDUSTRY_ICONS[industry.icon] || INDUSTRY_ICONS.cloud;
+                const text = industry.title;
+                return (
+                  <div
+                    key={industry.id}
+                    className="flex  justify-start items-center gap-2"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => scrollToSection(index)}
+                      className={`group flex h-10 w-10 items-center justify-center rounded-full border border-[#C2CDD6] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-[#0a1628] ${
+                        activeIndex === index
+                          ? "scale-110 bg-[#003859] text-white"
+                          : "bg-transparent text-[#859CAD] hover:scale-105 hover:text-[#859CAD]"
+                      }`}
+                      aria-label={`Go to ${industry.title}`}
+                      aria-current={activeIndex === index ? "true" : undefined}
                     >
-                      <Image
-                        src={imageSrc}
-                        alt={industry.title}
-                        fill
-                        className="object-contain w-full h-full"
-                        sizes="(max-width: 1024px) 160px, 192px"
-                      />
-                    </div>
+                      <IconComponent className="h-5 w-5 shrink-0" />
+                    </button>{" "}
+                    <p
+                      className={`text-xs font-normal block  ${activeIndex === index ? "scale-110 ps-1 text-[#003859]" : "text-[#52697A]"}`}
+                    >
+                      {text}
+                    </p>
                   </div>
-                  {/* Right: Content */}
-                  <div className="flex min-h-0 shrink flex-1 flex-col justify-between lg:min-h-[600px]">
-                    <div className="flex flex-col gap-12">
-                      <div className="flex flex-col justify-stretch gap-6">
-                        <h3 className="font-jakarta text-2xl font-bold text-[#003859] sm:text-3xl lg:text-4xl">
-                          {industry.title}
-                        </h3>
-                        <p className="font-jakarta text-base leading-relaxed text-[#52697A]">
-                          {industry.description}
-                        </p>
+                );
+              })}
+            </nav>
+          </div>
+
+          {/* Main white content block */}
+          <div className="flex-1 pb-24">
+            <div className="mx-auto  rounded-2xl   ">
+              {industries.map((industry, index) => {
+                const IconComponent =
+                  INDUSTRY_ICONS[industry.icon] || INDUSTRY_ICONS.cloud;
+                const imageSrc =
+                  "image" in industry && typeof industry.image === "string"
+                    ? industry.image
+                    : "/images/industries/technology.png";
+                return (
+                  <div
+                    key={industry.id}
+                    ref={(el) => {
+                      sectionRefs.current[index] = el;
+                    }}
+                    id={industry.id}
+                    className="w-full scroll-mt-28"
+                  >
+                    <motion.article
+                      initial={{ opacity: 0, y: 100 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.5 }}
+                      transition={{ duration: 1, ease: "easeOut" }}
+                      className="flex flex-col gap-10 px-6 py-12 md:flex-row lg:items-stretch lg:gap-6 lg:px-5"
+                    >
+                      {/* Left: Industry image */}
+                      <div className="relative flex shrink-0 items-center justify-center w-full md:w-1/2">
+                        <div
+                          className="relative overflow-hidden   h-full w-full  "
+                          style={{
+                            borderRadius: "16px",
+                            background: "#FFF",
+                            boxShadow:
+                              "0 121px 34px 0 rgba(0, 0, 0, 0.00), 0 77px 31px 0 rgba(0, 0, 0, 0.01), 0 44px 26px 0 rgba(0, 0, 0, 0.05), 0 19px 19px 0 rgba(0, 0, 0, 0.09), 0 5px 11px 0 rgba(0, 0, 0, 0.10)",
+                            display: "flex",
+
+                            height: "800px",
+                            width: "553px",
+                            flexDirection: "column",
+                            justifyContent: "center",
+                            alignItems: "center",
+                          }}
+                        >
+                          <Image
+                            src={imageSrc}
+                            alt={industry.title}
+                            fill
+                            className="   object-contain"
+                          />
+                        </div>
                       </div>
-                      <ul className="space-y-2">
-                        {industry.bullets.map((bullet) => (
-                          <li
-                            key={bullet}
-                            className="flex items-start gap-2 font-jakarta text-base text-[#003859]"
-                          >
-                            <span className="mt-1.5 h-3 w-3 shrink-0 rounded-full bg-[#00C3FF]" />
-                            {bullet}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <HoverSwapButton
-                      href={industry.ctaHref}
-                      label={industry.ctaLabel}
-                      hoverLabel={industry.ctaLabel}
-                      variant="cta"
-                      showChevrons={false}
-                      className="w-full mt-5 lg:mt-0 md:w-auto text-sm md:text-base lg:text-lg  font-ano"
-                    />
+                      {/* Right: Content */}
+                      <div className="flex min-h-0 shrink flex-1 flex-col justify-between lg:min-h-[600px]">
+                        <div className="flex flex-col gap-12">
+                          <div className="flex flex-col justify-stretch gap-6">
+                            <h3 className="font-jakarta text-2xl font-bold text-[#003859] sm:text-3xl lg:text-4xl">
+                              {industry.title}
+                            </h3>
+                            <p className="font-jakarta text-base leading-relaxed text-[#52697A]">
+                              {industry.description}
+                            </p>
+                          </div>
+                          <ul className="space-y-2">
+                            {industry.bullets.map((bullet) => (
+                              <li
+                                key={bullet}
+                                className="flex items-start gap-2 font-jakarta text-base text-[#003859]"
+                              >
+                                <span className="mt-1.5 h-3 w-3 shrink-0 rounded-full bg-[#00C3FF]" />
+                                {bullet}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <HoverSwapButton
+                          href={industry.ctaHref}
+                          label={industry.ctaLabel}
+                          hoverLabel={industry.ctaLabel}
+                          variant="cta"
+                          showChevrons={false}
+                          className="w-full mt-5 lg:mt-0 md:w-auto text-sm md:text-base lg:text-lg  font-ano"
+                        />
+                      </div>
+                    </motion.article>
                   </div>
-                </motion.article>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

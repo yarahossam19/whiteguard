@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function ContactThanksPage() {
   return (
-    <section className="flex min-h-[60vh] w-full items-center justify-center bg-white px-6 py-[80px]">
-      <div className="mx-auto flex w-full max-w-[1183px] flex-col items-center gap-[50px]">
+    <section className="flex min-h-[60vh] w-full items-center justify-center bg-white py-[80px]">
+      <div className="container flex w-full max-w-[1183px] flex-col items-center gap-[50px]">
         <div className="flex w-full max-w-[1183px] flex-col items-center gap-4">
           <div className="flex flex-wrap items-end justify-center gap-3">
             <span className="rounded-[2px] bg-[#003859] px-1 pb-0.5 pt-1 font-jakarta text-[40px] font-extrabold italic leading-[1.2] tracking-[1.5px] text-white">

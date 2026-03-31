@@ -11,8 +11,8 @@ export default function PartnersTypesSection({
   const { heading, subtitle, cards } = data;
 
   return (
-    <section className="relative w-full overflow-hidden bg-white px-6 pb-16 lg:px-[7vw] lg:pb-40">
-      <div className="mx-auto max-w-[1152px]">
+    <section className="relative w-full overflow-hidden bg-white pb-16 lg:pb-40">
+      <div className="container">
         {/* Header  */}
         <div className="mb-12 flex flex-col items-center gap-4 text-center">
           <h2 className="font-jakarta text-[clamp(28px,4vw,42px)] font-extrabold leading-[1.15] tracking-[-1.05px] text-[#003859]">

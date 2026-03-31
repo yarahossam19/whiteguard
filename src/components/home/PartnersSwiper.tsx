@@ -11,7 +11,7 @@ import { partnerLogos } from "@/config/site";
 export function PartnersSwiper() {
   return (
     <section className="border-t border-[var(--button-border)] bg-white py-16">
-      <div className="mx-auto max-w-[1506px] px-4 sm:px-6 lg:px-[50px]">
+      <div className="container">
         <h2 className="mb-10 text-center text-2xl font-semibold text-[var(--primary-950)]">
           Our Partners
         </h2>

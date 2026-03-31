@@ -29,7 +29,8 @@ export default function ServiceDetailStandards({
   certifications,
 }: ServiceDetailStandardsProps) {
   return (
-    <section className="bg-white px-4 pb-16 lg:pb-20">
+    <section className="bg-white pb-16 lg:pb-20">
+      <div className="container">
       <div className="mx-auto max-w-[1152px]">
         <h2 className="mb-12 text-center font-jakarta text-[28px] font-normal leading-[41.6px] text-[#003859] lg:text-[32px]">
           {heading}
@@ -81,6 +82,7 @@ export default function ServiceDetailStandards({
             ))}
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

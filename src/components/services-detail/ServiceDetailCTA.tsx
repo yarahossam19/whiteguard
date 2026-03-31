@@ -23,7 +23,7 @@ export default function ServiceDetailCTA({
         imageSrc="/images/wave.svg"
         // transform="scaleY(-1)"
       />
-      <section className="relative flex flex-col items-center justify-center gap-12 overflow-hidden bg-[#003859] px-4 py-20 lg:py-24">
+      <section className="relative flex flex-col items-center justify-center gap-12 overflow-hidden bg-[#003859] py-20 lg:py-24">
         {/* Decorative circles */}
         <div className="pointer-events-none absolute left-1/2 top-1/2   h-0 w-full max-w-[50%] -translate-1/2">
           <div className="absolute -left-5 -top-27 size-16 rounded-full bg-[rgba(224,230,235,0.25)]" />
@@ -37,7 +37,7 @@ export default function ServiceDetailCTA({
             +
           </div>
         </div>
-        <div className="relative z-10 flex flex-col items-center gap-6 text-center">
+        <div className="container relative z-10 flex flex-col items-center gap-6 text-center">
           <h2 className="font-jakarta text-[24px] font-normal leading-[39px] text-white lg:text-[30px]">
             {heading}
           </h2>

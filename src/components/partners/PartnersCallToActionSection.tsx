@@ -19,7 +19,7 @@ export default function PartnersCallToActionSection({
           "radial-gradient(ellipse 50% 40% at 50% 50%, rgba(0, 163, 224, 0.08) 0%, transparent 70%), rgb(0, 56, 89)",
       }}
     >
-      <div className="flex w-full  flex-col items-center gap-[50px] px-6">
+      <div className="container flex w-full flex-col items-center gap-[50px]">
         {/* Logo + Text block - gap 16px */}
         <div className="flex flex-col items-center gap-4">
           {/* Logo  */}

@@ -43,7 +43,7 @@ export default function ServicesPageHero({
         </div>
 
         {/* Hero content */}
-        <div className="relative z-10 mx-auto flex  flex-col items-center gap-16 px-6 pt-4 lg:gap-[100px]  ">
+        <div className="container relative z-10 flex flex-col items-center gap-16 pt-4 lg:gap-[100px]">
           <div className="flex flex-col items-center gap-4 text-center">
             <h1 className="font-jakarta text-[clamp(36px,5vw,72px)] font-bold leading-[1.25] text-[#003859]">
               {hero.heading}

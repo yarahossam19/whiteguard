@@ -37,12 +37,13 @@ export default function WhiteHawkSection({ data }: WhiteHawkSectionProps) {
       {" "}
       <SectionImageSeparator direction="top" />
       <section
-        className="relative flex w-full flex-col-reverse items-center justify-between gap-16 overflow-hidden px-6 py-20 lg:flex-row lg:gap-16 lg:px-[7vw] lg:py-24"
+        className="relative w-full overflow-hidden py-20 lg:py-24"
         style={{
           background:
             "linear-gradient(180deg, #003859 0%, #001f33 20%, #001f33 80%, #003859 100%)",
         }}
       >
+        <div className="container flex w-full flex-col-reverse items-center justify-between gap-16 lg:flex-row lg:gap-16">
         {/* Left: Content */}
         <div className="flex max-w-[520px] flex-col gap-8">
           <div className="flex flex-col gap-4">
@@ -128,6 +129,7 @@ export default function WhiteHawkSection({ data }: WhiteHawkSectionProps) {
               </button>
             </div>
           </div>
+        </div>
         </div>
       </section>
       {/* Video modal */}

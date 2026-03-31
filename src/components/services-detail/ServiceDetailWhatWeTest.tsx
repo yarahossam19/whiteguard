@@ -22,12 +22,13 @@ export default function ServiceDetailWhatWeTest({
     <>
       <SectionVideoSeparator direction="top" videoSrc="/videos/wave.mp4" />
       <section
-        className="flex w-full flex-col items-center gap-12 px-4 py-16 lg:gap-16 lg:py-20"
+        className="flex w-full flex-col items-center py-16 lg:py-20"
         style={{
           background:
             "linear-gradient(180deg, rgb(171, 225, 255) 0%, rgb(231, 246, 255) 20%, rgb(231, 246, 255) 80%, rgb(171, 224, 255) 100%)",
         }}
       >
+        <div className="container flex w-full flex-col items-center gap-12 lg:gap-16">
         <div className="flex flex-col items-center gap-2 text-center">
           <h2 className="font-jakarta text-[28px] font-normal leading-[41.6px] text-[#003859] lg:text-[32px]">
             {heading}
@@ -67,6 +68,7 @@ export default function ServiceDetailWhatWeTest({
               </div>
             ))}
           </div>
+        </div>
         </div>
       </section>
       <SectionVideoSeparator

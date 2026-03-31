@@ -39,12 +39,13 @@ export default function ServiceDetailTestimonials({
         className="z-[-1] pt-150"
       />
       <section
-        className="flex w-full flex-col items-center gap-12 px-4 py-16 lg:gap-16 lg:py-20"
+        className="flex w-full flex-col items-center py-16 lg:py-20"
         style={{
           background:
             "linear-gradient(180deg, rgb(171, 225, 255) 0%, rgb(231, 246, 255) 20%, rgb(231, 246, 255) 80%, rgb(171, 224, 255) 100%)",
         }}
       >
+        <div className="container flex w-full flex-col items-center gap-12 lg:gap-16">
         <h2 className="text-center font-jakarta text-[28px] font-normal leading-[41.6px] text-[#003859] lg:text-[32px]">
           Words of Satisfaction from Our Clients
         </h2>
@@ -82,6 +83,7 @@ export default function ServiceDetailTestimonials({
               </p>
             </div>
           ))}
+        </div>
         </div>
       </section>
       <SectionVideoSeparator

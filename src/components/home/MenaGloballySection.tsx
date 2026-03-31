@@ -20,12 +20,13 @@ export default function MenaGloballySection({
         videoSrc="/videos/wave.mp4"
       />
       <section
-        className="relative flex w-full flex-col-reverse items-center justify-between gap-12 overflow-hidden px-6 py-16 lg:flex-row lg:gap-16 lg:px-[7vw] lg:py-24"
+        className="relative w-full overflow-hidden py-16 lg:py-24"
         style={{
           background:
             "linear-gradient(180deg, #ABE0FF 0%, #E7F6FF 20%, #E7F6FF 80%, #ABE0FF 100%)",
         }}
       >
+        <div className="container flex w-full flex-col-reverse items-center justify-between gap-12 lg:flex-row lg:gap-16">
         {/* Left: Text + Certifications */}
         <div className="flex lg:max-w-[571px] flex-col gap-6 text-center lg:text-left">
           <div className="flex flex-col gap-0">
@@ -72,6 +73,7 @@ export default function MenaGloballySection({
             alt={mapData.alt}
             className="h-full w-full object-cover"
           />
+        </div>
         </div>
       </section>
       <SectionVideoSeparator

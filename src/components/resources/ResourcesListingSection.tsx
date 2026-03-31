@@ -21,8 +21,9 @@ export default function ResourcesListingSection({
 
   return (
     <section className="w-full bg-white">
+      <div className="container flex flex-col items-center gap-[49px] pt-0">
       {/* Section heading */}
-      <div className="mx-auto flex  flex-col items-center gap-0 px-4 pt-0 text-center sm:px-6 lg:px-[96px]">
+      <div className="flex flex-col items-center gap-0 text-center">
         <h2 className="font-jakarta text-[24px] font-bold leading-[36px] text-[#003859] lg:text-[30px]">
           {listing.heading}
         </h2>
@@ -32,7 +33,7 @@ export default function ResourcesListingSection({
       </div>
 
       {/* Cards grid - 3 columns, and pagination */}
-      <div className="mx-auto mt-[49px] flex max-w-[1313px] flex-col items-center gap-[49px] px-4 sm:px-6 lg:px-[96px]">
+      <div className="flex w-full flex-col items-center gap-[49px]">
         <div className="grid w-full grid-cols-1 gap-y-[50px] sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-[57px] lg:gap-y-[50px]">
           {visibleItems.map((item) => (
             <ResourceCard key={item.id} item={item} />
@@ -50,6 +51,7 @@ export default function ResourcesListingSection({
             }}
           />
         )}
+      </div>
       </div>
     </section>
   );

@@ -43,7 +43,7 @@ export default function TestimonialsSection({
           "linear-gradient(180deg, #f0f9ff 0%, rgba(255,255,255,0) 100%)",
       }}
     >
-      <div className="mx-auto max-w-[1506px] px-6 lg:px-[7vw]">
+      <div className="container">
         {/* Heading */}
         <div className="mb-16 flex flex-col items-center gap-6 text-center">
           <h2 className="font-jakarta text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15]">

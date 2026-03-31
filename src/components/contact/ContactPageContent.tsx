@@ -147,7 +147,8 @@ export default function ContactPageContent() {
   };
 
   return (
-    <div className="  w-full grid grid-cols-1 lg:grid-cols-2  items-stretch justify-center gap-8 bg-white px-4 pb-32 lg:items-center lg:gap-20 lg:px-[97px] pt-0">
+    <div className="w-full bg-white pb-32 pt-0">
+      <div className="container grid grid-cols-1 items-stretch justify-center gap-8 lg:grid-cols-2 lg:items-center lg:gap-20">
       {/* OR */}
       {/* <p className="shrink-0 self-center whitespace-nowrap font-jakarta text-[28px] font-bold leading-[40px] tracking-[1.5px] text-[#003859]">
         OR
@@ -372,6 +373,7 @@ export default function ContactPageContent() {
             disabled={isSubmitting}
           />
         </form>
+      </div>
       </div>
     </div>
   );

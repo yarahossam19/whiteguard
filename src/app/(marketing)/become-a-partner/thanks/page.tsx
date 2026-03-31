@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function BecomePartnerThanksPage() {
   return (
-    <section className="flex min-h-[60vh] w-full items-center justify-center bg-white px-6 py-[80px]">
-      <div className="mx-auto flex w-full max-w-[1183px] flex-col items-center gap-[50px]">
+    <section className="flex min-h-[60vh] w-full items-center justify-center bg-white py-[80px]">
+      <div className="container flex w-full max-w-[1183px] flex-col items-center gap-[50px]">
         {/* Heading + description */}
         <div className="flex w-full max-w-[1183px] flex-col items-center gap-4">
           <div className="flex flex-wrap items-end justify-center gap-3">

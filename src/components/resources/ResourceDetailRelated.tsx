@@ -11,7 +11,8 @@ export default function ResourceDetailRelated({
   if (items.length === 0) return null;
 
   return (
-    <section className="mx-auto w-full max-w-[1313px] px-4 py-16 sm:px-6 lg:px-[96px]">
+    <section className="w-full py-16">
+      <div className="container">
       {/* Section title - 32px, underline 4px #29343d */}
       <div className="mb-5 flex flex-col items-start gap-4">
         <h2 className="font-jakarta   border-b-4 pb-3 border-[#29343D] text-[32px] font-normal capitalize leading-normal tracking-[-0.8px] text-[#29343D]">
@@ -27,6 +28,7 @@ export default function ResourceDetailRelated({
             <ResourceCard item={item} />
           </div>
         ))}
+      </div>
       </div>
     </section>
   );

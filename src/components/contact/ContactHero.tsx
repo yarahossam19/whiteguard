@@ -20,7 +20,7 @@ export default function ContactHero({ headline, subtitle }: ContactHeroProps) {
           }}
         >
           {/* Content - centered */}
-          <div className="relative z-10 flex   flex-col items-center gap-4 px-6 text-center">
+          <div className="container relative z-10 flex flex-col items-center gap-4 text-center">
             <h1 className="font-jakarta flex flex-col  gap-5 text-[clamp(32px,5vw,72px)] font-medium leading-[1.2] tracking-[-0.02em] lg:text-[72px]">
               <span className="text-[#003859] ">{headline.line1}</span>
             </h1>

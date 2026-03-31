@@ -39,8 +39,9 @@ export default function IndustriesBannerSection({
         />
 
         {/* Content */}
-        <div className="relative z-10 flex lg:min-h-[90vh] flex-col items-center justify-center px-4 py-16 text-center sm:px-8 sm:py-20 lg:px-[7vw] lg:py-24">
-          <div className="mx-auto flex max-w-[961px]   flex-col items-center gap-8">
+        <div className="relative z-10 flex lg:min-h-[90vh] flex-col items-center justify-center py-16 text-center sm:py-20 lg:py-24">
+          <div className="container flex flex-col items-center">
+          <div className="mx-auto flex w-full max-w-[961px] flex-col items-center gap-8">
             <h1
               className="font-jakarta font-extrabold leading-[1.2] tracking-[-0.02em] text-[#003859]"
               style={{ fontSize: "clamp(36px, 7vw, 72px)" }}
@@ -57,6 +58,7 @@ export default function IndustriesBannerSection({
             >
               {description}
             </p>
+          </div>
           </div>
         </div>
       </section>{" "}

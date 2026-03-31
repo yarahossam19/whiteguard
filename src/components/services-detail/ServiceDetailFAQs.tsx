@@ -11,7 +11,8 @@ export default function ServiceDetailFAQs({ faqs }: ServiceDetailFAQsProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-white px-4 pb-20 lg:pb-40">
+    <section className="bg-white pb-20 lg:pb-40">
+      <div className="container">
       <div className="mx-auto max-w-[768px]">
         <h2 className="mb-12 text-center font-jakarta text-[28px] font-normal leading-[41.6px] text-[#003859] lg:text-[32px]">
           FAQs
@@ -51,6 +52,7 @@ export default function ServiceDetailFAQs({ faqs }: ServiceDetailFAQsProps) {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

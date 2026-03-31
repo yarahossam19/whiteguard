@@ -19,7 +19,8 @@ export default function PartnersHeroSection({
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
   return (
-    <section className="relative flex w-full flex-col gap-12 px-4 py-10 sm:gap-16 sm:px-8 lg:gap-20 lg:px-[7vw] lg:py-14">
+    <section className="relative flex w-full flex-col gap-12 py-10 sm:gap-16 lg:gap-20 lg:py-14">
+      <div className="container">
       <div className="lg:max-h-screen flex flex-col lg:flex-row  ">
         {/*  LEFT CONTENT */}
         <div className="relative flex-1 flex items-center justify-center z-10  ">
@@ -145,6 +146,7 @@ export default function PartnersHeroSection({
             </div>
           </div>
         </div>
+      </div>
       </div>
       <ClientLogos logos={logos} className="pt-0 lg:pt-0" />
     </section>

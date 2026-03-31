@@ -29,7 +29,8 @@ export default function ServiceDetailWhoNeeds({
   examples,
 }: ServiceDetailWhoNeedsProps) {
   return (
-    <section className="bg-white px-4 pb-16 lg:pb-[112px]">
+    <section className="bg-white pb-16 lg:pb-[112px]">
+      <div className="container">
       <div className="mx-auto max-w-[1104px]">
         <div className="mb-12 flex flex-col items-center gap-4 text-center">
           <h2 className="font-jakarta text-[28px] font-normal leading-[41.6px] text-[#003859] lg:text-[32px]">
@@ -73,6 +74,7 @@ export default function ServiceDetailWhoNeeds({
             {examples}
           </p>
         </div>
+      </div>
       </div>
     </section>
   );

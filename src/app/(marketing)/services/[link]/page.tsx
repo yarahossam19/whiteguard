@@ -68,7 +68,7 @@ export default async function ServiceDetailPage({
   if (!data) {
     const title = card?.title ?? service?.label ?? "Service";
     return (
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="container py-16">
         <h1 className="font-jakarta text-3xl font-bold text-[#003859]">
           {title}
         </h1>

@@ -10,7 +10,7 @@ export default function CTASection({ data }: CTASectionProps) {
 
   return (
     <section
-      className="relative flex flex-col items-center justify-center overflow-hidden px-6 py-20 lg:px-[7vw]"
+      className="relative flex flex-col items-center justify-center overflow-hidden py-20"
       style={{
         background: "rgba(231, 246, 255, 0.8)",
         backdropFilter: "blur(15px)",
@@ -29,7 +29,8 @@ export default function CTASection({ data }: CTASectionProps) {
         }}
         aria-hidden
       />
-      <div className="relative z-10 mx-auto flex max-w-[896px] flex-col items-center gap-10 text-center">
+      <div className="container relative z-10 flex flex-col items-center">
+        <div className="mx-auto flex w-full max-w-[896px] flex-col items-center gap-10 text-center">
         <div className="flex flex-col items-center gap-6">
           <h2 className="font-jakarta text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15]">
             <span className="text-[#003859]">{heading.line1}</span>
@@ -47,6 +48,7 @@ export default function CTASection({ data }: CTASectionProps) {
           variant={button.variant as "cta" | "secondary"}
           showChevrons={false}
         />
+        </div>
       </div>
     </section>
   );

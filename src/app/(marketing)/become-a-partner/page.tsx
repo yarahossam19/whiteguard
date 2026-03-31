@@ -9,8 +9,10 @@ export const metadata: Metadata = {
 
 export default function BecomeAPartnerPage() {
   return (
-    <section className="flex w-full justify-center bg-white px-6 py-[80px]">
-      <BecomePartnerForm />
+    <section className="flex w-full justify-center bg-white py-[80px]">
+      <div className="container flex justify-center">
+        <BecomePartnerForm />
+      </div>
     </section>
   );
 }

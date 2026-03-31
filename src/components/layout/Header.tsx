@@ -31,9 +31,9 @@ export function Header() {
     }`;
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-[12px] bg-white/95 supports-[backdrop-filter]:bg-white/90">
+    <header className="sticky top-0 z-50 w-full  py-6 lg:py-6 backdrop-blur-md bg-white/95 supports-backdrop-filter:bg-white/90">
       <nav
-        className="mx-auto flex max-w-[1506px] items-center justify-between gap-4 px-4 py-6 sm:px-6 lg:px-[50px] lg:py-6"
+        className="container-fluid flex items-center justify-between gap-4"
         aria-label="Main navigation"
       >
         {/* Logo */}
@@ -124,7 +124,7 @@ export function Header() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="border-t border-[var(--button-border)] bg-white lg:hidden">
-          <div className="space-y-1 px-4 py-4">
+          <div className="container-fluid space-y-1 py-4">
             {mainNav.map((item) => {
               const hasSubLinks =
                 "subLinks" in item && item.subLinks && item.subLinks.length > 0;
