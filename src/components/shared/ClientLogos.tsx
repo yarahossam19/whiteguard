@@ -76,7 +76,7 @@ export default function ClientLogos({
             <div className="backface-hidden">
               <LogoGrid items={visible} />
             </div>
-            <div className="absolute inset-0 backface-hidden [transform:rotateX(180deg)]">
+            <div className="absolute inset-0 backface-hidden transform-[rotateX(180deg)]">
               <LogoGrid items={next} />
             </div>
           </div>

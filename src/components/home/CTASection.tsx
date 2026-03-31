@@ -30,7 +30,7 @@ export default function CTASection({ data }: CTASectionProps) {
         aria-hidden
       />
       <div className="relative z-10 mx-auto flex max-w-[896px] flex-col items-center gap-10 text-center">
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col items-center gap-6">
           <h2 className="font-jakarta text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15]">
             <span className="text-[#003859]">{heading.line1}</span>
             <br />
