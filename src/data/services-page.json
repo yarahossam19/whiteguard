@@ -4,7 +4,7 @@
     { "id": "offensive", "label": "Offensive" },
     { "id": "defensive", "label": "Defensive" },
     { "id": "grc", "label": "GRC" },
-    { "id": "training", "label": "Awareness Training" }
+    { "id": "training", "label": "Training" }
   ],
   "categories": {
     "all": {

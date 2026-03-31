@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import type { ServicesPageData } from "@/data/services-page";
 
 type TabId = ServicesPageData["tabs"][number]["id"];
@@ -15,8 +16,23 @@ export default function ServicesPageTabs({
   activeTab,
   onTabChange,
 }: ServicesPageTabsProps) {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 40);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <div className="sticky  z-40 mx-auto flex w-full flex-wrap items-center justify-center gap-1 bg-white/95 px-2 py-3 shadow-sm sm:justify-between lg:rounded-full lg:w-[80%] 2xl:w-[55%] lg:px-4 lg:py-3  top-[10%] lg:top-[20vh] 2xl:top-[16vh]  min-[1600px]:top-[14vh]!">
+    <div
+      className={`sticky  z-40 mx-auto  grid grid-cols-5 px-6 w-fit items-center justify-center gap-1 py-3 shadow-sm     sm:justify-between lg:rounded-full  not-even:gap-2  lg:py-3 top-[10%] lg:top-[20vh] 2xl:top-[16vh] min-[1600px]:top-[14vh]! transition-all duration-300 ease-in-out     ${
+        isScrolled ? "bg-white/10 " : "bg-white/95  "
+      }`}
+    >
       {tabs.map((tab) => {
         const isActive = activeTab === tab.id;
         return (
@@ -24,7 +40,7 @@ export default function ServicesPageTabs({
             key={tab.id}
             type="button"
             onClick={() => onTabChange(tab.id)}
-            className={`cursor-pointer font-jakarta text-[18px] leading-[32.5px] px-4 py-2.5 rounded-lg transition-colors lg:px-6 lg:py-2 lg:text-[20px] ${
+            className={`cursor-pointer transition-all duration-500 ease-in-out font-jakarta text-[18px] leading-[32.5px] ${isScrolled ? "lg:px-2!" : "lg:px-6"} py-2.5 rounded-lg    lg:py-2 lg:text-[20px] ${
               isActive
                 ? "font-normal text-white"
                 : "font-normal text-[#52697A] hover:text-[#003859]"
