@@ -327,19 +327,57 @@ export default function IndustriesSectionsSection({
     <section className="relative w-full bg-white py-12 sm:py-16 lg:py-24">
       <div className="container">
         {/* Top header - dark background */}
-        <div className="flex flex-col items-center text-center pb-24">
+        <div className="flex flex-col items-center text-center pb-10 sm:pb-16 lg:pb-24">
           <h2 className="font-jakarta text-lg font-bold uppercase tracking-widest  text-[#003859] sm:text-2xl">
             {header.title}
           </h2>
-          <p className="mx-auto mt-4 lg:max-w-[636px] font-jakarta text-base font-normal leading-relaxed text-[#52697A] sm:text-lg">
+          <p className="mx-auto mt-3 max-w-[min(100%,636px)] px-1 font-jakarta text-base font-normal leading-relaxed text-[#52697A] sm:mt-4 sm:text-lg">
             {header.subtitle}
           </p>
         </div>
 
+        {/* Mobile / tablet: horizontal industry nav */}
+        <div className="lg:hidden -mx-1 mb-8 overflow-x-auto overscroll-x-contain pb-2 [scrollbar-width:thin]">
+          <nav
+            className="mx-auto flex w-max max-w-none flex-row flex-nowrap justify-start gap-3 px-1 sm:gap-4"
+            aria-label="Industry sections"
+          >
+            {industries.map((industry, index) => {
+              const IconComponent =
+                INDUSTRY_ICONS[industry.icon] || INDUSTRY_ICONS.cloud;
+              return (
+                <div
+                  key={`m-${industry.id}`}
+                  className="flex shrink-0 flex-col items-center gap-1.5"
+                >
+                  <button
+                    type="button"
+                    onClick={() => scrollToSection(index)}
+                    className={`group flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#C2CDD6] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#003859]/40 focus-visible:ring-offset-2 ${
+                      activeIndex === index
+                        ? "scale-105 bg-[#003859] text-white"
+                        : "bg-white text-[#859CAD] active:scale-95"
+                    }`}
+                    aria-label={`Go to ${industry.title}`}
+                    aria-current={activeIndex === index ? "true" : undefined}
+                  >
+                    <IconComponent className="h-5 w-5 shrink-0" />
+                  </button>
+                  <span
+                    className={`max-w-18 text-center text-[10px] font-normal leading-tight sm:max-w-24 sm:text-xs ${activeIndex === index ? "font-medium text-[#003859]" : "text-[#52697A]"}`}
+                  >
+                    {industry.title}
+                  </span>
+                </div>
+              );
+            })}
+          </nav>
+        </div>
+
         {/* Main layout: sticky nav + content */}
-        <div className="relative flex flex-col lg:flex-row gap-20 items-center justify-center">
+        <div className="relative flex flex-col items-stretch justify-center gap-10 md:gap-14 lg:flex-row lg:items-start lg:gap-12 xl:gap-20">
           {/* Sticky left nav - circles - scrolls with page, click scrolls to section */}
-          <div className="sticky top-24 z-20 shrink-0 self-start hidden lg:block">
+          <div className="sticky top-24 z-20 hidden shrink-0 self-start lg:block lg:w-[200px] xl:w-[220px]">
             <nav
               className="flex flex-row justify-start gap-4 py-4 lg:flex-col lg:items-start lg:gap-6 lg:py-8"
               aria-label="Industry sections"
@@ -401,38 +439,27 @@ export default function IndustriesSectionsSection({
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.5 }}
                       transition={{ duration: 1, ease: "easeOut" }}
-                      className="flex flex-col gap-10 px-6 py-12 md:flex-row lg:items-stretch lg:gap-6 lg:px-5"
+                      className="flex flex-col gap-8 py-8 sm:gap-10 sm:px-4 sm:py-10 md:flex-row md:items-stretch md:gap-8 md:py-12 lg:gap-10 lg:px-2 lg:py-12"
                     >
                       {/* Left: Industry image */}
-                      <div className="relative flex shrink-0 items-center justify-center w-full md:w-1/2">
+                      <div className="relative flex w-full shrink-0 items-center justify-center md:w-[46%] md:max-w-[50%] lg:w-1/2">
                         <div
-                          className="relative overflow-hidden   h-full w-full  "
-                          style={{
-                            borderRadius: "16px",
-                            background: "#FFF",
-                            boxShadow:
-                              "0 121px 34px 0 rgba(0, 0, 0, 0.00), 0 77px 31px 0 rgba(0, 0, 0, 0.01), 0 44px 26px 0 rgba(0, 0, 0, 0.05), 0 19px 19px 0 rgba(0, 0, 0, 0.09), 0 5px 11px 0 rgba(0, 0, 0, 0.10)",
-                            display: "flex",
-
-                            height: "800px",
-                            width: "553px",
-                            flexDirection: "column",
-                            justifyContent: "center",
-                            alignItems: "center",
-                          }}
+                          className="relative mx-auto w-full max-w-[553px] overflow-hidden rounded-2xl bg-white shadow-[0_5px_11px_0_rgba(0,0,0,0.1),0_19px_19px_0_rgba(0,0,0,0.09),0_44px_26px_0_rgba(0,0,0,0.05)]"
+                          style={{ aspectRatio: "553 / 800" }}
                         >
                           <Image
                             src={imageSrc}
                             alt={industry.title}
                             fill
-                            className="   object-contain"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 45vw, 520px"
+                            className="object-contain object-center"
                           />
                         </div>
                       </div>
                       {/* Right: Content */}
-                      <div className="flex min-h-0 shrink flex-1 flex-col justify-between lg:min-h-[600px]">
-                        <div className="flex flex-col gap-12">
-                          <div className="flex flex-col justify-stretch gap-6">
+                      <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col justify-between md:max-w-[54%] lg:max-w-none lg:min-h-[min(600px,70vh)]">
+                        <div className="flex flex-col gap-8 sm:gap-10 lg:gap-12">
+                          <div className="flex flex-col justify-stretch gap-4 sm:gap-6">
                             <h3 className="font-jakarta text-2xl font-bold text-[#003859] sm:text-3xl lg:text-4xl">
                               {industry.title}
                             </h3>
