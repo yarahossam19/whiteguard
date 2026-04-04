@@ -29,9 +29,12 @@ export default function ServicesPageTabs({
 
   return (
     <div
-      className={`sticky  z-40 mx-auto  grid grid-cols-5 px-6 w-fit items-center justify-center gap-1 py-3 shadow-sm     sm:justify-between lg:rounded-full  not-even:gap-2  lg:py-3 top-[10%] lg:top-[20vh] 2xl:top-[16vh] min-[1600px]:top-[14vh]! transition-all duration-300 ease-in-out     ${
-        isScrolled ? "bg-white/10 " : "bg-white/95  "
-      }`}
+      className={`sticky z-40 top-[12%] w-full max-w-full transition-all duration-300 ease-in-out lg:top-[20vh] 2xl:top-[16vh] min-[1600px]:top-[14vh]! ${
+        isScrolled ? "bg-white/10" : "bg-white/95"
+      } shadow-sm
+      flex flex-nowrap items-stretch justify-start gap-1.5 overflow-x-auto overflow-y-hidden overscroll-x-contain py-2.5 pl-3 pr-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
+      sm:gap-2 sm:px-4
+      lg:mx-auto lg:w-fit lg:grid lg:max-w-none lg:grid-cols-5 lg:items-center lg:justify-center lg:gap-1 lg:overflow-visible lg:rounded-full lg:px-6 lg:py-3`}
     >
       {tabs.map((tab) => {
         const isActive = activeTab === tab.id;
@@ -40,11 +43,15 @@ export default function ServicesPageTabs({
             key={tab.id}
             type="button"
             onClick={() => onTabChange(tab.id)}
-            className={`cursor-pointer transition-all duration-500 ease-in-out font-jakarta text-[18px] leading-[32.5px] ${isScrolled ? "lg:px-1!" : "lg:px-1"} py-2.5 rounded-lg    lg:py-2 lg:text-[20px] ${
-              isActive
-                ? "font-normal text-white"
-                : "font-normal text-[#52697A] hover:text-[#003859]"
-            }`}
+            className={`shrink-0 cursor-pointer rounded-lg font-jakarta font-normal transition-all duration-500 ease-in-out
+              whitespace-nowrap px-1 py-2 text-[13px] leading-snug
+              sm:px-3.5 sm:text-[14px]
+              lg:px-4 lg:py-2 lg:text-[18px] lg:leading-[32.5px]
+              xl:px-5 xl:text-[20px]
+              ${isScrolled ? "lg:px-2! xl:px-4!" : ""}
+              ${
+                isActive ? "text-white" : "text-[#52697A] hover:text-[#003859]"
+              }`}
             style={{
               borderRadius: isActive ? "12px" : "0px",
               border: isActive ? "1px solid #0087D7" : "none",
