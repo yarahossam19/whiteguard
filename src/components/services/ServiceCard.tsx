@@ -58,7 +58,7 @@ export default function ServiceCard({ card }: ServiceCardProps) {
 
       {/* CTA link - uses card link for details page */}
       <HoverSwapButton
-        href={`#.`}
+        href={`/contact`}
         label={cta.label}
         hoverLabel={cta.label}
         variant="secondary"
