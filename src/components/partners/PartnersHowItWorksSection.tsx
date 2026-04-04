@@ -1,9 +1,26 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import type { PartnersHowItWorksData } from "@/data/partners-how-it-works";
 
 interface PartnersHowItWorksSectionProps {
   data: PartnersHowItWorksData;
 }
+
+/** Figma 1646:1638 — Section frame (px) */
+const FW = 1506;
+const FH = 1389;
+
+function xp(n: number): string {
+  return `${(n / FW) * 100}%`;
+}
+function yp(n: number): string {
+  return `${(n / FH) * 100}%`;
+}
+function wp(n: number): string {
+  return `${(n / FW) * 100}%`;
+}
+
+/* ----- Mobile ----- */
 
 function MobileStepIsometricIcon({
   iconSrc,
@@ -19,7 +36,7 @@ function MobileStepIsometricIcon({
         alt={title}
         width={64}
         height={64}
-        className="absolute top-[-10%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 object-contain w-[64px] h-[64px]"
+        className="absolute top-[-10%] left-1/2 z-20 h-[64px] w-[64px] -translate-x-1/2 -translate-y-1/2 object-contain"
         sizes="64px"
       />
       <div
@@ -28,14 +45,13 @@ function MobileStepIsometricIcon({
           background: "url(/images/icons/under-cover.svg)",
           width: "100px",
           height: "100px",
-          // transform: "rotate(-45deg)",
           backgroundSize: "contain",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
         <Image
-          className="absolute left-1/2 top-[50%] z-10 w-[60px] -translate-x-1/2 -translate-y-1/2 object-contain"
+          className="absolute top-1/2 left-1/2 z-10 w-[60px] -translate-x-1/2 -translate-y-1/2 object-contain"
           src="/images/icons/dot.svg"
           alt=""
           width={40}
@@ -47,8 +63,7 @@ function MobileStepIsometricIcon({
   );
 }
 
-// Isometric cube path block
-function PathCube({ style }: { style?: React.CSSProperties }) {
+function PathCubeSvg({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +71,8 @@ function PathCube({ style }: { style?: React.CSSProperties }) {
       height={66}
       viewBox="0 0 64 66"
       fill="none"
-      style={style}
+      className={className}
+      aria-hidden
     >
       <path
         d="M41.5522 50.4889L64 37.3542L63.8879 51.9594L41.5522 65.0561L41.5522 50.4889Z"
@@ -74,16 +90,245 @@ function PathCube({ style }: { style?: React.CSSProperties }) {
   );
 }
 
+/** Path tile — straight segment (Figma Group 1000009232), top-left = x,y */
+function PathTileFlat({ style }: { style?: CSSProperties }) {
+  return (
+    <div className="pointer-events-none absolute" style={style}>
+      <PathCubeSvg className="block h-[65.167px] w-[64px]" />
+    </div>
+  );
+}
+
+/** Path tile — angled A (Figma 9221 / 9226 wrapper) */
+function PathTileAngledA({ style }: { style?: CSSProperties }) {
+  return (
+    <div
+      className="absolute flex h-[97.167px] w-[55.426px] items-center justify-center"
+      style={style}
+    >
+      <div
+        className="flex-none"
+        style={{
+          transform: "rotate(-30deg) skewX(-30deg) scaleY(0.87)",
+        }}
+      >
+        <div className="relative h-[65.167px] w-[64px]">
+          <PathCubeSvg className="block" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Path tile — flipped corner (Figma 9220) */
+function PathTileFlipped({ style }: { style?: CSSProperties }) {
+  return (
+    <div
+      className="absolute flex h-[97.167px] w-[55.426px] items-center justify-center"
+      style={style}
+    >
+      <div
+        className="flex-none"
+        style={{
+          transform: "rotate(-150deg) scaleY(0.87) skewX(30deg)",
+        }}
+      >
+        <div className="relative h-[65.167px] w-[64px]">
+          <PathCubeSvg className="block" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type StepMarkerConfig = {
+  platform: { left: number; top: number; width: number; height: number };
+  platformInnerTransform: string;
+  shadow: {
+    left: number;
+    top: number;
+    width: number;
+    height: number;
+    innerTransform: string;
+    shadowW: number;
+    shadowH: number;
+  };
+  icon: { left: number; top: number; width: number; height: number };
+  /** Step 4 only: object position for raster crop */
+  iconImgStyle?: CSSProperties;
+};
+
+const STEP_MARKERS: StepMarkerConfig[] = [
+  {
+    platform: { left: 478, top: 348, width: 173.205, height: 100 },
+    platformInnerTransform: "rotate(-30deg) scaleY(0.87) skewX(30deg)",
+    shadow: {
+      left: 524.71,
+      top: 377.82,
+      width: 80.396,
+      height: 40.359,
+      innerTransform: "rotate(-43.79deg) scaleY(0.87) skewX(30deg)",
+      shadowW: 35.232,
+      shadowH: 57.238,
+    },
+    icon: { left: 515, top: 315, width: 90, height: 90 },
+  },
+  {
+    platform: { left: 827, top: 565, width: 173.205, height: 100 },
+    platformInnerTransform: "rotate(-30deg) scaleY(0.87) skewX(30deg)",
+    shadow: {
+      left: 883.97,
+      top: 600,
+      width: 59.885,
+      height: 30,
+      innerTransform: "rotate(-43.79deg) scaleY(0.87) skewX(30deg)",
+      shadowW: 26.114,
+      shadowH: 42.732,
+    },
+    icon: { left: 864, top: 540, width: 100, height: 100 },
+  },
+  {
+    platform: { left: 777, top: 839, width: 173.205, height: 100 },
+    platformInnerTransform: "rotate(-30deg) scaleY(0.87) skewX(30deg)",
+    shadow: {
+      left: 826,
+      top: 866,
+      width: 76.99,
+      height: 39.203,
+      innerTransform: "rotate(-17.28deg) scaleY(0.87) skewX(30deg)",
+      shadowW: 54.545,
+      shadowH: 33.901,
+    },
+    icon: { left: 820, top: 810, width: 90, height: 90 },
+  },
+  {
+    platform: { left: 574, top: 1145, width: 173.205, height: 100 },
+    platformInnerTransform: "rotate(-30deg) scaleY(0.87) skewX(30deg)",
+    shadow: {
+      left: 628,
+      top: 1176,
+      width: 65.818,
+      height: 38,
+      innerTransform: "rotate(-30deg) scaleY(0.87) skewX(30deg)",
+      shadowW: 35.232,
+      shadowH: 40.768,
+    },
+    icon: { left: 632, top: 1105, width: 80, height: 80 },
+    iconImgStyle: {
+      width: "176.55%",
+      height: "112.28%",
+      left: "-50.86%",
+      top: "-2.41%",
+      maxWidth: "none",
+    },
+  },
+];
+
+function DesktopStepMarkerLayer({
+  iconSrc,
+  title,
+  config,
+}: {
+  iconSrc: string;
+  title: string;
+  config: StepMarkerConfig;
+}) {
+  const { platform, platformInnerTransform, shadow, icon, iconImgStyle } =
+    config;
+
+  return (
+    <>
+      {/* Isometric platform (ellipse asset → gradient + transform) */}
+      <div
+        className="pointer-events-none absolute z-20 flex items-center justify-center"
+        style={{
+          left: xp(platform.left),
+          top: yp(platform.top),
+          width: wp(platform.width),
+          height: `${(platform.height / FH) * 100}%`,
+        }}
+      >
+        <div
+          className="absolute bottom-0 left-1/2 z-0 -translate-x-1/2"
+          style={{
+            background: "url(/images/icons/under-cover.svg)",
+            width: "80px",
+            height: "80px",
+            backgroundSize: "contain",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <Image
+            src="/images/icons/dot.svg"
+            alt=""
+            width={40}
+            height={40}
+            className="absolute top-1/2 left-1/2 z-10 w-[40px] -translate-x-1/2 -translate-y-1/2 object-contain"
+          />
+        </div>
+      </div>
+      {/* Ground shadow under icon */}
+      <div
+        className="pointer-events-none absolute z-30 flex items-center justify-center"
+        style={{
+          left: xp(shadow.left),
+          top: yp(shadow.top),
+          width: wp(shadow.width),
+          height: `${(shadow.height / FH) * 100}%`,
+        }}
+      >
+        <div className="flex-none" style={{ transform: shadow.innerTransform }}>
+          <div
+            className="relative overflow-visible"
+            style={{ width: shadow.shadowW, height: shadow.shadowH }}
+          >
+            <div
+              className="absolute rounded-[50%]"
+              style={{
+                inset: "-20% -32%",
+                background:
+                  "radial-gradient(ellipse at 50% 35%, rgba(0,56,89,0.35) 0%, rgba(0,56,89,0.12) 45%, transparent 72%)",
+                filter: "blur(2.5px)",
+              }}
+            />
+          </div>
+        </div>
+      </div>
+      {/* Step icon */}
+      <div
+        className="pointer-events-none absolute z-40 overflow-hidden"
+        style={{
+          left: xp(icon.left),
+          top: yp(icon.top),
+          width: wp(icon.width),
+          height: wp(icon.height),
+        }}
+      >
+        <Image
+          src={iconSrc}
+          alt={title}
+          width={icon.width}
+          height={icon.height}
+          className="absolute inset-0 size-full object-contain"
+          // sizes="120px"
+          style={iconImgStyle}
+        />
+      </div>
+    </>
+  );
+}
+
 export default function PartnersHowItWorksSection({
   data,
 }: PartnersHowItWorksSectionProps) {
   const { badge, heading, steps } = data;
 
   return (
-    <section className="relative z-10 w-full overflow-hidden bg-white pb-8  lg:pb-40">
+    <section className="relative z-10 w-full overflow-hidden bg-white pb-8 lg:pb-40">
       <div className="container relative">
-        {/* Header  */}
-        <div className="mx-auto mb-16 flex max-w-[353px] flex-col items-center gap-2 lg:mb-4 lg:max-w-none">
+        {/* Mobile header */}
+        <div className="mx-auto mb-16 flex lg:max-w-[353px] flex-col items-center gap-2 lg:hidden">
           <div
             className="flex h-8 items-center justify-center rounded-full border px-5"
             style={{
@@ -95,292 +340,195 @@ export default function PartnersHowItWorksSection({
               {badge}
             </p>
           </div>
-          <h2 className="hidden max-w-[872px] px-8 text-center font-jakarta text-[clamp(28px,4vw,42px)] font-extrabold leading-[1.15] tracking-[-1.05px] text-[#003859] lg:block">
-            {heading.line1}
-            <span className="text-[#0087D7]">{heading.line2}</span>
-            {heading.line3}
-          </h2>
-          <h2 className="w-full text-center font-jakarta text-[32px] font-extrabold leading-[1.2] tracking-[-0.8px] text-[#003859] lg:hidden">
+          <h2 className="w-full text-center font-jakarta text-[32px] font-extrabold leading-[1.2] tracking-[-0.8px] text-[#003859]">
             <span className="block">{heading.line1.trimEnd()}</span>
             <span className="block text-[#0087D7]">{heading.line2}</span>
             <span className="block">{heading.line3.trimStart()}</span>
           </h2>
         </div>
 
-        {/* Desktop:   */}
-        <div className="relative hidden min-h-[1050px] lg:block">
-          {/* Path cubes - S-shape, hidden on mobile */}
-          <div className="absolute inset-0 hidden lg:block" aria-hidden>
-            <div style={{ position: "absolute", left: "43%", top: "21%" }}>
-              <PathCube />
-            </div>
-            <div style={{ position: "absolute", left: "47%", top: "25%" }}>
-              <PathCube />
-            </div>
-            <div style={{ position: "absolute", left: "51%", top: "29%" }}>
-              <PathCube />
-            </div>
-            <div style={{ position: "absolute", left: "55%", top: "33%" }}>
-              <PathCube />
-            </div>
-            {/* <div style={{ position: "absolute", left: "54%", top: "38%" }}>
-              <PathCube />
-            </div> */}
-            <div style={{ position: "absolute", left: "52%", top: "44%" }}>
-              <PathCube />
-            </div>
-            <div style={{ position: "absolute", left: "48%", top: "48%" }}>
-              <PathCube />
-            </div>
-            <div style={{ position: "absolute", left: "43%", top: "52%" }}>
-              <PathCube />
-            </div>
-            <div style={{ position: "absolute", left: "40%", top: "56%" }}>
-              <PathCube />
-            </div>
-            <div style={{ position: "absolute", left: "38%", top: "60%" }}>
-              <PathCube />
-            </div>
-            {/* <div style={{ position: "absolute", left: "40%", top: "68%" }}>
-              <PathCube />
-            </div> */}
+        {/* Desktop — pixel canvas 1506×1389 (Figma); scales with container width */}
+        <div className="relative mx-auto hidden w-full max-w-[1506px] lg:block ">
+          <div
+            className="relative w-full bg-white"
+            style={{ aspectRatio: `${FW} / ${FH}` }}
+          >
+            {/* Path under copy — z-0 */}
             <div
-              style={{
-                position: "absolute",
-                left: "38%",
-                top: "73%",
-                transform: "rotateY(180deg)",
-              }}
+              className="pointer-events-none absolute inset-0 z-0"
+              aria-hidden
             >
-              <PathCube />
+              <PathTileFlat style={{ left: xp(609), top: yp(405) }} />
+              <PathTileFlat style={{ left: xp(673), top: yp(442) }} />
+              <PathTileFlat style={{ left: xp(734), top: yp(479) }} />
+              <PathTileFlat style={{ left: xp(796), top: yp(520) }} />
+              {/* <PathTileFlipped style={{ left: xp(931), top: yp(614) }} /> */}
+              <PathTileFlat style={{ left: xp(920), top: yp(625) }} />
+              <PathTileAngledA style={{ left: xp(931), top: yp(662) }} />
+              <PathTileAngledA style={{ left: xp(909), top: yp(713) }} />
+              <PathTileAngledA style={{ left: xp(876), top: yp(765) }} />
+              <PathTileAngledA style={{ left: xp(804), top: yp(889) }} />
+              <PathTileAngledA style={{ left: xp(777), top: yp(933) }} />
+              <PathTileAngledA style={{ left: xp(746), top: yp(977) }} />
+              <PathTileAngledA style={{ left: xp(712), top: yp(1025) }} />
+              <PathTileAngledA style={{ left: xp(684), top: yp(1073) }} />
             </div>
-            <div
-              style={{
-                position: "absolute",
-                left: "35%",
-                top: "78%",
-                transform: "rotateY(180deg)",
-              }}
-            >
-              <PathCube />
-            </div>
-            <div
-              style={{
-                position: "absolute",
-                left: "32%",
-                top: "83%",
-                transform: "rotateY(180deg)",
-              }}
-            >
-              <PathCube />
-            </div>
-          </div>
 
-          {/* Step 1 - top-left */}
-          <div className="absolute left-0 top-0 w-full max-w-[350px] lg:left-[10%] lg:top-[12%]">
-            <div className="flex flex-col gap-1 text-right">
+            {/* Header — 1658:3254 */}
+            <div
+              className="flex text-center justify-center z-10 flex-col items-center gap-2 "
+              // style={{
+              //   left: xp(214),
+              //   top: yp(60),
+              //   width: wp(1024),
+              // }}
+            >
+              <div
+                className="relative flex h-8 shrink-0 items-center justify-center rounded-full border px-4 "
+                style={{
+                  width: "135.797px",
+                  maxWidth: "100%",
+                  backgroundColor: "#F0F6F9",
+                  borderColor: "rgba(0, 56, 89, 0.1)",
+                }}
+              >
+                <p className="font-jakarta text-[12px] font-bold leading-[18px] tracking-[0.84px] text-[#003859]">
+                  {badge}
+                </p>
+              </div>
+              <div className="flex w-full flex-col items-center text-center font-jakarta text-[42px] font-extrabold tracking-[-1.05px] text-[#003859] ">
+                <p className="w-full leading-[48.3px]">
+                  <span>{heading.line1}</span>
+                  <span className="text-[#0087D7]">{heading.line2}</span>
+                </p>
+                <p className="w-full leading-[48.3px]">
+                  {heading.line3.trimStart()}
+                </p>
+              </div>
+            </div>
+
+            {/* STEP 01 copy */}
+            <div
+              className="absolute z-10 flex flex-col gap-1 text-right "
+              style={{
+                left: xp(280),
+                top: yp(306),
+                // width: wp(197.125),
+              }}
+            >
               <p className="font-jakarta text-[14px] font-bold leading-[15px] tracking-[0.8px] text-[#00A3E0]">
                 {steps[0].label}
               </p>
-              <h3 className="font-jakarta text-[20px] font-bold leading-[24px] text-[#003859]">
+              <p className="font-jakarta text-[20px] font-bold leading-[24px] text-[#003859] w-full">
                 {steps[0].title}
-              </h3>
-              <p className="font-jakarta pe-10 text-[14px] font-normal leading-[25.2px] text-[#52697A]">
-                {steps[0].description}
               </p>
             </div>
-          </div>
-          <div className="absolute left-1/2 top-[15%] flex h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 items-center justify-center lg:left-[42%]">
-            <div className="flex  items-center justify-center  ">
-              <Image
-                src={steps[0].icon}
-                alt="check icon"
-                width={70}
-                height={70}
-                className="object-contain w-[70px] h-[70px] relative z-10"
-              />
-              <div
-                className="absolute top-12 left-0 z-0"
-                style={{
-                  background: "url(/images/icons/under-cover.svg)",
-                  width: "100px",
-                  height: "100px",
-                  // transform: "rotate(-45deg)",
-                  backgroundSize: "contain",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                }}
-              >
-                <Image
-                  className="object-contain relative left-1/2 -translate-x-1/2 z-10 mt-4"
-                  src="/images/icons/dot.svg"
-                  alt="under cover"
-                  width={55}
-                  height={70}
-                  style={{
-                    width: "55px",
-                    height: "70px",
-                    // transform: "rotate(-53.066deg)",
-                  }}
-                />
-              </div>
-            </div>
-          </div>
+            <p
+              className="absolute z-10 text-left  mt-4 font-jakarta text-[14px] font-normal leading-[25.2px] text-[#52697A]"
+              style={{
+                left: xp(210),
+                top: yp(361),
+                width: wp(310),
+              }}
+            >
+              {steps[0].description}
+            </p>
 
-          {/* Step 2 - mid-right */}
-          <div className="absolute right-0 top-0 w-full max-w-[350px] lg:right-[8%] lg:top-[38%]">
-            <div className="flex flex-col gap-1 text-left">
+            {/* STEP 02 */}
+            <div
+              className="absolute z-10 flex flex-col gap-1 text-left"
+              style={{
+                left: xp(980),
+                top: yp(537),
+              }}
+            >
               <p className="font-jakarta text-[14px] font-bold leading-[15px] tracking-[0.8px] text-[#00A3E0]">
                 {steps[1].label}
               </p>
-              <h3 className="font-jakarta text-[20px] font-bold leading-[24px] text-[#003859]">
+              <p className="font-jakarta text-[20px] font-bold leading-[24px] text-[#003859]">
                 {steps[1].title}
-              </h3>
-              <p className="font-jakarta ps-10 text-[14px] font-normal leading-[25.2px] text-[#52697A]">
-                {steps[1].description}
               </p>
             </div>
-          </div>
-          <div className="absolute left-[1/2] top-[40%] flex h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 items-center justify-center lg:left-[61%]">
-            <div className="flex  items-center justify-center  ">
-              <Image
-                src={steps[1].icon}
-                alt="check icon"
-                width={70}
-                height={70}
-                className="object-contain w-[70px] h-[70px] relative z-10"
-              />
-              <div
-                className="absolute top-12 left-0 z-0"
-                style={{
-                  background: "url(/images/icons/under-cover.svg)",
-                  width: "100px",
-                  height: "100px",
-                  // transform: "rotate(-45deg)",
-                  backgroundSize: "contain",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                }}
-              >
-                <Image
-                  className="object-contain relative left-1/2 -translate-x-1/2 z-10 mt-4"
-                  src="/images/icons/dot.svg"
-                  alt="under cover"
-                  width={55}
-                  height={70}
-                  style={{
-                    width: "55px",
-                    height: "70px",
-                    // transform: "rotate(-53.066deg)",
-                  }}
-                />
-              </div>
-            </div>
-          </div>
+            <p
+              className="absolute  mt-4  z-10 text-left font-jakarta text-[14px] font-normal leading-[25.2px] text-[#52697A]"
+              style={{
+                left: xp(1020),
+                top: yp(592),
+                width: wp(350),
+              }}
+            >
+              {steps[1].description}
+            </p>
 
-          {/* Step 3 - mid-left */}
-          <div className="absolute left-0 top-0 w-full max-w-[350px] lg:left-[8%] lg:top-[64%]">
-            <div className="flex flex-col gap-1 text-right">
+            {/* STEP 03 */}
+            <div
+              className="absolute z-10 flex flex-col gap-1 text-right"
+              style={{
+                left: xp(490),
+                top: yp(788),
+                // width: wp(280),
+              }}
+            >
               <p className="font-jakarta text-[14px] font-bold leading-[15px] tracking-[0.8px] text-[#00A3E0]">
                 {steps[2].label}
               </p>
-              <h3 className="font-jakarta text-[20px] font-bold leading-[24px] text-[#003859]">
+              <p className="font-jakarta text-[20px] font-bold leading-[24px] text-[#003859]">
                 {steps[2].title}
-              </h3>
-              <p className="font-jakarta pe-10 text-[14px] font-normal leading-[25.2px] text-[#52697A]">
-                {steps[2].description}
               </p>
             </div>
-          </div>
-          <div className="absolute left-1/2 top-[66%] flex h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 items-center justify-center lg:left-[42%]">
-            <div className="flex  items-center justify-center  ">
-              <Image
-                src={steps[2].icon}
-                alt="check icon"
-                width={70}
-                height={70}
-                className="object-contain w-[70px] h-[70px] relative z-10"
-              />
-              <div
-                className="absolute top-12 left-0 z-0"
-                style={{
-                  background: "url(/images/icons/under-cover.svg)",
-                  width: "100px",
-                  height: "100px",
-                  // transform: "rotate(-45deg)",
-                  backgroundSize: "contain",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                }}
-              >
-                <Image
-                  className="object-contain relative left-1/2 -translate-x-1/2 z-10 mt-4"
-                  src="/images/icons/dot.svg"
-                  alt="under cover"
-                  width={55}
-                  height={70}
-                  style={{
-                    width: "55px",
-                    height: "70px",
-                    // transform: "rotate(-53.066deg)",
-                  }}
-                />
-              </div>
-            </div>
-          </div>
+            <p
+              className="absolute z-10 mt-4 text-left font-jakarta text-[14px] font-normal leading-[25.2px] text-[#52697A]"
+              style={{
+                left: xp(432),
+                top: yp(843),
+                width: wp(344),
+              }}
+            >
+              {steps[2].description}
+            </p>
 
-          {/* Step 4 - bottom-right */}
-          <div className="absolute left-0 top-0 w-full max-w-[350px] lg:left-[0%] lg:top-[88%]">
-            <div className="flex flex-col gap-1 text-right">
-              <p className="font-jakarta text-[14px] font-bold leading-[15px] tracking-[0.8px] text-[#00A3E0]">
+            {/* STEP 04 */}
+            <div
+              className="absolute z-10 flex flex-col gap-1 text-right"
+              style={{
+                left: xp(400),
+                top: yp(1105),
+                // width: wp(174),
+              }}
+            >
+              <p className="whitespace-nowrap font-jakarta text-[14px] font-bold leading-[15px] tracking-[0.8px] text-[#00A3E0]">
                 {steps[3].label}
               </p>
-              <h3 className="font-jakarta text-[20px] font-bold leading-[24px] text-[#003859]">
+              <p className="min-w-full font-jakarta text-[20px] font-bold leading-[24px] text-[#003859]">
                 {steps[3].title}
-              </h3>
-              <p className="font-jakarta pe-10 text-[14px] font-normal leading-[25.2px] text-[#52697A]">
-                {steps[3].description}
               </p>
             </div>
-          </div>
-          <div className="absolute left-1/2 top-[90%] flex h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 items-center justify-center lg:left-[32%]">
-            <div className="flex  items-center justify-center  ">
-              <Image
-                src={steps[3].icon}
-                alt="check icon"
-                width={70}
-                height={70}
-                className="object-contain w-[70px] h-[70px] relative z-10"
+            <p
+              className="absolute z-10 mt-4 text-left font-jakarta text-[14px] font-normal leading-[25.2px] text-[#52697A]"
+              style={{
+                left: xp(230),
+                top: yp(1160),
+                width: wp(350),
+              }}
+            >
+              {steps[3].description}
+            </p>
+
+            {/* Step markers (platform + shadow + icon) */}
+            {steps.slice(0, 4).map((step, i) => (
+              <DesktopStepMarkerLayer
+                key={step.id}
+                iconSrc={step.icon}
+                title={step.title}
+                config={STEP_MARKERS[i]!}
               />
-              <div
-                className="absolute top-12 left-0 z-0"
-                style={{
-                  background: "url(/images/icons/under-cover.svg)",
-                  width: "100px",
-                  height: "100px",
-                  // transform: "rotate(-45deg)",
-                  backgroundSize: "contain",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                }}
-              >
-                <Image
-                  className="object-contain relative left-1/2 -translate-x-1/2 z-10 mt-4"
-                  src="/images/icons/dot.svg"
-                  alt="under cover"
-                  width={55}
-                  height={70}
-                  style={{
-                    width: "55px",
-                    height: "70px",
-                    // transform: "rotate(-53.066deg)",
-                  }}
-                />
-              </div>
-            </div>
+            ))}
+
+            <span className="sr-only">How partnership steps work</span>
           </div>
         </div>
 
+        {/* Mobile steps */}
         <div className="mx-auto flex w-full max-w-[353px] flex-col gap-[50px] lg:hidden">
           {steps.map((step, index) => {
             const textOnLeft = index % 2 === 0;
@@ -393,7 +541,7 @@ export default function PartnersHowItWorksSection({
                 <p className="font-jakarta text-[14px] font-bold leading-[15px] tracking-[0.8px] text-[#00A3E0]">
                   {step.label}
                 </p>
-                <h3 className="font-jakarta text-[18px] font-bold leading-[1.2] text-[#003859]">
+                <h3 className="font-jakarta text-[18px] font-bold leading-snug text-[#003859]">
                   {step.title}
                 </h3>
               </div>
@@ -417,7 +565,7 @@ export default function PartnersHowItWorksSection({
                     </>
                   )}
                 </div>
-                <p className="mt-[13px] max-w-[250px] font-jakarta text-[14px] font-normal leading-[1.5] text-[#52697A]">
+                <p className="mt-[13px] max-w-[250px] font-jakarta text-[14px] font-normal leading-normal text-[#52697A]">
                   {step.description}
                 </p>
               </div>

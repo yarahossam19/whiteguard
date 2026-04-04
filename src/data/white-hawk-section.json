@@ -1,13 +1,14 @@
 {
   "heading": {
-    "line1": "Cybersecurity Powered",
-    "line2": "by Innovation."
+    "line1": "Cybersecurity, Unified",
+    "line2": "by",
+    "line3": "Intelligence"
   },
-  "description": "White Hawk is our proprietary threat intelligence and security operations platform. It provides real-time visibility into your security posture, automates response workflows, and leverages AI to predict emerging threats before they materialize.",
+  "description": "White Hawk is our AI-powered cybersecurity management platform. It centralizes Offensive, Defensive, GRC, and Asset Management into a single pane of glass, enabling organizations to manage, prioritize, and act on security risks with full visibility and control.",
   "features": [
-    "Real-time threat detection & automated response",
-    "AI-powered vulnerability prediction engine",
-    "Unified compliance dashboard across all frameworks"
+    "Centralized visibility across assets, threats, and compliance",
+    "Automated correlation between vulnerabilities, alerts, and business risk ",
+    "Unified platform for security operations, GRC, and decision-making"
   ],
   "cta": {
     "variant": "secondary",

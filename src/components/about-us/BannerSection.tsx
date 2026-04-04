@@ -110,7 +110,7 @@ export default function BannerSection({ data }: BannerSectionProps) {
               {headline.line2}
             </h1>
 
-            <div className="flex flex-col gap-8 lg:gap-[81px]">
+            <div className="flex flex-col gap-8 lg:gap-[50px]">
               {/* Stats */}
               <div className="flex flex-wrap justify-center gap-4 lg:justify-start lg:gap-6">
                 {stats.map((stat) => (
@@ -172,7 +172,7 @@ export default function BannerSection({ data }: BannerSectionProps) {
         {/* RIGHT - Image columns (hidden on mobile, shown below) */}
         <div className="relative hidden w-full lg:flex lg:w-1/2">
           <div
-            className="flex absolute  w-full  left-[30%] -top-[50%]"
+            className="flex absolute  w-full  left-[20%] -top-[50%]"
             style={{
               height: "1506px",
               transform: "rotate(-20.331deg)",
@@ -182,7 +182,7 @@ export default function BannerSection({ data }: BannerSectionProps) {
             }}
           >
             <div
-              className="w-full z-20 h-[50%] absolute right-[30%] top-[-15%]  "
+              className="w-full z-20 h-[35%] absolute right-[30%] top-[-15%]  "
               style={{
                 background:
                   "linear-gradient(to bottom, rgba(255, 255, 255,1) ,rgba(255, 255, 255,1), transparent)",

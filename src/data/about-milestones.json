@@ -6,44 +6,33 @@
   "subtitle": "Every great company has defining moments. These are ours - the milestones that shaped who we are today.",
   "milestones": [
     {
-      "id": "2018",
-      "year": "2018",
+      "id": "2024",
+      "year": "2024",
       "title": "Company Founded",
-      "description": "WHITEGUARD was born from a simple but powerful belief: that every organization deserves enterprise-grade cybersecurity. Two founders, one vision — and the relentless drive to make it real.",
+      "description": "WHITEGUARD was founded with a clear mission to simplify cybersecurity and make it accessible, scalable, and effective for every organization. From day one, the focus was on building real impact through innovation and execution.",
       "metricValue": "1",
       "metricLabel": "Day Zero",
       "icon": "flag",
       "side": "left"
     },
     {
-      "id": "2020",
-      "year": "2020",
-      "title": "First 100 Enterprise Clients",
-      "description": "A landmark moment — reaching 100 enterprise clients across Saudi Arabia, the UAE, and Egypt. This milestone proved our unified approach resonated with organizations of every scale and sector.",
-      "metricValue": "100+",
-      "metricLabel": "Clients Secured",
+      "id": "2025",
+      "year": "2025",
+      "title": "Pre-Seed Funding Secured",
+      "description": "A major milestone that validated the vision — securing pre-seed investment to accelerate growth, expand capabilities, and strengthen our position in the cybersecurity market across the region.",
+
       "icon": "users",
       "side": "right"
     },
     {
-      "id": "2022",
-      "year": "2022",
-      "title": "Launched Unified Security Platform",
-      "description": "Introducing White Hawk — our proprietary, AI-driven platform that consolidates threat detection, compliance management, and incident response into a single, intelligent dashboard.",
+      "id": "2026",
+      "year": "2026",
+      "title": "Launching White Hawk ",
+      "description": "Introducing White Hawk — our AI-powered cybersecurity platform that unifies security operations, GRC, and asset management into one intelligent system, redefining how organizations manage and act on cyber risks.",
       "metricValue": "40+",
       "metricLabel": "Platform Features",
       "icon": "rocket",
       "side": "left"
-    },
-    {
-      "id": "2024",
-      "year": "2024",
-      "title": "Regional Cybersecurity Excellence Award",
-      "description": "Recognized as the leading cybersecurity solutions provider in the MENA region, awarded by the Gulf Technology Council for our outstanding contribution to enterprise security resilience.",
-      "metricValue": "12+",
-      "metricLabel": "Awards Won",
-      "icon": "trophy",
-      "side": "right"
     }
   ]
 }

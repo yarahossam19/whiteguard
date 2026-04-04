@@ -176,11 +176,11 @@ button,
 }
 
 .animate-marquee-up {
-  animation: marquee-vertical-up 25s linear infinite;
+  animation: marquee-vertical-up 40s linear infinite;
 }
 
 .animate-marquee-down {
-  animation: marquee-vertical-down 25s linear infinite;
+  animation: marquee-vertical-down 40s linear infinite;
 }
 
 @keyframes spin-slow {

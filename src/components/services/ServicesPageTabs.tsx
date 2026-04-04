@@ -40,7 +40,7 @@ export default function ServicesPageTabs({
             key={tab.id}
             type="button"
             onClick={() => onTabChange(tab.id)}
-            className={`cursor-pointer transition-all duration-500 ease-in-out font-jakarta text-[18px] leading-[32.5px] ${isScrolled ? "lg:px-2!" : "lg:px-6"} py-2.5 rounded-lg    lg:py-2 lg:text-[20px] ${
+            className={`cursor-pointer transition-all duration-500 ease-in-out font-jakarta text-[18px] leading-[32.5px] ${isScrolled ? "lg:px-1!" : "lg:px-1"} py-2.5 rounded-lg    lg:py-2 lg:text-[20px] ${
               isActive
                 ? "font-normal text-white"
                 : "font-normal text-[#52697A] hover:text-[#003859]"

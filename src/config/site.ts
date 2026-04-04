@@ -6,7 +6,7 @@ export const siteConfig = {
   name: "WHITEGUARD",
   tagline:
     "Empowering businesses with intelligent, continuous security monitoring. We are your trusted partner in the digital landscape.",
-  copyright: "©2026 WhiteHawk Security. All rights reserved.",
+  copyright: "©2026 WHITEGUARD Security. All rights reserved.",
 } as const;
 
 export const mainNav = [

@@ -36,15 +36,21 @@ const ICONS: Record<
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      stroke={color}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
     >
-      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-      <circle cx="9" cy="7" r="4" />
-      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      <path
+        d="M15.4768 12.8896L16.9918 21.4156C17.0087 21.516 16.9946 21.6192 16.9514 21.7114C16.9081 21.8036 16.8377 21.8803 16.7497 21.9314C16.6616 21.9825 16.56 22.0055 16.4586 21.9974C16.3571 21.9892 16.2605 21.9502 16.1818 21.8856L12.6018 19.1986C12.4289 19.0695 12.219 18.9998 12.0033 18.9998C11.7875 18.9998 11.5776 19.0695 11.4048 19.1986L7.81875 21.8846C7.74007 21.9491 7.64361 21.988 7.54225 21.9962C7.44088 22.0044 7.33942 21.9815 7.25141 21.9305C7.16341 21.8796 7.09303 21.803 7.04967 21.711C7.00631 21.619 6.99204 21.516 7.00875 21.4156L8.52275 12.8896"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12 14C15.3137 14 18 11.3137 18 8C18 4.68629 15.3137 2 12 2C8.68629 2 6 4.68629 6 8C6 11.3137 8.68629 14 12 14Z"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
     </svg>
   ),
   rocket: ({ className = "", color = "currentColor" }) => (
@@ -98,6 +104,7 @@ export default function MilestonesSection({ data }: MilestonesSectionProps) {
         videoSrc="/videos/wave.mp4"
         className="z-[-1]"
       />
+      سسسسسس
       <section
         className="relative w-full py-16 lg:py-24"
         style={{
@@ -107,135 +114,136 @@ export default function MilestonesSection({ data }: MilestonesSectionProps) {
       >
         <div className="container">
           <div className="mx-auto lg:max-w-[900px]">
-          {/* Heading */}
-          <div className="mb-16 flex flex-col items-center gap-6 text-center">
-            <h2 className="font-jakarta text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15]">
-              <span className="text-[#003859]">{heading.line1}</span>
-              <span className="text-[#0087D7]">{heading.line2}</span>
-            </h2>
-            <p className="max-w-[434px] font-jakarta text-base leading-[1.8] text-[#52697A]">
-              {subtitle}
-            </p>
-          </div>
+            {/* Heading */}
+            <div className="mb-16 flex flex-col items-center gap-6 text-center">
+              <h2 className="font-jakarta text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15]">
+                <span className="text-[#003859]">{heading.line1}</span>
+                <span className="text-[#0087D7]">{heading.line2}</span>
+              </h2>
+              <p className="max-w-[434px] font-jakarta text-base leading-[1.8] text-[#52697A]">
+                {subtitle}
+              </p>
+            </div>
 
-          {/* Timeline */}
-          <div className="relative">
-            {/* Vertical dashed line */}
+            {/* Timeline */}
+            <div className="relative">
+              {/* Vertical dashed line */}
 
-            {/* Milestones */}
-            <div className="flex flex-col gap-12 lg:gap-20">
-              {milestones.map((milestone) => {
-                const isLeft = milestone.side === "left";
-                const isActive = isLeft;
-                const IconComponent = ICONS[milestone.icon] || ICONS.flag;
+              {/* Milestones */}
+              <div className="flex flex-col gap-12 lg:gap-20">
+                {milestones.map((milestone) => {
+                  const isLeft = milestone.side === "left";
+                  const isActive = isLeft;
+                  const IconComponent = ICONS[milestone.icon] || ICONS.flag;
 
-                return (
-                  <div
-                    key={milestone.id}
-                    className="relative flex flex-col lg:flex-row min-h-[200px] items-stretch lg:min-h-[180px]"
-                  >
-                    {/* Left area: card when left, empty when right */}
+                  return (
                     <div
-                      className={`flex flex-1 items-center ${
-                        isLeft
-                          ? "justify-end  gap-2 pr-2 lg:gap-3 lg:pr-4"
-                          : "justify-center lg:justify-end"
-                      }`}
+                      key={milestone.id}
+                      className="relative flex flex-col lg:flex-row min-h-[200px] items-stretch lg:min-h-[180px]"
                     >
-                      {isLeft && (
-                        <>
-                          <Image
-                            src="/images/icons/left.png"
-                            alt=""
-                            width={24}
-                            height={24}
-                            className="hidden shrink-0 lg:block"
-                            aria-hidden
-                          />
-                          <div
-                            className="w-full max-w-[420px] rounded-[28px] p-8 text-right transition-all duration-300"
-                            style={{
-                              borderRadius: "24px",
-                              background:
-                                "linear-gradient(135deg, #003859 0%, #004A73 100%)",
-                              boxShadow: "0 16px 50px 0 rgba(0, 56, 89, 0.20)",
-                            }}
-                          >
-                            <MilestoneCardContent
-                              milestone={milestone}
-                              isActive={isActive}
-                              isLeft={isLeft}
-                            />
-                          </div>
-                        </>
-                      )}
-                    </div>
-
-                    {/* Center: timeline node */}
-                    <div className="relative mx-10 z-10 hidden lg:flex shrink-0 -translate-y-29 items-center justify-center">
+                      {/* Left area: card when left, empty when right */}
                       <div
-                        className="relative flex items-center justify-center"
-                        style={{
-                          display: "flex",
-                          height: "56px",
-                          width: "56px",
-
-                          flexShrink: 0,
-                          borderRadius: "16px",
-                          background:
-                            "linear-gradient(135deg, #003859 0%, #0891B2 100%)",
-                          boxShadow:
-                            "0 0 0 6px rgba(0, 56, 89, 0.08), 0 8px 20px 0 rgba(0, 56, 89, 0.20)",
-                        }}
+                        className={`flex flex-1 items-center ${
+                          isLeft
+                            ? "justify-end  gap-2 pr-2 lg:gap-3 lg:pr-4"
+                            : "justify-center lg:justify-end"
+                        }`}
                       >
-                        <IconComponent color="#fff" />
+                        {isLeft && (
+                          <>
+                            <Image
+                              src="/images/icons/left.png"
+                              alt=""
+                              width={24}
+                              height={24}
+                              className="hidden shrink-0 lg:block"
+                              aria-hidden
+                            />
+                            <div
+                              className="w-full max-w-[420px] rounded-[28px] p-8 text-right transition-all duration-300"
+                              style={{
+                                borderRadius: "24px",
+                                background:
+                                  "linear-gradient(135deg, #003859 0%, #004A73 100%)",
+                                boxShadow:
+                                  "0 16px 50px 0 rgba(0, 56, 89, 0.20)",
+                              }}
+                            >
+                              <MilestoneCardContent
+                                milestone={milestone}
+                                isActive={isActive}
+                                isLeft={isLeft}
+                              />
+                            </div>
+                          </>
+                        )}
+                      </div>
+
+                      {/* Center: timeline node */}
+                      <div className="relative mx-10 z-10 hidden lg:flex shrink-0 -translate-y-29 items-center justify-center">
                         <div
-                          className="absolute left-1/2 top-full hidden w-px -translate-x-1/2 lg:block"
+                          className="relative flex items-center justify-center"
                           style={{
-                            width: "2px",
-                            height: "80px",
+                            display: "flex",
+                            height: "56px",
+                            width: "56px",
+
+                            flexShrink: 0,
+                            borderRadius: "16px",
                             background:
-                              "linear-gradient(180deg, #003859 0%, #0891B2 100%)",
+                              "linear-gradient(135deg, #003859 0%, #0891B2 100%)",
+                            boxShadow:
+                              "0 0 0 6px rgba(0, 56, 89, 0.08), 0 8px 20px 0 rgba(0, 56, 89, 0.20)",
                           }}
-                        />
+                        >
+                          <IconComponent color="#fff" />
+                          <div
+                            className="absolute left-1/2 top-full hidden w-px -translate-x-1/2 lg:block"
+                            style={{
+                              width: "2px",
+                              height: "80px",
+                              background:
+                                "linear-gradient(180deg, #003859 0%, #0891B2 100%)",
+                            }}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Right area: arrow outside + card when right */}
+                      <div
+                        className={`flex flex-1 items-center ${
+                          isLeft
+                            ? "justify-center lg:justify-start"
+                            : "justify-start gap-2 lg:gap-3 lg:pl-2"
+                        }`}
+                      >
+                        {!isLeft && (
+                          <>
+                            <div
+                              className="w-full max-w-[420px] rounded-[28px] p-8 text-left transition-all duration-300"
+                              style={{
+                                borderRadius: "24px",
+                                border: "1px solid rgba(8, 145, 178, 0.15)",
+                                background:
+                                  "linear-gradient(145deg, #F0F9FF 6.17%, #E0F2FE 93.83%)",
+                                boxShadow: "0 8px 30px 0 rgba(0, 56, 89, 0.07)",
+                              }}
+                            >
+                              <MilestoneCardContent
+                                milestone={milestone}
+                                isActive={isActive}
+                                isLeft={isLeft}
+                              />
+                            </div>
+                          </>
+                        )}
                       </div>
                     </div>
-
-                    {/* Right area: arrow outside + card when right */}
-                    <div
-                      className={`flex flex-1 items-center ${
-                        isLeft
-                          ? "justify-center lg:justify-start"
-                          : "justify-start gap-2 lg:gap-3 lg:pl-2"
-                      }`}
-                    >
-                      {!isLeft && (
-                        <>
-                          <div
-                            className="w-full max-w-[420px] rounded-[28px] p-8 text-left transition-all duration-300"
-                            style={{
-                              borderRadius: "24px",
-                              border: "1px solid rgba(8, 145, 178, 0.15)",
-                              background:
-                                "linear-gradient(145deg, #F0F9FF 6.17%, #E0F2FE 93.83%)",
-                              boxShadow: "0 8px 30px 0 rgba(0, 56, 89, 0.07)",
-                            }}
-                          >
-                            <MilestoneCardContent
-                              milestone={milestone}
-                              isActive={isActive}
-                              isLeft={isLeft}
-                            />
-                          </div>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </section>
       <SectionVideoSeparator
@@ -318,26 +326,34 @@ function MilestoneCardContent({
       >
         {milestone.description}
       </p>
-      <p className="font-jakarta  ">
-        <span
-          className="font-extrabold text-2xl"
+      {milestone.metricValue && (
+        <p
+          className="font-jakarta  "
           style={{
-            color: isActive ? "#FFFFFF" : "#003859",
+            borderTop: "1px solid rgba(255, 255, 255, 0.10)",
+            paddingTop: "10px",
           }}
         >
-          {milestone.metricValue}{" "}
-        </span>
-        <span
-          className="font-medium  text-xs"
-          style={{
-            color: isActive
-              ? "rgba(255, 255, 255, 0.45)"
-              : "rgba(0, 56, 89, 0.45)",
-          }}
-        >
-          {milestone.metricLabel}
-        </span>
-      </p>
+          <span
+            className="font-extrabold text-2xl"
+            style={{
+              color: isActive ? "#FFFFFF" : "#003859",
+            }}
+          >
+            {milestone.metricValue}{" "}
+          </span>
+          <span
+            className="font-medium  text-xs"
+            style={{
+              color: isActive
+                ? "rgba(255, 255, 255, 0.45)"
+                : "rgba(0, 56, 89, 0.45)",
+            }}
+          >
+            {milestone.metricLabel}
+          </span>
+        </p>
+      )}
     </div>
   );
 }

@@ -65,20 +65,20 @@ export default function ServiceCard({ card }: ServiceCardProps) {
         showChevrons={false}
         showImg={false}
         // imgSrc="/images/icons/arrow-right-2.svg"
-        className="px-6 py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano w-full flex-row-reverse"
+        className="px-6 py-2 text-[clamp(16px,1.4vw,24px)]  font-ano w-full flex-row-reverse"
       />
       <Link
         href={`/services/${card.link}`}
-        className="inline-flex items-center justify-center gap-4 font-ano text-[14px] font-normal tracking-[0.48px] text-[#006DAD] transition-colors hover:text-[#0087D7] lg:text-[18px]"
+        className="inline-flex items-center justify-center gap-4 font-ano text-[14px] font-normal tracking-[0.48px] text-[#006DAD] transition-colors hover:text-[#0087D7] lg:text-[18px] bg-[#E7F6FF] rounded-[8px] px-6 py-2"
       >
-        <span>Learn More</span>
-        <Image
+        <span>Know More</span>
+        {/* <Image
           src="/images/icons/arrow-right-2.svg"
           alt=""
           width={24}
           height={24}
           className="shrink-0 rotate-180"
-        />
+        /> */}
       </Link>
     </div>
   );

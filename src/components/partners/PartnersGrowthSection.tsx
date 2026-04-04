@@ -63,18 +63,18 @@ export default function PartnersGrowthSection({
             </p>
           </div>
 
-          {/* Section title + icon */}
-          <div className="mb-6 flex w-full max-w-[360px] items-center gap-2 self-start md:mb-10 md:max-w-none md:gap-2 lg:mb-16 lg:gap-4 lg:pl-1">
+          {/* Section title + icon — Figma: gap 16px; arrow ~44px */}
+          <div className="mb-6 flex w-full max-w-[360px] items-center gap-2 self-start md:mb-10 md:max-w-none md:gap-3 lg:mb-16 lg:gap-4 lg:pl-1">
             <h3 className="font-jakarta text-[12px] font-extrabold leading-[1.2] text-[#003859] md:text-2xl lg:text-[32px]">
               {sectionTitle}
             </h3>
-            <div className="relative size-4 shrink-0 md:size-7 lg:size-11">
+            <div className="relative size-[17px] shrink-0 md:size-8 lg:size-[44px]">
               <Image
                 src={growthIcon}
                 alt=""
                 fill
                 className="object-contain"
-                sizes="44px"
+                sizes="(max-width: 768px) 20px, (max-width: 1024px) 32px, 44px"
               />
             </div>
           </div>
@@ -94,29 +94,11 @@ export default function PartnersGrowthSection({
                   key={item.id}
                   className="relative z-10 flex min-h-0 min-w-0 flex-1 flex-col"
                 >
+                  {/* One column per bar: icon stacks above its bar inside fixed chart height (dynamic gap above bar) */}
                   <div
                     className="grid w-full gap-x-0.5 md:gap-x-1 lg:gap-x-2"
                     style={{ gridTemplateColumns: gridCols }}
                   >
-                    {item.bars.map((_bar, i) => (
-                      <div
-                        key={`icon-${item.id}-${i}`}
-                        className="flex min-h-[22px] items-end justify-center pb-0.5 md:min-h-[30px] md:pb-1 lg:min-h-[48px] lg:pb-1.5"
-                      >
-                        {i === iconCol && (
-                          <div className="relative size-3 md:size-[27px] lg:size-[42px]">
-                            <Image
-                              src={item.icon}
-                              alt=""
-                              fill
-                              className="object-contain"
-                              sizes="42px"
-                            />
-                          </div>
-                        )}
-                      </div>
-                    ))}
-
                     {item.bars.map((bar, barIndex) => {
                       const h = `calc(var(--chart-scale) * ${bar.height}px)`;
                       const isGlowCell =
@@ -125,8 +107,8 @@ export default function PartnersGrowthSection({
                         barIndex === item.bars.length - 1;
                       return (
                         <div
-                          key={`bar-${item.id}-${barIndex}`}
-                          className="relative flex items-end"
+                          key={`col-${item.id}-${barIndex}`}
+                          className="relative flex min-h-0 flex-col justify-end"
                           style={{ height: chartColumnHeight }}
                         >
                           {isGlowCell && (
@@ -142,8 +124,21 @@ export default function PartnersGrowthSection({
                               aria-hidden
                             />
                           )}
+                          {barIndex === iconCol && (
+                            <div className="relative z-10 mb-1 flex shrink-0 justify-center md:mb-1.5 lg:mb-2.5">
+                              <div className="relative size-3 md:size-[27px] lg:h-[42px] lg:w-[42px]">
+                                <Image
+                                  src={item.icon}
+                                  alt=""
+                                  fill
+                                  className="object-contain object-bottom"
+                                  sizes="(max-width: 768px) 12px, (max-width: 1024px) 27px, 42px"
+                                />
+                              </div>
+                            </div>
+                          )}
                           <div
-                            className="relative z-10 w-full min-w-0 rounded-t-[3px] md:rounded-t-[6.33px] lg:rounded-t-[10px]"
+                            className="relative z-10 w-full min-w-0 shrink-0 rounded-t-[3px] md:rounded-t-[6.33px] lg:rounded-t-[10px]"
                             style={{
                               height: h,
                               ...barVisualStyle(
