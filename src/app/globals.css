@@ -259,10 +259,17 @@ button, a {
   margin-left: auto;
 }
 
+.hero-font {
+  font-size: 58px ;
+}
+
 /* breakpoints */
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
+  }
+  .hero-font {
+    font-size: 58px ;
   }
 }
 
@@ -270,11 +277,17 @@ button, a {
   .container {
     max-width: 720px;
   }
+  .hero-font {
+    font-size: 58px ;
+  }
 }
 
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
+  }
+  .hero-font {
+    font-size: 58px ;
   }
 }
 
@@ -282,14 +295,31 @@ button, a {
   .container {
     max-width: 1140px;
   }
-}
-
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1320px;
+  .hero-font {
+    font-size:64px;
   }
 }
 
+@media (min-width: 1400px)   {
+  .container {
+    max-width: 1320px;
+  }
+  .hero-font {
+    font-size: 75px;
+  }
+}
+
+@media (min-width: 1601px) {
+  
+  .hero-font {
+     font-size:85px;
+  }
+}
+@media (min-width: 1920px) {
+  .hero-font {
+    font-size: 100px;
+  }
+}
 .container-fluid {
   width: 100%;
   padding-right: 15px;

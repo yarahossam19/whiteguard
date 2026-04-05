@@ -10,10 +10,12 @@ export interface ServicesDropdownItem {
   description?: string;
   href: string;
   icon?: string;
+  small?: boolean;
 }
 
 interface ServicesDropdownProps {
   items: readonly ServicesDropdownItem[];
+  small?: boolean;
 }
 
 export function ServicesDropdown({ items }: ServicesDropdownProps) {
@@ -30,7 +32,7 @@ export function ServicesDropdown({ items }: ServicesDropdownProps) {
       onClick={() => setIsHovered(false)}
     >
       <div
-        className="flex flex-col gap-10 rounded-2xl border-4 border-[#e7f6ff] bg-white px-6 py-8 shadow-[0px_3.5px_4.3px_2px_rgba(0,0,0,0.25)]"
+        className="flex flex-col gap-8 rounded-2xl border-4 border-[#e7f6ff] bg-white px-6 py-8 shadow-[0px_3.5px_4.3px_2px_rgba(0,0,0,0.25)]"
         style={{
           minWidth: "402px",
           backgroundImage: "url('/images/logo-icon-2.svg')",
@@ -41,7 +43,7 @@ export function ServicesDropdown({ items }: ServicesDropdownProps) {
           // backgroundBlendMode: "overlay",
         }}
       >
-        {items.map((sub) => {
+        {items.map((sub, index) => {
           const subTab = sub.href.includes("tab=")
             ? sub.href.split("tab=")[1]
             : null;
@@ -53,7 +55,7 @@ export function ServicesDropdown({ items }: ServicesDropdownProps) {
               key={sub.href}
               href={sub.href}
               role="menuitem"
-              className="group flex flex-col gap-2"
+              className={`group flex flex-col gap-2  ${items.length - 1 > index ? " pb-4 border-b-1 border-[#ccc]" : ""}`}
             >
               <div className="flex items-start gap-[9px]">
                 {sub.icon && (
@@ -67,7 +69,7 @@ export function ServicesDropdown({ items }: ServicesDropdownProps) {
                     />
                   </div>
                 )}
-                <div className="min-w-0 flex-1">
+                <div className="min-w-0 flex-1 flex flex-col gap-2">
                   <p className="font-jakarta text-base font-semibold leading-[1.2] text-[#003859]">
                     {sub.label}
                   </p>

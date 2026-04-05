@@ -26,13 +26,13 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
             height={68}
             alt=""
             aria-hidden="true"
-            className="  absolute left-[15%] md:left-[30%] lg:left-[unset] lg:right-[28%] top-[15%] md:top-[16%] lg:top-[25%] w-[40px] h-[40px] lg:w-[65px] lg:h-[68px] object-contain   pointer-events-none select-none"
+            className="  absolute left-[15%] md:left-[30%] lg:left-[unset] lg:right-[28%] top-[15%] md:top-[16%] lg:top-[25%] min-[1600px]:top-[28%]! w-[40px] h-[40px] lg:w-[65px] lg:h-[68px] object-contain   pointer-events-none select-none"
           />
 
           <div className="flex flex-col gap-10 lg:max-w-[560px] text-[#003859]">
             {/* Headline */}
             <div className="flex flex-col gap-5 text-center lg:text-left">
-              <h1 className="font-jakarta leading-[1.18] text-center lg:text-left tracking-[-0.03em] text-[clamp(36px,5vw,58px)] ">
+              <h1 className="font-jakarta leading-[1.18] text-center lg:text-left tracking-[-0.03em] hero-font">
                 <span className=" font-extrabold">{headline.line1.bold}</span>
                 <span className="font-light">{headline.line1.light}</span>
                 <span className=" font-extrabold text-center lg:text-left">

@@ -82,6 +82,7 @@ export function Header() {
                 item.subLinks &&
                 openDropdown === item.label && (
                   <ServicesDropdown
+                    small={item.small}
                     items={item.subLinks.map((s) => ({
                       label: s.label,
                       description:
@@ -95,7 +96,17 @@ export function Header() {
           ))}
         </div>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex   items-center gap-4">
+          <HoverSwapButton
+            href="https://www.whitehwk.com"
+            label="White Hawk"
+            hoverLabel="White Hawk" 
+            variant="secondary"
+            showChevrons={false}
+            showImg={true}
+            imgSrc="/images/icons/external-link.svg"
+            className="text-sm md:text-base lg:text-lg flex flex-row-reverse items-center gap-2  font-ano" 
+          />
           <HoverSwapButton
             href="/contact"
             label="Book a Consultation"
@@ -209,10 +220,19 @@ export function Header() {
                 </div>
               );
             })}
+
+            <Link
+              href="https://www.whitehwk.com"
+              onClick={closeMobileMenu}
+              className="mt-4 block rounded-xl border border-[#0087D7]  px-3 py-2 text-center text-lg font-medium text-[#0087D7] shadow-[0px_10px_40px_0px_var(--primary-glow)] duration-300 ease-out transition-[opacity,box-shadow] hover:opacity-95 hover:shadow-[0px_10px_50px_0px_rgba(87,177,255,0.45)] flex items-center justify-center gap-2"
+            >
+              White Hawk
+              <Image src="/images/icons/external-link.svg" alt="White Hawk" width={24} height={24} />
+            </Link>
             <Link
               href="/contact"
               onClick={closeMobileMenu}
-              className="mt-4 block rounded-xl border border-white bg-gradient-to-b from-[var(--primary-800)] to-[var(--primary-600)] px-6 py-3 text-center text-lg font-medium text-white shadow-[0px_10px_40px_0px_var(--primary-glow)] duration-300 ease-out transition-[opacity,box-shadow] hover:opacity-95 hover:shadow-[0px_10px_50px_0px_rgba(87,177,255,0.45)]"
+              className="mt-4 block rounded-xl border border-white bg-gradient-to-b from-[var(--primary-800)] to-[var(--primary-600)] px-3 py-2 text-center text-lg font-medium text-white shadow-[0px_10px_40px_0px_var(--primary-glow)] duration-300 ease-out transition-[opacity,box-shadow] hover:opacity-95 hover:shadow-[0px_10px_50px_0px_rgba(87,177,255,0.45)]"
             >
               Book a Consultation
             </Link>

@@ -11,11 +11,12 @@ export const siteConfig = {
 
 export const mainNav = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  // { label: "About", href: "/about" },
   {
     label: "Services",
     href: "/services",
     hasDropdown: true,
+    small: false,
     subLinks: [
       {
         label: "Offensive",
@@ -46,8 +47,12 @@ export const mainNav = [
   { label: "Industries", href: "/industries" },
   { label: "Partners", href: "/partners" },
    
-  { label: "Resources", href: "/resources" },
-  { label: "White Hawk", href: "https://www.whitehwk.com" },
+  { label: "Resources",small:true, href: "#.",hasDropdown: true, subLinks: [
+    { label: "Blogs", href: "/resources",description: "Stay up-to-date with the latest news and insights from our team." },
+    { label: "About Us", href: "/about",description: "Learn more about our company and our mission." },
+    
+  ] },
+  // { label: "White Hawk", href: "https://www.whitehwk.com" },
 ] as const;
 
 export const footerNav = {
