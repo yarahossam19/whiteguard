@@ -119,6 +119,7 @@ export default function ContactPageContent() {
   const [jobRole, setJobRole] = useState("");
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const inputBase =
     "w-full rounded-[8px] border-2 bg-white p-4 font-jakarta text-[16px] leading-[normal] tracking-[1.5px] text-[#141a1f] placeholder:text-[#52697a] transition-colors duration-200 outline-none";
@@ -137,11 +138,37 @@ export default function ContactPageContent() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
     setIsSubmitting(true);
     try {
-      await new Promise((r) => setTimeout(r, 500));
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: fullName.trim(),
+          email: email.trim(),
+          company: company.trim(),
+          country,
+          jobRole,
+        }),
+      });
+
+      const data = (await res.json().catch(() => ({}))) as {
+        error?: string;
+      };
+
+      if (!res.ok) {
+        setSubmitError(
+          data.error ||
+            "Something went wrong. Please try again or email us directly.",
+        );
+        return;
+      }
+
       router.push("/contact/thanks");
     } catch {
+      setSubmitError("Network error. Check your connection and try again.");
+    } finally {
       setIsSubmitting(false);
     }
   };
@@ -360,6 +387,15 @@ export default function ContactPageContent() {
               </div>
             </div>
           </div>
+
+          {submitError ? (
+            <p
+              className="font-jakarta text-[15px] leading-snug text-[#b42318]"
+              role="alert"
+            >
+              {submitError}
+            </p>
+          ) : null}
 
           <HoverSwapButton
             as="button"

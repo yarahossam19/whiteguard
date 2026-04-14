@@ -1,0 +1,10 @@
+# Contact form — send via your own SMTP (e.g. Gmail app password)
+# https://support.google.com/accounts/answer/185833
+
+CONTACT_TO_EMAIL=ahmedmostafakhedr31@gmail.com
+
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-gmail@gmail.com
+SMTP_PASS=your-16-char-app-password
+SMTP_FROM="WHITEGUARD Website" <your-gmail@gmail.com>

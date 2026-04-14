@@ -19,7 +19,7 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
     <section className="relative w-full overflow-hidden  ">
       <div className="lg:min-h-screen  flex flex-col-reverse lg:flex-row  ">
         {/*  LEFT CONTENT */}
-        <div className="relative z-10 flex flex-1 items-center justify-start px-4 py-4 sm:px-8 sm:py-4 lg:ps-[7vw] lg:py-0">
+        <div className="relative z-10 flex flex-1 items-start  justify-start px-4 py-4 sm:px-8 sm:py-4 lg:ps-[7vw] lg:py-[2.5%]">
           <Image
             src={decorations.sparkleTop}
             width={65}
