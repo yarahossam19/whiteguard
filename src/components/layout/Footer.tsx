@@ -38,8 +38,8 @@ export function Footer() {
           {/* Navigation Columns */}
           <div className="grid gap-8 sm:grid-cols-3 lg:col-span-3">
             <FooterNavColumn title="Services" links={footerNav.services} />
-            <FooterNavColumn title="Platform" links={footerNav.platform} />
-            <FooterNavColumn title="Solutions" links={footerNav.solutions} />
+            <FooterNavColumn title="Company" links={footerNav.company} />
+            <FooterNavColumn title="Resources" links={footerNav.resources} />
           </div>
         </div>
 

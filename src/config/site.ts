@@ -60,18 +60,16 @@ export const footerNav = {
     { label: "Offensive Security", href: "/services?tab=offensive" },
     { label: "Defensive Security", href: "/services?tab=defensive" },
     { label: "GRC", href: "/services?tab=grc" },
-    { label: "Training", href: "/services?tab=training" },
+    { label: "Awareness Training", href: "/services?tab=training" },
+    { label: "Industries", href: "/industries" }, 
   ],
-  platform: [
-    { label: "Offensive", href: "/platform/offensive" },
-    { label: "Defensive", href: "/platform/defensive" },
-    { label: "GRC", href: "/platform/grc" },
-    { label: "Asset Management", href: "/platform/asset-management" },
+  company: [
+    { label: "About Us", href: "/about" },
+    { label: "Partners", href: "/partners" }, 
+
   ],
-  solutions: [
-    { label: "Fintech Company", href: "/solutions/fintech" },
-    { label: "Public Sectors", href: "/solutions/public-sectors" },
-    { label: "Healthcare Organizations", href: "/solutions/healthcare" },
+  resources: [
+    { label: "Blogs", href: "/resources" }, 
   ],
 } as const;
 
