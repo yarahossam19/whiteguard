@@ -1,4 +1,7 @@
+import { existsSync } from "fs";
+import path from "path";
 import nodemailer from "nodemailer";
+import type SMTPTransport from "nodemailer/lib/smtp-transport";
 import { NextResponse } from "next/server";
 
 /** Nodemailer needs the Node runtime (not Edge). */
@@ -93,15 +96,78 @@ function parseOptionalMessage(v: unknown): { ok: true; text: string } | { ok: fa
   return { ok: true, text: t };
 }
 
+/**
+ * Base URL for hosted assets referenced in HTML emails (must be publicly reachable HTTPS).
+ * Priority: explicit email URL → public site URL → Vercel deployment hostname → default brand domain.
+ * On Vercel, set NEXT_PUBLIC_SITE_URL or CONTACT_EMAIL_PUBLIC_URL to your canonical domain
+ * so image URLs match where the site is actually served.
+ */
 function getPublicSiteUrl(): string {
-  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, "");
-  if (fromEnv) {
-    return fromEnv;
+  const trimmed = (s: string | undefined) => s?.trim().replace(/\/$/, "") ?? "";
+  const explicit =
+    trimmed(process.env.CONTACT_EMAIL_PUBLIC_URL) ||
+    trimmed(process.env.NEXT_PUBLIC_SITE_URL);
+  if (explicit) {
+    return explicit;
   }
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL.replace(/^https?:\/\//, "")}`;
   }
   return "https://whiteguard.co.uk";
+}
+
+/** Inline image CIDs — must match attachment `cid` and HTML `src="cid:…"`. */
+const MAIL_CID_LOGO_ICON = "wg-icon@whiteguard";
+const MAIL_CID_LOGO_WORDMARK = "wg-wordmark@whiteguard";
+
+/**
+ * Embed logos as multipart/related attachments so clients never fetch URLs
+ * (localhost is unreachable from Gmail; SVG/remote PNG URL issues go away).
+ * Falls back to absolute URLs only if files are missing on disk (e.g. custom deploy).
+ */
+function getEmailLogoSources(): {
+  iconSrc: string;
+  wordmarkSrc: string;
+  attachments: NonNullable<SMTPTransport.Options["attachments"]>;
+} {
+  const iconPath = path.join(
+    process.cwd(),
+    "public",
+    "images",
+    "logo-icon.png",
+  );
+  const wordmarkPath = path.join(
+    process.cwd(),
+    "public",
+    "images",
+    "WhiteGuardText.png",
+  );
+
+  if (existsSync(iconPath) && existsSync(wordmarkPath)) {
+    return {
+      iconSrc: `cid:${MAIL_CID_LOGO_ICON}`,
+      wordmarkSrc: `cid:${MAIL_CID_LOGO_WORDMARK}`,
+      attachments: [
+        {
+          filename: "logo-icon.png", 
+          path: iconPath,
+          cid: MAIL_CID_LOGO_ICON,
+        },
+        {
+          filename: "WhiteGuardText.png",
+          path: wordmarkPath,
+          cid: MAIL_CID_LOGO_WORDMARK,
+        },
+      ],
+    };
+  }
+
+  const base = getPublicSiteUrl();
+  return {
+    iconSrc: `${base}/images/logo-icon.png`,
+    wordmarkSrc: `${base}/images/WhiteGuardText.png`,
+    attachments: [],
+  };
 }
 
 export async function POST(request: Request) {
@@ -175,10 +241,8 @@ export async function POST(request: Request) {
   const whatsAppTrim = whatsApp.trim();
   const waDigits = whatsAppTrim.replace(/\D/g, "");
 
-  /** Remote images in HTML mail must be absolute URLs; relative `/images/...` never resolves in clients. */
-  const siteUrl = getPublicSiteUrl();
-  const logoUrl = `${siteUrl}/images/whiteguard-logo-text.svg`;
-  const logoIconUrl = `${siteUrl}/images/logo-icon.svg`;
+  const { iconSrc: logoIconSrc, wordmarkSrc: logoWordmarkSrc, attachments: logoAttachments } =
+    getEmailLogoSources();
 
   const safe = {
     fullName: escapeHtml(fullName.trim()),
@@ -226,13 +290,22 @@ export async function POST(request: Request) {
 <body style="margin:0;padding:24px;background:#f5f8fa;font-family:'Segoe UI',system-ui,sans-serif;color:#141a1f;">
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,56,89,0.08);">
     <tr>
-      <td style="padding:24px 28px 12px;text-align:center;border-bottom:1px solid #e0e6eb;display:flex;align-items:center;justify-content:center;gap:10px;">
-        <img src="${logoUrl}" alt="WhiteGuard" width="160" height="40" style="display:block;margin:0 auto;height:40px;width:auto;max-width:180px;" />
-        <img src="${logoIconUrl}" alt="WhiteGuard" width="20" height="20" style="display:block;margin:0 auto;height:20px;width:auto;max-width:20px;" />
-        </td>
+      <td align="center" style="padding:24px 28px 16px;border-bottom:1px solid #e0e6eb;">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin:0 auto;">
+          <tr>
+          
+            <td style="vertical-align:middle;">
+              <img src="${logoWordmarkSrc}" alt="WhiteGuard" width="145" height="14" border="0" style="display:block;max-width:145px;height:"14px";width:100%;" />
+            </td>
+              <td style="padding-left:10px;padding-right:10px;vertical-align:middle;">
+              <img src="${logoIconSrc}" alt="" width="26" height="20" border="0" style="display:block;width:26px;height:20px;" />
+            </td>
+          </tr>
+        </table>
+      </td>
     </tr>
     <tr>
-      <td style="padding:20px 28px 8px;">
+      <td style="padding:20px 28px 8px;text-align:center;">
         <h1 style="margin:0;font-size:20px;font-weight:700;color:#003859;letter-spacing:-0.02em;">New contact request</h1>
         <p style="margin:12px 0 0;font-size:15px;line-height:1.5;color:#52697a;">Someone submitted the contact form on <strong style="color:#003859;">whiteguard.co.uk</strong>. Reply directly to their business email below.</p>
       </td>
@@ -288,6 +361,8 @@ export async function POST(request: Request) {
       subject,
       text,
       html,
+      attachments:
+        logoAttachments.length > 0 ? [...logoAttachments] : undefined,
     });
 
     return NextResponse.json({ ok: true });
