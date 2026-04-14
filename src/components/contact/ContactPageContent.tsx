@@ -117,6 +117,8 @@ export default function ContactPageContent() {
   const [company, setCompany] = useState("");
   const [country, setCountry] = useState("");
   const [jobRole, setJobRole] = useState("");
+  const [whatsApp, setWhatsApp] = useState("");
+  const [message, setMessage] = useState("");
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -150,6 +152,8 @@ export default function ContactPageContent() {
           company: company.trim(),
           country,
           jobRole,
+          whatsApp: whatsApp.trim(),
+          message: message.trim(),
         }),
       });
 
@@ -175,241 +179,274 @@ export default function ContactPageContent() {
 
   return (
     <div className="w-full bg-white pb-32 pt-0">
-      <div className="container grid grid-cols-1 items-stretch justify-center gap-8 lg:grid-cols-2 lg:items-center lg:gap-20">
-      {/* OR */}
-      {/* <p className="shrink-0 self-center whitespace-nowrap font-jakarta text-[28px] font-bold leading-[40px] tracking-[1.5px] text-[#003859]">
+      <div className="container flex flex-col lg:flex-row items-stretch justify-between gap-8   lg:items-center lg:gap-20">
+        {/* OR */}
+        {/* <p className="shrink-0 self-center whitespace-nowrap font-jakarta text-[28px] font-bold leading-[40px] tracking-[1.5px] text-[#003859]">
         OR
       </p> */}
 
-      {/* Contact info column */}
-      <div className="flex min-w-[50%] py-0 shrink-0 flex-col justify-between gap-8 rounded-[20px]     align-self-stretch">
-        <h2 className="font-jakarta border-b border-[#c2cdd6] pb-5 text-[28px] font-medium leading-[1.5] tracking-[1.5px] text-[#003859]">
-          Contact us
-        </h2>
+        {/* Contact info column */}
+        <div className="flex lg:w-[40%]   py-0 shrink-0 flex-col justify-between gap-8 rounded-[20px]     align-self-stretch">
+          <h2 className="font-jakarta border-b border-[#c2cdd6] pb-5 text-[28px] font-medium leading-[1.5] tracking-[1.5px] text-[#003859]">
+            Contact us
+          </h2>
 
-        <div className="flex flex-col gap-8">
-          <a
-            href={CONTACT.telHref}
-            className="flex items-center gap-4 transition-opacity hover:opacity-80"
-          >
-            <IconPhone className="shrink-0" />
-            <p className="font-jakarta text-[16px] font-medium leading-[1.2] tracking-[1.5px] text-[#003859]">
-              {CONTACT.phone}
-            </p>
-          </a>
-
-          <a
-            href={CONTACT.mailHref}
-            className="flex items-center gap-4 transition-opacity hover:opacity-80"
-          >
-            <IconEnvelope className="shrink-0" />
-            <p className="font-jakarta text-[16px] font-medium leading-[1.2] tracking-[1.5px] text-[#003859]">
-              {CONTACT.email}
-            </p>
-          </a>
-
-          <a
-            href={CONTACT.addressHref}
-            target="_blank"
-            className="flex items-center gap-4"
-          >
-            <IconLocation className="shrink-0" />
-            <p className="font-jakarta text-[16px] font-medium leading-[1.2] tracking-[1.5px] text-[#003859]">
-              {CONTACT.address}
-            </p>
-          </a>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2482.2683780198176!2d-0.09094147387124933!3d51.52663720929847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1ss%20128%2C%20City%20Road%2C%20London%2C%20EC1V%202NX%2C%20UNITED%20KINGDOM!5e0!3m2!1sen!2seg!4v1774413208319!5m2!1sen!2seg"
-            width="600"
-            height="450"
-            style={{ border: "0", borderRadius: "10px" }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </div>
-      {/* Form card */}
-      <div className="flex  align-self-stretch flex-1 min-w-[50%] flex-1 flex-col rounded-[20px]  bg-white px-5 py-6 shadow-[0px_109px_31px_0px_rgba(0,0,0,0),0px_70px_28px_0px_rgba(0,0,0,0.01),0px_39px_24px_0px_rgba(0,0,0,0.05),0px_17px_17px_0px_rgba(0,0,0,0.09),0px_4px_10px_0px_rgba(0,0,0,0.1)]">
-        <form
-          onSubmit={handleSubmit}
-          className="flex w-full flex-col gap-[70px]"
-        >
           <div className="flex flex-col gap-8">
-            <div className="flex flex-col gap-1 font-jakarta font-medium tracking-[1.5px]">
-              <h1 className="text-[28px] font-medium leading-[1.5] text-[#003859]">
-                Start your security business
-              </h1>
-              <p className="text-[16px] leading-[1.2] text-[#52697a]">
-                Fill out the following form and we will get back to you in the
-                next 24 hours
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-8">
-              <div className="flex flex-col gap-2">
-                <label htmlFor="contact-fullName" className={labelClass}>
-                  Full Name <span className={asteriskClass}>*</span>
-                </label>
-                <input
-                  id="contact-fullName"
-                  type="text"
-                  required
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                  onFocus={() => setFocusedField("fullName")}
-                  onBlur={() => setFocusedField(null)}
-                  className={inputClass("fullName")}
-                  placeholder=""
-                  autoComplete="name"
-                />
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label htmlFor="contact-email" className={labelClass}>
-                  Business Email Address{" "}
-                  <span className={asteriskClass}>*</span>
-                </label>
-                <input
-                  id="contact-email"
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  onFocus={() => setFocusedField("email")}
-                  onBlur={() => setFocusedField(null)}
-                  className={inputClass("email")}
-                  placeholder="Example@Example.co"
-                  autoComplete="email"
-                />
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label htmlFor="contact-company" className={labelClass}>
-                  Company <span className={asteriskClass}>*</span>
-                </label>
-                <input
-                  id="contact-company"
-                  type="text"
-                  required
-                  value={company}
-                  onChange={(e) => setCompany(e.target.value)}
-                  onFocus={() => setFocusedField("company")}
-                  onBlur={() => setFocusedField(null)}
-                  className={inputClass("company")}
-                  placeholder="Your company name"
-                  autoComplete="organization"
-                />
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label htmlFor="contact-country" className={labelClass}>
-                  Country <span className={asteriskClass}>*</span>
-                </label>
-                <div
-                  className={`relative flex w-full items-center rounded-[8px] border-2 bg-white transition-colors duration-200 ${
-                    focusedField === "country"
-                      ? selectWrapperFocused
-                      : selectWrapperDefault
-                  }`}
-                >
-                  <select
-                    id="contact-country"
-                    required
-                    value={country}
-                    onChange={(e) => setCountry(e.target.value)}
-                    onFocus={() => setFocusedField("country")}
-                    onBlur={() => setFocusedField(null)}
-                    className={`w-full appearance-none bg-transparent p-4 font-jakarta text-[16px] leading-[normal] tracking-[1.5px] outline-none scheme-light ${
-                      country ? "text-[#141a1f]" : "text-[#52697a]"
-                    }`}
-                  >
-                    <option value="">Select Country</option>
-                    {COUNTRIES.map((opt) => (
-                      <option key={opt} value={opt}>
-                        {opt}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="pointer-events-none absolute right-4 top-1/2 size-7 -translate-y-1/2">
-                    <Image
-                      src="/images/icons/ChevronDown.svg"
-                      alt=""
-                      width={20}
-                      height={20}
-                      className="mx-auto block"
-                      aria-hidden
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label htmlFor="contact-jobRole" className={labelClass}>
-                  Job Role <span className={asteriskClass}>*</span>
-                </label>
-                <div
-                  className={`relative flex w-full items-center rounded-[8px] border-2 bg-white transition-colors duration-200 ${
-                    focusedField === "jobRole"
-                      ? selectWrapperFocused
-                      : selectWrapperDefault
-                  }`}
-                >
-                  <select
-                    id="contact-jobRole"
-                    required
-                    value={jobRole}
-                    onChange={(e) => setJobRole(e.target.value)}
-                    onFocus={() => setFocusedField("jobRole")}
-                    onBlur={() => setFocusedField(null)}
-                    className={`w-full appearance-none bg-transparent p-4 font-jakarta text-[16px] leading-[normal] tracking-[1.5px] outline-none scheme-light ${
-                      jobRole ? "text-[#141a1f]" : "text-[#52697a]"
-                    }`}
-                  >
-                    <option value="">Select Job Role</option>
-                    {JOB_ROLES.map((opt) => (
-                      <option key={opt} value={opt}>
-                        {opt}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="pointer-events-none absolute right-4 top-1/2 size-7 -translate-y-1/2">
-                    <Image
-                      src="/images/icons/ChevronDown.svg"
-                      alt=""
-                      width={20}
-                      height={20}
-                      className="mx-auto block"
-                      aria-hidden
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {submitError ? (
-            <p
-              className="font-jakarta text-[15px] leading-snug text-[#b42318]"
-              role="alert"
+            <a
+              href={CONTACT.telHref}
+              className="flex items-center gap-4 transition-opacity hover:opacity-80"
             >
-              {submitError}
-            </p>
-          ) : null}
+              <IconPhone className="shrink-0" />
+              <p className="font-jakarta text-[16px] font-medium leading-[1.2] tracking-[1.5px] text-[#003859]">
+                {CONTACT.phone}
+              </p>
+            </a>
 
-          <HoverSwapButton
-            as="button"
-            type="submit"
-            label={isSubmitting ? "Submitting..." : "Submit"}
-            hoverLabel={isSubmitting ? "Submitting..." : "Submit"}
-            variant="cta"
-            showChevrons={false}
-            // showImg={true}
-            // imgSrc="/images/icons/phone.svg"
-            disabled={isSubmitting}
-          />
-        </form>
-      </div>
+            <a
+              href={CONTACT.mailHref}
+              className="flex items-center gap-4 transition-opacity hover:opacity-80"
+            >
+              <IconEnvelope className="shrink-0" />
+              <p className="font-jakarta text-[16px] font-medium leading-[1.2] tracking-[1.5px] text-[#003859]">
+                {CONTACT.email}
+              </p>
+            </a>
+
+            <a
+              href={CONTACT.addressHref}
+              target="_blank"
+              className="flex items-center gap-4"
+            >
+              <IconLocation className="shrink-0" />
+              <p className="font-jakarta text-[16px] font-medium leading-[1.2] tracking-[1.5px] text-[#003859]">
+                {CONTACT.address}
+              </p>
+            </a>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2482.2683780198176!2d-0.09094147387124933!3d51.52663720929847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1ss%20128%2C%20City%20Road%2C%20London%2C%20EC1V%202NX%2C%20UNITED%20KINGDOM!5e0!3m2!1sen!2seg!4v1774413208319!5m2!1sen!2seg"
+              width="100%"
+              height="450"
+              style={{ border: "0", borderRadius: "10px" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+        {/* Form card */}
+        <div className="flex  align-self-stretch   lg:w-[60%]   flex-col rounded-[20px]  bg-white px-5 py-6 shadow-[0px_109px_31px_0px_rgba(0,0,0,0),0px_70px_28px_0px_rgba(0,0,0,0.01),0px_39px_24px_0px_rgba(0,0,0,0.05),0px_17px_17px_0px_rgba(0,0,0,0.09),0px_4px_10px_0px_rgba(0,0,0,0.1)]">
+          <form
+            onSubmit={handleSubmit}
+            className="flex w-full flex-col gap-[70px]"
+          >
+            <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-1 font-jakarta font-medium tracking-[1.5px]">
+                <h1 className="text-[28px] font-medium leading-[1.5] text-[#003859]">
+                  Start your security business
+                </h1>
+                <p className="text-[16px] leading-[1.2] text-[#52697a]">
+                  Fill out the following form and we will get back to you in the
+                  next 24 hours
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="contact-fullName" className={labelClass}>
+                    Full Name <span className={asteriskClass}>*</span>
+                  </label>
+                  <input
+                    id="contact-fullName"
+                    type="text"
+                    required
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    onFocus={() => setFocusedField("fullName")}
+                    onBlur={() => setFocusedField(null)}
+                    className={inputClass("fullName")}
+                    placeholder="Your full name"
+                    autoComplete="name"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="contact-email" className={labelClass}>
+                    Business Email Address{" "}
+                    <span className={asteriskClass}>*</span>
+                  </label>
+                  <input
+                    id="contact-email"
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    onFocus={() => setFocusedField("email")}
+                    onBlur={() => setFocusedField(null)}
+                    className={inputClass("email")}
+                    placeholder="Example@Example.co"
+                    autoComplete="email"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="contact-whatsApp" className={labelClass}>
+                    WhatsApp
+                  </label>
+                  <input
+                    id="contact-whatsApp"
+                    type="tel"
+                    inputMode="tel"
+                    autoComplete="tel"
+                    maxLength={48}
+                    value={whatsApp}
+                    onChange={(e) => setWhatsApp(e.target.value)}
+                    onFocus={() => setFocusedField("whatsApp")}
+                    onBlur={() => setFocusedField(null)}
+                    className={inputClass("whatsApp")}
+                    placeholder="WhatsApp number (optional)"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="contact-company" className={labelClass}>
+                    Company <span className={asteriskClass}>*</span>
+                  </label>
+                  <input
+                    id="contact-company"
+                    type="text"
+                    required
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                    onFocus={() => setFocusedField("company")}
+                    onBlur={() => setFocusedField(null)}
+                    className={inputClass("company")}
+                    placeholder="Your company name"
+                    autoComplete="organization"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="contact-country" className={labelClass}>
+                    Country <span className={asteriskClass}>*</span>
+                  </label>
+                  <div
+                    className={`relative flex w-full items-center rounded-[8px] border-2 bg-white transition-colors duration-200 ${
+                      focusedField === "country"
+                        ? selectWrapperFocused
+                        : selectWrapperDefault
+                    }`}
+                  >
+                    <select
+                      id="contact-country"
+                      required
+                      value={country}
+                      onChange={(e) => setCountry(e.target.value)}
+                      onFocus={() => setFocusedField("country")}
+                      onBlur={() => setFocusedField(null)}
+                      className={`w-full appearance-none bg-transparent p-4 font-jakarta text-[16px] leading-[normal] tracking-[1.5px] outline-none scheme-light ${
+                        country ? "text-[#141a1f]" : "text-[#52697a]"
+                      }`}
+                    >
+                      <option value="">Select Country</option>
+                      {COUNTRIES.map((opt) => (
+                        <option key={opt} value={opt}>
+                          {opt}
+                        </option>
+                      ))}
+                    </select>
+                    <div className="pointer-events-none absolute right-4 top-1/2 size-7 -translate-y-1/2">
+                      <Image
+                        src="/images/icons/ChevronDown.svg"
+                        alt=""
+                        width={20}
+                        height={20}
+                        className="mx-auto block"
+                        aria-hidden
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="contact-jobRole" className={labelClass}>
+                    Job Role <span className={asteriskClass}>*</span>
+                  </label>
+                  <div
+                    className={`relative flex w-full items-center rounded-[8px] border-2 bg-white transition-colors duration-200 ${
+                      focusedField === "jobRole"
+                        ? selectWrapperFocused
+                        : selectWrapperDefault
+                    }`}
+                  >
+                    <select
+                      id="contact-jobRole"
+                      required
+                      value={jobRole}
+                      onChange={(e) => setJobRole(e.target.value)}
+                      onFocus={() => setFocusedField("jobRole")}
+                      onBlur={() => setFocusedField(null)}
+                      className={`w-full appearance-none bg-transparent p-4 font-jakarta text-[16px] leading-[normal] tracking-[1.5px] outline-none scheme-light ${
+                        jobRole ? "text-[#141a1f]" : "text-[#52697a]"
+                      }`}
+                    >
+                      <option value="">Select Job Role</option>
+                      {JOB_ROLES.map((opt) => (
+                        <option key={opt} value={opt}>
+                          {opt}
+                        </option>
+                      ))}
+                    </select>
+                    <div className="pointer-events-none absolute right-4 top-1/2 size-7 -translate-y-1/2">
+                      <Image
+                        src="/images/icons/ChevronDown.svg"
+                        alt=""
+                        width={20}
+                        height={20}
+                        className="mx-auto block"
+                        aria-hidden
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="contact-message" className={labelClass}>
+                  Message
+                </label>
+                <textarea
+                  id="contact-message"
+                  rows={5}
+                  maxLength={5000}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  onFocus={() => setFocusedField("message")}
+                  onBlur={() => setFocusedField(null)}
+                  className={`${inputClass("message")} min-h-[120px] resize-y`}
+                  placeholder="Optional — tell us more about your inquiry"
+                />
+              </div>
+            </div>
+
+            {submitError ? (
+              <p
+                className="font-jakarta text-[15px] leading-snug text-[#b42318]"
+                role="alert"
+              >
+                {submitError}
+              </p>
+            ) : null}
+
+            <HoverSwapButton
+              as="button"
+              type="submit"
+              label={isSubmitting ? "Submitting..." : "Submit"}
+              hoverLabel={isSubmitting ? "Submitting..." : "Submit"}
+              variant="cta"
+              showChevrons={false}
+              // showImg={true}
+              // imgSrc="/images/icons/phone.svg"
+              disabled={isSubmitting}
+            />
+          </form>
+        </div>
       </div>
     </div>
   );

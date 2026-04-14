@@ -104,7 +104,6 @@ export default function MilestonesSection({ data }: MilestonesSectionProps) {
         videoSrc="/videos/wave.mp4"
         className="z-[-1]"
       />
-      سسسسسس
       <section
         className="relative w-full py-16 lg:py-24"
         style={{

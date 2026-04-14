@@ -78,6 +78,32 @@ function isNonEmptyString(v: unknown, max: number): v is string {
   return typeof v === "string" && v.trim().length > 0 && v.length <= max;
 }
 
+/** Optional message: empty string if missing; max length enforced. */
+function parseOptionalMessage(v: unknown): { ok: true; text: string } | { ok: false } {
+  if (v === undefined || v === null) {
+    return { ok: true, text: "" };
+  }
+  if (typeof v !== "string") {
+    return { ok: false };
+  }
+  const t = v.trim();
+  if (t.length > 5000) {
+    return { ok: false };
+  }
+  return { ok: true, text: t };
+}
+
+function getPublicSiteUrl(): string {
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, "");
+  if (fromEnv) {
+    return fromEnv;
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL.replace(/^https?:\/\//, "")}`;
+  }
+  return "https://whiteguard.co.uk";
+}
+
 export async function POST(request: Request) {
   let body: unknown;
   try {
@@ -96,13 +122,23 @@ export async function POST(request: Request) {
   const company = b.company;
   const country = b.country;
   const jobRole = b.jobRole;
+  const whatsApp = b.whatsApp;
+  const messageParsed = parseOptionalMessage(b.message);
+  if (!messageParsed.ok) {
+    return NextResponse.json(
+      { error: "Invalid message (max 5000 characters)" },
+      { status: 400 },
+    );
+  }
+  const messageText = messageParsed.text;
 
   if (
     !isNonEmptyString(fullName, 200) ||
     !isNonEmptyString(email, 254) ||
     !isNonEmptyString(company, 200) ||
     !isNonEmptyString(country, 120) ||
-    !isNonEmptyString(jobRole, 120)
+    !isNonEmptyString(jobRole, 120) ||
+    !isNonEmptyString(whatsApp, 48)
   ) {
     return NextResponse.json(
       { error: "Missing or invalid fields" },
@@ -136,6 +172,13 @@ export async function POST(request: Request) {
 
   const replyEmail = email.trim();
   const mailtoHref = `mailto:${encodeURIComponent(replyEmail)}`;
+  const whatsAppTrim = whatsApp.trim();
+  const waDigits = whatsAppTrim.replace(/\D/g, "");
+
+  /** Remote images in HTML mail must be absolute URLs; relative `/images/...` never resolves in clients. */
+  const siteUrl = getPublicSiteUrl();
+  const logoUrl = `${siteUrl}/images/whiteguard-logo-text.svg`;
+  const logoIconUrl = `${siteUrl}/images/logo-icon.svg`;
 
   const safe = {
     fullName: escapeHtml(fullName.trim()),
@@ -143,7 +186,14 @@ export async function POST(request: Request) {
     company: escapeHtml(company.trim()),
     country: escapeHtml(country.trim()),
     jobRole: escapeHtml(jobRole.trim()),
+    whatsApp: escapeHtml(whatsAppTrim),
+    message: escapeHtml(messageText),
   };
+
+  const waCell =
+    waDigits.length > 0
+      ? `<a href="https://wa.me/${waDigits}" style="color:#0087d7;text-decoration:none;font-weight:600;">${safe.whatsApp}</a>`
+      : `<span style="color:#003859;font-weight:600;">${safe.whatsApp}</span>`;
 
   const subject = `[WHITEGUARD] Contact form — ${fullName.trim()}`;
 
@@ -155,8 +205,17 @@ export async function POST(request: Request) {
     `Company: ${company.trim()}`,
     `Country: ${country.trim()}`,
     `Job role: ${jobRole.trim()}`,
+    `WhatsApp: ${whatsAppTrim}`,
+    messageText
+      ? `Message:\n${messageText}`
+      : "Message: (not provided)",
   ];
   const text = textLines.join("\n");
+
+  const messageRow =
+    messageText.length > 0
+      ? `<tr><td style="padding:10px 0;border-top:1px solid #e0e6eb;color:#52697a;vertical-align:top;">Message</td><td style="padding:10px 0;border-top:1px solid #e0e6eb;color:#003859;white-space:pre-wrap;">${safe.message}</td></tr>`
+      : `<tr><td style="padding:10px 0;border-top:1px solid #e0e6eb;color:#52697a;vertical-align:top;">Message</td><td style="padding:10px 0;border-top:1px solid #e0e6eb;color:#94a3b8;font-style:italic;">—</td></tr>`;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -167,7 +226,13 @@ export async function POST(request: Request) {
 <body style="margin:0;padding:24px;background:#f5f8fa;font-family:'Segoe UI',system-ui,sans-serif;color:#141a1f;">
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,56,89,0.08);">
     <tr>
-      <td style="padding:28px 28px 8px;">
+      <td style="padding:24px 28px 12px;text-align:center;border-bottom:1px solid #e0e6eb;display:flex;align-items:center;justify-content:center;gap:10px;">
+        <img src="${logoUrl}" alt="WhiteGuard" width="160" height="40" style="display:block;margin:0 auto;height:40px;width:auto;max-width:180px;" />
+        <img src="${logoIconUrl}" alt="WhiteGuard" width="20" height="20" style="display:block;margin:0 auto;height:20px;width:auto;max-width:20px;" />
+        </td>
+    </tr>
+    <tr>
+      <td style="padding:20px 28px 8px;">
         <h1 style="margin:0;font-size:20px;font-weight:700;color:#003859;letter-spacing:-0.02em;">New contact request</h1>
         <p style="margin:12px 0 0;font-size:15px;line-height:1.5;color:#52697a;">Someone submitted the contact form on <strong style="color:#003859;">whiteguard.co.uk</strong>. Reply directly to their business email below.</p>
       </td>
@@ -177,9 +242,11 @@ export async function POST(request: Request) {
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;font-size:15px;">
           <tr><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#52697a;width:38%;vertical-align:top;">Full name</td><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#003859;font-weight:600;">${safe.fullName}</td></tr>
           <tr><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#52697a;vertical-align:top;">Business email</td><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;"><a href="${mailtoHref}" style="color:#0087d7;text-decoration:none;font-weight:600;">${safe.email}</a></td></tr>
+          <tr><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#52697a;vertical-align:top;">WhatsApp</td><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;">${waCell}</td></tr>
           <tr><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#52697a;vertical-align:top;">Company</td><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#003859;">${safe.company}</td></tr>
           <tr><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#52697a;vertical-align:top;">Country</td><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#003859;">${safe.country}</td></tr>
-          <tr><td style="padding:10px 0;color:#52697a;vertical-align:top;">Job role</td><td style="padding:10px 0;color:#003859;">${safe.jobRole}</td></tr>
+          <tr><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#52697a;vertical-align:top;">Job role</td><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#003859;">${safe.jobRole}</td></tr>
+          ${messageRow}
         </table>
       </td>
     </tr>
