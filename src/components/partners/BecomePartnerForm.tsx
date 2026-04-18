@@ -5,6 +5,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
 
+/** Same-origin proxy → `/api/partner-applications` (avoids CORS on partner API). */
+const APPLICATIONS_URL = "/api/partner-applications";
+
 const INDUSTRIES = [
   "Technology",
   "Healthcare",
@@ -17,8 +20,9 @@ const INDUSTRIES = [
   "Other",
 ];
 
-const JOB_ROLES = [
+const CONTACT_TITLES = [
   "CEO / Founder",
+  "CISO",
   "CTO",
   "Security Director",
   "Sales Director",
@@ -26,15 +30,56 @@ const JOB_ROLES = [
   "Other",
 ];
 
+const COUNTRIES = [
+  "United Kingdom",
+  "United Arab Emirates",
+  "Saudi Arabia",
+  "Egypt",
+  "Qatar",
+  "Kuwait",
+  "Bahrain",
+  "Oman",
+  "Jordan",
+  "Lebanon",
+  "United States Of America",
+  "Other",
+];
+
+const COMPANY_SIZES = [
+  "1-10",
+  "11-50",
+  "51-200",
+  "201-500",
+  "501-1000",
+  "101-1000",
+  "1000+",
+];
+
+const PARTNERSHIP_TYPES = [
+  "Strategic Partnership",
+  "Reseller",
+  "Technology Partner",
+  "Referral Partner",
+  "Other",
+];
+
 export default function BecomePartnerForm() {
   const router = useRouter();
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [company, setCompany] = useState("");
+  const [companyLegalName, setCompanyLegalName] = useState("");
+  const [tradeName, setTradeName] = useState("");
+  const [website, setWebsite] = useState("");
+  const [country, setCountry] = useState("");
+  const [companySize, setCompanySize] = useState("");
   const [industry, setIndustry] = useState("");
-  const [jobRole, setJobRole] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [contactTitle, setContactTitle] = useState("");
+  const [email, setEmail] = useState("");
+  const [contactPhone, setContactPhone] = useState("");
+  const [servicesOffered, setServicesOffered] = useState("");
+  const [partnershipType, setPartnershipType] = useState("");
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const inputBase =
     "w-full rounded-[8px] border-2 bg-white px-4 py-3 font-jakarta text-[16px] leading-[16px] tracking-[1.1px] text-[#141a1f] placeholder:text-[#52697a] transition-colors duration-200 outline-none";
@@ -53,14 +98,62 @@ export default function BecomePartnerForm() {
   const selectWrapperDefault = "border-[#e0e6eb]";
   const selectWrapperFocused = "border-[#ABE0FF]";
 
+  const selectClass = (value: string) =>
+    `w-full appearance-none bg-transparent px-4 py-4 font-jakarta text-[16px] leading-[24px] tracking-[1.5px] outline-none scheme-light ${
+      value ? "text-[#141a1f]" : "text-[#52697a]"
+    }`;
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
     setIsSubmitting(true);
     try {
-      // TODO: Wire to API or email handler
-      await new Promise((r) => setTimeout(r, 500));
+      const payload = {
+        CompanyLegalName: companyLegalName.trim(),
+        TradeName: tradeName.trim(),
+        Website: website.trim(),
+        Country: country,
+        CompanySize: companySize,
+        IndustryFocus: industry,
+        ContactFullName: fullName.trim(),
+        ContactTitle: contactTitle,
+        ContactEmail: email.trim(),
+        ContactPhone: contactPhone.trim(),
+        ServicesOffered: servicesOffered.trim(),
+        PartnershipType: partnershipType,
+      };
+
+      const res = await fetch(APPLICATIONS_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = (await res.json().catch(() => ({}))) as {
+        message?: string;
+        error?: string;
+        errors?: Record<string, string[]>;
+      };
+
+      if (!res.ok) {
+        const fromErrors =
+          data.errors &&
+          Object.values(data.errors).flat().filter(Boolean).join(" ");
+        setSubmitError(
+          fromErrors ||
+            data.message ||
+            data.error ||
+            "Something went wrong. Please try again.",
+        );
+        return;
+      }
+
       router.push("/become-a-partner/thanks");
     } catch {
+      setSubmitError(
+        "Network error. Check your connection and try again.",
+      );
+    } finally {
       setIsSubmitting(false);
     }
   };
@@ -71,69 +164,145 @@ export default function BecomePartnerForm() {
       className="flex w-full max-w-[850px] flex-col gap-[71px]"
     >
       <div className="flex flex-col gap-[32px]">
-        <h1 className="font-jakarta text-[28px] font-normal pb-4 leading-[40px] tracking-[1.5px] text-[#003859] mb-4">
+        <h1 className="mb-4 pb-4 font-jakarta text-[28px] font-normal leading-[40px] tracking-[1.5px] text-[#003859]">
           Submit your partnership application here
         </h1>
 
         <div className="flex flex-col gap-4">
-          {/* Full Name */}
           <div className="flex flex-col gap-[8px]">
-            <label htmlFor="fullName" className={labelClass}>
-              Full Name <span className={asteriskClass}>*</span>
+            <label htmlFor="companyLegalName" className={labelClass}>
+              Company legal name <span className={asteriskClass}>*</span>
             </label>
             <input
-              id="fullName"
+              id="companyLegalName"
               type="text"
               required
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-              onFocus={() => setFocusedField("fullName")}
+              value={companyLegalName}
+              onChange={(e) => setCompanyLegalName(e.target.value)}
+              onFocus={() => setFocusedField("companyLegalName")}
               onBlur={() => setFocusedField(null)}
-              className={inputClass("fullName")}
+              className={inputClass("companyLegalName")}
+              placeholder=""
+              autoComplete="organization"
+            />
+          </div>
+
+          <div className="flex flex-col gap-[8px]">
+            <label htmlFor="tradeName" className={labelClass}>
+              Trade name <span className={asteriskClass}>*</span>
+            </label>
+            <input
+              id="tradeName"
+              type="text"
+              required
+              value={tradeName}
+              onChange={(e) => setTradeName(e.target.value)}
+              onFocus={() => setFocusedField("tradeName")}
+              onBlur={() => setFocusedField(null)}
+              className={inputClass("tradeName")}
               placeholder=""
             />
           </div>
 
-          {/* Business Email Address */}
           <div className="flex flex-col gap-[8px]">
-            <label htmlFor="email" className={labelClass}>
-              Business Email Address <span className={asteriskClass}>*</span>
+            <label htmlFor="website" className={labelClass}>
+              Website <span className={asteriskClass}>*</span>
             </label>
             <input
-              id="email"
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onFocus={() => setFocusedField("email")}
-              onBlur={() => setFocusedField(null)}
-              className={inputClass("email")}
-              placeholder="Example@Example.co"
-            />
-          </div>
-
-          {/* Company */}
-          <div className="flex flex-col gap-[8px]">
-            <label htmlFor="company" className={labelClass}>
-              Company <span className={asteriskClass}>*</span>
-            </label>
-            <input
-              id="company"
+              id="website"
               type="text"
               required
-              value={company}
-              onChange={(e) => setCompany(e.target.value)}
-              onFocus={() => setFocusedField("company")}
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              onFocus={() => setFocusedField("website")}
               onBlur={() => setFocusedField(null)}
-              className={inputClass("company")}
-              placeholder="Your company name"
+              className={inputClass("website")}
+              placeholder="example.com"
+              autoComplete="url"
             />
           </div>
 
-          {/* Industry */}
+          <div className="flex flex-col gap-[8px]">
+            <label htmlFor="country" className={labelClass}>
+              Country <span className={asteriskClass}>*</span>
+            </label>
+            <div
+              className={`${selectWrapper} ${
+                focusedField === "country"
+                  ? selectWrapperFocused
+                  : selectWrapperDefault
+              }`}
+            >
+              <select
+                id="country"
+                required
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+                onFocus={() => setFocusedField("country")}
+                onBlur={() => setFocusedField(null)}
+                className={selectClass(country)}
+              >
+                <option value="">Select country</option>
+                {COUNTRIES.map((opt) => (
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
+                ))}
+              </select>
+              <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
+                <Image
+                  src="/images/icons/ChevronDown.svg"
+                  alt=""
+                  width={20}
+                  height={20}
+                  aria-hidden
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-[8px]">
+            <label htmlFor="companySize" className={labelClass}>
+              Company size <span className={asteriskClass}>*</span>
+            </label>
+            <div
+              className={`${selectWrapper} ${
+                focusedField === "companySize"
+                  ? selectWrapperFocused
+                  : selectWrapperDefault
+              }`}
+            >
+              <select
+                id="companySize"
+                required
+                value={companySize}
+                onChange={(e) => setCompanySize(e.target.value)}
+                onFocus={() => setFocusedField("companySize")}
+                onBlur={() => setFocusedField(null)}
+                className={selectClass(companySize)}
+              >
+                <option value="">Select company size</option>
+                {COMPANY_SIZES.map((opt) => (
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
+                ))}
+              </select>
+              <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
+                <Image
+                  src="/images/icons/ChevronDown.svg"
+                  alt=""
+                  width={20}
+                  height={20}
+                  aria-hidden
+                />
+              </div>
+            </div>
+          </div>
+
           <div className="flex flex-col gap-[8px]">
             <label htmlFor="industry" className={labelClass}>
-              Industry <span className={asteriskClass}>*</span>
+              Industry focus <span className={asteriskClass}>*</span>
             </label>
             <div
               className={`${selectWrapper} ${
@@ -149,11 +318,9 @@ export default function BecomePartnerForm() {
                 onChange={(e) => setIndustry(e.target.value)}
                 onFocus={() => setFocusedField("industry")}
                 onBlur={() => setFocusedField(null)}
-                className={`w-full appearance-none bg-transparent px-4 py-4 font-jakarta text-[16px] leading-[24px] tracking-[1.5px] outline-none scheme-light ${
-                  industry ? "text-[#141a1f]" : "text-[#52697a]"
-                }`}
+                className={selectClass(industry)}
               >
-                <option value="">Select Industry</option>
+                <option value="">Select industry</option>
                 {INDUSTRIES.map((opt) => (
                   <option key={opt} value={opt}>
                     {opt}
@@ -172,31 +339,139 @@ export default function BecomePartnerForm() {
             </div>
           </div>
 
-          {/* Job Role */}
           <div className="flex flex-col gap-[8px]">
-            <label htmlFor="jobRole" className={labelClass}>
-              Job Role <span className={asteriskClass}>*</span>
+            <label htmlFor="fullName" className={labelClass}>
+              Contact full name <span className={asteriskClass}>*</span>
+            </label>
+            <input
+              id="fullName"
+              type="text"
+              required
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              onFocus={() => setFocusedField("fullName")}
+              onBlur={() => setFocusedField(null)}
+              className={inputClass("fullName")}
+              placeholder=""
+              autoComplete="name"
+            />
+          </div>
+
+          <div className="flex flex-col gap-[8px]">
+            <label htmlFor="contactTitle" className={labelClass}>
+              Contact title <span className={asteriskClass}>*</span>
             </label>
             <div
               className={`${selectWrapper} ${
-                focusedField === "jobRole"
+                focusedField === "contactTitle"
                   ? selectWrapperFocused
                   : selectWrapperDefault
               }`}
             >
               <select
-                id="jobRole"
+                id="contactTitle"
                 required
-                value={jobRole}
-                onChange={(e) => setJobRole(e.target.value)}
-                onFocus={() => setFocusedField("jobRole")}
+                value={contactTitle}
+                onChange={(e) => setContactTitle(e.target.value)}
+                onFocus={() => setFocusedField("contactTitle")}
                 onBlur={() => setFocusedField(null)}
-                className={`w-full appearance-none bg-transparent px-4 py-4 font-jakarta text-[16px] leading-[24px] tracking-[1.5px] outline-none scheme-light ${
-                  jobRole ? "text-[#141a1f]" : "text-[#52697a]"
-                }`}
+                className={selectClass(contactTitle)}
               >
-                <option value="">Select Job Role</option>
-                {JOB_ROLES.map((opt) => (
+                <option value="">Select title</option>
+                {CONTACT_TITLES.map((opt) => (
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
+                ))}
+              </select>
+              <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
+                <Image
+                  src="/images/icons/ChevronDown.svg"
+                  alt=""
+                  width={20}
+                  height={20}
+                  aria-hidden
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-[8px]">
+            <label htmlFor="email" className={labelClass}>
+              Business email address <span className={asteriskClass}>*</span>
+            </label>
+            <input
+              id="email"
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              onFocus={() => setFocusedField("email")}
+              onBlur={() => setFocusedField(null)}
+              className={inputClass("email")}
+              placeholder="Example@Example.co"
+              autoComplete="email"
+            />
+          </div>
+
+          <div className="flex flex-col gap-[8px]">
+            <label htmlFor="contactPhone" className={labelClass}>
+              Contact phone <span className={asteriskClass}>*</span>
+            </label>
+            <input
+              id="contactPhone"
+              type="tel"
+              inputMode="tel"
+              required
+              value={contactPhone}
+              onChange={(e) => setContactPhone(e.target.value)}
+              onFocus={() => setFocusedField("contactPhone")}
+              onBlur={() => setFocusedField(null)}
+              className={inputClass("contactPhone")}
+              placeholder=""
+              autoComplete="tel"
+            />
+          </div>
+
+          <div className="flex flex-col gap-[8px]">
+            <label htmlFor="servicesOffered" className={labelClass}>
+              Services offered <span className={asteriskClass}>*</span>
+            </label>
+            <textarea
+              id="servicesOffered"
+              required
+              rows={4}
+              value={servicesOffered}
+              onChange={(e) => setServicesOffered(e.target.value)}
+              onFocus={() => setFocusedField("servicesOffered")}
+              onBlur={() => setFocusedField(null)}
+              className={`${inputClass("servicesOffered")} min-h-[100px] resize-y`}
+              placeholder="e.g. Cloud Services, Managed SOC, …"
+            />
+          </div>
+
+          <div className="flex flex-col gap-[8px]">
+            <label htmlFor="partnershipType" className={labelClass}>
+              Partnership type <span className={asteriskClass}>*</span>
+            </label>
+            <div
+              className={`${selectWrapper} ${
+                focusedField === "partnershipType"
+                  ? selectWrapperFocused
+                  : selectWrapperDefault
+              }`}
+            >
+              <select
+                id="partnershipType"
+                required
+                value={partnershipType}
+                onChange={(e) => setPartnershipType(e.target.value)}
+                onFocus={() => setFocusedField("partnershipType")}
+                onBlur={() => setFocusedField(null)}
+                className={selectClass(partnershipType)}
+              >
+                <option value="">Select partnership type</option>
+                {PARTNERSHIP_TYPES.map((opt) => (
                   <option key={opt} value={opt}>
                     {opt}
                   </option>
@@ -215,6 +490,16 @@ export default function BecomePartnerForm() {
           </div>
         </div>
       </div>
+
+      {submitError ? (
+        <p
+          className="font-jakarta text-[15px] leading-snug text-[#b42318]"
+          role="alert"
+        >
+          {submitError}
+        </p>
+      ) : null}
+
       <HoverSwapButton
         as="button"
         type="submit"
