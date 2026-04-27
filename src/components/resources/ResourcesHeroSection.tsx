@@ -34,7 +34,7 @@ export default function ResourcesHeroSection({
             </p>
             {/* Decorative icons  */}
             <div
-              className="pointer-events-none absolute -left-[5%]  top-[50%] -translate-y-1/2 hidden h-[73px] w-[77px] lg:block"
+              className="pointer-events-none absolute -left-[3%] xl:-left-[5%]  top-[50%] -translate-y-1/2 hidden h-[73px] w-[77px] lg:block"
               aria-hidden
             >
               <Image
@@ -46,7 +46,7 @@ export default function ResourcesHeroSection({
               />
             </div>
             <div
-              className="pointer-events-none absolute -right-[6%] top-[50%] -translate-y-1/2 hidden h-[81px] w-[80px] lg:block"
+              className="pointer-events-none absolute xl:-right-[6%] -right-[3%] top-[50%] -translate-y-1/2 hidden h-[81px] w-[80px] lg:block"
               aria-hidden
             >
               <Image

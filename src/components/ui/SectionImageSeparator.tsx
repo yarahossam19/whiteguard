@@ -24,7 +24,7 @@ export function SectionImageSeparator({
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   return (
     <div
-      className={`relative   z-0 overflow-hidden  wave-container ${direction === "top" ? "mt-[0]" : ""} ${className}`}
+      className={`relative hidden lg:block   z-0 overflow-hidden  wave-container ${direction === "top" ? "mt-[0]" : ""} ${className}`}
       style={{
         alignSelf: "stretch",
         transform: transform,

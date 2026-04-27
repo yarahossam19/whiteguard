@@ -34,7 +34,7 @@ export default function ResourcesListingSection({
 
       {/* Cards grid - 3 columns, and pagination */}
       <div className="flex w-full flex-col items-center gap-[49px]">
-        <div className="grid w-full grid-cols-1 gap-y-[50px] sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-[57px] lg:gap-y-[50px]">
+        <div className="grid w-full grid-cols-1 gap-y-[50px]  md:grid-cols-2 md:gap-x-[35px] xl:grid-cols-3 xl:gap-x-[57px] lg:gap-y-[50px]">
           {visibleItems.map((item) => (
             <ResourceCard key={item.id} item={item} />
           ))}

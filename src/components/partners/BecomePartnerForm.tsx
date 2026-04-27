@@ -8,16 +8,23 @@ import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
 /** Same-origin proxy → `/api/partner-applications` (avoids CORS on partner API). */
 const APPLICATIONS_URL = "/api/partner-applications";
 
-const INDUSTRIES = [
-  "Technology",
-  "Healthcare",
-  "Finance",
-  "Government",
-  "Energy",
-  "Retail",
-  "Manufacturing",
-  "Consulting",
-  "Other",
+const INDUSTRY_FOCUS_OPTIONS = [
+  "System Integrator",
+  "Consulting Firm",
+  "Network & Security Provider",
+  "Cybersecurity Provider",
+  "Cloud Provider",
+  "Managed Service Provider (MSP)",
+  "Managed Security Service Provider (MSSP)",
+  "Value-Added Reseller (VAR)",
+  "Distributor",
+  "Technology Vendor / ISV",
+  "Technology Integration Partner",
+  "Hosting / Data Center Provider",
+  "Compliance / GRC Advisory Firm",
+  "Digital Transformation / IT Services Provider",
+  "Telecommunications / ISP Provider",
+  "Training / Awareness Provider",
 ];
 
 const CONTACT_TITLES = [
@@ -150,9 +157,7 @@ export default function BecomePartnerForm() {
 
       router.push("/become-a-partner/thanks");
     } catch {
-      setSubmitError(
-        "Network error. Check your connection and try again.",
-      );
+      setSubmitError("Network error. Check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -320,8 +325,8 @@ export default function BecomePartnerForm() {
                 onBlur={() => setFocusedField(null)}
                 className={selectClass(industry)}
               >
-                <option value="">Select industry</option>
-                {INDUSTRIES.map((opt) => (
+                <option value="">Select industry focus</option>
+                {INDUSTRY_FOCUS_OPTIONS.map((opt) => (
                   <option key={opt} value={opt}>
                     {opt}
                   </option>

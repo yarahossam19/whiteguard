@@ -90,11 +90,11 @@ export default function BannerSection({ data }: BannerSectionProps) {
 
   return (
     <section className="relative z-1 mb-20 w-full overflow-hidden flex flex-col-reverse">
-      <div className="flex lg:min-h-screen flex-col lg:flex-row overflow-hidden relative">
+      <div className="flex xl:min-h-screen flex-col xl:flex-row overflow-hidden relative">
         {/* LEFT - Content  */}
-        <div className="relative z-10 flex flex-1 flex-col items-center justify-center  px-6 pt-24 sm:px-12 sm:py-16 lg:px-[7vw]  ">
+        <div className="relative z-10 flex flex-1 flex-col items-center justify-center  px-6 pt-24 sm:px-12 sm:py-16 xl:px-[7vw]  ">
           <div
-            className="flex w-full  flex-col text-center lg:text-left"
+            className="flex w-full  flex-col text-center xl:text-left"
             style={{ gap: 40 }}
           >
             {/* Heading */}
@@ -110,9 +110,9 @@ export default function BannerSection({ data }: BannerSectionProps) {
               {headline.line2}
             </h1>
 
-            <div className="flex flex-col gap-8 lg:gap-[50px]">
+            <div className="flex flex-col gap-8 xl:gap-[50px]">
               {/* Stats */}
-              <div className="flex flex-wrap justify-center gap-4 lg:justify-start lg:gap-6">
+              <div className="flex flex-wrap justify-center gap-4 xl:justify-start xl:gap-6">
                 {stats.map((stat) => (
                   <div
                     key={stat.label}
@@ -140,7 +140,7 @@ export default function BannerSection({ data }: BannerSectionProps) {
               </p>
             </div>
             {/* CTAs */}
-            <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
+            <div className="flex flex-wrap justify-center gap-4 xl:justify-start">
               {ctas.map((cta) =>
                 cta.variant === "outline" ? (
                   <HoverSwapButton
@@ -151,7 +151,7 @@ export default function BannerSection({ data }: BannerSectionProps) {
                     variant="secondary"
                     showChevrons={false}
                     showArrow={"showArrow" in cta && cta.showArrow}
-                    className="font-ano px-6 py-3.5 text-base lg:text-lg w-full md:w-auto"
+                    className="font-ano px-6 py-3.5 text-base xl:text-lg w-full md:w-auto"
                   />
                 ) : (
                   <HoverSwapButton
@@ -161,7 +161,7 @@ export default function BannerSection({ data }: BannerSectionProps) {
                     hoverLabel={cta.hoverLabel}
                     variant="cta"
                     showChevrons={false}
-                    className="font-ano px-6 py-3.5 text-base lg:text-lg w-full md:w-auto"
+                    className="font-ano px-6 py-3.5 text-base xl:text-lg w-full md:w-auto"
                   />
                 ),
               )}
@@ -170,7 +170,7 @@ export default function BannerSection({ data }: BannerSectionProps) {
         </div>
 
         {/* RIGHT - Image columns (hidden on mobile, shown below) */}
-        <div className="relative hidden w-full lg:flex lg:w-1/2">
+        <div className="relative hidden w-full xl:flex xl:w-1/2">
           <div
             className="flex absolute  w-full  left-[20%] -top-[50%]"
             style={{
@@ -199,7 +199,7 @@ export default function BannerSection({ data }: BannerSectionProps) {
               }}
             />
             {/* LEFT COLUMN - Images scroll bottom to top */}
-            <div className="relative hidden min-h-screen w-[47.5%] shrink-0 lg:block">
+            <div className="relative hidden min-h-screen w-[47.5%] shrink-0 xl:block">
               <ImageColumn
                 images={leftColumnImages}
                 direction="up"
@@ -207,7 +207,7 @@ export default function BannerSection({ data }: BannerSectionProps) {
               />
             </div>
             {/* RIGHT COLUMN - Images scroll top to bottom */}
-            <div className="relative hidden min-h-screen w-[47.5%] shrink-0 lg:block">
+            <div className="relative hidden min-h-screen w-[47.5%] shrink-0 xl:block">
               <ImageColumn
                 images={rightColumnImages}
                 direction="down"
@@ -228,10 +228,15 @@ export default function BannerSection({ data }: BannerSectionProps) {
       </div>
 
       {/* Mobile: show single column with up scroll */}
-      <div className="relative h-[400px] overflow-hidden lg:hidden">
+      <div className="relative h-[400px] overflow-hidden xl:hidden flex">
         <ImageColumn
           images={leftColumnImages}
           direction="up"
+          className="min-h-0! h-full!"
+        />
+        <ImageColumn
+          images={rightColumnImages}
+          direction="down"
           className="min-h-0! h-full!"
         />
       </div>

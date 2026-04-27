@@ -226,7 +226,7 @@ export default function ContactPageContent() {
               src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2482.2683780198176!2d-0.09094147387124933!3d51.52663720929847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1ss%20128%2C%20City%20Road%2C%20London%2C%20EC1V%202NX%2C%20UNITED%20KINGDOM!5e0!3m2!1sen!2seg!4v1774413208319!5m2!1sen!2seg"
               width="100%"
               height="450"
-              style={{ border: "0", borderRadius: "10px" }}
+              style={{ border: "1px solid #ccc", borderRadius: "10px" }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -352,7 +352,7 @@ export default function ContactPageContent() {
                         </option>
                       ))}
                     </select>
-                    <div className="pointer-events-none absolute right-4 top-1/2 size-7 -translate-y-1/2">
+                    <div className=" absolute right-2 top-1/2 size-5 -translate-y-1/2">
                       <Image
                         src="/images/icons/ChevronDown.svg"
                         alt=""
@@ -383,7 +383,7 @@ export default function ContactPageContent() {
                       onChange={(e) => setJobRole(e.target.value)}
                       onFocus={() => setFocusedField("jobRole")}
                       onBlur={() => setFocusedField(null)}
-                      className={`w-full appearance-none bg-transparent p-4 font-jakarta text-[16px] leading-[normal] tracking-[1.5px] outline-none scheme-light ${
+                      className={`w-full  appearance-none bg-transparent p-4 font-jakarta text-[16px] leading-[normal] tracking-[1.5px] outline-none scheme-light ${
                         jobRole ? "text-[#141a1f]" : "text-[#52697a]"
                       }`}
                     >
@@ -394,7 +394,7 @@ export default function ContactPageContent() {
                         </option>
                       ))}
                     </select>
-                    <div className="pointer-events-none absolute right-4 top-1/2 size-7 -translate-y-1/2">
+                    <div className=" absolute right-2 top-1/2 size-5 -translate-y-1/2">
                       <Image
                         src="/images/icons/ChevronDown.svg"
                         alt=""

@@ -18,13 +18,14 @@ export function SectionVideoSeparator({
 }: SectionSeparatorProps) {
   const height = 300;
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isTablet = useMediaQuery({ query: "(max-width: 1025px)" });
 
   if (videoSrc) {
     return (
       <div
         className={`relative ${direction === "top" ? (!isMobile ? "mt-[-240px]" : "mt-[-100px]") : " "} z-0 overflow-hidden ${className} `}
         style={{
-          height: `${height}px`,
+          height: isTablet &&direction === "bottom" ? '120px'  : `${height}px`,
           alignSelf: "stretch",
           transform: transform,
         }}

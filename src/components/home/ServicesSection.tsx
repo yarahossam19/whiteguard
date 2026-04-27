@@ -37,13 +37,13 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
   const segment = 1 / N;
 
   return (
-    <section ref={ref} className="relative bg-white lg:mb-50">
+    <section ref={ref} className="relative bg-white xl:mb-50">
       {/* Tall scroll area - each service gets 1/N of the scroll */}
       <div className="relative " style={{ height: `${N * 100}vh` }}>
         {/* Sticky viewport */}
-        <div className="sticky top-0 flex h-screen flex-col ">
+        <div className="sticky top-0 flex h-screen md:h-[70vh] xl:h-screen flex-col ">
           {/* Header - fixed at top of sticky area */}
-          <div className="container shrink-0 flex flex-col items-center gap-4 pt-0 lg:pt-0">
+          <div className="container shrink-0 flex flex-col items-center gap-4 pt-0 xl:pt-0">
             <div className="flex flex-col items-center gap-0 text-center ">
               <h2 className="font-jakarta text-[clamp(32px,4vw,44px)] font-extrabold leading-[1.15] text-[#003859]">
                 {heading.line1}
@@ -58,7 +58,7 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
           </div>
 
           {/* Card + background area - flex grow, center card vertically */}
-          <div className="relative flex min-h-[400px] min-w-0 flex-1 items-center justify-center overflow-hidden sm:min-h-[577px]">
+          <div className="relative flex min-h-[400px] min-w-0 flex-1 items-center justify-center overflow-hidden xl:min-h-[577px]">
             {/* Background text - large, faded, marquee horizontal, behind card, never disappears */}
             <div
               className="absolute inset-0 flex items-center overflow-hidden pointer-events-none z-0"
@@ -81,7 +81,7 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
 
             {/* Cards - swipe from behind (new card slides up and overlays previous) */}
             <div className="container relative z-10 flex justify-center px-0">
-            <div className="relative z-10 h-[340px] w-full max-w-[90%] shrink-0 translate-y-8 overflow-hidden self-center pt-12 sm:h-[420px] sm:max-w-[90%] sm:translate-y-12 sm:pt-16 lg:h-[577px] lg:max-w-[400px] lg:pt-20">
+            <div className="relative z-10 h-[340px] w-full max-w-[90%] shrink-0 translate-y-8 overflow-hidden self-center pt-12 sm:h-[420px] sm:max-w-[90%] sm:translate-y-12 sm:pt-16 xl:h-[577px] xl:max-w-[400px] xl:pt-20">
               {services.map((service, i) => {
                 const slideFromBottom = 600;
                 const isFirst = i === 0;
@@ -151,7 +151,7 @@ function CardMotion({
   return (
     <motion.div className="absolute inset-0 w-full" style={{ y, opacity }}>
       <div
-        className="inline-flex flex-col items-start gap-4 p-6 sm:p-8 lg:gap-[15px] lg:px-10 lg:py-[60px]"
+        className="inline-flex flex-col items-start gap-4 p-6 sm:p-8 xl:gap-[15px] xl:px-10 xl:py-[60px]"
         style={{
           borderRadius: "60.075px",
           border: `2.503px solid ${service.borderColor}`,

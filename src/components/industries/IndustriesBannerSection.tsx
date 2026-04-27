@@ -16,7 +16,7 @@ export default function IndustriesBannerSection({
   return (
     <>
       {" "}
-      <section className="relative lg:min-h-[90vh] w-full overflow-hidden">
+      <section className="relative min-h-[50vh] xl:min-h-[90vh] w-full overflow-hidden">
         {/* Video background */}
         <video
           src={videoSrc}
@@ -39,7 +39,7 @@ export default function IndustriesBannerSection({
         />
 
         {/* Content */}
-        <div className="relative z-10 flex lg:min-h-[90vh] flex-col items-center justify-center py-16 text-center sm:py-20 lg:py-24">
+        <div className="relative z-10 flex min-h-[50vh] xl:min-h-[90vh] flex-col items-center justify-center py-16 text-center sm:py-20 xl:py-24">
           <div className="container flex flex-col items-center">
           <div className="mx-auto flex w-full max-w-[961px] flex-col items-center gap-8">
             <h1

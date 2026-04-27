@@ -17,7 +17,7 @@ export default function ServiceDetailHero({
 }: ServiceDetailHeroProps) {
   return (
     <>
-      <section className="relative flex min-h-screen lg:h-[50vh] w-full flex-col items-center justify-center overflow-hidden bg-white py-16 lg:py-30">
+      <section className="relative flex min-h-[70vh] xl:min-h-screen xl:h-[50vh] w-full flex-col items-center justify-center overflow-hidden bg-white py-16 xl:py-30">
         {/* Optional decorative background - light wave texture */}
         <div
           className="pointer-events-none absolute  w-full"
@@ -42,7 +42,7 @@ export default function ServiceDetailHero({
               <h1 className="font-jakarta text-[clamp(28px,4vw,50px)] font-bold leading-[1.2] text-[#003859]">
                 {headline}
               </h1>
-              <p className="max-w-[752px] font-jakarta text-[16px] font-normal leading-[30.6px] text-[#52697a] lg:text-[20px]">
+              <p className="max-w-[752px] font-jakarta text-[16px] font-normal leading-[30.6px] text-[#52697a] xl:text-[20px]">
                 {subtitle}
               </p>
             </div>

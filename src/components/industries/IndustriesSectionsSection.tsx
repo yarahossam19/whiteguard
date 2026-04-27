@@ -324,10 +324,10 @@ export default function IndustriesSectionsSection({
   };
 
   return (
-    <section className="relative w-full bg-white py-12 sm:py-16 lg:py-24">
+    <section className="relative w-full bg-white py-12 sm:py-16 xl:py-24">
       <div className="container">
         {/* Top header - dark background */}
-        <div className="flex flex-col items-center text-center pb-10 sm:pb-16 lg:pb-24">
+        <div className="flex flex-col items-center text-center pb-10 sm:pb-16 xl:pb-24">
           <h2 className="font-jakarta text-lg font-bold uppercase tracking-widest  text-[#003859] sm:text-2xl">
             {header.title}
           </h2>
@@ -337,7 +337,7 @@ export default function IndustriesSectionsSection({
         </div>
 
         {/* Mobile / tablet: horizontal industry nav */}
-        <div className="lg:hidden -mx-1 mb-8 overflow-x-auto overscroll-x-contain pb-2 [scrollbar-width:thin]">
+        {/* <div className="xl:hidden -mx-1 mb-8 overflow-x-auto overscroll-x-contain pb-2 [scrollbar-width:thin]">
           <nav
             className="mx-auto flex w-max max-w-none flex-row flex-nowrap justify-start gap-3 px-1 sm:gap-4"
             aria-label="Industry sections"
@@ -372,14 +372,14 @@ export default function IndustriesSectionsSection({
               );
             })}
           </nav>
-        </div>
+        </div> */}
 
         {/* Main layout: sticky nav + content */}
-        <div className="relative flex flex-col items-stretch justify-center gap-10 md:gap-14 lg:flex-row lg:items-start lg:gap-12 xl:gap-20">
+        <div className="relative flex flex-col items-stretch justify-center gap-10 md:gap-14 xl:flex-row xl:items-start xl:gap-12 xl:gap-20">
           {/* Sticky left nav - circles - scrolls with page, click scrolls to section */}
-          <div className="sticky top-24 z-20 hidden shrink-0 self-start lg:block lg:w-[200px] xl:w-[220px]">
+          <div className="sticky top-24 z-20 hidden shrink-0 self-start xl:block xl:w-[200px] xl:w-[220px]">
             <nav
-              className="flex flex-row justify-start gap-4 py-4 lg:flex-col lg:items-start lg:gap-6 lg:py-8"
+              className="flex flex-row justify-start gap-4 py-4 xl:flex-col xl:items-start xl:gap-6 xl:py-8"
               aria-label="Industry sections"
             >
               {industries.map((industry, index) => {
@@ -439,10 +439,10 @@ export default function IndustriesSectionsSection({
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.5 }}
                       transition={{ duration: 1, ease: "easeOut" }}
-                      className="flex flex-col gap-8 py-8 sm:gap-10 sm:px-4 sm:py-10 md:flex-row md:items-stretch md:gap-8 md:py-12 lg:gap-10 lg:px-2 lg:py-12"
+                      className="flex flex-col gap-8 py-8 sm:gap-10 sm:px-4 sm:py-10 md:flex-row md:items-stretch md:gap-8 md:py-12 xl:gap-10 xl:px-2 xl:py-12"
                     >
                       {/* Left: Industry image */}
-                      <div className="relative flex w-full shrink-0 items-center justify-center md:w-[46%] md:max-w-[50%] lg:w-1/2">
+                      <div className="relative flex w-full shrink-0 items-center justify-center md:w-[46%] md:max-w-[50%] xl:w-1/2">
                         <div
                           className="relative mx-auto w-full max-w-[553px] overflow-hidden rounded-2xl bg-white shadow-[0_5px_11px_0_rgba(0,0,0,0.1),0_19px_19px_0_rgba(0,0,0,0.09),0_44px_26px_0_rgba(0,0,0,0.05)]"
                           style={{ aspectRatio: "553 / 800" }}
@@ -457,10 +457,10 @@ export default function IndustriesSectionsSection({
                         </div>
                       </div>
                       {/* Right: Content */}
-                      <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col justify-between md:max-w-[54%] lg:max-w-none lg:min-h-[min(600px,70vh)]">
-                        <div className="flex flex-col gap-8 sm:gap-10 lg:gap-12">
+                      <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col justify-between md:max-w-[54%] xl:max-w-none xl:min-h-[min(600px,70vh)]">
+                        <div className="flex flex-col gap-8 sm:gap-10 xl:gap-12">
                           <div className="flex flex-col justify-stretch gap-4 sm:gap-6">
-                            <h3 className="font-jakarta text-2xl font-bold text-[#003859] sm:text-3xl lg:text-4xl">
+                            <h3 className="font-jakarta text-2xl font-bold text-[#003859] sm:text-3xl xl:text-4xl">
                               {industry.title}
                             </h3>
                             <p className="font-jakarta text-base leading-relaxed text-[#52697A]">
@@ -485,7 +485,7 @@ export default function IndustriesSectionsSection({
                           hoverLabel={industry.ctaLabel}
                           variant="cta"
                           showChevrons={false}
-                          className="w-full mt-5 lg:mt-0 md:w-auto text-sm md:text-base lg:text-lg  font-ano"
+                          className="w-full mt-5 xl:mt-0 md:w-auto text-sm   xl:text-lg  font-ano"
                         />
                       </div>
                     </motion.article>

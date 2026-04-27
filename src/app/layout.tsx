@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { ScrollToTopButton } from "@/components/ui/ScrollToTopButton";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -58,6 +59,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${plusJakartaSans.variable} antialiased`}
       >
         {children}
+        <ScrollToTopButton />
       </body>
     </html>
   );

@@ -39,6 +39,10 @@
   --container-lg: 960px;
   --container-xl: 1140px;
   --container-xxl: 1506px;
+
+  /* Scrollbar thumb (page + scrollable areas) */
+  --scrollbar-thumb: #003859;
+  --scrollbar-track: #e8eef2;
 }
 
 @theme inline {
@@ -109,6 +113,31 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-plus-jakarta-sans), sans-serif;
+}
+
+/* Scrollbar: thumb #003859 — Firefox + Chromium / Safari / Edge */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #002439;
 }
 
 /* Ano Regular for tabs, links, and buttons */
@@ -260,7 +289,7 @@ button, a {
 }
 
 .hero-font {
-  font-size: 58px ;
+  font-size: 50px ;
 }
 
 /* breakpoints */

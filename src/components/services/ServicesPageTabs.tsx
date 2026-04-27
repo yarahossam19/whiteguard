@@ -20,7 +20,7 @@ export default function ServicesPageTabs({
 
   useEffect(() => {
     const onScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      setIsScrolled(window.scrollY > 800);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -29,12 +29,12 @@ export default function ServicesPageTabs({
 
   return (
     <div
-      className={`sticky z-40 top-[12%] w-full max-w-full transition-all duration-300 ease-in-out lg:top-[20vh] 2xl:top-[16vh] min-[1600px]:top-[14vh]! ${
-        isScrolled ? "bg-white/10" : "bg-white/95"
-      } shadow-sm
-      flex flex-nowrap items-stretch justify-start gap-1.5 overflow-x-auto overflow-y-hidden overscroll-x-contain py-2.5 pl-3 pr-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
-      sm:gap-2 sm:px-4
-      lg:mx-auto lg:w-fit lg:grid lg:max-w-none lg:grid-cols-5 lg:items-center lg:justify-center lg:gap-1 lg:overflow-visible lg:rounded-full lg:px-6 lg:py-3`}
+      className={` z-40 shadow-sm  w-fit rounded-full max-w-full flex flex-nowrap items-stretch justify-center gap-1.5 overflow-x-auto  transition-all  duration-500 ease-in-out overflow-y-hidden overscroll-x-contain py-2.5 pl-3 pr-3 sm:gap-2 sm:px-4
+      mx-auto lg:w-fit lg:grid lg:max-w-none lg:grid-cols-5 lg:items-center lg:justify-center lg:gap-1 lg:overflow-visible lg:px-6 lg:py-3
+        ${
+        isScrolled ? "fixed bg-white/10 top-[10%] lg:top-[15%] left-1/2 -translate-x-1/2" : "relative bg-white/95 top-[23%] lg:pt-8 "
+      } 
+       `}
     >
       {tabs.map((tab) => {
         const isActive = activeTab === tab.id;
@@ -43,7 +43,7 @@ export default function ServicesPageTabs({
             key={tab.id}
             type="button"
             onClick={() => onTabChange(tab.id)}
-            className={`shrink-0 cursor-pointer rounded-lg font-jakarta font-normal transition-all duration-500 ease-in-out
+            className={`shrink-0 cursor-pointer rounded-full font-jakarta font-normal transition-all duration-500 ease-in-out
               whitespace-nowrap px-1 py-2 text-[13px] leading-snug
               sm:px-3.5 sm:text-[14px]
               lg:px-4 lg:py-2 lg:text-[18px] lg:leading-[32.5px]

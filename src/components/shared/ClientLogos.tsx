@@ -28,8 +28,8 @@ function LogoGrid({ items }: { items: LogosData }) {
 }
 
 function getLogosForPage(logos: LogosData, pageIndex: number) {
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const isTablet = useMediaQuery({ query: "(max-width: 1023px)" });
   const numLogos = isMobile ? 2 : isTablet ? 4 : 7;
   const start = (pageIndex * numLogos) % logos.length;
   return Array.from(

@@ -31,7 +31,7 @@ export function Header() {
     }`;
 
   return (
-    <header className="sticky top-0 z-50 w-full  py-6 lg:py-6 backdrop-blur-md bg-white/95 supports-backdrop-filter:bg-white/90">
+    <header className="sticky top-0 z-50 w-full  py-6 xl:py-6 backdrop-blur-md bg-white/95 supports-backdrop-filter:bg-white/90">
       <nav
         className="container-fluid flex items-center justify-between gap-4"
         aria-label="Main navigation"
@@ -40,7 +40,7 @@ export function Header() {
         <Logo />
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden items-center gap-4 xl:flex">
           {mainNav.map((item) => (
             <div
               key={item.href}
@@ -96,7 +96,7 @@ export function Header() {
           ))}
         </div>
 
-        <div className="hidden lg:flex   items-center gap-4">
+        <div className="hidden xl:flex   items-center gap-4">
           <HoverSwapButton
             href="https://www.whitehwk.com"
             label="White Hawk"
@@ -105,7 +105,7 @@ export function Header() {
             showChevrons={false}
             showImg={true}
             imgSrc="/images/icons/external-link.svg"
-            className="text-sm md:text-base lg:text-lg flex flex-row-reverse items-center gap-2  font-ano" 
+            className="text-sm md:text-base xl:text-lg flex flex-row-reverse items-center gap-2  font-ano" 
           />
           <HoverSwapButton
             href="/contact"
@@ -120,7 +120,7 @@ export function Header() {
         <button
           type="button"
           onClick={toggleMobileMenu}
-          className="inline-flex items-center justify-center rounded-lg p-2 text-[var(--primary-950)] duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] lg:hidden"
+          className="inline-flex items-center justify-center rounded-lg p-2 text-[var(--primary-950)] duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] xl:hidden"
           aria-expanded={isMobileMenuOpen}
           aria-label="Toggle menu"
         >
@@ -134,7 +134,7 @@ export function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="border-t border-[var(--button-border)] bg-white lg:hidden">
+        <div className="border-t border-[var(--button-border)] bg-white xl:hidden">
           <div className="container-fluid space-y-1 py-4">
             {mainNav.map((item) => {
               const hasSubLinks =
