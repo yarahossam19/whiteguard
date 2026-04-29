@@ -7,6 +7,7 @@ interface ServicesPageBottomCTAProps {
   subtitle: string;
   buttonLabel: string;
   href: string;
+  className?: string;
 }
 
 export default function ServicesPageBottomCTA({
@@ -15,6 +16,7 @@ export default function ServicesPageBottomCTA({
   subtitle,
   buttonLabel,
   href,
+  className,
 }: ServicesPageBottomCTAProps) {
   return (
     <section
@@ -39,7 +41,7 @@ export default function ServicesPageBottomCTA({
           hoverLabel={buttonLabel}
           variant={"secondary"}
           showChevrons={false}
-          className="px-6 py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano"
+          className={`px-6 py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano ${className ? className : ""}`}
         />
       </div>
     </section>

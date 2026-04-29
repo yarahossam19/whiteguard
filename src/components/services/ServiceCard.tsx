@@ -96,7 +96,9 @@ export default function ServiceCard({ card }: ServiceCardProps) {
   );
 
   return (
-    <div className={`flex ${imageLeft ?"flex-col" :"flex-col-reverse"} items-center gap-8 py-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-[32px]`}>
+    <div
+      className={`flex ${imageLeft ? "flex-col" : "flex-col-reverse"} items-center gap-8 py-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-[32px]`}
+    >
       {imageLeft ? (
         <>
           {imageBlock}

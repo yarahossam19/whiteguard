@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
+import { PartnerCountryMultiSelect } from "@/components/partners/PartnerCountryMultiSelect";
 
 /** Same-origin proxy → `/api/partner-applications` (avoids CORS on partner API). */
 const APPLICATIONS_URL = "/api/partner-applications";
@@ -25,6 +26,7 @@ const INDUSTRY_FOCUS_OPTIONS = [
   "Digital Transformation / IT Services Provider",
   "Telecommunications / ISP Provider",
   "Training / Awareness Provider",
+  "Other",
 ];
 
 const CONTACT_TITLES = [
@@ -34,21 +36,6 @@ const CONTACT_TITLES = [
   "Security Director",
   "Sales Director",
   "Channel Manager",
-  "Other",
-];
-
-const COUNTRIES = [
-  "United Kingdom",
-  "United Arab Emirates",
-  "Saudi Arabia",
-  "Egypt",
-  "Qatar",
-  "Kuwait",
-  "Bahrain",
-  "Oman",
-  "Jordan",
-  "Lebanon",
-  "United States Of America",
   "Other",
 ];
 
@@ -75,15 +62,17 @@ export default function BecomePartnerForm() {
   const [companyLegalName, setCompanyLegalName] = useState("");
   const [tradeName, setTradeName] = useState("");
   const [website, setWebsite] = useState("");
-  const [country, setCountry] = useState("");
+  const [countryCodes, setCountryCodes] = useState<string[]>([]);
   const [companySize, setCompanySize] = useState("");
   const [industry, setIndustry] = useState("");
+  const [industryFocusOther, setIndustryFocusOther] = useState("");
   const [fullName, setFullName] = useState("");
   const [contactTitle, setContactTitle] = useState("");
   const [email, setEmail] = useState("");
   const [contactPhone, setContactPhone] = useState("");
   const [servicesOffered, setServicesOffered] = useState("");
   const [partnershipType, setPartnershipType] = useState("");
+  const [activeDeal, setActiveDeal] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -97,7 +86,7 @@ export default function BecomePartnerForm() {
     `${inputBase} ${focusedField === field ? inputFocused : inputDefault}`;
 
   const labelClass =
-    "font-jakarta text-[16px] font-normal leading-[24px] tracking-[1.5px] text-[#141a1f]";
+    "font-jakarta text-[16px] font-normal leading-[16px] tracking-[1.1px] text-[#141a1f]";
   const asteriskClass = "text-[#ff0004]";
 
   const selectWrapper =
@@ -106,7 +95,7 @@ export default function BecomePartnerForm() {
   const selectWrapperFocused = "border-[#ABE0FF]";
 
   const selectClass = (value: string) =>
-    `w-full appearance-none bg-transparent px-4 py-4 font-jakarta text-[16px] leading-[24px] tracking-[1.5px] outline-none scheme-light ${
+    `w-full appearance-none bg-transparent px-4 py-3 font-jakarta text-[16px] leading-[18px] tracking-[1.1px] outline-none scheme-light ${
       value ? "text-[#141a1f]" : "text-[#52697a]"
     }`;
 
@@ -114,20 +103,37 @@ export default function BecomePartnerForm() {
     e.preventDefault();
     setSubmitError(null);
     setIsSubmitting(true);
+
+    if (countryCodes.length === 0) {
+      setSubmitError("Please select at least one country.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (industry === "Other" && !industryFocusOther.trim()) {
+      setSubmitError("Please specify your industry focus.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const industryFocusValue =
+      industry === "Other" ? industryFocusOther.trim() : industry;
+
     try {
       const payload = {
         CompanyLegalName: companyLegalName.trim(),
         TradeName: tradeName.trim(),
         Website: website.trim(),
-        Country: country,
+        countryCodes,
         CompanySize: companySize,
-        IndustryFocus: industry,
+        IndustryFocus: industryFocusValue,
         ContactFullName: fullName.trim(),
         ContactTitle: contactTitle,
         ContactEmail: email.trim(),
         ContactPhone: contactPhone.trim(),
         ServicesOffered: servicesOffered.trim(),
         PartnershipType: partnershipType,
+        activeDeal,
       };
 
       const res = await fetch(APPLICATIONS_URL, {
@@ -166,9 +172,9 @@ export default function BecomePartnerForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex w-full max-w-[850px] flex-col gap-[71px]"
+      className="flex w-full max-w-[850px] flex-col gap-8"
     >
-      <div className="flex flex-col gap-[32px]">
+      <div className="flex flex-col gap-4">
         <h1 className="mb-4 pb-4 font-jakarta text-[28px] font-normal leading-[40px] tracking-[1.5px] text-[#003859]">
           Submit your partnership application here
         </h1>
@@ -190,254 +196,253 @@ export default function BecomePartnerForm() {
               placeholder=""
               autoComplete="organization"
             />
-          </div>
-
+          </div>{" "}
           <div className="flex flex-col gap-[8px]">
-            <label htmlFor="tradeName" className={labelClass}>
-              Trade name <span className={asteriskClass}>*</span>
-            </label>
-            <input
-              id="tradeName"
-              type="text"
-              required
-              value={tradeName}
-              onChange={(e) => setTradeName(e.target.value)}
-              onFocus={() => setFocusedField("tradeName")}
-              onBlur={() => setFocusedField(null)}
-              className={inputClass("tradeName")}
-              placeholder=""
+            <span id="countries-label" className={labelClass}>
+              Countries <span className={asteriskClass}>*</span>
+            </span>
+            <PartnerCountryMultiSelect
+              id="countryCodes"
+              value={countryCodes}
+              onChange={setCountryCodes}
+              focused={focusedField === "countryCodes"}
+              onInteract={() => setFocusedField("countryCodes")}
             />
           </div>
-
-          <div className="flex flex-col gap-[8px]">
-            <label htmlFor="website" className={labelClass}>
-              Website <span className={asteriskClass}>*</span>
-            </label>
-            <input
-              id="website"
-              type="text"
-              required
-              value={website}
-              onChange={(e) => setWebsite(e.target.value)}
-              onFocus={() => setFocusedField("website")}
-              onBlur={() => setFocusedField(null)}
-              className={inputClass("website")}
-              placeholder="example.com"
-              autoComplete="url"
-            />
-          </div>
-
-          <div className="flex flex-col gap-[8px]">
-            <label htmlFor="country" className={labelClass}>
-              Country <span className={asteriskClass}>*</span>
-            </label>
-            <div
-              className={`${selectWrapper} ${
-                focusedField === "country"
-                  ? selectWrapperFocused
-                  : selectWrapperDefault
-              }`}
-            >
-              <select
-                id="country"
+          <div className="grid lg:grid-cols-2 gap-4">
+            {" "}
+            <div className="flex flex-col gap-[8px]">
+              <label htmlFor="tradeName" className={labelClass}>
+                Trade name <span className={asteriskClass}>*</span>
+              </label>
+              <input
+                id="tradeName"
+                type="text"
                 required
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
-                onFocus={() => setFocusedField("country")}
+                value={tradeName}
+                onChange={(e) => setTradeName(e.target.value)}
+                onFocus={() => setFocusedField("tradeName")}
                 onBlur={() => setFocusedField(null)}
-                className={selectClass(country)}
+                className={inputClass("tradeName")}
+                placeholder=""
+              />
+            </div>
+            <div className="flex flex-col gap-[8px]">
+              <label htmlFor="website" className={labelClass}>
+                Website <span className={asteriskClass}>*</span>
+              </label>
+              <input
+                id="website"
+                type="text"
+                required
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+                onFocus={() => setFocusedField("website")}
+                onBlur={() => setFocusedField(null)}
+                className={inputClass("website")}
+                placeholder="example.com"
+                autoComplete="url"
+              />
+            </div>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-4">
+            <div className="flex flex-col gap-[8px]">
+              <label htmlFor="companySize" className={labelClass}>
+                Company size <span className={asteriskClass}>*</span>
+              </label>
+              <div
+                className={`${selectWrapper} ${
+                  focusedField === "companySize"
+                    ? selectWrapperFocused
+                    : selectWrapperDefault
+                }`}
               >
-                <option value="">Select country</option>
-                {COUNTRIES.map((opt) => (
-                  <option key={opt} value={opt}>
-                    {opt}
-                  </option>
-                ))}
-              </select>
-              <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
-                <Image
-                  src="/images/icons/ChevronDown.svg"
-                  alt=""
-                  width={20}
-                  height={20}
-                  aria-hidden
-                />
+                <select
+                  id="companySize"
+                  required
+                  value={companySize}
+                  onChange={(e) => setCompanySize(e.target.value)}
+                  onFocus={() => setFocusedField("companySize")}
+                  onBlur={() => setFocusedField(null)}
+                  className={selectClass(companySize)}
+                >
+                  <option value="">Select company size</option>
+                  {COMPANY_SIZES.map((opt) => (
+                    <option key={opt} value={opt}>
+                      {opt}
+                    </option>
+                  ))}
+                </select>
+                <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
+                  <Image
+                    src="/images/icons/ChevronDown.svg"
+                    alt=""
+                    width={20}
+                    height={20}
+                    aria-hidden
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col gap-[8px]">
+              <label htmlFor="industry" className={labelClass}>
+                Industry focus <span className={asteriskClass}>*</span>
+              </label>
+              <div
+                className={`${selectWrapper} ${
+                  focusedField === "industry"
+                    ? selectWrapperFocused
+                    : selectWrapperDefault
+                }`}
+              >
+                <select
+                  id="industry"
+                  required
+                  value={industry}
+                  onChange={(e) => {
+                    const next = e.target.value;
+                    setIndustry(next);
+                    if (next !== "Other") {
+                      setIndustryFocusOther("");
+                    }
+                  }}
+                  onFocus={() => setFocusedField("industry")}
+                  onBlur={() => setFocusedField(null)}
+                  className={selectClass(industry)}
+                >
+                  <option value="">Select industry focus</option>
+                  {INDUSTRY_FOCUS_OPTIONS.map((opt) => (
+                    <option key={opt} value={opt}>
+                      {opt}
+                    </option>
+                  ))}
+                </select>
+                <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
+                  <Image
+                    src="/images/icons/ChevronDown.svg"
+                    alt=""
+                    width={20}
+                    height={20}
+                    aria-hidden
+                  />
+                </div>
               </div>
             </div>
           </div>
-
-          <div className="flex flex-col gap-[8px]">
-            <label htmlFor="companySize" className={labelClass}>
-              Company size <span className={asteriskClass}>*</span>
-            </label>
-            <div
-              className={`${selectWrapper} ${
-                focusedField === "companySize"
-                  ? selectWrapperFocused
-                  : selectWrapperDefault
-              }`}
-            >
-              <select
-                id="companySize"
+          {industry === "Other" ? (
+            <div className="flex flex-col gap-[8px]">
+              <label htmlFor="industryFocusOther" className={labelClass}>
+                Specify industry focus <span className={asteriskClass}>*</span>
+              </label>
+              <input
+                id="industryFocusOther"
+                type="text"
                 required
-                value={companySize}
-                onChange={(e) => setCompanySize(e.target.value)}
-                onFocus={() => setFocusedField("companySize")}
+                maxLength={200}
+                value={industryFocusOther}
+                onChange={(e) => setIndustryFocusOther(e.target.value)}
+                onFocus={() => setFocusedField("industryFocusOther")}
                 onBlur={() => setFocusedField(null)}
-                className={selectClass(companySize)}
+                className={inputClass("industryFocusOther")}
+                placeholder="Enter your industry or segment"
+              />
+            </div>
+          ) : null}
+          <div className="grid lg:grid-cols-2 gap-4">
+            <div className="flex flex-col gap-[8px]">
+              <label htmlFor="fullName" className={labelClass}>
+                Contact full name <span className={asteriskClass}>*</span>
+              </label>
+              <input
+                id="fullName"
+                type="text"
+                required
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                onFocus={() => setFocusedField("fullName")}
+                onBlur={() => setFocusedField(null)}
+                className={inputClass("fullName")}
+                placeholder=""
+                autoComplete="name"
+              />
+            </div>
+            <div className="flex flex-col gap-[8px]">
+              <label htmlFor="contactTitle" className={labelClass}>
+                Contact title <span className={asteriskClass}>*</span>
+              </label>
+              <div
+                className={`${selectWrapper} ${
+                  focusedField === "contactTitle"
+                    ? selectWrapperFocused
+                    : selectWrapperDefault
+                }`}
               >
-                <option value="">Select company size</option>
-                {COMPANY_SIZES.map((opt) => (
-                  <option key={opt} value={opt}>
-                    {opt}
-                  </option>
-                ))}
-              </select>
-              <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
-                <Image
-                  src="/images/icons/ChevronDown.svg"
-                  alt=""
-                  width={20}
-                  height={20}
-                  aria-hidden
-                />
+                <select
+                  id="contactTitle"
+                  required
+                  value={contactTitle}
+                  onChange={(e) => setContactTitle(e.target.value)}
+                  onFocus={() => setFocusedField("contactTitle")}
+                  onBlur={() => setFocusedField(null)}
+                  className={selectClass(contactTitle)}
+                >
+                  <option value="">Select title</option>
+                  {CONTACT_TITLES.map((opt) => (
+                    <option key={opt} value={opt}>
+                      {opt}
+                    </option>
+                  ))}
+                </select>
+                <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
+                  <Image
+                    src="/images/icons/ChevronDown.svg"
+                    alt=""
+                    width={20}
+                    height={20}
+                    aria-hidden
+                  />
+                </div>
               </div>
             </div>
           </div>
-
-          <div className="flex flex-col gap-[8px]">
-            <label htmlFor="industry" className={labelClass}>
-              Industry focus <span className={asteriskClass}>*</span>
-            </label>
-            <div
-              className={`${selectWrapper} ${
-                focusedField === "industry"
-                  ? selectWrapperFocused
-                  : selectWrapperDefault
-              }`}
-            >
-              <select
-                id="industry"
+          <div className="grid lg:grid-cols-2 gap-4">
+            {" "}
+            <div className="flex flex-col gap-[8px]">
+              <label htmlFor="email" className={labelClass}>
+                Business email address <span className={asteriskClass}>*</span>
+              </label>
+              <input
+                id="email"
+                type="email"
                 required
-                value={industry}
-                onChange={(e) => setIndustry(e.target.value)}
-                onFocus={() => setFocusedField("industry")}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onFocus={() => setFocusedField("email")}
                 onBlur={() => setFocusedField(null)}
-                className={selectClass(industry)}
-              >
-                <option value="">Select industry focus</option>
-                {INDUSTRY_FOCUS_OPTIONS.map((opt) => (
-                  <option key={opt} value={opt}>
-                    {opt}
-                  </option>
-                ))}
-              </select>
-              <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
-                <Image
-                  src="/images/icons/ChevronDown.svg"
-                  alt=""
-                  width={20}
-                  height={20}
-                  aria-hidden
-                />
-              </div>
+                className={inputClass("email")}
+                placeholder="Example@Example.co"
+                autoComplete="email"
+              />
+            </div>
+            <div className="flex flex-col gap-[8px]">
+              <label htmlFor="contactPhone" className={labelClass}>
+                Contact phone <span className={asteriskClass}>*</span>
+              </label>
+              <input
+                id="contactPhone"
+                type="tel"
+                inputMode="tel"
+                required
+                value={contactPhone}
+                onChange={(e) => setContactPhone(e.target.value)}
+                onFocus={() => setFocusedField("contactPhone")}
+                onBlur={() => setFocusedField(null)}
+                className={inputClass("contactPhone")}
+                placeholder=""
+                autoComplete="tel"
+              />
             </div>
           </div>
-
-          <div className="flex flex-col gap-[8px]">
-            <label htmlFor="fullName" className={labelClass}>
-              Contact full name <span className={asteriskClass}>*</span>
-            </label>
-            <input
-              id="fullName"
-              type="text"
-              required
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-              onFocus={() => setFocusedField("fullName")}
-              onBlur={() => setFocusedField(null)}
-              className={inputClass("fullName")}
-              placeholder=""
-              autoComplete="name"
-            />
-          </div>
-
-          <div className="flex flex-col gap-[8px]">
-            <label htmlFor="contactTitle" className={labelClass}>
-              Contact title <span className={asteriskClass}>*</span>
-            </label>
-            <div
-              className={`${selectWrapper} ${
-                focusedField === "contactTitle"
-                  ? selectWrapperFocused
-                  : selectWrapperDefault
-              }`}
-            >
-              <select
-                id="contactTitle"
-                required
-                value={contactTitle}
-                onChange={(e) => setContactTitle(e.target.value)}
-                onFocus={() => setFocusedField("contactTitle")}
-                onBlur={() => setFocusedField(null)}
-                className={selectClass(contactTitle)}
-              >
-                <option value="">Select title</option>
-                {CONTACT_TITLES.map((opt) => (
-                  <option key={opt} value={opt}>
-                    {opt}
-                  </option>
-                ))}
-              </select>
-              <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2">
-                <Image
-                  src="/images/icons/ChevronDown.svg"
-                  alt=""
-                  width={20}
-                  height={20}
-                  aria-hidden
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-[8px]">
-            <label htmlFor="email" className={labelClass}>
-              Business email address <span className={asteriskClass}>*</span>
-            </label>
-            <input
-              id="email"
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onFocus={() => setFocusedField("email")}
-              onBlur={() => setFocusedField(null)}
-              className={inputClass("email")}
-              placeholder="Example@Example.co"
-              autoComplete="email"
-            />
-          </div>
-
-          <div className="flex flex-col gap-[8px]">
-            <label htmlFor="contactPhone" className={labelClass}>
-              Contact phone <span className={asteriskClass}>*</span>
-            </label>
-            <input
-              id="contactPhone"
-              type="tel"
-              inputMode="tel"
-              required
-              value={contactPhone}
-              onChange={(e) => setContactPhone(e.target.value)}
-              onFocus={() => setFocusedField("contactPhone")}
-              onBlur={() => setFocusedField(null)}
-              className={inputClass("contactPhone")}
-              placeholder=""
-              autoComplete="tel"
-            />
-          </div>
-
           <div className="flex flex-col gap-[8px]">
             <label htmlFor="servicesOffered" className={labelClass}>
               Services offered <span className={asteriskClass}>*</span>
@@ -454,7 +459,6 @@ export default function BecomePartnerForm() {
               placeholder="e.g. Cloud Services, Managed SOC, …"
             />
           </div>
-
           <div className="flex flex-col gap-[8px]">
             <label htmlFor="partnershipType" className={labelClass}>
               Partnership type <span className={asteriskClass}>*</span>
@@ -492,6 +496,28 @@ export default function BecomePartnerForm() {
                 />
               </div>
             </div>
+          </div>
+          <div className="flex flex-col gap-[8px]">
+            <label
+              htmlFor="activeDeal"
+              className={`${labelClass} flex cursor-pointer items-start gap-3`}
+            >
+              <input
+                id="activeDeal"
+                type="checkbox"
+                checked={activeDeal}
+                onChange={(e) => setActiveDeal(e.target.checked)}
+                onFocus={() => setFocusedField("activeDeal")}
+                onBlur={() => setFocusedField(null)}
+                className="mt-0.5 size-[18px] shrink-0 rounded border-[#c2cdd6] text-[#003859] focus:ring-2 focus:ring-[#ABE0FF] focus:ring-offset-2"
+              />
+              <span>
+                Active deal{" "}
+                <span className="font-jakarta font-normal text-[14px] text-[#52697a]">
+                  (check if there is an active opportunity or deal today)
+                </span>
+              </span>
+            </label>
           </div>
         </div>
       </div>

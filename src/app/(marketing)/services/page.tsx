@@ -101,6 +101,7 @@ function ServicesPageContent() {
         subtitle={bottomCta.subtitle}
         buttonLabel={bottomCta.buttonLabel}
         href={bottomCta.href}
+        className="d-block w-full"
       />
     </div>
   );
@@ -111,7 +112,9 @@ export default function ServicesPage() {
     <Suspense
       fallback={
         <div className="bg-white min-h-[60vh] flex items-center justify-center">
-          <div className="animate-pulse text-[var(--primary-600)]">Loading...</div>
+          <div className="animate-pulse text-[var(--primary-600)]">
+            Loading...
+          </div>
         </div>
       }
     >
