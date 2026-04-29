@@ -134,13 +134,13 @@ export function HoverSwapButton(props: HoverSwapButtonProps) {
     return (
       <Link
         href={href ?? "#"}
-        className="group w-full md:w-auto inline-flex rounded-lg p-[2.5px] font-ano font-normal text-[#002439]"
+        className="group w-full md:w-auto inline-flex rounded-lg p-[2px] font-ano font-normal text-[#002439] text-base!"
         style={{
           background: "linear-gradient(180deg, #0087D7 0%, #81D0FF 100%)",
         }}
       >
         <span
-          className={`flex items-center justify-center gap-2 rounded-[5px] bg-white px-6 py-2 text-lg transition-colors duration-300 ease-out group-hover:bg-[#ABE0FF]/30 ${className}`}
+          className={`flex items-center justify-center gap-2 rounded-[5px] bg-white px-4 py-2 text-lg transition-colors duration-300 ease-out group-hover:bg-[#ABE0FF]/30 ${className}`}
         >
           {showChevrons && !showArrow && <ChevronIcon />}
           {showImg && (
@@ -172,7 +172,7 @@ export function HoverSwapButton(props: HoverSwapButtonProps) {
     <Link
       href={href ?? "#"}
       className={`group relative inline-flex items-center justify-center gap-2 rounded-[12px] font-ano font-normal duration-300 ease-out ${
-        isNav ? "px-5 py-2.5 text-base" : "px-6 py-3 text-lg"
+        isNav ? "px-4 py-2.5 text-base" : "px-6 py-3 text-lg"
       } ${className}`}
     >
       {primaryButtonContent}

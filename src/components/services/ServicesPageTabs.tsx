@@ -32,8 +32,10 @@ export default function ServicesPageTabs({
       className={` z-40 shadow-sm  w-fit rounded-full max-w-full flex flex-nowrap items-stretch justify-center gap-1.5 overflow-x-auto  transition-all  duration-500 ease-in-out overflow-y-hidden overscroll-x-contain py-2.5 pl-3 pr-3 sm:gap-2 sm:px-4
       mx-auto lg:w-fit lg:grid lg:max-w-none lg:grid-cols-5 lg:items-center lg:justify-center lg:gap-1 lg:overflow-visible lg:px-6 lg:py-3
         ${
-        isScrolled ? "fixed bg-white/10 top-[10%] lg:top-[15%] left-1/2 -translate-x-1/2" : "relative bg-white/95 top-[23%] lg:pt-8 "
-      } 
+          isScrolled
+            ? "fixed bg-white/10 top-[10%] lg:top-[15%] left-1/2 -translate-x-1/2"
+            : "relative bg-white/95 top-[23%] lg:mt-8 "
+        } 
        `}
     >
       {tabs.map((tab) => {
