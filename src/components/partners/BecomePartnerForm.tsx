@@ -39,15 +39,7 @@ const CONTACT_TITLES = [
   "Other",
 ];
 
-const COMPANY_SIZES = [
-  "1-10",
-  "11-50",
-  "51-200",
-  "201-500",
-  "501-1000",
-  "101-1000",
-  "1000+",
-];
+const COMPANY_SIZES = ["1-25", "26-100", "101-1000", "1001+"];
 
 const PARTNERSHIP_TYPES = [
   "Strategic Partnership",

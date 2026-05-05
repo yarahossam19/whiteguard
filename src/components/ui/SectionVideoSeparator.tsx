@@ -25,7 +25,7 @@ export function SectionVideoSeparator({
       <div
         className={`relative ${direction === "top" ? (!isMobile ? "mt-[-240px]" : "mt-[-100px]") : " "} z-0 overflow-hidden ${className} `}
         style={{
-          height: isTablet &&direction === "bottom" ? '120px'  : `${height}px`,
+          height: isTablet && direction === "bottom" ? "120px" : `${height}px`,
           alignSelf: "stretch",
           transform: transform,
         }}
