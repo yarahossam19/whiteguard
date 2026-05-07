@@ -289,7 +289,7 @@ button, a {
 }
 
 .hero-font {
-  font-size: 50px ;
+  font-size: 50px;
 }
 
 /* breakpoints */
@@ -297,8 +297,9 @@ button, a {
   .container {
     max-width: 540px;
   }
+
   .hero-font {
-    font-size: 58px ;
+    font-size: 58px;
   }
 }
 
@@ -306,8 +307,9 @@ button, a {
   .container {
     max-width: 720px;
   }
+
   .hero-font {
-    font-size: 58px ;
+    font-size: 58px;
   }
 }
 
@@ -315,8 +317,9 @@ button, a {
   .container {
     max-width: 960px;
   }
+
   .hero-font {
-    font-size: 58px ;
+    font-size: 58px;
   }
 }
 
@@ -324,35 +327,51 @@ button, a {
   .container {
     max-width: 1140px;
   }
+
   .hero-font {
-    font-size:64px;
+    font-size: 64px;
   }
 }
 
-@media (min-width: 1400px)   {
+@media (min-width: 1400px) {
   .container {
     max-width: 1320px;
   }
+
   .hero-font {
     font-size: 75px;
   }
 }
 
 @media (min-width: 1601px) {
-  
+
   .hero-font {
-     font-size:85px;
+    font-size: 85px;
   }
 }
+
 @media (min-width: 1920px) {
   .hero-font {
     font-size: 100px;
   }
 }
+
 .container-fluid {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+
+}
+
+/* reCAPTCHA v2: stretch widget to grid cell (overrides inline iframe width) */
+.recaptcha-container .g-recaptcha {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.recaptcha-container iframe, .rc-anchor-light.rc-anchor-compact, .rc-anchor-light.rc-anchor-normal {
+  width: 100% !important;
+  max-width: 100% !important;
 }

@@ -4,10 +4,19 @@ import nodemailer from "nodemailer";
 import type SMTPTransport from "nodemailer/lib/smtp-transport";
 import { NextResponse } from "next/server";
 
+import {
+  getContactServiceLabels,
+  isValidContactServiceSelection,
+} from "@/data/contact-service-options";
+import {
+  getPartnerCountryLabel,
+  PARTNER_COUNTRY_CODE_SET,
+} from "@/data/partner-countries";
+
 /** Nodemailer needs the Node runtime (not Edge). */
 export const runtime = "nodejs";
 
-const DEFAULT_TO = "ahmedmostafakhedr31@gmail.com";
+const DEFAULT_CONTACT_TO = "info@whiteguard.co.uk";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -15,14 +24,31 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 function getContactRecipients(): string[] {
   const raw = process.env.CONTACT_TO_EMAIL?.trim();
   if (!raw) {
-    return [DEFAULT_TO];
+    return [DEFAULT_CONTACT_TO];
   }
   const parts = raw
     .split(/[,;]+/)
     .map((a) => a.trim())
     .filter(Boolean);
   const valid = parts.filter((a) => EMAIL_RE.test(a));
-  return valid.length > 0 ? valid : [DEFAULT_TO];
+  return valid.length > 0 ? valid : [DEFAULT_CONTACT_TO];
+}
+
+/** Blind-copy (e.g. personal inbox) — comma or semicolon separated; omitted if unset or invalid. */
+function getContactBcc(): string | string[] | undefined {
+  const raw = process.env.CONTACT_BCC_EMAIL?.trim();
+  if (!raw) {
+    return undefined;
+  }
+  const parts = raw
+    .split(/[,;]+/)
+    .map((a) => a.trim())
+    .filter(Boolean);
+  const valid = parts.filter((a) => EMAIL_RE.test(a));
+  if (valid.length === 0) {
+    return undefined;
+  }
+  return valid.length === 1 ? valid[0] : valid;
 }
 
 function getSmtpConfig() {
@@ -94,6 +120,72 @@ function parseOptionalMessage(v: unknown): { ok: true; text: string } | { ok: fa
     return { ok: false };
   }
   return { ok: true, text: t };
+}
+
+/** Optional WhatsApp: empty or non-empty trimmed string, max length for API. */
+function parseOptionalWhatsApp(
+  v: unknown,
+): { ok: true; text: string } | { ok: false } {
+  if (v === undefined || v === null || v === "") {
+    return { ok: true, text: "" };
+  }
+  if (typeof v !== "string") {
+    return { ok: false };
+  }
+  const t = v.trim();
+  if (t.length > 48) {
+    return { ok: false };
+  }
+  return { ok: true, text: t };
+}
+
+/** At least one allowed partner country code; duplicates removed. */
+function parseCountryCodes(
+  v: unknown,
+): { ok: true; codes: string[] } | { ok: false } {
+  if (!Array.isArray(v) || v.length === 0) {
+    return { ok: false };
+  }
+  const codes: string[] = [];
+  const seen = new Set<string>();
+  for (const item of v) {
+    if (typeof item !== "string") {
+      return { ok: false };
+    }
+    const c = item.trim();
+    if (!PARTNER_COUNTRY_CODE_SET.has(c)) {
+      return { ok: false };
+    }
+    if (!seen.has(c)) {
+      seen.add(c);
+      codes.push(c);
+    }
+  }
+  if (codes.length === 0) {
+    return { ok: false };
+  }
+  return { ok: true, codes };
+}
+
+const RECAPTCHA_VERIFY_URL =
+  "https://www.google.com/recaptcha/api/siteverify";
+
+/** reCAPTCHA v2 Checkbox — siteverify returns success only (no score). */
+async function verifyRecaptchaToken(token: string): Promise<boolean> {
+  const secret = process.env.RECAPTCHA_SECRET_KEY?.trim();
+  if (!secret) {
+    return false;
+  }
+  const res = await fetch(RECAPTCHA_VERIFY_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({ secret, response: token }),
+  });
+  const data = (await res.json()) as {
+    success?: boolean;
+    "error-codes"?: string[];
+  };
+  return data.success === true;
 }
 
 /**
@@ -186,25 +278,81 @@ export async function POST(request: Request) {
   const fullName = b.fullName;
   const email = b.email;
   const company = b.company;
-  const country = b.country;
   const jobRole = b.jobRole;
-  const whatsApp = b.whatsApp;
+  const serviceType = b.serviceType;
+  const serviceSub = b.serviceSub;
+  const recaptchaToken = b.recaptchaToken;
   const messageParsed = parseOptionalMessage(b.message);
+  const whatsAppParsed = parseOptionalWhatsApp(b.whatsApp);
+  const countryParsed = parseCountryCodes(b.countryCodes);
+  if (!countryParsed.ok) {
+    return NextResponse.json(
+      { error: "Please select at least one valid country." },
+      { status: 400 },
+    );
+  }
+  const countryCodes = countryParsed.codes;
   if (!messageParsed.ok) {
     return NextResponse.json(
       { error: "Invalid message (max 5000 characters)" },
       { status: 400 },
     );
   }
+  if (!whatsAppParsed.ok) {
+    return NextResponse.json(
+      { error: "Invalid WhatsApp field" },
+      { status: 400 },
+    );
+  }
   const messageText = messageParsed.text;
+  const whatsAppText = whatsAppParsed.text;
+
+  const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY?.trim();
+  if (recaptchaSecret) {
+    if (
+      typeof recaptchaToken !== "string" ||
+      recaptchaToken.trim().length === 0
+    ) {
+      return NextResponse.json(
+        { error: "Security check failed. Please try again." },
+        { status: 400 },
+      );
+    }
+    const ok = await verifyRecaptchaToken(recaptchaToken.trim());
+    if (!ok) {
+      return NextResponse.json(
+        { error: "Security check failed. Please try again." },
+        { status: 400 },
+      );
+    }
+  } else if (process.env.NODE_ENV === "production") {
+    return NextResponse.json(
+      {
+        error:
+          "Contact form is not fully configured. (reCAPTCHA secret missing on server.)",
+      },
+      { status: 503 },
+    );
+  }
+
+  if (!isValidContactServiceSelection(serviceType, serviceSub)) {
+    return NextResponse.json(
+      { error: "Please choose a valid service category and service." },
+      { status: 400 },
+    );
+  }
+
+  const serviceTypeStr =
+    typeof serviceType === "string" ? serviceType.trim() : "";
+  const serviceSubStr = typeof serviceSub === "string" ? serviceSub.trim() : "";
+  const { typeLabel: serviceTypeLabel, subLabel: subServiceLabel } =
+    getContactServiceLabels(serviceTypeStr, serviceSubStr);
 
   if (
     !isNonEmptyString(fullName, 200) ||
     !isNonEmptyString(email, 254) ||
     !isNonEmptyString(company, 200) ||
-    !isNonEmptyString(country, 120) ||
-    !isNonEmptyString(jobRole, 120) ||
-    !isNonEmptyString(whatsApp, 48)
+    !isNonEmptyString(jobRole, 120)
   ) {
     return NextResponse.json(
       { error: "Missing or invalid fields" },
@@ -235,21 +383,27 @@ export async function POST(request: Request) {
     process.env.SMTP_FROM_NAME?.trim() || "WhiteGuard";
 
   const to = getContactRecipients();
+  const bcc = getContactBcc();
 
   const replyEmail = email.trim();
   const mailtoHref = `mailto:${encodeURIComponent(replyEmail)}`;
-  const whatsAppTrim = whatsApp.trim();
+  const whatsAppTrim = whatsAppText;
   const waDigits = whatsAppTrim.replace(/\D/g, "");
 
   const { iconSrc: logoIconSrc, wordmarkSrc: logoWordmarkSrc, attachments: logoAttachments } =
     getEmailLogoSources();
 
+  const companyTrimmed = typeof company === "string" ? company.trim() : "";
+  const countriesLabel = countryCodes.map(getPartnerCountryLabel).join(", ");
+
   const safe = {
     fullName: escapeHtml(fullName.trim()),
     email: escapeHtml(replyEmail),
-    company: escapeHtml(company.trim()),
-    country: escapeHtml(country.trim()),
+    company: escapeHtml(companyTrimmed),
+    countries: escapeHtml(countriesLabel),
     jobRole: escapeHtml(jobRole.trim()),
+    serviceType: escapeHtml(serviceTypeLabel),
+    subService: escapeHtml(subServiceLabel),
     whatsApp: escapeHtml(whatsAppTrim),
     message: escapeHtml(messageText),
   };
@@ -266,9 +420,11 @@ export async function POST(request: Request) {
     "",
     `Full name: ${fullName.trim()}`,
     `Business email: ${email.trim()}`,
-    `Company: ${company.trim()}`,
-    `Country: ${country.trim()}`,
+    `Company: ${companyTrimmed}`,
+    `Countries: ${countriesLabel}`,
     `Job role: ${jobRole.trim()}`,
+    `Service category: ${serviceTypeLabel}`,
+    `Service: ${subServiceLabel}`,
     `WhatsApp: ${whatsAppTrim}`,
     messageText
       ? `Message:\n${messageText}`
@@ -307,7 +463,7 @@ export async function POST(request: Request) {
     <tr>
       <td style="padding:20px 28px 8px;text-align:center;">
         <h1 style="margin:0;font-size:20px;font-weight:700;color:#003859;letter-spacing:-0.02em;">New contact request</h1>
-        <p style="margin:12px 0 0;font-size:15px;line-height:1.5;color:#52697a;">Someone submitted the contact form on <strong style="color:#003859;">whiteguard.co.uk</strong>. Reply directly to their business email below.</p>
+        <p style="margin:12px 0 0;font-size:15px;line-height:1.5;color:#52697a;">Someone submitted the contact form on <strong style="color:#003859;">whiteguard.co.uk</strong>. Reply directly to their business email below</p>
       </td>
     </tr>
     <tr>
@@ -317,8 +473,10 @@ export async function POST(request: Request) {
           <tr><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#52697a;vertical-align:top;">Business email</td><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;"><a href="${mailtoHref}" style="color:#0087d7;text-decoration:none;font-weight:600;">${safe.email}</a></td></tr>
           <tr><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#52697a;vertical-align:top;">WhatsApp</td><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;">${waCell}</td></tr>
           <tr><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#52697a;vertical-align:top;">Company</td><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#003859;">${safe.company}</td></tr>
-          <tr><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#52697a;vertical-align:top;">Country</td><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#003859;">${safe.country}</td></tr>
+          <tr><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#52697a;vertical-align:top;">Countries</td><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#003859;">${safe.countries}</td></tr>
           <tr><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#52697a;vertical-align:top;">Job role</td><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#003859;">${safe.jobRole}</td></tr>
+          <tr><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#52697a;vertical-align:top;">Service category</td><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#003859;">${safe.serviceType}</td></tr>
+          <tr><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#52697a;vertical-align:top;">Service</td><td style="padding:10px 0;border-bottom:1px solid #e0e6eb;color:#003859;">${safe.subService}</td></tr>
           ${messageRow}
         </table>
       </td>
@@ -357,6 +515,7 @@ export async function POST(request: Request) {
     await transporter.sendMail({
       from: { name: fromName, address: fromAddress },
       to,
+      ...(bcc ? { bcc } : {}),
       replyTo: replyEmail,
       subject,
       text,

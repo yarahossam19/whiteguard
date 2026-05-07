@@ -87,7 +87,15 @@ export const partnerLogos = [
 ] as const;
 
 export const socialLinks = [
-  { label: "Twitter", href: "https://twitter.com", icon: "x" },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: "linkedin" },
-  { label: "Facebook", href: "https://facebook.com", icon: "facebook" },
+  { label: "X", href: "https://x.com/WHITEGUARDLTD", icon: "x" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/thewhiteguard/",
+    icon: "linkedin",
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/WHITEGUARD.CO.UK/",
+    icon: "facebook",
+  },
 ] as const;

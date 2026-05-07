@@ -3,26 +3,12 @@
 import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
 
-export const PARTNER_COUNTRY_OPTIONS: { code: string; label: string }[] = [
-  { code: "GB", label: "United Kingdom" },
-  { code: "AE", label: "United Arab Emirates" },
-  { code: "SA", label: "Saudi Arabia" },
-  { code: "EG", label: "Egypt" },
-  { code: "QA", label: "Qatar" },
-  { code: "KW", label: "Kuwait" },
-  { code: "BH", label: "Bahrain" },
-  { code: "OM", label: "Oman" },
-  { code: "JO", label: "Jordan" },
-  { code: "LB", label: "Lebanon" },
-  { code: "US", label: "United States Of America" },
-  { code: "OTHER", label: "Other" },
-];
+import {
+  getPartnerCountryLabel,
+  PARTNER_COUNTRY_OPTIONS,
+} from "@/data/partner-countries";
 
-function labelForCode(code: string): string {
-  return (
-    PARTNER_COUNTRY_OPTIONS.find((o) => o.code === code)?.label ?? code
-  );
-}
+export { PARTNER_COUNTRY_OPTIONS } from "@/data/partner-countries";
 
 const chipClass =
   "inline-flex items-center gap-1.5 rounded-[999px] bg-[#e8f4fc] py-1.5 pl-3 pr-1 font-jakarta text-[14px] font-medium leading-tight tracking-[0.2px] text-[#003859]";
@@ -110,10 +96,10 @@ export function PartnerCountryMultiSelect({
             className={chipClass}
             onClick={(e) => e.stopPropagation()}
           >
-            <span>{labelForCode(code)}</span>
+            <span>{getPartnerCountryLabel(code)}</span>
             <button
               type="button"
-              aria-label={`Remove ${labelForCode(code)}`}
+              aria-label={`Remove ${getPartnerCountryLabel(code)}`}
               className="flex size-6 shrink-0 items-center justify-center rounded-full font-ano text-[16px] leading-none text-[#003859] transition-opacity hover:bg-[#d0e8f8]/80 hover:opacity-90"
               onClick={(e) => {
                 e.stopPropagation();
