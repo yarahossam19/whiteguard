@@ -48,7 +48,7 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
               <h2 className="font-jakarta text-[clamp(32px,4vw,44px)] font-extrabold leading-[1.15] text-[#003859]">
                 {heading.line1}
               </h2>
-              <h2 className="font-jakarta text-[clamp(32px,4vw,44px)] font-extrabold leading-[1.15] text-[#0087D7]">
+              <h2 className="font-jakarta text-[clamp(32px,4vw,44px)] font-extrabold leading-[1.15] text-[#0891B2]">
                 {heading.line2}
               </h2>
             </div>
@@ -81,47 +81,47 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
 
             {/* Cards - swipe from behind (new card slides up and overlays previous) */}
             <div className="container relative z-10 flex justify-center px-0">
-            <div className="relative z-10 h-[340px] w-full max-w-[90%] shrink-0 translate-y-8 overflow-hidden self-center pt-12 sm:h-[420px] sm:max-w-[90%] sm:translate-y-12 sm:pt-16 xl:h-[577px] xl:max-w-[400px] xl:pt-20">
-              {services.map((service, i) => {
-                const slideFromBottom = 600;
-                const isFirst = i === 0;
-                const isLast = i === N - 1;
+              <div className="relative z-10 h-[340px] w-full max-w-[90%] shrink-0 translate-y-8 overflow-hidden self-center pt-12 sm:h-[420px] sm:max-w-[90%] sm:translate-y-12 sm:pt-16 xl:h-[577px] xl:max-w-[400px] xl:pt-20">
+                {services.map((service, i) => {
+                  const slideFromBottom = 600;
+                  const isFirst = i === 0;
+                  const isLast = i === N - 1;
 
-                const pad = 0.03;
-                const inputRange = isLast
-                  ? [0, (N - 1) * segment - 0.05, (N - 1) * segment + 0.1, 1]
-                  : isFirst
-                    ? [0, 0, segment + pad, 1]
-                    : [
-                        0,
-                        i * segment,
-                        (i + 1) * segment,
-                        Math.min((i + 2) * segment, 1),
-                        1,
-                      ];
-                const yRange = isFirst
-                  ? [0, 0, 0, 0]
-                  : isLast
-                    ? [slideFromBottom, slideFromBottom, 0, 0]
-                    : [slideFromBottom, slideFromBottom, 0, 0, 0];
-                const opacityRange = isFirst
-                  ? [1, 1, 1, 1]
-                  : isLast
-                    ? [0, 0, 1, 1]
-                    : [0, 0, 1, 1, 1];
+                  const pad = 0.03;
+                  const inputRange = isLast
+                    ? [0, (N - 1) * segment - 0.05, (N - 1) * segment + 0.1, 1]
+                    : isFirst
+                      ? [0, 0, segment + pad, 1]
+                      : [
+                          0,
+                          i * segment,
+                          (i + 1) * segment,
+                          Math.min((i + 2) * segment, 1),
+                          1,
+                        ];
+                  const yRange = isFirst
+                    ? [0, 0, 0, 0]
+                    : isLast
+                      ? [slideFromBottom, slideFromBottom, 0, 0]
+                      : [slideFromBottom, slideFromBottom, 0, 0, 0];
+                  const opacityRange = isFirst
+                    ? [1, 1, 1, 1]
+                    : isLast
+                      ? [0, 0, 1, 1]
+                      : [0, 0, 1, 1, 1];
 
-                return (
-                  <CardMotion
-                    key={service.id}
-                    service={service}
-                    scrollYProgress={scrollYProgress}
-                    inputRange={inputRange}
-                    yRange={yRange}
-                    opacityRange={opacityRange}
-                  />
-                );
-              })}
-            </div>
+                  return (
+                    <CardMotion
+                      key={service.id}
+                      service={service}
+                      scrollYProgress={scrollYProgress}
+                      inputRange={inputRange}
+                      yRange={yRange}
+                      opacityRange={opacityRange}
+                    />
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

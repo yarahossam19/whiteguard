@@ -1,34 +1,40 @@
 {
   "heading": {
-    "line1": "Why Leading",
-    "line2": "Organizations",
-    "line3": "Choose Us."
+    "line1": "Why Leading Organizations",
+    "line2": "Choose This",
+    "line3": "Cybersecurity Company"
   },
   "description": "We combine deep expertise, innovative technology, and a client-first approach to deliver cybersecurity that actually works.",
   "cards": [
     {
-      "id": "global-standards",
-      "title": "Global Standards, Local Expertise",
-      "description": "We align with international frameworks like ISO 27001, NIST, and PCI DSS, while deeply understanding regional regulations such as SAMA CSF and NCA ECC.",
-      "icon": "/images/why-choose-us/global-standards.svg"
+      "id": "24-7-monitoring",
+      "title": "24/7 Monitoring Across the Region",
+      "description": "Our dedicated team provides continuous, round-the-clock surveillance across your network, ensuring total security and visibility every single day.",
+      "icon": "/images/why-choose-us/icon-1.svg"
     },
     {
-      "id": "end-to-end",
-      "title": "End-to-End Coverage",
-      "description": "From penetration testing to compliance audits, from SOC operations to employee training — we cover every facet of your cybersecurity lifecycle.",
-      "icon": "/images/why-choose-us/end-to-end.svg"
+      "id": "fast-incident-response",
+      "title": "Fast Incident Response, Backed by DFIR",
+      "description": "We rapidly contain threats and utilize deep digital forensics to uncover root causes, ensuring immediate recovery and future protection.",
+      "icon": "/images/why-choose-us/icon-2.svg"
     },
     {
-      "id": "ai-driven",
-      "title": "AI-Driven Intelligence",
-      "description": "Our White Hawk platform leverages machine learning to predict threats, automate responses, and provide actionable intelligence in real-time.",
-      "icon": "/images/why-choose-us/ai-driven.svg"
+      "id": "certified-experts",
+      "title": "Certified Experts, Top-Tier Credentials",
+      "description": "Defend your business with elite professionals holding the industry’s most rigorous cybersecurity certifications and proven, top-tier field experience.",
+      "icon": "/images/why-choose-us/icon-3.svg"
     },
     {
-      "id": "trusted",
-      "title": "Trusted by Industry Leaders",
-      "description": "Financial institutions, government agencies, and Fortune 500 companies trust WHITEGUARD to protect their most critical digital assets.",
-      "icon": "/images/why-choose-us/trusted.svg"
+      "id": "compliance-ready",
+      "title": "Compliance-Ready From Day One",
+      "description": "Skip regulatory headaches. Our solutions seamlessly align with strict industry frameworks to keep your business audit-ready from the start.",
+      "icon": "/images/why-choose-us/icon-4.svg"
+    },
+    {
+      "id": "advanced-threat-detection",
+      "title": "Advanced Threat Detection, Powered by WhiteHawk",
+      "description": "Leveraging exclusive WH technology, we proactively hunt, identify, and neutralize hidden, sophisticated cyber threats before they impact your operations.",
+      "icon": "/images/why-choose-us/icon-5.svg"
     }
   ]
 }

@@ -12,7 +12,7 @@ export default function WhyChooseUsSection({ data }: WhyChooseUsSectionProps) {
     <section className="relative w-full bg-white py-16 lg:py-24">
       <div className="container flex flex-col gap-16 lg:flex-row lg:gap-16">
         {/* Left: Heading + Description - sticky while scrolling through cards */}
-        <div className="flex w-full lg:max-w-[443px] flex-col gap-6 lg:sticky lg:top-28 lg:w-[443px] lg:shrink-0 lg:self-start">
+        <div className="flex w-full lg:max-w-[590px] flex-col gap-6 lg:sticky lg:top-28 lg:w-[590px] lg:shrink-0 lg:self-start">
           <div className="flex flex-col text-center lg:text-left gap-0">
             <h2 className="font-jakarta text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15] text-[#003859]">
               {heading.line1}

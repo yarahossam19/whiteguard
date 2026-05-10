@@ -17,36 +17,32 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
   return (
     <section className="relative w-full overflow-hidden  ">
-      <div className="xl:min-h-screen  flex flex-col-reverse xl:flex-row  ">
+      <div className=" flex flex-col-reverse xl:flex-row  ">
         {/*  LEFT CONTENT */}
-        <div className="relative z-10 flex flex-1 items-start  justify-start px-4 py-4 sm:px-8 sm:py-4 xl:ps-[7vw] xl:py-[2.5%]">
-          <Image
-            src={decorations.sparkleTop}
-            width={65}
-            height={68}
-            alt=""
-            aria-hidden="true"
-            className="  absolute left-[15%] md:left-[30%] xl:left-[unset] xl:right-[28%] top-[15%] md:top-[16%] xl:top-[25%] min-[1600px]:top-[28%]! w-[40px] h-[40px] xl:w-[65px] xl:h-[68px] object-contain   pointer-events-none select-none"
-          />
-
-          <div className="flex flex-col gap-10 xl:max-w-[560px] text-[#003859]">
+        <div className="relative z-10 flex flex-1 items-start  justify-start px-4 py-4 sm:px-6 sm:py-4 xl:ps-[5vw] xl:py-[2.5%]">
+          <div className="flex flex-col gap-10 xl:max-w-[800px] text-[#003859]">
             {/* Headline */}
             <div className="flex flex-col gap-5 text-center xl:text-left">
               <h1 className="font-jakarta leading-[1.18] text-center xl:text-left tracking-[-0.03em] hero-font">
                 <span className=" font-extrabold">{headline.line1.bold}</span>
-                <span className="font-light">{headline.line1.light}</span>
-                <span className=" font-extrabold text-center xl:text-left">
-                  {headline.line1.end}
-                </span>
-                <br />
+
+                <div className="flex  items-center xl:items-start gap-0 justify-center xl:justify-start">
+                  <span className="font-light">{headline.line1.light}</span>
+                  <Image
+                    src={decorations.sparkleTop}
+                    width={65}
+                    height={68}
+                    alt=""
+                    aria-hidden="true"
+                    className="  ms-4 xl:block  xl:w-[65px] xl:h-[68px] w-[65px] h-[40px] object-contain -rotate-[0deg] pointer-events-none select-none"
+                  />
+                </div>
+
                 <span className=" font-extrabold text-center xl:text-left">
                   {headline.line2.bold}
                 </span>
                 <div className="flex  items-center gap-0 justify-center xl:justify-start">
                   <span className="font-light">{headline.line2.light}</span>
-                  <span className=" font-extrabold text-center xl:text-left">
-                    {headline.line2.end}
-                  </span>{" "}
                   <Image
                     width={65}
                     height={70}
@@ -57,7 +53,7 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
                   />
                 </div>
               </h1>
-              <p className="font-Jakarta   text-[clamp(16px,20px,20px)] font-normal leading-[1.7]">
+              <p className="font-Jakarta w-full  text-[clamp(16px,1.4vw,20px)] font-normal leading-[1.7]">
                 {description}
               </p>{" "}
             </div>
@@ -81,7 +77,7 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
 
         {/* ─── RIGHT PANEL ─── */}
         <div
-          className="relative  inset-y-[-5vh] xl:inset-0 z-10 w-full xl:w-[50%] min-[1600px]:w-[50%]! min-h-[50vh] xl:min-h-screen   "
+          className="relative  inset-y-[-5vh] xl:inset-0 z-10 w-full xl:w-[50%] min-[1600px]:w-[50%]! min-h-[50vh]    "
           style={{
             backgroundImage: `url(${isTablet ? "/images/banner-mobile.png" : rightPanel.backgroundImage})`,
             backgroundSize: "100% 100%",

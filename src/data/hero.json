@@ -1,9 +1,13 @@
 {
   "headline": {
-    "line1": { "bold": "Cybersecurity ", "light": "Simplified", "end": ". " },
-    "line2": { "bold": "Protection ", "light": "Amplified", "end": "." }
+    "line1": {
+      "bold": "The Cybersecurity",
+      "light": "Company Behind",
+      "end": ". "
+    },
+    "line2": { "bold": "MENA's Most", "light": "Critical Networks", "end": "" }
   },
-  "description": "WHITEGUARD provides a new era of cybersecurity — visualized, simplified, and under your control.",
+  "description": "WhiteGuard is the cybersecurity company protecting 64+ enterprises across banking, fintech, insurance, healthcare, energy, and critical infrastructure from the cyber threats reshaping the region.",
   "ctas": [
     {
       "href": "/contact",

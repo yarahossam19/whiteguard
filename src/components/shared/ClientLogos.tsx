@@ -40,7 +40,7 @@ function getLogosForPage(logos: LogosData, pageIndex: number) {
 
 export default function ClientLogos({
   logos,
-  className = "pt-10 lg:pt-40",
+  className = "pt-10 ",
 }: {
   logos: LogosData;
   className?: string;
