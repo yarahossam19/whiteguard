@@ -15,14 +15,23 @@ import { getTestimonialsSectionData } from "@/data/testimonials-section";
 import { getCtaSectionData } from "@/data/cta-section";
 import { getClientLogosData } from "@/data/client-logos";
 import { SectionImageSeparator } from "@/components/ui/SectionImageSeparator";
+
+const HOME_META_TITLE =
+  "Cybersecurity Company for MENA Banks & Fintechs | WhiteGuard";
+const HOME_META_DESCRIPTION =
+  "WhiteGuard is the cybersecurity company protecting 64+ MENA enterprises — managed security services, 24/7 SOC, SAMA, CBE & ISO 27001 ready.";
+
 export const metadata: Metadata = {
-  title: "Home",
-  description:
-    "WHITEGUARD provides a new era of cybersecurity — visualized, simplified, and under your control. MENA-rooted, globally proven.",
+  title: { absolute: HOME_META_TITLE },
+  description: HOME_META_DESCRIPTION,
   openGraph: {
-    title: "WHITEGUARD | Cybersecurity Simplified. Protection Amplified.",
-    description:
-      "WHITEGUARD provides a new era of cybersecurity — visualized, simplified, and under your control.",
+    title: HOME_META_TITLE,
+    description: HOME_META_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: HOME_META_TITLE,
+    description: HOME_META_DESCRIPTION,
   },
 };
 
