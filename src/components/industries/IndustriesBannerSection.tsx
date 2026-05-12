@@ -39,26 +39,26 @@ export default function IndustriesBannerSection({
         />
 
         {/* Content */}
-        <div className="relative z-10 flex min-h-[50vh] xl:min-h-[90vh] flex-col items-center justify-center py-16 text-center sm:py-20 xl:py-24">
+        <div className="relative z-10 flex min-h-[50vh] xl:min-h-[60vh] flex-col items-center justify-center py-16 text-center sm:py-20 xl:py-24">
           <div className="container flex flex-col items-center">
-          <div className="mx-auto flex w-full max-w-[961px] flex-col items-center gap-8">
-            <h1
-              className="font-jakarta font-extrabold leading-[1.2] tracking-[-0.02em] text-[#003859]"
-              style={{ fontSize: "clamp(36px, 7vw, 72px)" }}
-            >
-              {headline.line1}
-              <br />
-              {headline.line2}
-              &nbsp;
-              {headline.line3}
-            </h1>
-            <p
-              className="font-jakarta font-normal leading-[1.7] text-[#52697A]  "
-              style={{ fontSize: "clamp(16px, 1.25vw, 20px)" }}
-            >
-              {description}
-            </p>
-          </div>
+            <div className="mx-auto flex w-full max-w-[961px] flex-col items-center gap-8">
+              <h1
+                className="font-jakarta font-extrabold leading-[1.2] tracking-[-0.02em] text-[#003859]"
+                style={{ fontSize: "clamp(36px, 7vw, 72px)" }}
+              >
+                {headline.line1}
+                <br />
+                {headline.line2}
+                &nbsp;
+                {headline.line3}
+              </h1>
+              <p
+                className="font-jakarta font-normal leading-[1.7] text-[#52697A]  "
+                style={{ fontSize: "clamp(16px, 1.25vw, 20px)" }}
+              >
+                {description}
+              </p>
+            </div>
           </div>
         </div>
       </section>{" "}

@@ -55,31 +55,32 @@ export default function ServiceCard({ card }: ServiceCardProps) {
           ))}
         </div>
       </div>
-
-      {/* CTA link - uses card link for details page */}
-      <HoverSwapButton
-        href={`/contact`}
-        label={cta.label}
-        hoverLabel={cta.label}
-        variant="secondary"
-        showChevrons={false}
-        showImg={false}
-        // imgSrc="/images/icons/arrow-right-2.svg"
-        className="px-6 py-2 text-[clamp(16px,1.4vw,24px)]  font-ano w-full flex-row-reverse"
-      />
-      <Link
-        href={`/services/${card.link}`}
-        className="inline-flex items-center justify-center gap-4 font-ano text-[14px] font-normal tracking-[0.48px] text-[#006DAD] transition-colors hover:text-[#0087D7] lg:text-[18px] bg-[#E7F6FF] rounded-[8px] px-6 py-2"
-      >
-        <span>Know More</span>
-        {/* <Image
+      <div className="flex flex-col gap-3">
+        {/* CTA link - uses card link for details page */}
+        <HoverSwapButton
+          href={`/contact`}
+          label={cta.label}
+          hoverLabel={cta.label}
+          variant="secondary"
+          showChevrons={false}
+          showImg={false}
+          // imgSrc="/images/icons/arrow-right-2.svg"
+          className="px-6 py-2 text-[clamp(16px,1.4vw,18px)]  font-ano w-full flex-row-reverse"
+        />
+        <Link
+          href={`/services/${card.link}`}
+          className="inline-flex items-center justify-center gap-4 font-ano text-[14px] font-normal tracking-[0.48px] text-[#006DAD] transition-colors hover:text-[#0087D7] lg:text-[18px] bg-[#E7F6FF] rounded-[8px] px-6 py-2"
+        >
+          <span>Know More</span>
+          {/* <Image
           src="/images/icons/arrow-right-2.svg"
           alt=""
           width={24}
           height={24}
           className="shrink-0 rotate-180"
         /> */}
-      </Link>
+        </Link>
+      </div>
     </div>
   );
 

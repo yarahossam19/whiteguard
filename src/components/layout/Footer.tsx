@@ -10,9 +10,9 @@ export function Footer() {
     >
       <div className="container ">
         {/* Upper Section */}
-        <div className="grid gap-8 lg:grid-cols-4 lg:gap-12">
+        <div className="grid gap-8 lg:grid-cols-6 lg:gap-14">
           {/* Company Info */}
-          <div className="lg:col-span-1 text-center lg:text-left flex flex-col items-center lg:items-start ">
+          <div className="lg:col-span-2 text-center lg:text-left flex flex-col items-center lg:items-start ">
             <div className="mb-4">
               <Logo />
             </div>
@@ -36,10 +36,11 @@ export function Footer() {
           </div>
 
           {/* Navigation Columns */}
-          <div className="grid gap-8 sm:grid-cols-3 lg:col-span-3">
+          <div className="grid gap-8 sm:grid-cols-4 lg:col-span-4">
             <FooterNavColumn title="Services" links={footerNav.services} />
             <FooterNavColumn title="Company" links={footerNav.company} />
             <FooterNavColumn title="Resources" links={footerNav.resources} />
+            <FooterNavColumn title="Platform" links={footerNav.platform} />
           </div>
         </div>
 

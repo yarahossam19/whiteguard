@@ -4,7 +4,7 @@
     "line2": "across every",
     "line3": "industry"
   },
-  "description": "From fintech to healthcare, we deliver industry-specific cybersecurity solutions that meet regulatory requirements and protect what matters most.",
+  "description": "Different industries. One mission — protect, comply, and evolve securely. Every industry faces unique risks, but all share one truth: cybersecurity is now business-critical.",
   "ctas": [
     {
       "href": "/contact",
@@ -19,5 +19,5 @@
       "variant": "secondary"
     }
   ],
-  "videoSrc": "/videos/industries-bg.mp4"
+  "videoSrc": "/videos/industry-banner.mp4"
 }

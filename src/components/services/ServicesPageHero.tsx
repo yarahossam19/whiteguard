@@ -34,7 +34,7 @@ export default function ServicesPageHero({
             }}
           />
           <div
-            className="absolute h-[700px] xl:h-[550px] left-0 right-0 w-full bottom-0"
+            className="absolute h-[700px] xl:h-[400px] left-0 right-0 w-full bottom-0"
             style={{
               background:
                 "linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #ABE1FF 100%)",
@@ -43,14 +43,32 @@ export default function ServicesPageHero({
         </div>
 
         {/* Hero content */}
-        <div className="container relative z-10 flex flex-col justify-center items-center gap-16 pt-4 xl:gap-[100px]">
+        <div className="container relative z-10 flex flex-col justify-center items-center gap-16 pt-4  ">
           <div className="flex flex-col items-center justify-center gap-4 text-center">
-            <h1 className="font-jakarta text-[clamp(36px,5vw,72px)] font-bold leading-[1.25] text-[#003859]">
+            <h1 className="font-jakarta text-[clamp(36px,5vw,72px)] font-bold leading-tight text-[#003859]">
               {hero.heading}
-              <br />
-              {hero.headingAccent}
+              <br />{" "}
+              {hero.heading2 ? (
+                <>
+                  {hero.heading2}
+                  <br />
+                </>
+              ) : (
+                ""
+              )}
             </h1>
-            <p className="max-w-[768px] font-jakarta text-[16px] font-normal leading-[30px] text-[#52697A] xl:text-[18px]">
+            <h2 className="font-thin italic font-jakarta text-[clamp(36px,5vw,72px)]  leading-tight text-[#003859]">
+              {hero.headingAccent}{" "}
+              {hero.headingAccent2 ? (
+                <>
+                  <br />
+                  {hero.headingAccent2}{" "}
+                </>
+              ) : (
+                ""
+              )}
+            </h2>
+            <p className="lg:max-w-[75%] font-jakarta text-[16px] font-normal leading-[30px] text-[#52697A] xl:text-[18px]">
               {hero.subtitle}
             </p>
           </div>
@@ -64,7 +82,7 @@ export default function ServicesPageHero({
                 hoverLabel={hero.ctaPrimary.label}
                 variant={"cta"}
                 showChevrons={false}
-                className="px-6 py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano w-full md:w-auto"
+                className={`${hero.ctaSecondary?.label ? "px-6" : "px-12"} py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano w-full md:w-auto`}
               />
             )}
             {hero.ctaSecondary?.label && (

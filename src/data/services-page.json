@@ -9,11 +9,12 @@
   "categories": {
     "all": {
       "hero": {
-        "heading": "Comprehensive Cybersecurity",
-        "headingAccent": "Services.",
-        "subtitle": "An interconnected ecosystem of security services designed to protect every layer of your organization. From offensive testing to defensive operations, GRC, and training.",
-        "ctaPrimary": { "label": "Request an Assessment", "href": "#" },
-        "ctaSecondary": { "label": "Talk to a Security Expert", "href": "#" }
+        "heading": "Comprehensive ",
+        "heading2": "Cybersecurity Services",
+        "headingAccent": "for Every MENA Business Need",
+        "subtitle": "WhiteGuard cybersecurity services and cyber security solutions cover four integrated disciplines — Red Team, Blue Team, Compliance & Standards, and Training & Awareness. The cybersecurity services portfolio spans SAMA and CBE readiness, 24/7 SOC, penetration testing, source code review, and DFIR — serving banking, insurance, healthcare, energy, automotive, and critical infrastructure across MENA and beyond.",
+        "ctaPrimary": { "label": "Get Protected Today", "href": "#" },
+        "ctaSecondary": { "label": "", "href": "#" }
       },
       "bottomCta": {
         "heading": "Ready to Strengthen Your Security?",
@@ -25,11 +26,11 @@
     },
     "offensive": {
       "hero": {
-        "heading": "Simulate the Threat.",
-        "headingAccent": "Strengthen the Defense.",
-        "subtitle": "WHITEGUARD's Red Team services expose your blind spots before real attackers do. We simulate real-world threats across people, processes, and systems to help you validate defenses, test detection, and harden your entire security posture.",
+        "heading": "Offensive Security",
+        "headingAccent": "Find What Defenders Haven't",
+        "subtitle": "Offensive Security is how WhiteGuard's Red Team finds what your defenders haven't yet. Our Offensive Security portfolio attacks your own systems before adversaries do, six services covering Penetration Testing, Vulnerability Assessment, Red Team Assessment, CIS Benchmarks Assessment, Source Code Review, and Cloud Security Assessment, delivered by practitioners certified to OSCP, OSEP, OSWE, GPEN, and GXPN",
         "ctaPrimary": { "label": "Request an Assessment", "href": "#" },
-        "ctaSecondary": { "label": "Talk to a Security Expert", "href": "#" }
+        "ctaSecondary": { "label": "", "href": "#" }
       },
       "cards": [
         {
@@ -60,7 +61,7 @@
         {
           "link": "vulnerability-assessment",
           "title": "Vulnerability Assessment",
-          "description": "Scan your systems. Prioritize what matters. We conduct comprehensive scans across your digital infrastructure, identifying known vulnerabilities mapped to CVEs and MITRE ATT&CK.",
+          "description": "WhiteGuard Vulnerability Assessment identifies security weaknesses across your infrastructure through comprehensive scans mapped to CVEs and MITRE ATT&CK frameworks.",
           "features": [
             {
               "icon": "/images/services/icons/icon-4.svg",
@@ -85,7 +86,7 @@
         {
           "link": "red-team-assessment",
           "title": "Red Team Assessment",
-          "description": "Go beyond testing. Simulate a real-world breach. WHITEGUARD's red team engagements emulate persistent threat actors targeting your defenses across people, technology, and process.",
+          "description": "Red Teaming Assessment simulates real-world cyberattacks evaluating your ability to detect, respond, and defend against sophisticated threats. Our Red Teaming Assessment team adopts the perspective of malicious actors, using stealth tactics across people, process, and technology.",
           "features": [
             {
               "icon": "/images/services/icons/icon-7.svg",
@@ -114,7 +115,7 @@
         {
           "link": "cis-benchmarks-assessment",
           "title": "CIS Benchmarks Assessment",
-          "description": "Audit your systems against the CIS hardening standards. We evaluate your configurations against CIS benchmarks and PCI DSS security standards to ensure you are securely configured.",
+          "description": "Audit your systems against the CIS hardening standards.  We evaluate your configurations against CIS benchmarks and PCI DSS security standards to ensure you are securely configured.",
           "features": [
             {
               "icon": "/images/services/icons/icon-11.svg",
@@ -139,7 +140,7 @@
         {
           "link": "source-code-review",
           "title": "Source Code Review",
-          "description": "Secure your software before attackers find the flaws. We combine automated scanners with manual analysis to detect logic bugs in your custom code.",
+          "description": "Secure your software before attackers find the flaws. We combine automated scanners with manual analysis to detect logic bugs in your custom code.",
           "features": [
             {
               "icon": "/images/services/icons/icon-14.svg",
@@ -164,7 +165,7 @@
         {
           "link": "cloud-security-assessment",
           "title": "Cloud Security Assessment",
-          "description": "Misconfigured cloud = open door, Let's close it. We review your cloud environment across AWS, Azure, GCP, and hybrid setups for identity, network, and storage misconfigurations.",
+          "description": "Cloud security services from WhiteGuard evaluate your infrastructure across AWS, Azure, GCP, and hybrid setups, identity and access management, network segmentation, storage exposure, secure architecture, aligning configurations with cloud security best practices and compliance frameworks.",
           "features": [
             {
               "icon": "/images/services/icons/icon-17.svg",
@@ -197,9 +198,9 @@
     },
     "defensive": {
       "hero": {
-        "heading": "Real-Time Defense. Rapid ",
-        "headingAccent": "Response. Reliable Protection.",
-        "subtitle": "WHITEGUARD’s Blue Team services help organizations detect threats, respond with speed, and recover with confidence. From SOC-as-a-Service to incident response and forensics, we design defense systems that scale, adapt, and protect — 24/7.",
+        "heading": "Defensive Cybersecurity ",
+        "headingAccent": "That Runs While Everyone Sleeps",
+        "subtitle": "Defensive Cybersecurity is what runs while everyone sleeps. WhiteGuard's Defensive Cybersecurity services deliver cyber defense across the full operational lifecycle, SOC services, SIEM Deployment, SIEM Use-Case Lifecycle Management, DFIR, Threat Intelligence with Brand Protection, Managed Phishing Simulation, Incident Response and Handling, and Business Continuity and Recovery, operated from regional centers across MENA.",
         "ctaPrimary": { "label": null, "href": "#" },
         "ctaSecondary": { "label": null, "href": "#" }
       },
@@ -207,7 +208,7 @@
         {
           "link": "soc-design",
           "title": "SOC Service",
-          "description": "Your virtual security operations center — always on  We provide 24/7 monitoring, alert triage, threat detection, and response, all without the overhead of building your own SOC. ",
+          "description": "SOC services from WhiteGuard provide 24/7 monitoring, detection, and response through a managed Security Operations Center using advanced tools, analysts, and threat intelligence. ",
           "features": [
             {
               "icon": "/images/services/defensive-icons/icon-1.svg",
@@ -236,7 +237,7 @@
         {
           "link": "siem-deployment",
           "title": "SIEM Deployment",
-          "description": "Visibility is the first step to control Deploy the right SIEM, Deploy it right. We help you implement, configure, and optimize leading SIEM platforms (e.g., ELK, Splunk, IBM QRadar, Azure Sentinel) to meet your environment's unique needs.",
+          "description": "WhiteGuard implements and optimizes SIEM Security platforms including Splunk, IBM QRadar, Microsoft Sentinel, ELK, and OpenSearch with integration, dashboards, alert tuning, and training.",
           "features": [
             {
               "icon": "/images/services/defensive-icons/icon-5.svg",
@@ -365,7 +366,7 @@
         {
           "link": "managed-threat-hunting",
           "title": "Incident Response & Handling",
-          "description": "Be ready when an incident happens From playbook development to tabletop exercises, we help your team respond fast, decisively, and correctly under pressure.",
+          "description": "Incident Response and Handling provides expert support in detecting, analyzing, and responding to incidents, minimizing damage, restoring normal operations, and producing forensic and post-incident review documentation that stands up to regulator and board scrutiny.",
           "features": [
             {
               "icon": "/images/services/defensive-icons/icon-21.svg",
@@ -423,10 +424,14 @@
     },
     "grc": {
       "hero": {
-        "heading": "Governance, Risk, Compliance,",
-        "headingAccent": " Covered.",
-        "subtitle": "Compliance doesn’t start with checklists. It starts with strategy WHITEGUARD’s GRC services help you design, implement, and manage security frameworks aligned to local and international standards. Whether you're pursuing ISO 27001 certification, preparing for a SAMA audit, or aligning to PCI-DSS or GDPR, our team ensures you meet regulatory demands without disrupting business.",
-        "ctaPrimary": { "label": null, "href": "#" },
+        "heading": "GRC",
+        "headingAccent": " Governance, Risk &",
+        "headingAccent2": "Compliance Services",
+        "subtitle": "GRC compliance doesn't start with checklists, it starts with strategy. WhiteGuard GRC services help you design, implement, and manage Governance, Risk, Compliance frameworks aligned to local and international standards: ISO/IEC 27001, SAMA cybersecurity framework, NCA Compliance, PCI-DSS, SOC 2, HIPAA, GDPR, Aramco CCC, CBE, CBL, and FRA 139, meeting regulatory demands without disrupting business.",
+        "ctaPrimary": {
+          "label": "Start a GRC Service Review",
+          "href": "/contact"
+        },
         "ctaSecondary": { "label": null, "href": "#" }
       },
       "cards": [
@@ -458,7 +463,7 @@
         {
           "link": "sama-readiness",
           "title": "SAMA Compliance Program",
-          "description": "Meet Saudi Arabia's strictest cybersecurity framework  WHITEGUARD helps financial institutions implement the SAMA CSF and navigate regulatory audits with confidence.",
+          "description": "WhiteGuard helps financial institutions implement the SAMA cybersecurity framework through gap analysis, risk registers, reporting, and staff awareness across KSA.",
           "features": [
             {
               "icon": "/images/services/grc-icons/icon-4.svg",
@@ -487,7 +492,7 @@
         {
           "link": "nca-compliance",
           "title": "NCA Compliance",
-          "description": "Secure national assets. Comply with KSA's NCA mandates  We support public & private sector entities to align with NCA Essential Cybersecurity Controls (ECC) and CCC standards.",
+          "description": "Secure national assets, Comply with KSA's NCA mandates. We support public & private sector entities with NCA Compliance aligned to NCA ECC and CCC standards.",
           "features": [
             {
               "icon": "/images/services/grc-icons/icon-8.svg",
@@ -611,8 +616,8 @@
         },
         {
           "link": "cbe-compliance",
-          "title": "Central Bank of Egypt (CBE) Compliance",
-          "description": "Meet CBE Cybersecurity Framework requirements for banks, fintechs, and insurers in Egypt. We help you achieve regulatory compliance and audit readiness.",
+          "title": "Central Bank & Sector-Specific Compliance",
+          "description": "Align with financial regulations across Egypt, Libya, and more  We assist regulated entities in meeting cybersecurity expectations from regional central banks and regulatory bodies.",
           "features": [
             {
               "icon": "/images/services/grc-icons/icon-23.svg",
@@ -628,58 +633,8 @@
             }
           ],
           "cta": {
-            "label": "Align with CBE Regulations",
+            "label": "Align with Sector Regulators",
             "href": "/services/cbe-compliance"
-          },
-          "image": "/images/services/grc-8.png",
-          "imageLeft": false
-        },
-        {
-          "link": "cbl-compliance",
-          "title": "Central Bank of Libya (CBL) Compliance",
-          "description": "Achieve CBL Cybersecurity Compliance for financial institutions in Libya. We support banks, insurers, and fintechs with gap assessment and implementation.",
-          "features": [
-            {
-              "icon": "/images/services/grc-icons/icon-23.svg",
-              "label": "CBL Gap Analysis"
-            },
-            {
-              "icon": "/images/services/grc-icons/icon-24.svg",
-              "label": "Policy Development"
-            },
-            {
-              "icon": "/images/services/grc-icons/icon-25.svg",
-              "label": "Audit Support"
-            }
-          ],
-          "cta": {
-            "label": "Align with CBL Regulations",
-            "href": "/services/cbl-compliance"
-          },
-          "image": "/images/services/grc-7.png",
-          "imageLeft": true
-        },
-        {
-          "link": "fra-139-compliance",
-          "title": "FRA 139 Compliance",
-          "description": "Meet FRA 139 cybersecurity requirements for non-banking financial institutions (NBFIs) in Egypt. Insurance, fintech, and securities firms.",
-          "features": [
-            {
-              "icon": "/images/services/grc-icons/icon-23.svg",
-              "label": "FRA 139 Gap Analysis"
-            },
-            {
-              "icon": "/images/services/grc-icons/icon-24.svg",
-              "label": "Control Mapping"
-            },
-            {
-              "icon": "/images/services/grc-icons/icon-25.svg",
-              "label": "Regulatory Submission"
-            }
-          ],
-          "cta": {
-            "label": "Align with FRA 139",
-            "href": "/services/fra-139-compliance"
           },
           "image": "/images/services/grc-8.png",
           "imageLeft": false
@@ -695,11 +650,11 @@
     },
     "training": {
       "hero": {
-        "heading": "Your people are your first line of ",
-        "headingAccent": "defense, make them your strongest",
-        "subtitle": "WHITEGUARD’s Cybersecurity Training & Awareness programs help organizations reduce human error, build internal security capabilities, and foster a proactive security culture. From entry-level awareness to advanced red and blue team training, we tailor each program to your teams, threats, and industry",
-        "ctaPrimary": { "label": "Request Custom Training Plan", "href": "#" },
-        "ctaSecondary": { "label": "Explore Training Programs", "href": "#" }
+        "heading": "Cybersecurity Awareness",
+        "headingAccent": "That Actually Changes Behavior",
+        "subtitle": "Cybersecurity awareness is the cheapest control with the highest leverage, and the easiest to do badly. WhiteGuard cybersecurity awareness portfolio combines interactive sessions, hands-on workshops, real-world scenarios, and ongoing assessments to reduce security incidents, enhance technical capabilities, and foster a security-first culture across your organization. Built for MENA's regulated sectors.",
+        "ctaPrimary": { "label": "", "href": "#" },
+        "ctaSecondary": { "label": "", "href": "#" }
       },
       "cards": [
         {
@@ -807,7 +762,7 @@
         "heading": "Why Leading Organizations",
         "headingAccent": "Trust WHITEGUARD",
         "subtitle": "All offensive services are delivered by certified professionals with real-world experience in threat simulation and enterprise security.",
-        "buttonLabel": "Book a Training Consultation",
+        "buttonLabel": "Request Custom Training Plan",
         "href": "#"
       }
     }

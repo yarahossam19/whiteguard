@@ -1,0 +1,178 @@
+{
+  "all": {
+    "heading": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about our cybersecurity services, process, and protection model",
+    "items": [
+      {
+        "question": "What cybersecurity services do you offer?",
+        "answer": "WhiteGuard delivers integrated cybersecurity services across Offensive Security, Defensive Security, GRC & Compliance, and Cybersecurity Training. Services include penetration testing, SOC operations, SIEM, DFIR, threat intelligence, compliance readiness, and security awareness training through the WhiteHawk platform"
+      },
+      {
+        "question": "What is the difference between offensive and defensive cybersecurity services?",
+        "answer": "Offensive services simulate attackers to discover weaknesses early—think penetration testing, red teaming, and code review. Defensive services protect what you operate day to day: monitoring, detection, incident response, and hardening controls. Most mature programs blend both."
+      },
+      {
+        "question": "Do you offer managed cybersecurity services?",
+        "answer": "Yes. We support managed SOC operations, tooling administration, advisory retainers, and hybrid models where our experts work alongside your internal team so you scale coverage without building everything in-house."
+      },
+      {
+        "question": "What industries do your cybersecurity services serve?",
+        "answer": "We work across regulated and high-impact sectors—including financial services, healthcare, telecom, manufacturing, retail, critical infrastructure, and technology—with playbooks tuned to sector-specific threats and frameworks."
+      },
+      {
+        "question": "Do your cybersecurity services help with compliance and regulations?",
+        "answer": "Absolutely. Our GRC practice maps assessments and programs to frameworks such as ISO 27001, PCI DSS, SWIFT CSCF, GDPR readiness, SAMA/NCA controls, and other regional requirements—with evidence you can use for audits."
+      },
+      {
+        "question": "How do I know which cybersecurity services I need?",
+        "answer": "Start from your risk posture: assets, regulators, incidents, and business goals. We help scope the right roadmap through discovery workshops and baseline assessments—but if you prefer, Contact us for a pragmatic next-step recommendation."
+      }
+    ],
+    "footer": {
+      "title": "Still have a question?",
+      "subtitle": "If you didn't find your answer, our security team can help scope the right next step.",
+      "buttonLabel": "Contact us",
+      "buttonHref": "/contact"
+    }
+  },
+  "offensive": {
+    "heading": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about offensive security assessments and simulated attacks.",
+    "items": [
+      {
+        "question": "What is Offensive Security?",
+        "answer": "Offensive Security tests your defenses the way a real attacker would. WhiteGuard's Offensive Security services include Penetration Testing, Vulnerability Assessment, Red Teaming, CIS Benchmarks Assessment, Source Code Review, and Cloud Security Services to identify weaknesses before attackers do."
+      },
+      {
+        "question": "Why is Offensive Security important?",
+        "answer": "Offensive Security validates whether defensive controls work under real attack conditions, identifies blind spots early, and provides measurable proof of cyber resilience. SAMA, NCA, CBE, PCI-DSS, ISO 27001, and Aramco CCC all require Offensive Security testing."
+      },
+      {
+        "question": "What is the difference between Offensive Security and Defensive Security?",
+        "answer": "Offensive Security tests your defenses through simulated attacks, while Defensive Security continuously monitors and responds to threats through SOC operations, SIEM, DFIR, and incident response. Mature cybersecurity programs require both working together."
+      },
+      {
+        "question": "How often should Offensive Security testing be performed?",
+        "answer": "At minimum: annually, plus after any material change. PCI-DSS 4.0 mandates annual penetration testing and segmentation testing every six months for service providers. SAMA and NCA expect cycle-driven Offensive Security testing aligned to risk. WhiteGuard scopes a cadence that fits your sector"
+      },
+      {
+        "question": "What is the difference between penetration testing and red teaming?",
+        "answer": "Penetration testing finds and exploits vulnerabilities in defined scope (an application, network segment, API). Red Teaming Assessment simulates a full kill chain — phishing, lateral movement, persistence, exfiltration. Pen tests answer \"is this thing broken?\"; red teams answer \"would we even notice?\""
+      },
+      {
+        "question": "How does Offensive Security help with compliance?",
+        "answer": "SAMA, NCA ECC, CBE, ISO 27001, PCI-DSS, and Aramco CCC require periodic vulnerability assessments, penetration testing, and red teaming. WhiteGuard maps findings directly to compliance controls to support audit readiness and remediation planning."
+      }
+    ],
+    "footer": {
+      "title": "Still have a question?",
+      "subtitle": "If you didn't find your answer, our security team can help scope the right next step.",
+      "buttonLabel": "Contact us",
+      "buttonHref": "/contact"
+    }
+  },
+  "defensive": {
+    "heading": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about detection, monitoring, and incident readiness.",
+    "items": [
+      {
+        "question": "What is Defensive Cybersecurity?",
+        "answer": "Defensive Cybersecurity focuses on monitoring, detecting, and responding to threats before damage escalates. WhiteGuard's Defensive Cybersecurity services include 24/7 SOC services, SIEM Security, DFIR, threat intelligence, phishing simulation, incident response, and business continuity and recovery."
+      },
+      {
+        "question": "What services are included in Defensive Cybersecurity?",
+        "answer": "Defensive Cybersecurity services include SOC as a Service, SIEM Deployment, SIEM Use-Case Management, DFIR, Threat Intelligence & Brand Protection, Managed Phishing Simulation, Incident Response, and Business Continuity & Recover, aligned to CBE, SAMA, NCA, and ISO 22301 requirements."
+      },
+      {
+        "question": "Why does my business need Defensive Cybersecurity?",
+        "answer": "Defensive Cybersecurity reduces detection and response time through continuous monitoring, threat detection, and tested cyber defense playbook. Without it, breaches can remain undetected for months, increasing operational and regulatory risk."
+      },
+      {
+        "question": "How do you detect and respond to cyber threats?",
+        "answer": "Threat detection combines tuned SIEM rules, EDR/XDR sensors, threat-intelligence feeds, and analyst-led threat hunting mapped to MITRE ATT&CK. Incident Response follows structured processes for containment, eradication, recovery, and post-incident review."
+      },
+      {
+        "question": "What is Incident Response and how quickly can you act?",
+        "answer": "Incident Response is the process of investigating and containing security incidents. WhiteGuard's DFIR team delivers forensic investigation, evidence preservation, remediation guidance, and post-incident reporting with a containment-first approach."
+      },
+      {
+        "question": "What happens if a security breach occurs?",
+        "answer": "WhiteGuard activates an Incident Response playbook including detection, containment, forensic analysis, reporting, and recovery recommendations. We also provide regulator-ready reporting aligned to SAMA, CBE, NCA, and GDPR requirements."
+      }
+    ],
+    "footer": {
+      "title": "Still have a question?",
+      "subtitle": "If you didn't find your answer, our security team can help scope the right next step.",
+      "buttonLabel": "Contact us",
+      "buttonHref": "/contact"
+    }
+  },
+  "grc": {
+    "heading": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about governance, risk, and compliance.",
+    "items": [
+      {
+        "question": "What is GRC in cybersecurity?",
+        "answer": "GRC stands for Governance, Risk, Compliance, the framework that aligns security strategy with business objectives and regulatory obligations. In MENA, GRC also means alignment with standards such as ISO 27001, PCI-DSS, HIPAA, GDPR, SAMA, NCA, and CBE."
+      },
+      {
+        "question": "What services are included in GRC?",
+        "answer": "WhiteGuard delivers GRC services including ISO/IEC 27001 Readiness, SAMA Compliance, NCA Compliance, PCI-DSS / PIN Security, SOC 2, HIPAA, GDPR, Aramco CCC, CBE, and FRA 139, supporting banking, insurance, fintech, and healthcare organizations across MENA."
+      },
+      {
+        "question": "Why does my business need GRC?",
+        "answer": "A mature GRC program turns compliance from reactive fire-drills into a structured process that reduces audit costs, supports regulatory readiness, and gives leadership clear visibility into organizational risk."
+      },
+      {
+        "question": "What compliance standards do you support?",
+        "answer": "WhiteGuard supports ISO/IEC 27001, ISO/IEC 27701, SOC 2, NIST CSF, PCI-DSS / PIN Security, HIPAA, GDPR, SAMA cybersecurity framework, NCA Compliance (ECC & CCC), CBE, FRA 139, and Aramco CCC."
+      },
+      {
+        "question": "How does GRC help improve security and regulatory compliance?",
+        "answer": "GRC connects security operations with business and regulatory requirements. It ensures controls align with compliance obligations, evidence is collected continuously through the WhiteHawk platform, and organizations maintain ongoing audit readiness aligned to SAMA and NCA expectations."
+      }
+    ],
+    "footer": {
+      "title": "Still have a question?",
+      "subtitle": "If you didn't find your answer, our security team can help scope the right next step.",
+      "buttonLabel": "Contact us",
+      "buttonHref": "/contact"
+    }
+  },
+  "training": {
+    "heading": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about cybersecurity awareness and training.",
+    "items": [
+      {
+        "question": "What is cybersecurity awareness training?",
+        "answer": "Cybersecurity awareness training teaches employees how to recognize and respond to threats such as phishing, social engineering, malicious attachments, password reuse, and accidental data exposure. WhiteGuard delivers interactive sessions, hands-on workshops, real-world scenarios, and ongoing assessments."
+      },
+      {
+        "question": "Why is awareness training important for employees?",
+        "answer": "Cybersecurity awareness training helps employees recognize and avoid social-engineering attacks that bypass traditional security controls. Continuous awareness programs reduce human-related security risks and improve organizational resilience."
+      },
+      {
+        "question": "What topics are covered in the cybersecurity awareness program?",
+        "answer": "Training covers phishing, social engineering, password security, MFA usage, data protection, remote-work security, incident reporting, and policy compliance, with role-based tracks for executives, finance, HR, IT, and developers."
+      },
+      {
+        "question": "How is the training delivered (online, in-person, or hybrid)?",
+        "answer": "Training covers phishing, social engineering, password security, MFA usage, data protection, remote-work security, incident reporting, and policy compliance, with role-based tracks for executives, finance, HR, IT, and developers."
+      },
+      {
+        "question": "Do you include phishing simulation in the training?",
+        "answer": "Yes. WhiteGuard delivers managed phishing simulation campaigns as part of the cybersecurity awareness program, including phishing, BEC, smishing, and vishing scenarios with employee performance reporting and ongoing assessments."
+      },
+      {
+        "question": "How often should cybersecurity awareness training be conducted?",
+        "answer": "Annual training is the minimum requirement, but mature cybersecurity awareness programs include continuous micro-learning, quarterly phishing simulations, and regular topic refreshers aligned to evolving threats and compliance expectations."
+      }
+    ],
+    "footer": {
+      "title": "Still have a question?",
+      "subtitle": "If you didn't find your answer, our security team can help scope the right next step.",
+      "buttonLabel": "Contact us",
+      "buttonHref": "/contact"
+    }
+  }
+}

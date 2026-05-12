@@ -24,7 +24,7 @@ export function Header() {
 
   /* Hover: bg Primary-100 | Selected: bg Primary-200 | border-radius: 8px */
   const navLinkClass = (href: string) =>
-    `inline-flex items-center gap-2 rounded-lg px-3 py-1 text-[20px]  leading-6 font-normal font-ano duration-300 ease-out transition-[background-color] ${
+    `inline-flex items-center gap-2 rounded-lg px-4 py-1 text-[20px]  leading-6 font-normal font-ano duration-300 ease-out transition-[background-color] ${
       pathname === href
         ? "text-[var(--primary-950)] bg-[var(--Primary-200)]"
         : "text-[var(--primary-950)] hover:bg-[#ABE0FF]"
@@ -40,7 +40,7 @@ export function Header() {
         <Logo />
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-4 xl:flex">
+        <div className="hidden items-center gap-8 xl:flex">
           {mainNav.map((item) => (
             <div
               key={item.href}
@@ -96,16 +96,16 @@ export function Header() {
           ))}
         </div>
 
-        <div className="hidden xl:flex   items-center gap-4">
+        <div className="hidden xl:flex   items-center gap-8">
           <HoverSwapButton
             href="https://www.whitehwk.com"
             label="White Hawk"
-            hoverLabel="White Hawk" 
+            hoverLabel="White Hawk"
             variant="secondary"
             showChevrons={false}
             showImg={true}
             imgSrc="/images/icons/external-link.svg"
-            className="text-sm md:text-base xl:text-lg flex flex-row-reverse items-center gap-2  font-ano" 
+            className="text-sm md:text-base xl:text-lg flex flex-row-reverse items-center gap-2  font-ano"
           />
           <HoverSwapButton
             href="/contact"
@@ -227,7 +227,12 @@ export function Header() {
               className="mt-4 block rounded-xl border border-[#0087D7]  px-3 py-2 text-center text-lg font-medium text-[#0087D7] shadow-[0px_10px_40px_0px_var(--primary-glow)] duration-300 ease-out transition-[opacity,box-shadow] hover:opacity-95 hover:shadow-[0px_10px_50px_0px_rgba(87,177,255,0.45)] flex items-center justify-center gap-2"
             >
               White Hawk
-              <Image src="/images/icons/external-link.svg" alt="White Hawk" width={24} height={24} />
+              <Image
+                src="/images/icons/external-link.svg"
+                alt="White Hawk"
+                width={24}
+                height={24}
+              />
             </Link>
             <Link
               href="/contact"

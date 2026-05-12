@@ -55,7 +55,7 @@ export default function ServiceDetailHero({
                 variant="cta"
                 className="w-full md:w-auto"
               />
-              <HoverSwapButton
+              {/* <HoverSwapButton
                 href={ctaSecondary.href}
                 label={ctaSecondary.label}
                 hoverLabel={ctaSecondary.label}
@@ -64,7 +64,7 @@ export default function ServiceDetailHero({
                 showImg={true}
                 imgSrc="/images/icons/download.svg"
                 className="w-full md:w-auto"
-              />
+              /> */}
             </div>
           </div>
         </div>

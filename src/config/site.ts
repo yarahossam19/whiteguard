@@ -71,6 +71,10 @@ export const footerNav = {
   resources: [
     { label: "Blogs", href: "/resources" }, 
   ],
+  platform: [
+    { label: "White Hawk", href: "https://www.whitehwk.com" },
+   
+  ],
 } as const;
 
 export const footerLegal = [

@@ -5,8 +5,10 @@ import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import ServicesPageHero from "@/components/services/ServicesPageHero";
 import ServicesPageTabs from "@/components/services/ServicesPageTabs";
 import ServiceCard from "@/components/services/ServiceCard";
+import ServicesPageFAQSection from "@/components/services/ServicesPageFAQSection";
 import ServicesPageBottomCTA from "@/components/services/ServicesPageBottomCTA";
 import { getServicesPageData } from "@/data/services-page";
+import { getServicesPageFaqForTab } from "@/data/services-page-faq";
 import type { ServiceCard as ServiceCardType } from "@/data/services-page";
 
 const VALID_TABS = [
@@ -62,6 +64,8 @@ function ServicesPageInner() {
     };
   }, [activeTab, data]);
 
+  const faqData = getServicesPageFaqForTab(activeTab);
+
   return (
     <div className="bg-white">
       <ServicesPageTabs
@@ -93,6 +97,8 @@ function ServicesPageInner() {
         </div>
       </section>
 
+      <ServicesPageFAQSection key={activeTab} data={faqData} />
+
       <ServicesPageBottomCTA
         heading={bottomCta.heading}
         headingAccent={bottomCta.headingAccent}
@@ -110,9 +116,7 @@ export default function ServicesPageClient() {
     <Suspense
       fallback={
         <div className="flex min-h-[60vh] items-center justify-center bg-white">
-          <div className="animate-pulse text-primary-600">
-            Loading...
-          </div>
+          <div className="animate-pulse text-primary-600">Loading...</div>
         </div>
       }
     >
