@@ -39,8 +39,8 @@
     },
     {
       "id": "technical-enablement-2",
-      "label": "Technical Enablement",
-      "icon": "/images/icons/check-doc-blue.svg",
+      "label": "Partner Portal",
+      "icon": "/images/icons/check-hands.svg",
       "bars": [{ "color": "gradient", "height": 145 }]
     }
   ]

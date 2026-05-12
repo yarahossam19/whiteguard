@@ -261,6 +261,27 @@ button, a {
   transition: all 0.3s ease;
 }
 
+/* Swiper slidesPerView:auto needs explicit widths; commas in min() break Tailwind arbitrary classes */
+@media (max-width: 1023px) {
+  .testimonials-section .swiper-slide {
+    width: 100%;
+    max-width: min(560px, calc(100vw - 32px));
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonials-section .swiper-slide:not(.swiper-slide-active) {
+    width: min(280px, calc((100vw - 2rem) * 0.42));
+    box-sizing: border-box;
+  }
+
+  .testimonials-section .swiper-slide.swiper-slide-active {
+    width: min(560px, calc((100vw - 2rem) * 0.84));
+    box-sizing: border-box;
+  }
+}
+
 .wave-container {
   height: 130px;
 
@@ -346,13 +367,13 @@ button, a {
 @media (min-width: 1601px) {
 
   .hero-font {
-    font-size: 85px;
+    font-size: 65px;
   }
 }
 
 @media (min-width: 1920px) {
   .hero-font {
-    font-size: 100px;
+    font-size: 65px;
   }
 }
 
@@ -374,4 +395,21 @@ button, a {
 .recaptcha-container iframe, .rc-anchor-light.rc-anchor-compact, .rc-anchor-light.rc-anchor-normal {
   width: 100% !important;
   max-width: 100% !important;
+}
+
+.testimonials-card-arrow {
+  position: absolute;
+  left: 28.029px;
+  bottom: -13.22px;
+  width: 24px;
+  height: 24px;
+  transform: rotate(45deg);
+  border-right: 1px solid #E0F2FE;
+  border-bottom: 1px solid #E0F2FE;
+  background: #FFF;
+  box-shadow: 0 10px 15px -3px rgba(0, 56, 89, 0.05), 0 4px 6px -4px rgba(0, 56, 89, 0.05);
+
+
+  /* z-index: -1; */
+  /* box-shadow: 0px 10px 15px rgba(0, 56, 89, 0.05), 0px 4px 6px rgba(0, 56, 89, 0.05); */
 }

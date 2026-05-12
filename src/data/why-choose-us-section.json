@@ -31,10 +31,52 @@
       "icon": "/images/why-choose-us/icon-4.svg"
     },
     {
-      "id": "advanced-threat-detection",
-      "title": "Advanced Threat Detection, Powered by WhiteHawk",
-      "description": "Leveraging exclusive WH technology, we proactively hunt, identify, and neutralize hidden, sophisticated cyber threats before they impact your operations.",
+      "id": "unified-cybersecurity-management",
+      "title": "Unified Cybersecurity Management, Powered by White Hawk",
+      "description": "White Hawk brings your offensive, defensive, compliance, and asset security activities into one connected platform, helping teams track risks, manage actions, and make faster security decisions with clear visibility.",
       "icon": "/images/why-choose-us/icon-5.svg"
+    }
+  ],
+  "certifications": [
+    {
+      "id": 0,
+      "title": "icon-1",
+      "image": "/images/backed/icon-1.svg"
+    },
+    {
+      "id": 1,
+      "title": "icon-2",
+      "image": "/images/backed/icon-2.svg"
+    },
+    {
+      "id": 2,
+      "title": "icon-3",
+      "image": "/images/backed/icon-3.svg"
+    },
+    {
+      "id": 3,
+      "title": "icon-4",
+      "image": "/images/backed/icon-4.svg"
+    },
+    {
+      "id": 4,
+      "title": "icon-5",
+      "image": "/images/backed/icon-5.svg"
+    },
+    {
+      "id": 5,
+      "title": "icon-6",
+      "image": "/images/backed/icon-6.svg"
+    },
+    {
+      "id": 6,
+      "title": "icon-7",
+      "image": "/images/backed/icon-7.svg"
+    },
+    {
+      "id": 7,
+      "title": "icon-8",
+      "image": "/images/backed/icon-8.svg"
     }
   ]
 }

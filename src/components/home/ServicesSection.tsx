@@ -15,6 +15,13 @@ interface ServicesSectionProps {
 }
 
 const N = 4; // number of services
+/** More vh per card = slower scroll through each frame; last card has extra hold in inputRange below. */
+const VH_PER_SERVICE = 130;
+/**
+ * Extra scroll length after animations — keeps sticky pinned so card 4 can be read before the next section.
+ * Taller track also stretches earlier phases slightly (fractions unchanged).
+ */
+const SCROLL_TAIL_HOLD_VH = 240;
 
 export default function ServicesSection({ data }: ServicesSectionProps) {
   const { heading, subtitle, services } = data;
@@ -23,15 +30,19 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start center", "end start"],
+    // End marker later → more scroll usable while pinned before progress hits 1
+    offset: ["start center", "end center"],
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const p = Math.max(0, Math.min(latest, 1));
-    const segment = 1 / N;
-    const delay = segment * 0.4;
-    const i = p < 1 ? Math.floor((p - delay) * N) : N - 1;
-    setActiveIndex(Math.max(0, Math.min(i, N - 1)));
+    /** Match keyed scroll phases below — not equal N segments */
+    let i: number;
+    if (p < 0.2) i = 0;
+    else if (p < 0.42) i = 1;
+    else if (p < 0.8) i = 2;
+    else i = 3;
+    setActiveIndex(i);
   });
 
   const segment = 1 / N;
@@ -39,7 +50,10 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
   return (
     <section ref={ref} className="relative bg-white xl:mb-50">
       {/* Tall scroll area - each service gets 1/N of the scroll */}
-      <div className="relative " style={{ height: `${N * 100}vh` }}>
+      <div
+        className="relative "
+        style={{ height: `${N * VH_PER_SERVICE + SCROLL_TAIL_HOLD_VH}vh` }}
+      >
         {/* Sticky viewport */}
         <div className="sticky top-0 flex h-screen md:h-[70vh] xl:h-screen flex-col ">
           {/* Header - fixed at top of sticky area */}
@@ -86,28 +100,44 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
                   const slideFromBottom = 600;
                   const isFirst = i === 0;
                   const isLast = i === N - 1;
+                  const isPenultimate = i === N - 2;
 
                   const pad = 0.03;
-                  const inputRange = isLast
-                    ? [0, (N - 1) * segment - 0.05, (N - 1) * segment + 0.1, 1]
-                    : isFirst
-                      ? [0, 0, segment + pad, 1]
-                      : [
+                  /**
+                   * Last card: slide in, long plateau (readable), tiny tail → progress 1.
+                   * Uses 5 stops so opacity/y stay flat across most of the tail scroll.
+                   */
+                  const inputRange =
+                    isLast
+                      ? [
                           0,
-                          i * segment,
-                          (i + 1) * segment,
-                          Math.min((i + 2) * segment, 1),
+                          0.795,
+                          0.852,
+                          0.942,
                           1,
-                        ];
+                        ]
+                      : isFirst
+                        ? [0, 0, segment + pad, 1]
+                        : isPenultimate
+                          ? [0, 0.46, 0.54, 0.79, 1]
+                          : i === 1
+                            ? [0, 0.22, 0.3, 0.46, 1]
+                            : [
+                                0,
+                                i * segment,
+                                (i + 1) * segment,
+                                Math.min((i + 2) * segment, 1),
+                                1,
+                              ];
                   const yRange = isFirst
                     ? [0, 0, 0, 0]
                     : isLast
-                      ? [slideFromBottom, slideFromBottom, 0, 0]
+                      ? [slideFromBottom, slideFromBottom, 0, 0, 0]
                       : [slideFromBottom, slideFromBottom, 0, 0, 0];
                   const opacityRange = isFirst
                     ? [1, 1, 1, 1]
                     : isLast
-                      ? [0, 0, 1, 1]
+                      ? [0, 0, 1, 1, 1]
                       : [0, 0, 1, 1, 1];
 
                   return (

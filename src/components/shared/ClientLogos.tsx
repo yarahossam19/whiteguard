@@ -18,8 +18,8 @@ function LogoGrid({ items }: { items: LogosData }) {
             src={logo.src}
             alt={logo.alt}
             width={120}
-            height={100}
-            className={`w-[${parseInt(logo.width)}px] h-auto max-h-[56px] object-contain`}
+            height={120}
+            className={`w-[${parseInt(logo.width)}px]   max-h-[80px] object-contain`}
           />
         </div>
       ))}

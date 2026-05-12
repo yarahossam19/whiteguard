@@ -39,9 +39,9 @@ const CONTACT = {
   telHref: "tel:+441227391144",
   email: "sales@whiteguard.co.uk",
   mailHref: "mailto:sales@whiteguard.co.uk",
-  address: "s 128, City Road, London, EC1V 2NX, UNITED KINGDOM",
-  addressHref: "https://maps.app.goo.gl/hwwVWdqLpfp1qXeq5",
-  officeHours: "Monday – Friday: 9:00am – 5:00pm (UK)",
+  address: "4 Khan Younis, Mit Aqaba, Agouza District, Giza Governorate",
+  addressHref: "https://maps.app.goo.gl/qk7M7pri7U3R1pDJ6",
+  officeHours: "Sunday – Thursday: 9:00am – 5:00pm",
 } as const;
 
 function IconPhone({ className }: { className?: string }) {
@@ -679,7 +679,7 @@ export default function ContactPageContent() {
             <div className="overflow-hidden rounded-[10px] border border-[#e0e6eb]">
               <iframe
                 title="WhiteGuard location"
-                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2482.2683780198176!2d-0.09094147387124933!3d51.52663720929847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1ss%20128%2C%20City%20Road%2C%20London%2C%20EC1V%202NX%2C%20UNITED%20KINGDOM!5e0!3m2!1sen!2seg!4v1774413208319!5m2!1sen!2seg"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.3158407176566!2d31.19261767501089!3d30.05647991800129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145859007e8985eb%3A0x9a771a8e3ae7b453!2sWHITEGUARD!5e0!3m2!1sen!2seg!4v1778549602329!5m2!1sen!2seg"
                 width="100%"
                 height={320}
                 className="block min-h-[280px] w-full bg-[#f5f8fa] lg:h-[300px]"
@@ -714,7 +714,7 @@ export default function ContactPageContent() {
                 </div>
               </li>
 
-              <li className="group flex gap-4">
+              {/* <li className="group flex gap-4">
                 <div className={CONTACT_SIDEBAR_ICON_TILE_CLASS} aria-hidden>
                   <IconPhone className="h-6 w-6 shrink-0" />
                 </div>
@@ -729,8 +729,8 @@ export default function ContactPageContent() {
                     {CONTACT.phone}
                   </a>
                 </div>
-              </li>
-              <li className="group flex gap-4 border-b border-[#e0e6eb] pb-8">
+              </li> */}
+              <li className="group flex gap-4  ">
                 <div className={CONTACT_SIDEBAR_ICON_TILE_CLASS} aria-hidden>
                   <IconEnvelope className="h-6 w-6 shrink-0" />
                 </div>
@@ -746,19 +746,19 @@ export default function ContactPageContent() {
                   </a>
                 </div>
               </li>
-              {/* <li className="group flex gap-4 border-b border-[#e0e6eb] pb-8">
+              <li className="group flex gap-4 border-b border-[#e0e6eb] pb-8">
                 <div className={CONTACT_SIDEBAR_ICON_TILE_CLASS} aria-hidden>
                   <IconClock className="h-6 w-6 shrink-0" />
                 </div>
                 <div className="min-w-0 pt-0.5">
                   <p className="font-jakarta text-xs font-bold uppercase tracking-wide text-[#003859]">
-                    Office hrs
+                    Working hours
                   </p>
                   <p className="mt-1 font-jakarta text-[16px] leading-relaxed text-[#52697A]">
                     {CONTACT.officeHours}
                   </p>
                 </div>
-              </li> */}
+              </li>
             </ul>
 
             <div className="mt-10 flex flex-wrap gap-3">

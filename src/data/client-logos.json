@@ -14,14 +14,14 @@
   {
     "id": 3,
     "alt": "Client Logo",
-    "src": "/images/clients/partner-3.png",
-    "width": "12"
+    "src": "/images/clients/partner-3.svg",
+    "width": "50"
   },
   {
     "id": 4,
     "alt": "TAMAA Finance Company",
-    "src": "/images/clients/partner-4.png",
-    "width": "36"
+    "src": "/images/clients/partner-4.svg",
+    "width": "120"
   },
   {
     "id": 5,
@@ -32,8 +32,8 @@
   {
     "id": 6,
     "alt": "ORASCOM",
-    "src": "/images/clients/partner-6.png",
-    "width": "40"
+    "src": "/images/clients/partner-6.svg",
+    "width": "120"
   },
   {
     "id": 7,
@@ -80,8 +80,8 @@
   {
     "id": 14,
     "alt": "Client Logo",
-    "src": "/images/clients/partner-14.png",
-    "width": "24"
+    "src": "/images/clients/partner-14.svg",
+    "width": "120"
   },
   {
     "id": 15,

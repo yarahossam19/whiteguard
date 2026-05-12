@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import type { TestimonialsSectionData } from "@/data/testimonials-section";
@@ -58,64 +57,48 @@ export default function TestimonialsSection({
         {/* Swiper Cards */}
         <Swiper
           modules={[Navigation, Autoplay]}
+          centeredSlides={true}
+          centeredSlidesBounds={true}
+          slidesPerView={1}
           spaceBetween={28}
-          slidesPerView={1.1}
+          initialSlide={1}
           loop={false}
-          
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
-          speed={1000}
-          loopPreventsSliding={true}
-          loopAdditionalSlides={1}
+          speed={600}
           navigation
           grabCursor
           breakpoints={{
-            640: { slidesPerView: 1.5 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 2.5 },
-            1280: { slidesPerView: 4 },
+            576: {
+              slidesPerView: 1,
+              spaceBetween: 28,
+              centeredSlidesBounds: false,
+            },
+            768: {
+              slidesPerView: "auto",
+              spaceBetween: 28,
+              centeredSlidesBounds: false,
+            },
+            992: {
+              slidesPerView: "auto",
+              spaceBetween: 28,
+              centeredSlidesBounds: false,
+            },
+            1200: {
+              slidesPerView: "auto",
+              spaceBetween: 28,
+              centeredSlidesBounds: false,
+            },
           }}
-          className="!overflow-visible [&_.swiper-button-next]:text-[#003859] [&_.swiper-button-prev]:text-[#003859]"
+          className="overflow-visible! pb-4 [&_.swiper]:pb-1 [&_.swiper-button-next]:text-[#003859] [&_.swiper-button-prev]:text-[#003859] [&_.swiper-slide]:box-border [&_.swiper-slide]:transition-[width] [&_.swiper-slide]:duration-500 [&_.swiper-slide]:ease-out"
         >
-          {testimonials.map((t) => (
-            <SwiperSlide key={t.id}>
-              <div
-                className="flex min-h-[370px] flex-col rounded-[28px] border p-7"
-                style={{
-                  borderColor: "#e0f2fe",
-                  background: "#fff",
-                  boxShadow:
-                    "0px 10px 15px rgba(0,56,89,0.05), 0px 4px 6px rgba(0,56,89,0.05)",
-                }}
-              >
-                <Image
-                  src="/images/icons/quote.svg"
-                  alt=""
-                  width={32}
-                  height={32}
-                  className="mb-4"
-                />
-                <p className="mb-6 flex-1 font-jakarta text-[15px] leading-[1.75] text-[#003859]">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <StarRating count={t.rating} />
-                <p className="mt-4 font-jakarta text-[15px] font-bold leading-[1.5] text-[#003859]">
-                  {t.name}
-                </p>
-                <p className="font-jakarta text-[13px] leading-[1.5] text-[#52697A]">
-                  {t.title}
-                </p>
-              </div>
-            </SwiperSlide>
-          ))}
-
           {/* CTA Card */}
-          <SwiperSlide>
+          <SwiperSlide className="!box-border">
             <div
-              className="flex min-h-[370px] w-[340px] max-w-full flex-col justify-between rounded-[28px] border p-7"
+              className="flex min-h-[450px] w-full flex-col justify-between rounded-[28px] border p-7"
               style={{
                 borderColor: "#abe0ff",
                 background:
@@ -146,6 +129,38 @@ export default function TestimonialsSection({
               </div>
             </div>
           </SwiperSlide>
+          {testimonials.map((t) => (
+            <SwiperSlide key={t.id} className="!box-border">
+              <div
+                className=" flex min-h-[450px] w-full flex-col rounded-[28px] border p-7"
+                style={{
+                  borderColor: "#e0f2fe",
+                  background: "#fff",
+                  boxShadow:
+                    "0px 10px 15px rgba(0,56,89,0.05), 0px 4px 6px rgba(0,56,89,0.05)",
+                }}
+              >
+                <Image
+                  src="/images/icons/quote.svg"
+                  alt=""
+                  width={32}
+                  height={32}
+                  className="mb-4"
+                />
+                <p className="mb-6 flex-1 font-jakarta text-[15px] leading-[1.75] text-[#003859]">
+                  {t.quote}
+                </p>
+                {/* <StarRating count={t.rating} /> */}
+                <p className="mt-4 font-jakarta text-[15px] font-bold leading-normal text-[#003859]">
+                  {t.name}
+                </p>
+                <p className="font-jakarta text-[13px] leading-normal text-[#52697A]">
+                  {t.title}
+                </p>
+              </div>
+              <div className="testimonials-card-arrow"></div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </section>

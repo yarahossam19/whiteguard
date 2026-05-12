@@ -37,7 +37,7 @@ export default function PartnersCallToActionSection({
           </div>
 
           {/* Text block - gap 18px */}
-          <div className="flex flex-col lg:max-w-[600px] items-center gap-[18px] text-center">
+          <div className="flex flex-col lg:max-w-[75%] items-center gap-[18px] text-center">
             <h2 className="font-jakarta text-[clamp(36px,4.5vw,52px)] font-extrabold leading-[57.2px] tracking-[-1.56px] text-white">
               {heading1}
               <br className="hidden lg:block" />
@@ -50,7 +50,7 @@ export default function PartnersCallToActionSection({
         </div>
 
         {/* Buttons - gap 16px */}
-        <div className=" w-full max-w-lg flex flex-col md:flex-row items-center justify-center gap-4 sm:max-w-none sm:grid-cols-2">
+        <div className=" w-full max-w-lg flex flex-col md:flex-row items-center justify-center gap-4 sm:max-w-none sm:grid-cols-1">
           <Link
             href={primaryCta.href}
             className="flex h-[57px] w-full  flex-1 items-center justify-center gap-3 rounded-full bg-white   py-[15px] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.15)] transition-opacity hover:opacity-95 sm:min-w-auto lg:min-w-[280px] lg:max-w-[310px]"
@@ -66,14 +66,14 @@ export default function PartnersCallToActionSection({
               className="shrink-0"
             />
           </Link>
-          <Link
+          {/* <Link
             href={secondaryCta.href}
             className="flex h-[57px]  w-full flex-1 items-center justify-center rounded-full border border-white/30 px-0 lg:px-[33px] py-[17px] transition-opacity hover:bg-white/10 sm:min-w-auto lg:min-w-[280px] lg:max-w-[310px]"
           >
             <span className="font-jakarta text-[15px] font-semibold leading-[22.5px] text-white/85">
               {secondaryCta.label}
             </span>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </section>
