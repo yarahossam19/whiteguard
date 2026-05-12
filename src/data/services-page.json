@@ -616,8 +616,8 @@
         },
         {
           "link": "cbe-compliance",
-          "title": "Central Bank & Sector-Specific Compliance",
-          "description": "Align with financial regulations across Egypt, Libya, and more  We assist regulated entities in meeting cybersecurity expectations from regional central banks and regulatory bodies.",
+          "title": "Central Bank of Egypt (CBE) Compliance",
+          "description": "Meet CBE Cybersecurity Framework requirements for banks, fintechs, and insurers in Egypt. We help you achieve regulatory compliance and audit readiness.",
           "features": [
             {
               "icon": "/images/services/grc-icons/icon-23.svg",
@@ -633,8 +633,58 @@
             }
           ],
           "cta": {
-            "label": "Align with Sector Regulators",
+            "label": "Align with CBE Regulations",
             "href": "/services/cbe-compliance"
+          },
+          "image": "/images/services/grc-8.png",
+          "imageLeft": false
+        },
+        {
+          "link": "cbl-compliance",
+          "title": "Central Bank of Libya (CBL) Compliance",
+          "description": "Achieve CBL Cybersecurity Compliance for financial institutions in Libya. We support banks, insurers, and fintechs with gap assessment and implementation.",
+          "features": [
+            {
+              "icon": "/images/services/grc-icons/icon-23.svg",
+              "label": "CBL Gap Analysis"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-24.svg",
+              "label": "Policy Development"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-25.svg",
+              "label": "Audit Support"
+            }
+          ],
+          "cta": {
+            "label": "Align with CBL Regulations",
+            "href": "/services/cbl-compliance"
+          },
+          "image": "/images/services/grc-7.png",
+          "imageLeft": true
+        },
+        {
+          "link": "fra-139-compliance",
+          "title": "FRA 139 Compliance",
+          "description": "Meet FRA 139 cybersecurity requirements for non-banking financial institutions (NBFIs) in Egypt. Insurance, fintech, and securities firms.",
+          "features": [
+            {
+              "icon": "/images/services/grc-icons/icon-23.svg",
+              "label": "FRA 139 Gap Analysis"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-24.svg",
+              "label": "Control Mapping"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-25.svg",
+              "label": "Regulatory Submission"
+            }
+          ],
+          "cta": {
+            "label": "Align with FRA 139",
+            "href": "/services/fra-139-compliance"
           },
           "image": "/images/services/grc-8.png",
           "imageLeft": false

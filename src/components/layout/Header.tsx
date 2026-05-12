@@ -24,7 +24,7 @@ export function Header() {
 
   /* Hover: bg Primary-100 | Selected: bg Primary-200 | border-radius: 8px */
   const navLinkClass = (href: string) =>
-    `inline-flex items-center gap-2 rounded-lg px-4 py-1 text-[20px]  leading-6 font-normal font-ano duration-300 ease-out transition-[background-color] ${
+    `inline-flex items-center gap-2 rounded-lg px-3 py-1 text-[20px]  leading-6 font-normal font-ano duration-300 ease-out transition-[background-color] ${
       pathname === href
         ? "text-[var(--primary-950)] bg-[var(--Primary-200)]"
         : "text-[var(--primary-950)] hover:bg-[#ABE0FF]"
@@ -40,7 +40,7 @@ export function Header() {
         <Logo />
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-8 xl:flex">
+        <div className="hidden items-center gap-4 xl:flex">
           {mainNav.map((item) => (
             <div
               key={item.href}
@@ -96,7 +96,7 @@ export function Header() {
           ))}
         </div>
 
-        <div className="hidden xl:flex   items-center gap-8">
+        <div className="hidden xl:flex   items-center gap-4">
           <HoverSwapButton
             href="https://www.whitehwk.com"
             label="White Hawk"
