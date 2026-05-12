@@ -48,25 +48,21 @@ export default function ServicesPageHero({
             <h1 className="font-jakarta text-[clamp(36px,5vw,72px)] font-bold leading-tight text-[#003859]">
               {hero.heading}
               <br />{" "}
-              {hero.heading2 ? (
+              {"heading2" in hero && hero.heading2 ? (
                 <>
                   {hero.heading2}
                   <br />
                 </>
-              ) : (
-                ""
-              )}
+              ) : null}
             </h1>
             <h2 className="font-thin italic font-jakarta text-[clamp(36px,5vw,72px)]  leading-tight text-[#003859]">
               {hero.headingAccent}{" "}
-              {hero.headingAccent2 ? (
+              {"headingAccent2" in hero && hero.headingAccent2 ? (
                 <>
                   <br />
                   {hero.headingAccent2}{" "}
                 </>
-              ) : (
-                ""
-              )}
+              ) : null}
             </h2>
             <p className="lg:max-w-[75%] font-jakarta text-[16px] font-normal leading-[30px] text-[#52697A] xl:text-[18px]">
               {hero.subtitle}
