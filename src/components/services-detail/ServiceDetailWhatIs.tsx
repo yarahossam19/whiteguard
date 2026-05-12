@@ -48,7 +48,7 @@ export default function ServiceDetailWhatIs({
             <HoverSwapButton
               href={ctaHref}
               label={ctaLabel}
-              hoverLabel={""}
+              hoverLabel={ctaLabel}
               showChevrons={false}
               variant="secondary"
               className="w-full md:w-auto  text-sm md:text-base lg:text-lg  font-ano"
