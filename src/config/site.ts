@@ -44,11 +44,17 @@ export const mainNav = [
       },
     ],
   },
-  { label: "Industries", href: "/industries" },
+  { label: "Industries",small:true, href: "/industries",hasDropdown: true, subLinks: [
+    { label: "Financial services",icon: "/images/industries/financial.png", href: "/industries/financial-services", description: "Banks, fintech, insurance, leasing, payments, and other regulated finance across MENA." },
+    { label: "Healthcare services", icon: "/images/industries/healthcare.png", href: "/industries/healthcare", description: "Hospitals, clinics, health-tech, telehealth, and medical-device settings across MENA." },
+    { label: "Industrial IT services", icon: "/images/industries/manufacturing.png", href: "/industries/industrial-services", description: "Manufacturing, automotive, oil & gas, and energy organizations across MENA." },
+     
+  ] },
+  // { label: "Industries", href: "/industries" },
   { label: "Partners", href: "/partners" },
    
   { label: "Resources",small:true, href: "#.",hasDropdown: true, subLinks: [
-    { label: "Blogs", href: "/resources",description: "Stay up-to-date with the latest news and insights from our team." },
+    { label: "Financial services", href: "/industries/financial-services",description: "from our team." },
     { label: "About Us", href: "/about",description: "Learn more about our company and our mission." },
     
   ] },

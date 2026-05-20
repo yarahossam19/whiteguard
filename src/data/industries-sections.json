@@ -7,91 +7,104 @@
     {
       "id": "financial-services",
       "title": "Financial Services",
-      "description": "Banks, fintechs, and insurance providers face relentless cyber threats and growing regulatory pressure. WHITEGUARD helps financial institutions comply with frameworks like FRA 139, CBE, and SAMA CSF, while enhancing resilience against fraud, data breaches, and ransomware.",
+      "description": "WhiteGuard supports financial institutions across MENA, including banks, fintechs, insurance providers, leasing companies, payment providers, and other regulated financial organizations.",
       "bullets": [
-        "Continuous vulnerability assessment and incident readiness",
-        "SOC and SIEM monitoring tailored to financial systems",
-        "Compliance alignment with regional and global standards",
-        "Employee awareness programs for phishing and fraud prevention"
+        "Built for banks, fintechs, insurers, leasing, and payments.",
+        "Covers offensive, defensive, asset, and GRC needs.",
+        "Helps monitor threats and maintain compliance.",
+        "Improves visibility across financial operations."
+      ],
+      "certifications": [
+        {
+          "id": 0,
+          "name": "ISO 27001:2013",
+          "src": "/images/industries/logos/financial/logo-1.svg"
+        },
+        {
+          "id": 1,
+          "name": "ISO 27001:2013",
+          "src": "/images/industries/logos/financial/logo-2.svg"
+        },
+        {
+          "id": 2,
+          "name": "ISO 27001:2013",
+          "src": "/images/industries/logos/financial/logo-3.svg"
+        },
+        {
+          "id": 3,
+          "name": "ISO 27001:2013",
+          "src": "/images/industries/logos/financial/logo-4.svg"
+        },
+        {
+          "id": 4,
+          "name": "ISO 27001:2013",
+          "src": "/images/industries/logos/financial/logo-5.svg"
+        }
       ],
       "ctaLabel": "Secure Your Financial Operation",
-      "ctaHref": "/contact",
+      "ctaHref": "/industries/financial-services",
       "icon": "wallet",
       "image": "/images/industries/financial.png"
     },
     {
       "id": "healthcare",
-      "title": "Healthcare",
-      "description": "The protection of patient data and clinical systems is now a matter of life, trust, and compliance. WHITEGUARD enables hospitals, healthcare networks, and medtech providers to meet standards like HIPAA, FDA, and ISO 27001, ensuring sensitive data and connected devices remain protected.",
+      "title": "Healthcare Services",
+      "description": "WhiteGuard supports healthcare organizations across MENA, including hospitals, clinics, health-tech platforms, telehealth providers, and medical-device environments.",
       "bullets": [
-        "Data protection and breach prevention across clinical systems",
-        "Cloud and IoT device security assessments",
-        "Incident response and digital forensics for healthcare environments",
-        "Compliance readiness for HIPAA, FDA, and regional data protection laws"
+        "Built for hospitals, clinics, and health-tech providers.",
+        "Protects patient data, PHI, and clinical systems.",
+        "Secures medical devices and healthcare applications.",
+        "Provides 24/7 monitoring and healthcare risk visibility."
+      ],
+      "certifications": [
+        {
+          "id": 1,
+          "name": "ISO 27001:2013",
+          "src": "/images/industries/logos/healthcare/logo-2.svg"
+        },
+        {
+          "id": 2,
+          "name": "ISO 27001:2013",
+          "src": "/images/industries/logos/healthcare/logo-5.svg"
+        },
+        {
+          "id": 3,
+          "name": "ISO 27001:2013",
+          "src": "/images/industries/logos/healthcare/logo-3.svg"
+        },
+        {
+          "id": 4,
+          "name": "ISO 27001:2013",
+          "src": "/images/industries/logos/healthcare/logo-4.svg"
+        },
+
+        {
+          "id": 5,
+          "name": "ISO 27001:2013",
+          "src": "/images/industries/logos/healthcare/logo-1.svg"
+        }
       ],
       "ctaLabel": "Protect Your Patient Data",
-      "ctaHref": "/contact",
+      "ctaHref": "/industries/healthcare",
       "icon": "healthcare",
       "image": "/images/industries/healthcare.png"
     },
     {
-      "id": "manufacturing",
-      "title": "Manufacturing",
-      "description": "Modern factories rely on interconnected OT (Operational Technology) and IT systems that, if compromised, can halt production and disrupt global supply chains. WHITEGUARD safeguards industrial networks and critical systems through proactive risk detection, red team assessments, and continuous monitoring.",
+      "id": "industrial-services",
+      "title": "Industrial  Services",
+      "description": "WhiteGuard supports industrial organizations across MENA, including manufacturing plants, automotive companies, oil & gas operators, and energy providers.",
       "bullets": [
-        "Industrial network segmentation and risk assessments",
-        "OT/ICS (Industrial Control Systems) cybersecurity audits and compliance with NCA and ISO",
-        "Business continuity and incident response plans",
-        "Real-time monitoring and threat intelligence for operational continuity"
+        "Built for manufacturing, automotive, oil & gas, and energy.",
+        "Secures OT, IT, SCADA, DCS, and industrial networks.",
+        "Supports segmentation, monitoring, and incident readiness.",
+        "Helps protect uptime and business continuity.",
+        "Provides compliance evidence through WhiteHawk."
       ],
+      "certifications": [],
       "ctaLabel": "Strengthen Your Industrial Defenses",
-      "ctaHref": "/contact",
+      "ctaHref": "/industries/industrial-services",
       "icon": "manufacturing",
       "image": "/images/industries/manufacturing.png"
-    },
-    {
-      "id": "insurance-leasing",
-      "title": "Insurance & Leasing",
-      "description": "As digital platforms reshape the financial ecosystem, insurers and leasing companies are increasingly exposed to data breaches, fraud, and compliance risk. WHITEGUARD supports this sector through data protection, system hardening, and compliance alignment with FRA 139 and PCI-DSS.",
-      "bullets": [
-        "Endpoint and cloud security for underwriting and claims systems",
-        "Regulatory mapping for FRA, PCI, and privacy frameworks",
-        "Continuous monitoring of customer and transaction data",
-        "Executive visibility dashboards through White Hawk"
-      ],
-      "ctaLabel": "Build Your Compliance Confidence",
-      "ctaHref": "/contact",
-      "icon": "insurance",
-      "image": "/images/industries/insurance.png"
-    },
-    {
-      "id": "automotive",
-      "title": "Automotive",
-      "description": "The automotive industry is evolving into a digital ecosystem — connected vehicles, smart factories, and global supply chains. WHITEGUARD helps in source code reviewing for embedded systems, secure cloud integrations, and threat modeling and compliance support.",
-      "bullets": [
-        "Secure software and firmware audits for connected vehicles",
-        "Red team and penetration testing for automotive control systems",
-        "Supply chain cybersecurity assessments and vendor risk mapping"
-      ],
-      "ctaLabel": "Drive Your Secure Innovation",
-      "ctaHref": "/contact",
-      "icon": "automotive",
-      "image": "/images/industries/automotive.png"
-    },
-    {
-      "id": "technology-cloud",
-      "title": "Technology & Cloud",
-      "description": "In the cloud-first era, every technology company is a potential target. WHITEGUARD works with SaaS providers, datacenters, and cloud operators to secure platforms, APIs, and customer environments against evolving cyber threats.",
-      "bullets": [
-        "Cloud security and configuration audits (AWS, Azure, GCP)",
-        "Application and API penetration testing",
-        "SOC-as-a-Service and continuous threat detection",
-        "Compliance readiness for SOC 2, ISO 27001, and privacy frameworks"
-      ],
-      "ctaLabel": "Secure Your Cloud",
-      "ctaHref": "/contact",
-      "icon": "cloud",
-      "image": "/images/industries/technology.png"
     }
   ]
 }
