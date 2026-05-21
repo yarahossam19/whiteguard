@@ -38,7 +38,7 @@ export default function IndustrialManufacturingCyberSection({
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-white pb-16 xl:pb-[180px]"
+      className="relative w-full overflow-hidden bg-white pb-16 xl:pb-[180px] z-10"
       aria-labelledby="industrial-manufacturing-cyber-headline"
     >
       <div className="container mx-auto w-full     ">
