@@ -17,9 +17,9 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
   return (
     <section className="relative w-full overflow-hidden  ">
-      <div className=" flex flex-col-reverse xl:flex-row  ">
+      <div className=" flex flex-col-reverse xl:flex-row  min-h-screen">
         {/*  LEFT CONTENT */}
-        <div className="relative z-10 flex flex-1 items-start  justify-start px-4 py-4 sm:px-6 sm:py-4 xl:ps-[5vw] xl:py-[2.5%]">
+        <div className="relative z-10 flex flex-1 items-start  justify-start px-4 py-4 sm:px-6 sm:py-4 xl:ps-[5vw] xl:py-[4%]">
           <div className="flex flex-col gap-10 xl:max-w-[800px] text-[#003859]">
             {/* Headline */}
             <div className="flex flex-col gap-5 text-center xl:text-left">
@@ -77,7 +77,7 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
 
         {/* ─── RIGHT PANEL ─── */}
         <div
-          className="relative  inset-y-[-5vh] xl:inset-0 z-10 w-full xl:w-[50%] min-[1600px]:w-[50%]! min-h-[50vh]    "
+          className="relative  inset-y-[-5vh] xl:inset-0 z-10 w-full xl:w-[50%] min-[1600px]:w-[50%]! min-h-screen     "
           style={{
             backgroundImage: `url(${isTablet ? "/images/banner-mobile.png" : rightPanel.backgroundImage})`,
             backgroundSize: "100% 100%",

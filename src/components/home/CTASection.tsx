@@ -31,23 +31,23 @@ export default function CTASection({ data }: CTASectionProps) {
       />
       <div className="container relative z-10 flex flex-col items-center">
         <div className="mx-auto flex w-full max-w-[896px] flex-col items-center gap-10 text-center">
-        <div className="flex flex-col items-center gap-6">
-          <h2 className="font-jakarta text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15]">
-            <span className="text-[#003859]">{heading.line1}</span>
-            <br />
-            <span className="text-[#0087D7]">{heading.line2}</span>
-          </h2>
-          <p className="font-jakarta lg:max-w-[500px] text-base leading-[1.7] text-[#52697A]">
-            {subtext}
-          </p>
-        </div>
-        <HoverSwapButton
-          href={button.href}
-          label={button.label}
-          hoverLabel={button.hoverLabel}
-          variant={button.variant as "cta" | "secondary"}
-          showChevrons={false}
-        />
+          <div className="flex flex-col items-center gap-6">
+            <h2 className="font-jakarta text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15]">
+              <span className="text-[#003859]">{heading.line1}</span>
+              <br />
+              <span className="text-[#0087D7]">{heading.line2}</span>
+            </h2>
+            <p className="font-jakarta lg:max-w-3/4 text-base leading-[1.7] text-[#52697A]">
+              {subtext}
+            </p>
+          </div>
+          <HoverSwapButton
+            href={button.href}
+            label={button.label}
+            hoverLabel={button.hoverLabel}
+            variant={button.variant as "cta" | "secondary"}
+            showChevrons={false}
+          />
         </div>
       </div>
     </section>

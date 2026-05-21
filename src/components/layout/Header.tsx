@@ -16,10 +16,13 @@ export function Header() {
   const tabParam = searchParams.get("tab");
   const { isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useUIStore();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  /** Which top-level nav item’s mobile submenu is open (matched by href). One at a time. */
+  const [mobileExpandedHref, setMobileExpandedHref] = useState<string | null>(
+    null,
+  );
 
   useEffect(() => {
-    if (!isMobileMenuOpen) setMobileServicesOpen(false);
+    if (!isMobileMenuOpen) setMobileExpandedHref(null);
   }, [isMobileMenuOpen]);
 
   /* Hover: bg Primary-100 | Selected: bg Primary-200 | border-radius: 8px */
@@ -141,8 +144,9 @@ export function Header() {
                 "subLinks" in item && item.subLinks && item.subLinks.length > 0;
 
               if (hasSubLinks) {
+                const isThisExpanded = mobileExpandedHref === item.href;
                 return (
-                  <div key={item.href}>
+                  <div key={`${item.label}-${item.href}`}>
                     <div className="flex items-stretch gap-1 rounded-lg">
                       <Link
                         href={item.href}
@@ -157,13 +161,18 @@ export function Header() {
                       </Link>
                       <button
                         type="button"
-                        onClick={() => setMobileServicesOpen((open) => !open)}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setMobileExpandedHref((prev) =>
+                            prev === item.href ? null : item.href,
+                          );
+                        }}
                         className="flex shrink-0 items-center justify-center  px-3 text-primary-950 duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] border-l border-[#ccc]"
-                        aria-expanded={mobileServicesOpen}
+                        aria-expanded={isThisExpanded}
                         aria-label={
-                          mobileServicesOpen
-                            ? "Hide services submenu"
-                            : "Show services submenu"
+                          isThisExpanded
+                            ? `Hide ${item.label} submenu`
+                            : `Show ${item.label} submenu`
                         }
                       >
                         <Image
@@ -172,13 +181,13 @@ export function Header() {
                           width={22}
                           height={22}
                           className={`transition-transform duration-300 ${
-                            mobileServicesOpen ? "rotate-180" : ""
+                            isThisExpanded ? "rotate-180" : ""
                           }`}
                           aria-hidden
                         />
                       </button>
                     </div>
-                    {mobileServicesOpen &&
+                    {isThisExpanded &&
                       item.subLinks?.map((sub) => {
                         const subTab = sub.href.includes("tab=")
                           ? sub.href.split("tab=")[1]

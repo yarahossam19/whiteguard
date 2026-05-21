@@ -1,0 +1,96 @@
+{
+  "slug": "industrial-services",
+  "title": "Industrial cybersecurity",
+  "description": "Industrial cybersecurity is what keeps the production line running, the pipeline pressurized, and the assembly robot under your control. WhiteGuard delivers industrial cybersecurity and OT Cybersecurity programs for automotive, manufacturing, oil & gas, and energy operators across MENA. Automotive and energy are two of WhiteGuard's nine declared vertical specializations, served by a fifty-strong team of cybersecurity specialists.",
+  "supportHeading": "How we support your sector",
+  "image": "/images/industries/hero/industrial.svg",
+  "ctaLabel": "Assess OT exposure",
+  "primaryCtaHref": "/contact",
+  "secondaryCta": {
+    "label": "Explore WhiteHawk",
+    "href": "https://www.whitehwk.com"
+  },
+  "bullets": [
+    "Built for manufacturing, automotive, oil & gas, and energy.",
+    "Secures OT, IT, SCADA, DCS, and industrial networks.",
+    "Supports segmentation, monitoring, and incident readiness.",
+    "Helps protect uptime and business continuity.",
+    "Provides compliance evidence through WhiteHawk."
+  ],
+  "certifications": [
+    {
+      "id": 1,
+      "name": "all logos",
+      "src": "/images/industries/logos/industrial/logos.svg"
+    }
+  ],
+  "industrialAutomotiveBattlefieldBand": {
+    "headline": "Automotive cybersecurity",
+    "intro": "Automotive cybersecurity is one of WhiteGuard's nine declared vertical specializations. The program spans three battlefields at once: the connected vehicle, the manufacturing line that builds it, and the dealer-network systems that sell and service it. WhiteGuard's automotive cybersecurity covers all three: telematics and over-the-air update channels, plant-floor robotics and ECU programming stations, and dealer-management systems holding customer and vehicle data. Generic industrial security solutions designed for general manufacturing are not enough. Automotive needs purpose-built controls.",
+    "features": [
+      {
+        "title": "Connected vehicle controls",
+        "description": "Telematics, OTA update paths, and connected services are tested as part of the same risk model."
+      },
+      {
+        "title": "Dealer-network protection",
+        "description": "Customer and vehicle data in sales and service systems is protected alongside plant systems."
+      }
+    ],
+    "illustrationCard": {
+      "title": "Three battlefields, one program",
+      "subtitle": "Connected vehicle channels, plant-floor controls, and dealer systems are modeled together instead of treated as separate risks."
+    }
+  },
+  "industrialManufacturingCyberBand": {
+    "illustrationCard": {
+      "title": "Line continuity map",
+      "subtitle": "IT and OT segmentation, recovery planning, and WhiteHawk defensive telemetry protect the process before an interruption becomes a shutdown."
+    },
+    "illustrationImageSrc": "/images/industries/section-industrial-manufacturing/line-continuity-map.svg",
+    "illustrationImageAlt": "Line continuity: manufacturing shield securing plant operations from cyber threats",
+    "headline": "Manufacturing cybersecurity",
+    "intro": "Manufacturing cybersecurity has one job that beats every other metric: keep the line running. A ransomware event taking a line down costs more per hour than most IT budgets carry per quarter. WhiteGuard's manufacturing cybersecurity and OT Cybersecurity programs serve regional industrial clients and deliver IT/OT segmentation, continuous OT monitoring through WhiteHawk's defensive module, Business Continuity & Recovery, and the GRC evidence auditors demand.",
+    "features": [
+      {
+        "title": "IT/OT segmentation",
+        "description": "Zones and conduits reduce blast radius between corporate systems and plant-floor control networks"
+      },
+      {
+        "title": "Business continuity",
+        "description": "Recovery planning keeps production decisions practical when ransomware pressure is highest."
+      }
+    ]
+  },
+  "industrialOilGasCyberBand": {
+    "headline": "Oil & Gas Cybersecurity",
+    "intro": "Oil & Gas Cybersecurity and Energy Cybersecurity protect the highest-stakes attack surface in the region. SCADA, drilling control rooms, refinery DCS, pipeline telemetry, and LNG-terminal automation are all valid targets, and a successful attack causes physical-world consequences far beyond data loss.",
+    "checklistItems": [
+      "SCADA visibility",
+      "Pipeline telemetry",
+      "Refinery DCS detection",
+      "24/7 SOC response"
+    ],
+    "illustrationCard": {
+      "title": "SCADA and pipeline control",
+      "subtitle": "Threat detection follows industrial telemetry from control room to pipeline and SOC response."
+    }
+  },
+  "seo": {
+    "title": "Industrial Services | WHITEGUARD",
+    "description": "Cybersecurity for manufacturing, automotive, oil & gas, and energy across MENA."
+  },
+  "ctaSectionData": {
+    "heading": {
+      "line1": "Protect uptime before",
+      "line2": "the line stops"
+    },
+    "subtext": "Bring automotive, manufacturing, oil & gas, and energy environments into one WhiteGuard program built around OT visibility, segmentation, 24/7 monitoring, GRC evidence, and recovery readiness.",
+    "button": {
+      "label": "Start an OT security review",
+      "hoverLabel": "Start an OT security review",
+      "variant": "cta",
+      "href": "/contact"
+    }
+  }
+}

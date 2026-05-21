@@ -509,7 +509,7 @@ export default function IndustriesSectionsSection({
                           <HoverSwapButton
                             href={industry.ctaHref}
                             label={"Learn more"}
-                            hoverLabel={"Learn more"}
+                            hoverLabel={`Learn more about ${industry.title}`}
                             variant="cta"
                             showChevrons={false}
                             className="w-full mt-5 xl:mt-0 md:w-auto text-sm   xl:text-lg  font-ano"

@@ -45,19 +45,20 @@ export const mainNav = [
     ],
   },
   { label: "Industries",small:true, href: "/industries",hasDropdown: true, subLinks: [
-    { label: "Financial services",icon: "/images/industries/financial.png", href: "/industries/financial-services", description: "Banks, fintech, insurance, leasing, payments, and other regulated finance across MENA." },
-    { label: "Healthcare services", icon: "/images/industries/healthcare.png", href: "/industries/healthcare", description: "Hospitals, clinics, health-tech, telehealth, and medical-device settings across MENA." },
-    { label: "Industrial IT services", icon: "/images/industries/manufacturing.png", href: "/industries/industrial-services", description: "Manufacturing, automotive, oil & gas, and energy organizations across MENA." },
+    { label: "Industries Services", icon: "/images/industries/icons/all-industries.svg", href: "/industries", description: "Comprehensive services designed around the unique needs of every industry across MENA." },
+    { label: "Financial services",icon: "/images/industries/icons/finance.svg", href: "/industries/financial-services", description: "Banks, fintech, insurance, leasing, payments, and other regulated finance across MENA." },
+    { label: "Healthcare services", icon: "/images/industries/icons/healthcare.svg", href: "/industries/healthcare", description: "Hospitals, clinics, health-tech, telehealth, and medical-device settings across MENA." },
+    { label: "Industrial  Services", icon: "/images/industries/icons/manufacturing.svg", href: "/industries/industrial-services", description: "Manufacturing, automotive, oil & gas, and energy organizations across MENA." },
      
   ] },
   // { label: "Industries", href: "/industries" },
-  { label: "Partners", href: "/partners" },
-   
+  
   { label: "Resources",small:true, href: "#.",hasDropdown: true, subLinks: [
-    { label: "Financial services", href: "/industries/financial-services",description: "from our team." },
-    { label: "About Us", href: "/about",description: "Learn more about our company and our mission." },
+    { label: "About Us",icon: "/images/logo-icon.svg", href: "/about",description: "Learn more about our company and our mission." },
+    { label: "Blogs",icon: "/images/resources/blogs-icon.png", href: "/resources",description: "Stay updated with the latest industry insights and security best practices." },
     
-  ] },
+  ] },{ label: "Partners", href: "/partners" },
+   
   // { label: "White Hawk", href: "https://www.whitehwk.com" },
 ] as const;
 

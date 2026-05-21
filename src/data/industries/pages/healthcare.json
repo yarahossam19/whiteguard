@@ -1,0 +1,202 @@
+{
+  "slug": "healthcare",
+  "title": "Healthcare Cybersecurity for Hospitals, Clinics, and Health-Tech.",
+  "description": "Healthcare cybersecurity is patient safety in another form. WhiteGuard's healthcare cybersecurity practice secures patient data, medical devices, and clinical systems across MENA, meeting HIPAA MENA expectations, GDPR, MOH KSA, and FDA medical-device guidance.",
+  "supportHeading": "How we support your sector",
+  "image": "/images/industries/hero/healthcare.svg",
+  "ctaLabel": "Assess healthcare risk",
+  "primaryCtaHref": "/contact",
+  "secondaryCta": {
+    "label": "Explore WhiteHawk",
+    "href": "https://www.whitehwk.com"
+  },
+  "bullets": [
+    "Built for hospitals, clinics, and health-tech providers.",
+    "Protects patient data, PHI, and clinical systems.",
+    "Secures medical devices and healthcare applications.",
+    "Provides 24/7 monitoring and healthcare risk visibility."
+  ],
+  "certifications": [
+    {
+      "id": 1,
+      "name": "ISO 27001:2013",
+      "src": "/images/industries/logos/healthcare/logo-2.svg"
+    },
+    {
+      "id": 2,
+      "name": "ISO 27001:2013",
+      "src": "/images/industries/logos/healthcare/logo-5.svg"
+    },
+    {
+      "id": 3,
+      "name": "ISO 27001:2013",
+      "src": "/images/industries/logos/healthcare/logo-3.svg"
+    },
+    {
+      "id": 4,
+      "name": "ISO 27001:2013",
+      "src": "/images/industries/logos/healthcare/logo-4.svg"
+    },
+    {
+      "id": 5,
+      "name": "ISO 27001:2013",
+      "src": "/images/industries/logos/healthcare/logo-1.svg"
+    }
+  ],
+  "seo": {
+    "title": "Healthcare Services | WHITEGUARD",
+    "description": "Cybersecurity for hospitals, clinics, health-tech, and medical-device environments across MENA."
+  },
+  "healthcareRegulatorsSection": {
+    "headline": "The Regulators Healthcare Cybersecurity Must Answer To",
+    "intro": "Healthcare cybersecurity sits at the intersection of patient safety and data privacy. The regulatory load varies by patient origin and operator type.",
+    "regulatorRows": [
+      [
+        {
+          "title": "HIPAA",
+          "body": "for handling US patient data; required by US partners and payers.",
+          "iconVariant": "compact"
+        },
+        {
+          "title": "GDPR",
+          "body": "for EU-resident patient data, including cross-border transfers.",
+          "iconVariant": "compact"
+        }
+      ],
+      [
+        {
+          "title": "MOH KSA",
+          "body": "cybersecurity requirements, for Saudi healthcare providers",
+          "iconVariant": "tall"
+        },
+        {
+          "title": "SCFHS Standards",
+          "body": "Saudi Commission for Health Specialties",
+          "iconVariant": "wide"
+        }
+      ],
+      [
+        {
+          "title": "ISO 13485 + IEC 62304",
+          "body": "for software as a medical device (SaMD)",
+          "iconVariant": "tall"
+        },
+        {
+          "title": "ISO/IEC 27001:2022",
+          "body": "ISMS baseline",
+          "iconVariant": "wide"
+        }
+      ],
+      [
+        {
+          "title": "FDA Cybersecurity Guidance",
+          "body": "for medical device security in regulated devices",
+          "iconVariant": "fda"
+        }
+      ]
+    ],
+    "illustrationCard": {
+      "title": "Regulatory evidence map",
+      "subtitle": "One healthcare program maps privacy, clinical systems, medical devices, and ISMS controls to the regulators that apply."
+    }
+  },
+  "healthcareClinicalControlsSection": {
+    "headline": "Clinical controls that protect care delivery",
+    "intro": "Healthcare cybersecurity cannot stop at policies. Device inventories, clinical-workflow training, and WhiteHawk visibility make the program operational across hospital networks, cloud workloads, SaaS applications, and medical devices.",
+    "features": [
+      {
+        "title": "Medical Device Security",
+        "description": "Network segmentation review, device inventory and risk scoring, vulnerability assessment of legacy and modern devices, and WhiteHawk Asset Management integration."
+      },
+      {
+        "title": "Cybersecurity Awareness Training",
+        "description": "Phishing simulation for physicians, nurses, billing, and admin, plus HIPAA-aligned awareness modules and incident-reporting drills."
+      },
+      {
+        "title": "WhiteHawk Platform",
+        "description": "Unified visibility across hospital networks, medical device security inventories, cloud workloads, and SaaS applications."
+      },
+      {
+        "title": "Clinical SOC Content",
+        "description": "Detection logic tuned to ransomware, credential theft, medical-device anomalies, and patient-care system behavior."
+      }
+    ],
+    "illustrationCard": {
+      "title": "Medical device security inventory",
+      "subtitle": "Device discovery, risk scoring, segmentation review, and WhiteHawk Asset Management keep clinical assets visible."
+    },
+    "inventoryRows": [
+      {
+        "iconSrc": "/images/industries/section-healthcare-clinical-controls/icon-mri.svg",
+        "iconAlt": "MRI system device icon",
+        "name": "MRI-03",
+        "status": "Analyzing....",
+        "statusTone": "muted"
+      },
+      {
+        "iconSrc": "/images/industries/section-healthcare-clinical-controls/icon-infusion.svg",
+        "iconAlt": "Infusion pump device icon",
+        "name": "Infusion-18",
+        "status": "Low Severity",
+        "statusTone": "success",
+        "showReview": true
+      },
+      {
+        "iconSrc": "/images/industries/section-healthcare-clinical-controls/icon-nurse.svg",
+        "iconAlt": "Clinical workstation icon",
+        "name": "CT-Gateway",
+        "status": "Hight Severity",
+        "statusTone": "warning",
+        "showReview": true
+      },
+      {
+        "iconSrc": "/images/industries/section-healthcare-clinical-controls/icon-nurse.svg",
+        "iconAlt": "Nurse station icon",
+        "name": "Nurse station",
+        "status": "Critical Severity",
+        "statusTone": "danger",
+        "showReview": true
+      }
+    ]
+  },
+  "healthcareEngagementSection": {
+    "headline": "How We Engage on Healthcare Cybersecurity",
+    "intro": "Healthcare delivery is networked, outsourced, and always on—which means engagements must tie privacy regimes, supplier risk, clinical continuity, and product security together. WhiteGuard aligns each phase to how hospitals, clinics, and health-tech vendors actually operate—from readiness for HIPAA/GDPR through secure SDLC and 24×7 SOC coverage.",
+    "cards": [
+      {
+        "variant": "chips",
+        "title": "HIPAA & GDPR Readiness",
+        "body": "Govern PHI and PII lifecycle, subprocessors, BAAs, DPIAs where needed, breach playbooks, and evidence your privacy office can consume—without freezing clinical workflows.",
+        "imageSrc": "/images/industries/section-healthcare-engagement/HIPAA-GDPR.svg",
+        "imageAlt": "HIPAA & GDPR Readiness"
+      },
+      {
+        "variant": "imageFade",
+        "title": "Source Code Review for Health-Tech Cybersecurity",
+        "body": "Structured review across repositories, release pipelines, and supporting infrastructure lowers defect escape before devices and clinician-facing apps reach production.",
+        "imageSrc": "/images/industries/section-healthcare-engagement/code-review.svg",
+        "imageAlt": "IDE view of application source code undergoing security-focused review."
+      },
+      {
+        "variant": "image",
+        "title": "24/7 SOC: Hospitals and Health-Tech",
+        "body": "Correlation across identities, workloads, integrations, endpoints, and cloud workloads—tiered alerting and response without turning the SOC into bedside noise.",
+        "imageSrc": "/images/industries/section-healthcare-engagement/soc-terminal.webp",
+        "imageAlt": "SOC analyst workspace with dashboards and alerts on monitors."
+      }
+    ]
+  },
+  "ctaSectionData": {
+    "heading": {
+      "line1": "Secure patient care",
+      "line2": "without slowing clinicians down"
+    },
+    "subtext": "Bring hospitals, clinics, and health-tech platforms into one WHITEGUARD program for privacy readiness, source code review, clinical SOC monitoring, medical device security, awareness training, and WhiteHawk visibility.",
+    "button": {
+      "label": "Start a Healthcare Security Program",
+      "hoverLabel": "Start a Healthcare Security Program",
+      "variant": "cta",
+      "href": "/contact"
+    }
+  }
+}
