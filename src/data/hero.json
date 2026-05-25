@@ -1,11 +1,7 @@
 {
   "headline": {
-    "line1": {
-      "bold": "The Cybersecurity",
-      "light": "Company Behind",
-      "end": ". "
-    },
-    "line2": { "bold": "MENA's Most", "light": "Critical Networks", "end": "" }
+    "line1": { "bold": "Cybersecurity ", "light": "Simplified", "end": ". " },
+    "line2": { "bold": "Protection ", "light": "Amplified", "end": "." }
   },
   "description": "WhiteGuard absorbs the cyber attack before it ever becomes the breach. The cybersecurity company defending MENA's banks, fintech's, insurers, healthcare, energy, and critical infrastructure.",
   "ctas": [

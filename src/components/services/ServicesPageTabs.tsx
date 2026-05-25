@@ -50,7 +50,7 @@ export default function ServicesPageTabs({
               sm:px-3.5 sm:text-[14px]
               lg:px-4 lg:py-2 lg:text-[18px] lg:leading-[32.5px]
               xl:px-5 xl:text-[20px]
-              ${isScrolled ? "lg:px-2! xl:px-4!" : ""}
+              ${isScrolled ? "lg:px-2! xl:px-1!" : ""}
               ${
                 isActive ? "text-white" : "text-[#52697A] hover:text-[#003859]"
               }`}

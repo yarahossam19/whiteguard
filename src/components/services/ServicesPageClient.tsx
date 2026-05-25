@@ -6,7 +6,9 @@ import ServicesPageHero from "@/components/services/ServicesPageHero";
 import ServicesPageTabs from "@/components/services/ServicesPageTabs";
 import ServiceCard from "@/components/services/ServiceCard";
 import ServicesPageFAQSection from "@/components/services/ServicesPageFAQSection";
-import ServicesPageBottomCTA from "@/components/services/ServicesPageBottomCTA";
+import ServicesPageBottomCTA, {
+  type BottomCtaHighlight,
+} from "@/components/services/ServicesPageBottomCTA";
 import { getServicesPageData } from "@/data/services-page";
 import { getServicesPageFaqForTab } from "@/data/services-page-faq";
 import type { ServiceCard as ServiceCardType } from "@/data/services-page";
@@ -106,6 +108,11 @@ function ServicesPageInner() {
         buttonLabel={bottomCta.buttonLabel}
         href={bottomCta.href}
         className="d-block w-full"
+        highlights={
+          "highlights" in bottomCta
+            ? (bottomCta as { highlights?: BottomCtaHighlight[] }).highlights
+            : undefined
+        }
       />
     </div>
   );

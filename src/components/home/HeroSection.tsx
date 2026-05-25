@@ -28,6 +28,7 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
 
                 <div className="flex  items-center xl:items-start gap-0 justify-center xl:justify-start">
                   <span className="font-light">{headline.line1.light}</span>
+                  <span className="font-extrabold">{headline.line1.end}</span>
                   <Image
                     src={decorations.sparkleTop}
                     width={65}
@@ -43,6 +44,7 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
                 </span>
                 <div className="flex  items-center gap-0 justify-center xl:justify-start">
                   <span className="font-light">{headline.line2.light}</span>
+                  <span className="font-extrabold">{headline.line2.end}</span>
                   <Image
                     width={65}
                     height={70}

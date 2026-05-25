@@ -63,8 +63,8 @@ export default function ServiceCard({ card }: ServiceCardProps) {
           hoverLabel={cta.label}
           variant="secondary"
           showChevrons={false}
-          showImg={false}
-          // imgSrc="/images/icons/arrow-right-2.svg"
+          showImg={true}
+          imgSrc="/images/icons/arrow-right-1.svg"
           className="px-6 py-2 text-[clamp(16px,1.4vw,18px)]  font-ano w-full flex-row-reverse"
         />
         <Link
@@ -85,7 +85,7 @@ export default function ServiceCard({ card }: ServiceCardProps) {
   );
 
   const imageBlock = (
-    <div className="relative h-[320px] w-full shrink-0 overflow-hidden rounded-[24px] shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] lg:h-[400px] lg:w-[50%]">
+    <div className="relative h-[320px] w-full shrink-0 overflow-hidden rounded-[24px] shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] lg:h-[400px] lg:w-[45%]">
       <Image
         src={image}
         alt={title}

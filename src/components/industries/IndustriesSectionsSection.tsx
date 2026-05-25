@@ -324,7 +324,7 @@ export default function IndustriesSectionsSection({
   };
 
   return (
-    <section className="relative w-full bg-white py-12    ">
+    <section className="relative w-full bg-white py-12 sm:py-16 xl:py-24">
       <div className="container">
         {/* Top header - dark background */}
         <div className="flex flex-col items-center text-center pb-10 sm:pb-16 xl:pb-24">
@@ -458,7 +458,7 @@ export default function IndustriesSectionsSection({
                       </div>
                       {/* Right: Content */}
                       <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col justify-between md:max-w-[54%] xl:max-w-none xl:min-h-[min(600px,70vh)]">
-                        <div className="flex flex-col gap-8 sm:gap-10 xl:gap-10">
+                        <div className="flex flex-col gap-8 sm:gap-10 xl:gap-12">
                           <div className="flex flex-col justify-stretch gap-4 sm:gap-6">
                             <h3 className="font-jakarta text-2xl font-bold text-[#003859] sm:text-3xl xl:text-4xl">
                               {industry.title}
@@ -478,51 +478,15 @@ export default function IndustriesSectionsSection({
                               </li>
                             ))}
                           </ul>
-                          {/* Certification logos */}
-                          {industry.certifications.length > 0 && (
-                            <div className="flex flex-col gap-4  ">
-                              <h4 className="font-jakarta text-sm font-medium text-[#52697A]">
-                                Supports
-                              </h4>
-
-                              <div className="flex flex-wrap justify-between items-center gap-8">
-                                {industry.certifications.map((cert) => (
-                                  <div
-                                    key={cert.id}
-                                    className="flex  items-center justify-center grayscale "
-                                  >
-                                    <Image
-                                      width={60}
-                                      height={60}
-                                      src={cert.src}
-                                      alt={cert.name}
-                                      className="h-full w-full object-contain max-h-[60px] max-w-[60px]"
-                                    />
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          )}
                         </div>
-                        <div className="flex flex-col gap-4">
-                          {" "}
-                          <HoverSwapButton
-                            href={industry.ctaHref}
-                            label={"Learn more"}
-                            hoverLabel={`Learn more about ${industry.title}`}
-                            variant="cta"
-                            showChevrons={false}
-                            className="w-full mt-5 xl:mt-0 md:w-auto text-sm   xl:text-lg  font-ano"
-                          />
-                          <HoverSwapButton
-                            href={"/contact"}
-                            label={industry.ctaLabel}
-                            hoverLabel={`Request  ${industry.title}`}
-                            variant="secondary"
-                            showChevrons={false}
-                            className="w-full "
-                          />
-                        </div>
+                        <HoverSwapButton
+                          href={industry.ctaHref}
+                          label={industry.ctaLabel}
+                          hoverLabel={industry.ctaLabel}
+                          variant="cta"
+                          showChevrons={false}
+                          className="w-full mt-5 xl:mt-0 md:w-auto text-sm   xl:text-lg  font-ano"
+                        />
                       </div>
                     </motion.article>
                   </div>

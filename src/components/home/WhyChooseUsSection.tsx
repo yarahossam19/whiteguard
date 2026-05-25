@@ -74,8 +74,9 @@ export default function WhyChooseUsSection({ data }: WhyChooseUsSectionProps) {
                 key={certification.id}
                 src={certification.image}
                 alt={certification.title}
-                width={100}
-                height={100}
+                width={90}
+                height={90}
+                className=" object-contain max-h-[90px] max-w-[90px]"
               />
             ))}
           </div>
