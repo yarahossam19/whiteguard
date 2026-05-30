@@ -35,7 +35,7 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
                     height={68}
                     alt=""
                     aria-hidden="true"
-                    className="  ms-4 xl:block  xl:w-[65px] xl:h-[68px] w-[65px] h-[40px] object-contain -rotate-[0deg] pointer-events-none select-none"
+                    className="  ms-4 hidden lg:block   xl:w-[65px] xl:h-[68px] w-[65px] h-[40px] object-contain -rotate-[0deg] pointer-events-none select-none"
                   />
                 </div>
 
@@ -51,7 +51,7 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
                     src={decorations.sparkleBottom}
                     alt=""
                     aria-hidden="true"
-                    className="  ms-4 xl:block  xl:w-[65px] xl:h-[70px] w-[40px] h-[40px] object-contain -rotate-[0deg] pointer-events-none select-none"
+                    className="  ms-4 hidden lg:block xl:w-[65px] xl:h-[70px] w-[40px] h-[40px] object-contain -rotate-[0deg] pointer-events-none select-none"
                   />
                 </div>
               </h1>

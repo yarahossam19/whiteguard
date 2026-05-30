@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import type { TestimonialsSectionData } from "@/data/testimonials-section";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { HoverSwapButton } from "../ui/HoverSwapButton";
 
@@ -55,20 +56,20 @@ export default function TestimonialsSection({
         </div>
         {/* Swiper Cards */}
         <Swiper
-          modules={[Navigation, Autoplay]}
+          modules={[Navigation, Autoplay, Pagination]}
           centeredSlides={true}
           centeredSlidesBounds={true}
           slidesPerView={1}
           spaceBetween={28}
-          // initialSlide={1}
-          loop={false}
+          loop={true}
           autoplay={{
-            delay: 2500,
+            delay: 2000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
-          speed={2500}
+          speed={1500}
           navigation
+          pagination={{ clickable: true }}
           grabCursor
           breakpoints={{
             576: {
@@ -92,12 +93,12 @@ export default function TestimonialsSection({
               centeredSlidesBounds: false,
             },
           }}
-          className="overflow-visible! pb-4 [&_.swiper]:pb-1 [&_.swiper-button-next]:text-[#003859] [&_.swiper-button-prev]:text-[#003859] [&_.swiper-slide]:box-border [&_.swiper-slide]:transition-[width] [&_.swiper-slide]:duration-500 [&_.swiper-slide]:ease-out"
+          className="testimonials-swiper overflow-visible! pb-4 [&_.swiper]:pb-1 [&_.swiper-slide]:box-border"
         >
           {testimonials.map((t) => (
             <SwiperSlide key={t.id} className="box-border!">
               <div
-                className="transition-all duration-500 ease-out flex min-h-[450px] w-full flex-col rounded-[28px] border p-7"
+                className="flex h-[400px] lg:h-[300px] w-full flex-col rounded-[28px] border p-7"
                 style={{
                   borderColor: "#e0f2fe",
                   background: "#fff",
@@ -129,7 +130,7 @@ export default function TestimonialsSection({
           {/* CTA Card */}
           <SwiperSlide className="box-border! ">
             <div
-              className="flex min-h-[450px] w-full flex-col justify-between rounded-[28px] border p-7"
+              className="flex h-[400px] lg:h-[300px] w-full flex-col justify-between rounded-[28px] border p-7"
               style={{
                 borderColor: "#abe0ff",
                 background:

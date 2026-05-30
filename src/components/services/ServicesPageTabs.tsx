@@ -33,7 +33,7 @@ export default function ServicesPageTabs({
       mx-auto lg:w-fit lg:grid lg:max-w-none lg:grid-cols-5 lg:items-center lg:justify-center lg:gap-1 lg:overflow-visible lg:px-6 lg:py-3
         ${
           isScrolled
-            ? "fixed bg-white/10 top-[10%] lg:top-[15%] left-1/2 -translate-x-1/2"
+            ? "md:fixed bg-white/10 top-[10%] lg:top-[15%] left-1/2 -translate-x-1/2"
             : "relative bg-white/95 top-[23%] lg:mt-8 "
         } 
        `}

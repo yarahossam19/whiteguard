@@ -72,7 +72,7 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
           </div>
 
           {/* Card + background area - flex grow, center card vertically */}
-          <div className="relative flex min-h-[400px] min-w-0 flex-1 items-center justify-center overflow-hidden xl:min-h-[577px]">
+          <div className="relative flex min-h-[400px] min-w-0 flex-1 items-start lg:items-center justify-start lg:justify-center overflow-hidden xl:min-h-[577px]">
             {/* Background text - large, faded, marquee horizontal, behind card, never disappears */}
             <div
               className="absolute inset-0 flex items-center overflow-hidden pointer-events-none z-0"
@@ -95,7 +95,7 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
 
             {/* Cards - swipe from behind (new card slides up and overlays previous) */}
             <div className="container relative z-10 flex justify-center px-0">
-              <div className="relative z-10 h-[340px] w-full max-w-[90%] shrink-0 translate-y-8 overflow-hidden self-center pt-12 sm:h-[420px] sm:max-w-[90%] sm:translate-y-12 sm:pt-16 xl:h-[577px] xl:max-w-[400px] xl:pt-20">
+              <div className="relative z-10 h-[400px] lg:h-[340px] w-full max-w-[90%] shrink-0 translate-y-8 overflow-hidden self-center pt-12 sm:h-[420px] sm:max-w-[90%] sm:translate-y-12 sm:pt-16 xl:h-[577px] xl:max-w-[400px] xl:pt-20">
                 {services.map((service, i) => {
                   const slideFromBottom = 600;
                   const isFirst = i === 0;
@@ -107,28 +107,21 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
                    * Last card: slide in, long plateau (readable), tiny tail → progress 1.
                    * Uses 5 stops so opacity/y stay flat across most of the tail scroll.
                    */
-                  const inputRange =
-                    isLast
-                      ? [
-                          0,
-                          0.795,
-                          0.852,
-                          0.942,
-                          1,
-                        ]
-                      : isFirst
-                        ? [0, 0, segment + pad, 1]
-                        : isPenultimate
-                          ? [0, 0.46, 0.54, 0.79, 1]
-                          : i === 1
-                            ? [0, 0.22, 0.3, 0.46, 1]
-                            : [
-                                0,
-                                i * segment,
-                                (i + 1) * segment,
-                                Math.min((i + 2) * segment, 1),
-                                1,
-                              ];
+                  const inputRange = isLast
+                    ? [0, 0.795, 0.852, 0.942, 1]
+                    : isFirst
+                      ? [0, 0, segment + pad, 1]
+                      : isPenultimate
+                        ? [0, 0.46, 0.54, 0.79, 1]
+                        : i === 1
+                          ? [0, 0.22, 0.3, 0.46, 1]
+                          : [
+                              0,
+                              i * segment,
+                              (i + 1) * segment,
+                              Math.min((i + 2) * segment, 1),
+                              1,
+                            ];
                   const yRange = isFirst
                     ? [0, 0, 0, 0]
                     : isLast

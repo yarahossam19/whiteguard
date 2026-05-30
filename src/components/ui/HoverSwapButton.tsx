@@ -92,7 +92,7 @@ export function HoverSwapButton(props: HoverSwapButtonProps) {
       {/* Hover: Light blue glossy */}
       <span className="absolute inset-0 rounded-[12px] border-2 border-[#57B1FF] bg-gradient-to-b from-[#E8F7FF] to-[#ABE0FF] opacity-0 shadow-[0px_0px_24px_rgba(171,224,255,0.6)] transition-opacity duration-300 ease-out group-hover:opacity-100" />
       {/* Text: default white, hover dark blue */}
-      <span className="relative z-10 flex items-center gap-2">
+      <div className="relative z-10 flex items-center gap-2">
         {showChevrons && <ChevronIcon />}
         {showImg && (
           <Image
@@ -114,7 +114,7 @@ export function HoverSwapButton(props: HoverSwapButtonProps) {
           </span>
         </span>
         {showChevrons && <ChevronIcon />}
-      </span>
+      </div>
     </>
   );
 
@@ -123,7 +123,7 @@ export function HoverSwapButton(props: HoverSwapButtonProps) {
       <button
         type={type}
         disabled={disabled}
-        className={`group relative inline-flex w-full items-center justify-center gap-2 rounded-[12px] font-ano font-normal duration-300 ease-out px-6 py-3 text-lg disabled:opacity-70 disabled:cursor-not-allowed ${className}`}
+        className={`group relative inline-flex w-full items-center justify-center gap-2 rounded-[12px] font-ano font-normal duration-300 ease-out px-3 lg:px-6 py-3 text-lg disabled:opacity-70 disabled:cursor-not-allowed ${className}`}
       >
         {primaryButtonContent}
       </button>
@@ -139,8 +139,8 @@ export function HoverSwapButton(props: HoverSwapButtonProps) {
           background: "linear-gradient(180deg, #0087D7 0%, #81D0FF 100%)",
         }}
       >
-        <span
-          className={`flex items-center justify-center gap-2 rounded-[5px] bg-white px-4 py-2 text-lg transition-colors duration-300 ease-out group-hover:bg-[#ABE0FF]/30 ${className}`}
+        <div
+          className={`flex items-center justify-center gap-2 rounded-[5px] bg-white px-2 lg:px-4 py-2 text-sm lg:text-lg transition-colors duration-300 ease-out group-hover:bg-[#ABE0FF]/30 ${className}`}
         >
           {showChevrons && !showArrow && <ChevronIcon />}
           {showImg && (
@@ -163,7 +163,7 @@ export function HoverSwapButton(props: HoverSwapButtonProps) {
             </span>
           </span>
           {showArrow ? <ArrowDownIcon /> : showChevrons && <ChevronIcon />}
-        </span>
+        </div>
       </Link>
     );
   }

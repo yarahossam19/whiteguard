@@ -246,7 +246,9 @@ button, a {
   animation: ping-slow 4s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
-.testimonials-section .swiper-button-prev, .swiper-button-next {
+/* Desktop: prev/next arrows */
+.testimonials-section .swiper-button-prev,
+.testimonials-section .swiper-button-next {
   color: var(--primary-600);
   padding: 10px;
   border-radius: 50%;
@@ -255,11 +257,48 @@ button, a {
   transition: all 0.3s ease;
 }
 
-.testimonials-section .swiper-button-prev:hover, .swiper-button-next:hover {
+.testimonials-section .swiper-button-prev:hover,
+.testimonials-section .swiper-button-next:hover {
   background: var(--primary-600);
   color: var(--UI-Colors-Background-main-bg);
   transition: all 0.3s ease;
 }
+
+/* Mobile: dots instead of arrows */
+.testimonials-section .testimonials-swiper .swiper-pagination {
+  position: relative;
+  margin-top: 1.5rem;
+  bottom: auto !important;
+}
+
+.testimonials-section .testimonials-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px !important;
+  background: #c2d5e3;
+  opacity: 1;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.testimonials-section .testimonials-swiper .swiper-pagination-bullet-active {
+  background: #0087d7;
+  transform: scale(1.15);
+}
+
+@media (max-width: 1023px) {
+
+  .testimonials-section .testimonials-swiper .swiper-button-prev,
+  .testimonials-section .testimonials-swiper .swiper-button-next {
+    display: none !important;
+  }
+}
+
+/* 
+@media (min-width: 1024px) {
+  .testimonials-section .testimonials-swiper .swiper-pagination {
+    display: none !important;
+  }
+} */
 
 /* Swiper slidesPerView:auto needs explicit widths; commas in min() break Tailwind arbitrary classes */
 @media (max-width: 1023px) {
@@ -271,12 +310,7 @@ button, a {
 }
 
 @media (min-width: 1024px) {
-  .testimonials-section .swiper-slide:not(.swiper-slide-active) {
-    width: min(280px, calc((100vw - 2rem) * 0.42));
-    box-sizing: border-box;
-  }
-
-  .testimonials-section .swiper-slide.swiper-slide-active {
+  .testimonials-section .swiper-slide {
     width: min(560px, calc((100vw - 2rem) * 0.84));
     box-sizing: border-box;
   }

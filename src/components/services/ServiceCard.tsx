@@ -65,7 +65,7 @@ export default function ServiceCard({ card }: ServiceCardProps) {
           showChevrons={false}
           showImg={true}
           imgSrc="/images/icons/arrow-right-1.svg"
-          className="px-6 py-2 text-[clamp(16px,1.4vw,18px)]  font-ano w-full flex-row-reverse"
+          className="px-2 md:px-3 lg:px-6 py-2 text-[clamp(14px,1.1vw,18px)]  font-ano w-full flex-row-reverse"
         />
         <Link
           href={`/services/${card.link}`}
