@@ -27,7 +27,12 @@ build_and_push_to_ecr:
     - echo "{\"credHelpers\":{\"${ECR_REGISTRY}\":\"ecr-login\"}}" > ~/.docker/config.json
     - cat ~/.docker/config.json
   script:
-    - docker build --pull -t "$IMAGE_URI:$IMAGE_TAG" -t "$IMAGE_URI:latest" .
+    - test -n "$NEXT_PUBLIC_RECAPTCHA_SITE_KEY"
+    - |
+      docker build --pull \
+        --build-arg NEXT_PUBLIC_RECAPTCHA_SITE_KEY="$NEXT_PUBLIC_RECAPTCHA_SITE_KEY" \
+        -t "$IMAGE_URI:$IMAGE_TAG" \
+        -t "$IMAGE_URI:latest" .
     - docker push "$IMAGE_URI:$IMAGE_TAG"
     - docker push "$IMAGE_URI:latest"
   rules:
