@@ -90,7 +90,7 @@ export default function WhiteHawkSection({ data }: WhiteHawkSectionProps) {
                 hoverLabel={cta.hoverLabel}
                 variant={cta.variant as "cta" | "secondary"}
                 showChevrons={false}
-                className="px-6 py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano w-full xl:w-auto"
+                className="px-6 py-[14px] text-[clamp(14px,1.1vw,24px)]  font-ano w-full xl:w-auto"
               />
 
               <p

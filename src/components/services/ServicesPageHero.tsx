@@ -78,7 +78,7 @@ export default function ServicesPageHero({
                 hoverLabel={hero.ctaPrimary.label}
                 variant={"cta"}
                 showChevrons={false}
-                className={`${hero.ctaSecondary?.label ? "px-6" : "px-12"} py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano w-full md:w-auto`}
+                className={`${hero.ctaSecondary?.label ? "px-6" : "px-12"} py-[14px] text-[clamp(14px,1.1vw,24px)]  font-ano w-full md:w-auto`}
               />
             )}
             {hero.ctaSecondary?.label && (
@@ -88,7 +88,7 @@ export default function ServicesPageHero({
                 hoverLabel={hero.ctaSecondary.label}
                 variant={"secondary"}
                 showChevrons={false}
-                className="px-6 py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano w-full md:w-auto"
+                className="px-6 py-[14px] text-[clamp(14px,1.1vw,24px)]  font-ano w-full md:w-auto"
               />
             )}
           </div>

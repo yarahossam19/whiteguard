@@ -123,7 +123,7 @@ export function HoverSwapButton(props: HoverSwapButtonProps) {
       <button
         type={type}
         disabled={disabled}
-        className={`group relative inline-flex w-full items-center justify-center gap-2 rounded-[12px] font-ano font-normal duration-300 ease-out px-3 lg:px-6 py-3 text-lg disabled:opacity-70 disabled:cursor-not-allowed ${className}`}
+        className={`group relative inline-flex w-full items-center justify-center gap-2 rounded-[12px] font-ano font-normal duration-300 ease-out px-3 lg:px-6 py-3 text-[clamp(14px,1.1vw,24px)] disabled:opacity-70 disabled:cursor-not-allowed ${className}`}
       >
         {primaryButtonContent}
       </button>
@@ -134,13 +134,13 @@ export function HoverSwapButton(props: HoverSwapButtonProps) {
     return (
       <Link
         href={href ?? "#"}
-        className="group w-full md:w-auto inline-flex rounded-lg p-[2px] font-ano font-normal text-[#002439] text-base!"
+        className="group w-full md:w-auto inline-flex rounded-lg p-[2px] font-ano font-normal text-[#002439] text-[clamp(14px,1.1vw,24px)]"
         style={{
           background: "linear-gradient(180deg, #0087D7 0%, #81D0FF 100%)",
         }}
       >
         <div
-          className={`flex items-center justify-center gap-2 rounded-[5px] bg-white px-2 lg:px-4 py-2 text-sm lg:text-lg transition-colors duration-300 ease-out group-hover:bg-[#ABE0FF]/30 ${className}`}
+          className={`flex items-center justify-center gap-2 rounded-[5px] bg-white px-2 lg:px-4 py-2 text-sm lg:text-[clamp(14px,1.1vw,24px)] transition-colors duration-300 ease-out group-hover:bg-[#ABE0FF]/30 ${className}`}
         >
           {showChevrons && !showArrow && <ChevronIcon />}
           {showImg && (
@@ -172,7 +172,9 @@ export function HoverSwapButton(props: HoverSwapButtonProps) {
     <Link
       href={href ?? "#"}
       className={`group relative inline-flex items-center justify-center gap-2 rounded-[12px] font-ano font-normal duration-300 ease-out ${
-        isNav ? "px-4 py-2.5 text-base" : "px-6 py-3 text-lg"
+        isNav
+          ? "px-4 py-2.5 text-[clamp(14px,1.1vw,24px)]"
+          : "px-6 py-3 text-[clamp(14px,1.1vw,24px)]"
       } ${className}`}
     >
       {primaryButtonContent}

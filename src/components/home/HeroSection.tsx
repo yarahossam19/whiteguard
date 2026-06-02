@@ -70,7 +70,7 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
                   hoverLabel={cta.hoverLabel}
                   variant={cta.variant as "cta" | "secondary"}
                   showChevrons={false}
-                  className="px-6 py-[14px] text-[clamp(16px,1.4vw,24px)]  font-ano w-full md:w-auto"
+                  className="px-3 lg:px-6  py-[14px] text-[clamp(14px,1.1vw,24px)]  font-ano w-full md:w-auto"
                 />
               ))}
             </div>
