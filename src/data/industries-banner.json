@@ -19,5 +19,31 @@
       "variant": "secondary"
     }
   ],
-  "videoSrc": "/videos/industry-banner.mp4"
+  "videoSrc": "/videos/industry-banner.mp4",
+  "rotatingIcons": [
+    {
+      "src": "/images/industries/icons/flip-1.svg",
+      "alt": "Financial services"
+    },
+    {
+      "src": "/images/industries/icons/flip-2.svg",
+      "alt": "Healthcare"
+    },
+    {
+      "src": "/images/industries/icons/flip-3.svg",
+      "alt": "Manufacturing"
+    },
+    {
+      "src": "/images/industries/icons/flip-4.svg",
+      "alt": "Industrial"
+    },
+    {
+      "src": "/images/industries/icons/flip-5.svg",
+      "alt": "Energy"
+    },
+    {
+      "src": "/images/industries/icons/flip-6.svg",
+      "alt": "Government"
+    }
+  ]
 }

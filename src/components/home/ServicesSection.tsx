@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 import {
+  AnimatePresence,
   motion,
   useScroll,
   useTransform,
@@ -15,13 +16,10 @@ interface ServicesSectionProps {
 }
 
 const N = 4; // number of services
-/** More vh per card = slower scroll through each frame; last card has extra hold in inputRange below. */
-const VH_PER_SERVICE = 130;
-/**
- * Extra scroll length after animations — keeps sticky pinned so card 4 can be read before the next section.
- * Taller track also stretches earlier phases slightly (fractions unchanged).
- */
-const SCROLL_TAIL_HOLD_VH = 240;
+/** vh per card — balance: not as long as 130, not as short as 48 */
+const VH_PER_SERVICE = 78;
+/** Hold after last card before unpinning */
+const SCROLL_TAIL_HOLD_VH = 110;
 
 export default function ServicesSection({ data }: ServicesSectionProps) {
   const { heading, subtitle, services } = data;
@@ -30,17 +28,15 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    // End marker later → more scroll usable while pinned before progress hits 1
-    offset: ["start center", "end center"],
+    offset: ["start 0.72", "end 0.28"],
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const p = Math.max(0, Math.min(latest, 1));
-    /** Match keyed scroll phases below — not equal N segments */
     let i: number;
     if (p < 0.2) i = 0;
-    else if (p < 0.42) i = 1;
-    else if (p < 0.8) i = 2;
+    else if (p < 0.4) i = 1;
+    else if (p < 0.62) i = 2;
     else i = 3;
     setActiveIndex(i);
   });
@@ -73,24 +69,37 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
 
           {/* Card + background area - flex grow, center card vertically */}
           <div className="relative flex min-h-[400px] min-w-0 flex-1 items-start lg:items-center justify-start lg:justify-center overflow-hidden xl:min-h-[577px]">
-            {/* Background text - large, faded, marquee horizontal, behind card, never disappears */}
+            {/* Background label — marquee + slide/flip when active service changes */}
             <div
-              className="absolute inset-0 flex items-center overflow-hidden pointer-events-none z-0"
+              className="absolute inset-0 overflow-hidden pointer-events-none z-0"
+              style={{ perspective: 1400 }}
               aria-hidden
             >
-              <div className="flex animate-services-marquee whitespace-nowrap items-center">
-                {Array(12)
-                  .fill(services[activeIndex].label)
-                  .map((label, i) => (
-                    <span
-                      key={`${activeIndex}-${i}`}
-                      className="mx-6 text-[clamp(120px,20vw,200px)] font-extrabold leading-none tracking-tighter"
-                      style={{ color: "#e0e6eb" }}
-                    >
-                      {label}
-                    </span>
-                  ))}
-              </div>
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={services[activeIndex].id}
+                  className="absolute inset-0 flex items-center overflow-hidden"
+                  style={{ transformOrigin: "50% 50%" }}
+                  initial={{ opacity: 0, y: 72, rotateX: 52 }}
+                  animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                  exit={{ opacity: 0, y: -48, rotateX: -42 }}
+                  transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <div className="flex animate-services-marquee whitespace-nowrap items-center">
+                    {Array(12)
+                      .fill(services[activeIndex].label)
+                      .map((label, i) => (
+                        <span
+                          key={i}
+                          className="mx-6 text-[clamp(120px,20vw,200px)] font-extrabold leading-none tracking-tighter"
+                          style={{ color: "#e0e6eb" }}
+                        >
+                          {label}
+                        </span>
+                      ))}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
 
             {/* Cards - swipe from behind (new card slides up and overlays previous) */}
@@ -103,18 +112,14 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
                   const isPenultimate = i === N - 2;
 
                   const pad = 0.03;
-                  /**
-                   * Last card: slide in, long plateau (readable), tiny tail → progress 1.
-                   * Uses 5 stops so opacity/y stay flat across most of the tail scroll.
-                   */
                   const inputRange = isLast
-                    ? [0, 0.795, 0.852, 0.942, 1]
+                    ? [0, 0.74, 0.8, 0.92, 1]
                     : isFirst
                       ? [0, 0, segment + pad, 1]
                       : isPenultimate
-                        ? [0, 0.46, 0.54, 0.79, 1]
+                        ? [0, 0.44, 0.52, 0.72, 1]
                         : i === 1
-                          ? [0, 0.22, 0.3, 0.46, 1]
+                          ? [0, 0.2, 0.28, 0.44, 1]
                           : [
                               0,
                               i * segment,

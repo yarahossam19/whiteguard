@@ -1,40 +1,52 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import { useEffect, useMemo, useState } from "react";
 import type { ClientLogosData } from "@/data/client-logos";
 import type { PartnersLogosData } from "@/data/partners-logos";
 import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
+
 type LogosData = ClientLogosData | PartnersLogosData;
+
+const FACE_STYLE = {
+  backfaceVisibility: "hidden" as const,
+  WebkitBackfaceVisibility: "hidden" as const,
+  MozBackfaceVisibility: "hidden" as const,
+};
+
+function logosPerPage(isMobile: boolean, isTablet: boolean) {
+  if (isMobile) return 2;
+  if (isTablet) return 4;
+  return 7;
+}
+
+function sliceLogosPage(logos: LogosData, pageIndex: number, perPage: number) {
+  const start = (pageIndex * perPage) % logos.length;
+  return Array.from(
+    { length: perPage },
+    (_, i) => logos[(start + i) % logos.length],
+  );
+}
 
 function LogoGrid({ items }: { items: LogosData }) {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 items-center justify-center gap-8">
+    <div className="grid grid-cols-2 items-center justify-center gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
       {items.map((logo, i) => (
         <div
           key={`${logo.id}-${i}`}
-          className="flex items-center justify-center opacity-90 transition hover:opacity-100"
+          className="flex items-center justify-center opacity-90 transition-opacity hover:opacity-100"
         >
           <Image
             src={logo.src}
             alt={logo.alt}
             width={120}
             height={100}
-            className={`w-[${parseInt(logo.width)}px] h-auto max-h-[56px] object-contain`}
+            style={{ width: `${parseInt(logo.width, 10) || 100}px` }}
+            className="h-auto max-h-[56px] w-auto object-contain"
           />
         </div>
       ))}
     </div>
-  );
-}
-
-function getLogosForPage(logos: LogosData, pageIndex: number) {
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
-  const isTablet = useMediaQuery({ query: "(max-width: 1023px)" });
-  const numLogos = isMobile ? 2 : isTablet ? 4 : 7;
-  const start = (pageIndex * numLogos) % logos.length;
-  return Array.from(
-    { length: numLogos },
-    (_, i) => logos[(start + i) % logos.length],
   );
 }
 
@@ -47,34 +59,65 @@ export default function ClientLogos({
 }) {
   const [pageIndex, setPageIndex] = useState(0);
   const [flip, setFlip] = useState(false);
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  const visible = getLogosForPage(logos, pageIndex);
-  const next = getLogosForPage(logos, pageIndex + 1);
+
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const isTablet = useMediaQuery({ query: "(max-width: 1023px)" });
+  const perPage = logosPerPage(isMobile, isTablet);
+  const pageCount = Math.max(1, Math.ceil(logos.length / perPage));
+
+  const visible = useMemo(
+    () => sliceLogosPage(logos, pageIndex, perPage),
+    [logos, pageIndex, perPage],
+  );
+
+  const next = useMemo(
+    () => sliceLogosPage(logos, pageIndex + 1, perPage),
+    [logos, pageIndex, perPage],
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
       setFlip(true);
-
       setTimeout(() => {
-        setPageIndex((p) => (p + 1) % Math.ceil(logos.length / visible.length));
+        setPageIndex((p) => (p + 1) % pageCount);
         setFlip(false);
       }, 350);
     }, 3000);
     return () => clearInterval(interval);
-  }, [logos.length, visible.length]);
+  }, [pageCount]);
 
   return (
-    <div className={`w-full bg-white relative z-9 pb-10 ${className}`}>
+    <div className={`relative z-9 w-full bg-white pb-10 ${className}`}>
       <div className="container">
-        <div className="perspective-[1000px]">
+        <div
+          className="min-h-[72px] overflow-hidden"
+          style={{ perspective: 1000 }}
+        >
           <div
-            className="relative  transform-3d transition-transform duration-300 ease-in-out"
-            style={{ transform: flip ? "rotateX(270deg)" : "rotateX(180deg)" }}
+            className="relative transition-transform duration-300 ease-in-out"
+            style={{
+              transformStyle: "preserve-3d",
+              transform: flip ? "rotateX(270deg)" : "rotateX(180deg)",
+            }}
           >
-            <div className="backface-hidden">
+            <div
+              style={{
+                ...FACE_STYLE,
+                transform: "rotateX(180deg)",
+              }}
+            >
               <LogoGrid items={visible} />
             </div>
-            <div className="absolute inset-0 backface-hidden transform-[rotateX(180deg)]">
+            <div
+              className="absolute inset-0"
+              style={{
+                visibility: flip ? "visible" : "hidden",
+                ...FACE_STYLE,
+                transform: "rotateX(270deg)  ",
+                /* Firefox often draws both faces when idle — hide back until flip */
+              }}
+              aria-hidden={!flip}
+            >
               <LogoGrid items={next} />
             </div>
           </div>

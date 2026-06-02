@@ -44,6 +44,7 @@ export default function IndustryHeroSection({
               >
                 {headline}
               </h1>
+
               <p className="font-jakarta text-base font-normal leading-[1.5] text-[#52697a] xl:text-lg xl:leading-relaxed">
                 {intro}
               </p>
