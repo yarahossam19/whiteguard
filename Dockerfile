@@ -40,15 +40,18 @@ RUN addgroup --system --gid 1001 nodejs \
 
 COPY package.json package-lock.json ./
 
-# Install production dependencies + TypeScript only
-# TypeScript is needed at runtime because the project uses next.config.ts
-RUN npm ci --omit=dev \
-    && npm install --no-save typescript \
+# Important:
+# We install full dependencies, not only production dependencies,
+# because this project uses next.config.ts and Next needs TypeScript at runtime.
+RUN npm ci \
     && npm cache clean --force
 
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/next.config.ts ./next.config.ts
+
+# Ensure the non-root user can read the app files
+RUN chown -R nextjs:nodejs /app
 
 USER nextjs
 
