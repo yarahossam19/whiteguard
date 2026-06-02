@@ -13,11 +13,13 @@ RUN npm ci
 
 COPY . .
 
+# Public variable required at Next.js build time
 ARG NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 ENV NEXT_PUBLIC_RECAPTCHA_SITE_KEY=$NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 
 RUN npm run build
 
+# Remove build cache to reduce final image size
 RUN rm -rf .next/cache
 
 
@@ -53,3 +55,4 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
   CMD node -e "fetch('http://127.0.0.1:3000').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
 
 CMD ["npm", "run", "start"]
+
