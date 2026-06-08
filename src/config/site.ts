@@ -59,7 +59,7 @@ export const mainNav = [
     
   ] },
    
-  // { label: "White Hawk", href: "https://www.whitehwk.com" },
+  // { label: "White Hawk", href: "https://whitehawk.io" }, 
 ] as const;
 
 export const footerNav = {
@@ -79,7 +79,7 @@ export const footerNav = {
     { label: "Blogs", href: "/resources" }, 
   ],
   platform: [
-    { label: "White Hawk", href: "https://www.whitehwk.com" },
+    { label: "White Hawk", href: "https://whitehawk.io" },
    
   ],
 } as const;

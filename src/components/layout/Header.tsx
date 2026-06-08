@@ -101,7 +101,7 @@ export function Header() {
 
         <div className="hidden xl:flex   items-center gap-4">
           <HoverSwapButton
-            href="https://www.whitehwk.com"
+            href="https://whitehawk.io"
             label="White Hawk"
             hoverLabel="White Hawk"
             variant="secondary"
@@ -231,7 +231,7 @@ export function Header() {
             })}
 
             <Link
-              href="https://www.whitehwk.com"
+              href="https://whitehawk.io"
               onClick={closeMobileMenu}
               className="mt-4 block rounded-xl border border-[#0087D7]  px-3 py-2 text-center text-lg font-medium text-[#0087D7] shadow-[0px_10px_40px_0px_var(--primary-glow)] duration-300 ease-out transition-[opacity,box-shadow] hover:opacity-95 hover:shadow-[0px_10px_50px_0px_rgba(87,177,255,0.45)] flex items-center justify-center gap-2"
             >
