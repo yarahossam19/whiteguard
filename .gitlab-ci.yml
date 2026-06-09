@@ -64,12 +64,17 @@ deploy_to_ec2:
     # Prepare app directory on EC2
     - ssh "$EC2_USER@$EC2_HOST" "mkdir -p '$APP_ENV_DIR'"
 
-    # Copy runtime environment file to EC2 if APP_ENV_FILE exists
+    # Copy runtime environment file to EC2 (SMTP, RECAPTCHA_SECRET_KEY, CONTACT_TO_EMAIL, …)
     - |
       if [ -n "${APP_ENV_FILE:-}" ] && [ -f "$APP_ENV_FILE" ]; then
+        grep -qE '^RECAPTCHA_SECRET_KEY=.+' "$APP_ENV_FILE" || {
+          echo "ERROR: APP_ENV_FILE must set RECAPTCHA_SECRET_KEY (server-side reCAPTCHA secret)."
+          exit 1
+        }
         scp "$APP_ENV_FILE" "$EC2_USER@$EC2_HOST:$APP_ENV_DIR/.env"
       else
-        ssh "$EC2_USER@$EC2_HOST" "touch '$APP_ENV_DIR/.env'"
+        echo "ERROR: APP_ENV_FILE is missing — production contact form needs runtime env (RECAPTCHA_SECRET_KEY, SMTP, …)."
+        exit 1
       fi
 
     # Login EC2 Docker to ECR without AWS CLI on EC2

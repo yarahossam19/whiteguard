@@ -17,7 +17,7 @@ import { HoverSwapButton } from "../ui/HoverSwapButton";
 import { PartnerCountryMultiSelect } from "@/components/partners/PartnerCountryMultiSelect";
 
 const RECAPTCHA_SITE_KEY =
-  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY?.trim() ?? "";
+  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY?.trim() ?? "6Le0FN0sAAAAAMk9rrT8VrdRiqMExw1iYl8hjPkC";
 
 const CONTACT_SERVICE_TYPE_OPTIONS = getContactServiceTypeOptions();
 
