@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import {
+  GoogleTagManagerNoScript,
+  GoogleTagManagerScript,
+} from "@/components/analytics/GoogleTagManager";
 import { ScrollToTopButton } from "@/components/ui/ScrollToTopButton";
 import "./globals.css";
 
@@ -36,9 +40,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="0lqEsKlzYOHsMmUoI2XErolOme7kJb-SW0IzrECZRUA"
+        />
+        <GoogleTagManagerScript />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${plusJakartaSans.variable} antialiased`}
       >
+        <GoogleTagManagerNoScript />
         {children}
         <ScrollToTopButton />
       </body>
