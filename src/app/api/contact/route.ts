@@ -379,8 +379,8 @@ export async function POST(request: Request) {
 
   /** Gmail requires From to be this mailbox or an allowed “Send mail as” alias. */
   const fromAddress = process.env.SMTP_FROM_EMAIL?.trim() || user;
-  const fromName =
-    process.env.SMTP_FROM_NAME?.trim() || "WhiteGuard";
+  const brandName = process.env.SMTP_FROM_NAME?.trim() || "WhiteGuard";
+  const submitterName = fullName.trim();
 
   const to = getContactRecipients();
   const bcc = getContactBcc();
@@ -463,7 +463,7 @@ export async function POST(request: Request) {
     <tr>
       <td style="padding:20px 28px 8px;text-align:center;">
         <h1 style="margin:0;font-size:20px;font-weight:700;color:#003859;letter-spacing:-0.02em;">New contact request</h1>
-        <p style="margin:12px 0 0;font-size:15px;line-height:1.5;color:#52697a;">Someone submitted the contact form on <strong style="color:#003859;">whiteguard.co.uk</strong>. Reply directly to their business email below</p>
+        <p style="margin:12px 0 0;font-size:15px;line-height:1.5;color:#52697a;">Someone submitted the contact form on <strong style="color:#003859;">whiteguard.co.uk</strong>. Use <strong>Reply</strong> to reach them at their business email below.</p>
       </td>
     </tr>
     <tr>
@@ -513,10 +513,13 @@ export async function POST(request: Request) {
 
   try {
     await transporter.sendMail({
-      from: { name: fromName, address: fromAddress },
+      from: {
+        name: `${submitterName} via ${brandName}`,
+        address: fromAddress,
+      },
       to,
       ...(bcc ? { bcc } : {}),
-      replyTo: replyEmail,
+      replyTo: { name: submitterName, address: replyEmail },
       subject,
       text,
       html,
