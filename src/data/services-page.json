@@ -1,34 +1,16 @@
 {
   "tabs": [
-    { "id": "all", "label": "All Services" },
     { "id": "offensive", "label": "Offensive" },
     { "id": "defensive", "label": "Defensive" },
     { "id": "grc", "label": "GRC" },
-    { "id": "training", "label": "Training" }
+    { "id": "training", "label": "Cybersecurity Awareness" }
   ],
   "categories": {
-    "all": {
-      "hero": {
-        "heading": "Comprehensive ",
-        "heading2": "Cybersecurity Services",
-        "headingAccent": "for Every MENA Business Need",
-        "subtitle": "WhiteGuard cybersecurity services and cyber security solutions cover four integrated disciplines — Red Team, Blue Team, Compliance & Standards, and Training & Awareness. The cybersecurity services portfolio spans SAMA and CBE readiness, 24/7 SOC, penetration testing, source code review, and DFIR — serving banking, insurance, healthcare, energy, automotive, and critical infrastructure across MENA and beyond.",
-        "ctaPrimary": { "label": "Get Protected Today", "href": "/contact" },
-        "ctaSecondary": { "label": "", "href": "#" }
-      },
-      "bottomCta": {
-        "heading": "Let Our Red Team Simulate the Breach",
-        "headingAccent": "Before the Real One Happens",
-        "subtitle": "All offensive services are delivered by certified professionals with real-world experience in threat simulation and enterprise security.",
-        "buttonLabel": "Book an Offensive Service Consultation",
-        "href": "/contact"
-      }
-    },
     "offensive": {
       "hero": {
         "heading": "Offensive Security",
         "headingAccent": "Find What Defenders Haven't",
-        "subtitle": "Offensive Security is how WhiteGuard's Red Team finds what your defenders haven't yet. Our Offensive Security portfolio attacks your own systems before adversaries do, six services covering Penetration Testing, Vulnerability Assessment, Red Team Assessment, CIS Benchmarks Assessment, Source Code Review, and Cloud Security Assessment, delivered by practitioners certified to OSCP, OSEP, OSWE, GPEN, and GXPN",
+        "subtitle": "Whiteguard's Red Team finds the weaknesses your defenders haven't spotted yet. We test your systems the same way real attackers would—then show you exactly how to fix what we find. Six Offensive Security Services: Penetration Testing, Vulnerability Assessment, Red Team Assessment, CIS Benchmarks Assessment, Source Code Review, and Cloud Security Assessment, every engagement is delivered by certified practitioners holding OSCP, OSEP, OSWE, GPEN, and GXPN. ",
         "ctaPrimary": { "label": "Request an Assessment", "href": "/contact" },
         "ctaSecondary": { "label": "", "href": "#" }
       },
@@ -189,18 +171,51 @@
         }
       ],
       "bottomCta": {
-        "heading": "Let Our Red Team Simulate the Breach.",
-        "headingAccent": "Before the Real One Happens.",
-        "subtitle": "All offensive services are delivered by certified professionals with real-world experience in threat simulation and enterprise security.",
+        "heading": "Let Our Red Team Simulate the Attack",
+        "headingAccent": "",
+        "subtitle": "All offensive services are delivered by certified professionals with real-world experience in attack simulation and enterprise security",
         "buttonLabel": "Book an Offensive Service Consultation",
-        "href": "/contact"
+        "href": "/contact",
+        "highlights": [
+          {
+            "iconSrc": "/images/services/bottom-cta-highlight/certified.svg",
+            "lines": [
+              "Certified offensive practitioners",
+              "(OSCP, OSEP, OSWE, GPEN, GXPN)"
+            ]
+          },
+          {
+            "iconSrc": "/images/services/bottom-cta-highlight/eye.svg",
+            "lines": [
+              "Real-world attack simulation across people, process & technology"
+            ]
+          },
+          {
+            "iconSrc": "/images/services/bottom-cta-highlight/globe.svg",
+            "lines": [
+              "Full attack surface coverage: networks, apps, APIs, cloud, OT & wireless"
+            ]
+          },
+          {
+            "iconSrc": "/images/services/bottom-cta-highlight/chart.svg",
+            "lines": [
+              "Exploitation PoCs with prioritized remediation roadmaps"
+            ]
+          },
+          {
+            "iconSrc": "/images/services/bottom-cta-highlight/building.svg",
+            "lines": [
+              "Proven results across banking, healthcare, leasing, manufacturing & more"
+            ]
+          }
+        ]
       }
     },
     "defensive": {
       "hero": {
         "heading": "Defensive Cybersecurity ",
         "headingAccent": "That Runs While Everyone Sleeps",
-        "subtitle": "Defensive Cybersecurity is what runs while everyone sleeps. WhiteGuard's Defensive Cybersecurity services deliver cyber defense across the full operational lifecycle, SOC services, SIEM Deployment, SIEM Use-Case Lifecycle Management, DFIR, Threat Intelligence with Brand Protection, Managed Phishing Simulation, Incident Response and Handling, and Business Continuity and Recovery, operated from regional centers across MENA.",
+        "subtitle": "Whiteguard defends your organization around the clock, across the full security lifecycle. Our regional centers across MENA keep watch so threats get caught and contained day or night. Our Defensive Security Services: Network Security, SOC Services, SIEM Deployment, SIEM Use-Case Lifecycle Management, DFIR, Threat Intelligence & Brand Protection, Managed Phishing Simulation, Incident Response & Handling, and Business Continuity & Recovery. ",
         "ctaPrimary": { "label": null, "href": "#" },
         "ctaSecondary": { "label": null, "href": "#" }
       },
@@ -417,7 +432,7 @@
       "bottomCta": {
         "heading": "Why Leading Organizations",
         "headingAccent": "Trust Whiteguard",
-        "subtitle": "All offensive services are delivered by certified professionals with real-world experience in threat simulation and enterprise security.",
+        "subtitle": "All defensive services are delivered by certified professionals with real-world experience in threat simulation and enterprise security",
         "buttonLabel": "Book a Defensive Service Consultation",
         "href": "/contact",
         "highlights": [
@@ -453,7 +468,7 @@
         "heading": "GRC",
         "headingAccent": " Governance, Risk &",
         "headingAccent2": "Compliance Services",
-        "subtitle": "GRC compliance doesn't start with checklists, it starts with strategy. WhiteGuard GRC services help you design, implement, and manage Governance, Risk, Compliance frameworks aligned to local and international standards: ISO/IEC 27001, SAMA cybersecurity framework, NCA Compliance, PCI-DSS, SOC 2, HIPAA, GDPR, Aramco CCC, CBE, CBL, and FRA 139, meeting regulatory demands without disrupting business.",
+        "subtitle": "Whiteguard helps you design, build, and manage Governance, Risk, and Compliance frameworks that meet regulatory demands—without slowing your business down. We align you with the standards that matter most in your region and industry",
         "ctaPrimary": {
           "label": "Start a GRC Service Review",
           "href": "/contact"
@@ -670,8 +685,8 @@
       "bottomCta": {
         "heading": "Why Leading Organizations",
         "headingAccent": "Trust Whiteguard",
-        "subtitle": "All offensive services are delivered by certified professionals with real-world experience in threat simulation and enterprise security.",
-        "buttonLabel": "Request Custom Training Plan",
+        "subtitle": "All GRC services are delivered by certified professionals with real-world experience in GRC and enterprise security",
+        "buttonLabel": "Book a GRC service consultation",
         "href": "/contact",
         "highlights": [
           {
@@ -709,7 +724,7 @@
       "hero": {
         "heading": "Cybersecurity Awareness",
         "headingAccent": "That Actually Changes Behavior",
-        "subtitle": "Cybersecurity awareness is the cheapest control with the highest leverage, and the easiest to do badly. WhiteGuard cybersecurity awareness portfolio combines interactive sessions, hands-on workshops, real-world scenarios, and ongoing assessments to reduce security incidents, enhance technical capabilities, and foster a security-first culture across your organization. Built for MENA's regulated sectors.",
+        "subtitle": "Awareness is the most cost-effective security control you have—and the easiest to get wrong. Whiteguard's training does it right.  We combine interactive sessions, hands-on workshops, and real-world scenarios with ongoing assessments to keep skills sharp. The results fewer incidents, stronger technical skills, and a security-first culture across your whole team.  Built for MENA's regulated sectors.",
         "ctaPrimary": { "label": "", "href": "/contact" },
         "ctaSecondary": { "label": "", "href": "/contact" }
       },
@@ -818,7 +833,7 @@
       "bottomCta": {
         "heading": "Why Leading Organizations",
         "headingAccent": "Trust Whiteguard",
-        "subtitle": "All offensive services are delivered by certified professionals with real-world experience in threat simulation and enterprise security.",
+        "subtitle": "All training services are delivered by certified professionals with real-world  experience enterprise security",
         "buttonLabel": "Request Custom Training Plan",
         "href": "/contact",
         "highlights": [

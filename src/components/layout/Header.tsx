@@ -46,7 +46,7 @@ export function Header() {
         <div className="hidden items-center gap-4 xl:flex">
           {mainNav.map((item) => (
             <div
-              key={item.href}
+              key={item.label}
               className="relative"
               onMouseEnter={() =>
                 "hasDropdown" in item && item.hasDropdown
@@ -214,7 +214,7 @@ export function Header() {
               }
 
               return (
-                <div key={item.href}>
+                <div key={item.label}>
                   <Link
                     href={item.href}
                     onClick={closeMobileMenu}

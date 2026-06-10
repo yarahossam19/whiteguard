@@ -1,0 +1,234 @@
+{
+  "hero": {
+    "title": ["Build Stronger", "Cybersecurity Together"],
+    "subtitle": "WHITEGUARD partners with consultancies, system integrators, and MSSPs across MENA to deliver offensive, defensive, GRC, and training services—so you scale without fragmenting your stack.",
+    "image": "/images/new-dashboard.avif",
+    "cta": {
+      "href": "/become-a-partner",
+      "label": "Become a Partner",
+      "hoverLabel": "Become a Partner"
+    }
+  },
+  "whyPartner": {
+    "title": "Why Partner with White Hawk",
+    "subtitle": "One platform. Many opportunities. Transform how you deliver cybersecurity services.",
+    "heroCard": {
+      "title": "One Platform. Many Opportunities.",
+      "description": "A unified cybersecurity management platform that partners can sell, implement, and build services around.",
+      "image": "/images/new-dashboard.avif"
+    },
+    "tallCard": {
+      "title": "Not Just a Vendor",
+      "description": "A cybersecurity partner you can co-sell, co-deliver, and co-market with. Differentiate your offering with enterprise-grade capabilities backed by regional expertise."
+    },
+    "compactCards": [
+      {
+        "id": "revenue",
+        "title": "Recurring Revenue",
+        "description": "Generate sustainable income streams with subscription-based licensing."
+      },
+      {
+        "id": "delivery",
+        "title": "Faster Delivery",
+        "description": "Streamlined workflows reduce project timelines and increase margins."
+      },
+      {
+        "id": "differentiation",
+        "title": "Market Differentiation",
+        "description": "Stand out in competitive markets with comprehensive capabilities."
+      }
+    ]
+  },
+  "audience": {
+    "title": "Who the Partner Program Is For",
+    "subtitle": "Tailored partnership models for every type of security services provider.",
+    "tabs": [
+      {
+        "id": "consulting",
+        "label": "Consulting & Advisory",
+        "title": "Strategic Security Advisors",
+        "description": "Cybersecurity consultancies and GRC advisors use White Hawk to deliver structured assessments, manage client roadmaps, and demonstrate continuous value beyond the initial audit.",
+        "bullets": [
+          "Risk Assessment Frameworks",
+          "Compliance Mapping",
+          "Strategic Roadmaps"
+        ]
+      },
+      {
+        "id": "mssp",
+        "label": "MSSPs & SOC",
+        "title": "Managed Security Providers",
+        "description": "Centralize alerts, playbooks, and incident management. White Hawk enables you to deliver SOC services efficiently with built-in automation and visibility.",
+        "bullets": [
+          "Unified alert management",
+          "Customizable playbooks",
+          "Multi-tenant architecture"
+        ]
+      },
+      {
+        "id": "integrators",
+        "label": "Systems & Technology Integrators",
+        "title": "Systems & Technology Integrators",
+        "description": "IT and security integrators use White Hawk as the management layer that ties together disparate tools, creating a unified ecosystem that is easier to maintain and upgrade.",
+        "bullets": [
+          "API-first Architecture",
+          "Seamless Tool Integration",
+          "Unified Dashboard"
+        ]
+      },
+      {
+        "id": "channel",
+        "label": "Value-Added Resellers",
+        "title": "Value-Added Resellers",
+        "description": "Resellers can bundle White Hawk with other software or services to create stickier customer relationships and drive higher margin recurring revenue.",
+        "bullets": [
+          "High-margin Opportunities",
+          "Bundled Service Offerings",
+          "Sales Enablement"
+        ]
+      }
+    ]
+  },
+  "engage": {
+    "title": "How Partners Engage",
+    "subtitle": "Multiple pathways to value—choose how you want to work with WHITEGUARD.",
+    "items": [
+      {
+        "id": "sell",
+        "title": "Sell",
+        "description": "Resell licenses to your customer base. Bundle White Hawk with your existing services. Generate recurring revenue streams through subscription-based models."
+      },
+      {
+        "id": "deliver",
+        "title": "Deliver",
+        "description": "Standardize workflows across engagements. Reduce delivery time with built-in templates and automation. Deliver assessments, SOC services, and compliance programs faster."
+      },
+      {
+        "id": "build",
+        "title": "Build",
+        "description": "Create custom services on top of the platform. Integrate your proprietary tools and methodologies. Expand your offerings without building from scratch."
+      }
+    ]
+  },
+  "capabilities": {
+    "title": "What You Can Deliver with White Hawk",
+    "subtitle": "Comprehensive capabilities across the security spectrum",
+    "items": [
+      {
+        "id": "offensive",
+        "title": "Offensive Security",
+        "description": "Offer comprehensive vulnerability assessments, penetration testing, and red team exercises. Identify weaknesses before attackers do.",
+        "pills": [
+          "Vulnerability Management",
+          "Penetration Testing",
+          "Red Team Exercises"
+        ]
+      },
+      {
+        "id": "defensive",
+        "title": "Defensive Security",
+        "description": "Provide 24/7 monitoring capabilities, threat hunting services, and rapid incident response. Detect anomalies in real-time.",
+        "pills": ["SOC Services", "Threat Hunting", "Incident Response"]
+      },
+      {
+        "id": "grc",
+        "title": "GRC & Compliance",
+        "description": "Streamline compliance journeys for ISO 27001, SOC 2, NCA ECC, and more. Manage risks and gather audit-ready evidence.",
+        "pills": [
+          "Compliance Frameworks",
+          "Third-Party Risk",
+          "Policy Management"
+        ]
+      },
+      {
+        "id": "training",
+        "title": "Asset Visibility",
+        "description": "Discover every asset on the network, from IT servers to IoT devices. Track software licenses and manage exposure surfaces.",
+        "pills": [
+          "Automated Discovery",
+          "Shadow IT Detection",
+          "Attack Surface Management"
+        ]
+      }
+    ]
+  },
+  "benefits": {
+    "subtitle": "Comprehensive capabilities across the security spectrum",
+    "items": [
+      {
+        "id": "faster",
+        "title": "Deliver Faster",
+        "description": "Leverage standardized workflows and built-in reporting."
+      },
+      {
+        "id": "overhead",
+        "title": "Reduce Overhead",
+        "description": "Fewer tools, centralized visibility."
+      },
+      {
+        "id": "revenue",
+        "title": "Grow Revenue",
+        "description": "New recurring streams & upsells."
+      },
+      {
+        "id": "differentiate",
+        "title": "Differentiate",
+        "description": "One partner across security domains."
+      }
+    ]
+  },
+  "tiers": {
+    "title": "Partner Enablement & Tiers",
+    "subtitle": "We support partners at every stage with training, sales enablement, and joint Go-To-Market strategies.",
+    "items": [
+      {
+        "id": "registered",
+        "name": "Registered",
+        "tagline": "Entry level partnership",
+        "highlighted": false,
+        "features": [
+          "Access to partner portal",
+          "Basic enablement materials",
+          "Referral opportunities"
+        ]
+      },
+      {
+        "id": "certified",
+        "name": "Certified",
+        "tagline": "For delivery partners",
+        "highlighted": true,
+        "features": [
+          "Technical Certification",
+          "Delivery Enablement",
+          "Margin Incentives",
+          "NFR Licenses"
+        ]
+      },
+      {
+        "id": "strategic",
+        "name": "Strategic",
+        "tagline": "For market leaders",
+        "highlighted": false,
+        "features": [
+          "Joint marketing funds",
+          "Dedicated success manager",
+          "Early product access",
+          "Executive sponsorship"
+        ]
+      }
+    ]
+  },
+  "cta": {
+    "heading": {
+      "line1": "Let's Build Together.",
+      "line2": ""
+    },
+    "subtext": "If you help customers with cybersecurity, compliance, or digital risk—we'd love to explore how White Hawk can power your practice.",
+    "button": {
+      "variant": "cta",
+      "href": "/become-a-partner",
+      "label": "Talk to Partner Team",
+      "hoverLabel": "Talk to Partner Team"
+    }
+  }
+}

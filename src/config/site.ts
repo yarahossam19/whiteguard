@@ -37,7 +37,7 @@ export const mainNav = [
         icon: "/images/nav-services/grc.png",
       },
       {
-        label: "Awareness Training",
+        label: "Cybersecurity Awareness",
         description: "Empower your team to recognize and prevent cyber attacks",
         href: "/services?tab=training",
         icon: "/images/nav-services/training.png",
@@ -53,7 +53,7 @@ export const mainNav = [
   // ] },
   { label: "Industries", href: "/industries" },
   { label: "Partners", href: "/partners" },
-  { label: "Resources",small:true, href: "#.",hasDropdown: true, subLinks: [
+  { label: "Resources",small:true, href: "/resources",hasDropdown: true, subLinks: [
     { label: "About Us",icon: "/images/logo-icon.svg", href: "/about",description: "Learn more about our company and our mission." },
     { label: "Blogs",icon: "/images/resources/blogs-icon.png", href: "/resources",description: "Stay updated with the latest industry insights and security best practices." },
     

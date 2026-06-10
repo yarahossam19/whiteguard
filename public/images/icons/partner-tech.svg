@@ -1,11 +1,1 @@
-<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M14 6v4" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-  <path d="M14 18v4" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-  <path d="M8 10l3 3" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-  <path d="M17 15l3 3" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-  <path d="M10 8l-3 3" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-  <path d="M19 17l3 3" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-  <path d="M6 14h4" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-  <path d="M18 14h4" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="14" cy="14" r="4" stroke="#fff" stroke-width="2"/>
-</svg>
+<svg class="PartnerAudienceSection-module-scss-module__reoYKq__cardIconSvg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="6" cy="18" r="2.25" stroke="currentColor" stroke-width="1.75"></circle><circle cx="18" cy="18" r="2.25" stroke="currentColor" stroke-width="1.75"></circle><circle cx="12" cy="6" r="2.25" stroke="currentColor" stroke-width="1.75"></circle><path d="M7.5 16.5l3-7M16.5 16.5l-3-7" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"></path></svg>

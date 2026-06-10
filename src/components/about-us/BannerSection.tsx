@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
 import type { AboutBannerData } from "@/data/about-banner";
 
@@ -9,236 +8,119 @@ interface BannerSectionProps {
   data: AboutBannerData;
 }
 
-function OutlineButton({
-  href,
-  label,
-  showArrow = false,
-}: {
-  href: string;
-  label: string;
-  showArrow?: boolean;
-}) {
+const ORBIT_POSITIONS = [
+  "left-1/2 top-0 -translate-x-1/2 -translate-y-1",
+  "bottom-2 left-0",
+  "bottom-2 right-0",
+] as const;
+
+function OrbitStatCard({ value, label }: { value: string; label: string }) {
   return (
-    <Link
-      href={href}
-      className="group inline-flex items-center justify-center gap-2 rounded-[12px] border border-[#9CA3AF] bg-white px-6 py-3.5 font-ano text-base font-normal text-[#002439] transition-colors hover:border-[#6B7280] hover:bg-gray-50"
-    >
-      {label}
-      {showArrow && (
-        <span className="text-[#002439]" aria-hidden>
-          ↓
-        </span>
-      )}
-    </Link>
+    <div className="min-w-[128px] rounded-2xl border border-white/90 bg-white/95 px-4 py-3 text-center shadow-[0_16px_40px_rgba(0,56,89,0.12)] backdrop-blur-sm sm:min-w-[148px] sm:px-5 sm:py-4">
+      <p className="font-jakarta text-[clamp(22px,2.5vw,32px)] font-extrabold leading-none text-[#0087D7]">
+        {value}
+      </p>
+      <p className="mt-1.5 font-jakarta text-xs font-medium leading-snug text-[#52697A] sm:text-sm">
+        {label}
+      </p>
+    </div>
   );
 }
 
-function ImageColumn({
-  images,
-  direction,
-  className = "",
-}: {
-  images: string[];
-  direction: "up" | "down";
-  className?: string;
-}) {
-  const animationClass =
-    direction === "up" ? "animate-marquee-up" : "animate-marquee-down";
-
+function LogoOrbitVisual({ stats }: { stats: AboutBannerData["stats"] }) {
   return (
-    <div
-      className={`relative h-full min-h-screen w-full overflow-hidden ${className}`}
-    >
-      <div className={`flex flex-col gap-0 ${animationClass}`}>
-        {/* Duplicate for seamless loop */}
-        {[1, 2].map((set) => (
-          <div key={set} className="flex flex-col gap-0">
-            {images.map((src, i) => (
-              <div
-                key={`${set}-${i}`}
-                className="relative h-full w-full shrink-0 overflow-hidden  "
-                style={{
-                  aspectRatio: "1/1",
-                }}
-              >
-                <Image
-                  src={src}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="100%"
-                />
-              </div>
-            ))}
-          </div>
-        ))}
+    <div className="relative mx-auto h-[60px] w-full max-w-[320px] sm:h-[300px] sm:max-w-[360px] xl:h-[380px] xl:max-w-[400px]">
+      <div
+        className="absolute inset-[2%] rounded-full border border-[#0087D7]/10"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-[12%] rounded-full border border-dashed border-[#0087D7]/18"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-[22%] rounded-full bg-linear-to-br from-[#E7F6FF] via-white to-[#ABE0FF]/50 shadow-[inset_0_0_40px_rgba(0,135,215,0.08)]"
+        aria-hidden
+      />
+      <div className="absolute left-1/2 top-1/2 flex h-[38%] w-[38%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-[0_20px_50px_rgba(0,56,89,0.14)]">
+        <Image
+          src="/images/logo-icon.svg"
+          alt=""
+          width={96}
+          height={96}
+          className="h-[58%] w-[58%] object-contain"
+          aria-hidden
+        />
       </div>
+
+      {stats.map((stat, index) => (
+        <div
+          key={stat.label}
+          className={`absolute hidden xl:block ${ORBIT_POSITIONS[index]}`}
+        >
+          <OrbitStatCard value={stat.value} label={stat.label} />
+        </div>
+      ))}
     </div>
   );
 }
 
 export default function BannerSection({ data }: BannerSectionProps) {
-  const {
-    headline,
-    stats,
-    description,
-    ctas,
-    leftColumnImages,
-    rightColumnImages,
-    columnBackground,
-  } = data;
+  const { headline, stats, description, ctas } = data;
 
   return (
-    <section className="relative z-1 mb-20 w-full overflow-hidden flex flex-col-reverse">
-      <div className="flex xl:min-h-screen flex-col xl:flex-row overflow-hidden relative">
-        {/* LEFT - Content  */}
-        <div className="relative z-10 flex flex-1 flex-col items-center justify-center  px-6 pt-24 sm:px-12 sm:py-16 xl:px-[7vw]  ">
-          <div
-            className="flex w-full  flex-col text-center xl:text-left"
-            style={{ gap: 40 }}
-          >
-            {/* Heading */}
-            <h1
-              className="font-jakarta font-semibold leading-[86.4px] "
-              style={{
-                fontSize: "clamp(36px, 5vw, 58px)",
-                color: "#003859",
-              }}
-            >
-              {headline.line1}
-              <br />
-              {headline.line2}
-            </h1>
+    <section className="relative w-full overflow-hidden min-h-[80vh] py-30  ">
+      <div className="container relative z-10   py-20 sm:py-24 xl:py-28">
+        <div className="mx-auto flex w-full   flex-col items-center gap-12 xl:flex-row xl:items-center xl:gap-16">
+          <div className="flex flex-1 flex-col gap-8 text-center   xl:text-left">
+            <div className="flex flex-col gap-5">
+              <h1
+                className="font-jakarta font-semibold leading-[1.1] tracking-[-0.03em]"
+                style={{ fontSize: "clamp(38px, 5vw, 62px)" }}
+              >
+                <span className="text-[#003859]">{headline.line1}</span>
+                <br />
+                <span className="text-[#0087D7]">{headline.line2}</span>
+              </h1>
 
-            <div className="flex flex-col gap-8 xl:gap-[50px]">
-              {/* Stats */}
-              <div className="flex flex-wrap justify-center gap-4 xl:justify-start xl:gap-6">
-                {stats.map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="flex flex-col items-center justify-center gap-1"
-                  >
-                    <span
-                      className="font-jakarta text-[clamp(22px,2.5vw,32px)] font-extrabold leading-tight"
-                      style={{ color: "#003859" }}
-                    >
-                      {stat.value}
-                    </span>
-                    <span className="font-jakarta text-base font-medium leading-snug text-[#52697A">
-                      {stat.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Description */}
               <p
-                className="font-jakarta font-normal leading-[1.7] text-[#52697A]"
-                style={{ fontSize: "clamp(16px, 1.25vw, 22px)" }}
+                className="font-jakarta font-normal leading-[1.75] text-[#52697A]"
+                style={{ fontSize: "clamp(16px, 1.2vw, 20px)" }}
               >
                 {description}
               </p>
             </div>
-            {/* CTAs */}
-            <div className="flex flex-wrap justify-center gap-4 xl:justify-start">
-              {ctas.map((cta) =>
-                cta.variant === "outline" ? (
-                  <HoverSwapButton
-                    key={cta.href}
-                    href={cta.href}
-                    label={cta.label}
-                    hoverLabel={cta.hoverLabel}
-                    variant="secondary"
-                    showChevrons={false}
-                    showArrow={"showArrow" in cta && cta.showArrow}
-                    className="font-ano px-6 py-3.5 text-base xl:text-lg w-full md:w-auto"
-                  />
-                ) : (
-                  <HoverSwapButton
-                    key={cta.href}
-                    href={cta.href}
-                    label={cta.label}
-                    hoverLabel={cta.hoverLabel}
-                    variant="cta"
-                    showChevrons={false}
-                    className="font-ano px-6 py-3.5 text-base xl:text-lg w-full md:w-auto"
-                  />
-                ),
-              )}
+
+            <div className="flex flex-wrap items-center justify-center gap-4 xl:justify-start">
+              {ctas.map((cta) => (
+                <HoverSwapButton
+                  key={`${cta.href}-${cta.label}`}
+                  href={cta.href}
+                  label={cta.label}
+                  hoverLabel={cta.hoverLabel}
+                  variant={cta.variant === "outline" ? "secondary" : "cta"}
+                  showChevrons={false}
+                  showArrow={"showArrow" in cta && cta.showArrow}
+                  className="font-ano w-full px-6 py-3.5 text-base md:w-auto xl:text-lg"
+                />
+              ))}
             </div>
+          </div>
+
+          <div className="flex flex-1 justify-center xl:justify-end">
+            <LogoOrbitVisual stats={stats} />
           </div>
         </div>
 
-        {/* RIGHT - Image columns (hidden on mobile, shown below) */}
-        <div className="relative hidden w-full xl:flex xl:w-1/2">
-          <div
-            className="flex absolute  w-full  left-[20%] -top-[50%]"
-            style={{
-              height: "1506px",
-              transform: "rotate(-20.331deg)",
-              alignItems: "flex-start",
-              boxShadow:
-                "-173px 78px 53px 0 rgba(0, 0, 0, 0.00), -110px 50px 49px 0 rgba(0, 0, 0, 0.01), -62px 28px 41px 0 rgba(0, 0, 0, 0.05), -28px 13px 30px 0 rgba(0, 0, 0, 0.09), -7px 3px 17px 0 rgba(0, 0, 0, 0.10)",
-            }}
-          >
-            <div
-              className="w-full z-20 h-[35%] absolute right-[30%] top-[-15%]  "
-              style={{
-                background:
-                  "linear-gradient(to bottom, rgba(255, 255, 255,1) ,rgba(255, 255, 255,1), transparent)",
-                backdropFilter: "blur(1px)",
-                transform: "rotate(-0.331deg)",
-              }}
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3 xl:hidden">
+          {stats.map((stat) => (
+            <OrbitStatCard
+              key={stat.label}
+              value={stat.value}
+              label={stat.label}
             />
-            <div
-              className="w-[5%] h-full bg-[#81D0FF]"
-              style={{
-                backgroundImage: `url(${columnBackground})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            />
-            {/* LEFT COLUMN - Images scroll bottom to top */}
-            <div className="relative hidden min-h-screen w-[47.5%] shrink-0 xl:block">
-              <ImageColumn
-                images={leftColumnImages}
-                direction="up"
-                className="h-full min-h-screen"
-              />
-            </div>
-            {/* RIGHT COLUMN - Images scroll top to bottom */}
-            <div className="relative hidden min-h-screen w-[47.5%] shrink-0 xl:block">
-              <ImageColumn
-                images={rightColumnImages}
-                direction="down"
-                className="h-full min-h-screen"
-              />
-            </div>
-          </div>
-          <div
-            className="w-full z-20 h-[50%] absolute left-[30%] bottom-[-20%]  "
-            style={{
-              background:
-                "linear-gradient(to top, rgba(255, 255, 255,1) ,rgba(255, 255, 255,1), transparent)",
-              backdropFilter: "blur(1.2px)",
-              transform: "rotate(-20.331deg)",
-            }}
-          />
+          ))}
         </div>
-      </div>
-
-      {/* Mobile: show single column with up scroll */}
-      <div className="relative h-[400px] overflow-hidden xl:hidden flex">
-        <ImageColumn
-          images={leftColumnImages}
-          direction="up"
-          className="min-h-0! h-full!"
-        />
-        <ImageColumn
-          images={rightColumnImages}
-          direction="down"
-          className="min-h-0! h-full!"
-        />
       </div>
     </section>
   );

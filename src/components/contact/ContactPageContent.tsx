@@ -17,7 +17,8 @@ import { HoverSwapButton } from "../ui/HoverSwapButton";
 import { PartnerCountryMultiSelect } from "@/components/partners/PartnerCountryMultiSelect";
 
 const RECAPTCHA_SITE_KEY =
-  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY?.trim() ?? "6Le0FN0sAAAAAMk9rrT8VrdRiqMExw1iYl8hjPkC";
+  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY?.trim() ??
+  "6Le0FN0sAAAAAMk9rrT8VrdRiqMExw1iYl8hjPkC";
 
 const CONTACT_SERVICE_TYPE_OPTIONS = getContactServiceTypeOptions();
 
@@ -386,8 +387,6 @@ export default function ContactPageContent() {
             </h2>
             <p className="mt-3 max-w-xl font-jakarta text-[16px] font-normal leading-normal text-[#52697A]">
               Fill out the form below — we’ll get back to you within 24 hours.
-              Tell us about your company, role, and the WhiteGuard service
-              you’re interested in.
             </p>
 
             <form

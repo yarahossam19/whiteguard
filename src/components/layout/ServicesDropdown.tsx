@@ -57,7 +57,7 @@ export function ServicesDropdown({ items }: ServicesDropdownProps) {
               role="menuitem"
               className={`group flex flex-col gap-2  ${items.length - 1 > index ? " pb-4 border-b-1 border-[#ccc]" : ""}`}
             >
-              <div className="flex items-start gap-[9px]">
+              <div className="flex items-center gap-[9px]">
                 {sub.icon && (
                   <div className="relative size-12 shrink-0 overflow-hidden rounded-lg">
                     <Image
