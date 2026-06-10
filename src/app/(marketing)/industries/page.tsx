@@ -11,7 +11,7 @@ import { getIndustriesWhyData } from "@/data/industries-why";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Industries | WHITEGUARD",
+  title: "Industries ",
   description: "Security solutions tailored for your industry.",
 };
 

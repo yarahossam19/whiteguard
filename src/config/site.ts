@@ -6,7 +6,7 @@ export const siteConfig = {
   name: "WHITEGUARD",
   tagline:
     "Empowering businesses with intelligent, continuous security monitoring. We are your trusted partner in the digital landscape.",
-  copyright: "©2026 WHITEGUARD Security. All rights reserved.",
+  copyright: "© 2026 WHITEGUARD LLC. All rights reserved.",
 } as const;
 
 export const mainNav = [
@@ -68,20 +68,20 @@ export const footerNav = {
     { label: "Defensive Security", href: "/services?tab=defensive" },
     { label: "GRC", href: "/services?tab=grc" },
     { label: "Awareness Training", href: "/services?tab=training" },
-    { label: "Industries", href: "/industries" }, 
+   
+  ],platform: [
+    { label: "White Hawk", href: "https://whitehawk.io" },
+   
+  ],resources: [
+    { label: "Blogs", href: "/resources" },  { label: "Industries", href: "/industries" }, 
   ],
   company: [
     { label: "About Us", href: "/about" },
     { label: "Partners", href: "/partners" }, 
 
   ],
-  resources: [
-    { label: "Blogs", href: "/resources" }, 
-  ],
-  platform: [
-    { label: "White Hawk", href: "https://whitehawk.io" },
-   
-  ],
+  
+  
 } as const;
 
 export const footerLegal = [
@@ -106,7 +106,7 @@ export const socialLinks = [
   },
   {
     label: "Facebook",
-    href: "https://www.facebook.com/WHITEGUARD.CO.UK/",
+    href: "https://www.facebook.com/WHITEGUARD.IO",
     icon: "facebook",
   },
 ] as const;

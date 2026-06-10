@@ -5,7 +5,7 @@ import { SectionImageSeparator } from "@/components/ui/SectionImageSeparator";
 import { getResourcesData } from "@/data/resources";
 
 export const metadata: Metadata = {
-  title: "Resources | WHITEGUARD",
+  title: "Resources  ",
   description:
     "Security resources, guides, and documentation. Explore expert insights, practical tools, and proven strategies.",
 };

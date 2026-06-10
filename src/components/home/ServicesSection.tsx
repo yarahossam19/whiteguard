@@ -58,13 +58,13 @@ export default function ServicesSection({ data }: ServicesSectionProps) {
               <h2 className="font-jakarta text-[clamp(32px,4vw,44px)] font-extrabold leading-[1.15] text-[#003859]">
                 {heading.line1}
               </h2>
-              <h2 className="font-jakarta text-[clamp(32px,4vw,44px)] font-extrabold leading-[1.15] text-[#0891B2]">
+              <h2 className="font-jakarta text-[clamp(32px,4vw,44px)] font-extrabold leading-[1.15] text-[#0087D7]">
                 {heading.line2}
               </h2>
             </div>
-            <p className="mt-4   text-center  font-jakarta text-base leading-[1.8] text-[#52697A]">
+            {/* <p className="mt-4   text-center  font-jakarta text-base leading-[1.8] text-[#52697A]">
               {subtitle}
-            </p>
+            </p> */}
           </div>
 
           {/* Card + background area - flex grow, center card vertically */}
@@ -201,6 +201,7 @@ function CardMotion({
             <h2 className="font-jakarta text-xl font-bold text-[#003859] sm:text-2xl">
               {service.title}
             </h2>
+            {service.label == "Training" && <br />}
             <p className="mt-2 font-jakarta text-base font-normal leading-normal text-[#52697A] sm:mt-3 sm:text-lg">
               {service.description}
             </p>

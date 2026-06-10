@@ -16,8 +16,7 @@ import { getCtaSectionData } from "@/data/cta-section";
 import { getClientLogosData } from "@/data/client-logos";
 import { SectionImageSeparator } from "@/components/ui/SectionImageSeparator";
 
-const HOME_META_TITLE =
-  "Cybersecurity Company for MENA Banks & Fintechs | WhiteGuard";
+const HOME_META_TITLE = "WhiteGuard";
 const HOME_META_DESCRIPTION =
   "WhiteGuard is the cybersecurity company protecting 64+ MENA enterprises — managed security services, 24/7 SOC, SAMA, CBE & ISO 27001 ready.";
 

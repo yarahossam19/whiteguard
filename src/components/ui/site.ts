@@ -75,7 +75,7 @@ export const socialLinks = [
   },
   {
     label: "Facebook",
-    href: "https://www.facebook.com/WHITEGUARD.CO.UK/",
+    href: "https://www.facebook.com/WHITEGUARD.IO",
     icon: "facebook",
   },
 ] as const;

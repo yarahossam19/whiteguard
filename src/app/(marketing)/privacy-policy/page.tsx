@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | WHITEGUARD",
+  title: "Privacy Policy ",
   description:
     "WHITEGUARD Privacy Policy - Learn how we collect, use, and protect your personal information.",
 };

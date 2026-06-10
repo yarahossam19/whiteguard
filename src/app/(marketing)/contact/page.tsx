@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ContactPageContent from "@/components/contact/ContactPageContent";
 import ContactHero from "@/components/contact/ContactHero";
 export const metadata: Metadata = {
-  title: "Contact Us | WHITEGUARD",
+  title: "Contact Us ",
   description:
     "Get in touch with WHITEGUARD. Start your security conversation or reach us by phone, email, or address.",
 };

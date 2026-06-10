@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | WHITEGUARD",
+  title: "Terms of Service  ",
   description:
-    "WHITEGUARD Terms of Service - Read our terms and conditions for using our security services and platform.",
+    "Whiteguard Terms of Service - Read our terms and conditions for using our security services and platform.",
 };
 
 export default function TermsOfServicePage() {
@@ -25,12 +25,12 @@ export default function TermsOfServicePage() {
               1. Agreement to Terms
             </h2>
             <p className="leading-relaxed">
-              By accessing or using the WHITEGUARD website, platform, or any of
+              By accessing or using the Whiteguard website, platform, or any of
               our cybersecurity services (collectively, the
               &quot;Services&quot;), you agree to be bound by these Terms of
               Service. If you do not agree to these terms, please do not use our
               Services. These terms apply to all visitors, users, and customers
-              of WHITEGUARD and WhiteHawk Security.
+              of Whiteguard and WhiteHawk Security.
             </p>
           </section>
 
@@ -39,7 +39,7 @@ export default function TermsOfServicePage() {
               2. Description of Services
             </h2>
             <p className="mb-4 leading-relaxed">
-              WHITEGUARD provides intelligent security monitoring, offensive and
+              Whiteguard provides intelligent security monitoring, offensive and
               defensive cybersecurity services, governance, risk, and compliance
               (GRC) solutions, security training, and related platform
               offerings. Our Services are designed to help organizations build,
@@ -48,7 +48,7 @@ export default function TermsOfServicePage() {
             <p className="leading-relaxed">
               The specific scope, deliverables, and terms of any engagement will
               be defined in separate service agreements, statements of work
-              (SOW), or order forms executed between you and WHITEGUARD.
+              (SOW), or order forms executed between you and Whiteguard.
             </p>
           </section>
 
@@ -104,7 +104,7 @@ export default function TermsOfServicePage() {
             </h2>
             <p className="leading-relaxed">
               All content, software, methodologies, tools, reports, and
-              materials provided by WHITEGUARD remain our exclusive property or
+              materials provided by Whiteguard remain our exclusive property or
               that of our licensors. You receive a limited, non-exclusive
               license to use our Services for your internal business purposes
               during the term of your engagement. Nothing in these Terms grants
@@ -136,7 +136,7 @@ export default function TermsOfServicePage() {
               7. Limitation of Liability
             </h2>
             <p className="leading-relaxed">
-              To the maximum extent permitted by law, WHITEGUARD and WhiteHawk
+              To the maximum extent permitted by law, Whiteguard and WhiteHawk
               Security shall not be liable for any indirect, incidental,
               special, consequential, or punitive damages arising from your use
               of the Services. Our total liability for any claims related to
@@ -151,7 +151,7 @@ export default function TermsOfServicePage() {
               8. Indemnification
             </h2>
             <p className="leading-relaxed">
-              You agree to indemnify and hold harmless WHITEGUARD, WhiteHawk
+              You agree to indemnify and hold harmless Whiteguard, WhiteHawk
               Security, and our affiliates, officers, and employees from any
               claims, damages, or expenses arising from your misuse of the
               Services, violation of these Terms, or infringement of any
@@ -194,7 +194,7 @@ export default function TermsOfServicePage() {
             </h2>
             <p className="leading-relaxed">
               These Terms shall be governed by and construed in accordance with
-              the laws of the jurisdiction in which WHITEGUARD operates, without
+              the laws of the jurisdiction in which Whiteguard operates, without
               regard to conflict of law principles. Any disputes arising from
               these Terms or the Services shall be resolved in the courts of
               that jurisdiction.

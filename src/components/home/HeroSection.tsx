@@ -12,7 +12,8 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ data, logos }: HeroSectionProps) {
-  const { headline, description, ctas, decorations, rightPanel } = data;
+  const { headline, description, description2, ctas, decorations, rightPanel } =
+    data;
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
   return (
@@ -57,7 +58,9 @@ export default function HeroSection({ data, logos }: HeroSectionProps) {
               </h1>
               <p className="font-Jakarta w-full  text-[clamp(16px,1.4vw,20px)] font-normal leading-[1.7]">
                 {description}
-              </p>{" "}
+                <br />
+                {description2}
+              </p>
             </div>
 
             {/* CTA Buttons */}

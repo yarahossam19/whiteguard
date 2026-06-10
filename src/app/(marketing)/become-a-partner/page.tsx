@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import BecomePartnerForm from "@/components/partners/BecomePartnerForm";
 
 export const metadata: Metadata = {
-  title: "Become a Partner | WHITEGUARD",
+  title: "Become a Partner ",
   description:
     "Submit your partnership application to join the WHITEGUARD partner ecosystem.",
 };

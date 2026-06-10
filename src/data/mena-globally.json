@@ -4,8 +4,10 @@
     "line2": "Globally Proven"
   },
   "paragraphs": [
-    "Born in the heart of the Middle East, WHITEGUARD combines deep regional expertise with world-class cybersecurity frameworks. We understand the unique regulatory landscape of MENA while delivering services that meet the highest global standards.",
-    "With offices across Egypt, KSA, United Kingdom, United States, Libya we're strategically positioned to protect organizations across all sectors — from financial institutions to government agencies."
+    "Whiteguard pairs deep regional knowledge with world-class security frameworks. We know the compliance demands MENA organizations face—from local regulation to global regulation—and we meet the highest global standards while we're at it. "
+  ],
+  "paragraphs2": [
+    "With offices in Egypt, Libya, Saudi Arabia, United Kingdom, and The United State, we're positioned to protect organizations across every sector—from banks and fintechs to government agencies and critical infrastructure."
   ],
   "certifications": [
     {
@@ -15,27 +17,65 @@
     },
     {
       "id": 1,
+      "name": "NCA ECC-1:2018",
+      "src": "/images/certifications/certification-5.png"
+    },
+    {
+      "id": 2,
       "name": "Certification 1",
       "src": "/images/certifications/certification-1.png"
     },
     {
-      "id": 2,
+      "id": 3,
       "name": "PCI DSS Compliant",
       "src": "/images/certifications/certification-2.png"
     },
     {
-      "id": 4,
-      "name": "NCA ECC-1:2018",
-      "src": "/images/certifications/certification-4.png"
-    },
-    {
       "id": 5,
       "name": "NCA ECC-1:2018",
-      "src": "/images/certifications/certification-5.png"
+      "src": "/images/certifications/certification-4.png"
     }
   ],
   "map": {
     "src": "/images/map.svg",
-    "alt": "WHITEGUARD global presence map"
+    "alt": "Whiteguard global presence map",
+    "markers": [
+      {
+        "id": "canada",
+        "label": "Canada",
+        "left": 16.03,
+        "top": 38.01
+      },
+      {
+        "id": "usa",
+        "label": "USA",
+        "left": 19.15,
+        "top": 52.29
+      },
+      {
+        "id": "uk",
+        "label": "UK",
+        "left": 45.96,
+        "top": 42.47
+      },
+      {
+        "id": "libya",
+        "label": "Libya",
+        "left": 51.06,
+        "top": 59.66
+      },
+      {
+        "id": "egypt",
+        "label": "Egypt",
+        "left": 55.04,
+        "top": 60.33
+      },
+      {
+        "id": "ksa",
+        "label": "KSA",
+        "left": 59.43,
+        "top": 60.33
+      }
+    ]
   }
 }

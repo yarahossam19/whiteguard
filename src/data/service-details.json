@@ -2,8 +2,8 @@
   "penetration-testing": {
     "title": "Penetration Testing",
     "seo": {
-      "title": "Penetration Testing Services | Web, API, Network & Cloud | WHITEGUARD",
-      "description": "Identify and remediate real-world vulnerabilities with WHITEGUARD's Penetration Testing service — web, mobile, API, network, and cloud testing with evidence-backed findings, prioritized remediation, and retest."
+      "title": "Penetration Testing Services | Web, API, Network & Cloud | Whiteguard",
+      "description": "Identify and remediate real-world vulnerabilities with Whiteguard's Penetration Testing service — web, mobile, API, network, and cloud testing with evidence-backed findings, prioritized remediation, and retest."
     },
     "hero": {
       "headline": "Penetration Testing — Validate Your Defenses Under Real Attack Conditions",
@@ -16,7 +16,7 @@
     },
     "whatIs": {
       "heading": "What is Penetration Testing?",
-      "body": "Penetration testing is more than a scan — it's a controlled cyberattack designed to expose real weaknesses in your environment. At WHITEGUARD, we deliver tailored penetration testing engagements across networks, web/mobile/desktop apps, APIs, wireless, POS, cloud, ITM & ATM, and OT environments. Whether you're meeting compliance, validating new deployments, or securing legacy systems, our certified testers reveal the exploitable paths attackers could take — so you can close them with confidence.",
+      "body": "Penetration testing is more than a scan — it's a controlled cyberattack designed to expose real weaknesses in your environment. At Whiteguard, we deliver tailored penetration testing engagements across networks, web/mobile/desktop apps, APIs, wireless, POS, cloud, ITM & ATM, and OT environments. Whether you're meeting compliance, validating new deployments, or securing legacy systems, our certified testers reveal the exploitable paths attackers could take — so you can close them with confidence.",
       "ctaLabel": "Get A Quote",
       "ctaHref": "/contact"
     },
@@ -248,7 +248,7 @@
     },
     "testimonials": [
       {
-        "quote": "WHITEGUARD exposed critical paths we didn't know existed. Highly professional.",
+        "quote": "Whiteguard exposed critical paths we didn't know existed. Highly professional.",
         "name": "Ahmed R.",
         "title": "CISO"
       },
@@ -258,7 +258,7 @@
         "title": "VP of Engineering"
       },
       {
-        "quote": "We needed PCI-DSS compliance fast. WHITEGUARD delivered a clear report that satisfied our auditors.",
+        "quote": "We needed PCI-DSS compliance fast. Whiteguard delivered a clear report that satisfied our auditors.",
         "name": "Omar K.",
         "title": "IT Director"
       }
@@ -295,8 +295,8 @@
   "vulnerability-assessment": {
     "title": "Vulnerability Assessment",
     "seo": {
-      "title": "Vulnerability Assessment Services | Identify, Prioritize & Remediate Security Risks | WHITEGUARD",
-      "description": "WHITEGUARD's Vulnerability Assessment service identifies, analyzes, and prioritizes security weaknesses across systems, networks, and applications. Get actionable insights, clear risk ratings, and a remediation roadmap to enhance resilience and compliance."
+      "title": "Vulnerability Assessment Services | Identify, Prioritize & Remediate Security Risks | Whiteguard",
+      "description": "Whiteguard's Vulnerability Assessment service identifies, analyzes, and prioritizes security weaknesses across systems, networks, and applications. Get actionable insights, clear risk ratings, and a remediation roadmap to enhance resilience and compliance."
     },
     "hero": {
       "headline": "Vulnerability Assessment — See Your Risks Before Attackers Do",
@@ -309,7 +309,7 @@
     },
     "whatIs": {
       "heading": "What Is a Vulnerability Assessment?",
-      "body": "A Vulnerability Assessment (VA) is the foundation of every robust cybersecurity program. It's a structured process to identify, analyze, and rank weaknesses across your IT assets before they can be exploited. At WHITEGUARD, we go beyond automated scanning, combining intelligent analysis, manual verification, and expert interpretation to eliminate noise and deliver actionable insights. From endpoints and applications to cloud and network layers, we help you see your vulnerabilities clearly, prioritize remediation, and maintain compliance with evolving standards.",
+      "body": "A Vulnerability Assessment (VA) is the foundation of every robust cybersecurity program. It's a structured process to identify, analyze, and rank weaknesses across your IT assets before they can be exploited. At Whiteguard, we go beyond automated scanning, combining intelligent analysis, manual verification, and expert interpretation to eliminate noise and deliver actionable insights. From endpoints and applications to cloud and network layers, we help you see your vulnerabilities clearly, prioritize remediation, and maintain compliance with evolving standards.",
       "ctaLabel": "Get A Quote",
       "ctaHref": "/contact"
     },
@@ -536,7 +536,7 @@
     },
     "testimonials": [
       {
-        "quote": "WHITEGUARD's VA gave us clarity we never had. Clear priorities, actionable fixes.",
+        "quote": "Whiteguard's VA gave us clarity we never had. Clear priorities, actionable fixes.",
         "name": "Client",
         "title": "CISO, Financial Services"
       }
@@ -565,7 +565,7 @@
     ],
     "cta": {
       "heading": "Ready to Eliminate Blind Spots Before Attackers Find Them?",
-      "subtitle": "WHITEGUARD's Vulnerability Assessment delivers clarity, compliance, and confidence — helping you stay one step ahead of threats.",
+      "subtitle": "Whiteguard's Vulnerability Assessment delivers clarity, compliance, and confidence — helping you stay one step ahead of threats.",
       "buttonLabel": "Request a Free Scoping Call",
       "buttonHref": "tel:0123456789"
     }
@@ -573,8 +573,8 @@
   "red-team-assessment": {
     "title": "Red Team Assessment",
     "seo": {
-      "title": "Red Team Assessment Services | Real-World Simulation & Attack Emulation | WHITEGUARD",
-      "description": "WHITEGUARD's Red Team Assessment simulates real-world cyberattacks to test your detection, response, and defense maturity. Validate readiness, uncover blind spots, and strengthen resilience through realistic multi-stage attack simulations."
+      "title": "Red Team Assessment Services | Real-World Simulation & Attack Emulation | Whiteguard",
+      "description": "Whiteguard's Red Team Assessment simulates real-world cyberattacks to test your detection, response, and defense maturity. Validate readiness, uncover blind spots, and strengthen resilience through realistic multi-stage attack simulations."
     },
     "hero": {
       "headline": "Red Team Assessment — Test Detection. Strengthen Response. Prove Resilience.",
@@ -587,7 +587,7 @@
     },
     "whatIs": {
       "heading": "What Is a Red Team Assessment?",
-      "body": "A Red Team Assessment goes beyond traditional penetration testing — it's a strategic simulation of real adversaries targeting your people, processes, and technologies. At WHITEGUARD, we emulate advanced attack techniques across multiple vectors (network, phishing, social engineering, and cloud) to evaluate how prepared your defenses truly are. This approach measures not just technical vulnerabilities, but your organization's detection, response, and decision-making capabilities under pressure. The result: actionable insights that help you build stronger incident response processes, refine playbooks, and improve SOC performance.",
+      "body": "A Red Team Assessment goes beyond traditional penetration testing — it's a strategic simulation of real adversaries targeting your people, processes, and technologies. At Whiteguard, we emulate advanced attack techniques across multiple vectors (network, phishing, social engineering, and cloud) to evaluate how prepared your defenses truly are. This approach measures not just technical vulnerabilities, but your organization's detection, response, and decision-making capabilities under pressure. The result: actionable insights that help you build stronger incident response processes, refine playbooks, and improve SOC performance.",
       "ctaLabel": "Get A Quote",
       "ctaHref": "/contact"
     },
@@ -826,7 +826,7 @@
       },
       {
         "question": "Will this cause system downtime?",
-        "description": "No. All actions are coordinated and non-destructive. WHITEGUARD uses controlled simulation within pre-approved boundaries."
+        "description": "No. All actions are coordinated and non-destructive. Whiteguard uses controlled simulation within pre-approved boundaries."
       },
       {
         "question": "Can we involve our Blue Team during testing?",
@@ -843,7 +843,7 @@
     ],
     "cta": {
       "heading": "Ready to Simulate a Real Cyberattack Safely?",
-      "subtitle": "WHITEGUARD's Red Team Assessments help you uncover weaknesses, enhance response speed, and validate true cyber resilience.",
+      "subtitle": "Whiteguard's Red Team Assessments help you uncover weaknesses, enhance response speed, and validate true cyber resilience.",
       "buttonLabel": "Request a Free Scoping Call",
       "buttonHref": "tel:0123456789"
     }
@@ -851,8 +851,8 @@
   "cis-benchmarks-assessment": {
     "title": "CIS Benchmarks Assessment",
     "seo": {
-      "title": "CIS Benchmarks Assessment Services | System Hardening & Configuration Compliance | WHITEGUARD",
-      "description": "WHITEGUARD's CIS Benchmarks Assessment evaluates your servers, operating systems, databases, and cloud environments against global configuration best practices. Identify misconfigurations, reduce risk, and achieve compliance across your infrastructure."
+      "title": "CIS Benchmarks Assessment Services | System Hardening & Configuration Compliance | Whiteguard",
+      "description": "Whiteguard's CIS Benchmarks Assessment evaluates your servers, operating systems, databases, and cloud environments against global configuration best practices. Identify misconfigurations, reduce risk, and achieve compliance across your infrastructure."
     },
     "hero": {
       "headline": "CIS Benchmarks Assessment — Strengthen Your Foundation. Secure Every System.",
@@ -862,7 +862,7 @@
     },
     "whatIs": {
       "heading": "What Is a CIS Benchmarks Assessment?",
-      "body": "CIS Benchmarks are globally recognized configuration standards developed by the Center for Internet Security (CIS). They define how to securely configure operating systems, databases, and cloud services to minimize vulnerabilities and reduce attack surfaces. WHITEGUARD's CIS Benchmarks Assessment measures your systems against these standards, identifies configuration gaps, and provides step-by-step remediation guidance. Our experts combine automated scanning with manual validation to deliver actionable insights, ensuring your infrastructure meets both security and compliance expectations.",
+      "body": "CIS Benchmarks are globally recognized configuration standards developed by the Center for Internet Security (CIS). They define how to securely configure operating systems, databases, and cloud services to minimize vulnerabilities and reduce attack surfaces. Whiteguard's CIS Benchmarks Assessment measures your systems against these standards, identifies configuration gaps, and provides step-by-step remediation guidance. Our experts combine automated scanning with manual validation to deliver actionable insights, ensuring your infrastructure meets both security and compliance expectations.",
       "ctaLabel": "Get A Quote",
       "ctaHref": "/contact"
     },
@@ -1118,7 +1118,7 @@
     ],
     "cta": {
       "heading": "Ready to Benchmark and Harden Your Systems?",
-      "subtitle": "WHITEGUARD's CIS Benchmarks Assessment delivers visibility, structure, and control, so your configurations stay secure and compliant.",
+      "subtitle": "Whiteguard's CIS Benchmarks Assessment delivers visibility, structure, and control, so your configurations stay secure and compliant.",
       "buttonLabel": "Request a Free Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -1126,8 +1126,8 @@
   "source-code-review": {
     "title": "Source Code Review",
     "seo": {
-      "title": "Source Code Review Services | Secure Coding & Vulnerability Detection | WHITEGUARD",
-      "description": "WHITEGUARD's Source Code Review service identifies hidden security flaws within application code. Strengthen your software's security posture through manual and automated code analysis aligned with OWASP and secure SDLC best practices."
+      "title": "Source Code Review Services | Secure Coding & Vulnerability Detection | Whiteguard",
+      "description": "Whiteguard's Source Code Review service identifies hidden security flaws within application code. Strengthen your software's security posture through manual and automated code analysis aligned with OWASP and secure SDLC best practices."
     },
     "hero": {
       "headline": "Source Code Review — Secure Your Applications from the Inside Out",
@@ -1137,7 +1137,7 @@
     },
     "whatIs": {
       "heading": "What Is a Source Code Review?",
-      "body": "A Source Code Review (also known as Secure Code Analysis) is a deep dive into your application's source code to detect security weaknesses early in the development cycle. Unlike black-box testing, this process evaluates the code itself — identifying logic flaws, insecure libraries, and misconfigurations that automated scanners often miss. At WHITEGUARD, we combine manual review by certified secure code analysts with automated scanning tools to ensure comprehensive coverage and accurate results. Our approach strengthens your Secure Software Development Lifecycle (SSDLC), improves DevSecOps maturity, and eliminates vulnerabilities before they become production risks.",
+      "body": "A Source Code Review (also known as Secure Code Analysis) is a deep dive into your application's source code to detect security weaknesses early in the development cycle. Unlike black-box testing, this process evaluates the code itself — identifying logic flaws, insecure libraries, and misconfigurations that automated scanners often miss. At Whiteguard, we combine manual review by certified secure code analysts with automated scanning tools to ensure comprehensive coverage and accurate results. Our approach strengthens your Secure Software Development Lifecycle (SSDLC), improves DevSecOps maturity, and eliminates vulnerabilities before they become production risks.",
       "ctaLabel": "Get A Quote",
       "ctaHref": "/contact"
     },
@@ -1393,7 +1393,7 @@
     ],
     "cta": {
       "heading": "Build Security Into Every Line of Code.",
-      "subtitle": "Protect your software and your customers with WHITEGUARD's comprehensive Source Code Review services.",
+      "subtitle": "Protect your software and your customers with Whiteguard's comprehensive Source Code Review services.",
       "buttonLabel": "Request a Free Scoping Call",
       "buttonHref": "tel:0123456789"
     }
@@ -1401,8 +1401,8 @@
   "cloud-security-assessment": {
     "title": "Cloud Security Assessment",
     "seo": {
-      "title": "Cloud Security Assessment | AWS, Azure & GCP Configuration Review | WHITEGUARD",
-      "description": "WHITEGUARD's Cloud Security Assessment identifies misconfigurations, excessive permissions, and architectural risks across AWS, Azure, and GCP environments. Gain visibility, strengthen compliance, and secure your cloud infrastructure."
+      "title": "Cloud Security Assessment | AWS, Azure & GCP Configuration Review | Whiteguard",
+      "description": "Whiteguard's Cloud Security Assessment identifies misconfigurations, excessive permissions, and architectural risks across AWS, Azure, and GCP environments. Gain visibility, strengthen compliance, and secure your cloud infrastructure."
     },
     "hero": {
       "headline": "Cloud Security Assessment — Secure the Cloud. Protect What Matters.",
@@ -1415,7 +1415,7 @@
     },
     "whatIs": {
       "heading": "What Is a Cloud Security Assessment?",
-      "body": "A Cloud Security Assessment is a comprehensive review of your cloud infrastructure, configurations, and policies to detect vulnerabilities and misconfigurations that threaten data integrity, compliance, and business continuity. At WHITEGUARD, we evaluate your AWS, Azure, and Google Cloud environments against industry benchmarks (CIS, NIST, ISO) and best practices to ensure your assets are secure, compliant, and resilient. Our experts identify IAM privilege issues, storage exposures, unprotected APIs, insecure networking, and logging gaps — delivering a clear path to a hardened and auditable cloud environment.",
+      "body": "A Cloud Security Assessment is a comprehensive review of your cloud infrastructure, configurations, and policies to detect vulnerabilities and misconfigurations that threaten data integrity, compliance, and business continuity. At Whiteguard, we evaluate your AWS, Azure, and Google Cloud environments against industry benchmarks (CIS, NIST, ISO) and best practices to ensure your assets are secure, compliant, and resilient. Our experts identify IAM privilege issues, storage exposures, unprotected APIs, insecure networking, and logging gaps — delivering a clear path to a hardened and auditable cloud environment.",
       "ctaLabel": "Get A Quote",
       "ctaHref": "/contact"
     },
@@ -1658,7 +1658,7 @@
       },
       {
         "question": "Can you cover multi-cloud or hybrid setups?",
-        "description": "Absolutely. WHITEGUARD assesses all major cloud providers and integrated hybrid networks."
+        "description": "Absolutely. Whiteguard assesses all major cloud providers and integrated hybrid networks."
       },
       {
         "question": "How long does the assessment take?",
@@ -1671,7 +1671,7 @@
     ],
     "cta": {
       "heading": "Gain Control. Achieve Visibility. Secure the Cloud.",
-      "subtitle": "WHITEGUARD's Cloud Security Assessment gives you the clarity and confidence to operate safely in the cloud.",
+      "subtitle": "Whiteguard's Cloud Security Assessment gives you the clarity and confidence to operate safely in the cloud.",
       "buttonLabel": "Request a Free Scoping Call",
       "buttonHref": "tel:0123456789"
     }
@@ -1679,8 +1679,8 @@
   "soc-design": {
     "title": "SOC-as-a-Service",
     "seo": {
-      "title": "SOC-as-a-Service | 24/7 Threat Monitoring, Detection & Response | WHITEGUARD",
-      "description": "WHITEGUARD's SOC-as-a-Service delivers 24/7 threat detection, investigation, and incident response powered by expert analysts, automation, and intelligence. Gain visibility, speed, and control over your security operations."
+      "title": "SOC-as-a-Service | 24/7 Threat Monitoring, Detection & Response | Whiteguard",
+      "description": "Whiteguard's SOC-as-a-Service delivers 24/7 threat detection, investigation, and incident response powered by expert analysts, automation, and intelligence. Gain visibility, speed, and control over your security operations."
     },
     "hero": {
       "headline": "SOC-as-a-Service — Continuous Defense. Instant Response. Proven Resilience.",
@@ -1693,7 +1693,7 @@
     },
     "whatIs": {
       "heading": "What Is SOC-as-a-Service?",
-      "body": "A Security Operations Center (SOC) is the backbone of modern cyber defense, but building and maintaining one internally can be complex, costly, and resource intensive. WHITEGUARD's SOC-as-a-Service gives you all the capabilities of a world-class SOC without the overhead. Our certified analysts, advanced SIEM technology, and AI-driven automation deliver 24/7 visibility, real-time detection, and rapid response across your on-prem, cloud, and hybrid environments. With WHITEGUARD, you get proactive protection that scales with your business.",
+      "body": "A Security Operations Center (SOC) is the backbone of modern cyber defense, but building and maintaining one internally can be complex, costly, and resource intensive. Whiteguard's SOC-as-a-Service gives you all the capabilities of a world-class SOC without the overhead. Our certified analysts, advanced SIEM technology, and AI-driven automation deliver 24/7 visibility, real-time detection, and rapid response across your on-prem, cloud, and hybrid environments. With Whiteguard, you get proactive protection that scales with your business.",
       "ctaLabel": "Get A Quote",
       "ctaHref": "/contact"
     },
@@ -1787,7 +1787,7 @@
           "number": "04",
           "imgSrc": "/images/icons/output-4.svg",
           "title": "Security Advisory & Continuous Optimization",
-          "description": "Monthly threat briefings and improvement sessions with WHITEGUARD analysts.",
+          "description": "Monthly threat briefings and improvement sessions with Whiteguard analysts.",
           "bg": "#faf5ff"
         },
         {
@@ -1873,7 +1873,7 @@
           "id": "co-managed",
           "title": "Co-Managed SOC",
           "iconSrc": "/images/icons/pricing/icon-4.svg",
-          "description": "Hybrid collaboration model between WHITEGUARD and your in-house team."
+          "description": "Hybrid collaboration model between Whiteguard and your in-house team."
         },
         {
           "id": "retainer",
@@ -1919,14 +1919,14 @@
     },
     "testimonials": [
       {
-        "quote": "WHITEGUARD's SOC gave us 24/7 peace of mind. Response times are exceptional.",
+        "quote": "Whiteguard's SOC gave us 24/7 peace of mind. Response times are exceptional.",
         "name": "Client",
         "title": "CISO, Regional Bank"
       }
     ],
     "faqs": [
       {
-        "question": "How fast does WHITEGUARD's SOC detect and respond to threats?",
+        "question": "How fast does Whiteguard's SOC detect and respond to threats?",
         "description": "Our analysts monitor 24/7 and typically respond to verified alerts within 10–15 minutes."
       },
       {
@@ -1948,7 +1948,7 @@
     ],
     "cta": {
       "heading": "Stay Protected 24/7. Detect Threats Before They Impact.",
-      "subtitle": "WHITEGUARD's SOC-as-a-Service delivers continuous monitoring, rapid response, and full visibility — all managed by experts.",
+      "subtitle": "Whiteguard's SOC-as-a-Service delivers continuous monitoring, rapid response, and full visibility — all managed by experts.",
       "buttonLabel": "Request SOC-as-a-Service Now",
       "buttonHref": "tel:0123456789"
     }
@@ -1956,12 +1956,12 @@
   "siem-deployment": {
     "title": "SIEM Deployment & Use Case Management",
     "seo": {
-      "title": "SIEM Deployment & Use Case Management | Real-Time Threat Detection & Compliance | WHITEGUARD",
-      "description": "WHITEGUARD's SIEM Deployment and Use Case Management services help organizations implement and optimize SIEM solutions for better threat detection, response, and compliance. Tailored integration for your environment."
+      "title": "SIEM Deployment & Use Case Management | Real-Time Threat Detection & Compliance | Whiteguard",
+      "description": "Whiteguard's SIEM Deployment and Use Case Management services help organizations implement and optimize SIEM solutions for better threat detection, response, and compliance. Tailored integration for your environment."
     },
     "hero": {
       "headline": "SIEM Deployment & Use Case Management — Detect, Respond, Comply.",
-      "subtitle": "Get full visibility into your network and systems with SIEM deployment, customized use case management, and real-time threat detection powered by WHITEGUARD experts.",
+      "subtitle": "Get full visibility into your network and systems with SIEM deployment, customized use case management, and real-time threat detection powered by Whiteguard experts.",
       "ctaPrimary": {
         "label": "Request a SIEM Consultation",
         "href": "/contact"
@@ -1970,7 +1970,7 @@
     },
     "whatIs": {
       "heading": "What Is SIEM?",
-      "body": "A Security Information and Event Management (SIEM) system helps organizations aggregate logs, monitor network traffic, and detect suspicious activity — all from a centralized platform. At WHITEGUARD, we deploy, configure, and manage SIEM solutions tailored to your business needs, ensuring that you have complete visibility into your digital infrastructure, so you can respond to threats faster and improve your overall security posture.",
+      "body": "A Security Information and Event Management (SIEM) system helps organizations aggregate logs, monitor network traffic, and detect suspicious activity — all from a centralized platform. At Whiteguard, we deploy, configure, and manage SIEM solutions tailored to your business needs, ensuring that you have complete visibility into your digital infrastructure, so you can respond to threats faster and improve your overall security posture.",
       "ctaLabel": "Get A Quote",
       "ctaHref": "/contact"
     },
@@ -2224,7 +2224,7 @@
       }
     ],
     "cta": {
-      "heading": "Achieve 360° Security Monitoring with WHITEGUARD's SIEM Solutions",
+      "heading": "Achieve 360° Security Monitoring with Whiteguard's SIEM Solutions",
       "subtitle": "Our expert SIEM deployment and optimization services give you visibility, control, and proactive protection.",
       "buttonLabel": "Request a Free SIEM Consultation",
       "buttonHref": "tel:0123456789"
@@ -2233,12 +2233,12 @@
   "dfir-services": {
     "title": "Digital Forensics & Incident Response (DFIR)",
     "seo": {
-      "title": "Digital Forensics & Incident Response (DFIR) Services | Threat Investigation & Data Recovery | WHITEGUARD",
-      "description": "WHITEGUARD's Digital Forensics & Incident Response services help organizations investigate breaches, recover data, and strengthen security postures. From containment to forensics, we provide expert support when you need it most."
+      "title": "Digital Forensics & Incident Response (DFIR) Services | Threat Investigation & Data Recovery | Whiteguard",
+      "description": "Whiteguard's Digital Forensics & Incident Response services help organizations investigate breaches, recover data, and strengthen security postures. From containment to forensics, we provide expert support when you need it most."
     },
     "hero": {
       "headline": "Digital Forensics & Incident Response (DFIR) — Investigate. Contain. Recover.",
-      "subtitle": "Uncover the full scope of a cyberattack, respond effectively, and recover quickly with WHITEGUARD's expert DFIR services.",
+      "subtitle": "Uncover the full scope of a cyberattack, respond effectively, and recover quickly with Whiteguard's expert DFIR services.",
       "ctaPrimary": {
         "label": "Request Incident Response Support",
         "href": "/contact"
@@ -2247,7 +2247,7 @@
     },
     "whatIs": {
       "heading": "What Is Digital Forensics & Incident Response (DFIR)?",
-      "body": "Digital Forensics involves the collection, preservation, and analysis of digital evidence from compromised systems to determine the source, methods, and impact of an attack. Incident Response (IR) is the organized approach to detecting, containing, mitigating, and recovering from security incidents to minimize damage and restore normal operations. At WHITEGUARD, we combine both disciplines to ensure your organization responds effectively and recovers swiftly. Our expert DFIR team works alongside your internal teams to handle security incidents, analyze affected systems, and mitigate further damage. We provide real-time containment, detailed forensic analysis, and evidence gathering to help you meet compliance, maintain business continuity, and prevent future incidents.",
+      "body": "Digital Forensics involves the collection, preservation, and analysis of digital evidence from compromised systems to determine the source, methods, and impact of an attack. Incident Response (IR) is the organized approach to detecting, containing, mitigating, and recovering from security incidents to minimize damage and restore normal operations. At Whiteguard, we combine both disciplines to ensure your organization responds effectively and recovers swiftly. Our expert DFIR team works alongside your internal teams to handle security incidents, analyze affected systems, and mitigate further damage. We provide real-time containment, detailed forensic analysis, and evidence gathering to help you meet compliance, maintain business continuity, and prevent future incidents.",
       "ctaLabel": "Get A Quote",
       "ctaHref": "/contact"
     },
@@ -2480,7 +2480,7 @@
     ],
     "faqs": [
       {
-        "question": "How quickly can WHITEGUARD respond to an incident?",
+        "question": "How quickly can Whiteguard respond to an incident?",
         "description": "Our DFIR team is available 24/7, with an average response time of 1-2 hours for critical incidents."
       },
       {
@@ -2498,7 +2498,7 @@
     ],
     "cta": {
       "heading": "Respond Faster. Recover Smarter. Strengthen Your Defenses.",
-      "subtitle": "WHITEGUARD's DFIR services deliver rapid response, expert analysis, and recovery strategies to help your organization bounce back stronger than ever.",
+      "subtitle": "Whiteguard's DFIR services deliver rapid response, expert analysis, and recovery strategies to help your organization bounce back stronger than ever.",
       "buttonLabel": "Request a Free DFIR Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -2506,8 +2506,8 @@
   "threat-intelligence-brand-protection": {
     "title": "Threat Intelligence, Data Breach Monitoring & Brand Protection",
     "seo": {
-      "title": "Threat Intelligence & Data Breach Monitoring | Proactive Brand Protection | WHITEGUARD",
-      "description": "WHITEGUARD's Threat Intelligence, Data Breach Monitoring, and Brand Protection services provide continuous monitoring of your digital environment to detect early signs of attack and prevent brand abuse. Stay ahead of threats with actionable intelligence."
+      "title": "Threat Intelligence & Data Breach Monitoring | Proactive Brand Protection | Whiteguard",
+      "description": "Whiteguard's Threat Intelligence, Data Breach Monitoring, and Brand Protection services provide continuous monitoring of your digital environment to detect early signs of attack and prevent brand abuse. Stay ahead of threats with actionable intelligence."
     },
     "hero": {
       "headline": "Threat Intelligence, Data Breach Monitoring & Brand Protection — Stay One Step Ahead",
@@ -2520,7 +2520,7 @@
     },
     "whatIs": {
       "heading": "What Is Threat Intelligence & Data Breach Monitoring?",
-      "body": "Threat Intelligence involves the collection, analysis, and sharing of information about potential or actual cyber threats that could impact your organization. Data Breach Monitoring provides early detection of exposed personal, financial, and sensitive data across the dark web and other online channels. Brand Protection ensures your digital reputation remains intact by monitoring for impersonation, domain misuse, and phishing attacks targeting your customers or employees. At WHITEGUARD, we combine these services into a unified offering that gives your organization the visibility, protection, and response capabilities it needs to stay secure in an increasingly hostile digital environment.",
+      "body": "Threat Intelligence involves the collection, analysis, and sharing of information about potential or actual cyber threats that could impact your organization. Data Breach Monitoring provides early detection of exposed personal, financial, and sensitive data across the dark web and other online channels. Brand Protection ensures your digital reputation remains intact by monitoring for impersonation, domain misuse, and phishing attacks targeting your customers or employees. At Whiteguard, we combine these services into a unified offering that gives your organization the visibility, protection, and response capabilities it needs to stay secure in an increasingly hostile digital environment.",
       "ctaLabel": "Get A Quote",
       "ctaHref": "/contact"
     },
@@ -2780,7 +2780,7 @@
     ],
     "cta": {
       "heading": "Stay Ahead of Cyber Threats and Protect Your Brand",
-      "subtitle": "WHITEGUARD's Threat Intelligence and Data Breach Monitoring service provides continuous visibility, proactive defense, and brand protection.",
+      "subtitle": "Whiteguard's Threat Intelligence and Data Breach Monitoring service provides continuous visibility, proactive defense, and brand protection.",
       "buttonLabel": "Request a Free Consultation Now",
       "buttonHref": "tel:0123456789"
     }
@@ -2788,8 +2788,8 @@
   "managed-phishing-simulation-awareness": {
     "title": "Managed Phishing Simulation & Awareness",
     "seo": {
-      "title": "Managed Phishing Simulation & Awareness Training | Employee Security Education | WHITEGUARD",
-      "description": "WHITEGUARD's Managed Phishing Simulation & Awareness service helps organizations reduce human risk by simulating real-world phishing attacks and educating employees on security best practices. Strengthen your human firewall today."
+      "title": "Managed Phishing Simulation & Awareness Training | Employee Security Education | Whiteguard",
+      "description": "Whiteguard's Managed Phishing Simulation & Awareness service helps organizations reduce human risk by simulating real-world phishing attacks and educating employees on security best practices. Strengthen your human firewall today."
     },
     "hero": {
       "headline": "Managed Phishing Simulation & Awareness — Build a Resilient Human Firewall",
@@ -2805,7 +2805,7 @@
     },
     "whatIs": {
       "heading": "What Is Managed Phishing Simulation & Awareness?",
-      "body": "Managed Phishing Simulation & Awareness is a comprehensive program designed to test your employees' susceptibility to phishing attacks, raise awareness about common cyber threats, and improve your organization's overall security posture. At WHITEGUARD, we simulate real-world phishing campaigns that mirror current attack tactics, test responses, and provide tailored training to help employees recognize and report threats. Our continuous learning approach ensures that your team stays updated on the latest attack vectors and builds a strong cybersecurity awareness culture that reduces the risk of social engineering breaches.",
+      "body": "Managed Phishing Simulation & Awareness is a comprehensive program designed to test your employees' susceptibility to phishing attacks, raise awareness about common cyber threats, and improve your organization's overall security posture. At Whiteguard, we simulate real-world phishing campaigns that mirror current attack tactics, test responses, and provide tailored training to help employees recognize and report threats. Our continuous learning approach ensures that your team stays updated on the latest attack vectors and builds a strong cybersecurity awareness culture that reduces the risk of social engineering breaches.",
       "ctaLabel": "Get A Quote",
       "ctaHref": "/contact"
     },
@@ -3056,7 +3056,7 @@
     ],
     "cta": {
       "heading": "Strengthen Your Human Firewall Against Phishing Attacks",
-      "subtitle": "WHITEGUARD's Managed Phishing Simulation and Awareness service helps organizations build a resilient workforce capable of spotting, preventing, and reporting phishing attacks.",
+      "subtitle": "Whiteguard's Managed Phishing Simulation and Awareness service helps organizations build a resilient workforce capable of spotting, preventing, and reporting phishing attacks.",
       "buttonLabel": "Start My Phishing Simulation Campaign Now",
       "buttonHref": "tel:0123456789"
     }
@@ -3064,8 +3064,8 @@
   "managed-threat-hunting": {
     "title": "Incident Response & Handling",
     "seo": {
-      "title": "Incident Response & Handling Services | Cyber Attack Containment & Recovery | WHITEGUARD",
-      "description": "WHITEGUARD's Incident Response & Handling services provide fast containment, in-depth investigation, and recovery support to minimize the impact of security incidents. Get expert guidance and recovery strategies after a cyber-attack."
+      "title": "Incident Response & Handling Services | Cyber Attack Containment & Recovery | Whiteguard",
+      "description": "Whiteguard's Incident Response & Handling services provide fast containment, in-depth investigation, and recovery support to minimize the impact of security incidents. Get expert guidance and recovery strategies after a cyber-attack."
     },
     "hero": {
       "headline": "Incident Response & Handling — Investigate, Contain, Recover.",
@@ -3078,7 +3078,7 @@
     },
     "whatIs": {
       "heading": "What Is Incident Response & Handling?",
-      "body": "Incident Response (IR) is the process of identifying, containing, eradicating, and recovering from a cyberattack or security breach. Incident Handling involves the structured steps taken to manage an ongoing attack, including identifying the source, understanding its impact, and ensuring that any vulnerabilities are addressed to prevent further incidents. At WHITEGUARD, our Incident Response & Handling services are designed to minimize business downtime and protect your organization's reputation. Our certified experts rapidly respond to data breaches, ransomware, APTs (Advanced Persistent Threats), and other cyber threats. We work alongside your teams to ensure full recovery and help you implement a stronger defense against future incidents.",
+      "body": "Incident Response (IR) is the process of identifying, containing, eradicating, and recovering from a cyberattack or security breach. Incident Handling involves the structured steps taken to manage an ongoing attack, including identifying the source, understanding its impact, and ensuring that any vulnerabilities are addressed to prevent further incidents. At Whiteguard, our Incident Response & Handling services are designed to minimize business downtime and protect your organization's reputation. Our certified experts rapidly respond to data breaches, ransomware, APTs (Advanced Persistent Threats), and other cyber threats. We work alongside your teams to ensure full recovery and help you implement a stronger defense against future incidents.",
       "ctaLabel": "Get A Quote",
       "ctaHref": "/contact"
     },
@@ -3315,7 +3315,7 @@
     ],
     "faqs": [
       {
-        "question": "How quickly can WHITEGUARD respond to an incident?",
+        "question": "How quickly can Whiteguard respond to an incident?",
         "description": "Our team is available 24/7. The average response time for critical incidents is 1-2 hours, with on-site support for severe breaches."
       },
       {
@@ -3337,7 +3337,7 @@
     ],
     "cta": {
       "heading": "Respond Faster. Recover Smarter. Strengthen Your Security.",
-      "subtitle": "WHITEGUARD's Incident Response & Handling services help you quickly manage and recover from attacks while strengthening your defenses for the future.",
+      "subtitle": "Whiteguard's Incident Response & Handling services help you quickly manage and recover from attacks while strengthening your defenses for the future.",
       "buttonLabel": "Request a Free Incident Response Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -3345,12 +3345,12 @@
   "business-continuity-recovery": {
     "title": "Business Continuity & Disaster Recovery (BCDR)",
     "seo": {
-      "title": "Business Continuity & Disaster Recovery Services | Incident Recovery, DRP, BCP | WHITEGUARD",
-      "description": "WHITEGUARD's Business Continuity & Disaster Recovery (BCDR) services help organizations plan, implement, and test effective recovery strategies. Minimize downtime, reduce risk, and ensure rapid recovery after incidents or disruptions."
+      "title": "Business Continuity & Disaster Recovery Services | Incident Recovery, DRP, BCP | Whiteguard",
+      "description": "Whiteguard's Business Continuity & Disaster Recovery (BCDR) services help organizations plan, implement, and test effective recovery strategies. Minimize downtime, reduce risk, and ensure rapid recovery after incidents or disruptions."
     },
     "hero": {
       "headline": "Business Continuity & Disaster Recovery (BCDR) — Ensure Resilience. Guarantee Recovery.",
-      "subtitle": "Plan for the unexpected, recover quickly, and continue business operations with WHITEGUARD's tailored Business Continuity and Disaster Recovery solutions.",
+      "subtitle": "Plan for the unexpected, recover quickly, and continue business operations with Whiteguard's tailored Business Continuity and Disaster Recovery solutions.",
       "ctaPrimary": {
         "label": "Request a BCDR Consultation",
         "href": "/contact"
@@ -3359,7 +3359,7 @@
     },
     "whatIs": {
       "heading": "What Is Business Continuity & Disaster Recovery (BCDR)?",
-      "body": "Business Continuity ensures that critical business functions continue during and after a disaster, while Disaster Recovery focuses on restoring IT infrastructure and data after a disruptive event. At WHITEGUARD, we help organizations design, implement, and test BCP (Business Continuity Plans) and DRP (Disaster Recovery Plans) to prepare for worst-case scenarios. Our comprehensive approach enables you to: Minimize downtime during incidents; Recover critical data and infrastructure; Meet regulatory compliance for risk management and operational continuity. We combine risk assessment, business impact analysis, failover strategies, and recovery procedures into a tailored, actionable plan.",
+      "body": "Business Continuity ensures that critical business functions continue during and after a disaster, while Disaster Recovery focuses on restoring IT infrastructure and data after a disruptive event. At Whiteguard, we help organizations design, implement, and test BCP (Business Continuity Plans) and DRP (Disaster Recovery Plans) to prepare for worst-case scenarios. Our comprehensive approach enables you to: Minimize downtime during incidents; Recover critical data and infrastructure; Meet regulatory compliance for risk management and operational continuity. We combine risk assessment, business impact analysis, failover strategies, and recovery procedures into a tailored, actionable plan.",
       "ctaLabel": "Get A Quote",
       "ctaHref": "/contact"
     },
@@ -3614,7 +3614,7 @@
     ],
     "cta": {
       "heading": "Be Prepared for the Unexpected.",
-      "subtitle": "WHITEGUARD's Business Continuity & Disaster Recovery services help you stay resilient and recover faster — minimizing downtime and protecting what matters most.",
+      "subtitle": "Whiteguard's Business Continuity & Disaster Recovery services help you stay resilient and recover faster — minimizing downtime and protecting what matters most.",
       "buttonLabel": "Request a Free BCDR Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -3622,12 +3622,12 @@
   "security-awareness-training": {
     "title": "Security Awareness Training for Non-Technical Staff",
     "seo": {
-      "title": "Security Awareness Training for Non-Technical Staff | Cybersecurity Education & Best Practices | WHITEGUARD",
-      "description": "WHITEGUARD's Security Awareness Training helps non-technical staff recognize cyber threats, prevent security breaches, and adopt best practices for data protection and phishing prevention. Empower your workforce with the knowledge to defend against cyber threats."
+      "title": "Security Awareness Training for Non-Technical Staff | Cybersecurity Education & Best Practices | Whiteguard",
+      "description": "Whiteguard's Security Awareness Training helps non-technical staff recognize cyber threats, prevent security breaches, and adopt best practices for data protection and phishing prevention. Empower your workforce with the knowledge to defend against cyber threats."
     },
     "hero": {
       "headline": "Security Awareness Training for Non-Technical Staff — Protect Your Organization from Human Error",
-      "subtitle": "Train your non-technical staff to recognize threats like phishing, social engineering, and data breaches with WHITEGUARD's customized Security Awareness Training. Reduce risks, enhance cybersecurity, and foster a security-conscious culture.",
+      "subtitle": "Train your non-technical staff to recognize threats like phishing, social engineering, and data breaches with Whiteguard's customized Security Awareness Training. Reduce risks, enhance cybersecurity, and foster a security-conscious culture.",
       "ctaPrimary": {
         "label": "Request Security Awareness Training Proposal",
         "href": "/contact"
@@ -3639,7 +3639,7 @@
     },
     "whatIs": {
       "heading": "What Is Security Awareness Training for Non-Technical Staff?",
-      "body": "Security Awareness Training is designed to educate non-technical employees on cybersecurity best practices and help them understand the risks associated with common cyber threats such as phishing, social engineering, and data breaches. WHITEGUARD provides tailored training sessions that empower employees with the skills to identify and mitigate potential threats, ensuring that all team members — regardless of their technical background — understand how their actions impact organizational security.",
+      "body": "Security Awareness Training is designed to educate non-technical employees on cybersecurity best practices and help them understand the risks associated with common cyber threats such as phishing, social engineering, and data breaches. Whiteguard provides tailored training sessions that empower employees with the skills to identify and mitigate potential threats, ensuring that all team members — regardless of their technical background — understand how their actions impact organizational security.",
       "ctaLabel": "Get Security Awareness Training Today",
       "ctaHref": "/contact"
     },
@@ -3884,7 +3884,7 @@
     ],
     "cta": {
       "heading": "Strengthen Your First Line of Defense Against Cyber Threats",
-      "subtitle": "WHITEGUARD's Security Awareness Training helps your non-technical staff recognize threats and adopt best practices for protecting your organization's critical data.",
+      "subtitle": "Whiteguard's Security Awareness Training helps your non-technical staff recognize threats and adopt best practices for protecting your organization's critical data.",
       "buttonLabel": "Request a Free Security Awareness Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -3892,12 +3892,12 @@
   "ssdlt-training": {
     "title": "Secure Software Development Lifecycle (SSDLC) Training",
     "seo": {
-      "title": "Secure Software Development Lifecycle (SSDLC) Training | Build Secure Applications | WHITEGUARD",
-      "description": "WHITEGUARD's Secure Software Development Lifecycle (SSDLC) Training helps development teams integrate security into every phase of the software development process. Learn best practices for building secure applications from the ground up."
+      "title": "Secure Software Development Lifecycle (SSDLC) Training | Build Secure Applications | Whiteguard",
+      "description": "Whiteguard's Secure Software Development Lifecycle (SSDLC) Training helps development teams integrate security into every phase of the software development process. Learn best practices for building secure applications from the ground up."
     },
     "hero": {
       "headline": "Secure Software Development Lifecycle (SSDLC) Training — Build Secure Applications from the Start",
-      "subtitle": "Integrate security throughout every phase of your software development lifecycle (SDLC) with WHITEGUARD's SSDLC Training. Empower your development team to create secure, scalable applications.",
+      "subtitle": "Integrate security throughout every phase of your software development lifecycle (SDLC) with Whiteguard's SSDLC Training. Empower your development team to create secure, scalable applications.",
       "ctaPrimary": {
         "label": "Request SSDLC Training Proposal",
         "href": "/contact"
@@ -3909,7 +3909,7 @@
     },
     "whatIs": {
       "heading": "What Is Secure Software Development Lifecycle (SSDLC)?",
-      "body": "The Secure Software Development Lifecycle (SSDLC) is a framework that integrates security practices into every stage of software development — from initial design to final deployment. By embedding security from the outset, SSDLC helps identify and address vulnerabilities early in the development process, preventing costly and time-consuming fixes later. WHITEGUARD's SSDLC training ensures that your development team follows security best practices across all phases of the SDLC, improving the overall security posture of your software products. We teach developers how to design secure code, perform security testing, and handle vulnerabilities proactively.",
+      "body": "The Secure Software Development Lifecycle (SSDLC) is a framework that integrates security practices into every stage of software development — from initial design to final deployment. By embedding security from the outset, SSDLC helps identify and address vulnerabilities early in the development process, preventing costly and time-consuming fixes later. Whiteguard's SSDLC training ensures that your development team follows security best practices across all phases of the SDLC, improving the overall security posture of your software products. We teach developers how to design secure code, perform security testing, and handle vulnerabilities proactively.",
       "ctaLabel": "Get SSDLC Training Today",
       "ctaHref": "/contact"
     },
@@ -4154,7 +4154,7 @@
     ],
     "cta": {
       "heading": "Build Secure Software from the Ground Up with SSDLC",
-      "subtitle": "WHITEGUARD's Secure Software Development Lifecycle (SSDLC) training helps your development team integrate security into every phase of the software lifecycle, ensuring safer applications and a stronger security posture.",
+      "subtitle": "Whiteguard's Secure Software Development Lifecycle (SSDLC) training helps your development team integrate security into every phase of the software lifecycle, ensuring safer applications and a stronger security posture.",
       "buttonLabel": "Request a Free SSDLC Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -4162,8 +4162,8 @@
   "vapt-training": {
     "title": "VAPT Training for Technical Employees",
     "seo": {
-      "title": "VAPT Training for Technical Employees | Penetration Testing & Vulnerability Assessment | WHITEGUARD",
-      "description": "WHITEGUARD's VAPT Training for Technical Employees empowers your security teams to perform effective penetration testing and vulnerability assessments. Learn the latest tactics, tools, and techniques to identify and mitigate security vulnerabilities."
+      "title": "VAPT Training for Technical Employees | Penetration Testing & Vulnerability Assessment | Whiteguard",
+      "description": "Whiteguard's VAPT Training for Technical Employees empowers your security teams to perform effective penetration testing and vulnerability assessments. Learn the latest tactics, tools, and techniques to identify and mitigate security vulnerabilities."
     },
     "hero": {
       "headline": "VAPT Training for Technical Employees — Strengthen Your Security with Expert Training",
@@ -4179,7 +4179,7 @@
     },
     "whatIs": {
       "heading": "What Is VAPT Training for Technical Employees?",
-      "body": "VAPT (Vulnerability Assessment and Penetration Testing) is a critical process in identifying and addressing security vulnerabilities in your organization's systems and infrastructure. It combines vulnerability scanning to identify weaknesses and penetration testing to exploit those weaknesses, simulating real-world attacks to evaluate security defenses. WHITEGUARD's VAPT training teaches your technical employees, including security professionals, network engineers, and system administrators, how to effectively conduct VAPT activities using industry-leading tools and techniques. This training ensures your team has the expertise to identify and address security flaws proactively, minimizing the risk of breaches.",
+      "body": "VAPT (Vulnerability Assessment and Penetration Testing) is a critical process in identifying and addressing security vulnerabilities in your organization's systems and infrastructure. It combines vulnerability scanning to identify weaknesses and penetration testing to exploit those weaknesses, simulating real-world attacks to evaluate security defenses. Whiteguard's VAPT training teaches your technical employees, including security professionals, network engineers, and system administrators, how to effectively conduct VAPT activities using industry-leading tools and techniques. This training ensures your team has the expertise to identify and address security flaws proactively, minimizing the risk of breaches.",
       "ctaLabel": "Get VAPT Training Today",
       "ctaHref": "/contact"
     },
@@ -4424,7 +4424,7 @@
     ],
     "cta": {
       "heading": "Empower Your Security Team with VAPT Expertise",
-      "subtitle": "WHITEGUARD's VAPT Training for Technical Employees helps your team master the skills to identify, test, and fix vulnerabilities, improving your organization's security posture.",
+      "subtitle": "Whiteguard's VAPT Training for Technical Employees helps your team master the skills to identify, test, and fix vulnerabilities, improving your organization's security posture.",
       "buttonLabel": "Request a Free VAPT Training Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -4432,8 +4432,8 @@
   "soc-training": {
     "title": "SOC Training for Technical Employees",
     "seo": {
-      "title": "SOC Training for Technical Employees | Cybersecurity Operations & Incident Response | WHITEGUARD",
-      "description": "WHITEGUARD's SOC Training for Technical Employees provides hands-on experience in threat detection, incident response, and security monitoring. Equip your SOC team with the skills to protect your organization from evolving cyber threats."
+      "title": "SOC Training for Technical Employees | Cybersecurity Operations & Incident Response | Whiteguard",
+      "description": "Whiteguard's SOC Training for Technical Employees provides hands-on experience in threat detection, incident response, and security monitoring. Equip your SOC team with the skills to protect your organization from evolving cyber threats."
     },
     "hero": {
       "headline": "SOC Training for Technical Employees — Master Threat Detection & Incident Response",
@@ -4449,7 +4449,7 @@
     },
     "whatIs": {
       "heading": "What Is SOC Training for Technical Employees?",
-      "body": "A Security Operations Center (SOC) is the heart of an organization's cybersecurity defense. The SOC team is responsible for monitoring, detecting, and responding to security incidents in real-time. SOC Training teaches technical employees how to effectively operate security tools, monitor network activity, identify threats, and respond to incidents to mitigate risks. WHITEGUARD's SOC training helps security analysts, incident responders, and SOC teams build expertise in key areas such as log management, incident detection, threat intelligence, security automation, and forensics. The training includes hands-on exercises and simulations, ensuring your team is prepared to handle real-world cybersecurity challenges.",
+      "body": "A Security Operations Center (SOC) is the heart of an organization's cybersecurity defense. The SOC team is responsible for monitoring, detecting, and responding to security incidents in real-time. SOC Training teaches technical employees how to effectively operate security tools, monitor network activity, identify threats, and respond to incidents to mitigate risks. Whiteguard's SOC training helps security analysts, incident responders, and SOC teams build expertise in key areas such as log management, incident detection, threat intelligence, security automation, and forensics. The training includes hands-on exercises and simulations, ensuring your team is prepared to handle real-world cybersecurity challenges.",
       "ctaLabel": "Get SOC Training Today",
       "ctaHref": "/contact"
     },
@@ -4694,7 +4694,7 @@
     ],
     "cta": {
       "heading": "Strengthen Your SOC Team with Expert Training",
-      "subtitle": "WHITEGUARD's SOC Training for Technical Employees ensures your team has the skills to detect, respond, and secure your systems against cyber threats.",
+      "subtitle": "Whiteguard's SOC Training for Technical Employees ensures your team has the skills to detect, respond, and secure your systems against cyber threats.",
       "buttonLabel": "Request a Free SOC Training Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -4702,8 +4702,8 @@
   "iso-27001": {
     "title": "ISO/IEC 27001 Certification Services",
     "seo": {
-      "title": "ISO/IEC 27001 Certification Services | Information Security Management System (ISMS) | WHITEGUARD",
-      "description": "Achieve ISO/IEC 27001 certification with WHITEGUARD's expert ISMS consulting services. Implement risk-based security controls, secure critical data, and meet regulatory requirements with a structured, compliant approach."
+      "title": "ISO/IEC 27001 Certification Services | Information Security Management System (ISMS) | Whiteguard",
+      "description": "Achieve ISO/IEC 27001 certification with Whiteguard's expert ISMS consulting services. Implement risk-based security controls, secure critical data, and meet regulatory requirements with a structured, compliant approach."
     },
     "hero": {
       "headline": "ISO/IEC 27001 Certification — Strengthen Your Information Security Management System",
@@ -4716,8 +4716,8 @@
     },
     "whatIs": {
       "heading": "What Is ISO/IEC 27001?",
-      "body": "ISO/IEC 27001 is the international standard for creating, implementing, and maintaining an Information Security Management System (ISMS). It provides a systematic approach to managing sensitive company information, ensuring that it remains secure through a risk management process, proper controls, and ongoing monitoring. WHITEGUARD helps organizations achieve ISO/IEC 27001 certification by assessing their security posture, recommending necessary controls, and ensuring compliance with industry's best practices. Our team supports businesses at every stage — from gap analysis to certification, and through continuous improvement for sustained security.",
-      "ctaLabel": "Get ISO 27001 Certified with WHITEGUARD",
+      "body": "ISO/IEC 27001 is the international standard for creating, implementing, and maintaining an Information Security Management System (ISMS). It provides a systematic approach to managing sensitive company information, ensuring that it remains secure through a risk management process, proper controls, and ongoing monitoring. Whiteguard helps organizations achieve ISO/IEC 27001 certification by assessing their security posture, recommending necessary controls, and ensuring compliance with industry's best practices. Our team supports businesses at every stage — from gap analysis to certification, and through continuous improvement for sustained security.",
+      "ctaLabel": "Get ISO 27001 Certified with Whiteguard",
       "ctaHref": "/contact"
     },
     "whoNeeds": {
@@ -4942,7 +4942,7 @@
     },
     "testimonials": [
       {
-        "quote": "WHITEGUARD guided us to ISO 27001 certification with clarity and expertise.",
+        "quote": "Whiteguard guided us to ISO 27001 certification with clarity and expertise.",
         "name": "Client",
         "title": "CISO, Fintech Client"
       }
@@ -4953,7 +4953,7 @@
         "description": "Typically, the process takes 3–6 months depending on your organization's size and existing security posture."
       },
       {
-        "question": "Can WHITEGUARD help with ongoing compliance after certification?",
+        "question": "Can Whiteguard help with ongoing compliance after certification?",
         "description": "Yes — we provide continuous monitoring, periodic audits, and training to ensure your ISMS remains compliant."
       },
       {
@@ -4967,7 +4967,7 @@
     ],
     "cta": {
       "heading": "Build a Stronger Information Security Management System with ISO 27001",
-      "subtitle": "WHITEGUARD's expert ISO 27001 consulting and implementation services help you secure critical information, reduce risk, and meet compliance.",
+      "subtitle": "Whiteguard's expert ISO 27001 consulting and implementation services help you secure critical information, reduce risk, and meet compliance.",
       "buttonLabel": "Request a Free ISO 27001 Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -4975,8 +4975,8 @@
   "sama-readiness": {
     "title": "SAMA Cybersecurity Framework (CSF) Services",
     "seo": {
-      "title": "SAMA Cybersecurity Framework (CSF) Consulting | Compliance & Implementation | WHITEGUARD",
-      "description": "Achieve compliance with Saudi Arabia's SAMA Cybersecurity Framework (CSF) with WHITEGUARD's expert consulting services. Protect critical financial systems, meet regulatory requirements, and secure your data through tailored cybersecurity solutions."
+      "title": "SAMA Cybersecurity Framework (CSF) Consulting | Compliance & Implementation | Whiteguard",
+      "description": "Achieve compliance with Saudi Arabia's SAMA Cybersecurity Framework (CSF) with Whiteguard's expert consulting services. Protect critical financial systems, meet regulatory requirements, and secure your data through tailored cybersecurity solutions."
     },
     "hero": {
       "headline": "SAMA Cybersecurity Framework (CSF) — Achieve Compliance, Strengthen Security",
@@ -4989,8 +4989,8 @@
     },
     "whatIs": {
       "heading": "What Is SAMA Cybersecurity Framework (CSF)?",
-      "body": "The SAMA Cybersecurity Framework (CSF) is a set of guidelines established by the Saudi Arabian Monetary Authority (SAMA) to protect financial institutions and critical national infrastructure from cyber threats. The CSF outlines the core security measures, risk management practices, and compliance controls that must be implemented across the financial sector, fintech companies, and their suppliers. At WHITEGUARD, we offer SAMA CSF compliance consulting and implementation support to help your organization align with the framework's requirements. From conducting gap assessments to implementing cybersecurity controls, we ensure that your cybersecurity posture meets regulatory expectations while strengthening your defenses.",
-      "ctaLabel": "Get SAMA CSF Compliant with WHITEGUARD",
+      "body": "The SAMA Cybersecurity Framework (CSF) is a set of guidelines established by the Saudi Arabian Monetary Authority (SAMA) to protect financial institutions and critical national infrastructure from cyber threats. The CSF outlines the core security measures, risk management practices, and compliance controls that must be implemented across the financial sector, fintech companies, and their suppliers. At Whiteguard, we offer SAMA CSF compliance consulting and implementation support to help your organization align with the framework's requirements. From conducting gap assessments to implementing cybersecurity controls, we ensure that your cybersecurity posture meets regulatory expectations while strengthening your defenses.",
+      "ctaLabel": "Get SAMA CSF Compliant with Whiteguard",
       "ctaHref": "/contact"
     },
     "whoNeeds": {
@@ -5215,7 +5215,7 @@
     },
     "testimonials": [
       {
-        "quote": "SAMA compliance achieved on schedule with WHITEGUARD's support.",
+        "quote": "SAMA compliance achieved on schedule with Whiteguard's support.",
         "name": "Client",
         "title": "CISO, Saudi Bank"
       }
@@ -5231,7 +5231,7 @@
       },
       {
         "question": "Do you offer ongoing support after the SAMA CSF implementation?",
-        "description": "Yes. WHITEGUARD offers continuous monitoring, incident response support, and regular audits to maintain compliance with the SAMA CSF."
+        "description": "Yes. Whiteguard offers continuous monitoring, incident response support, and regular audits to maintain compliance with the SAMA CSF."
       },
       {
         "question": "Can you assist with other regulatory frameworks besides SAMA CSF?",
@@ -5240,7 +5240,7 @@
     ],
     "cta": {
       "heading": "Ensure Your Compliance with SAMA CSF Today",
-      "subtitle": "WHITEGUARD's SAMA CSF consulting and implementation services help you meet regulatory requirements, protect critical data, and enhance your cybersecurity posture.",
+      "subtitle": "Whiteguard's SAMA CSF consulting and implementation services help you meet regulatory requirements, protect critical data, and enhance your cybersecurity posture.",
       "buttonLabel": "Request a Free SAMA CSF Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -5248,8 +5248,8 @@
   "nca-compliance": {
     "title": "NCA Cybersecurity Compliance",
     "seo": {
-      "title": "NCA Cybersecurity Compliance | Regulatory Support & Implementation | WHITEGUARD",
-      "description": "Achieve compliance with Saudi Arabia's NCA Essential Cybersecurity Controls with WHITEGUARD's expert consulting and implementation services. Secure critical infrastructure, meet regulatory requirements, and enhance cyber resilience."
+      "title": "NCA Cybersecurity Compliance | Regulatory Support & Implementation | Whiteguard",
+      "description": "Achieve compliance with Saudi Arabia's NCA Essential Cybersecurity Controls with Whiteguard's expert consulting and implementation services. Secure critical infrastructure, meet regulatory requirements, and enhance cyber resilience."
     },
     "hero": {
       "headline": "NCA Cybersecurity Compliance — Secure Critical Infrastructure, Meet Regulatory Standards",
@@ -5262,8 +5262,8 @@
     },
     "whatIs": {
       "heading": "What Is NCA Cybersecurity Compliance?",
-      "body": "NCA Cybersecurity Compliance is a set of mandatory cybersecurity controls and standards issued by the National Cybersecurity Authority (NCA) to protect critical infrastructure across Saudi Arabia. The NCA document outlines essential cybersecurity practices that every organization handling national infrastructure, government, or financial data must implement. WHITEGUARD helps organizations implement these standards effectively, ensuring compliance with NCA, enhancing their overall security posture, and reducing risks associated with cyber threats. We guide businesses through the entire compliance lifecycle, from gap assessments to full implementation, risk management, and audit support.",
-      "ctaLabel": "Achieve NCA Compliance with WHITEGUARD",
+      "body": "NCA Cybersecurity Compliance is a set of mandatory cybersecurity controls and standards issued by the National Cybersecurity Authority (NCA) to protect critical infrastructure across Saudi Arabia. The NCA document outlines essential cybersecurity practices that every organization handling national infrastructure, government, or financial data must implement. Whiteguard helps organizations implement these standards effectively, ensuring compliance with NCA, enhancing their overall security posture, and reducing risks associated with cyber threats. We guide businesses through the entire compliance lifecycle, from gap assessments to full implementation, risk management, and audit support.",
+      "ctaLabel": "Achieve NCA Compliance with Whiteguard",
       "ctaHref": "/contact"
     },
     "whoNeeds": {
@@ -5488,7 +5488,7 @@
     },
     "testimonials": [
       {
-        "quote": "NCA compliance achieved with WHITEGUARD's structured approach.",
+        "quote": "NCA compliance achieved with Whiteguard's structured approach.",
         "name": "Client",
         "title": "Head of IT Security, Telecom Provider"
       }
@@ -5508,12 +5508,12 @@
       },
       {
         "question": "Can you help us with post-compliance monitoring?",
-        "description": "Yes, WHITEGUARD offers continuous monitoring and regular security audits to ensure that your organization remains compliant with NCA."
+        "description": "Yes, Whiteguard offers continuous monitoring and regular security audits to ensure that your organization remains compliant with NCA."
       }
     ],
     "cta": {
       "heading": "Achieve Full NCA Compliance and Strengthen Your Cybersecurity Framework",
-      "subtitle": "WHITEGUARD's NCA compliance consulting services ensure your organization's cybersecurity controls meet regulatory standards while securing your critical infrastructure.",
+      "subtitle": "Whiteguard's NCA compliance consulting services ensure your organization's cybersecurity controls meet regulatory standards while securing your critical infrastructure.",
       "buttonLabel": "Request a Free NCA Compliance Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -5521,8 +5521,8 @@
   "pci-dss-pin-security-compliance": {
     "title": "PCI-DSS & PIN Security Compliance",
     "seo": {
-      "title": "PCI-DSS & PIN Security Compliance Services | Payment Data Protection & Fraud Prevention | WHITEGUARD",
-      "description": "Achieve PCI-DSS compliance and secure cardholder data with WHITEGUARD's expert consulting services. We help organizations meet the latest standards for payment data protection, fraud prevention, and PIN security."
+      "title": "PCI-DSS & PIN Security Compliance Services | Payment Data Protection & Fraud Prevention | Whiteguard",
+      "description": "Achieve PCI-DSS compliance and secure cardholder data with Whiteguard's expert consulting services. We help organizations meet the latest standards for payment data protection, fraud prevention, and PIN security."
     },
     "hero": {
       "headline": "PCI-DSS & PIN Security Compliance — Protect Payment Data, Ensure Regulatory Compliance",
@@ -5535,8 +5535,8 @@
     },
     "whatIs": {
       "heading": "What Is PCI-DSS & PIN Security Compliance?",
-      "body": "PCI-DSS (Payment Card Industry Data Security Standard) is a global standard that ensures all entities that process, store, or transmit cardholder data maintain a secure environment. This includes businesses, service providers, and organizations that handle payment card information. PIN Security relates to the security of Personal Identification Numbers (PINs), which must be encrypted and stored securely according to specific industry guidelines. Compliance with PCI-DSS and PIN Security is not optional — it's critical for protecting sensitive data, ensuring customer trust, and meeting regulatory requirements. WHITEGUARD offers end-to-end PCI-DSS compliance consulting and PIN security services, from gap assessments to remediation support and audit preparation. We ensure that your organization meets all security standards, including encryption, authentication, and access control, to mitigate the risk of fraud and data breaches.",
-      "ctaLabel": "Get PCI-DSS Certified with WHITEGUARD",
+      "body": "PCI-DSS (Payment Card Industry Data Security Standard) is a global standard that ensures all entities that process, store, or transmit cardholder data maintain a secure environment. This includes businesses, service providers, and organizations that handle payment card information. PIN Security relates to the security of Personal Identification Numbers (PINs), which must be encrypted and stored securely according to specific industry guidelines. Compliance with PCI-DSS and PIN Security is not optional — it's critical for protecting sensitive data, ensuring customer trust, and meeting regulatory requirements. Whiteguard offers end-to-end PCI-DSS compliance consulting and PIN security services, from gap assessments to remediation support and audit preparation. We ensure that your organization meets all security standards, including encryption, authentication, and access control, to mitigate the risk of fraud and data breaches.",
+      "ctaLabel": "Get PCI-DSS Certified with Whiteguard",
       "ctaHref": "/contact"
     },
     "whoNeeds": {
@@ -5761,7 +5761,7 @@
     },
     "testimonials": [
       {
-        "quote": "We needed PCI-DSS compliance fast. WHITEGUARD delivered a clear roadmap.",
+        "quote": "We needed PCI-DSS compliance fast. Whiteguard delivered a clear roadmap.",
         "name": "Client",
         "title": "CISO, E-commerce Client"
       }
@@ -5790,7 +5790,7 @@
     ],
     "cta": {
       "heading": "Achieve PCI-DSS Compliance & Secure Your Payment Systems",
-      "subtitle": "WHITEGUARD's PCI-DSS and PIN Security services ensure your business complies with industry standards, protecting payment card data and securing customer trust.",
+      "subtitle": "Whiteguard's PCI-DSS and PIN Security services ensure your business complies with industry standards, protecting payment card data and securing customer trust.",
       "buttonLabel": "Request a PCI-DSS Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -5798,8 +5798,8 @@
   "soc-2-compliance": {
     "title": "SOC 2 Compliance",
     "seo": {
-      "title": "SOC 2 Compliance Services | Trust Services Criteria & Audit Readiness | WHITEGUARD",
-      "description": "Achieve SOC 2 compliance with WHITEGUARD's expert consulting and audit readiness services. Secure your cloud environment, meet regulatory requirements, and demonstrate your commitment to security and privacy."
+      "title": "SOC 2 Compliance Services | Trust Services Criteria & Audit Readiness | Whiteguard",
+      "description": "Achieve SOC 2 compliance with Whiteguard's expert consulting and audit readiness services. Secure your cloud environment, meet regulatory requirements, and demonstrate your commitment to security and privacy."
     },
     "hero": {
       "headline": "SOC 2 Compliance — Secure Your Systems, Ensure Trust",
@@ -5812,7 +5812,7 @@
     },
     "whatIs": {
       "heading": "What Is SOC 2 Compliance?",
-      "body": "SOC 2 is a framework for managing and securing data based on five Trust Services Criteria (TSC): Security (the protection of data from unauthorized access), Availability (the accessibility of the system as agreed upon), Confidentiality (the protection of confidential information), Processing Integrity (ensuring the system's processing is complete, accurate, and timely), and Privacy (protecting personal information in line with privacy policies). At WHITEGUARD, we help organizations implement SOC 2 controls, prepare for the SOC 2 audit, and ensure continuous compliance monitoring. We guide you through the process from initial gap assessments to audit preparation, ensuring you meet SOC 2 TSC requirements and improve your overall cybersecurity posture.",
+      "body": "SOC 2 is a framework for managing and securing data based on five Trust Services Criteria (TSC): Security (the protection of data from unauthorized access), Availability (the accessibility of the system as agreed upon), Confidentiality (the protection of confidential information), Processing Integrity (ensuring the system's processing is complete, accurate, and timely), and Privacy (protecting personal information in line with privacy policies). At Whiteguard, we help organizations implement SOC 2 controls, prepare for the SOC 2 audit, and ensure continuous compliance monitoring. We guide you through the process from initial gap assessments to audit preparation, ensuring you meet SOC 2 TSC requirements and improve your overall cybersecurity posture.",
       "ctaLabel": "Talk To An Expert Now",
       "ctaHref": "/contact"
     },
@@ -6038,7 +6038,7 @@
     },
     "testimonials": [
       {
-        "quote": "SOC 2 certification in record time with WHITEGUARD's expertise.",
+        "quote": "SOC 2 certification in record time with Whiteguard's expertise.",
         "name": "Client",
         "title": "Security Director, SaaS Company"
       }
@@ -6058,7 +6058,7 @@
       },
       {
         "question": "How does the SOC 2 audit process work?",
-        "description": "SOC 2 audits are conducted by third-party auditors who verify that your company has implemented the necessary Trust Services Criteria. WHITEGUARD provides pre-audit readiness, remediation, and audit support."
+        "description": "SOC 2 audits are conducted by third-party auditors who verify that your company has implemented the necessary Trust Services Criteria. Whiteguard provides pre-audit readiness, remediation, and audit support."
       },
       {
         "question": "Do you offer continuous SOC 2 compliance monitoring?",
@@ -6067,7 +6067,7 @@
     ],
     "cta": {
       "heading": "Secure Your Systems, Prove Your Trustworthiness with SOC 2",
-      "subtitle": "Achieve SOC 2 certification and demonstrate your organization's commitment to security, privacy, and data protection with WHITEGUARD.",
+      "subtitle": "Achieve SOC 2 certification and demonstrate your organization's commitment to security, privacy, and data protection with Whiteguard.",
       "buttonLabel": "Request a Free SOC 2 Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -6075,12 +6075,12 @@
   "hipaa-compliance": {
     "title": "HIPAA Compliance",
     "seo": {
-      "title": "HIPAA Compliance Consulting Services | Data Protection & Patient Privacy | WHITEGUARD",
-      "description": "Achieve HIPAA compliance with WHITEGUARD's expert consulting services. Secure patient data, ensure privacy, and meet all HIPAA regulatory requirements for healthcare providers, insurers, and business associates."
+      "title": "HIPAA Compliance Consulting Services | Data Protection & Patient Privacy | Whiteguard",
+      "description": "Achieve HIPAA compliance with Whiteguard's expert consulting services. Secure patient data, ensure privacy, and meet all HIPAA regulatory requirements for healthcare providers, insurers, and business associates."
     },
     "hero": {
       "headline": "HIPAA Compliance — Secure Patient Data, Ensure Privacy",
-      "subtitle": "Achieve full HIPAA compliance with WHITEGUARD's expert consulting and implementation services, protecting patient data, ensuring privacy, and meeting regulatory standards for healthcare organizations.",
+      "subtitle": "Achieve full HIPAA compliance with Whiteguard's expert consulting and implementation services, protecting patient data, ensuring privacy, and meeting regulatory standards for healthcare organizations.",
       "ctaPrimary": {
         "label": "Request HIPAA Compliance Consultation",
         "href": "/contact"
@@ -6089,8 +6089,8 @@
     },
     "whatIs": {
       "heading": "What Is HIPAA Compliance?",
-      "body": "HIPAA (Health Insurance Portability and Accountability Act) sets the standards for protecting sensitive patient data. It mandates how healthcare organizations (and their business associates) should store, transmit, and handle patient information to ensure its confidentiality, integrity, and availability. WHITEGUARD helps healthcare providers, insurers, and business associates meet HIPAA's stringent requirements, including data protection, risk management, access controls, and incident response. We provide full-service HIPAA compliance consulting — from gap analysis to implementation, training, and audit support. Our approach ensures that your organization protects PHI (Protected Health Information) while reducing risks of breaches and non-compliance.",
-      "ctaLabel": "Achieve HIPAA Compliance with WHITEGUARD",
+      "body": "HIPAA (Health Insurance Portability and Accountability Act) sets the standards for protecting sensitive patient data. It mandates how healthcare organizations (and their business associates) should store, transmit, and handle patient information to ensure its confidentiality, integrity, and availability. Whiteguard helps healthcare providers, insurers, and business associates meet HIPAA's stringent requirements, including data protection, risk management, access controls, and incident response. We provide full-service HIPAA compliance consulting — from gap analysis to implementation, training, and audit support. Our approach ensures that your organization protects PHI (Protected Health Information) while reducing risks of breaches and non-compliance.",
+      "ctaLabel": "Achieve HIPAA Compliance with Whiteguard",
       "ctaHref": "/contact"
     },
     "whoNeeds": {
@@ -6315,7 +6315,7 @@
     },
     "testimonials": [
       {
-        "quote": "HIPAA compliance made clear and achievable with WHITEGUARD.",
+        "quote": "HIPAA compliance made clear and achievable with Whiteguard.",
         "name": "Client",
         "title": "Compliance Officer, Healthcare Provider"
       }
@@ -6340,7 +6340,7 @@
     ],
     "cta": {
       "heading": "Protect Patient Data, Achieve HIPAA Compliance, and Build Trust",
-      "subtitle": "WHITEGUARD's HIPAA compliance consulting helps healthcare organizations, insurers, and business associates meet regulatory requirements, secure sensitive data, and demonstrate a commitment to patient privacy.",
+      "subtitle": "Whiteguard's HIPAA compliance consulting helps healthcare organizations, insurers, and business associates meet regulatory requirements, secure sensitive data, and demonstrate a commitment to patient privacy.",
       "buttonLabel": "Request a Free HIPAA Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -6348,12 +6348,12 @@
   "gdpr-compliance": {
     "title": "GDPR Compliance",
     "seo": {
-      "title": "GDPR Compliance Services | Data Protection & Privacy Regulation | WHITEGUARD",
-      "description": "Achieve full GDPR compliance with WHITEGUARD's expert consulting services. Ensure the protection of personal data, privacy, and regulatory adherence with customized GDPR solutions for your organization."
+      "title": "GDPR Compliance Services | Data Protection & Privacy Regulation | Whiteguard",
+      "description": "Achieve full GDPR compliance with Whiteguard's expert consulting services. Ensure the protection of personal data, privacy, and regulatory adherence with customized GDPR solutions for your organization."
     },
     "hero": {
       "headline": "GDPR Compliance — Protect Personal Data, Ensure Privacy",
-      "subtitle": "Achieve GDPR compliance with WHITEGUARD's expert consulting services, ensuring the protection of personal data, privacy rights, and regulatory adherence for your organization.",
+      "subtitle": "Achieve GDPR compliance with Whiteguard's expert consulting services, ensuring the protection of personal data, privacy rights, and regulatory adherence for your organization.",
       "ctaPrimary": {
         "label": "Request GDPR Compliance Consultation",
         "href": "/contact"
@@ -6362,8 +6362,8 @@
     },
     "whatIs": {
       "heading": "What Is GDPR Compliance?",
-      "body": "GDPR (General Data Protection Regulation) is a regulation enforced by the European Union to protect personal data and privacy rights of individuals. It mandates that organizations handling EU citizens' data adhere to strict privacy, data protection, and transparency measures. At WHITEGUARD, we provide end-to-end GDPR compliance consulting and implementation, helping you meet all requirements — from data protection impact assessments to GDPR audit readiness. We ensure that your systems, policies, and employees are aligned with GDPR principles, reducing the risk of non-compliance and potential penalties.",
-      "ctaLabel": "Get GDPR Compliant with WHITEGUARD",
+      "body": "GDPR (General Data Protection Regulation) is a regulation enforced by the European Union to protect personal data and privacy rights of individuals. It mandates that organizations handling EU citizens' data adhere to strict privacy, data protection, and transparency measures. At Whiteguard, we provide end-to-end GDPR compliance consulting and implementation, helping you meet all requirements — from data protection impact assessments to GDPR audit readiness. We ensure that your systems, policies, and employees are aligned with GDPR principles, reducing the risk of non-compliance and potential penalties.",
+      "ctaLabel": "Get GDPR Compliant with Whiteguard",
       "ctaHref": "/contact"
     },
     "whoNeeds": {
@@ -6603,7 +6603,7 @@
         "description": "Typically, the process can take 3–6 months, depending on the complexity of your organization's data processing activities."
       },
       {
-        "question": "Can WHITEGUARD help us during a data breach?",
+        "question": "Can Whiteguard help us during a data breach?",
         "description": "Yes, we offer post-breach support, helping you handle the incident, comply with GDPR reporting requirements, and improve your data protection measures."
       },
       {
@@ -6617,7 +6617,7 @@
     ],
     "cta": {
       "heading": "Protect Personal Data, Ensure Privacy, Achieve GDPR Compliance",
-      "subtitle": "WHITEGUARD's GDPR compliance consulting helps you protect sensitive data, ensure regulatory adherence, and strengthen customer trust.",
+      "subtitle": "Whiteguard's GDPR compliance consulting helps you protect sensitive data, ensure regulatory adherence, and strengthen customer trust.",
       "buttonLabel": "Request a Free GDPR Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -6625,8 +6625,8 @@
   "aramco-ccc": {
     "title": "Aramco Cybersecurity Compliance Certificate (CCC)",
     "seo": {
-      "title": "Aramco Cybersecurity Compliance Certificate (CCC) | Secure Your Aramco Projects | WHITEGUARD",
-      "description": "Achieve Aramco Cybersecurity Compliance Certificate (CCC) with WHITEGUARD's expert consulting services. Ensure that your organization meets Aramco's cybersecurity standards and gain the certification required for working with Aramco."
+      "title": "Aramco Cybersecurity Compliance Certificate (CCC) | Secure Your Aramco Projects | Whiteguard",
+      "description": "Achieve Aramco Cybersecurity Compliance Certificate (CCC) with Whiteguard's expert consulting services. Ensure that your organization meets Aramco's cybersecurity standards and gain the certification required for working with Aramco."
     },
     "hero": {
       "headline": "Aramco Cybersecurity Compliance Certificate (CCC) — Meet Aramco's Cybersecurity Standards",
@@ -6639,8 +6639,8 @@
     },
     "whatIs": {
       "heading": "What Is the Aramco Cybersecurity Compliance Certificate (CCC)?",
-      "body": "The Aramco Cybersecurity Compliance Certificate (CCC) is a certification required for organizations and third-party vendors who wish to conduct business with Saudi Aramco or its partners. This certification ensures that your organization meets Aramco's stringent cybersecurity standards, policies, and guidelines, designed to protect critical infrastructure and sensitive data within Aramco's ecosystem. WHITEGUARD helps organizations achieve CCC certification by conducting gap assessments, implementing necessary cybersecurity controls, and preparing the required documentation for certification. Our consultancy services ensure you meet Aramco's security expectations, so your business can securely interact with Aramco and its contractors.",
-      "ctaLabel": "Get Aramco CCC Certified with WHITEGUARD",
+      "body": "The Aramco Cybersecurity Compliance Certificate (CCC) is a certification required for organizations and third-party vendors who wish to conduct business with Saudi Aramco or its partners. This certification ensures that your organization meets Aramco's stringent cybersecurity standards, policies, and guidelines, designed to protect critical infrastructure and sensitive data within Aramco's ecosystem. Whiteguard helps organizations achieve CCC certification by conducting gap assessments, implementing necessary cybersecurity controls, and preparing the required documentation for certification. Our consultancy services ensure you meet Aramco's security expectations, so your business can securely interact with Aramco and its contractors.",
+      "ctaLabel": "Get Aramco CCC Certified with Whiteguard",
       "ctaHref": "/contact"
     },
     "whoNeeds": {
@@ -6865,7 +6865,7 @@
     },
     "testimonials": [
       {
-        "quote": "Aramco CCC certification achieved with WHITEGUARD's expert guidance.",
+        "quote": "Aramco CCC certification achieved with Whiteguard's expert guidance.",
         "name": "Client",
         "title": "Head of IT Security, IT Service Provider for Aramco"
       }
@@ -6890,7 +6890,7 @@
     ],
     "cta": {
       "heading": "Achieve Aramco Cybersecurity Compliance and Secure Your Business",
-      "subtitle": "Ensure your organization meets Aramco's cybersecurity standards with WHITEGUARD's expert consulting services. Gain the Aramco Cybersecurity Compliance Certificate and securely collaborate with Saudi Aramco.",
+      "subtitle": "Ensure your organization meets Aramco's cybersecurity standards with Whiteguard's expert consulting services. Gain the Aramco Cybersecurity Compliance Certificate and securely collaborate with Saudi Aramco.",
       "buttonLabel": "Request a Free Aramco CCC Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -6898,12 +6898,12 @@
   "cbe-compliance": {
     "title": "Central Bank of Egypt (CBE) Cybersecurity Compliance",
     "seo": {
-      "title": "CBE Cybersecurity Compliance Services | Financial Sector Cybersecurity | WHITEGUARD",
-      "description": "Achieve CBE Cybersecurity Compliance with WHITEGUARD's expert consulting services. Ensure your organization meets Central Bank of Egypt (CBE) cybersecurity regulations for financial institutions, data protection, and risk management."
+      "title": "CBE Cybersecurity Compliance Services | Financial Sector Cybersecurity | Whiteguard",
+      "description": "Achieve CBE Cybersecurity Compliance with Whiteguard's expert consulting services. Ensure your organization meets Central Bank of Egypt (CBE) cybersecurity regulations for financial institutions, data protection, and risk management."
     },
     "hero": {
       "headline": "Central Bank of Egypt (CBE) Cybersecurity Compliance — Safeguard Financial Data, Ensure Regulatory Adherence",
-      "subtitle": "Achieve CBE Cybersecurity Framework compliance with WHITEGUARD's consulting services, ensuring your organization meets Egypt's banking sector cybersecurity regulations.",
+      "subtitle": "Achieve CBE Cybersecurity Framework compliance with Whiteguard's consulting services, ensuring your organization meets Egypt's banking sector cybersecurity regulations.",
       "ctaPrimary": {
         "label": "Request CBE Compliance Consultation",
         "href": "/contact"
@@ -6912,8 +6912,8 @@
     },
     "whatIs": {
       "heading": "What Is CBE Cybersecurity Compliance?",
-      "body": "The Central Bank of Egypt (CBE) has established a comprehensive set of cybersecurity regulations for financial institutions to ensure the protection of critical financial infrastructure and sensitive data. The CBE Cybersecurity Framework outlines strict requirements for risk management, data protection, security controls, and incident response protocols to safeguard the Egyptian financial system from cyber threats. WHITEGUARD helps banks, insurance companies, FinTech's, and other financial institutions comply with the CBE Cybersecurity Framework. From conducting gap assessments to implementing required controls, we ensure your organization meets CBE's cybersecurity standards and is fully prepared for regulatory audits.",
-      "ctaLabel": "Achieve CBE Cybersecurity Compliance with WHITEGUARD",
+      "body": "The Central Bank of Egypt (CBE) has established a comprehensive set of cybersecurity regulations for financial institutions to ensure the protection of critical financial infrastructure and sensitive data. The CBE Cybersecurity Framework outlines strict requirements for risk management, data protection, security controls, and incident response protocols to safeguard the Egyptian financial system from cyber threats. Whiteguard helps banks, insurance companies, FinTech's, and other financial institutions comply with the CBE Cybersecurity Framework. From conducting gap assessments to implementing required controls, we ensure your organization meets CBE's cybersecurity standards and is fully prepared for regulatory audits.",
+      "ctaLabel": "Achieve CBE Cybersecurity Compliance with Whiteguard",
       "ctaHref": "/contact"
     },
     "whoNeeds": {
@@ -6969,7 +6969,7 @@
         },
         {
           "title": "Ongoing Monitoring & Support",
-          "description": "WHITEGUARD provides continuous monitoring of your systems to ensure ongoing CBE cybersecurity compliance and helps manage any risks that may emerge in the future."
+          "description": "Whiteguard provides continuous monitoring of your systems to ensure ongoing CBE cybersecurity compliance and helps manage any risks that may emerge in the future."
         },
         {
           "title": "Training & Awareness",
@@ -7138,7 +7138,7 @@
     },
     "testimonials": [
       {
-        "quote": "CBE compliance achieved with WHITEGUARD's structured approach.",
+        "quote": "CBE compliance achieved with Whiteguard's structured approach.",
         "name": "Client",
         "title": "CISO, Financial Institution"
       }
@@ -7154,16 +7154,16 @@
       },
       {
         "question": "What does the CBE audit process involve?",
-        "description": "The CBE audit assesses your adherence to their cybersecurity standards and ensures that you have implemented all required controls and documentation. WHITEGUARD helps with audit preparation and offers full support during the certification process."
+        "description": "The CBE audit assesses your adherence to their cybersecurity standards and ensures that you have implemented all required controls and documentation. Whiteguard helps with audit preparation and offers full support during the certification process."
       },
       {
         "question": "Can you assist with ongoing monitoring after achieving compliance?",
-        "description": "Yes. WHITEGUARD provides continuous monitoring services to ensure your organization maintains compliance with CBE standards and addresses any emerging threats."
+        "description": "Yes. Whiteguard provides continuous monitoring services to ensure your organization maintains compliance with CBE standards and addresses any emerging threats."
       }
     ],
     "cta": {
       "heading": "Secure Your Future in the Financial Sector with CBE Cybersecurity Compliance",
-      "subtitle": "Achieve CBE Cybersecurity Compliance and ensure the protection of critical data, infrastructure, and operations with WHITEGUARD's expert consulting services.",
+      "subtitle": "Achieve CBE Cybersecurity Compliance and ensure the protection of critical data, infrastructure, and operations with Whiteguard's expert consulting services.",
       "buttonLabel": "Request a Free CBE Compliance Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -7171,8 +7171,8 @@
   "cbl-compliance": {
     "title": "Central Bank of Libya (CBL) Cybersecurity Compliance",
     "seo": {
-      "title": "Central Bank of Libya (CBL) Cybersecurity Compliance | Financial Sector Cybersecurity | WHITEGUARD",
-      "description": "Achieve CBL Cybersecurity Compliance with WHITEGUARD's expert consulting services. Secure your financial systems, meet Libya's banking regulations, and safeguard your organization from cyber threats."
+      "title": "Central Bank of Libya (CBL) Cybersecurity Compliance | Financial Sector Cybersecurity | Whiteguard",
+      "description": "Achieve CBL Cybersecurity Compliance with Whiteguard's expert consulting services. Secure your financial systems, meet Libya's banking regulations, and safeguard your organization from cyber threats."
     },
     "hero": {
       "headline": "Central Bank of Libya (CBL) Cybersecurity Compliance — Secure Financial Data, Meet Regulatory Standards",
@@ -7185,8 +7185,8 @@
     },
     "whatIs": {
       "heading": "What Is CBL Cybersecurity Compliance?",
-      "body": "The Central Bank of Libya (CBL) has established a set of cybersecurity regulations for the financial sector in Libya. These standards are designed to protect critical financial systems, data, and infrastructure from cyber threats and financial fraud. The CBL Cybersecurity Compliance framework outlines the necessary security controls, incident response protocols, risk management practices, and data protection measures required for banks, financial institutions, and other service providers within Libya's financial ecosystem. WHITEGUARD helps organizations achieve CBL Cybersecurity Compliance by performing gap assessments, control implementation, and providing audit readiness support. Our consulting services ensure that your organization adheres to CBL regulations, mitigates risks, and is fully prepared for audits and regulatory inspections.",
-      "ctaLabel": "Achieve CBL Cybersecurity Compliance with WHITEGUARD",
+      "body": "The Central Bank of Libya (CBL) has established a set of cybersecurity regulations for the financial sector in Libya. These standards are designed to protect critical financial systems, data, and infrastructure from cyber threats and financial fraud. The CBL Cybersecurity Compliance framework outlines the necessary security controls, incident response protocols, risk management practices, and data protection measures required for banks, financial institutions, and other service providers within Libya's financial ecosystem. Whiteguard helps organizations achieve CBL Cybersecurity Compliance by performing gap assessments, control implementation, and providing audit readiness support. Our consulting services ensure that your organization adheres to CBL regulations, mitigates risks, and is fully prepared for audits and regulatory inspections.",
+      "ctaLabel": "Achieve CBL Cybersecurity Compliance with Whiteguard",
       "ctaHref": "/contact"
     },
     "whoNeeds": {
@@ -7242,7 +7242,7 @@
         },
         {
           "title": "Ongoing Monitoring & Support",
-          "description": "WHITEGUARD provides continuous monitoring through WHITEHAWK, offering real-time insights into your cybersecurity posture and helping you stay compliant with CBL regulations."
+          "description": "Whiteguard provides continuous monitoring through WHITEHAWK, offering real-time insights into your cybersecurity posture and helping you stay compliant with CBL regulations."
         },
         {
           "title": "Training & Awareness",
@@ -7411,7 +7411,7 @@
     },
     "testimonials": [
       {
-        "quote": "CBL compliance achieved with WHITEGUARD's expertise.",
+        "quote": "CBL compliance achieved with Whiteguard's expertise.",
         "name": "Client",
         "title": "Head of IT Security, Libyan Bank"
       }
@@ -7430,13 +7430,13 @@
         "description": "Yes, we provide full CBL audit preparation support, ensuring you are ready for regulatory inspections and certifications."
       },
       {
-        "question": "How does WHITEGUARD ensure ongoing compliance?",
+        "question": "How does Whiteguard ensure ongoing compliance?",
         "description": "We offer continuous monitoring, regular security assessments, and incident response support to ensure your organization maintains compliance over time."
       }
     ],
     "cta": {
       "heading": "Achieve CBL Cybersecurity Compliance and Protect Your Financial Data",
-      "subtitle": "WHITEGUARD's CBL Cybersecurity Compliance services help you meet Libya's banking regulations and safeguard your critical financial systems and data.",
+      "subtitle": "Whiteguard's CBL Cybersecurity Compliance services help you meet Libya's banking regulations and safeguard your critical financial systems and data.",
       "buttonLabel": "Request a Free CBL Compliance Consultation",
       "buttonHref": "tel:0123456789"
     }
@@ -7444,12 +7444,12 @@
   "fra-139-compliance": {
     "title": "FRA 139 Compliance",
     "seo": {
-      "title": "FRA 139 Compliance Services | Cybersecurity for Non-Banking Financial Institutions | WHITEGUARD",
-      "description": "Achieve FRA 139 compliance with WHITEGUARD's expert consulting services. Ensure your organization meets Egypt's Financial Regulatory Authority (FRA) cybersecurity guidelines for non-banking financial institutions (NBFIs) and secure sensitive data."
+      "title": "FRA 139 Compliance Services | Cybersecurity for Non-Banking Financial Institutions | Whiteguard",
+      "description": "Achieve FRA 139 compliance with Whiteguard's expert consulting services. Ensure your organization meets Egypt's Financial Regulatory Authority (FRA) cybersecurity guidelines for non-banking financial institutions (NBFIs) and secure sensitive data."
     },
     "hero": {
       "headline": "FRA 139 Compliance — Secure Your Financial Systems, Meet Regulatory Standards",
-      "subtitle": "Ensure compliance with FRA 139 regulations for non-banking financial institutions (NBFIs), secure critical financial data, and strengthen your cybersecurity framework with WHITEGUARD's expert consulting services.",
+      "subtitle": "Ensure compliance with FRA 139 regulations for non-banking financial institutions (NBFIs), secure critical financial data, and strengthen your cybersecurity framework with Whiteguard's expert consulting services.",
       "ctaPrimary": {
         "label": "Request FRA 139 Compliance Consultation",
         "href": "/contact"
@@ -7458,8 +7458,8 @@
     },
     "whatIs": {
       "heading": "What Is FRA 139 Compliance?",
-      "body": "FRA 139 is a set of cybersecurity guidelines issued by the Financial Regulatory Authority (FRA) in Egypt to ensure that non-banking financial institutions (NBFIs), including insurance companies, financial markets, and fintech firms, have robust security controls in place to protect sensitive financial data and mitigate cyber risks. The framework includes requirements for data protection, risk management, incident response, and business continuity within Egypt's financial sector. FRA 139 compliance helps NBFIs demonstrate their commitment to securing financial data, maintaining operational continuity, and meeting the FRA's cybersecurity standards. WHITEGUARD helps organizations achieve FRA 139 compliance through gap analysis, control implementation, and audit readiness. Our experts ensure your organization aligns with FRA 139 requirements and is fully prepared for regulatory inspections.",
-      "ctaLabel": "Achieve FRA 139 Compliance with WHITEGUARD",
+      "body": "FRA 139 is a set of cybersecurity guidelines issued by the Financial Regulatory Authority (FRA) in Egypt to ensure that non-banking financial institutions (NBFIs), including insurance companies, financial markets, and fintech firms, have robust security controls in place to protect sensitive financial data and mitigate cyber risks. The framework includes requirements for data protection, risk management, incident response, and business continuity within Egypt's financial sector. FRA 139 compliance helps NBFIs demonstrate their commitment to securing financial data, maintaining operational continuity, and meeting the FRA's cybersecurity standards. Whiteguard helps organizations achieve FRA 139 compliance through gap analysis, control implementation, and audit readiness. Our experts ensure your organization aligns with FRA 139 requirements and is fully prepared for regulatory inspections.",
+      "ctaLabel": "Achieve FRA 139 Compliance with Whiteguard",
       "ctaHref": "/contact"
     },
     "whoNeeds": {
@@ -7515,7 +7515,7 @@
         },
         {
           "title": "Ongoing Monitoring & Compliance Support",
-          "description": "WHITEGUARD provides continuous monitoring through WHITEHAWK to ensure ongoing FRA 139 compliance and offer support with incident response, risk mitigation, and audit preparation."
+          "description": "Whiteguard provides continuous monitoring through WHITEHAWK to ensure ongoing FRA 139 compliance and offer support with incident response, risk mitigation, and audit preparation."
         },
         {
           "title": "Employee Training & Awareness",
@@ -7684,7 +7684,7 @@
     },
     "testimonials": [
       {
-        "quote": "FRA 139 compliance achieved with WHITEGUARD's expert support.",
+        "quote": "FRA 139 compliance achieved with Whiteguard's expert support.",
         "name": "Client",
         "title": "CISO, Non-Banking Financial Institution"
       }
@@ -7709,7 +7709,7 @@
     ],
     "cta": {
       "heading": "Achieve FRA 139 Compliance and Secure Your Financial Systems",
-      "subtitle": "WHITEGUARD's FRA 139 Cybersecurity Compliance services ensure your organization aligns with Egypt's financial regulatory standards, safeguarding your data and infrastructure.",
+      "subtitle": "Whiteguard's FRA 139 Cybersecurity Compliance services ensure your organization aligns with Egypt's financial regulatory standards, safeguarding your data and infrastructure.",
       "buttonLabel": "Request a Free FRA 139 Consultation",
       "buttonHref": "tel:+0123456789"
     }

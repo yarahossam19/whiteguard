@@ -86,7 +86,7 @@
         {
           "link": "red-team-assessment",
           "title": "Red Team Assessment",
-          "description": "Go beyond testing. Simulate a real-world breach. WHITEGUARD’s red team engagements emulate persistent threat actors targeting your defenses across people, technology, and process.",
+          "description": "Go beyond testing. Simulate a real-world breach. Whiteguard’s red team engagements emulate persistent threat actors targeting your defenses across people, technology, and process.",
           "features": [
             {
               "icon": "/images/services/icons/icon-7.svg",
@@ -416,7 +416,7 @@
       ],
       "bottomCta": {
         "heading": "Why Leading Organizations",
-        "headingAccent": "Trust WHITEGUARD",
+        "headingAccent": "Trust Whiteguard",
         "subtitle": "All offensive services are delivered by certified professionals with real-world experience in threat simulation and enterprise security.",
         "buttonLabel": "Book a Defensive Service Consultation",
         "href": "/contact",
@@ -489,7 +489,7 @@
         {
           "link": "sama-readiness",
           "title": "SAMA Compliance Program",
-          "description": "Meet Saudi Arabia's strictest cybersecurity framework  WHITEGUARD helps financial institutions implement the SAMA CSF and navigate regulatory audits with confidence.",
+          "description": "Meet Saudi Arabia's strictest cybersecurity framework  Whiteguard helps financial institutions implement the SAMA CSF and navigate regulatory audits with confidence.",
           "features": [
             {
               "icon": "/images/services/grc-icons/icon-4.svg",
@@ -544,7 +544,7 @@
         {
           "link": "soc-2-compliance",
           "title": "SOC 2",
-          "description": "Build trust with customers and partners through SOC 2 compliance  WHITEGUARD designs and implements SOC 2 control environments across trust principles: security, availability, processing integrity, confidentiality, and privacy.",
+          "description": "Build trust with customers and partners through SOC 2 compliance  Whiteguard designs and implements SOC 2 control environments across trust principles: security, availability, processing integrity, confidentiality, and privacy.",
           "features": [
             {
               "icon": "/images/services/grc-icons/icon-14.svg",
@@ -669,7 +669,7 @@
       ],
       "bottomCta": {
         "heading": "Why Leading Organizations",
-        "headingAccent": "Trust WHITEGUARD",
+        "headingAccent": "Trust Whiteguard",
         "subtitle": "All offensive services are delivered by certified professionals with real-world experience in threat simulation and enterprise security.",
         "buttonLabel": "Request Custom Training Plan",
         "href": "/contact",
@@ -817,7 +817,7 @@
       ],
       "bottomCta": {
         "heading": "Why Leading Organizations",
-        "headingAccent": "Trust WHITEGUARD",
+        "headingAccent": "Trust Whiteguard",
         "subtitle": "All offensive services are delivered by certified professionals with real-world experience in threat simulation and enterprise security.",
         "buttonLabel": "Request Custom Training Plan",
         "href": "/contact",

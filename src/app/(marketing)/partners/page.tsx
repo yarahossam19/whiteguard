@@ -14,7 +14,7 @@ import { getPartnersTypesData } from "@/data/partners-types";
 import { getPartnersCtaData } from "@/data/partners-cta";
 
 export const metadata: Metadata = {
-  title: "Partners | WHITEGUARD",
+  title: "Partners ",
   description: "Our trusted partners in security.",
 };
 

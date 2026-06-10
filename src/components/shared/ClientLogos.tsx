@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { ClientLogosData } from "@/data/client-logos";
 import type { PartnersLogosData } from "@/data/partners-logos";
 import Image from "next/image";
@@ -59,6 +59,8 @@ export default function ClientLogos({
 }) {
   const [pageIndex, setPageIndex] = useState(0);
   const [flip, setFlip] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const flipTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
   const isTablet = useMediaQuery({ query: "(max-width: 1023px)" });
@@ -76,15 +78,34 @@ export default function ClientLogos({
   );
 
   useEffect(() => {
+    if (isPaused) return;
+
     const interval = setInterval(() => {
       setFlip(true);
-      setTimeout(() => {
+      flipTimeoutRef.current = setTimeout(() => {
         setPageIndex((p) => (p + 1) % pageCount);
         setFlip(false);
-      }, 350);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [pageCount]);
+        flipTimeoutRef.current = null;
+      }, 550);
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+      if (flipTimeoutRef.current) {
+        clearTimeout(flipTimeoutRef.current);
+        flipTimeoutRef.current = null;
+      }
+    };
+  }, [pageCount, isPaused]);
+
+  const pauseAnimation = () => {
+    setIsPaused(true);
+    if (flipTimeoutRef.current) {
+      clearTimeout(flipTimeoutRef.current);
+      flipTimeoutRef.current = null;
+    }
+    setFlip(false);
+  };
 
   return (
     <div className={`relative z-9 w-full bg-white pb-10 ${className}`}>
@@ -92,6 +113,14 @@ export default function ClientLogos({
         <div
           className="min-h-[72px] overflow-hidden"
           style={{ perspective: 1000 }}
+          onMouseEnter={pauseAnimation}
+          onMouseLeave={() => setIsPaused(false)}
+          onFocusCapture={pauseAnimation}
+          onBlurCapture={(e) => {
+            if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+              setIsPaused(false);
+            }
+          }}
         >
           <div
             className="relative transition-transform duration-300 ease-in-out"

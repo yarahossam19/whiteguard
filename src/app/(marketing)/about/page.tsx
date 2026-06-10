@@ -11,7 +11,7 @@ import { getCtaSectionData } from "@/data/cta-section";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | WHITEGUARD",
+  title: "About Us  ",
   description:
     "Learn about WHITEGUARD - your trusted partner in intelligent security monitoring.",
 };

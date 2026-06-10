@@ -1,31 +1,31 @@
 {
   "heading": "Trusted by Industry Leaders.",
-  "subtitle": "See what leading organizations across the MENA region have to say about working with WHITEGUARD.",
+  "subtitle": "See what leading organizations across the MENA region have to say about working with Whiteguard.",
   "testimonials": [
     {
       "id": "1",
-      "quote": "WHITEGUARD helped us optimize our security spending by offering efficient cybersecurity tools while focusing on risk mitigation. We have achieved a robust security posture at a predictable price point, proving that world-class defense doesn't have to come with an unsustainable budget.",
+      "quote": "Whiteguard helped us optimize our security spending by offering efficient cybersecurity tools while focusing on risk mitigation. We have achieved a robust security posture at a predictable price point, proving that world-class defense doesn't have to come with an unsustainable budget.",
       "name": "Mohamed Afifi",
       "title": "CIO, A.T Lease",
       "rating": 5
     },
     {
       "id": "2",
-      "quote": "WHITEGUARD transformed our security posture from reactive to proactive. Their SOC team detected a critical vulnerability that had gone unnoticed for months.",
+      "quote": "Whiteguard transformed our security posture from reactive to proactive. Their SOC team detected a critical vulnerability that had gone unnoticed for months.",
       "name": "Mohamed Arafa",
       "title": "IT Manager At Paxera",
       "rating": 5
     },
     {
       "id": "3",
-      "quote": "The penetration testing uncovered vulnerabilities our previous vendor missed entirely. WHITEGUARD's offensive team is world-class.",
+      "quote": "The penetration testing uncovered vulnerabilities our previous vendor missed entirely. Whiteguard's offensive team is world-class.",
       "name": "Bahaa Ryad",
       "title": "IT Manager Penetration testing At Enmaa",
       "rating": 5
     },
     {
       "id": "4",
-      "quote": "WHITEGUARD transformed our security posture from reactive to proactive. Their SOC team detected a critical vulnerability that had gone unnoticed for months.",
+      "quote": "Whiteguard transformed our security posture from reactive to proactive. Their SOC team detected a critical vulnerability that had gone unnoticed for months.",
       "name": "Mohamed Youssef",
       "title": "infrastructure manager At GIG",
       "rating": 5
@@ -33,7 +33,7 @@
   ],
   "ctaCard": {
     "title": "Your Story Could Be Next.",
-    "body": "Join hundreds of organizations that trust WHITEGUARD with their cybersecurity.",
+    "body": "Join hundreds of organizations that trust Whiteguard with their cybersecurity.",
     "buttonLabel": "Get Started",
     "buttonHref": "/contact"
   }
