@@ -106,10 +106,10 @@ export default function PartnerProgramHero({ data }: PartnerProgramHeroProps) {
 
   return (
     <section className="relative w-full overflow-hidden bg-white">
-      <div className="flex min-h-[min(891px,92vh)] flex-col-reverse lg:flex-row">
-        <div className="relative z-10 flex flex-1 items-center px-6 pb-16 pt-28 lg:px-10 lg:pb-24 lg:pt-36 xl:ps-[max(1.5rem,calc((100vw-1324px)/2+1.5rem))]">
+      <div className="  flex min-h-[min(891px,92vh)] flex-col-reverse lg:flex-row">
+        <div className="lg:ps-20 relative z-10 flex flex-1 items-center   pb-16 pt-28 lg:px-10 lg:pb-24 lg:pt-36  ">
           {/* <HeroContentBackground /> */}
-          <div className="relative z-[2] max-w-[766px]">
+          <div className="relative z-[2]  ">
             <h1 className="mb-6 flex flex-col gap-1 font-jakarta text-[clamp(36px,5vw,56px)] font-extrabold leading-[1.05] tracking-[-0.02em]">
               <span className="text-[#003859]">{title[0]}</span>
               <span className="text-[#0087D7]">{title[1]}</span>
