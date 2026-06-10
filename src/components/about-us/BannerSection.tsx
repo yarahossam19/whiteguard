@@ -31,18 +31,36 @@ function LogoOrbitVisual({ stats }: { stats: AboutBannerData["stats"] }) {
   return (
     <div className="relative mx-auto h-[60px] w-full max-w-[320px] sm:h-[300px] sm:max-w-[360px] xl:h-[380px] xl:max-w-[400px]">
       <div
-        className="absolute inset-[2%] rounded-full border border-[#0087D7]/10"
+        className="absolute inset-[2%] overflow-hidden rounded-full border border-[#0087D7]/10 motion-reduce:overflow-visible"
+        aria-hidden
+      >
+        <div
+          className="absolute inset-[-50%] animate-banner-radar-sweep motion-reduce:animate-none"
+          style={{
+            background:
+              "conic-gradient(from 0deg, transparent 0deg, transparent 300deg, rgba(2,161,255,0.08) 320deg, rgba(0,135,215,0.28) 360deg)",
+          }}
+        />
+      </div>
+
+      <div
+        className="pointer-events-none absolute inset-[2%] rounded-full border border-[#02a1ff]/25 animate-banner-radar-pulse motion-reduce:animate-none"
         aria-hidden
       />
       <div
-        className="absolute inset-[12%] rounded-full border border-dashed border-[#0087D7]/18"
+        className="pointer-events-none absolute inset-[2%] rounded-full border border-[#0087D7]/20 animate-banner-radar-pulse motion-reduce:animate-none [animation-delay:1.6s]"
+        aria-hidden
+      />
+
+      <div
+        className="absolute inset-[12%] rounded-full border border-dashed border-[#0087D7]/18 motion-reduce:animate-none animate-banner-orbit-spin"
         aria-hidden
       />
       <div
         className="absolute inset-[22%] rounded-full bg-linear-to-br from-[#E7F6FF] via-white to-[#ABE0FF]/50 shadow-[inset_0_0_40px_rgba(0,135,215,0.08)]"
         aria-hidden
       />
-      <div className="absolute left-1/2 top-1/2 flex h-[38%] w-[38%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-[0_20px_50px_rgba(0,56,89,0.14)]">
+      <div className="absolute left-1/2 top-1/2 z-10 flex h-[38%] w-[38%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-[0_20px_50px_rgba(0,56,89,0.14)]">
         <Image
           src="/images/logo-icon.svg"
           alt=""
@@ -56,7 +74,7 @@ function LogoOrbitVisual({ stats }: { stats: AboutBannerData["stats"] }) {
       {stats.map((stat, index) => (
         <div
           key={stat.label}
-          className={`absolute hidden xl:block ${ORBIT_POSITIONS[index]}`}
+          className={`absolute z-20 hidden xl:block ${ORBIT_POSITIONS[index]}`}
         >
           <OrbitStatCard value={stat.value} label={stat.label} />
         </div>
