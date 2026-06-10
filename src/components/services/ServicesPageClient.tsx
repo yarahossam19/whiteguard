@@ -53,7 +53,7 @@ function ServicesPageInner() {
       }
       return {
         cards: allCards,
-        bottomCta: data.categories.all.bottomCta,
+        bottomCta: data.categories.offensive.bottomCta,
       };
     }
     const cat = data.categories[activeTab];
