@@ -123,7 +123,7 @@ export default function PartnerProgramHero({ data }: PartnerProgramHeroProps) {
               hoverLabel={cta.hoverLabel}
               variant="secondary"
               showChevrons={false}
-              className="min-w-[220px] px-6 py-3.5 text-lg font-ano"
+              className="min-w-[220px] w-full md:w-auto px-6 py-3.5 text-lg font-ano"
             />
           </div>
         </div>

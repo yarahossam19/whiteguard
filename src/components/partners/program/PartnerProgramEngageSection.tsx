@@ -16,7 +16,8 @@ const engageIcons = [
   partnerProgramIcons.build,
 ];
 
-const VH_PER_ITEM = 80;
+const VH_PER_ITEM_DESKTOP = 80;
+const VH_PER_ITEM_MOBILE = 42;
 
 export default function PartnerProgramEngageSection({
   data,
@@ -45,10 +46,12 @@ export default function PartnerProgramEngageSection({
     setActiveIndex(index);
   });
 
-  const slideHeight = isMobile ? "min(60vh, 420px)" : "min(72vh, 520px)";
-  const scrollStageHeight = prefersReducedMotion
-    ? "auto"
-    : `${items.length * VH_PER_ITEM}vh`;
+  const useScrollDriven = !prefersReducedMotion;
+  const vhPerItem = isMobile ? VH_PER_ITEM_MOBILE : VH_PER_ITEM_DESKTOP;
+  const slideHeight = isMobile ? "min(28vh, 220px)" : "min(72vh, 520px)";
+  const scrollStageHeight = useScrollDriven
+    ? `${items.length * vhPerItem}vh`
+    : "auto";
 
   return (
     <section className="bg-[#e0e6eb]/25 px-6 py-20 lg:py-24">
@@ -69,21 +72,49 @@ export default function PartnerProgramEngageSection({
         >
           <div
             className={
-              prefersReducedMotion
-                ? "relative"
-                : "sticky top-0 flex min-h-screen items-center py-6 md:py-10"
+              useScrollDriven
+                ? "sticky top-0 flex min-h-[100dvh] items-start justify-center py-14 max-md:pt-12 lg:min-h-screen lg:items-center lg:py-10"
+                : "relative"
             }
           >
-            <div className="flex w-full flex-col items-center gap-12 lg:flex-row lg:justify-between lg:gap-16">
+            <div className="flex w-full flex-col items-center gap-6 max-md:gap-3 lg:flex-row lg:justify-between lg:gap-16">
               {/* Text slides */}
               <div
-                className="w-full max-w-[496px] overflow-hidden"
+                className="w-full max-w-[496px] overflow-hidden max-md:order-2"
                 style={{
                   ["--slide-h" as string]: slideHeight,
-                  height: prefersReducedMotion ? "auto" : "var(--slide-h)",
+                  height: useScrollDriven ? "var(--slide-h)" : "auto",
                 }}
               >
-                {prefersReducedMotion ? (
+                {useScrollDriven ? (
+                  <div
+                    className="flex flex-col transition-transform duration-[650ms] ease-[cubic-bezier(0.32,0.72,0,1)] motion-reduce:transition-none"
+                    style={{
+                      transform: `translateY(calc(-${activeIndex} * var(--slide-h)))`,
+                    }}
+                  >
+                    {items.map((item, index) => {
+                      const iconSrc =
+                        engageIcons[index] ?? partnerProgramIcons.sell;
+                      const isActive = index === activeIndex;
+                      return (
+                        <div
+                          key={item.id}
+                          className="flex shrink-0 items-start max-lg:pt-1 lg:items-center"
+                          style={{ height: "var(--slide-h)" }}
+                        >
+                          <EngageTextBlock
+                            item={item}
+                            iconSrc={iconSrc}
+                            isActive={isActive}
+                            showBody={isActive}
+                            onSelect={() => setActiveIndex(index)}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
                   <div className="space-y-10">
                     {items.map((item, index) => {
                       const iconSrc =
@@ -100,39 +131,15 @@ export default function PartnerProgramEngageSection({
                       );
                     })}
                   </div>
-                ) : (
-                  <div
-                    className="flex flex-col transition-transform duration-[650ms] ease-[cubic-bezier(0.32,0.72,0,1)] motion-reduce:transition-none"
-                    style={{
-                      transform: `translateY(calc(-${activeIndex} * var(--slide-h)))`,
-                    }}
-                  >
-                    {items.map((item, index) => {
-                      const iconSrc =
-                        engageIcons[index] ?? partnerProgramIcons.sell;
-                      const isActive = index === activeIndex;
-                      return (
-                        <div
-                          key={item.id}
-                          className="flex shrink-0 items-center"
-                          style={{ height: "var(--slide-h)" }}
-                        >
-                          <EngageTextBlock
-                            item={item}
-                            iconSrc={iconSrc}
-                            isActive={isActive}
-                            showBody={isActive}
-                            onSelect={() => setActiveIndex(index)}
-                          />
-                        </div>
-                      );
-                    })}
-                  </div>
                 )}
               </div>
 
               {/* Diagram */}
-              <EngageDiagram activeIndex={activeIndex} itemCount={items.length} />
+              <EngageDiagram
+                activeIndex={activeIndex}
+                itemCount={items.length}
+                compact={isMobile}
+              />
             </div>
           </div>
         </div>
@@ -179,7 +186,7 @@ function EngageTextBlock({
         </span>
       </div>
       {showBody && (
-        <p className="pl-16 font-jakarta text-lg leading-[29px] text-[#52697A] max-md:pl-0">
+        <p className="pl-16 font-jakarta text-lg leading-[29px] text-[#52697A] max-md:pl-0 max-md:text-base max-md:leading-7">
           {item.description}
         </p>
       )}
@@ -190,9 +197,11 @@ function EngageTextBlock({
 function EngageDiagram({
   activeIndex,
   itemCount,
+  compact = false,
 }: {
   activeIndex: number;
   itemCount: number;
+  compact?: boolean;
 }) {
   const arcPaths = [
     "M 193 38 A 155 155 0 0 1 327.23 270.5",
@@ -207,7 +216,11 @@ function EngageDiagram({
   ].slice(0, itemCount);
 
   return (
-    <div className="relative aspect-square w-full max-w-[387px] shrink-0">
+    <div
+      className={`relative aspect-square w-full shrink-0 max-md:order-1 max-md:mt-8 max-md:-mb-1 ${
+        compact ? "max-w-[min(240px,68vw)]" : "max-w-[387px]"
+      }`}
+    >
       <svg viewBox="0 0 386 386" className="h-full w-full" aria-hidden>
         {arcPaths.map((d, i) => (
           <path
@@ -243,10 +256,14 @@ function EngageDiagram({
           />
         ))}
       </svg>
-      <div className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-xl bg-[#e0e6eb] shadow-inner">
+      <div
+        className={`absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-xl bg-[#e0e6eb] shadow-inner ${
+          compact ? "h-16 w-16" : "h-24 w-24"
+        }`}
+      >
         <IconImage
           src={engageIcons[activeIndex] ?? partnerProgramIcons.sell}
-          size={40}
+          size={compact ? 28 : 40}
         />
       </div>
     </div>
