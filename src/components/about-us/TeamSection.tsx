@@ -28,11 +28,12 @@ export default function TeamSection({ data }: TeamSectionProps) {
         </div>
 
         <Image
-          src={"/images/team.png"}
-          alt={`team members`}
+          src="/images/team.png"
+          alt="WHITEGUARD team members"
           width={1296}
           height={305}
-          className="  object-contain"
+          className="h-auto w-full max-w-full object-contain"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1296px"
         />
       </div>
     </section>

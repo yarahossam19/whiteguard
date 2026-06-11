@@ -16,8 +16,8 @@ const ORBIT_POSITIONS = [
 
 function OrbitStatCard({ value, label }: { value: string; label: string }) {
   return (
-    <div className="min-w-[128px] rounded-2xl border border-white/90 bg-white/95 px-4 py-3 text-center shadow-[0_16px_40px_rgba(0,56,89,0.12)] backdrop-blur-sm sm:min-w-[148px] sm:px-5 sm:py-4">
-      <p className="font-jakarta text-[clamp(22px,2.5vw,32px)] font-extrabold leading-none text-[#0087D7]">
+    <div className="min-w-0 rounded-2xl border border-white/90 bg-white/95 px-4 py-3 text-center shadow-[0_16px_40px_rgba(0,56,89,0.12)] backdrop-blur-sm sm:px-5 sm:py-4">
+      <p className="font-jakarta text-[clamp(22px,5vw,32px)] font-extrabold leading-none text-[#0087D7]">
         {value}
       </p>
       <p className="mt-1.5 font-jakarta text-xs font-medium leading-snug text-[#52697A] sm:text-sm">
@@ -29,7 +29,7 @@ function OrbitStatCard({ value, label }: { value: string; label: string }) {
 
 function LogoOrbitVisual({ stats }: { stats: AboutBannerData["stats"] }) {
   return (
-    <div className="relative mx-auto h-[60px] w-full max-w-[320px] sm:h-[320px] sm:max-w-[320px] xl:h-[430px] xl:max-w-[450px]">
+    <div className="relative mx-auto h-[min(72vw,280px)] w-full max-w-[280px] sm:h-[300px] sm:max-w-[320px] xl:h-[430px] xl:max-w-[450px]">
       <div
         className="absolute inset-[2%] overflow-hidden rounded-full border border-[#0087D7]/10 motion-reduce:overflow-visible"
         aria-hidden
@@ -87,57 +87,53 @@ export default function BannerSection({ data }: BannerSectionProps) {
   const { headline, stats, description, ctas } = data;
 
   return (
-    <section className="relative w-full overflow-hidden min-h-[80vh] py-30  ">
-      <div className="container relative z-10   py-20 sm:py-24 xl:py-28 flex   ">
-        <div className="mx-auto flex w-full   flex-col items-center gap-12 xl:flex-row xl:items-center xl:gap-16">
-          <div className="flex flex-1 flex-col gap-8 text-center   xl:text-left">
-            <div className="flex flex-col gap-5">
-              <h1
-                className="font-jakarta font-semibold leading-[1.1] tracking-[-0.03em]"
-                style={{ fontSize: "clamp(38px, 5vw, 62px)" }}
-              >
-                <span className="text-[#003859]">{headline.line1}</span>
-                <br />
-                <span className="text-[#0087D7]">{headline.line2}</span>
-              </h1>
+    <section className="relative w-full overflow-hidden py-12 sm:py-16 lg:py-20 xl:py-28">
+      <div className="container relative z-10 ">
+        <div className="mx-auto flex w-full flex-col items-center gap-10 lg:gap-12">
+          <div className="flex w-full flex-col items-center gap-10 xl:flex-row xl:items-center xl:gap-16">
+            <div className="flex w-full flex-1 flex-col gap-6 text-center xl:max-w-[52%] xl:text-left">
+              <div className="flex flex-col gap-4 sm:gap-5">
+                <h1 className="font-jakarta text-[clamp(32px,5vw,62px)] font-semibold leading-[1.1] tracking-[-0.03em]">
+                  <span className="text-[#003859]">{headline.line1}</span>
+                  <br />
+                  <span className="text-[#0087D7]">{headline.line2}</span>
+                </h1>
 
-              <p
-                className="font-jakarta font-normal leading-[1.75] text-[#52697A]"
-                style={{ fontSize: "clamp(16px, 1.2vw, 20px)" }}
-              >
-                {description}
-              </p>
+                <p className="font-jakarta text-[clamp(15px,1.2vw,20px)] font-normal leading-[1.75] text-[#52697A]">
+                  {description}
+                </p>
+              </div>
+
+              <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4 xl:justify-start">
+                {ctas.map((cta) => (
+                  <HoverSwapButton
+                    key={`${cta.href}-${cta.label}`}
+                    href={cta.href}
+                    label={cta.label}
+                    hoverLabel={cta.hoverLabel}
+                    variant={cta.variant === "outline" ? "secondary" : "cta"}
+                    showChevrons={false}
+                    showArrow={"showArrow" in cta && cta.showArrow}
+                    className="font-ano w-full px-6 py-3.5 text-base sm:w-auto xl:text-lg"
+                  />
+                ))}
+              </div>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-4 xl:justify-start">
-              {ctas.map((cta) => (
-                <HoverSwapButton
-                  key={`${cta.href}-${cta.label}`}
-                  href={cta.href}
-                  label={cta.label}
-                  hoverLabel={cta.hoverLabel}
-                  variant={cta.variant === "outline" ? "secondary" : "cta"}
-                  showChevrons={false}
-                  showArrow={"showArrow" in cta && cta.showArrow}
-                  className="font-ano w-full px-6 py-3.5 text-base md:w-auto xl:text-lg"
-                />
-              ))}
+            <div className="flex w-full flex-1 justify-center xl:justify-end">
+              <LogoOrbitVisual stats={stats} />
             </div>
           </div>
 
-          <div className="flex flex-1 justify-center xl:justify-end">
-            <LogoOrbitVisual stats={stats} />
+          <div className="grid w-full grid-cols-3 gap-2 sm:gap-4 xl:hidden">
+            {stats.map((stat) => (
+              <OrbitStatCard
+                key={stat.label}
+                value={stat.value}
+                label={stat.label}
+              />
+            ))}
           </div>
-        </div>
-
-        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3 xl:hidden">
-          {stats.map((stat) => (
-            <OrbitStatCard
-              key={stat.label}
-              value={stat.value}
-              label={stat.label}
-            />
-          ))}
         </div>
       </div>
     </section>

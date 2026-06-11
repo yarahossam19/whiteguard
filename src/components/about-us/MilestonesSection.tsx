@@ -138,7 +138,7 @@ export default function MilestonesSection({ data }: MilestonesSectionProps) {
                   return (
                     <div
                       key={milestone.id}
-                      className="relative flex flex-col lg:flex-row min-h-[200px] items-stretch lg:min-h-[180px]"
+                      className="relative flex flex-col items-stretch lg:min-h-[180px] lg:flex-row"
                     >
                       {/* Left area: card when left, empty when right */}
                       <div
@@ -159,7 +159,7 @@ export default function MilestonesSection({ data }: MilestonesSectionProps) {
                               aria-hidden
                             />
                             <div
-                              className="w-full max-w-[420px] rounded-[28px] p-8 text-right transition-all duration-300"
+                              className="w-full max-w-[420px] rounded-3xl p-6 text-left transition-all duration-300 sm:p-8 lg:text-right"
                               style={{
                                 borderRadius: "24px",
                                 background:
@@ -219,7 +219,7 @@ export default function MilestonesSection({ data }: MilestonesSectionProps) {
                         {!isLeft && (
                           <>
                             <div
-                              className="w-full max-w-[420px] rounded-[28px] p-8 text-left transition-all duration-300"
+                              className="w-full max-w-[420px] rounded-3xl p-6 text-left transition-all duration-300 sm:p-8"
                               style={{
                                 borderRadius: "24px",
                                 border: "1px solid rgba(8, 145, 178, 0.15)",

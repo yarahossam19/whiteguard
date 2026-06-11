@@ -106,13 +106,12 @@ export default function MissionSection({ data }: MissionSectionProps) {
           >
             {/* Vision Card - initial active */}
             <div
-              className="flex flex-col items-center p-6 transition-all duration-300 lg:p-[50px]"
+              className="flex flex-col items-center rounded-2xl p-6 transition-all duration-300 lg:rounded-none lg:rounded-l-2xl lg:p-[50px]"
               style={{
                 background: isVisionActive ? "transparent" : "#E9EDF1",
                 boxShadow: !isVisionActive
                   ? "0 8px 24px rgba(0, 56, 89, 0.08)"
                   : "unset",
-                borderRadius: "16px 0 0 16px",
               }}
               onMouseEnter={() => setActiveCard("vision")}
             >
@@ -147,13 +146,12 @@ export default function MissionSection({ data }: MissionSectionProps) {
 
             {/* Mission Card */}
             <div
-              className="flex flex-col items-center p-6 transition-all duration-300 lg:p-[50px]"
+              className="flex flex-col items-center rounded-2xl p-6 transition-all duration-300 lg:rounded-none lg:rounded-r-2xl lg:p-[50px]"
               style={{
                 background: isMissionActive ? "transparent" : "#E9EDF1",
                 boxShadow: !isMissionActive
                   ? "0 8px 24px rgba(0, 56, 89, 0.08)"
                   : "unset",
-                borderRadius: " 0 16px 16px  0",
               }}
               onMouseEnter={() => setActiveCard("mission")}
             >
