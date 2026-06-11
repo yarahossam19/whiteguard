@@ -29,7 +29,7 @@ function OrbitStatCard({ value, label }: { value: string; label: string }) {
 
 function LogoOrbitVisual({ stats }: { stats: AboutBannerData["stats"] }) {
   return (
-    <div className="relative mx-auto h-[60px] w-full max-w-[320px] sm:h-[300px] sm:max-w-[360px] xl:h-[380px] xl:max-w-[400px]">
+    <div className="relative mx-auto h-[60px] w-full max-w-[320px] sm:h-[320px] sm:max-w-[320px] xl:h-[430px] xl:max-w-[450px]">
       <div
         className="absolute inset-[2%] overflow-hidden rounded-full border border-[#0087D7]/10 motion-reduce:overflow-visible"
         aria-hidden
@@ -88,7 +88,7 @@ export default function BannerSection({ data }: BannerSectionProps) {
 
   return (
     <section className="relative w-full overflow-hidden min-h-[80vh] py-30  ">
-      <div className="container relative z-10   py-20 sm:py-24 xl:py-28">
+      <div className="container relative z-10   py-20 sm:py-24 xl:py-28 flex   ">
         <div className="mx-auto flex w-full   flex-col items-center gap-12 xl:flex-row xl:items-center xl:gap-16">
           <div className="flex flex-1 flex-col gap-8 text-center   xl:text-left">
             <div className="flex flex-col gap-5">

@@ -10,12 +10,6 @@
       "label": "Become a Partner",
       "hoverLabel": "Become a Partner",
       "variant": "cta"
-    },
-    {
-      "href": "/partners/program",
-      "label": "Explore Program",
-      "hoverLabel": "Explore Program",
-      "variant": "secondary"
     }
   ],
   "decorations": {
