@@ -85,10 +85,21 @@ deploy_to_ec2:
       ssh "$EC2_USER@$EC2_HOST" << EOF
         set -e
 
-        docker pull "${IMAGE_URI}:${IMAGE_TAG}"
+        echo "=== Disk usage before cleanup ==="
+        df -h /
 
+        # EC2 root volume is small (~28GB); free space before pulling large Next.js images
         docker stop "${CONTAINER_NAME}" || true
         docker rm "${CONTAINER_NAME}" || true
+        docker container prune -f || true
+        docker image prune -af || true
+        docker builder prune -af || true
+        docker system prune -af || true
+
+        echo "=== Disk usage after cleanup ==="
+        df -h /
+
+        docker pull "${IMAGE_URI}:${IMAGE_TAG}"
 
         docker run -d \
           --name "${CONTAINER_NAME}" \
@@ -97,7 +108,7 @@ deploy_to_ec2:
           -p "${HOST_PORT}:${CONTAINER_PORT}" \
           "${IMAGE_URI}:${IMAGE_TAG}"
 
-        docker image prune -f
+        docker image prune -af || true
       EOF
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
