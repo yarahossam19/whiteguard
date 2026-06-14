@@ -1673,7 +1673,287 @@
       "heading": "Gain Control. Achieve Visibility. Secure the Cloud.",
       "subtitle": "Whiteguard's Cloud Security Assessment gives you the clarity and confidence to operate safely in the cloud.",
       "buttonLabel": "Request a Free Scoping Call",
-      "buttonHref": "tel:0123456789"
+      "buttonHref": "/contact"
+    }
+  },
+  "network-security": {
+    "title": "Network Security",
+    "seo": {
+      "title": "Network Security Services | Firewall, Segmentation & Monitoring | WhiteGuard",
+      "description": "WhiteGuard's Network Security services protect your perimeter and internal traffic with firewall hardening, segmentation, NAC, and 24/7 monitoring across on-prem, cloud, and hybrid environments."
+    },
+    "hero": {
+      "headline": "Network Security — Secure Every Connection. Inside and Out.",
+      "subtitle": "Comprehensive network protection that hardens your perimeter, controls internal traffic, and stops threats from moving laterally—so attackers have nowhere to hide.",
+      "ctaPrimary": {
+        "label": "Request a Network Security Service",
+        "href": "/contact"
+      },
+      "ctaSecondary": {
+        "label": "Download Service Overview (PDF)",
+        "href": "#"
+      }
+    },
+    "whatIs": {
+      "heading": "What Is Network Security?",
+      "body": "Your network is the path attackers use to reach everything that matters—data, applications, and users. A single misconfigured firewall or flat network can let one breach spread across your whole environment. WhiteGuard's Network Security services protect that path from edge to core. We design, harden, and monitor your network architecture across on-prem, cloud, and hybrid setups—combining firewalls, segmentation, access control, and continuous traffic monitoring. The result is a network that blocks threats at the perimeter, contains them if they get in, and gives you full visibility over every connection.",
+      "ctaLabel": "Get A Quote",
+      "ctaHref": "/contact"
+    },
+    "whoNeeds": {
+      "heading": "Who Needs Network Security?",
+      "subtitle": "Built for organizations that need control, visibility, and resilience across complex networks.",
+      "cards": [
+        {
+          "title": "Growing Infrastructures",
+          "subtitle": "Businesses scaling across multiple sites and clouds",
+          "iconBg": "#dbeafe",
+          "cardBg": "#eff6ff"
+        },
+        {
+          "title": "Mid-Sized Organizations",
+          "subtitle": "Without dedicated network security teams",
+          "iconBg": "#dcfce7",
+          "cardBg": "#f0fdf4"
+        },
+        {
+          "title": "Regulated Industries",
+          "subtitle": "SAMA, FRA, PCI-DSS, NCA ECC, ISO compliance",
+          "iconBg": "#fef3c6",
+          "cardBg": "#fffbeb"
+        },
+        {
+          "title": "Hybrid & Cloud-Driven Businesses",
+          "subtitle": "Securing traffic across on-prem and cloud",
+          "iconBg": "#f3e8ff",
+          "cardBg": "#faf5ff"
+        }
+      ],
+      "examples": "Short Examples: Banks segmenting cardholder data environments • Healthcare providers isolating medical devices • Manufacturers securing OT/IT network boundaries • Enterprises protecting branch and remote connectivity"
+    },
+    "whatWeTest": {
+      "heading": "What It Covers",
+      "subtitle": "End-to-End Network Protection and Control",
+      "items": [
+        {
+          "title": "Firewall Design & Hardening",
+          "description": "Configuration, rule review, and optimization of next-generation firewalls to enforce least-privilege access."
+        },
+        {
+          "title": "Network Segmentation & Micro-Segmentation",
+          "description": "Isolate critical assets and limit lateral movement so a single breach can't spread across your environment."
+        },
+        {
+          "title": "Network Access Control (NAC)",
+          "description": "Verify and control every device connecting to your network, blocking unauthorized or non-compliant endpoints."
+        },
+        {
+          "title": "Traffic & Anomaly Monitoring",
+          "description": "Continuous inspection of network traffic to detect unusual behavior, intrusions, and policy violations in real time."
+        },
+        {
+          "title": "Secure Remote & Branch Connectivity",
+          "description": "Protect VPNs, SD-WAN, and remote access with encrypted, authenticated, and monitored connections."
+        },
+        {
+          "title": "Architecture Review & Optimization",
+          "description": "Assess your current network design against best practices and recommend a secure, scalable architecture."
+        }
+      ]
+    },
+    "whatYouReceive": {
+      "heading": "What You Receive",
+      "subtitle": "Clear Visibility and Actionable Network Assurance",
+      "items": [
+        {
+          "number": "01",
+          "imgSrc": "/images/icons/output-1.svg",
+          "title": "Executive Summary",
+          "description": "Network risk posture overview, key findings, and business impact metrics for leadership.",
+          "bg": "#eff6ff"
+        },
+        {
+          "number": "02",
+          "imgSrc": "/images/icons/output-2.svg",
+          "title": "Technical Reports",
+          "description": "Detailed configuration findings, traffic analysis, and remediation steps with MITRE ATT&CK mappings.",
+          "bg": "#f0fdf4"
+        },
+        {
+          "number": "03",
+          "imgSrc": "/images/icons/output-3.svg",
+          "title": "Network Architecture Diagram",
+          "description": "Current-state and recommended secure architecture with segmentation and trust zones.",
+          "bg": "#fffbeb"
+        },
+        {
+          "number": "04",
+          "imgSrc": "/images/icons/output-4.svg",
+          "title": "Compliance Alignment",
+          "description": "Findings mapped to ISO 27001, SAMA, NCA ECC, and PCI-DSS network security requirements.",
+          "bg": "#faf5ff"
+        },
+        {
+          "number": "05",
+          "imgSrc": "/images/icons/output-5.svg",
+          "title": "Remediation Roadmap & Advisory",
+          "description": "Prioritized action plan and ongoing optimization sessions with WhiteGuard engineers.",
+          "bg": "#fff1f2"
+        }
+      ],
+      "linkLabel": "See Network Security Pricing",
+      "linkHref": "/contact"
+    },
+    "methodology": {
+      "heading": "Methodology & Process",
+      "subtitle": "How We Secure Your Network — Structured, Thorough, and Scalable",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Discovery & Assessment",
+          "description": "Map your network topology, assets, and traffic flows to understand your current exposure."
+        },
+        {
+          "number": 2,
+          "title": "Architecture & Gap Analysis",
+          "description": "Evaluate your design, firewall rules, and segmentation against best practices and compliance standards."
+        },
+        {
+          "number": 3,
+          "title": "Design & Hardening",
+          "description": "Define secure architecture, harden configurations, and implement segmentation and access controls."
+        },
+        {
+          "number": 4,
+          "title": "Monitoring & Detection",
+          "description": "Deploy continuous traffic monitoring to detect intrusions, anomalies, and policy violations."
+        },
+        {
+          "number": 5,
+          "title": "Reporting & Insights",
+          "description": "Deliver executive and technical reports with findings, risk ratings, and remediation priorities."
+        },
+        {
+          "number": 6,
+          "title": "Continuous Improvement",
+          "description": "Refine rules, tune monitoring, and reassess as your network and the threat landscape evolve."
+        }
+      ]
+    },
+    "whenToRun": {
+      "heading": "When Should You Deploy Network Security?",
+      "items": [
+        "When expanding to new sites, clouds, or remote workforces",
+        "When regulatory requirements demand segmentation and traffic control",
+        "After a network redesign, merger, or major infrastructure change",
+        "Following a breach or incident that revealed lateral movement",
+        "As part of a proactive zero-trust or defense-in-depth strategy"
+      ]
+    },
+    "pricing": {
+      "heading": "Pricing Guide & Options",
+      "subtitle": "Flexible Plans to Match Your Network",
+      "plans": [
+        {
+          "id": "essential-network",
+          "title": "Essential Network Plan",
+          "iconSrc": "/images/icons/pricing/icon-1.svg",
+          "description": "Firewall review and core segmentation for key assets, ideal for SMBs."
+        },
+        {
+          "id": "advanced-network",
+          "title": "Advanced Network Plan",
+          "iconSrc": "/images/icons/pricing/icon-2.svg",
+          "description": "Full architecture hardening, NAC, and continuous traffic monitoring."
+        },
+        {
+          "id": "enterprise-network",
+          "title": "Enterprise Network Plan",
+          "iconSrc": "/images/icons/pricing/icon-3.svg",
+          "description": "Multi-site, multi-cloud security with micro-segmentation and zero-trust design."
+        },
+        {
+          "id": "co-managed-network",
+          "title": "Co-Managed Network Security",
+          "iconSrc": "/images/icons/pricing/icon-4.svg",
+          "description": "Hybrid model between WhiteGuard and your in-house network team."
+        },
+        {
+          "id": "monitoring-addon",
+          "title": "Monitoring Add-On",
+          "iconSrc": "/images/icons/pricing/icon-5.svg",
+          "description": "Ongoing traffic monitoring, anomaly detection, and periodic health checks."
+        }
+      ],
+      "ctaLabel": "Request Pricing Proposal",
+      "ctaHref": "/contact"
+    },
+    "standards": {
+      "heading": "Standards & Mappings",
+      "cards": [
+        {
+          "id": "methodology-aligned",
+          "title": "Methodology & Process Aligned With",
+          "description": "NIST 800-41 (Firewall Guidelines) • NIST 800-207 (Zero Trust Architecture) • MITRE ATT&CK • CIS Benchmarks • SAMA CSF • NCA ECC",
+          "iconSrc": "/images/icons/mapping/BookOpen.svg"
+        },
+        {
+          "id": "compliance-mapped",
+          "title": "Mapped To Compliance Controls",
+          "description": "ISO 27001 • SAMA • FRA 139 • PCI-DSS • NCA ECC",
+          "iconSrc": "/images/icons/mapping/ShieldCheck.svg"
+        }
+      ],
+      "certifications": {
+        "heading": "Certifications & Tools",
+        "items": [
+          {
+            "id": "certs",
+            "title": "Engineers certified in CCNP Security, PCNSE, NSE, and CCIE Security",
+            "iconSrc": "/images/icons/mapping/Award.svg"
+          },
+          {
+            "id": "whitehawk",
+            "title": "Integration with WHITEHAWK for unified network visibility and alerting (Optional)",
+            "iconSrc": "/images/icons/mapping/Wrench.svg"
+          }
+        ]
+      }
+    },
+    "testimonials": [
+      {
+        "quote": "WhiteGuard redesigned our network segmentation and gave us visibility we never had before. Lateral movement is no longer a blind spot.",
+        "name": "Head of IT Security",
+        "title": "Regional Bank"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is Network Security?",
+        "description": "Network Security protects the systems, devices, and traffic that make up your network. WhiteGuard secures your perimeter and internal traffic through firewall hardening, segmentation, access control, and continuous monitoring across on-prem, cloud, and hybrid environments."
+      },
+      {
+        "question": "What is network segmentation and why does it matter?",
+        "description": "Segmentation divides your network into isolated zones so a breach in one area can't spread to others. It's a core control for limiting attacker movement and meeting standards like PCI-DSS."
+      },
+      {
+        "question": "Can you work with our existing firewalls and tools?",
+        "description": "Yes — we work with your existing next-generation firewalls, NAC, and monitoring tools, and recommend improvements where needed."
+      },
+      {
+        "question": "Do you support cloud and hybrid networks?",
+        "description": "Yes — we secure traffic and configurations across AWS, Azure, GCP, on-prem, and hybrid environments."
+      },
+      {
+        "question": "Can this be co-managed with our internal team?",
+        "description": "Yes — we offer full or hybrid models depending on your in-house network capabilities."
+      }
+    ],
+    "cta": {
+      "heading": "Secure Every Connection. Stop Threats Before They Spread.",
+      "subtitle": "WhiteGuard's Network Security services give you a hardened perimeter, controlled internal traffic, and full visibility — designed and managed by experts.",
+      "buttonLabel": "Request Network Security Now",
+      "buttonHref": "/contact"
     }
   },
   "soc-design": {

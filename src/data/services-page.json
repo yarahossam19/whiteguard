@@ -198,9 +198,7 @@
           },
           {
             "iconSrc": "/images/services/bottom-cta-highlight/chart.svg",
-            "lines": [
-              "Exploitation PoCs with prioritized remediation roadmaps"
-            ]
+            "lines": ["Exploitation PoCs with prioritized remediation roadmaps"]
           },
           {
             "iconSrc": "/images/services/bottom-cta-highlight/building.svg",
@@ -220,6 +218,31 @@
         "ctaSecondary": { "label": null, "href": "#" }
       },
       "cards": [
+        {
+          "link": "network-security",
+          "title": "Network Security",
+          "description": "Lock down every connection, Stop threats at the perimeter and inside. We secure your network end to end—firewalls, segmentation, and traffic monitoring across on-prem, cloud, and hybrid environments.",
+          "features": [
+            {
+              "icon": "/images/services/defensive-icons/icon-00.svg",
+              "label": "Firewall & NAC Hardening"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-01.svg",
+              "label": "Network Segmentation"
+            },
+            {
+              "icon": "/images/services/defensive-icons/icon-02.svg",
+              "label": "Traffic & Anomaly Monitoring"
+            }
+          ],
+          "cta": {
+            "label": "Secure Your Network Now",
+            "href": "/services/network-security"
+          },
+          "image": "/images/services/defensive-0.png",
+          "imageLeft": false
+        },
         {
           "link": "soc-design",
           "title": "SOC Service",
@@ -502,61 +525,6 @@
           "imageLeft": true
         },
         {
-          "link": "sama-readiness",
-          "title": "SAMA Compliance Program",
-          "description": "Meet Saudi Arabia's strictest cybersecurity framework  Whiteguard helps financial institutions implement the SAMA CSF and navigate regulatory audits with confidence.",
-          "features": [
-            {
-              "icon": "/images/services/grc-icons/icon-4.svg",
-              "label": "SAMA Gap Analysis"
-            },
-            {
-              "icon": "/images/services/grc-icons/icon-5.svg",
-              "label": "Control & Risk Register"
-            },
-            {
-              "icon": "/images/services/grc-icons/icon-6.svg",
-              "label": "Board-level Reporting"
-            },
-            {
-              "icon": "/images/services/grc-icons/icon-7.svg",
-              "label": "Staff Awareness"
-            }
-          ],
-          "cta": {
-            "label": "Achieve SAMA Compliance",
-            "href": "/services/sama-readiness"
-          },
-          "image": "/images/services/grc-2.png",
-          "imageLeft": false
-        },
-        {
-          "link": "nca-compliance",
-          "title": "NCA Compliance",
-          "description": "Secure national assets, Comply with KSA's NCA mandates. We support public & private sector entities with NCA Compliance aligned to NCA ECC and CCC standards.",
-          "features": [
-            {
-              "icon": "/images/services/grc-icons/icon-8.svg",
-              "label": "Readiness Assessment"
-            },
-            {
-              "icon": "/images/services/grc-icons/icon-9.svg",
-              "label": "Policy Alignment"
-            },
-            {
-              "icon": "/images/services/grc-icons/icon-10.svg",
-              "label": "Audit Trail & Advisory"
-            }
-          ],
-          "cta": {
-            "label": "Prepare for Your NCA Assessment",
-            "href": "/services/nca-compliance"
-          },
-          "image": "/images/services/grc-3.png",
-          "imageLeft": true
-        },
-
-        {
           "link": "soc-2-compliance",
           "title": "SOC 2",
           "description": "Build trust with customers and partners through SOC 2 compliance  Whiteguard designs and implements SOC 2 control environments across trust principles: security, availability, processing integrity, confidentiality, and privacy.",
@@ -631,6 +599,61 @@
           "image": "/images/services/grc-6.png",
           "imageLeft": false
         },
+        {
+          "link": "nca-compliance",
+          "title": "NCA Compliance",
+          "description": "Secure national assets, Comply with KSA's NCA mandates. We support public & private sector entities with NCA Compliance aligned to NCA ECC and CCC standards.",
+          "features": [
+            {
+              "icon": "/images/services/grc-icons/icon-8.svg",
+              "label": "Readiness Assessment"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-9.svg",
+              "label": "Policy Alignment"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-10.svg",
+              "label": "Audit Trail & Advisory"
+            }
+          ],
+          "cta": {
+            "label": "Prepare for Your NCA Assessment",
+            "href": "/services/nca-compliance"
+          },
+          "image": "/images/services/grc-3.png",
+          "imageLeft": true
+        },
+        {
+          "link": "sama-readiness",
+          "title": "SAMA Compliance Program",
+          "description": "Meet Saudi Arabia's strictest cybersecurity framework  Whiteguard helps financial institutions implement the SAMA CSF and navigate regulatory audits with confidence.",
+          "features": [
+            {
+              "icon": "/images/services/grc-icons/icon-4.svg",
+              "label": "SAMA Gap Analysis"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-5.svg",
+              "label": "Control & Risk Register"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-6.svg",
+              "label": "Board-level Reporting"
+            },
+            {
+              "icon": "/images/services/grc-icons/icon-7.svg",
+              "label": "Staff Awareness"
+            }
+          ],
+          "cta": {
+            "label": "Achieve SAMA Compliance",
+            "href": "/services/sama-readiness"
+          },
+          "image": "/images/services/grc-2.png",
+          "imageLeft": false
+        },
+
         {
           "link": "aramco-ccc",
           "title": "Aramco Cybersecurity Compliance Certificate (CCC)",

@@ -48,7 +48,9 @@ export default function ServiceDetailTestimonials({
           <h2 className="text-center font-jakarta text-[28px] font-normal leading-[41.6px] text-[#003859] lg:text-[32px]">
             Words of Satisfaction from Our Clients
           </h2>
-          <div className="mx-auto grid w-full max-w-[1152px] gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div
+            className={`mx-auto grid justify-center w-full max-w-[1152px] gap-8 sm:grid-cols-${testimonials.length <= 2 ? testimonials.length : 2} lg:grid-cols-${testimonials.length <= 3 ? testimonials.length : 3}`}
+          >
             {testimonials.map((t, i) => (
               <div
                 key={t.name}
