@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy ",
   description:
-    "WHITEGUARD Privacy Policy - Learn how we collect, use, and protect your personal information.",
+    "Whiteguard Privacy Policy - Learn how we collect, use, and protect your personal information.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
               1. Introduction
             </h2>
             <p className="leading-relaxed">
-              WHITEGUARD and WhiteHawk Security (&quot;we,&quot; &quot;us,&quot;
+              Whiteguard and WhiteHawk Security (&quot;we,&quot; &quot;us,&quot;
               or &quot;our&quot;) are committed to protecting your privacy. This
               Privacy Policy explains how we collect, use, disclose, and
               safeguard your personal information when you use our website,

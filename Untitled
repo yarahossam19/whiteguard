@@ -7,4 +7,4 @@ SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your-gmail@gmail.com
 SMTP_PASS=your-16-char-app-password
-SMTP_FROM="WHITEGUARD Website" <your-gmail@gmail.com>
+SMTP_FROM="Whiteguard Website" <your-gmail@gmail.com>

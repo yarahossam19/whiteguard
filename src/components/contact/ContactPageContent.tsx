@@ -268,8 +268,8 @@ export default function ContactPageContent() {
     };
   }, [recaptchaApiReady, recaptchaHostEl]);
 
-  const fieldBase =
-    "w-full rounded-[8px] border-2 bg-white px-4 py-3 font-jakarta text-[16px] leading-[16px] tracking-[1.1px] text-[#141a1f] placeholder:text-[#52697a] transition-colors duration-200 outline-none";
+  const fieldHeight = "h-[52px]";
+  const fieldBase = `w-full ${fieldHeight} rounded-[8px] border-2 bg-white px-4 py-[16px] font-jakarta text-[16px] leading-[16px] tracking-[1.1px] text-[#141a1f] placeholder:text-[#52697a] transition-colors duration-200 outline-none`;
   const fieldDefault = "border-[#e0e6eb]";
   const fieldFocused = "border-[#ABE0FF]";
 
@@ -277,16 +277,16 @@ export default function ContactPageContent() {
     `${fieldBase} ${focusedField === field ? fieldFocused : fieldDefault}`;
 
   const labelForm =
-    "font-jakarta text-[16px] font-normal leading-[16px] tracking-[1.1px] text-[#141a1f]";
+    "min-h-[16px] font-jakarta text-[16px] font-normal leading-[16px] tracking-[1.1px] text-[#141a1f]";
   const asteriskClass = "text-[#ff0004]";
 
   const selectShell = (field: string) =>
-    `relative flex w-full items-center rounded-[8px] border-2 bg-white transition-colors duration-200 ${
+    `relative flex w-full ${fieldHeight} items-center rounded-[8px] border-2 bg-white transition-colors duration-200 ${
       focusedField === field ? fieldFocused : fieldDefault
     }`;
 
   const selectInner =
-    "w-full appearance-none bg-transparent px-4 py-3 font-jakarta text-[16px] leading-[18px] tracking-[1.1px] outline-none scheme-light";
+    "h-full w-full appearance-none bg-transparent px-4 pr-10 py-0 font-jakarta text-[16px] leading-[16px] tracking-[1.1px] outline-none scheme-light";
 
   const subServiceOptions = useMemo(() => {
     if (!serviceType || !isContactCategoryId(serviceType)) return [];
@@ -523,9 +523,7 @@ export default function ContactPageContent() {
                 <div className="flex flex-col gap-2">
                   <label htmlFor="contact-whatsApp" className={labelForm}>
                     Phone{" "}
-                    <span className="text-[12px] font-normal normal-case tracking-normal text-[#52697a]">
-                      (WhatsApp)
-                    </span>
+                    <span className="font-normal text-[#52697a]">(WhatsApp)</span>
                   </label>
                   <input
                     id="contact-whatsApp"
@@ -678,7 +676,7 @@ export default function ContactPageContent() {
             <div className="overflow-hidden rounded-[10px] border border-[#e0e6eb]">
               <iframe
                 title="WhiteGuard location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.3158407176566!2d31.19261767501089!3d30.05647991800129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145859007e8985eb%3A0x9a771a8e3ae7b453!2sWHITEGUARD!5e0!3m2!1sen!2seg!4v1778549602329!5m2!1sen!2seg"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.3158407176566!2d31.19261767501089!3d30.05647991800129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145859007e8985eb%3A0x9a771a8e3ae7b453!2sWhiteguard!5e0!3m2!1sen!2seg!4v1778549602329!5m2!1sen!2seg"
                 width="100%"
                 height={320}
                 className="block min-h-[280px] w-full bg-[#f5f8fa] lg:h-[300px]"

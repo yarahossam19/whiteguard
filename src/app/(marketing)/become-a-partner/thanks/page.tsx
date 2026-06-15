@@ -4,8 +4,8 @@ import Image from "next/image";
 import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
 
 export const metadata: Metadata = {
-  title: "Application Received | WHITEGUARD",
-  description: "Thank you for applying to partner with WHITEGUARD.",
+  title: "Application Received | Whiteguard",
+  description: "Thank you for applying to partner with Whiteguard.",
 };
 
 export default function BecomePartnerThanksPage() {

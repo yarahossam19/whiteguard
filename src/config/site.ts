@@ -3,10 +3,10 @@
  */
 
 export const siteConfig = {
-  name: "WHITEGUARD",
+  name: "Whiteguard",
   tagline:
     "Empowering businesses with intelligent, continuous security monitoring. We are your trusted partner in the digital landscape.",
-  copyright: "© 2026 WHITEGUARD LLC. All rights reserved.",
+  copyright: "© 2026 Whiteguard LLC. All rights reserved.",
 } as const;
 
 export const mainNav = [
@@ -98,7 +98,7 @@ export const partnerLogos = [
 ] as const;
 
 export const socialLinks = [
-  { label: "X", href: "https://x.com/WHITEGUARDLTD", icon: "x" },
+  { label: "X", href: "https://x.com/WhiteguardLTD", icon: "x" },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/company/thewhiteguard/",
@@ -106,7 +106,7 @@ export const socialLinks = [
   },
   {
     label: "Facebook",
-    href: "https://www.facebook.com/WHITEGUARD.IO",
+    href: "https://www.facebook.com/Whiteguard.IO",
     icon: "facebook",
   },
 ] as const;

@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": ["Build Stronger", "Cybersecurity Together"],
-    "subtitle": "WHITEGUARD partners with consultancies, system integrators, and MSSPs across MENA to deliver offensive, defensive, GRC, and training services—so you scale without fragmenting your stack.",
+    "subtitle": "Whiteguard partners with consultancies, system integrators, and MSSPs across MENA to deliver offensive, defensive, GRC, and training services—so you scale without fragmenting your stack.",
     "image": "/images/new-dashboard.avif",
     "cta": {
       "href": "/become-a-partner",
@@ -91,7 +91,7 @@
   },
   "engage": {
     "title": "How Partners Engage",
-    "subtitle": "Multiple pathways to value—choose how you want to work with WHITEGUARD.",
+    "subtitle": "Multiple pathways to value—choose how you want to work with Whiteguard.",
     "items": [
       {
         "id": "sell",

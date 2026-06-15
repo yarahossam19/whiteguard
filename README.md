@@ -1,6 +1,6 @@
-# WHITEGUARD Website
+# Whiteguard Website
 
-Next.js website for WHITEGUARD - Intelligent Security Monitoring.
+Next.js website for Whiteguard - Intelligent Security Monitoring.
 
 ## Tech Stack
 

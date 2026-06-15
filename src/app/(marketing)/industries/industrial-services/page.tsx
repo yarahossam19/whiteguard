@@ -6,7 +6,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const d = getIndustrialServicesIndustryPageData();
   const seo = d.seo;
   return {
-    title: seo?.title ?? `${d.title} | WHITEGUARD`,
+    title: seo?.title ?? `${d.title} | Whiteguard`,
     description: seo?.description ?? d.description,
   };
 }

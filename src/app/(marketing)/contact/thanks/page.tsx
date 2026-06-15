@@ -4,8 +4,8 @@ import Image from "next/image";
 import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
 
 export const metadata: Metadata = {
-  title: "Message Received | WHITEGUARD",
-  description: "Thank you for contacting WHITEGUARD.",
+  title: "Message Received | Whiteguard",
+  description: "Thank you for contacting Whiteguard.",
 };
 
 export default function ContactThanksPage() {

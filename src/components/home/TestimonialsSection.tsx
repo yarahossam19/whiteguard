@@ -56,7 +56,7 @@ export default function TestimonialsSection({
         </div>
         {/* Swiper Cards */}
         <Swiper
-          modules={[Navigation, Autoplay, Pagination]}
+          modules={[  Autoplay, Pagination]}
           centeredSlides={true}
           centeredSlidesBounds={true}
           slidesPerView={1}
@@ -68,7 +68,7 @@ export default function TestimonialsSection({
             pauseOnMouseEnter: true,
           }}
           speed={1500}
-          navigation
+          // navigation
           pagination={{ clickable: true }}
           grabCursor
           breakpoints={{

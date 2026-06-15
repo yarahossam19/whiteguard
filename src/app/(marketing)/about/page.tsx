@@ -13,7 +13,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Us  ",
   description:
-    "Learn about WHITEGUARD - your trusted partner in intelligent security monitoring.",
+    "Learn about Whiteguard - your trusted partner in intelligent security monitoring.",
 };
 
 export default function AboutPage() {

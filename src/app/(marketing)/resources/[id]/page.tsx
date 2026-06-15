@@ -18,9 +18,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = await params;
   const detail = getResourceDetail(id);
-  if (!detail) return { title: "Resource | WHITEGUARD" };
+  if (!detail) return { title: "Resource | Whiteguard" };
   return {
-    title: `${detail.title} | WHITEGUARD`,
+    title: `${detail.title} | Whiteguard`,
     description: detail.sections[0]?.body?.slice(0, 160) ?? "Resource details",
   };
 }

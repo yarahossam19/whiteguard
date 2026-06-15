@@ -26,7 +26,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: {
     default: "WHITEGUAR",
-    template: "%s | WHITEGUARD",
+    template: "%s | Whiteguard",
   },
   description:
     "Empowering businesses with intelligent, continuous security monitoring. Your trusted partner in the digital landscape.",

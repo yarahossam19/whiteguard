@@ -75,7 +75,7 @@ export function PartnerCountryMultiSelect({
     <div ref={containerRef} className="relative w-full">
       <div
         id={id}
-        className={`flex min-h-[52px] w-full cursor-default flex-wrap items-center gap-2 rounded-[8px] border-2 bg-white px-3 py-2.5 pr-12 transition-colors duration-200 ${border}`}
+        className={`flex min-h-[52px] w-full cursor-default flex-wrap items-center gap-2 rounded-[8px] border-2 bg-white px-4 py-2 pr-12 transition-colors duration-200 ${border}`}
         onClick={() => {
           if (available.length === 0) return;
           setOpen((o) => !o);

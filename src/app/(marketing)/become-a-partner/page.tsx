@@ -4,7 +4,7 @@ import BecomePartnerForm from "@/components/partners/BecomePartnerForm";
 export const metadata: Metadata = {
   title: "Become a Partner ",
   description:
-    "Submit your partnership application to join the WHITEGUARD partner ecosystem.",
+    "Submit your partnership application to join the Whiteguard partner ecosystem.",
 };
 
 export default function BecomeAPartnerPage() {

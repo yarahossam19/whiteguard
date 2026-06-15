@@ -69,7 +69,7 @@ export default function MenaGloballySection({
         }}
       >
         <div className="container flex w-full flex-col-reverse items-center justify-between gap-12 xl:flex-row xl:gap-16">
-          <div className="flex flex-col gap-6 text-center xl:max-w-[571px] xl:text-left">
+          <div className="flex flex-col gap-6 text-center xl:max-w-full xl:text-left">
             <div className="flex flex-col gap-0">
               <h2 className="font-jakarta text-[clamp(32px,4vw,44px)] font-extrabold leading-[1.15] text-[#003859]">
                 {heading.line1}
@@ -87,7 +87,7 @@ export default function MenaGloballySection({
                 {paragraph}
               </p>
             ))}
-            <h6 className="font-jakarta text-[clamp(16px,1.6vw,18px)] mt-5 leading-0 font-semibold  text-[#003859]">
+            <h6 className="font-jakarta text-[clamp(16px,1.6vw,18px)] mt-4 leading-0 font-semibold  text-[#003859]">
               Where We Operate
             </h6>
             {paragraphs2.map((paragraph, i) => (
@@ -99,7 +99,7 @@ export default function MenaGloballySection({
               </p>
             ))}
 
-            <div className="flex flex-wrap items-center justify-around gap-8 pt-[106px]">
+            <div className="flex flex-wrap items-center justify-around gap-8 pt-[50px]">
               {certifications.map((cert) => (
                 <div
                   key={cert.id}
@@ -117,15 +117,17 @@ export default function MenaGloballySection({
             </div>
           </div>
 
-          <div className="relative w-full shrink-0 xl:max-w-[50%]">
-            <img
+          <div className="relative w-full shrink-0 xl:max-w-[50%]  ">
+            <Image
+              width={645}
+              height={346}
               src={mapData.src}
               alt={mapData.alt}
               className="h-full w-full object-cover"
             />
-            {markers.map((marker) => (
+            {/* {markers.map((marker) => (
               <MapMarkerPin key={marker.id} marker={marker} />
-            ))}
+            ))} */}
           </div>
         </div>
       </section>
