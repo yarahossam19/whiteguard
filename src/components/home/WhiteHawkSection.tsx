@@ -167,9 +167,10 @@ export default function WhiteHawkSection({ data }: WhiteHawkSectionProps) {
               </svg>
             </button>
             <video
-              src="/videos/whiehwk.mp4"
+              src={showVideo ? "/videos/whiehwk.mp4" : undefined}
               controls
               autoPlay
+              preload="none"
               className="w-full rounded-lg"
             />
           </div>

@@ -1,0 +1,12 @@
+# WhiteGuard — https://whiteguard.io
+User-agent: *
+Allow: /
+
+# API routes (not for search indexing)
+Disallow: /api/
+
+# Post-submit confirmation pages
+Disallow: /contact/thanks
+Disallow: /become-a-partner/thanks
+
+Sitemap: https://whiteguard.io/sitemap.xml

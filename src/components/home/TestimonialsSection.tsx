@@ -56,7 +56,7 @@ export default function TestimonialsSection({
         </div>
         {/* Swiper Cards */}
         <Swiper
-          modules={[  Autoplay, Pagination]}
+          modules={[Autoplay, Pagination]}
           centeredSlides={true}
           centeredSlidesBounds={true}
           slidesPerView={1}

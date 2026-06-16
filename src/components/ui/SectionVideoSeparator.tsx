@@ -1,13 +1,31 @@
-"use client";
-
-import { useMediaQuery } from "react-responsive";
+import { DesktopWaveVideo } from "./DesktopWaveVideo";
 
 interface SectionSeparatorProps {
-  /** Optional video source. If provided, video is used; otherwise SVG wave is shown. */
+  /** Optional video source. SVG on viewports below lg; video on lg+ only. */
   videoSrc?: string;
   className?: string;
   direction?: "top" | "bottom";
   transform?: string;
+}
+
+function WaveSvg() {
+  return (
+    <svg
+      className="block h-full w-full"
+      viewBox="0 0 1440 150"
+      preserveAspectRatio="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0,0 L1440,0 L1440,70 C1200,95 1000,45 720,65 C440,85 280,35 0,60 L0,0 Z"
+        fill="white"
+      />
+      <path
+        d="M0,60 C280,35 440,85 720,65 C1000,45 1200,95 1440,70 L1440,150 L0,150 Z"
+        fill="#ABE0FF"
+      />
+    </svg>
+  );
 }
 
 export function SectionVideoSeparator({
@@ -16,56 +34,34 @@ export function SectionVideoSeparator({
   videoSrc,
   className = "",
 }: SectionSeparatorProps) {
-  const height = 300;
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  const isTablet = useMediaQuery({ query: "(max-width: 1025px)" });
+  const topMarginClass =
+    direction === "top" ? "mt-[-100px] md:mt-[-240px]" : "";
+  const heightClass =
+    direction === "bottom" ? "h-[120px] lg:h-[300px]" : "h-[300px]";
 
-  if (videoSrc) {
+  if (!videoSrc) {
     return (
       <div
-        className={`relative ${direction === "top" ? (!isMobile ? "mt-[-240px]" : "mt-[-100px]") : " "} z-0 overflow-hidden ${className} `}
-        style={{
-          height: isTablet && direction === "bottom" ? "120px" : `${height}px`,
-          alignSelf: "stretch",
-          transform: transform,
-        }}
+        className={`relative w-full overflow-hidden ${heightClass} ${className}`}
+        style={{ alignSelf: "stretch" }}
+        aria-hidden
       >
-        <video
-          src={videoSrc}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute  inset-0 h-full w-full object-cover"
-          aria-hidden
-        />
+        <WaveSvg />
       </div>
     );
   }
 
   return (
     <div
-      className={`relative w-full overflow-hidden ${className}`}
-      style={{ height: `${height}px`, alignSelf: "stretch" }}
-      aria-hidden
+      className={`relative z-0 overflow-hidden ${topMarginClass} ${heightClass} ${className}`}
+      style={{ alignSelf: "stretch", transform }}
     >
-      <svg
-        className="block h-full w-full"
-        viewBox="0 0 1440 150"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* White top - wavy bottom edge (organic irregular waves) */}
-        <path
-          d="M0,0 L1440,0 L1440,70 C1200,95 1000,45 720,65 C440,85 280,35 0,60 L0,0 Z"
-          fill="white"
-        />
-        {/* Light blue bottom - complementary wavy top */}
-        <path
-          d="M0,60 C280,35 440,85 720,65 C1000,45 1200,95 1440,70 L1440,150 L0,150 Z"
-          fill="#ABE0FF"
-        />
-      </svg>
+      <div className="absolute inset-0 lg:hidden" aria-hidden>
+        <WaveSvg />
+      </div>
+      <div className="absolute inset-0 hidden lg:block" aria-hidden>
+        <DesktopWaveVideo src={videoSrc} />
+      </div>
     </div>
   );
 }
