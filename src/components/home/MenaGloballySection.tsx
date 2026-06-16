@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import type { MenaGloballyData } from "@/data/mena-globally";
 import { SectionVideoSeparator } from "../ui/SectionVideoSeparator";
@@ -110,6 +108,7 @@ export default function MenaGloballySection({
                     height={100}
                     src={cert.src}
                     alt={cert.name}
+                    loading="lazy"
                     className="h-full max-h-[54px] min-w-[107px] w-full object-contain"
                   />
                 </div>

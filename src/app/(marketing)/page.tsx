@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import HeroSection from "@/components/home/HeroSection";
 import MenaGloballySection from "@/components/home/MenaGloballySection";
-import ServicesSection from "@/components/home/ServicesSection";
-import WhiteHawkSection from "@/components/home/WhiteHawkSection";
 import WhyChooseUsSection from "@/components/home/WhyChooseUsSection";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CTASection from "@/components/home/CTASection";
 import { getHeroData } from "@/data/hero";
 import { getMenaGloballyData } from "@/data/mena-globally";
@@ -15,6 +13,27 @@ import { getTestimonialsSectionData } from "@/data/testimonials-section";
 import { getCtaSectionData } from "@/data/cta-section";
 import { getClientLogosData } from "@/data/client-logos";
 import { SectionImageSeparator } from "@/components/ui/SectionImageSeparator";
+
+const ServicesSection = dynamic(
+  () => import("@/components/home/ServicesSection"),
+  {
+    loading: () => <div aria-hidden className="min-h-[80vh] bg-white" />,
+  },
+);
+
+const WhiteHawkSection = dynamic(
+  () => import("@/components/home/WhiteHawkSection"),
+  {
+    loading: () => <div aria-hidden className="min-h-[60vh] bg-[#001f33]" />,
+  },
+);
+
+const TestimonialsSection = dynamic(
+  () => import("@/components/home/TestimonialsSection"),
+  {
+    loading: () => <div aria-hidden className="min-h-[50vh] bg-[#f0f9ff]" />,
+  },
+);
 
 const HOME_META_TITLE = "WhiteGuard";
 const HOME_META_DESCRIPTION =

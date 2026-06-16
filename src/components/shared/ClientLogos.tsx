@@ -4,7 +4,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { ClientLogosData } from "@/data/client-logos";
 import type { PartnersLogosData } from "@/data/partners-logos";
 import Image from "next/image";
-import { useMediaQuery } from "react-responsive";
 
 type LogosData = ClientLogosData | PartnersLogosData;
 
@@ -14,9 +13,9 @@ const FACE_STYLE = {
   MozBackfaceVisibility: "hidden" as const,
 };
 
-function logosPerPage(isMobile: boolean, isTablet: boolean) {
-  if (isMobile) return 2;
-  if (isTablet) return 4;
+function logosPerPage(width: number) {
+  if (width < 768) return 2;
+  if (width < 1024) return 4;
   return 7;
 }
 
@@ -41,6 +40,7 @@ function LogoGrid({ items }: { items: LogosData }) {
             alt={logo.alt}
             width={120}
             height={100}
+            loading="lazy"
             style={{ width: `${parseInt(logo.width, 10) || 100}px` }}
             className="h-auto max-h-[56px] w-auto object-contain"
           />
@@ -60,11 +60,15 @@ export default function ClientLogos({
   const [pageIndex, setPageIndex] = useState(0);
   const [flip, setFlip] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [perPage, setPerPage] = useState(2);
   const flipTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
-  const isTablet = useMediaQuery({ query: "(max-width: 1023px)" });
-  const perPage = logosPerPage(isMobile, isTablet);
+  useEffect(() => {
+    const sync = () => setPerPage(logosPerPage(window.innerWidth));
+    sync();
+    window.addEventListener("resize", sync);
+    return () => window.removeEventListener("resize", sync);
+  }, []);
   const pageCount = Math.max(1, Math.ceil(logos.length / perPage));
 
   const visible = useMemo(
