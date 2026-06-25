@@ -4,6 +4,10 @@ import {
   GoogleTagManagerNoScript,
   GoogleTagManagerScript,
 } from "@/components/analytics/GoogleTagManager";
+import {
+  SmartsuppChatNoScript,
+  SmartsuppChatScript,
+} from "@/components/analytics/SmartsuppChat";
 import { ScrollToTopButton } from "@/components/ui/ScrollToTopButton";
 import "./globals.css";
 
@@ -44,6 +48,8 @@ export default function RootLayout({
         <GoogleTagManagerNoScript />
         {children}
         <ScrollToTopButton />
+        <SmartsuppChatScript />
+        <SmartsuppChatNoScript />
       </body>
     </html>
   );
