@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 export interface ServicesDropdownItem {
@@ -20,6 +20,8 @@ interface ServicesDropdownProps {
 
 export function ServicesDropdown({ items }: ServicesDropdownProps) {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const tabParam = searchParams.get("tab");
   const [isHovered, setIsHovered] = useState(true);
 
   return (
@@ -42,7 +44,11 @@ export function ServicesDropdown({ items }: ServicesDropdownProps) {
         }}
       >
         {items.map((sub, index) => {
-          const isActive = pathname === sub.href;
+          const subTab = sub.href.includes("tab=")
+            ? sub.href.split("tab=")[1]
+            : null;
+          const isActive =
+            pathname === "/services" && subTab && tabParam === subTab;
 
           return (
             <Link

@@ -17,10 +17,10 @@ export default function ResourceCard({ item }: ResourceCardProps) {
   return (
     <Link
       href={item.href}
-      className="group flex w-full flex-col overflow-hidden rounded-[12px] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.1)] gap-4 transition-opacity hover:opacity-95 lg:max-w-[400px]"
+      className="group flex w-full flex-col overflow-hidden rounded-[8px]  gap-4 transition-opacity hover:opacity-95 lg:max-w-[400px]"
     >
       {/* Image */}
-      <div className="relative h-[228px] w-full shrink-0 overflow-hidden rounded-t-[12px]  ">
+      <div className="relative h-[228px] w-full shrink-0 overflow-hidden rounded-[8px]  ">
         <Image
           src={item.image}
           alt={item.title}
@@ -30,7 +30,7 @@ export default function ResourceCard({ item }: ResourceCardProps) {
         />
       </div>
       {/* Content */}
-      <div className="flex flex-col gap-0 pt-0 p-4">
+      <div className="flex flex-col gap-0 pt-0">
         <h3 className="font-jakarta text-[18px] font-normal leading-[30px] tracking-[-0.15px] text-black lg:text-[20px]">
           {item.title}
         </h3>

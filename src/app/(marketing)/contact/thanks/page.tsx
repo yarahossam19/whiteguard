@@ -2,13 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
-import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = buildPageMetadata({
-  path: "/contact/thanks",
-  title: "Message Received | WhiteGuard",
+export const metadata: Metadata = {
+  title: "Message Received | Whiteguard",
   description: "Thank you for contacting Whiteguard.",
-});
+};
 
 export default function ContactThanksPage() {
   return (

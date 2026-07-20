@@ -12,25 +12,88 @@
   },
   "items": [
     {
-      "id": "how-to-know-your-system-isnt-secure",
-      "title": "How to Know Your System Isn't Secure?",
-      "description": "Simple: if you haven't tested it, don't trust it. Learn the warning signs of assumed security—and what verified protection actually looks like.",
-      "image": "/images/resources/blog-system-security-card.png",
-      "href": "/resources/how-to-know-your-system-isnt-secure"
+      "id": "1",
+      "title": "Incident response plan template",
+      "description": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique.",
+      "image": "https://picsum.photos/seed/r1/400/228",
+      "href": "/resources/1"
     },
     {
-      "id": "why-penetration-testing-matters",
-      "title": "Why Penetration Testing Matters Before an Attack Does",
-      "description": "Waiting for a breach to prove your controls is the most expensive lesson in cybersecurity. Here's how pentesting turns uncertainty into a clear action plan.",
-      "image": "/images/resources/blog-penetration-testing-card.png",
-      "href": "/resources/why-penetration-testing-matters"
+      "id": "2",
+      "title": "Incident response plan template",
+      "description": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique.",
+      "image": "https://picsum.photos/seed/r2/400/228",
+      "href": "/resources/2"
     },
     {
-      "id": "assumed-security-vs-verified-security",
-      "title": "Assumed Security vs Verified Security",
-      "description": "A certificate on the wall is not the same as proof under pressure. Here's how to tell whether your security is real—or just assumed.",
-      "image": "/images/resources/blog-assumed-vs-verified-card.png",
-      "href": "/resources/assumed-security-vs-verified-security"
+      "id": "3",
+      "title": "Incident response plan template",
+      "description": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique.",
+      "image": "https://picsum.photos/seed/r3/400/228",
+      "href": "/resources/3"
+    },
+    {
+      "id": "4",
+      "title": "Incident response plan template",
+      "description": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique.",
+      "image": "https://picsum.photos/seed/r1/400/228",
+      "href": "/resources/4"
+    },
+    {
+      "id": "5",
+      "title": "Incident response plan template",
+      "description": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique.",
+      "image": "https://picsum.photos/seed/r5/400/228",
+      "href": "/resources/5"
+    },
+    {
+      "id": "6",
+      "title": "Incident response plan template",
+      "description": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique.",
+      "image": "https://picsum.photos/seed/r6/400/228",
+      "href": "/resources/6"
+    },
+    {
+      "id": "7",
+      "title": "Incident response plan template",
+      "description": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique.",
+      "image": "https://picsum.photos/seed/r7/400/228",
+      "href": "/resources/7"
+    },
+    {
+      "id": "8",
+      "title": "Incident response plan template",
+      "description": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique.",
+      "image": "https://picsum.photos/seed/r1/400/228",
+      "href": "/resources/8"
+    },
+    {
+      "id": "9",
+      "title": "Incident response plan template",
+      "description": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique.",
+      "image": "https://picsum.photos/seed/r9/400/228",
+      "href": "/resources/9"
+    },
+    {
+      "id": "10",
+      "title": "Incident response plan template",
+      "description": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique.",
+      "image": "https://picsum.photos/seed/r1/400/228",
+      "href": "/resources/10"
+    },
+    {
+      "id": "11",
+      "title": "Incident response plan template",
+      "description": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique.",
+      "image": "https://picsum.photos/seed/r11/400/228",
+      "href": "/resources/11"
+    },
+    {
+      "id": "12",
+      "title": "Incident response plan template",
+      "description": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique.",
+      "image": "https://picsum.photos/seed/r12/400/228",
+      "href": "/resources/12"
     }
   ]
 }

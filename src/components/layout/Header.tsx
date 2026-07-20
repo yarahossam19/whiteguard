@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { Logo } from "@/components/ui/Logo";
 import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
 import { ServicesDropdown } from "@/components/layout/ServicesDropdown";
@@ -12,6 +12,8 @@ import { useEffect, useState } from "react";
 
 export function Header() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const tabParam = searchParams.get("tab");
   const { isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useUIStore();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   /** Which top-level nav item’s mobile submenu is open (matched by href). One at a time. */
@@ -187,7 +189,13 @@ export function Header() {
                     </div>
                     {isThisExpanded &&
                       item.subLinks?.map((sub) => {
-                        const isActive = pathname === sub.href;
+                        const subTab = sub.href.includes("tab=")
+                          ? sub.href.split("tab=")[1]
+                          : null;
+                        const isActive =
+                          pathname === "/services" &&
+                          subTab &&
+                          tabParam === subTab;
                         return (
                           <Link
                             key={sub.href}

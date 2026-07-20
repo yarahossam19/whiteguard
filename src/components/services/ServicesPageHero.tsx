@@ -1,3 +1,4 @@
+"use client";
 import type { ServicesPageData } from "@/data/services-page";
 import { SectionVideoSeparator } from "../ui/SectionVideoSeparator";
 import { HoverSwapButton } from "../ui/HoverSwapButton";

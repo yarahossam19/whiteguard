@@ -7,19 +7,15 @@ interface ResourceDetailHeroProps {
 
 export default function ResourceDetailHero({ image, alt = "" }: ResourceDetailHeroProps) {
   return (
-    <section className="relative h-[220px] w-full overflow-hidden sm:h-[280px] lg:h-[345px]">
+    <section className="relative h-[345px] w-full overflow-hidden">
       <div className="absolute inset-0 bg-[#003859]" aria-hidden />
       <Image
         src={image}
         alt={alt}
         fill
-        className="object-cover object-center"
+        className="object-cover"
         sizes="100vw"
         priority
-      />
-      <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#003859]/35 to-transparent"
-        aria-hidden
       />
     </section>
   );
