@@ -49,6 +49,9 @@ RUN npm ci \
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/next.config.ts ./next.config.ts
+# next.config.ts imports these at runtime (redirects() reads services-page.json)
+COPY --from=builder /app/service-redirects.mjs ./service-redirects.mjs
+COPY --from=builder /app/src/data/services-page.json ./src/data/services-page.json
 
 # Ensure the non-root user can read the app files
 RUN chown -R nextjs:nodejs /app
