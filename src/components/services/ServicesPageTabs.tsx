@@ -1,20 +1,23 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { ServicesPageData } from "@/data/services-page";
+import {
+  servicePillarPath,
+  type ServicePillarTab,
+} from "@/lib/services-pillar-tabs";
 
 type TabId = ServicesPageData["tabs"][number]["id"];
 
 interface ServicesPageTabsProps {
   tabs: ServicesPageData["tabs"];
   activeTab: TabId;
-  onTabChange: (tab: TabId) => void;
 }
 
 export default function ServicesPageTabs({
   tabs,
   activeTab,
-  onTabChange,
 }: ServicesPageTabsProps) {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -28,25 +31,27 @@ export default function ServicesPageTabs({
   }, []);
 
   return (
-    <nav className="container">
+    <nav className="container" aria-label="Service categories">
       <div
         className={`w-fit z-40 shadow-sm rounded-full max-w-full flex flex-nowrap items-center justify-center gap-1.5 overflow-x-auto  transition-all  duration-500 ease-in-out overflow-y-hidden overscroll-x-contain py-2.5 pl-3 pr-3 sm:gap-2 sm:px-4
       mx-auto  lg:flex  lg:max-w-none lg:items-center lg:justify-center lg:gap-1 lg:overflow-visible lg:px-6 lg:py-3
         ${
           isScrolled
-            ? // ? "md:fixed bg-white/10 top-[10%] lg:top-[15%] left-1/2 -translate-x-1/2"
-              "relative bg-white/95 top-[23%] lg:mt-8 "
+            ? "relative bg-white/95 top-[23%] lg:mt-8 "
             : "relative bg-white/95 top-[23%] lg:mt-8 "
         } 
        `}
       >
         {tabs.map((tab) => {
           const isActive = activeTab === tab.id;
+          const href = servicePillarPath(tab.id as ServicePillarTab);
+
           return (
-            <button
+            <Link
               key={tab.id}
-              type="button"
-              onClick={() => onTabChange(tab.id)}
+              href={href}
+              scroll={false}
+              aria-current={isActive ? "page" : undefined}
               className={`shrink-0 cursor-pointer rounded-full font-jakarta font-normal transition-all duration-500 ease-in-out
               whitespace-nowrap px-1 py-2 text-[13px] leading-snug
               sm:px-3.5 sm:text-[14px]
@@ -68,7 +73,7 @@ export default function ServicesPageTabs({
               }}
             >
               {tab.label}
-            </button>
+            </Link>
           );
         })}
       </div>

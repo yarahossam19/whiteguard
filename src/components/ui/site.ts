@@ -17,8 +17,8 @@ export const mainNav = [
     href: "/services",
     hasDropdown: true,
     subLinks: [
-      { label: "Offensive Security", href: "/services/offensive-security" },
-      { label: "Defensive Security", href: "/services/defensive-security" },
+      { label: "Offensive Security", href: "/services/offensive" },
+      { label: "Defensive Security", href: "/services/defensive" },
       { label: "GRC", href: "/services/grc" },
       { label: "Training", href: "/services/training" },
     ],
@@ -35,8 +35,8 @@ export const mainNav = [
 
 export const footerNav = {
   services: [
-    { label: "Offensive Security", href: "/services/offensive-security" },
-    { label: "Defensive Security", href: "/services/defensive-security" },
+    { label: "Offensive Security", href: "/services/offensive" },
+    { label: "Defensive Security", href: "/services/defensive" },
     { label: "GRC", href: "/services/grc" },
     { label: "Training", href: "/services/training" },
   ],

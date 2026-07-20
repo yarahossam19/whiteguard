@@ -1,9 +1,21 @@
 {
   "tabs": [
-    { "id": "offensive", "label": "Offensive" },
-    { "id": "defensive", "label": "Defensive" },
-    { "id": "grc", "label": "GRC" },
-    { "id": "training", "label": "Cybersecurity Awareness" }
+    {
+      "id": "offensive",
+      "label": "Offensive"
+    },
+    {
+      "id": "defensive",
+      "label": "Defensive"
+    },
+    {
+      "id": "grc",
+      "label": "GRC"
+    },
+    {
+      "id": "training",
+      "label": "Cybersecurity Awareness"
+    }
   ],
   "categories": {
     "offensive": {
@@ -11,8 +23,14 @@
         "heading": "Offensive Security",
         "headingAccent": "Find What Defenders Haven't",
         "subtitle": "Whiteguard's Red Team finds the weaknesses your defenders haven't spotted yet. We test your systems the same way real attackers would—then show you exactly how to fix what we find. Six Offensive Security Services: Penetration Testing, Vulnerability Assessment, Red Team Assessment, CIS Benchmarks Assessment, Source Code Review, and Cloud Security Assessment, every engagement is delivered by certified practitioners holding OSCP, OSEP, OSWE, GPEN, and GXPN. ",
-        "ctaPrimary": { "label": "Request an Assessment", "href": "/contact" },
-        "ctaSecondary": { "label": "", "href": "#" }
+        "ctaPrimary": {
+          "label": "Request an Assessment",
+          "href": "/contact"
+        },
+        "ctaSecondary": {
+          "label": "",
+          "href": "#"
+        }
       },
       "cards": [
         {
@@ -35,7 +53,7 @@
           ],
           "cta": {
             "label": "Talk to a Security Expert",
-            "href": "/services/penetration-testing"
+            "href": "/services/offensive/penetration-testing"
           },
           "image": "/images/services/offensive.png",
           "imageLeft": true
@@ -60,7 +78,7 @@
           ],
           "cta": {
             "label": "Request a Vulnerability Scan Now",
-            "href": "/services/vulnerability-assessment"
+            "href": "/services/offensive/vulnerability-assessment"
           },
           "image": "/images/services/offensive-2.png",
           "imageLeft": false
@@ -89,7 +107,7 @@
           ],
           "cta": {
             "label": "Request a Red Team Exercise Now",
-            "href": "/services/red-team-assessment"
+            "href": "/services/offensive/red-team-assessment"
           },
           "image": "/images/services/offensive-3.png",
           "imageLeft": true
@@ -114,7 +132,7 @@
           ],
           "cta": {
             "label": "Run CIS Compliance Check Now",
-            "href": "/services/cis-benchmarks-assessment"
+            "href": "/services/offensive/cis-benchmarks-assessment"
           },
           "image": "/images/services/offensive-4.png",
           "imageLeft": false
@@ -139,7 +157,7 @@
           ],
           "cta": {
             "label": "Talk to a Security Expert",
-            "href": "/services/source-code-review"
+            "href": "/services/offensive/source-code-review"
           },
           "image": "/images/services/offensive-5.png",
           "imageLeft": true
@@ -164,7 +182,7 @@
           ],
           "cta": {
             "label": "Audit Your Cloud Setup Now",
-            "href": "/services/cloud-security-assessment"
+            "href": "/services/offensive/cloud-security-assessment"
           },
           "image": "/images/services/offensive-6.png",
           "imageLeft": false
@@ -198,7 +216,9 @@
           },
           {
             "iconSrc": "/images/services/bottom-cta-highlight/chart.svg",
-            "lines": ["Exploitation PoCs with prioritized remediation roadmaps"]
+            "lines": [
+              "Exploitation PoCs with prioritized remediation roadmaps"
+            ]
           },
           {
             "iconSrc": "/images/services/bottom-cta-highlight/building.svg",
@@ -214,8 +234,14 @@
         "heading": "Defensive Cybersecurity ",
         "headingAccent": "That Runs While Everyone Sleeps",
         "subtitle": "Whiteguard defends your organization around the clock, across the full security lifecycle. Our regional centers across MENA keep watch so threats get caught and contained day or night. Our Defensive Security Services: Network Security, SOC Services, SIEM Deployment, SIEM Use-Case Lifecycle Management, DFIR, Threat Intelligence & Brand Protection, Managed Phishing Simulation, Incident Response & Handling, and Business Continuity & Recovery. ",
-        "ctaPrimary": { "label": null, "href": "#" },
-        "ctaSecondary": { "label": null, "href": "#" }
+        "ctaPrimary": {
+          "label": null,
+          "href": "#"
+        },
+        "ctaSecondary": {
+          "label": null,
+          "href": "#"
+        }
       },
       "cards": [
         {
@@ -238,7 +264,7 @@
           ],
           "cta": {
             "label": "Secure Your Network Now",
-            "href": "/services/network-security"
+            "href": "/services/defensive/network-security"
           },
           "image": "/images/services/defensive-0.png",
           "imageLeft": false
@@ -267,7 +293,7 @@
           ],
           "cta": {
             "label": "Start with Managed SOC Now",
-            "href": "/services/soc-design"
+            "href": "/services/defensive/soc-design"
           },
           "image": "/images/services/defensive-1.png",
           "imageLeft": true
@@ -296,7 +322,7 @@
           ],
           "cta": {
             "label": "Deploy Your SIEM Now",
-            "href": "/services/siem-deployment"
+            "href": "/services/defensive/siem-deployment"
           },
           "image": "/images/services/defensive-2.png",
           "imageLeft": false
@@ -321,7 +347,7 @@
           ],
           "cta": {
             "label": "Optimize Your SIEM Now",
-            "href": "/services/siem-use-case-lifecycle-management"
+            "href": "/services/defensive/siem-use-case-lifecycle-management"
           },
           "image": "/images/services/defensive-3.png",
           "imageLeft": true
@@ -346,7 +372,7 @@
           ],
           "cta": {
             "label": "Request Incident Response Now",
-            "href": "/services/dfir-services"
+            "href": "/services/defensive/dfir-services"
           },
           "image": "/images/services/defensive-4.png",
           "imageLeft": false
@@ -371,7 +397,7 @@
           ],
           "cta": {
             "label": "Monitor Your Digital Risk",
-            "href": "/services/threat-intelligence-brand-protection"
+            "href": "/services/defensive/threat-intelligence-brand-protection"
           },
           "image": "/images/services/defensive-5.png",
           "imageLeft": true
@@ -396,7 +422,7 @@
           ],
           "cta": {
             "label": "Start Your Awareness Program Now",
-            "href": "/services/managed-phishing-simulation-awareness"
+            "href": "/services/defensive/managed-phishing-simulation-awareness"
           },
           "image": "/images/services/defensive-6.png",
           "imageLeft": false
@@ -421,7 +447,7 @@
           ],
           "cta": {
             "label": "Build Your IR Plan Now",
-            "href": "/services/managed-threat-hunting"
+            "href": "/services/defensive/managed-threat-hunting"
           },
           "image": "/images/services/defensive-7.png",
           "imageLeft": true
@@ -446,7 +472,7 @@
           ],
           "cta": {
             "label": "Strengthen Your Continuity Plan Now",
-            "href": "/services/business-continuity-recovery"
+            "href": "/services/defensive/business-continuity-recovery"
           },
           "image": "/images/services/defensive-8.png",
           "imageLeft": false
@@ -461,11 +487,16 @@
         "highlights": [
           {
             "iconSrc": "/images/services/bottom-cta-highlight/soc.svg",
-            "lines": ["24/7 Managed SOC coverage across MENA"]
+            "lines": [
+              "24/7 Managed SOC coverage across MENA"
+            ]
           },
           {
             "iconSrc": "/images/services/bottom-cta-highlight/certified.svg",
-            "lines": ["Certified Analysts", "(GIAC, GCIH, GCDA, GCFA, CSA)"]
+            "lines": [
+              "Certified Analysts",
+              "(GIAC, GCIH, GCDA, GCFA, CSA)"
+            ]
           },
           {
             "iconSrc": "/images/services/bottom-cta-highlight/globe.svg",
@@ -475,7 +506,9 @@
           },
           {
             "iconSrc": "/images/services/bottom-cta-highlight/chart.svg",
-            "lines": ["Seamless White Hawk integration for unified dashboards"]
+            "lines": [
+              "Seamless White Hawk integration for unified dashboards"
+            ]
           },
           {
             "iconSrc": "/images/services/bottom-cta-highlight/building.svg",
@@ -496,7 +529,10 @@
           "label": "Start a GRC Service Review",
           "href": "/contact"
         },
-        "ctaSecondary": { "label": null, "href": "#" }
+        "ctaSecondary": {
+          "label": null,
+          "href": "#"
+        }
       },
       "cards": [
         {
@@ -519,7 +555,7 @@
           ],
           "cta": {
             "label": "Start Your ISO 27001 Prep Now",
-            "href": "/services/iso-27001"
+            "href": "/services/grc/iso-27001"
           },
           "image": "/images/services/grc-1.png",
           "imageLeft": true
@@ -544,7 +580,7 @@
           ],
           "cta": {
             "label": "Launch SOC 2 Readiness Program",
-            "href": "/services/soc-2-compliance"
+            "href": "/services/grc/soc-2-compliance"
           },
           "image": "/images/services/grc-5.png",
           "imageLeft": false
@@ -569,7 +605,7 @@
           ],
           "cta": {
             "label": "Secure Cardholder Data",
-            "href": "/services/pci-dss-pin-security-compliance"
+            "href": "/services/grc/pci-dss-pin-security-compliance"
           },
           "image": "/images/services/grc-4.png",
           "imageLeft": true
@@ -594,7 +630,7 @@
           ],
           "cta": {
             "label": "Start Data Privacy Alignment",
-            "href": "/services/hipaa-gdpr-readiness"
+            "href": "/services/grc/hipaa-gdpr-readiness"
           },
           "image": "/images/services/grc-6.png",
           "imageLeft": false
@@ -619,7 +655,7 @@
           ],
           "cta": {
             "label": "Prepare for Your NCA Assessment",
-            "href": "/services/nca-compliance"
+            "href": "/services/grc/nca-compliance"
           },
           "image": "/images/services/grc-3.png",
           "imageLeft": true
@@ -648,12 +684,11 @@
           ],
           "cta": {
             "label": "Achieve SAMA Compliance",
-            "href": "/services/sama-readiness"
+            "href": "/services/grc/sama-readiness"
           },
           "image": "/images/services/grc-2.png",
           "imageLeft": false
         },
-
         {
           "link": "aramco-ccc",
           "title": "Aramco Cybersecurity Compliance Certificate (CCC)",
@@ -674,7 +709,7 @@
           ],
           "cta": {
             "label": "Get CCC-Ready",
-            "href": "/services/aramco-ccc"
+            "href": "/services/grc/aramco-ccc"
           },
           "image": "/images/services/grc-7.png",
           "imageLeft": true
@@ -699,7 +734,7 @@
           ],
           "cta": {
             "label": "Align with Sector Regulators",
-            "href": "/services/cbe-compliance"
+            "href": "/services/grc/cbe-compliance"
           },
           "image": "/images/services/grc-8.png",
           "imageLeft": false
@@ -738,7 +773,9 @@
           },
           {
             "iconSrc": "/images/services/bottom-cta-highlight/eye.svg",
-            "lines": ["100% transparency — from documentation to audit closure"]
+            "lines": [
+              "100% transparency — from documentation to audit closure"
+            ]
           }
         ]
       }
@@ -748,8 +785,14 @@
         "heading": "Cybersecurity Awareness",
         "headingAccent": "That Actually Changes Behavior",
         "subtitle": "Awareness is the most cost-effective security control you have—and the easiest to get wrong. Whiteguard's training does it right.  We combine interactive sessions, hands-on workshops, and real-world scenarios with ongoing assessments to keep skills sharp. The results fewer incidents, stronger technical skills, and a security-first culture across your whole team.  Built for MENA's regulated sectors.",
-        "ctaPrimary": { "label": "", "href": "/contact" },
-        "ctaSecondary": { "label": "", "href": "/contact" }
+        "ctaPrimary": {
+          "label": "",
+          "href": "/contact"
+        },
+        "ctaSecondary": {
+          "label": "",
+          "href": "/contact"
+        }
       },
       "cards": [
         {
@@ -772,7 +815,7 @@
           ],
           "cta": {
             "label": "Train Your Team Now",
-            "href": "/services/security-awareness-training"
+            "href": "/services/training/security-awareness-training"
           },
           "image": "/images/services/training-1.png",
           "imageLeft": true
@@ -797,7 +840,7 @@
           ],
           "cta": {
             "label": "Train Your Developers Now",
-            "href": "/services/ssdlt-training"
+            "href": "/services/training/ssdlt-training"
           },
           "image": "/images/services/training-2.png",
           "imageLeft": false
@@ -822,7 +865,7 @@
           ],
           "cta": {
             "label": "Train Your Security Team Now",
-            "href": "/services/vapt-training"
+            "href": "/services/training/vapt-training"
           },
           "image": "/images/services/training-3.png",
           "imageLeft": true
@@ -847,7 +890,7 @@
           ],
           "cta": {
             "label": "Train Your SOC Analysts",
-            "href": "/services/soc-training"
+            "href": "/services/training/soc-training"
           },
           "image": "/images/services/training-4.png",
           "imageLeft": false
@@ -878,7 +921,6 @@
               "Training programs continuously updated with emerging threats."
             ]
           },
-
           {
             "iconSrc": "/images/services/bottom-cta-highlight/building.svg",
             "lines": [

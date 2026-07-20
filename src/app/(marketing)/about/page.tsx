@@ -9,12 +9,14 @@ import { getAboutMissionData } from "@/data/about-mission";
 import { getAboutTeamData } from "@/data/about-team";
 import { getCtaSectionData } from "@/data/cta-section";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "About Us  ",
+export const metadata: Metadata = buildPageMetadata({
+  path: "/about",
+  title: "About Us",
   description:
     "Learn about Whiteguard - your trusted partner in intelligent security monitoring.",
-};
+});
 
 export default function AboutPage() {
   const bannerData = getAboutBannerData();

@@ -3,12 +3,14 @@ import ResourcesHeroSection from "@/components/resources/ResourcesHeroSection";
 import ResourcesListingSection from "@/components/resources/ResourcesListingSection";
 import { SectionImageSeparator } from "@/components/ui/SectionImageSeparator";
 import { getResourcesData } from "@/data/resources";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Resources  ",
+export const metadata: Metadata = buildPageMetadata({
+  path: "/resources",
+  title: "Resources",
   description:
     "Security resources, guides, and documentation. Explore expert insights, practical tools, and proven strategies.",
-};
+});
 
 export default function ResourcesPage() {
   const data = getResourcesData();

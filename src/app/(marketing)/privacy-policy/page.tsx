@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy ",
+export const metadata: Metadata = buildPageMetadata({
+  path: "/privacy-policy",
+  title: "Privacy Policy",
   description:
     "Whiteguard Privacy Policy - Learn how we collect, use, and protect your personal information.",
-};
+});
 
 export default function PrivacyPolicyPage() {
   return (

@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import {
+  DEFAULT_OG_IMAGE,
+  SITE_NAME,
+  metadataBase,
+} from "@/lib/metadata";
+import {
   GoogleTagManagerNoScript,
   GoogleTagManagerScript,
 } from "@/components/analytics/GoogleTagManager";
@@ -18,14 +23,37 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+const ROOT_DESCRIPTION =
+  "Empowering businesses with intelligent, continuous security monitoring. Your trusted partner in the digital landscape.";
+
 export const metadata: Metadata = {
+  metadataBase,
   title: {
-    default: "WHITEGUAR",
-    template: "%s | Whiteguard",
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
   },
-  description:
-    "Empowering businesses with intelligent, continuous security monitoring. Your trusted partner in the digital landscape.",
+  description: ROOT_DESCRIPTION,
   manifest: "/site.webmanifest",
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    title: SITE_NAME,
+    description: ROOT_DESCRIPTION,
+    images: [
+      {
+        url: DEFAULT_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: SITE_NAME,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description: ROOT_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
+  },
 };
 
 export default function RootLayout({

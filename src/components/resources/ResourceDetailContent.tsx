@@ -16,12 +16,16 @@ interface Section {
 }
 
 interface ResourceDetailContentProps {
+  image: string;
+  alt: string;
   title: string;
   toc: TocItem[];
   sections: Section[];
 }
 
 export default function ResourceDetailContent({
+  image,
+  alt,
   title,
   toc,
   sections,
@@ -54,7 +58,16 @@ export default function ResourceDetailContent({
 
   return (
     <div className="container my-14">
-      {/* Back + Title row - gap 200px, pl 97px */}
+      <div className="relative flex items-center justify-center h-[450px] w-full rounded-[12px] overflow-hidden mb-12">
+        <Image
+          src={image}
+          alt={alt}
+          width={1506}
+          height={450}
+          className="object-contain"
+        />
+      </div>
+      {/* Back + Title row */}
       <div className="mb-12 flex flex-col gap-6 xl:flex-row xl:items-center xl:gap-[200px] xl:pl-0">
         <Link
           href="/resources"
@@ -73,11 +86,10 @@ export default function ResourceDetailContent({
         </h1>
       </div>
 
-      {/* Two-column: TOC (232px) + Article (1009px) */}
+      {/* Two-column: TOC + Article */}
       <div className="flex flex-col gap-8 xl:flex-row xl:gap-[80px]">
-        {/* Table of Contents - sticky, scroll spy */}
         <nav
-          className="w-full hidden xl:block shrink-0 xl:sticky xl:top-24 xl:self-start xl:w-[232px]"
+          className="hidden w-full shrink-0 xl:sticky xl:top-24 xl:block xl:self-start xl:w-[232px]"
           aria-label="Table of contents"
         >
           <ul className="flex flex-col gap-5">
@@ -89,7 +101,7 @@ export default function ResourceDetailContent({
                     href={`#${item.id}`}
                     className={`flex items-center justify-between gap-4 px-[13px] py-[10px] font-jakarta text-[18px] font-normal leading-[24px] tracking-[0px] transition-colors hover:text-[#003859] ${
                       isActive
-                        ? "border-b border-[#29343d] text-[#29343d] font-medium"
+                        ? "border-b border-[#29343d] font-medium text-[#29343d]"
                         : "text-[#52697A]"
                     }`}
                   >
@@ -108,7 +120,6 @@ export default function ResourceDetailContent({
           </ul>
         </nav>
 
-        {/* Article body - max 1009px */}
         <article className="min-w-0 flex-1">
           <div className="flex flex-col gap-[34px]">
             {sections.map((section) => (
@@ -117,7 +128,7 @@ export default function ResourceDetailContent({
                 id={section.id}
                 className="flex flex-col gap-4 scroll-mt-24"
               >
-                <h2 className="font-jakarta text-base xl:text-[24px] font-medium leading-[1.2] tracking-[-0.2px] text-[#003859]">
+                <h2 className="font-jakarta text-base font-medium leading-[1.2] tracking-[-0.2px] text-[#003859] xl:text-[24px]">
                   {section.headline}
                 </h2>
                 <p className="font-jakarta text-[16px] font-normal leading-[30px] tracking-[-0.15px] text-[#29343D]">

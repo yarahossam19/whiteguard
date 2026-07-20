@@ -1,23 +1,37 @@
 import resourceDetailsData from "./resource-details.json";
-import resourcesData from "./resources.json";
 
-export type ResourceDetailData = (typeof resourceDetailsData)["1"];
+export type ResourceDetailData =
+  (typeof resourceDetailsData)["how-to-know-your-system-isnt-secure"];
 
-const defaultDetail = (resourceDetailsData as Record<string, ResourceDetailData>)["1"];
+/** Placeholder resource IDs (Lorem ipsum) — served as 410 until real content ships. */
+export const PLACEHOLDER_RESOURCE_IDS = new Set([
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11",
+  "12",
+]);
+
+export function isPlaceholderResourceId(id: string): boolean {
+  return PLACEHOLDER_RESOURCE_IDS.has(id);
+}
+
+/** IDs with real detail content that should be statically generated and indexed. */
+export function getPublishedResourceIds(): string[] {
+  const data = resourceDetailsData as Record<string, ResourceDetailData>;
+  return Object.keys(data).filter((id) => !isPlaceholderResourceId(id));
+}
 
 export function getResourceDetail(id: string): ResourceDetailData | null {
+  if (isPlaceholderResourceId(id)) return null;
+
   const data = resourceDetailsData as Record<string, ResourceDetailData>;
-  const detail = data[id] ?? defaultDetail;
-  if (!detail) return null;
-  const listingItem = resourcesData.items.find((i) => i.id === id);
-  const heroImage =
-    listingItem?.image.startsWith("https://picsum.photos")
-      ? listingItem.image.replace(/\/\d+\/\d+$/, "/1506/345")
-      : detail.heroImage;
-  return {
-    ...detail,
-    id,
-    title: (data[id] && data[id].title) ? detail.title : (listingItem?.title ?? detail.title),
-    heroImage,
-  };
+  return data[id] ?? null;
 }
