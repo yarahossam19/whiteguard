@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { footerNav } from "@/config/site";
+import { buildPageMetadata } from "@/lib/metadata";
+import { isServicePillarTab } from "@/lib/services-pillar-tabs";
 import {
-  getAllServiceCardLinks,
+  getAllServiceCardEntries,
   getServiceCardByLink,
+  getServiceDetailPath,
+  isValidServicePillarSlug,
 } from "@/data/services-page";
 import { getServiceDetailByLink } from "@/data/service-details";
 import ServiceDetailHero from "@/components/services-detail/ServiceDetailHero";
@@ -19,54 +22,63 @@ import ServiceDetailTestimonials from "@/components/services-detail/ServiceDetai
 import ServiceDetailFAQs from "@/components/services-detail/ServiceDetailFAQs";
 import ServiceDetailCTA from "@/components/services-detail/ServiceDetailCTA";
 
-/** All valid links: card links only (footer uses ?tab= query, not /services/[link]) */
-function getAllValidLinks(): string[] {
-  return getAllServiceCardLinks();
-}
+export const dynamicParams = false;
 
-/** Allow any dynamic link - required for direct URL access */
-export const dynamicParams = true;
-
-export async function generateStaticParams() {
-  return getAllValidLinks().map((link) => ({ link }));
+export function generateStaticParams() {
+  return getAllServiceCardEntries().map(({ pillar, link }) => ({
+    pillar,
+    slug: link,
+  }));
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ link: string }>;
+  params: Promise<{ pillar: string; slug: string }>;
 }): Promise<Metadata> {
-  const { link } = await params;
-  const detail = getServiceDetailByLink(link);
-  const card = getServiceCardByLink(link);
-  const service = footerNav.services.find((s) => s.href.endsWith(link));
+  const { pillar, slug } = await params;
+
+  if (!isValidServicePillarSlug(pillar, slug)) {
+    return { title: "Service" };
+  }
+
+  const detail = getServiceDetailByLink(slug);
+  const card = getServiceCardByLink(slug);
   const title =
-    (detail as { seo?: { title?: string } })?.seo?.title ??
+    (detail as { seo?: { title?: string } } | null)?.seo?.title ??
     detail?.title ??
     card?.title ??
-    service?.label ??
     "Service";
   const description =
-    (detail as { seo?: { description?: string } })?.seo?.description ??
+    (detail as { seo?: { description?: string } } | null)?.seo?.description ??
     detail?.hero?.subtitle ??
-    `Learn about our ${card?.title ?? service?.label ?? "service"} services.`;
-  return { title, description };
+    `Learn about our ${card?.title ?? "service"} services.`;
+
+  return buildPageMetadata({
+    path: getServiceDetailPath(slug) ?? `/services/${pillar}/${slug}`,
+    title,
+    description,
+  });
 }
 
 export default async function ServiceDetailPage({
   params,
 }: {
-  params: Promise<{ link: string }>;
+  params: Promise<{ pillar: string; slug: string }>;
 }) {
-  const { link } = await params;
-  const data = getServiceDetailByLink(link);
-  const card = getServiceCardByLink(link);
-  const service = footerNav.services.find((s) => s.href.endsWith(link));
+  const { pillar, slug } = await params;
 
-  if (!data && !card && !service) notFound();
+  if (!isServicePillarTab(pillar) || !isValidServicePillarSlug(pillar, slug)) {
+    notFound();
+  }
+
+  const data = getServiceDetailByLink(slug);
+  const card = getServiceCardByLink(slug);
+
+  if (!data && !card) notFound();
 
   if (!data) {
-    const title = card?.title ?? service?.label ?? "Service";
+    const title = card?.title ?? "Service";
     return (
       <div className="container py-16">
         <h1 className="font-jakarta text-3xl font-bold text-[#003859]">

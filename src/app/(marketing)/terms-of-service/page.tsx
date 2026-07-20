@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Terms of Service  ",
+export const metadata: Metadata = buildPageMetadata({
+  path: "/terms-of-service",
+  title: "Terms of Service",
   description:
     "Whiteguard Terms of Service - Read our terms and conditions for using our security services and platform.",
-};
+});
 
 export default function TermsOfServicePage() {
   return (

@@ -21,25 +21,25 @@ export const mainNav = [
       {
         label: "Offensive",
         description: "Find and exploit weaknesses before adversaries do.",
-        href: "/services?tab=offensive",
+        href: "/services/offensive",
         icon: "/images/nav-services/offensive.png",
       },
       {
         label: "Defensive",
         description: "Protect your infrastructure and respond to threats in real-time",
-        href: "/services?tab=defensive",
+        href: "/services/defensive",
         icon: "/images/nav-services/defensive.png",
       },
       {
         label: "GRC",
         description: "Manage organizational risk and ensure regulatory compliance",
-        href: "/services?tab=grc",
+        href: "/services/grc",
         icon: "/images/nav-services/grc.png",
       },
       {
         label: "Cybersecurity Awareness",
         description: "Empower your team to recognize and prevent cyber attacks",
-        href: "/services?tab=training",
+        href: "/services/training",
         icon: "/images/nav-services/training.png",
       },
     ],
@@ -64,10 +64,10 @@ export const mainNav = [
 
 export const footerNav = {
   services: [
-    { label: "Offensive Security", href: "/services?tab=offensive" },
-    { label: "Defensive Security", href: "/services?tab=defensive" },
-    { label: "GRC", href: "/services?tab=grc" },
-    { label: "Awareness Training", href: "/services?tab=training" },
+    { label: "Offensive Security", href: "/services/offensive" },
+    { label: "Defensive Security", href: "/services/defensive" },
+    { label: "GRC", href: "/services/grc" },
+    { label: "Awareness Training", href: "/services/training" },
    
   ],platform: [
     { label: "White Hawk", href: "https://whitehawk.io" },

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "White Hawk | Whiteguard",
+export const metadata: Metadata = buildPageMetadata({
+  path: "/white-hawk",
+  title: "White Hawk | WhiteGuard",
   description: "White Hawk Security Platform.",
-};
+});
 
 export default function WhiteHawkPage() {
   return (

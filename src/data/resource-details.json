@@ -1,4 +1,121 @@
 {
+  "how-to-know-your-system-isnt-secure": {
+    "id": "how-to-know-your-system-isnt-secure",
+    "title": "How to Know Your System Isn't Secure?",
+    "heroImage": "/images/resources/blog-system-security-hero.png",
+    "sections": [
+      {
+        "id": "dont-trust-untested",
+        "headline": "If you haven't tested it, don't trust it",
+        "body": "Many organisations believe their systems are secure because a vendor said so, a checkbox was ticked during onboarding, or a firewall was installed years ago. Security posture is not a label—it is evidence. Until your environment is tested against realistic attack scenarios, you are operating on assumptions. And assumptions are what attackers exploit."
+      },
+      {
+        "id": "warning-signs",
+        "headline": "Warning signs your security is assumed—not verified",
+        "body": "You may be overconfident if: no independent penetration test has been run in the last 12 months; critical assets were never tested after a major cloud migration or product launch; your team relies on automated scans alone with no manual validation; incident response plans exist on paper but have never been exercised; or compliance certificates are treated as proof of security rather than a baseline. Each of these gaps leaves blind spots that skilled adversaries can find quickly."
+      },
+      {
+        "id": "what-tested-means",
+        "headline": "What \"tested\" actually means",
+        "body": "Real assurance combines depth and context. Penetration testing simulates how an attacker would target your applications, APIs, and infrastructure. Vulnerability assessments identify known weaknesses—but without expert triage, they create noise, not clarity. Red team exercises test whether your detection and response capabilities work when it matters. Together, these approaches turn \"we think we're secure\" into \"we know where we stand—and what to fix first.\""
+      },
+      {
+        "id": "questions-to-ask",
+        "headline": "Four questions to ask before you trust a \"secure\" system",
+        "body": "1) When was the last time an independent team tried to break in—and what did they find? 2) Are our most valuable assets (customer data, payment flows, admin panels, APIs) in scope for testing? 3) Do we retest after every significant change to production? 4) Can we show leadership a clear remediation plan with owners and deadlines? Honest answers to these questions separate organisations that manage risk from those that merely hope for the best."
+      },
+      {
+        "id": "get-real-answers",
+        "headline": "Ready for real answers—not guesses?",
+        "body": "WhiteGuard helps organisations move from assumed security to verified resilience. Our offensive security specialists deliver penetration testing, red teaming, and actionable reporting—so you know exactly where you stand and what to prioritise. Reach out at info@whiteguard.co.uk to discuss your environment, scope a test, and get clarity you can act on."
+      }
+    ],
+    "toc": [
+      { "id": "dont-trust-untested", "label": "Don't trust untested systems" },
+      { "id": "warning-signs", "label": "Warning signs" },
+      { "id": "what-tested-means", "label": "What tested means" },
+      { "id": "questions-to-ask", "label": "Questions to ask" },
+      { "id": "get-real-answers", "label": "Get real answers" }
+    ]
+  },
+  "why-penetration-testing-matters": {
+    "id": "why-penetration-testing-matters",
+    "title": "Why Penetration Testing Matters Before an Attack Does",
+    "heroImage": "/images/resources/blog-penetration-testing-hero.png",
+    "sections": [
+      {
+        "id": "cost-of-waiting",
+        "headline": "The cost of waiting for a real attack",
+        "body": "Every organisation has a security story—policies, tools, dashboards, and annual audits. But attackers do not care about your documentation. They care about what actually breaks when pressure is applied. Penetration testing is how you find those breaks on your terms, with a controlled scope and a clear report—before ransomware, data theft, or downtime forces the conversation."
+      },
+      {
+        "id": "what-pentest-reveals",
+        "headline": "What a proper pentest actually reveals",
+        "body": "A strong engagement goes beyond a list of CVEs. It shows how weaknesses chain together: a misconfigured cloud bucket that leads to credentials, an API that trusts a forged token, a forgotten staging environment that mirrors production. You learn which findings are critical to your business, how an attacker would move laterally, and which fixes deliver the highest risk reduction first."
+      },
+      {
+        "id": "when-to-test",
+        "headline": "When you should run a penetration test",
+        "body": "Test before a major product launch, after a cloud migration, when integrating a new payment or identity provider, ahead of a compliance deadline (ISO 27001, SOC 2, PCI DSS, SAMA), or whenever leadership needs evidence—not opinions—about cyber risk. Annual testing is a minimum; high-change environments need more frequent, scoped assessments."
+      },
+      {
+        "id": "beyond-the-report",
+        "headline": "Beyond the PDF: remediation that sticks",
+        "body": "The value of a pentest is not the slide deck—it is the remediation loop. Prioritise by business impact, assign owners, retest critical paths, and feed lessons into secure development and operations. WhiteGuard pairs technical findings with practical guidance so teams know what to fix, why it matters, and how to validate the fix."
+      },
+      {
+        "id": "start-testing",
+        "headline": "Don't wait for the breach to be your proof",
+        "body": "If your last independent test was more than a year ago—or never happened—you are flying on assumptions. Reach out at info@whiteguard.co.uk to scope a penetration test tailored to your applications, infrastructure, and risk appetite. Real answers beat hopeful guesses every time."
+      }
+    ],
+    "toc": [
+      { "id": "cost-of-waiting", "label": "Cost of waiting" },
+      { "id": "what-pentest-reveals", "label": "What a pentest reveals" },
+      { "id": "when-to-test", "label": "When to test" },
+      { "id": "beyond-the-report", "label": "Beyond the report" },
+      { "id": "start-testing", "label": "Start testing" }
+    ]
+  },
+  "assumed-security-vs-verified-security": {
+    "id": "assumed-security-vs-verified-security",
+    "title": "Assumed Security vs Verified Security",
+    "heroImage": "/images/resources/blog-assumed-vs-verified-hero.png",
+    "sections": [
+      {
+        "id": "two-kinds-of-security",
+        "headline": "There are two kinds of security—and only one holds up",
+        "body": "Assumed security is what you get from vendor claims, green dashboard lights, and a compliance certificate on the wall. Verified security is what remains after an independent team has tried to break your systems and you have fixed what they found. The difference is not marketing language—it is the difference between hope and evidence."
+      },
+      {
+        "id": "where-assumptions-hide",
+        "headline": "Where assumptions hide in modern environments",
+        "body": "Assumptions thrive in complexity: multi-cloud estates, third-party SaaS, APIs that grew faster than their auth models, and \"temporary\" exceptions that never expired. Teams often assume a WAF covers the app, that MFA covers identity, or that a past audit still reflects today's production. Attackers look for exactly those gaps—the places nobody recently proved are safe."
+      },
+      {
+        "id": "how-to-verify",
+        "headline": "How verification actually works",
+        "body": "Verification is a cycle, not a one-off event. Scope the crown jewels. Test with skilled humans who think like adversaries—not only scanners. Triage findings by business impact. Remediate with owners and deadlines. Retest the critical paths. Feed the lessons into architecture and SDLC. Organisations that treat this as continuous risk management stay ahead; those that treat it as annual theatre fall behind."
+      },
+      {
+        "id": "leadership-questions",
+        "headline": "Questions leadership should demand answers to",
+        "body": "Ask: What was independently tested in the last year—and what was intentionally out of scope? Which critical findings are still open, and who owns them? When did we last exercise incident response under realistic pressure? If a key supplier or cloud control failed tomorrow, how would we know within hours—not weeks? Clear answers signal verified security. Vague answers signal assumed security."
+      },
+      {
+        "id": "move-to-verified",
+        "headline": "Move from assumed to verified",
+        "body": "WhiteGuard helps teams replace guesswork with proof—through penetration testing, red teaming, and remediation-focused reporting. If you are ready to know where you truly stand, reach out at info@whiteguard.co.uk. Real answers. Not guesses."
+      }
+    ],
+    "toc": [
+      { "id": "two-kinds-of-security", "label": "Two kinds of security" },
+      { "id": "where-assumptions-hide", "label": "Where assumptions hide" },
+      { "id": "how-to-verify", "label": "How to verify" },
+      { "id": "leadership-questions", "label": "Leadership questions" },
+      { "id": "move-to-verified", "label": "Move to verified" }
+    ]
+  },
   "1": {
     "id": "1",
     "title": "How a visual artist redefines success in graphic design",
@@ -7,29 +124,9 @@
       {
         "id": "headline-1",
         "headline": "Lorem ipsum dolor sit amet consectetur.",
-        "body": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique. Arcu amet eu in vitae enim adipiscing pharetra. Vitae tortor risus adipiscing eros adipiscing faucibus. Euismod non eu euismod libero diam. A vitae commodo fames amet pulvinar dapibus hendrerit tempus cursus. Convallis a leo adipiscing magna justo pellentesque vitae elementum. Ridiculus vitae dolor nulla pharetra blandit vitae. Purus tempor enim elementum nisi vel. Sed dui dignissim convallis vulputate quis integer ut adipiscing orci. Lorem aliquam enim eget viverra diam sed. Aliquet sapien posuere tellus duis nibh facilisis commodo. Sit tellus suscipit aliquet aliquam hac donec est facilisi. Quis faucibus phasellus dignissim egestas nibh morbi eget consectetur."
-      },
-      {
-        "id": "headline-2",
-        "headline": "Lorem ipsum dolor sit amet consectetur.",
-        "body": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique. Arcu amet eu in vitae enim adipiscing pharetra. Vitae tortor risus adipiscing eros adipiscing faucibus. Euismod non eu euismod libero diam. A vitae commodo fames amet pulvinar dapibus hendrerit tempus cursus. Convallis a leo adipiscing magna justo pellentesque vitae elementum. Ridiculus vitae dolor nulla pharetra blandit vitae. Purus tempor enim elementum nisi vel. Sed dui dignissim convallis vulputate quis integer ut adipiscing orci. Lorem aliquam enim eget viverra diam sed. Aliquet sapien posuere tellus duis nibh facilisis commodo. Sit tellus suscipit aliquet aliquam hac donec est facilisi. Quis faucibus phasellus dignissim egestas nibh morbi eget consectetur."
-      },
-      {
-        "id": "headline-3",
-        "headline": "Lorem ipsum dolor sit amet consectetur.",
-        "body": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique. Arcu amet eu in vitae enim adipiscing pharetra. Vitae tortor risus adipiscing eros adipiscing faucibus. Euismod non eu euismod libero diam. A vitae commodo fames amet pulvinar dapibus hendrerit tempus cursus. Convallis a leo adipiscing magna justo pellentesque vitae elementum. Ridiculus vitae dolor nulla pharetra blandit vitae. Purus tempor enim elementum nisi vel. Sed dui dignissim convallis vulputate quis integer ut adipiscing orci. Lorem aliquam enim eget viverra diam sed. Aliquet sapien posuere tellus duis nibh facilisis commodo. Sit tellus suscipit aliquet aliquam hac donec est facilisi. Quis faucibus phasellus dignissim egestas nibh morbi eget consectetur."
-      },
-      {
-        "id": "headline-4",
-        "headline": "Lorem ipsum dolor sit amet consectetur.",
-        "body": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique. Arcu amet eu in vitae enim adipiscing pharetra. Vitae tortor risus adipiscing eros adipiscing faucibus. Euismod non eu euismod libero diam. A vitae commodo fames amet pulvinar dapibus hendrerit tempus cursus. Convallis a leo adipiscing magna justo pellentesque vitae elementum. Ridiculus vitae dolor nulla pharetra blandit vitae. Purus tempor enim elementum nisi vel. Sed dui dignissim convallis vulputate quis integer ut adipiscing orci. Lorem aliquam enim eget viverra diam sed. Aliquet sapien posuere tellus duis nibh facilisis commodo. Sit tellus suscipit aliquet aliquam hac donec est facilisi. Quis faucibus phasellus dignissim egestas nibh morbi eget consectetur."
+        "body": "Lorem ipsum dolor sit amet consectetur. Enim id amet purus tristique."
       }
     ],
-    "toc": [
-      { "id": "headline-1", "label": "Headline Number 1" },
-      { "id": "headline-2", "label": "Headline Number 2" },
-      { "id": "headline-3", "label": "Headline Number 3" },
-      { "id": "headline-4", "label": "Headline Number 4" }
-    ]
+    "toc": [{ "id": "headline-1", "label": "Headline Number 1" }]
   }
 }

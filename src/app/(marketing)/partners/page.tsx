@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/partners/HeroSection";
+import { buildPageMetadata } from "@/lib/metadata";
 import PartnersGrowthSection from "@/components/partners/PartnersGrowthSection";
 import PartnersHowItWorksSection from "@/components/partners/PartnersHowItWorksSection";
 import PartnersBenefitsSection from "@/components/partners/PartnersBenefitsSection";
@@ -13,10 +14,11 @@ import { getPartnersBenefitsData } from "@/data/partners-benefits";
 import { getPartnersTypesData } from "@/data/partners-types";
 import { getPartnersCtaData } from "@/data/partners-cta";
 
-export const metadata: Metadata = {
-  title: "Partners ",
+export const metadata: Metadata = buildPageMetadata({
+  path: "/partners",
+  title: "Partners",
   description: "Our trusted partners in security.",
-};
+});
 
 export default function PartnersPage() {
   const partnersHeroData = getPartnersHeroData();

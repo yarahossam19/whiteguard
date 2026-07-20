@@ -9,11 +9,13 @@ import { getIndustriesProcessData } from "@/data/industries-process";
 import { getIndustriesSectionsData } from "@/data/industries-sections";
 import { getIndustriesWhyData } from "@/data/industries-why";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Industries ",
+export const metadata: Metadata = buildPageMetadata({
+  path: "/industries",
+  title: "Industries",
   description: "Security solutions tailored for your industry.",
-};
+});
 
 export default function IndustriesPage() {
   const bannerData = getIndustriesBannerData();

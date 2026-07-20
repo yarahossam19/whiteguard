@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import BecomePartnerForm from "@/components/partners/BecomePartnerForm";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Become a Partner ",
+export const metadata: Metadata = buildPageMetadata({
+  path: "/become-a-partner",
+  title: "Become a Partner",
   description:
     "Submit your partnership application to join the Whiteguard partner ecosystem.",
-};
+});
 
 export default function BecomeAPartnerPage() {
   return (

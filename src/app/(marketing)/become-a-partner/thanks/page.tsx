@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Application Received | Whiteguard",
+export const metadata: Metadata = buildPageMetadata({
+  path: "/become-a-partner/thanks",
+  title: "Application Received | WhiteGuard",
   description: "Thank you for applying to partner with Whiteguard.",
-};
+});
 
 export default function BecomePartnerThanksPage() {
   return (

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import HeroSection from "@/components/home/HeroSection";
+import { buildPageMetadata } from "@/lib/metadata";
 import MenaGloballySection from "@/components/home/MenaGloballySection";
 import WhyChooseUsSection from "@/components/home/WhyChooseUsSection";
 import CTASection from "@/components/home/CTASection";
@@ -39,19 +40,11 @@ const HOME_META_TITLE = "WhiteGuard";
 const HOME_META_DESCRIPTION =
   "WhiteGuard is the cybersecurity company protecting 64+ MENA enterprises — managed security services, 24/7 SOC, SAMA, CBE & ISO 27001 ready.";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
+  path: "/",
   title: { absolute: HOME_META_TITLE },
   description: HOME_META_DESCRIPTION,
-  openGraph: {
-    title: HOME_META_TITLE,
-    description: HOME_META_DESCRIPTION,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: HOME_META_TITLE,
-    description: HOME_META_DESCRIPTION,
-  },
-};
+});
 
 export default function HomePage() {
   const heroData = getHeroData();

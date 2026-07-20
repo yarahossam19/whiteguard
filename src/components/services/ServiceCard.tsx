@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ServiceCard as ServiceCardType } from "@/data/services-page";
+import { getServiceDetailPath } from "@/data/services-page";
 import { HoverSwapButton } from "../ui/HoverSwapButton";
 
 interface ServiceCardProps {
@@ -9,6 +10,8 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ card }: ServiceCardProps) {
   const { title, description, features, cta, image, imageLeft } = card;
+  const detailHref =
+    getServiceDetailPath(card.link) ?? `/services/${card.link}`;
 
   const contentBlock = (
     <div
@@ -68,7 +71,7 @@ export default function ServiceCard({ card }: ServiceCardProps) {
           className="px-2 md:px-3 lg:px-6 py-2 text-[clamp(14px,1.1vw,18px)]  font-ano w-full flex-row-reverse"
         />
         <Link
-          href={`/services/${card.link}`}
+          href={detailHref}
           className="inline-flex items-center justify-center gap-4 font-ano text-[14px] font-normal tracking-[0.48px] text-[#006DAD] transition-colors hover:text-[#0087D7] lg:text-[18px] bg-[#E7F6FF] rounded-[8px] px-6 py-2"
         >
           <span>Know More</span>
