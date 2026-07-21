@@ -45,6 +45,16 @@ export function servicePillarPath(tab: ServicePillarTab): string {
   return `/services/${tab}`;
 }
 
+export function getServicePillarLabel(tab: ServicePillarTab): string {
+  const labels: Record<ServicePillarTab, string> = {
+    offensive: "Offensive",
+    defensive: "Defensive",
+    grc: "GRC",
+    training: "Cybersecurity Awareness",
+  };
+  return labels[tab];
+}
+
 export function getServicePillarTabMetadata(tab: ServicePillarTab): Metadata {
   const { title, description } = PILLAR_TAB_META[tab];
 

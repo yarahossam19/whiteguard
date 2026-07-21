@@ -413,7 +413,7 @@ export async function POST(request: Request) {
       ? `<a href="https://wa.me/${waDigits}" style="color:#0087d7;text-decoration:none;font-weight:600;">${safe.whatsApp}</a>`
       : `<span style="color:#003859;font-weight:600;">${safe.whatsApp}</span>`;
 
-  const subject = `[Whiteguard] Contact form — ${fullName.trim()}`;
+  const subject = `[WhiteGuard] Contact form — ${fullName.trim()}`;
 
   const textLines = [
     "New submission from the website contact form.",

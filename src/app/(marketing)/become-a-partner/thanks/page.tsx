@@ -7,7 +7,7 @@ import { buildPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildPageMetadata({
   path: "/become-a-partner/thanks",
   title: "Application Received | WhiteGuard",
-  description: "Thank you for applying to partner with Whiteguard.",
+  description: "Thank you for applying to partner with WhiteGuard.",
 });
 
 export default function BecomePartnerThanksPage() {

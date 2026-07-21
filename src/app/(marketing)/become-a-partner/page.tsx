@@ -6,7 +6,7 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/become-a-partner",
   title: "Become a Partner",
   description:
-    "Submit your partnership application to join the Whiteguard partner ecosystem.",
+    "Submit your partnership application to join the WhiteGuard partner ecosystem.",
 });
 
 export default function BecomeAPartnerPage() {

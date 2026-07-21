@@ -29,7 +29,7 @@ export default function TeamSection({ data }: TeamSectionProps) {
 
         <Image
           src="/images/team.png"
-          alt="Whiteguard team members"
+          alt="WhiteGuard team members"
           width={1296}
           height={305}
           className="h-auto w-full max-w-full object-contain"

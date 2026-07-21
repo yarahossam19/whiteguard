@@ -3,10 +3,10 @@
  */
 
 export const siteConfig = {
-  name: "Whiteguard",
+  name: "WhiteGuard",
   tagline:
     "Empowering businesses with intelligent, continuous security monitoring. We are your trusted partner in the digital landscape.",
-  copyright: "© 2026 Whiteguard LLC. All rights reserved.",
+  copyright: "© 2026 WhiteGuard LLC. All rights reserved.",
 } as const;
 
 export const mainNav = [

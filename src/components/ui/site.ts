@@ -3,7 +3,7 @@
  */
 
 export const siteConfig = {
-  name: "Whiteguard",
+  name: "WhiteGuard",
   tagline:
     "Empowering businesses with intelligent, continuous security monitoring. We are your trusted partner in the digital landscape.",
   copyright: "©2026 WhiteHawk Security. All rights reserved.",

@@ -1,7 +1,21 @@
 import resourceDetailsData from "./resource-details.json";
 
-export type ResourceDetailData =
-  (typeof resourceDetailsData)["how-to-know-your-system-isnt-secure"];
+export type ResourceDetailSection = {
+  id: string;
+  headline: string;
+  body: string;
+};
+
+export type ResourceDetailData = {
+  id: string;
+  title: string;
+  heroImage: string;
+  sections: ResourceDetailSection[];
+  toc: { id: string; label: string }[];
+  /** ISO 8601 date — required for published articles / Article schema. */
+  datePublished?: string;
+  author?: string;
+};
 
 /** Placeholder resource IDs (Lorem ipsum) — served as 410 until real content ships. */
 export const PLACEHOLDER_RESOURCE_IDS = new Set([

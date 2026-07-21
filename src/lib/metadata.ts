@@ -64,7 +64,7 @@ function titleAlreadyHasBrand(title: string): boolean {
  * Resolve a page title for Next.js metadata.
  * - Trims trailing whitespace
  * - Uses `absolute` when the title already includes `| WhiteGuard` (avoids duplication with the root template)
- * - Normalizes legacy `| Whiteguard` → `| WhiteGuard`
+ * - Normalizes legacy `| WhiteGuard` → `| WhiteGuard`
  */
 export function resolvePageTitle(
   title: string | { absolute: string },

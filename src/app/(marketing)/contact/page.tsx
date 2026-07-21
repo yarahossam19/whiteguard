@@ -7,7 +7,7 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/contact",
   title: "Contact Us",
   description:
-    "Get in touch with Whiteguard. Start your security conversation or reach us by phone, email, or address.",
+    "Get in touch with WhiteGuard. Start your security conversation or reach us by phone, email, or address.",
 });
 
 export default function ContactPage() {
@@ -15,7 +15,7 @@ export default function ContactPage() {
     <>
       <ContactHero
         headline={{ line1: "Contact Us", line2: "" }}
-        subtitle="Get in touch with Whiteguard. Start your security conversation or reach us by phone, email, or address."
+        subtitle="Get in touch with WhiteGuard. Start your security conversation or reach us by phone, email, or address."
       />{" "}
       <ContactPageContent />{" "}
     </>

@@ -14,6 +14,8 @@ import {
   SmartsuppChatScript,
 } from "@/components/analytics/SmartsuppChat";
 import { ScrollToTopButton } from "@/components/ui/ScrollToTopButton";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildOrganizationSchema } from "@/lib/schema";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -68,6 +70,7 @@ export default function RootLayout({
           name="google-site-verification"
           content="0lqEsKlzYOHsMmUoI2XErolOme7kJb-SW0IzrECZRUA"
         />
+        <JsonLd data={buildOrganizationSchema()} />
         <GoogleTagManagerScript />
       </head>
       <body

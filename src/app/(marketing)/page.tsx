@@ -14,6 +14,8 @@ import { getTestimonialsSectionData } from "@/data/testimonials-section";
 import { getCtaSectionData } from "@/data/cta-section";
 import { getClientLogosData } from "@/data/client-logos";
 import { SectionImageSeparator } from "@/components/ui/SectionImageSeparator";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildWebSiteSchema } from "@/lib/schema";
 
 const ServicesSection = dynamic(
   () => import("@/components/home/ServicesSection"),
@@ -36,13 +38,13 @@ const TestimonialsSection = dynamic(
   },
 );
 
-const HOME_META_TITLE = "WhiteGuard";
+const HOME_META_TITLE = "Enterprise Cybersecurity Services | WhiteGuard";
 const HOME_META_DESCRIPTION =
   "WhiteGuard is the cybersecurity company protecting 64+ MENA enterprises — managed security services, 24/7 SOC, SAMA, CBE & ISO 27001 ready.";
 
 export const metadata: Metadata = buildPageMetadata({
   path: "/",
-  title: { absolute: HOME_META_TITLE },
+  title: HOME_META_TITLE,
   description: HOME_META_DESCRIPTION,
 });
 
@@ -58,6 +60,7 @@ export default function HomePage() {
 
   return (
     <>
+      <JsonLd data={buildWebSiteSchema()} />
       <HeroSection data={heroData} logos={clientLogosData} />
       <MenaGloballySection data={menaGloballyData} />
       <ServicesSection data={servicesSectionData} />

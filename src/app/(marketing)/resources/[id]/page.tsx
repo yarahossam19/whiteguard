@@ -10,6 +10,12 @@ import {
 } from "@/data/resource-details";
 import { getResourcesData } from "@/data/resources";
 import { buildPageMetadata } from "@/lib/metadata";
+import { JsonLd } from "@/components/seo/JsonLd";
+import {
+  buildArticleSchema,
+  buildBreadcrumbSchema,
+  toSchemaGraph,
+} from "@/lib/schema";
 
 export const dynamicParams = false;
 
@@ -65,8 +71,30 @@ export default async function ResourceDetailPage({
   const resourcesData = getResourcesData();
   const relatedItems = resourcesData.items.filter((item) => item.id !== id);
 
+  const articleDescription =
+    detail.sections[0]?.body?.slice(0, 160) ?? "Resource details";
+  const datePublished = detail.datePublished ?? "2026-01-01";
+  const authorName = detail.author ?? "WhiteGuard";
+
+  const structuredData = toSchemaGraph(
+    buildArticleSchema({
+      title: detail.title,
+      description: articleDescription,
+      path: `/resources/${id}`,
+      image: detail.heroImage,
+      datePublished,
+      authorName,
+    }),
+    buildBreadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Resources", path: "/resources" },
+      { name: detail.title, path: `/resources/${id}` },
+    ]),
+  );
+
   return (
     <div className="bg-white">
+      <JsonLd data={structuredData} />
       {/* <ResourceDetailHero image={detail.heroImage} alt={detail.title} /> */}
       <ResourceDetailContent
         image={detail.heroImage}

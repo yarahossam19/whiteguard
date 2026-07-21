@@ -34,7 +34,7 @@ function IndustryIconSlide({ icons }: { icons: RotatingIcon[] }) {
 
   return (
     <span
-      className="mx-2  h-[82px] w-[82px] bg-[#E7F6FF] p-[10px] rounded-2xl inline-block align-middle overflow-hidden"
+      className="mx-2  h-[82px] w-[82px] bg-[#E7F6FF] p-[10px] rounded-2xl hidden md:inline-block align-middle overflow-hidden"
       style={{ width: ICON_SIZE, height: ICON_SIZE }}
     >
       <AnimatePresence mode="wait" initial={false}>
@@ -97,10 +97,14 @@ export default function IndustriesBannerSection({
               >
                 {headline.line1}
                 <br />
-                <div className="flex items-end gap-4 justify-center mt-2">
-                  <span className="block ">{headline.line2}</span>
+                <div className="flex md:items-end md:gap-4 justify-center mt-2 flex-col md:flex-row items-center">
+                  <span className="inline-block  md:block ">
+                    {headline.line2}
+                  </span>
                   <IndustryIconSlide icons={icons} />
-                  <span className="block ">{headline.line3}</span>
+                  <span className="inline-block  md:block ">
+                    {headline.line3}
+                  </span>
                 </div>
               </h1>
               <p

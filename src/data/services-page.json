@@ -22,7 +22,7 @@
       "hero": {
         "heading": "Offensive Security",
         "headingAccent": "Find What Defenders Haven't",
-        "subtitle": "Whiteguard's Red Team finds the weaknesses your defenders haven't spotted yet. We test your systems the same way real attackers would—then show you exactly how to fix what we find. Six Offensive Security Services: Penetration Testing, Vulnerability Assessment, Red Team Assessment, CIS Benchmarks Assessment, Source Code Review, and Cloud Security Assessment, every engagement is delivered by certified practitioners holding OSCP, OSEP, OSWE, GPEN, and GXPN. ",
+        "subtitle": "WhiteGuard's Red Team finds the weaknesses your defenders haven't spotted yet. We test your systems the same way real attackers would—then show you exactly how to fix what we find. Six Offensive Security Services: Penetration Testing, Vulnerability Assessment, Red Team Assessment, CIS Benchmarks Assessment, Source Code Review, and Cloud Security Assessment, every engagement is delivered by certified practitioners holding OSCP, OSEP, OSWE, GPEN, and GXPN. ",
         "ctaPrimary": {
           "label": "Request an Assessment",
           "href": "/contact"
@@ -86,7 +86,7 @@
         {
           "link": "red-team-assessment",
           "title": "Red Team Assessment",
-          "description": "Go beyond testing. Simulate a real-world breach. Whiteguard’s red team engagements emulate persistent threat actors targeting your defenses across people, technology, and process.",
+          "description": "Go beyond testing. Simulate a real-world breach. WhiteGuard’s red team engagements emulate persistent threat actors targeting your defenses across people, technology, and process.",
           "features": [
             {
               "icon": "/images/services/icons/icon-7.svg",
@@ -216,9 +216,7 @@
           },
           {
             "iconSrc": "/images/services/bottom-cta-highlight/chart.svg",
-            "lines": [
-              "Exploitation PoCs with prioritized remediation roadmaps"
-            ]
+            "lines": ["Exploitation PoCs with prioritized remediation roadmaps"]
           },
           {
             "iconSrc": "/images/services/bottom-cta-highlight/building.svg",
@@ -233,7 +231,7 @@
       "hero": {
         "heading": "Defensive Cybersecurity ",
         "headingAccent": "That Runs While Everyone Sleeps",
-        "subtitle": "Whiteguard defends your organization around the clock, across the full security lifecycle. Our regional centers across MENA keep watch so threats get caught and contained day or night. Our Defensive Security Services: Network Security, SOC Services, SIEM Deployment, SIEM Use-Case Lifecycle Management, DFIR, Threat Intelligence & Brand Protection, Managed Phishing Simulation, Incident Response & Handling, and Business Continuity & Recovery. ",
+        "subtitle": "WhiteGuard defends your organization around the clock, across the full security lifecycle. Our regional centers across MENA keep watch so threats get caught and contained day or night. Our Defensive Security Services: Network Security, SOC Services, SIEM Deployment, SIEM Use-Case Lifecycle Management, DFIR, Threat Intelligence & Brand Protection, Managed Phishing Simulation, Incident Response & Handling, and Business Continuity & Recovery. ",
         "ctaPrimary": {
           "label": null,
           "href": "#"
@@ -480,23 +478,18 @@
       ],
       "bottomCta": {
         "heading": "Why Leading Organizations",
-        "headingAccent": "Trust Whiteguard",
+        "headingAccent": "Trust WhiteGuard",
         "subtitle": "All defensive services are delivered by certified professionals with real-world experience in threat simulation and enterprise security",
         "buttonLabel": "Book a Defensive Service Consultation",
         "href": "/contact",
         "highlights": [
           {
             "iconSrc": "/images/services/bottom-cta-highlight/soc.svg",
-            "lines": [
-              "24/7 Managed SOC coverage across MENA"
-            ]
+            "lines": ["24/7 Managed SOC coverage across MENA"]
           },
           {
             "iconSrc": "/images/services/bottom-cta-highlight/certified.svg",
-            "lines": [
-              "Certified Analysts",
-              "(GIAC, GCIH, GCDA, GCFA, CSA)"
-            ]
+            "lines": ["Certified Analysts", "(GIAC, GCIH, GCDA, GCFA, CSA)"]
           },
           {
             "iconSrc": "/images/services/bottom-cta-highlight/globe.svg",
@@ -506,9 +499,7 @@
           },
           {
             "iconSrc": "/images/services/bottom-cta-highlight/chart.svg",
-            "lines": [
-              "Seamless White Hawk integration for unified dashboards"
-            ]
+            "lines": ["Seamless White Hawk integration for unified dashboards"]
           },
           {
             "iconSrc": "/images/services/bottom-cta-highlight/building.svg",
@@ -524,7 +515,7 @@
         "heading": "GRC",
         "headingAccent": " Governance, Risk &",
         "headingAccent2": "Compliance Services",
-        "subtitle": "Whiteguard helps you design, build, and manage Governance, Risk, and Compliance frameworks that meet regulatory demands—without slowing your business down. We align you with the standards that matter most in your region and industry",
+        "subtitle": "WhiteGuard helps you design, build, and manage Governance, Risk, and Compliance frameworks that meet regulatory demands—without slowing your business down. We align you with the standards that matter most in your region and industry",
         "ctaPrimary": {
           "label": "Start a GRC Service Review",
           "href": "/contact"
@@ -563,7 +554,7 @@
         {
           "link": "soc-2-compliance",
           "title": "SOC 2",
-          "description": "Build trust with customers and partners through SOC 2 compliance  Whiteguard designs and implements SOC 2 control environments across trust principles: security, availability, processing integrity, confidentiality, and privacy.",
+          "description": "Build trust with customers and partners through SOC 2 compliance  WhiteGuard designs and implements SOC 2 control environments across trust principles: security, availability, processing integrity, confidentiality, and privacy.",
           "features": [
             {
               "icon": "/images/services/grc-icons/icon-14.svg",
@@ -663,7 +654,7 @@
         {
           "link": "sama-readiness",
           "title": "SAMA Compliance Program",
-          "description": "Meet Saudi Arabia's strictest cybersecurity framework  Whiteguard helps financial institutions implement the SAMA CSF and navigate regulatory audits with confidence.",
+          "description": "Meet Saudi Arabia's strictest cybersecurity framework  WhiteGuard helps financial institutions implement the SAMA CSF and navigate regulatory audits with confidence.",
           "features": [
             {
               "icon": "/images/services/grc-icons/icon-4.svg",
@@ -742,7 +733,7 @@
       ],
       "bottomCta": {
         "heading": "Why Leading Organizations",
-        "headingAccent": "Trust Whiteguard",
+        "headingAccent": "Trust WhiteGuard",
         "subtitle": "All GRC services are delivered by certified professionals with real-world experience in GRC and enterprise security",
         "buttonLabel": "Book a GRC service consultation",
         "href": "/contact",
@@ -773,9 +764,7 @@
           },
           {
             "iconSrc": "/images/services/bottom-cta-highlight/eye.svg",
-            "lines": [
-              "100% transparency — from documentation to audit closure"
-            ]
+            "lines": ["100% transparency — from documentation to audit closure"]
           }
         ]
       }
@@ -784,7 +773,7 @@
       "hero": {
         "heading": "Cybersecurity Awareness",
         "headingAccent": "That Actually Changes Behavior",
-        "subtitle": "Awareness is the most cost-effective security control you have—and the easiest to get wrong. Whiteguard's training does it right.  We combine interactive sessions, hands-on workshops, and real-world scenarios with ongoing assessments to keep skills sharp. The results fewer incidents, stronger technical skills, and a security-first culture across your whole team.  Built for MENA's regulated sectors.",
+        "subtitle": "Awareness is the most cost-effective security control you have—and the easiest to get wrong. WhiteGuard's training does it right.  We combine interactive sessions, hands-on workshops, and real-world scenarios with ongoing assessments to keep skills sharp. The results fewer incidents, stronger technical skills, and a security-first culture across your whole team.  Built for MENA's regulated sectors.",
         "ctaPrimary": {
           "label": "",
           "href": "/contact"
@@ -898,7 +887,7 @@
       ],
       "bottomCta": {
         "heading": "Why Leading Organizations",
-        "headingAccent": "Trust Whiteguard",
+        "headingAccent": "Trust WhiteGuard",
         "subtitle": "All training services are delivered by certified professionals with real-world  experience enterprise security",
         "buttonLabel": "Request Custom Training Plan",
         "href": "/contact",

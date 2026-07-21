@@ -15,7 +15,7 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/about",
   title: "About Us",
   description:
-    "Learn about Whiteguard - your trusted partner in intelligent security monitoring.",
+    "Learn about WhiteGuard — your trusted partner in intelligent security monitoring.",
 });
 
 export default function AboutPage() {

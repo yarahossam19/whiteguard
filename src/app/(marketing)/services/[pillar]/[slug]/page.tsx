@@ -21,6 +21,16 @@ import ServiceDetailStandards from "@/components/services-detail/ServiceDetailSt
 import ServiceDetailTestimonials from "@/components/services-detail/ServiceDetailTestimonials";
 import ServiceDetailFAQs from "@/components/services-detail/ServiceDetailFAQs";
 import ServiceDetailCTA from "@/components/services-detail/ServiceDetailCTA";
+import { JsonLd } from "@/components/seo/JsonLd";
+import {
+  getServicePillarLabel,
+  type ServicePillarTab,
+} from "@/lib/services-pillar-tabs";
+import {
+  buildBreadcrumbSchema,
+  buildServiceSchema,
+  toSchemaGraph,
+} from "@/lib/schema";
 
 export const dynamicParams = false;
 
@@ -105,10 +115,34 @@ export default async function ServiceDetailPage({
     testimonials,
     faqs,
     cta,
+    seo,
+    title: serviceTitle,
   } = data;
+
+  const detailPath =
+    getServiceDetailPath(slug) ?? `/services/${pillar}/${slug}`;
+  const serviceName = serviceTitle ?? card?.title ?? "Service";
+  const serviceDescription =
+    seo?.description ?? hero.subtitle ?? `Learn about our ${serviceName} services.`;
+  const pillarLabel = getServicePillarLabel(pillar as ServicePillarTab);
+
+  const structuredData = toSchemaGraph(
+    buildServiceSchema({
+      name: serviceName,
+      description: serviceDescription,
+      path: detailPath,
+    }),
+    buildBreadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Services", path: "/services/offensive" },
+      { name: pillarLabel, path: `/services/${pillar}` },
+      { name: serviceName, path: detailPath },
+    ]),
+  );
 
   return (
     <div className="flex flex-col">
+      <JsonLd data={structuredData} />
       <ServiceDetailHero
         headline={hero.headline}
         subtitle={hero.subtitle}

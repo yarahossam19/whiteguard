@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 import { getFlatServiceRedirects } from "./service-redirects.mjs";
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
   /**
    * Permanent redirect www → apex. Also configure at the CDN/DNS layer (Cloudflare/Vercel
    * domain settings) so both hostnames resolve and this rule can run.
@@ -59,6 +60,22 @@ const nextConfig: NextConfig = {
         pathname: "/api/mcp/asset/**",
       },
     ],
+  },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
+          },
+        ],
+      },
+    ];
   },
 };
 

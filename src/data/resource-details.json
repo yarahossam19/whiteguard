@@ -3,6 +3,8 @@
     "id": "how-to-know-your-system-isnt-secure",
     "title": "How to Know Your System Isn't Secure?",
     "heroImage": "/images/resources/blog-system-security-hero.png",
+    "datePublished": "2026-01-20",
+    "author": "WhiteGuard",
     "sections": [
       {
         "id": "dont-trust-untested",
@@ -42,6 +44,8 @@
     "id": "why-penetration-testing-matters",
     "title": "Why Penetration Testing Matters Before an Attack Does",
     "heroImage": "/images/resources/blog-penetration-testing-hero.png",
+    "datePublished": "2026-02-05",
+    "author": "WhiteGuard",
     "sections": [
       {
         "id": "cost-of-waiting",
@@ -81,6 +85,8 @@
     "id": "assumed-security-vs-verified-security",
     "title": "Assumed Security vs Verified Security",
     "heroImage": "/images/resources/blog-assumed-vs-verified-hero.png",
+    "datePublished": "2026-02-20",
+    "author": "WhiteGuard",
     "sections": [
       {
         "id": "two-kinds-of-security",

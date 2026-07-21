@@ -7,7 +7,7 @@ import { buildPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildPageMetadata({
   path: "/contact/thanks",
   title: "Message Received | WhiteGuard",
-  description: "Thank you for contacting Whiteguard.",
+  description: "Thank you for contacting WhiteGuard.",
 });
 
 export default function ContactThanksPage() {

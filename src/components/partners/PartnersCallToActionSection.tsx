@@ -29,7 +29,7 @@ export default function PartnersCallToActionSection({
           >
             <Image
               src="/images/logo-icon.svg"
-              alt="Whiteguard"
+              alt="WhiteGuard"
               fill
               className="object-contain"
               sizes="111px"

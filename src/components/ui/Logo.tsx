@@ -8,10 +8,10 @@ interface LogoProps {
 
 export function Logo({}: LogoProps) {
   return (
-    <Link href="/" className="flex items-center" aria-label="Whiteguard - Home">
+    <Link href="/" className="flex items-center" aria-label="WhiteGuard - Home">
       {/* <Image
         src="/images/whiteguard-logo-text.svg"
-        alt="Whiteguard Logo Text"
+        alt="WhiteGuard Logo Text"
         width={145}
         height={14}
         fetchPriority="high"
@@ -19,7 +19,7 @@ export function Logo({}: LogoProps) {
       /> */}
       <Image
         src="/images/logo-icon.svg"
-        alt="Whiteguard Logo Icon"
+        alt="WhiteGuard Logo Icon"
         width={76}
         height={46}
         fetchPriority="high"
