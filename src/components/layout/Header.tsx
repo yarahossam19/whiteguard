@@ -25,27 +25,27 @@ export function Header() {
 
   /* Hover: bg Primary-100 | Selected: bg Primary-200 | border-radius: 8px */
   const navLinkClass = (href: string) =>
-    `inline-flex items-center gap-2 rounded-lg px-3 py-1 text-[20px]  leading-6 font-normal font-ano duration-300 ease-out transition-[background-color] ${
+    `inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-1 text-[15px] leading-6 font-normal font-ano duration-300 ease-out transition-[background-color] 2xl:gap-2 2xl:px-3 2xl:text-[20px] ${
       pathname === href
         ? "text-[var(--primary-950)] bg-[var(--Primary-200)]"
         : "text-[var(--primary-950)] hover:bg-[#ABE0FF]"
     }`;
 
   return (
-    <header className="sticky top-0 z-50 w-full  py-6 xl:py-6 backdrop-blur-md bg-white/95 supports-backdrop-filter:bg-white/90">
+    <header className="sticky top-0 z-50 w-full py-5 backdrop-blur-md bg-white/95 supports-backdrop-filter:bg-white/90 lg:py-6">
       <nav
-        className="container-fluid flex items-center justify-between gap-4"
+        className="container-fluid flex min-w-0 items-center justify-between gap-2 lg:gap-4"
         aria-label="Main navigation"
       >
         {/* Logo */}
         <Logo />
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-4 xl:flex">
+        <div className="hidden min-w-0 flex-1 items-center justify-center gap-2 lg:flex 2xl:gap-4">
           {mainNav.map((item) => (
             <div
               key={item.label}
-              className="relative"
+              className="relative shrink-0"
               onMouseEnter={() =>
                 "hasDropdown" in item && item.hasDropdown
                   ? setOpenDropdown(item.label)
@@ -69,7 +69,7 @@ export function Header() {
                       alt=""
                       width={24}
                       height={24}
-                      className={`shrink-0 transition-[transform_var(--transition-dissolve)] ${
+                      className={`h-5 w-5 shrink-0 transition-[transform_var(--transition-dissolve)] 2xl:h-6 2xl:w-6 ${
                         openDropdown === item.label ? "rotate-180" : ""
                       }`}
                       aria-hidden
@@ -97,7 +97,7 @@ export function Header() {
           ))}
         </div>
 
-        <div className="hidden xl:flex   items-center gap-4">
+        <div className="hidden shrink-0 items-center gap-2 lg:flex 2xl:gap-4">
           <HoverSwapButton
             href="https://whitehawk.io"
             label="White Hawk"
@@ -106,7 +106,7 @@ export function Header() {
             showChevrons={false}
             showImg={true}
             imgSrc="/images/icons/external-link.svg"
-            className="text-sm md:text-base xl:text-lg flex flex-row-reverse items-center gap-2  font-ano"
+            className="shrink-0 text-sm 2xl:text-lg flex flex-row-reverse items-center gap-2 font-ano"
           />
           <HoverSwapButton
             href="/contact"
@@ -114,6 +114,7 @@ export function Header() {
             hoverLabel="Book a Consultation"
             variant="cta"
             showChevrons={false}
+            className="shrink-0 px-4 py-2.5 text-sm 2xl:px-6 2xl:py-3 2xl:text-base"
           />
         </div>
 
@@ -121,7 +122,7 @@ export function Header() {
         <button
           type="button"
           onClick={toggleMobileMenu}
-          className="inline-flex items-center justify-center rounded-lg p-2 text-[var(--primary-950)] duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] xl:hidden"
+          className="inline-flex shrink-0 items-center justify-center rounded-lg p-2 text-[var(--primary-950)] duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] lg:hidden"
           aria-expanded={isMobileMenuOpen}
           aria-label="Toggle menu"
         >
@@ -135,7 +136,7 @@ export function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="border-t border-[var(--button-border)] bg-white xl:hidden">
+        <div className="border-t border-[var(--button-border)] bg-white lg:hidden">
           <div className="container-fluid space-y-1 py-4">
             {mainNav.map((item) => {
               const hasSubLinks =

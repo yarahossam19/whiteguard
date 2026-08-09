@@ -41,8 +41,8 @@ export default function ResourceDetailRelated({
           className="resource-related-swiper !pb-2 [&_.swiper-pagination]:!static [&_.swiper-pagination]:mt-10 [&_.swiper-pagination]:flex [&_.swiper-pagination]:w-full [&_.swiper-pagination]:items-center [&_.swiper-pagination]:justify-center [&_.swiper-pagination-bullet]:!mx-1.5 [&_.swiper-pagination-bullet]:!h-2.5 [&_.swiper-pagination-bullet]:!w-2.5 [&_.swiper-pagination-bullet]:!rounded-full [&_.swiper-pagination-bullet]:!bg-[#c2cdd6] [&_.swiper-pagination-bullet]:!opacity-100 [&_.swiper-pagination-bullet]:transition-all [&_.swiper-pagination-bullet]:duration-300 [&_.swiper-pagination-bullet-active]:!w-7 [&_.swiper-pagination-bullet-active]:!bg-[#003859] [&_.swiper-pagination-bullet-active]:!rounded-full"
         >
           {items.map((item) => (
-            <SwiperSlide key={item.id} className="!h-auto">
-              <div className="flex h-full w-full lg:max-w-[375px]">
+            <SwiperSlide key={item.id} className="!flex !h-auto !self-stretch">
+              <div className="flex h-full min-h-0 w-full lg:max-w-[375px]">
                 <ResourceCard item={item} />
               </div>
             </SwiperSlide>

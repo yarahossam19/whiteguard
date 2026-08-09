@@ -4,7 +4,6 @@ import type { PartnersHeroData } from "@/data/partners-hero";
 import type { PartnersLogosData } from "@/data/partners-logos";
 import ClientLogos from "@/components/shared/ClientLogos";
 import Image from "next/image";
-import { useMediaQuery } from "react-responsive";
 
 interface PartnersHeroSectionProps {
   data: PartnersHeroData;
@@ -16,39 +15,21 @@ export default function PartnersHeroSection({
   logos,
 }: PartnersHeroSectionProps) {
   const { headline, description, ctas } = data;
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
+
   return (
     <section className="relative flex w-full flex-col gap-12 py-10 sm:gap-16 lg:gap-20 lg:py-14">
       <div className="container">
-        <div className="lg:max-h-screen flex flex-col lg:flex-row  ">
+        <div className="flex flex-col lg:max-h-screen lg:flex-row">
           {/*  LEFT CONTENT */}
-          <div className="relative flex-1 flex items-center justify-center z-10  ">
-            <div className="flex flex-col gap-10 max-w-[932px] items-center text-[#003859]">
+          <div className="relative z-10 flex flex-1 items-center justify-center">
+            <div className="flex max-w-[932px] flex-col items-center gap-10 text-[#003859]">
               {/* Headline */}
-              <div className="flex flex-col items-center gap-5 text-center  ">
-                <h1 className="font-jakarta leading-[1.18] tracking-[-0.03em] text-[clamp(36px,6vw,64px)] ">
-                  <span className=" font-extrabold">{headline.line1}</span>
+              <div className="flex flex-col items-center gap-5 text-center">
+                <h1 className="font-jakarta text-[clamp(36px,6vw,64px)] leading-[1.18] tracking-[-0.03em]">
+                  <span className="font-extrabold">{headline.line1}</span>
 
-                  <div className="relative  flex items-center justify-center text-center mt-5 gap-0">
-                    <span
-                      className="z-10 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.15)] bg-[rgba(150, 220, 255, 0.35)]"
-                      style={{
-                        position: "absolute",
-                        top: "50%",
-                        left: isMobile ? "0%" : "12%",
-                        transform: "translateY( -50%)",
-                        borderRadius: "345px",
-                        background: "rgba(150, 220, 255, 0.35)",
-                        backgroundColor: "rgba(150, 220, 255, 0.35)",
-                        display: "flex",
-                        width: "46px",
-                        height: "46px",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        zIndex: 1,
-                      }}
-                    >
+                  <div className="relative mt-5 flex items-center justify-center gap-0 text-center">
+                    <span className="absolute top-1/2 left-0 z-10 flex h-[46px] w-[46px] -translate-y-1/2 items-center justify-center rounded-[345px] bg-[rgba(150,220,255,0.35)] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.15)] md:left-[12%]">
                       <Image
                         src="/images/icons/check.svg"
                         alt="check"
@@ -57,37 +38,10 @@ export default function PartnersHeroSection({
                       />
                     </span>
                     <span
-                      style={{
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, -50%)",
-                        width: "80%",
-                        height: "90%",
-                        borderRadius: "50%",
-                        backgroundColor: "transparent",
-                        border: "2px solid #57C1FF",
-                        padding: "10px 20px",
-                      }}
-                    ></span>
-                    <span
-                      className="z-10 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.15)] bg-[rgba(150, 220, 255, 0.35)]"
-                      style={{
-                        position: "absolute",
-                        top: "5%",
-                        left: "46%",
-                        transform: "translate(50%, -50%)",
-                        borderRadius: "345px",
-                        background: "rgba(150, 220, 255, 0.35)",
-                        backgroundColor: "rgba(150, 220, 255, 0.35)",
-                        display: isMobile ? "none" : "flex",
-                        width: "46px",
-                        height: "46px",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        zIndex: 2,
-                      }}
-                    >
+                      className="absolute top-1/2 left-1/2 h-[90%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-[50%] border-2 border-[#57C1FF] bg-transparent px-5 py-2.5"
+                      aria-hidden
+                    />
+                    <span className="absolute top-[5%] left-[46%] z-10 hidden h-[46px] w-[46px] translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[345px] bg-[rgba(150,220,255,0.35)] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.15)] md:flex">
                       <Image
                         src="/images/icons/check-doc.svg"
                         alt="check"
@@ -95,24 +49,7 @@ export default function PartnersHeroSection({
                         height={28}
                       />
                     </span>
-                    <span
-                      className="z-10 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.15)] bg-[rgba(150, 220, 255, 0.35)]"
-                      style={{
-                        position: "absolute",
-                        top: isMobile || isTablet ? "-50%" : "-15%",
-                        right: isMobile ? "0%" : "12%",
-                        transform: "translateY(50%)",
-                        borderRadius: "345px",
-                        background: "rgba(150, 220, 255, 0.36)",
-                        backgroundColor: "rgba(150, 220, 255, 0.36)",
-                        display: "flex",
-                        width: "46px",
-                        height: "46px",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        zIndex: 2,
-                      }}
-                    >
+                    <span className="absolute top-[-50%] right-0 z-[2] flex h-[46px] w-[46px] translate-y-1/2 items-center justify-center rounded-[345px] bg-[rgba(150,220,255,0.36)] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.15)] min-[1025px]:top-[-15%] md:right-[12%]">
                       <Image
                         src="/images/icons/forward.svg"
                         alt="check"
@@ -120,18 +57,18 @@ export default function PartnersHeroSection({
                         height={19}
                       />
                     </span>
-                    <span className="text-[#0087D7]   font-extrabold">
+                    <span className="font-extrabold text-[#0087D7]">
                       {headline.line2}
                     </span>
                   </div>
                 </h1>
-                <p className="font-Jakarta text-[#52697A]  text-center  text-[clamp(14px,1.8px,18px)] font-normal leading-[27px]">
+                <p className="text-center font-Jakarta text-[clamp(14px,1.8px,18px)] font-normal leading-[27px] text-[#52697A]">
                   {description}
-                </p>{" "}
+                </p>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4 items-center">
+              <div className="flex flex-wrap items-center gap-4">
                 {ctas.map((cta) => (
                   <HoverSwapButton
                     key={cta.href}
@@ -140,7 +77,7 @@ export default function PartnersHeroSection({
                     hoverLabel={cta.hoverLabel}
                     variant={cta.variant as "cta" | "secondary"}
                     showChevrons={false}
-                    className="px-6 py-[14px] text-[clamp(14px,1.1vw,24px)]  font-ano w-full md:w-auto"
+                    className="w-full px-6 py-[14px] font-ano text-[clamp(14px,1.1vw,24px)] md:w-auto"
                   />
                 ))}
               </div>

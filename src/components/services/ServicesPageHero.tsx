@@ -21,7 +21,7 @@ export default function ServicesPageHero({
 
   return (
     <>
-      <section className="relative min-h-[60vh] xl:min-h-screen  pt-16 xl:py-24">
+      <section className="relative min-h-[25vh] xl:min-h-screen  pt-16 lg:py-24">
         {/* Background: wave + gradient overlay */}
         <div className="absolute inset-0 overflow-hidden">
           <div
@@ -33,7 +33,7 @@ export default function ServicesPageHero({
             }}
           />
           <div
-            className="absolute h-[700px] xl:h-[400px] left-0 right-0 w-full bottom-0"
+            className="absolute h-[700px] lg:h-[400px] left-0 right-0 w-full bottom-0"
             style={{
               background:
                 "linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #ABE1FF 100%)",
@@ -63,7 +63,7 @@ export default function ServicesPageHero({
                 </>
               ) : null}
             </h2>
-            <p className="lg:max-w-[75%] font-jakarta text-[16px] font-normal leading-[30px] text-[#52697A] xl:text-[18px]">
+            <p className="lg:max-w-[75%] font-jakarta text-[16px] font-normal leading-[30px] text-[#52697A] lg:text-[18px]">
               {hero.subtitle}
             </p>
           </div>

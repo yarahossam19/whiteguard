@@ -325,10 +325,10 @@ export default function PartnersHowItWorksSection({
   const { badge, heading, steps } = data;
 
   return (
-    <section className="relative z-10 w-full overflow-hidden bg-white pb-8 xl:pb-40">
+    <section className="relative z-10 w-full overflow-hidden bg-white pb-8 lg:pb-40">
       <div className="container relative">
         {/* Mobile header */}
-        <div className="mx-auto mb-16 flex xl:max-w-[353px] flex-col items-center gap-2 xl:hidden">
+        <div className="mx-auto mb-16 flex lg:max-w-[353px] flex-col items-center gap-2 lg:hidden">
           <div
             className="flex h-8 items-center justify-center rounded-full border px-5"
             style={{
@@ -348,7 +348,7 @@ export default function PartnersHowItWorksSection({
         </div>
 
         {/* Desktop — pixel canvas 1506×1389 (Figma); scales with container width */}
-        <div className="relative mx-auto hidden w-full max-w-[1506px] xl:block ">
+        <div className="relative mx-auto hidden w-full max-w-[1506px] lg:block ">
           <div
             className="relative w-full bg-white"
             style={{ aspectRatio: `${FW} / ${FH}` }}
@@ -529,7 +529,7 @@ export default function PartnersHowItWorksSection({
         </div>
 
         {/* Mobile steps */}
-        <div className="mx-auto flex w-full max-w-[353px] md:max-w-[55%] flex-col gap-[50px] xl:hidden">
+        <div className="mx-auto flex w-full max-w-[353px] md:max-w-[55%] flex-col gap-[50px] lg:hidden">
           {steps.map((step, index) => {
             const textOnLeft = index % 2 === 0;
             const headerBlock = (
