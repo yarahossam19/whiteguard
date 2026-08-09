@@ -5,7 +5,7 @@
     {
       "id": "1",
       "quote": "WhiteGuard helped us optimize our security spending by offering efficient cybersecurity tools while focusing on risk mitigation. We have achieved a robust security posture at a predictable price point, proving that world-class defense doesn't have to come with an unsustainable budget.",
-      "name": "Mohamed Afifi",
+      "name": "Hazem Mohamed",
       "title": "CIO, A.T Lease",
       "rating": 5
     },
@@ -21,13 +21,6 @@
       "quote": "The penetration testing uncovered vulnerabilities our previous vendor missed entirely. WhiteGuard's offensive team is world-class.",
       "name": "Bahaa Ryad",
       "title": "IT Manager Penetration testing At Enmaa",
-      "rating": 5
-    },
-    {
-      "id": "4",
-      "quote": "WhiteGuard transformed our security posture from reactive to proactive. Their SOC team detected a critical vulnerability that had gone unnoticed for months.",
-      "name": "Mohamed Youssef",
-      "title": "infrastructure manager At GIG",
       "rating": 5
     }
   ],
