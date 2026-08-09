@@ -48,11 +48,11 @@ export default function ServicesPageBottomCTA({
         </div>
 
         {highlights && highlights.length > 0 ? (
-          <div className="flex w-full max-w-[1124px] flex-wrap items-start justify-center gap-x-2 gap-y-8 lg:justify-between xl:flex-nowrap">
+          <div className="flex w-full max-w-[1124px] flex-wrap items-start justify-center gap-x-2 gap-y-8 lg:justify-between lg:flex-nowrap">
             {highlights.map((item, hi) => (
               <div
                 key={`${item.iconSrc}-${hi}`}
-                className="flex min-w-[min(100%,164px)] max-w-none flex-[1_0_164px] flex-col gap-2 rounded-2xl px-2 py-6 xl:min-w-0 xl:flex-[1_0_0] xl:basis-0 xl:gap-2 xl:py-6 xl:pb-8"
+                className="flex min-w-[min(100%,164px)] max-w-none flex-[1_0_164px] flex-col gap-2 rounded-2xl px-2 py-6 lg:min-w-0 lg:flex-[1_0_0] lg:basis-0 lg:gap-2 lg:py-6 lg:pb-8"
               >
                 <div className="relative size-10 shrink-0">
                   <Image

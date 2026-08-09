@@ -29,7 +29,7 @@ function OrbitStatCard({ value, label }: { value: string; label: string }) {
 
 function LogoOrbitVisual({ stats }: { stats: AboutBannerData["stats"] }) {
   return (
-    <div className="relative mx-auto h-[min(72vw,280px)] w-full max-w-[280px] sm:h-[300px] sm:max-w-[320px] xl:h-[430px] xl:max-w-[450px]">
+    <div className="relative mx-auto h-[min(72vw,280px)] w-full max-w-[280px] sm:h-[300px] sm:max-w-[320px] lg:h-[430px] lg:max-w-[450px]">
       <div
         className="absolute inset-[2%] overflow-hidden rounded-full border border-[#0087D7]/10 motion-reduce:overflow-visible"
         aria-hidden
@@ -74,7 +74,7 @@ function LogoOrbitVisual({ stats }: { stats: AboutBannerData["stats"] }) {
       {stats.map((stat, index) => (
         <div
           key={stat.label}
-          className={`absolute z-20 hidden xl:block ${ORBIT_POSITIONS[index]}`}
+          className={`absolute z-20 hidden lg:block ${ORBIT_POSITIONS[index]}`}
         >
           <OrbitStatCard value={stat.value} label={stat.label} />
         </div>
@@ -87,11 +87,11 @@ export default function BannerSection({ data }: BannerSectionProps) {
   const { headline, stats, description, ctas } = data;
 
   return (
-    <section className="relative w-full overflow-hidden py-12 sm:py-16 lg:py-20 xl:py-28">
+    <section className="relative w-full overflow-hidden py-12 sm:py-16 lg:py-20 lg:py-28">
       <div className="container relative z-10 ">
         <div className="mx-auto flex w-full flex-col items-center gap-10 lg:gap-12">
-          <div className="flex w-full flex-col items-center gap-10 xl:flex-row xl:items-center xl:gap-16">
-            <div className="flex w-full flex-1 flex-col gap-6 text-center xl:max-w-[52%] xl:text-left">
+          <div className="flex w-full flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-16">
+            <div className="flex w-full flex-1 flex-col gap-6 text-center lg:max-w-[52%] lg:text-left">
               <div className="flex flex-col gap-4 sm:gap-5">
                 <h1 className="font-jakarta text-[clamp(32px,5vw,62px)] font-semibold leading-[1.1] tracking-[-0.03em]">
                   <span className="text-[#003859]">{headline.line1}</span>
@@ -104,7 +104,7 @@ export default function BannerSection({ data }: BannerSectionProps) {
                 </p>
               </div>
 
-              <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4 xl:justify-start">
+              <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4 lg:justify-start">
                 {ctas.map((cta) => (
                   <HoverSwapButton
                     key={`${cta.href}-${cta.label}`}
@@ -114,18 +114,18 @@ export default function BannerSection({ data }: BannerSectionProps) {
                     variant={cta.variant === "outline" ? "secondary" : "cta"}
                     showChevrons={false}
                     showArrow={"showArrow" in cta && cta.showArrow}
-                    className="font-ano w-full px-6 py-3.5 text-base sm:w-auto xl:text-lg"
+                    className="font-ano w-full px-6 py-3.5 text-base sm:w-auto lg:text-lg"
                   />
                 ))}
               </div>
             </div>
 
-            <div className="flex w-full flex-1 justify-center xl:justify-end">
+            <div className="flex w-full flex-1 justify-center lg:justify-end">
               <LogoOrbitVisual stats={stats} />
             </div>
           </div>
 
-          <div className="grid w-full grid-cols-3 gap-2 sm:gap-4 xl:hidden">
+          <div className="grid w-full grid-cols-3 gap-2 sm:gap-4 lg:hidden">
             {stats.map((stat) => (
               <OrbitStatCard
                 key={stat.label}

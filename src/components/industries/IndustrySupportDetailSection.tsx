@@ -24,13 +24,13 @@ export default function IndustrySupportDetailSection({
   showDetailSectionImage = true,
 }: IndustrySupportDetailSectionProps) {
   return (
-    <section className="border-t border-[#e7eef4] bg-[#fbfdfe] py-14 xl:py-20">
+    <section className="border-t border-[#e7eef4] bg-[#fbfdfe] py-14 lg:py-20">
       <div className="container">
         <div
-          className={`mx-auto flex max-w-[1140px] flex-col gap-12 ${showDetailSectionImage ? "xl:flex-row xl:items-start xl:gap-16" : ""}`}
+          className={`mx-auto flex max-w-[1140px] flex-col gap-12 ${showDetailSectionImage ? "lg:flex-row lg:items-start lg:gap-16" : ""}`}
         >
           {showDetailSectionImage ? (
-            <div className="relative mx-auto w-full max-w-[553px] shrink-0 xl:mx-0 xl:w-[46%]">
+            <div className="relative mx-auto w-full max-w-[553px] shrink-0 lg:mx-0 lg:w-[46%]">
               <div className="relative aspect-[553/620] w-full overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_-8px_rgba(0,56,89,0.15)]">
                 <Image
                   src={imageSrc}

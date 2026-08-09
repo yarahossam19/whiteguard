@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useMediaQuery } from "react-responsive";
 
 interface SectionImageSeparatorProps {
   /** Optional image source. If not provided, wave.svg is used. */
@@ -19,9 +18,7 @@ export function SectionImageSeparator({
   transform = "rotateX(0)",
   imageSrc = DEFAULT_WAVE_SRC,
   className = "",
-  height = 380,
 }: SectionImageSeparatorProps) {
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   return (
     <div
       className={`relative hidden lg:block   z-0 overflow-hidden  wave-container ${direction === "top" ? "mt-[0]" : ""} ${className}`}
@@ -32,11 +29,7 @@ export function SectionImageSeparator({
       aria-hidden
     >
       <Image
-        src={
-          isMobile && imageSrc === DEFAULT_WAVE_SRC
-            ? "/images/wave-mobile.svg"
-            : imageSrc
-        }
+        src={imageSrc}
         alt=""
         width={1506}
         height={88}

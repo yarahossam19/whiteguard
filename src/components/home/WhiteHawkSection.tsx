@@ -37,16 +37,16 @@ export default function WhiteHawkSection({ data }: WhiteHawkSectionProps) {
       {" "}
       <SectionImageSeparator direction="top" />
       <section
-        className="relative w-full overflow-hidden py-20 xl:py-24"
+        className="relative w-full overflow-hidden py-20 lg:py-24"
         style={{
           background:
             "linear-gradient(180deg, #003859 0%, #001f33 20%, #001f33 80%, #003859 100%)",
         }}
       >
-        <div className="container flex w-full flex-col-reverse items-center justify-between gap-16 xl:flex-row xl:gap-16">
+        <div className="container flex w-full flex-col-reverse items-center justify-between gap-16 lg:flex-row lg:gap-16">
           {/* Left: Content */}
-          <div className="flex xl:max-w-[520px] flex-col gap-8">
-            <div className="flex flex-col gap-4 items-center xl:items-start">
+          <div className="flex lg:max-w-[520px] flex-col gap-8">
+            <div className="flex flex-col gap-4 items-center lg:items-start">
               <h2 className="font-jakarta text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15] text-white">
                 {heading.line1}
               </h2>
@@ -56,7 +56,7 @@ export default function WhiteHawkSection({ data }: WhiteHawkSectionProps) {
               </h2>
             </div>
 
-            <p className="font-jakarta text-center xl:text-start text-base font-normal leading-[1.8] text-white">
+            <p className="font-jakarta text-center lg:text-start text-base font-normal leading-[1.8] text-white">
               {description}
             </p>
 
@@ -90,7 +90,7 @@ export default function WhiteHawkSection({ data }: WhiteHawkSectionProps) {
                 hoverLabel={cta.hoverLabel}
                 variant={cta.variant as "cta" | "secondary"}
                 showChevrons={false}
-                className="px-6 py-[14px] text-[clamp(14px,1.1vw,24px)]  font-ano w-full xl:w-auto"
+                className="px-6 py-[14px] text-[clamp(14px,1.1vw,24px)]  font-ano w-full lg:w-auto"
               />
 
               <p
@@ -103,7 +103,7 @@ export default function WhiteHawkSection({ data }: WhiteHawkSectionProps) {
           </div>
 
           {/* Right: Dashboard mockup */}
-          <div className="relative w-full xl:max-w-[544px] shrink-0 overflow-hidden rounded-lg">
+          <div className="relative w-full lg:max-w-[544px] shrink-0 overflow-hidden rounded-lg">
             <div className="relative aspect-[544/356] w-full overflow-hidden rounded-lg">
               <Image
                 src={dashboardImage}
