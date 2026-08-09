@@ -68,7 +68,7 @@ export default function IndustriesBannerSection({
 
   return (
     <>
-      <section className="relative min-h-[50vh] w-full overflow-hidden xl:min-h-[90vh]">
+      <section className="relative min-h-[50vh] w-full overflow-hidden lg:min-h-[90vh]">
         <video
           src={videoSrc}
           autoPlay
@@ -88,7 +88,7 @@ export default function IndustriesBannerSection({
           }}
         />
 
-        <div className="relative z-10 flex min-h-[50vh] flex-col items-center justify-center py-16 text-center sm:py-20 xl:min-h-[60vh] xl:py-24">
+        <div className="relative z-10 flex min-h-[50vh] flex-col items-center justify-center py-16 text-center sm:py-20 lg:min-h-[60vh] lg:py-24">
           <div className="container flex flex-col items-center">
             <div className="mx-auto flex w-full max-w-[961px] flex-col items-center gap-8">
               <h1

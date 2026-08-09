@@ -48,7 +48,7 @@ export default function ServiceDetailPricing({
           </p>
         </div>
         <div
-          className={`mx-auto grid w-full max-w-[1312px] gap-6 sm:grid-cols-2 lg:grid-cols-${plans?.length <= 5 ? plans?.length : 5} xl:grid-cols-${plans?.length <= 5 ? plans?.length : 5}`}
+          className={`mx-auto grid w-full max-w-[1312px] gap-6 sm:grid-cols-2 lg:grid-cols-${plans?.length <= 5 ? plans?.length : 5}`}
         >
           {plans.map((plan) => (
             <div

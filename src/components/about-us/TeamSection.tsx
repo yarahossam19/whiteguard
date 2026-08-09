@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import type { AboutTeamData } from "@/data/about-team";
 
 interface TeamSectionProps {
@@ -9,9 +8,7 @@ interface TeamSectionProps {
 }
 
 export default function TeamSection({ data }: TeamSectionProps) {
-  const { heading, description, members } = data;
-  const [activeIndex, setActiveIndex] = useState<number>(0);
-
+  const { heading, description } = data;
   return (
     <section className="relative w-full bg-white pb-16 lg:mb-10 lg:pt-0">
       <div className="container flex flex-col items-center gap-12 lg:gap-16">

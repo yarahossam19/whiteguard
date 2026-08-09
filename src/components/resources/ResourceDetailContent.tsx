@@ -68,10 +68,10 @@ export default function ResourceDetailContent({
         />
       </div>
       {/* Back + Title row */}
-      <div className="mb-12 flex flex-col gap-6 xl:flex-row xl:items-center xl:gap-[200px] xl:pl-0">
+      <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-[200px] lg:pl-0">
         <Link
           href="/resources"
-          className="hidden xl:flex w-fit items-center gap-[13px] rounded-[8px] px-[13px] py-[10px] font-jakarta text-[18px] font-bold leading-[28px] text-[#003859] transition-colors hover:opacity-80"
+          className="hidden lg:flex w-fit items-center gap-[13px] rounded-[8px] px-[13px] py-[10px] font-jakarta text-[18px] font-bold leading-[28px] text-[#003859] transition-colors hover:opacity-80"
         >
           <Image
             src="/images/icons/arrow-right-2.svg"
@@ -81,15 +81,15 @@ export default function ResourceDetailContent({
           />
           Back
         </Link>
-        <h1 className="font-jakarta text-[clamp(18px,3vw,30px)] font-normal leading-[1.2] tracking-[-0.4px] text-[#003859] xl:max-w-full">
+        <h1 className="font-jakarta text-[clamp(18px,3vw,30px)] font-normal leading-[1.2] tracking-[-0.4px] text-[#003859] lg:max-w-full">
           {title}
         </h1>
       </div>
 
       {/* Two-column: TOC + Article */}
-      <div className="flex flex-col gap-8 xl:flex-row xl:gap-[80px]">
+      <div className="flex flex-col gap-8 lg:flex-row lg:gap-[80px]">
         <nav
-          className="hidden w-full shrink-0 xl:sticky xl:top-24 xl:block xl:self-start xl:w-[232px]"
+          className="hidden w-full shrink-0 lg:sticky lg:top-24 lg:block lg:self-start lg:w-[232px]"
           aria-label="Table of contents"
         >
           <ul className="flex flex-col gap-5">
@@ -128,7 +128,7 @@ export default function ResourceDetailContent({
                 id={section.id}
                 className="flex flex-col gap-4 scroll-mt-24"
               >
-                <h2 className="font-jakarta text-base font-medium leading-[1.2] tracking-[-0.2px] text-[#003859] xl:text-[24px]">
+                <h2 className="font-jakarta text-base font-medium leading-[1.2] tracking-[-0.2px] text-[#003859] lg:text-[24px]">
                   {section.headline}
                 </h2>
                 <p className="font-jakarta text-[16px] font-normal leading-[30px] tracking-[-0.15px] text-[#29343D]">

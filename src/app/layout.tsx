@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import {
-  DEFAULT_OG_IMAGE,
-  SITE_NAME,
-  metadataBase,
-} from "@/lib/metadata";
+import { DEFAULT_OG_IMAGE, SITE_NAME, metadataBase } from "@/lib/metadata";
 import {
   GoogleTagManagerNoScript,
   GoogleTagManagerScript,
@@ -73,14 +69,12 @@ export default function RootLayout({
         <JsonLd data={buildOrganizationSchema()} />
         <GoogleTagManagerScript />
       </head>
-      <body
-        className={`${plusJakartaSans.variable} antialiased`}
-      >
+      <body className={`${plusJakartaSans.variable} antialiased`}>
         <GoogleTagManagerNoScript />
         {children}
         <ScrollToTopButton />
-        <SmartsuppChatScript />
-        <SmartsuppChatNoScript />
+        {/* <SmartsuppChatScript />  */}
+        {/* <SmartsuppChatNoScript />  */}
       </body>
     </html>
   );
