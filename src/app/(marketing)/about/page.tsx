@@ -15,7 +15,7 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/about",
   title: "About Us",
   description:
-    "Learn about WhiteGuard — your trusted partner in intelligent security monitoring.",
+    "Discover WhiteGuard — a MENA cybersecurity leader protecting 64+ enterprises with managed security, 24/7 SOC, and compliance-ready services. Meet our team, mission, and milestones.",
 });
 
 export default function AboutPage() {

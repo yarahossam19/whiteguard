@@ -5,7 +5,7 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/privacy-policy",
   title: "Privacy Policy",
   description:
-    "WhiteGuard Privacy Policy - Learn how we collect, use, and protect your personal information.",
+    "Read the WhiteGuard Privacy Policy — how we collect, use, store, and protect personal data when you visit our site, request services, or partner with us. Updated March 2026.",
 });
 
 export default function PrivacyPolicyPage() {

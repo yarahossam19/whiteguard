@@ -17,7 +17,8 @@ import { getPartnersCtaData } from "@/data/partners-cta";
 export const metadata: Metadata = buildPageMetadata({
   path: "/partners",
   title: "Partners",
-  description: "Our trusted partners in security.",
+  description:
+    "Explore the WhiteGuard partner ecosystem — technology alliances, MSSPs, and regional integrators delivering enterprise cybersecurity, SOC, and compliance services across MENA.",
 });
 
 export default function PartnersPage() {
