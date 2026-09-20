@@ -13,7 +13,7 @@ import { buildPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildPageMetadata({
   path: "/industries",
-  title: "Industries",
+  title: "Whiteguard | Industries",
   description:
     "Industry-specific cybersecurity from WhiteGuard — tailored offensive, defensive, GRC, and training solutions for banking, healthcare, energy, government, and more across MENA.",
 });

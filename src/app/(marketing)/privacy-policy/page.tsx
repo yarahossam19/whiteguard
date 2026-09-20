@@ -3,7 +3,7 @@ import { buildPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildPageMetadata({
   path: "/privacy-policy",
-  title: "Privacy Policy",
+  title: "Whiteguard | Privacy Policy",
   description:
     "Read the WhiteGuard Privacy Policy — how we collect, use, store, and protect personal data when you visit our site, request services, or partner with us. Updated March 2026.",
 });

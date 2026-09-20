@@ -7,7 +7,7 @@ import { buildPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildPageMetadata({
   path: "/resources",
-  title: "Resources",
+  title: "Whiteguard | Resources",
   description:
     "Security resources, guides, and documentation. Explore expert insights, practical tools, and proven strategies.",
 });
