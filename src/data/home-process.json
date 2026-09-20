@@ -1,0 +1,36 @@
+{
+  "_review": "Stage titles and descriptions drafted for the v2 home page from the four service pillar descriptions in src/data/services-section.json. Confirm wording before launch.",
+  "eyebrow": "How we work",
+  "heading": "Four stages, in order",
+  "subtitle": "Assessment feeds defence, defence feeds evidence, and evidence keeps the posture from drifting back.",
+  "steps": [
+    {
+      "id": "assess",
+      "stage": "STAGE 01",
+      "title": "Assess",
+      "description": "Penetration testing, vulnerability assessment, red teaming, and source code review establish where you actually stand.",
+      "href": "/services/offensive"
+    },
+    {
+      "id": "defend",
+      "stage": "STAGE 02",
+      "title": "Defend",
+      "description": "Network security, SOC operations, SIEM, and incident response close what the assessment found and catch what comes next.",
+      "href": "/services/defensive"
+    },
+    {
+      "id": "comply",
+      "stage": "STAGE 03",
+      "title": "Comply",
+      "description": "Findings map to ISO 27001, PCI, SOC 2, CBE, SAMA, and NCA evidence, so audits draw on work you have already done.",
+      "href": "/services/grc"
+    },
+    {
+      "id": "manage",
+      "stage": "STAGE 04",
+      "title": "Manage",
+      "description": "Retests, continuous monitoring, and awareness training keep the posture from slipping back between engagements.",
+      "href": "/services/training"
+    }
+  ]
+}

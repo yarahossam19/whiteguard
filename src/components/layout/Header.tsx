@@ -1,252 +1,405 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "@/components/ui/Logo";
-import { HoverSwapButton } from "@/components/ui/HoverSwapButton";
+import { ButtonLink, ExternalArrow, GoArrow } from "@/components/ui/Button";
 import { ServicesDropdown } from "@/components/layout/ServicesDropdown";
 import { mainNav } from "@/config/site";
 import { useUIStore } from "@/lib/stores/ui-store";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
+
+/* Asymmetric thresholds: the header commits to solid at 24px but only returns
+   to its transparent state below 4px. A single threshold flickers when a
+   trackpad hovers either side of it mid-transition. */
+const SOLIDIFY_AT_PX = 24;
+const CLEAR_BELOW_PX = 4;
 
 export function Header() {
   const pathname = usePathname();
   const { isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useUIStore();
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  /** Which top-level nav item’s mobile submenu is open (matched by href). One at a time. */
+  const [openDropdown, setOpenDropdown] = useState<{
+    label: string;
+    path: string;
+  } | null>(null);
+  /** Which top-level nav item has its mobile submenu open (matched by href). One at a time. */
   const [mobileExpandedHref, setMobileExpandedHref] = useState<string | null>(
     null,
   );
+  const [scrolled, setScrolled] = useState(false);
+  /** Triggers, so Esc can return focus to the control that opened the panel. */
+  const triggerRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
+
+  /* Both derived rather than synchronised in an effect: a panel opened on one
+     route is closed by definition once the route changes, and the mobile
+     accordion collapses whenever the drawer is shut. */
+  const activeDropdown =
+    openDropdown && openDropdown.path === pathname ? openDropdown.label : null;
+  const expandedHref = isMobileMenuOpen ? mobileExpandedHref : null;
+
+  const openPanel = (label: string) =>
+    setOpenDropdown({ label, path: pathname });
+
+  /* The home hero pulls itself up by --header-h, so the header genuinely sits
+     over the hero rather than stacking a flat navy bar above it. That lets the
+     header go fully transparent at rest - the hero gradient and glow run
+     unbroken behind it - and flip to the solid light bar once scrolled. Every
+     other route is light, so it starts solid. */
+  const isHome = pathname === "/";
+  const overlay = isHome && !scrolled && !isMobileMenuOpen;
 
   useEffect(() => {
-    if (!isMobileMenuOpen) setMobileExpandedHref(null);
-  }, [isMobileMenuOpen]);
+    const onScroll = () =>
+      setScrolled((prev) => {
+        const y = window.scrollY;
+        return prev ? y > CLEAR_BELOW_PX : y > SOLIDIFY_AT_PX;
+      });
+    /* Sync the initial value on the next frame rather than synchronously in
+       the effect body, so a restored scroll position renders correctly. */
+    const frame = requestAnimationFrame(onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
 
-  /* Hover: bg Primary-100 | Selected: bg Primary-200 | border-radius: 8px */
+  /* Esc closes the open panel and restores focus to its trigger (WF-028). */
+  useEffect(() => {
+    if (!activeDropdown) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setOpenDropdown(null);
+      triggerRefs.current[activeDropdown]?.focus();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [activeDropdown]);
+
+  /* Esc also closes the mobile overlay, and the page behind it must not scroll. */
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeMobileMenu();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previous;
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isMobileMenuOpen, closeMobileMenu]);
+
   const navLinkClass = (href: string) =>
-    `inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-1 text-[15px] leading-6 font-normal font-ano duration-300 ease-out transition-[background-color] 2xl:gap-2 2xl:px-3 2xl:text-[20px] ${
-      pathname === href
-        ? "text-[var(--primary-950)] bg-[var(--Primary-200)]"
-        : "text-[var(--primary-950)] hover:bg-[#ABE0FF]"
-    }`;
+    [
+      "nav-pill nav-fade inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap",
+      "rounded-full px-3 py-2 text-[14px] font-semibold 2xl:text-[15px]",
+      overlay
+        ? pathname === href
+          ? "text-white"
+          : "text-white/80 hover:text-white"
+        : pathname === href
+          ? "text-accent-600"
+          : "text-ink hover:text-accent-600",
+    ].join(" ");
 
   return (
-    <header className="sticky top-0 z-50 w-full py-5 backdrop-blur-md bg-white/95 supports-backdrop-filter:bg-white/90 lg:py-6">
-      <nav
-        className="container-fluid flex min-w-0 items-center justify-between gap-2 lg:gap-4"
-        aria-label="Main navigation"
+    <>
+      {/* Two details make this fade cleanly rather than flash:
+          - the transparent state is bg-white/0, not bg-transparent. sRGB
+            interpolates transparent-black -> white/90 through grey, so a
+            `transparent` start visibly darkens mid-fade. Matching the hue and
+            moving only alpha keeps it white the whole way.
+          - backdrop-blur is always on. backdrop-filter cannot interpolate from
+            `none`, so toggling it made the blur snap in one frame while the
+            background was still fading. At rest only the hero's ambient
+            gradient sits behind the bar, so a constant blur is invisible. */}
+      <header
+        className={[
+          "nav-fade sticky top-0 z-50 w-full border-b backdrop-blur-xl",
+          overlay
+            ? "border-white/0 bg-white/0 shadow-none"
+            : "border-line bg-white/90 shadow-[0_6px_24px_-18px_rgba(11,42,91,0.5)]",
+        ].join(" ")}
       >
-        {/* Logo */}
-        <Logo />
+        {/* .container, not .container-fluid: every section below uses .container,
+            so a full-bleed header left the logo ~75px outside the content column
+            and ran the CTA into the viewport edge. */}
+        <nav
+          className="container flex h-[var(--header-h)] min-w-0 items-center justify-between gap-2 lg:gap-4"
+          aria-label="Main navigation"
+        >
+          <Logo variant={overlay ? "light" : "default"} />
 
-        {/* Desktop Navigation */}
-        <div className="hidden min-w-0 flex-1 items-center justify-center gap-2 lg:flex 2xl:gap-4">
-          {mainNav.map((item) => (
-            <div
-              key={item.label}
-              className="relative shrink-0"
-              onMouseEnter={() =>
-                "hasDropdown" in item && item.hasDropdown
-                  ? setOpenDropdown(item.label)
-                  : null
-              }
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              {"hoverLabel" in item && item.hoverLabel ? (
-                <HoverSwapButton
-                  href={item.href}
-                  label={item.label}
-                  hoverLabel={String(item.hoverLabel)}
-                  variant="nav"
-                />
-              ) : (
-                <Link href={item.href} className={navLinkClass(item.href)}>
-                  {item.label}
-                  {"hasDropdown" in item && item.hasDropdown && (
-                    <Image
-                      src="/images/icons/arrow-bottom.png"
-                      alt=""
-                      width={24}
-                      height={24}
-                      className={`h-5 w-5 shrink-0 transition-[transform_var(--transition-dissolve)] 2xl:h-6 2xl:w-6 ${
-                        openDropdown === item.label ? "rotate-180" : ""
-                      }`}
-                      aria-hidden
+          {/* Desktop navigation */}
+          <div className="hidden min-w-0 flex-1 items-center justify-center gap-1 lg:flex 2xl:gap-2">
+            {mainNav.map((item) => {
+              const hasDropdown =
+                "hasDropdown" in item && item.hasDropdown && "subLinks" in item;
+              const isOpen = activeDropdown === item.label;
+
+              return (
+                <div
+                  key={item.label}
+                  className="relative shrink-0"
+                  onMouseEnter={() =>
+                    hasDropdown ? openPanel(item.label) : undefined
+                  }
+                  onMouseLeave={() =>
+                    hasDropdown ? setOpenDropdown(null) : undefined
+                  }
+                >
+                  <Link
+                    href={item.href}
+                    ref={(node) => {
+                      triggerRefs.current[item.label] = node;
+                    }}
+                    className={navLinkClass(item.href)}
+                    data-active={pathname === item.href ? "true" : undefined}
+                    aria-expanded={hasDropdown ? isOpen : undefined}
+                    aria-current={pathname === item.href ? "page" : undefined}
+                    onKeyDown={(event) => {
+                      /* Enter/Space opens the panel rather than navigating, so
+                         the menu is reachable without a pointer (WF-028). */
+                      if (!hasDropdown) return;
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        if (isOpen) setOpenDropdown(null);
+                        else openPanel(item.label);
+                      }
+                    }}
+                  >
+                    {item.label}
+                    {hasDropdown && (
+                      <Chevron
+                        className={`h-4 w-4 shrink-0 transition-transform duration-200 ${
+                          isOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    )}
+                  </Link>
+
+                  {hasDropdown && isOpen && (
+                    <ServicesDropdown
+                      small={"small" in item ? item.small : undefined}
+                      items={item.subLinks.map((s) => ({
+                        label: s.label,
+                        description:
+                          "description" in s ? s.description : undefined,
+                        href: s.href,
+                        icon: "icon" in s ? s.icon : undefined,
+                      }))}
                     />
                   )}
-                </Link>
-              )}
+                </div>
+              );
+            })}
+          </div>
 
-              {/* Services Dropdown */}
-              {"hasDropdown" in item &&
-                item.subLinks &&
-                openDropdown === item.label && (
-                  <ServicesDropdown
-                    small={item.small}
-                    items={item.subLinks.map((s) => ({
-                      label: s.label,
-                      description:
-                        "description" in s ? s.description : undefined,
-                      href: s.href,
-                      icon: "icon" in s ? s.icon : undefined,
-                    }))}
-                  />
-                )}
-            </div>
-          ))}
-        </div>
+          <div className="hidden shrink-0 items-center gap-2.5 lg:flex">
+            <ButtonLink
+              href="https://whitehawk.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant={overlay ? "ghost-ondark" : "ghost"}
+              size="sm"
+              className="nav-fade"
+            >
+              White Hawk
+              <ExternalArrow />
+            </ButtonLink>
+            {/* One accent button per viewport: on the home page the hero owns
+                it, so the header CTA steps down to a secondary treatment. */}
+            <ButtonLink
+              href="/contact"
+              variant={
+                isHome ? (overlay ? "solid-ondark" : "ghost") : "accent"
+              }
+              size="sm"
+              className="nav-fade"
+            >
+              Book a Consultation
+              <GoArrow />
+            </ButtonLink>
+          </div>
 
-        <div className="hidden shrink-0 items-center gap-2 lg:flex 2xl:gap-4">
-          <HoverSwapButton
-            href="https://whitehawk.io"
-            label="White Hawk"
-            hoverLabel="White Hawk"
-            variant="secondary"
-            showChevrons={false}
-            showImg={true}
-            imgSrc="/images/icons/external-link.svg"
-            className="shrink-0 text-sm 2xl:text-lg flex flex-row-reverse items-center gap-2 font-ano"
-          />
-          <HoverSwapButton
-            href="/contact"
-            label="Book a Consultation"
-            hoverLabel="Book a Consultation"
-            variant="cta"
-            showChevrons={false}
-            className="shrink-0 px-4 py-2.5 text-sm 2xl:px-6 2xl:py-3 2xl:text-base"
-          />
-        </div>
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            onClick={toggleMobileMenu}
+            className={[
+              "nav-fade inline-flex size-11 shrink-0 items-center justify-center rounded-full border lg:hidden",
+              overlay
+                ? "border-white/30 bg-white/5 text-white"
+                : "border-line bg-white text-ink",
+            ].join(" ")}
+            aria-expanded={isMobileMenuOpen}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <CloseIcon className="h-5 w-5" />
+            ) : (
+              <MenuIcon className="h-5 w-5" />
+            )}
+          </button>
+        </nav>
+      </header>
 
-        {/* Mobile Menu Button */}
-        <button
-          type="button"
-          onClick={toggleMobileMenu}
-          className="inline-flex shrink-0 items-center justify-center rounded-lg p-2 text-[var(--primary-950)] duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] lg:hidden"
-          aria-expanded={isMobileMenuOpen}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? (
-            <CloseIcon className="h-6 w-6" />
-          ) : (
-            <MenuIcon className="h-6 w-6" />
-          )}
-        </button>
-      </nav>
-
-      {/* Mobile Menu */}
+      {/* Mobile overlay - full screen, so 27 services stay two taps away */}
       {isMobileMenuOpen && (
-        <div className="border-t border-[var(--button-border)] bg-white lg:hidden">
-          <div className="container-fluid space-y-1 py-4">
-            {mainNav.map((item) => {
-              const hasSubLinks =
-                "subLinks" in item && item.subLinks && item.subLinks.length > 0;
+        <div
+          className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-navy text-white lg:hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu"
+        >
+          <div aria-hidden className="pointer-events-none absolute inset-0">
+            <span className="orb left-[-20%] top-[-10%] h-[320px] w-[320px] bg-accent/30" />
+            <span
+              className="orb right-[-18%] bottom-[-8%] h-[280px] w-[280px] bg-[#38BDF8]/20"
+              style={{ animationDelay: "-7s" }}
+            />
+          </div>
 
-              if (hasSubLinks) {
-                const isThisExpanded = mobileExpandedHref === item.href;
+          <div className="container relative z-10 flex h-[var(--header-h)] items-center justify-between">
+            <Logo variant="light" />
+            <button
+              type="button"
+              onClick={closeMobileMenu}
+              className="inline-flex size-11 items-center justify-center rounded-full border border-white/30 bg-white/5 text-white"
+              aria-label="Close menu"
+            >
+              <CloseIcon className="h-5 w-5" />
+            </button>
+          </div>
+
+          <div className="container relative z-10 flex flex-1 flex-col pb-8">
+            <nav aria-label="Mobile navigation" className="mt-4 flex flex-col">
+              {mainNav.map((item, index) => {
+                const hasSubLinks =
+                  "subLinks" in item &&
+                  item.subLinks &&
+                  item.subLinks.length > 0;
+                const isThisExpanded = expandedHref === item.href;
+
                 return (
-                  <div key={`${item.label}-${item.href}`}>
-                    <div className="flex items-stretch gap-1 rounded-lg">
+                  <div
+                    key={`${item.label}-${item.href}`}
+                    className="rise border-b border-white/10"
+                    style={
+                      { "--rise-delay": `${index * 55}ms` } as CSSProperties
+                    }
+                  >
+                    <div className="flex items-stretch">
                       <Link
                         href={item.href}
                         onClick={closeMobileMenu}
-                        className={`min-w-0 flex-1 px-4 py-3 text-base font-medium duration-300 ease-out transition-[background-color] ${
+                        className={`flex min-h-[60px] min-w-0 flex-1 items-center text-[22px] font-extrabold tracking-[-0.02em] transition-colors ${
                           pathname === item.href
-                            ? "bg-[var(--Primary-200)] text-[var(--primary-950)]"
-                            : "text-[var(--primary-950)] hover:bg-[#ABE0FF]"
+                            ? "text-[#9bc4ff]"
+                            : "text-white"
                         }`}
                       >
                         {item.label}
                       </Link>
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setMobileExpandedHref((prev) =>
-                            prev === item.href ? null : item.href,
-                          );
-                        }}
-                        className="flex shrink-0 items-center justify-center  px-3 text-primary-950 duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] border-l border-[#ccc]"
-                        aria-expanded={isThisExpanded}
-                        aria-label={
-                          isThisExpanded
-                            ? `Hide ${item.label} submenu`
-                            : `Show ${item.label} submenu`
-                        }
-                      >
-                        <Image
-                          src="/images/icons/arrow-bottom.png"
-                          alt=""
-                          width={22}
-                          height={22}
-                          className={`transition-transform duration-300 ${
-                            isThisExpanded ? "rotate-180" : ""
-                          }`}
-                          aria-hidden
-                        />
-                      </button>
+                      {hasSubLinks && (
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setMobileExpandedHref((prev) =>
+                              prev === item.href ? null : item.href,
+                            )
+                          }
+                          className="flex min-h-[60px] w-12 shrink-0 items-center justify-center text-white/70"
+                          aria-expanded={isThisExpanded}
+                          aria-label={
+                            isThisExpanded
+                              ? `Hide ${item.label} submenu`
+                              : `Show ${item.label} submenu`
+                          }
+                        >
+                          <Chevron
+                            className={`h-6 w-6 transition-transform duration-200 ${
+                              isThisExpanded ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+                      )}
                     </div>
-                    {isThisExpanded &&
-                      item.subLinks?.map((sub) => {
-                        const isActive = pathname === sub.href;
-                        return (
+
+                    {hasSubLinks && isThisExpanded && (
+                      <div className="flex flex-col pb-3">
+                        {item.subLinks?.map((sub) => (
                           <Link
                             key={sub.href}
                             href={sub.href}
                             onClick={closeMobileMenu}
-                            className={`block rounded-lg px-6 py-2 text-sm text-[var(--primary-950)] duration-300 ease-out transition-[background-color] hover:bg-[#ABE0FF] ${
-                              isActive ? "bg-[var(--Primary-200)]" : ""
+                            className={`flex min-h-[48px] items-center gap-2 pl-4 text-[15px] font-semibold transition-colors ${
+                              pathname === sub.href
+                                ? "text-[#9bc4ff]"
+                                : "text-[#9bb4e6] hover:text-white"
                             }`}
                           >
+                            <span
+                              aria-hidden
+                              className="h-1 w-1 shrink-0 rounded-full bg-accent"
+                            />
                             {sub.label}
                           </Link>
-                        );
-                      })}
+                        ))}
+                      </div>
+                    )}
                   </div>
                 );
-              }
+              })}
+            </nav>
 
-              return (
-                <div key={item.label}>
-                  <Link
-                    href={item.href}
-                    onClick={closeMobileMenu}
-                    className={`block rounded-lg px-4 py-3 text-base font-medium duration-300 ease-out transition-[background-color] ${
-                      pathname === item.href
-                        ? "bg-[var(--Primary-200)] text-[var(--primary-950)]"
-                        : "text-[var(--primary-950)] hover:bg-[#ABE0FF]"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                </div>
-              );
-            })}
-
-            <Link
-              href="https://whitehawk.io"
-              onClick={closeMobileMenu}
-              className="mt-4 block rounded-xl border border-[#0087D7]  px-3 py-2 text-center text-lg font-medium text-[#0087D7] shadow-[0px_10px_40px_0px_var(--primary-glow)] duration-300 ease-out transition-[opacity,box-shadow] hover:opacity-95 hover:shadow-[0px_10px_50px_0px_rgba(87,177,255,0.45)] flex items-center justify-center gap-2"
-            >
-              White Hawk
-              <Image
-                src="/images/icons/external-link.svg"
-                alt="White Hawk"
-                width={24}
-                height={24}
-              />
-            </Link>
-            <Link
-              href="/contact"
-              onClick={closeMobileMenu}
-              className="mt-4 block rounded-xl border border-white bg-gradient-to-b from-[var(--primary-800)] to-[var(--primary-600)] px-3 py-2 text-center text-lg font-medium text-white shadow-[0px_10px_40px_0px_var(--primary-glow)] duration-300 ease-out transition-[opacity,box-shadow] hover:opacity-95 hover:shadow-[0px_10px_50px_0px_rgba(87,177,255,0.45)]"
-            >
-              Book a Consultation
-            </Link>
+            <div className="mt-auto flex flex-col gap-3 pt-10">
+              <ButtonLink
+                href="/contact"
+                onClick={closeMobileMenu}
+                variant="accent"
+                size="lg"
+                className="w-full"
+              >
+                Book a Consultation
+                <GoArrow />
+              </ButtonLink>
+              <ButtonLink
+                href="https://whitehawk.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMobileMenu}
+                variant="ghost-ondark"
+                size="lg"
+                className="w-full"
+              >
+                White Hawk
+                <ExternalArrow />
+              </ButtonLink>
+            </div>
           </div>
         </div>
       )}
-    </header>
+    </>
+  );
+}
+
+function Chevron({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M6 9l6 6 6-6" />
+    </svg>
   );
 }
 
@@ -258,12 +411,10 @@ function MenuIcon({ className }: { className?: string }) {
       viewBox="0 0 24 24"
       stroke="currentColor"
       strokeWidth={2}
+      strokeLinecap="round"
+      aria-hidden
     >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M4 6h16M4 12h16M4 18h16"
-      />
+      <path d="M4 7h16M4 12h16M4 17h16" />
     </svg>
   );
 }
@@ -276,12 +427,10 @@ function CloseIcon({ className }: { className?: string }) {
       viewBox="0 0 24 24"
       stroke="currentColor"
       strokeWidth={2}
+      strokeLinecap="round"
+      aria-hidden
     >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M6 18L18 6M6 6l12 12"
-      />
+      <path d="M6 18L18 6M6 6l12 12" />
     </svg>
   );
 }

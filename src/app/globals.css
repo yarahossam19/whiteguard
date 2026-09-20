@@ -1,16 +1,5 @@
 @import "tailwindcss";
 
-/* Ano Regular - local file takes precedence; add to public/fonts/ if needed */
-@font-face {
-  font-family: "Ano Regular";
-  src: local("Ano Regular"),
-    url("/fonts/AnoRegular.woff2") format("woff2"),
-    url("/fonts/AnoRegular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -27,7 +16,35 @@
   --Primary-100: #ABE0FF !important;
   --Primary-200: #81D0FF !important;
   --Primary-400: #02A1FF;
-  --font-ano: "Ano Regular", sans-serif;
+
+  /* ---- v2 design system (whiteguard-wireframes-v2 / Whitehawk Design System) ----
+     The new home page, header and footer read from these tokens. The primary
+     variables above are the previous palette; they stay until the remaining
+     pages are migrated. */
+  --navy: #0B2A5B;
+  --navy-700: #13316A;
+  --navy-600: #1E3A6B;
+  --accent: #2563EB;
+  --accent-600: #1D4FD7;
+  --accent-100: #DBE6FE;
+  --ink: #0F172A;
+  --slate: #64748B;
+  --wash: #F5F7FA;
+  --line: #E3E8EF;
+  --success: #16A34A;
+  --warning: #D97706;
+  --danger: #DC2626;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-pill: 999px;
+  --shadow: 0 10px 30px -12px rgba(11, 42, 91, 0.18);
+  /* Single source of truth for header height. The home hero pulls itself up by
+     exactly this much so the header sits over the hero instead of stacking a
+     flat navy bar above it, and the hero can still be a full viewport tall. */
+  --header-h: 68px;
+  --shadow-lift: 0 6px 18px rgba(11, 42, 91, 0.08);
+
   /* Hover/click: Dissolve, Ease out, 300ms */
   --transition-dissolve: 300ms ease-out;
 
@@ -45,13 +62,29 @@
   --scrollbar-track: #e8eef2;
 }
 
+@media (min-width: 1024px) {
+  :root {
+    --header-h: 76px;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary-950: var(--primary-950);
   --color-primary-800: var(--primary-800);
   --color-primary-600: var(--primary-600);
-  --font-sans: var(--font-plus-jakarta-sans);
+  --color-navy: var(--navy);
+  --color-navy-700: var(--navy-700);
+  --color-navy-600: var(--navy-600);
+  --color-accent: var(--accent);
+  --color-accent-600: var(--accent-600);
+  --color-accent-100: var(--accent-100);
+  --color-ink: var(--ink);
+  --color-slate: var(--slate);
+  --color-wash: var(--wash);
+  --color-line: var(--line);
+  --font-sans: var(--font-manrope);
   --font-mono: ui-monospace, monospace;
 }
 
@@ -112,7 +145,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-plus-jakarta-sans), sans-serif;
+  font-family: var(--font-manrope), Inter, system-ui, sans-serif;
 }
 
 /* Scrollbar: thumb #003859 — Firefox + Chromium / Safari / Edge */
@@ -140,15 +173,6 @@ body {
   background: #002439;
 }
 
-/* Ano Regular for tabs, links, and buttons */
-a,
-button,
-[role="tab"],
-[role="tab"] a,
-.font-ano {
-  font-family: var(--font-ano);
-}
-
 /* Hover: Dissolve, Ease out, 300ms */
 a,
 button,
@@ -160,12 +184,11 @@ button,
     box-shadow var(--transition-dissolve);
 }
 
-.font-jakarta {
-  font-family: var(--font-plus-jakarta-sans), sans-serif !important;
-}
-
+/* Both retained as aliases: they are applied across pages not migrated yet, so
+   deleting them would drop those elements to the browser default serif. */
+.font-jakarta,
 .font-ano {
-  font-family: var(--font-ano), sans-serif !important;
+  font-family: var(--font-manrope), Inter, system-ui, sans-serif !important;
 }
 
 @keyframes services-marquee {
@@ -579,4 +602,1108 @@ button, a {
 
   /* z-index: -1; */
   /* box-shadow: 0px 10px 15px rgba(0, 56, 89, 0.05), 0px 4px 6px rgba(0, 56, 89, 0.05); */
+}
+/* ==========================================================
+   v2 home page — quality floor + coverage visual
+   Ported from whiteguard-wireframes-v2.html
+   ========================================================== */
+
+/* Visible keyboard focus on every interactive element */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+[role="tab"]:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---- Coverage visual (home section 04) ---- */
+.cov-stage {
+  position: relative;
+  height: 520px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(219, 230, 254, 0.9) 0, transparent 46%),
+    linear-gradient(180deg, #fff 0%, var(--wash) 100%);
+}
+
+.cov-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at 50% 50%, #000 20%, transparent 72%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 20%, transparent 72%);
+  pointer-events: none;
+}
+
+.cov-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.cov-svg .flow {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.6;
+  stroke-opacity: 0.38;
+  stroke-dasharray: 5 9;
+  animation: covDash 1.1s linear infinite;
+}
+
+.cov-svg .flow.slow {
+  animation-duration: 1.7s;
+  stroke-opacity: 0.22;
+}
+
+.cov-float {
+  position: absolute;
+  z-index: 2;
+  width: 198px;
+  animation: covFloat 5.6s ease-in-out infinite;
+}
+
+.cov-float.f-l1 { left: 3%;   top: 8%;  animation-duration: 5.2s }
+.cov-float.f-l2 { left: 1.5%; top: 40%; animation-duration: 6.4s; animation-delay: .4s }
+.cov-float.f-l3 { left: 6%;   top: 71%; animation-duration: 5.8s; animation-delay: .9s }
+.cov-float.f-r1 { right: 3%;  top: 10%; animation-duration: 6s;   animation-delay: .2s }
+.cov-float.f-r2 { right: 1%;  top: 42%; animation-duration: 5.4s; animation-delay: .7s }
+.cov-float.f-r3 { right: 5%;  top: 72%; animation-duration: 6.6s; animation-delay: 1.1s }
+
+/* Frosted panel with a gradient hairline: the two backgrounds are clipped to
+   different boxes, which is how you get a gradient border without a wrapper.
+   `isolate` lets the corner light below sit under the text at z-index -1. */
+.mini-ui {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid transparent;
+  border-radius: var(--r-md);
+  padding: 11px 13px 12px 15px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(245, 247, 250, 0.92))
+      padding-box,
+    linear-gradient(
+        140deg,
+        rgba(37, 99, 235, 0.5),
+        rgba(37, 99, 235, 0.06) 55%,
+        rgba(37, 99, 235, 0.34)
+      )
+      border-box;
+  backdrop-filter: blur(6px);
+  box-shadow:
+    0 18px 38px -16px rgba(11, 42, 91, 0.34),
+    0 2px 6px rgba(11, 42, 91, 0.05);
+}
+
+/* Light in the top-left corner, where the flow line meets the panel. */
+.mini-ui::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at 0% 0%,
+    rgba(37, 99, 235, 0.15),
+    transparent 62%
+  );
+  pointer-events: none;
+}
+
+/* Accent rail on the leading edge. Inset past the corner radius so it stays on
+   the straight part of the border. */
+.mini-ui::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: linear-gradient(180deg, var(--accent), rgba(37, 99, 235, 0.16));
+  pointer-events: none;
+}
+
+.mini-ui b {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+}
+
+.mini-ui span {
+  display: block;
+  font-size: 11px;
+  color: var(--slate);
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+.mini-ui .dots {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 12px;
+  margin-bottom: 9px;
+}
+
+/* The three <i> are styled as an ascending signal glyph rather than the
+   macOS-style window dots they were - this is a telemetry panel, not a window.
+   Left static on purpose: the stage already carries the flow lines, particles,
+   floating cards, orbits and pulses. */
+.mini-ui .dots i {
+  display: block;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.mini-ui .dots i:nth-child(1) { height: 5px;  opacity: 0.3 }
+.mini-ui .dots i:nth-child(2) { height: 8px;  opacity: 0.58 }
+.mini-ui .dots i:nth-child(3) { height: 12px; opacity: 1 }
+
+.mini-ui .bar {
+  height: 5px;
+  border-radius: 99px;
+  background: rgba(11, 42, 91, 0.07);
+  margin-top: 9px;
+  overflow: hidden;
+}
+
+.mini-ui .bar em {
+  display: block;
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(90deg, var(--accent-600), #60A5FA);
+  border-radius: 99px;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.55);
+  animation: covBar 2.8s ease-in-out infinite;
+}
+
+.cov-hub {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 248px;
+  height: 248px;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.cov-orbit {
+  position: absolute;
+  inset: 18px;
+  border-radius: 50%;
+  border: 1.5px dashed #c7d7fe;
+  animation: covSpin 22s linear infinite;
+}
+
+.cov-orbit.inner {
+  inset: 48px;
+  animation-duration: 14s;
+  animation-direction: reverse;
+  border-color: rgba(37, 99, 235, 0.35);
+}
+
+.cov-pulse {
+  position: absolute;
+  inset: 54px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.14);
+  animation: covPulse 2.8s ease-out infinite;
+}
+
+.cov-pulse.d2 { animation-delay: 1.4s }
+
+/* The hub holds the WhiteGuard mark. It stays a filled disc rather than a bare
+   logo: six dashed flow lines and the background grid converge here, and they
+   would otherwise run straight through the artwork. Sized to clear
+   .cov-orbit.inner (152px across) with room to spare. */
+.cov-core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 108px;
+  height: 108px;
+  margin: -54px 0 0 -54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 34% 26%, var(--navy-600), var(--navy) 64%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.16),
+    inset 0 -14px 26px rgba(0, 0, 0, 0.22),
+    0 0 0 9px rgba(37, 99, 235, 0.12),
+    0 0 0 20px rgba(37, 99, 235, 0.05),
+    0 18px 38px rgba(11, 42, 91, 0.3);
+}
+
+.cov-core img {
+  width: 46%;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+}
+
+.cov-node {
+  position: absolute;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--navy);
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(11, 42, 91, 0.08);
+  animation: covNode 3.2s ease-in-out infinite;
+}
+
+.cov-node.n1 { top: 6px; left: 50%; transform: translateX(-50%) }
+.cov-node.n2 { right: -28px; top: 42% }
+.cov-node.n3 { bottom: 10px; left: 50%; transform: translateX(-50%); animation-delay: .6s }
+.cov-node.n4 { left: -22px; top: 42%; animation-delay: 1.1s }
+
+@keyframes covFloat {
+  0%, 100% { transform: translateY(0) }
+  50%      { transform: translateY(-14px) }
+}
+
+@keyframes covDash {
+  to { stroke-dashoffset: -28 }
+}
+
+@keyframes covPulse {
+  0%   { transform: scale(.72); opacity: .55 }
+  100% { transform: scale(1.55); opacity: 0 }
+}
+
+@keyframes covSpin {
+  to { transform: rotate(360deg) }
+}
+
+@keyframes covBar {
+  0%, 100% { width: 28%; margin-left: 0 }
+  50%      { width: 78%; margin-left: 12% }
+}
+
+@keyframes covNode {
+  0%, 100% { box-shadow: 0 6px 16px rgba(11, 42, 91, .08) }
+  50%      { box-shadow: 0 0 0 4px rgba(37, 99, 235, .16), 0 6px 16px rgba(11, 42, 91, .08) }
+}
+
+/* Below the stage's design width the floating cards collide with the hub. */
+@media (max-width: 900px) {
+  .cov-stage { height: 420px }
+  .cov-float { display: none }
+  .cov-hub { width: 220px; height: 220px }
+}
+
+/* ---- Process connectors (home section 06) ---- */
+.step-connector::after {
+  content: "";
+  position: absolute;
+  right: -22px;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid var(--accent);
+  border-right: 2px solid var(--accent);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.step-connector:last-child::after { content: none }
+
+@media (max-width: 1023px) {
+  .step-connector::after {
+    right: 50%;
+    top: auto;
+    bottom: -26px;
+    transform: translateX(50%) rotate(135deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cov-float,
+  .cov-svg .flow,
+  .cov-pulse,
+  .cov-orbit,
+  .cov-node,
+  .mini-ui .bar em {
+    animation: none !important;
+  }
+
+  .cov-svg circle { display: none }
+}
+
+/* ==========================================================
+   v2 home page — motion system
+   Scroll reveals, ambient backgrounds, and hover choreography.
+   Everything here collapses to a static state under
+   prefers-reduced-motion (single block at the end of the file).
+   ========================================================== */
+
+/* ---- Scroll reveal ---- */
+.reveal {
+  opacity: 0;
+  transform: translate3d(var(--reveal-x, 0), var(--reveal-y, 22px), 0)
+    scale(var(--reveal-scale, 1));
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- Ambient backgrounds ---- */
+.grid-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 20%, transparent 75%);
+  pointer-events: none;
+}
+
+.grid-bg-light::before {
+  background-image:
+    linear-gradient(rgba(11, 42, 91, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 42, 91, 0.045) 1px, transparent 1px);
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+  animation: orbDrift 18s ease-in-out infinite;
+}
+
+@keyframes orbDrift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1) }
+  33%      { transform: translate3d(4%, -6%, 0) scale(1.08) }
+  66%      { transform: translate3d(-3%, 5%, 0) scale(0.95) }
+}
+
+/* Slow sheen that travels across a dark band. */
+.sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.07) 50%,
+    transparent 65%
+  );
+  background-size: 250% 100%;
+  animation: sheenSweep 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes sheenSweep {
+  0%   { background-position: 130% 0 }
+  60%  { background-position: -30% 0 }
+  100% { background-position: -30% 0 }
+}
+
+/* ---- Type ---- */
+.text-gradient {
+  background: linear-gradient(100deg, #ffffff 10%, #9bc4ff 55%, #ffffff 90%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientPan 9s ease-in-out infinite;
+}
+
+.text-gradient-ink {
+  background: linear-gradient(100deg, var(--navy) 15%, var(--accent) 55%, var(--navy) 90%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientPan 9s ease-in-out infinite;
+}
+
+@keyframes gradientPan {
+  0%, 100% { background-position: 0% 50% }
+  50%      { background-position: 100% 50% }
+}
+
+/* Section eyebrow: no ornament, wide tracking, colour does the work. Set the
+   colour at the call site (accent on light sections, #9bc4ff on navy). */
+.eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+/* ---- Cards ---- */
+.card-lift {
+  position: relative;
+  /* Ornament layers below (.card-glow, .card-sheen, .ghost-num) sit at
+     z-index:-1 so they paint over the card's background but under its text.
+     That only holds inside a stacking context - without `isolate` they would
+     fall through to the section behind the card. */
+  isolation: isolate;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 44px -18px rgba(11, 42, 91, 0.32);
+}
+
+/* Accent hairline that wipes in along the top edge on hover. */
+.card-wipe::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  background: var(--card-accent, var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-lift:hover .card-wipe::before,
+.card-wipe:hover::before {
+  transform: scaleX(1);
+}
+
+/* Arrow that slides on hover. */
+.go-arrow {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .go-arrow {
+  transform: translateX(5px);
+}
+
+/* Icon that lifts and tilts with its card. */
+.icon-hover {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .icon-hover {
+  transform: translateY(-4px) rotate(-6deg) scale(1.07);
+}
+
+/* Image that eases in on hover. */
+.img-zoom {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .img-zoom {
+  transform: scale(1.06);
+}
+
+/* ---- Card ornaments ----
+   Each is an aria-hidden child <span> pinned to the card, painting between the
+   card background and its text (see the note on .card-lift). They read the
+   card's own `--card-accent` where one is set, so a grid of differently
+   coloured cards stays differentiated on hover instead of all going blue. */
+
+/* Accent bloom from the top-right corner. */
+.card-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at 108% -8%,
+    var(--card-accent, var(--accent)),
+    transparent 58%
+  );
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+
+.card-lift:hover .card-glow {
+  opacity: 0.16;
+}
+
+/* Light that sweeps across the card once on hover. */
+.card-sheen {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.card-sheen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    var(--sheen-color, rgba(37, 99, 235, 0.14)),
+    transparent
+  );
+  transform: skewX(-18deg);
+  transition: left 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-lift:hover .card-sheen::before {
+  left: 135%;
+}
+
+/* Oversized outline numeral, used where a card's position carries meaning.
+   Browsers without -webkit-text-stroke simply render nothing, which is the
+   right outcome for a watermark. */
+.ghost-num {
+  position: absolute;
+  z-index: -1;
+  right: 16px;
+  top: 4px;
+  font-size: 86px;
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(11, 42, 91, 0.11);
+  pointer-events: none;
+  transition:
+    -webkit-text-stroke-color 0.4s ease,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* The stroke stays brand accent rather than --card-accent: the pillar colours
+   are pale pastels and an outline in them is invisible on a white card. */
+.card-lift:hover .ghost-num {
+  -webkit-text-stroke-color: rgba(37, 99, 235, 0.3);
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* Icon plate: white fill, gradient hairline ring in the card's accent. The two
+   backgrounds are clipped to different boxes, which is how you get a gradient
+   border without a wrapper element. */
+.icon-plate {
+  position: relative;
+  border: 1.5px solid transparent;
+  border-radius: var(--r-md);
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(
+        135deg,
+        var(--card-accent, var(--accent)),
+        transparent 72%
+      )
+      border-box;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease;
+}
+
+.icon-plate::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--card-accent, var(--accent));
+  opacity: 0.1;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card-lift:hover .icon-plate {
+  transform: translateY(-3px) rotate(-4deg);
+  box-shadow: 0 12px 24px -12px var(--card-accent, var(--accent));
+}
+
+.card-lift:hover .icon-plate::after {
+  opacity: 0.22;
+}
+
+/* Circular arrow that drops into a card corner on hover. Sits above the image
+   it overlaps, so no negative z-index here. */
+.corner-arrow {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 10px 22px -8px rgba(11, 42, 91, 0.6);
+  opacity: 0;
+  transform: translate(8px, -8px) scale(0.78);
+  transition:
+    opacity 0.35s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.card-lift:hover .corner-arrow {
+  opacity: 1;
+  transform: none;
+}
+
+/* Metrics-band cell. These share one bordered band, so they must not lift the
+   way a free-standing card does - that would break the hairline grid. The
+   hover is a glow rising from the bottom edge instead, isolated so it paints
+   over the cell background but under the figure. */
+.stat-cell {
+  isolation: isolate;
+}
+
+.stat-cell::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: -1;
+  height: 72%;
+  background: linear-gradient(to top, rgba(37, 99, 235, 0.12), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.stat-cell:hover::before {
+  opacity: 1;
+}
+
+/* Slow ambient float, used on the platform screenshot. */
+.float-soft {
+  animation: floatSoft 7s ease-in-out infinite;
+}
+
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0) }
+  50%      { transform: translateY(-12px) }
+}
+
+/* ---- Process rail ---- */
+.rail {
+  position: relative;
+  overflow: hidden;
+}
+
+.rail::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--accent), rgba(37, 99, 235, 0.15));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.3s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+.rail.is-visible::after {
+  transform: scaleX(1);
+}
+
+/* Pulsing ring behind a step number. */
+.step-dot::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  opacity: 0;
+  animation: dotPing 3s ease-out infinite;
+}
+
+@keyframes dotPing {
+  0%   { transform: scale(0.85); opacity: 0.55 }
+  70%  { opacity: 0 }
+  100% { transform: scale(1.5); opacity: 0 }
+}
+
+/* ---- Standards marks (home section 09) ----
+   The six badges sit straight on the navy, so the only structure is a hairline
+   between cells. They are pre-knocked-out to white on transparency by
+   scripts/generate-certification-marks.mjs; the CSS here only handles rest and
+   hover state. */
+.std-mark {
+  opacity: 0.88;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.35));
+  transition:
+    opacity 0.35s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.std-item {
+  position: relative;
+  cursor: default;
+}
+
+.std-item:hover .std-mark {
+  opacity: 1;
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* Hairline between cells, drawn on the leading edge of each and suppressed on
+   whichever cell starts a row at the current breakpoint. */
+.std-item::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(255, 255, 255, 0.14) 22%,
+    rgba(255, 255, 255, 0.14) 78%,
+    transparent
+  );
+}
+
+.std-row > .std-item:nth-child(2n + 1)::before { content: none }
+
+@media (min-width: 640px) {
+  .std-row > .std-item:nth-child(2n + 1)::before { content: "" }
+  .std-row > .std-item:nth-child(3n + 1)::before { content: none }
+}
+
+@media (min-width: 1024px) {
+  .std-row > .std-item:nth-child(3n + 1)::before { content: "" }
+  .std-row > .std-item:first-child::before { content: none }
+}
+
+/* ---- Framework chips ---- */
+.chip-link {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.chip-link:hover {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .orb,
+  .sheen::after,
+  .text-gradient,
+  .text-gradient-ink,
+  .float-soft,
+  .step-dot::after {
+    animation: none !important;
+  }
+
+  .card-lift,
+  .card-wipe::before,
+  .stat-cell::before,
+  .card-glow,
+  .card-sheen::before,
+  .ghost-num,
+  .icon-plate,
+  .icon-plate::after,
+  .corner-arrow,
+  .go-arrow,
+  .icon-hover,
+  .img-zoom,
+  .std-mark,
+  .chip-link,
+  .rail::after {
+    transition: none !important;
+  }
+
+  /* The sheen has nowhere to travel to without a transition, so park it off-card. */
+  .card-lift:hover .card-sheen::before {
+    left: -70% !important;
+  }
+
+  .rail::after {
+    transform: scaleX(1) !important;
+  }
+}
+
+/* ---- Above-the-fold entrance ----
+   Hero content must not wait for hydration or an IntersectionObserver, so it
+   uses a plain CSS animation that starts on first paint. Anything that is or
+   contains the LCP element gets no entrance animation at all. */
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: riseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--rise-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none !important;
+  }
+}
+
+/* ==========================================================
+   Navbar, hero visual and trust bar
+   ========================================================== */
+
+/* ---- Nav items: rule that wipes out from the centre ---- */
+.nav-pill {
+  position: relative;
+}
+
+.nav-pill::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 5px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-pill:hover::after,
+.nav-pill[data-active="true"]::after {
+  transform: scaleX(1);
+}
+
+/* ---- Hero radar composition ---- */
+.radar-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.radar-ring.dashed {
+  border-style: dashed;
+  border-color: rgba(155, 196, 255, 0.3);
+}
+
+/* ---- Hero brand mark ----
+   The source GIF is drawn in a near-black teal (#072C43) on transparency, which
+   against the navy stage is a dark smudge. brightness(0) flattens every opaque
+   pixel to black and invert(1) lifts it to white, both leaving the alpha channel
+   alone - so the mark knocks out to white and keeps its anti-aliased edges. The
+   asset is monochrome apart from a grey tagline, so no colour is lost. */
+.hero-mark img {
+  filter: brightness(0) invert(1) drop-shadow(0 0 30px rgba(96, 165, 250, 0.3));
+}
+
+/* Core light under the mark, so it reads as lit rather than pasted onto the navy. */
+.hero-mark-glow {
+  position: absolute;
+  inset: 13%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(96, 165, 250, 0.32),
+    rgba(37, 99, 235, 0.14) 46%,
+    transparent 70%
+  );
+  filter: blur(28px);
+  pointer-events: none;
+  animation: markBreathe 7s ease-in-out infinite;
+}
+
+@keyframes markBreathe {
+  0%, 100% { opacity: 0.72; transform: scale(1) }
+  50%      { opacity: 1;    transform: scale(1.07) }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-mark-glow {
+    animation: none !important;
+  }
+}
+
+/* Positioning lives on a wrapper element: the float animation writes transform,
+   so it would cancel any translate used for centring. */
+.orbit-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: var(--r-pill);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(11, 42, 91, 0.72);
+  backdrop-filter: blur(10px);
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  white-space: nowrap;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
+  animation: chipFloat 6s ease-in-out infinite;
+}
+
+.orbit-chip i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--chip-dot, var(--accent));
+  flex-shrink: 0;
+}
+
+@keyframes chipFloat {
+  0%, 100% { transform: translateY(0) }
+  50%      { transform: translateY(-9px) }
+}
+
+/* ---- Scroll cue ---- */
+.scroll-cue {
+  animation: cueBob 2.2s ease-in-out infinite;
+}
+
+@keyframes cueBob {
+  0%, 100% { transform: translateY(0); opacity: 0.65 }
+  50%      { transform: translateY(7px); opacity: 1 }
+}
+
+/* ---- Logo marquee (trust bar) ----
+   Pure CSS: the track holds the list twice, so -50% loops seamlessly and no
+   JS is needed to page through logos. */
+.marquee-wrap {
+  overflow: hidden;
+  /* Hard stop: the track inside is width:max-content, so without this the
+     wrapper can be sized by its content in any auto-sized grid or flex track. */
+  max-width: 100%;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 7%,
+    #000 93%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 7%,
+    #000 93%,
+    transparent 100%
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: marqueeX 46s linear infinite;
+}
+
+.marquee-wrap:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeX {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 168px;
+  height: 56px;
+  padding: 0 14px;
+  opacity: 0.62;
+  filter: grayscale(1);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.marquee-item:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-chip,
+  .scroll-cue,
+  .marquee-track {
+    animation: none !important;
+  }
+
+  /* Static fallback: without the loop, show the first screenful only. */
+  .marquee-wrap {
+    overflow-x: auto;
+  }
+
+  .nav-pill::after {
+    transition: none !important;
+  }
+
+  .marquee-item {
+    opacity: 1;
+    filter: none;
+    transition: none !important;
+  }
+}
+
+/* ---- Header rest -> solid state change ----
+   One curve and one duration for every property that differs between the two
+   header states (background, border, shadow, text colour, logo cross-fade), so
+   nothing arrives early and the change reads as a single move. */
+.nav-fade {
+  transition-property: background-color, border-color, box-shadow, color, opacity;
+  transition-duration: 320ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-fade {
+    transition-duration: 0s;
+  }
 }

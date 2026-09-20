@@ -1,0 +1,58 @@
+{
+  "eyebrow": "Certifications & compliance",
+  "heading": "Audited, accredited, and mapped to the frameworks your regulator asks for.",
+  "subtitle": "The standards we hold ourselves to, and the frameworks we take clients through.",
+  "_reviewBadges": "`src` points at the knocked-out marks in certifications/marks/, generated from the supplied certification-N.png by scripts/generate-certification-marks.mjs. The originals are kept alongside them. The supplied files are only 64-108px, so the marks are shown small; higher-resolution artwork would let them run larger.",
+  "badgesHeading": "Standards we work to",
+  "badges": [
+    {
+      "id": "iso-27001",
+      "name": "ISO 27001",
+      "detail": "Information Security Management",
+      "src": "/images/certifications/marks/iso-27001.png"
+    },
+    {
+      "id": "iso-27001-annex-a",
+      "name": "ISO 27001 Annex A",
+      "detail": "Control set",
+      "src": "/images/certifications/marks/iso-27001-annex-a.png"
+    },
+    {
+      "id": "soc-2",
+      "name": "SOC 2",
+      "detail": "AICPA SOC for Service Organizations",
+      "src": "/images/certifications/marks/soc-2.png"
+    },
+    {
+      "id": "pci-dss",
+      "name": "PCI DSS",
+      "detail": "Payment card data security",
+      "src": "/images/certifications/marks/pci-dss.png"
+    },
+    {
+      "id": "nist-800-53",
+      "name": "NIST SP 800-53",
+      "detail": "Security and privacy controls",
+      "src": "/images/certifications/marks/nist-800-53.png"
+    },
+    {
+      "id": "gdpr",
+      "name": "GDPR",
+      "detail": "EU data protection",
+      "src": "/images/certifications/marks/gdpr.png",
+      "_review": "Badge artwork is an unlabelled padlock in a ring of stars. GDPR is the conventional reading but is not printed on the asset - confirm before launch."
+    }
+  ],
+  "frameworksHeading": "Frameworks we take clients through",
+  "frameworks": [
+    { "label": "ISO/IEC 27001", "href": "/services/grc/iso-27001" },
+    { "label": "SOC 2", "href": "/services/grc/soc-2-compliance" },
+    { "label": "PCI-DSS / PIN Security", "href": "/services/grc/pci-dss-pin-security-compliance" },
+    { "label": "HIPAA & GDPR", "href": "/services/grc/hipaa-gdpr-readiness" },
+    { "label": "NCA", "href": "/services/grc/nca-compliance" },
+    { "label": "SAMA", "href": "/services/grc/sama-readiness" },
+    { "label": "Aramco CCC", "href": "/services/grc/aramco-ccc" },
+    { "label": "CBE & sector-specific", "href": "/services/grc/cbe-compliance" }
+  ],
+  "cta": { "label": "Talk to a compliance lead", "href": "/contact" }
+}

@@ -1,0 +1,32 @@
+{
+  "_review": "Every value below was drafted for the v2 home page. Each is grounded in a claim the repo already makes - see 'source' on each metric. Confirm before launch.",
+  "eyebrow": "Trusted by",
+  "logosHeading": "The organizations we protect",
+  "metrics": [
+    {
+      "id": "enterprises",
+      "value": "64+",
+      "label": "MENA enterprises protected",
+      "source": "src/data/about-banner.json stats[0]"
+    },
+    {
+      "id": "offices",
+      "value": "5",
+      "label": "countries with offices",
+      "source": "src/data/mena-globally.json paragraphs2 - Egypt, Libya, KSA, UK, US",
+      "_review": "Conflicts with the '8+ Countries Secured' stat on /about. 5 is the number of offices actually named in the copy; decide which figure is correct and align both pages."
+    },
+    {
+      "id": "soc",
+      "value": "24/7",
+      "label": "SOC coverage",
+      "source": "src/data/why-choose-us-section.json cards[0]"
+    },
+    {
+      "id": "services",
+      "value": "27",
+      "label": "services across 4 practices",
+      "source": "counted from src/data/services-page.json - 6 offensive + 9 defensive + 8 GRC + 4 training"
+    }
+  ]
+}

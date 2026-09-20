@@ -11,7 +11,9 @@
       "title": "Offensive Security",
       "description": "Penetration testing, vulnerability assessments, source code review and red teaming that uncover gaps in your systems—before someone exploits them.",
       "icon": "/images/services/offensive-icon.png",
-      "borderColor": "#81D0FF"
+      "borderColor": "#81D0FF",
+      "count": 6,
+      "href": "/services/offensive"
     },
     {
       "id": "defensive",
@@ -19,7 +21,9 @@
       "title": "Defensive Security",
       "description": "Network security, SOC operations, SIEM management, digital forensics, and incident responses that catch threats early and shut them down fast.",
       "icon": "/images/services/defensive-icon.png",
-      "borderColor": "#57C1FF"
+      "borderColor": "#57C1FF",
+      "count": 9,
+      "href": "/services/defensive"
     },
     {
       "id": "grc",
@@ -27,7 +31,9 @@
       "title": "GRC",
       "description": "Consulting that aligns your organization with ISO 27001, PCI, SOC2, GDPR, CBE, SAMA, NCA, and other key frameworks—so you stay compliant without the guesswork.",
       "icon": "/images/services/grc.png",
-      "borderColor": "#6EE7B7"
+      "borderColor": "#6EE7B7",
+      "count": 8,
+      "href": "/services/grc"
     },
     {
       "id": "training",
@@ -35,7 +41,11 @@
       "title": "Training & Awareness",
       "description": "Cyber awareness programs, phishing simulations, and hands-on training that turn your employees into your strongest line of defense. ",
       "icon": "/images/services/training.png",
-      "borderColor": "#C4B5FD"
+      "borderColor": "#C4B5FD",
+      "count": 4,
+      "href": "/services/training"
     }
-  ]
+  ],
+  "ctaLabel": "Explore all 27 services",
+  "ctaHref": "/services"
 }

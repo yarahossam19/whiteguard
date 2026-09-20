@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 
 export interface ServicesDropdownItem {
   label: string;
@@ -18,69 +17,51 @@ interface ServicesDropdownProps {
   small?: boolean;
 }
 
+/** Dropdown panel for the header. Open/close and focus restoration live in Header. */
 export function ServicesDropdown({ items }: ServicesDropdownProps) {
   const pathname = usePathname();
-  const [isHovered, setIsHovered] = useState(true);
 
   return (
-    <div
-      className={`absolute left-0 top-full pt-1 ${isHovered ? "block" : "hidden"}`}
-      role="menu"
-      aria-label="Services menu"
-      onClick={() => setIsHovered(false)}
-    >
-      <div
-        className="flex flex-col gap-8 rounded-2xl border-4 border-[#e7f6ff] bg-white px-6 py-8 shadow-[0px_3.5px_4.3px_2px_rgba(0,0,0,0.25)]"
-        style={{
-          minWidth: "402px",
-          backgroundImage: "url('/images/logo-icon-2.svg')",
-          backgroundSize: "95% 95%",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          // backdropFilter: "invert(1)",
-          // backgroundBlendMode: "overlay",
-        }}
-      >
-        {items.map((sub, index) => {
+    <div className="absolute left-0 top-full pt-2" role="group">
+      <div className="flex w-[380px] flex-col rounded-[var(--r-md)] border border-line bg-white p-2 shadow-[0_18px_40px_rgba(11,42,91,0.12)]">
+        {items.map((sub) => {
           const isActive = pathname === sub.href;
 
           return (
             <Link
               key={sub.href}
               href={sub.href}
-              role="menuitem"
-              className={`group flex flex-col gap-2  ${items.length - 1 > index ? " pb-4 border-b-1 border-[#ccc]" : ""}`}
+              aria-current={isActive ? "page" : undefined}
+              className={`flex items-start gap-3 rounded-[var(--r-sm)] p-3 transition-colors duration-150 ${
+                isActive ? "bg-accent-100" : "hover:bg-wash"
+              }`}
             >
-              <div className="flex items-center gap-[9px]">
-                {sub.icon && (
-                  <div className="relative size-12 shrink-0 overflow-hidden rounded-lg">
-                    <Image
-                      src={sub.icon}
-                      alt=""
-                      width={48}
-                      height={48}
-                      className="object-cover"
-                    />
-                  </div>
+              {sub.icon && (
+                <span className="relative size-10 shrink-0 overflow-hidden rounded-[var(--r-sm)]">
+                  <Image
+                    src={sub.icon}
+                    alt=""
+                    width={40}
+                    height={40}
+                    className="size-10 object-cover"
+                    aria-hidden
+                  />
+                </span>
+              )}
+              <span className="min-w-0 flex-1">
+                <span
+                  className={`block text-[14px] font-extrabold leading-tight ${
+                    isActive ? "text-accent-600" : "text-navy"
+                  }`}
+                >
+                  {sub.label}
+                </span>
+                {sub.description && (
+                  <span className="mt-1 block text-[12px] leading-[1.45] text-slate">
+                    {sub.description}
+                  </span>
                 )}
-                <div className="min-w-0 flex-1 flex flex-col gap-2">
-                  <p className="font-jakarta text-base font-semibold leading-[1.2] text-[#003859]">
-                    {sub.label}
-                  </p>
-                  {"description" in sub && sub.description && (
-                    <p className="font-jakarta text-sm font-normal leading-[1.2] text-[#52697a]">
-                      {sub.description}
-                    </p>
-                  )}
-                </div>
-              </div>
-              <div
-                className={`h-0.5 rounded-sm transition-all duration-200 ${
-                  isActive
-                    ? "w-full bg-[#005283]"
-                    : "w-0 bg-transparent group-hover:w-full group-hover:bg-[#005283]"
-                }`}
-              />
+              </span>
             </Link>
           );
         })}

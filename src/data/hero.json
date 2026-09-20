@@ -1,7 +1,16 @@
 {
+  "eyebrow": "MENA cybersecurity company",
   "headline": {
-    "line1": { "bold": "Cybersecurity ", "light": "Simplified", "end": ". " },
-    "line2": { "bold": "Protection ", "light": "Amplified", "end": "." }
+    "line1": {
+      "bold": "Cybersecurity ",
+      "light": "Simplified",
+      "end": ". "
+    },
+    "line2": {
+      "bold": "Protection ",
+      "light": "Amplified",
+      "end": "."
+    }
   },
   "description": "Stop Cyber Attacks Before They Become Breaches.",
   "description2": "WhiteGuard is the cybersecurity company protecting MENA's most critical sectors—banks, fintechs, insurers, healthcare, energy, and infrastructure. We detect and contain threats early, so an attempted attack never turns into a costly breach.",

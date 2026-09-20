@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Manrope } from "next/font/google";
 import { DEFAULT_OG_IMAGE, SITE_NAME, metadataBase } from "@/lib/metadata";
 import {
   GoogleTagManagerNoScript,
@@ -14,8 +14,8 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { buildOrganizationSchema } from "@/lib/schema";
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   display: "swap",
@@ -68,8 +68,13 @@ export default function RootLayout({
         />
         <JsonLd data={buildOrganizationSchema()} />
         <GoogleTagManagerScript />
+        {/* Scroll reveals start hidden and are shown by IntersectionObserver.
+            Without JS there is no observer, so force them visible. */}
+        <noscript>
+          <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
+        </noscript>
       </head>
-      <body className={`${plusJakartaSans.variable} antialiased`}>
+      <body className={`${manrope.variable} antialiased`}>
         <GoogleTagManagerNoScript />
         {children}
         <ScrollToTopButton />

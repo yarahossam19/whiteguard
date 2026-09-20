@@ -1,0 +1,75 @@
+{
+  "_review": "Layout and node labels drafted for the v2 home page. All service names are taken verbatim from src/data/services-section.json and services-page.json; the framework names come from the GRC pillar. Confirm the three summary cards before launch.",
+  "heading": "Offense, defense, and GRC - connected",
+  "subtitle": "One engagement model. Findings from the offensive side drive the defensive build, and both produce the evidence GRC needs.",
+  "columnLabels": ["Offensive", "Defensive", "GRC"],
+  "nodes": [
+    { "id": "soc", "label": "SOC 24/7", "position": "n1" },
+    { "id": "frameworks", "label": "SAMA / NCA", "position": "n2" },
+    { "id": "training", "label": "Training", "position": "n3" },
+    { "id": "pentest", "label": "Pentest", "position": "n4" }
+  ],
+  "cardsLeft": [
+    {
+      "id": "pentest",
+      "title": "Penetration testing",
+      "detail": "Networks, apps, APIs, cloud",
+      "position": "f-l1"
+    },
+    {
+      "id": "code-review",
+      "title": "Source code review",
+      "detail": "SAST plus manual logic review",
+      "position": "f-l2"
+    },
+    {
+      "id": "red-team",
+      "title": "Red team assessment",
+      "detail": "People, process, technology",
+      "position": "f-l3"
+    }
+  ],
+  "cardsRight": [
+    {
+      "id": "soc",
+      "title": "24/7 SOC",
+      "detail": "Detect, triage, respond",
+      "position": "f-r1"
+    },
+    {
+      "id": "grc",
+      "title": "ISO / SAMA / NCA",
+      "detail": "Evidence mapped to findings",
+      "position": "f-r2"
+    },
+    {
+      "id": "sector",
+      "title": "PCI / CBE / Aramco",
+      "detail": "Controls you can audit",
+      "position": "f-r3"
+    }
+  ],
+  "summary": [
+    {
+      "id": "find",
+      "pill": "Find",
+      "title": "Find the gap",
+      "description": "Offensive: penetration testing, vulnerability assessment, red team, CIS benchmarks, code review, cloud.",
+      "href": "/services/offensive"
+    },
+    {
+      "id": "stop",
+      "pill": "Stop",
+      "title": "Stop the attack",
+      "description": "Defensive: network security, SOC, SIEM, DFIR, threat intelligence, phishing simulation, incident response.",
+      "href": "/services/defensive"
+    },
+    {
+      "id": "prove",
+      "pill": "Prove",
+      "title": "Prove the control",
+      "description": "GRC: ISO 27001, SOC 2, PCI-DSS, NCA, SAMA, Aramco CCC, and central bank compliance.",
+      "href": "/services/grc"
+    }
+  ]
+}

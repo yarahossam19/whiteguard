@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Proof",
+  "heading": "Results, in the client's words",
+  "subtitle": "Outcomes from real engagements, and what the people who ran them said afterwards.",
+  "featured": {
+    "_review": "Headline and metrics are drawn from the client outcome already published on the CIS Benchmarks Assessment service page (src/data/service-details.json). No case-study route exists, so this card links to that service page rather than an invented /case-studies URL. Confirm the client is comfortable with the figures being surfaced on the home page.",
+    "pill": "Client outcome",
+    "title": "Closed 95% of CIS gaps in 6 weeks.",
+    "quote": "CIS assessment gave us a clear roadmap. We closed 95% of gaps in 6 weeks.",
+    "attribution": "Manufacturing - Head of IT Infrastructure",
+    "metrics": [
+      { "value": "95%", "label": "CIS gaps closed" },
+      { "value": "6", "label": "weeks" },
+      { "value": "2", "label": "retests included" }
+    ],
+    "ctaLabel": "See CIS benchmarks assessment",
+    "ctaHref": "/services/offensive/cis-benchmarks-assessment"
+  }
+}

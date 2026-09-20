@@ -1,182 +1,107 @@
-"use client";
-
 import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import { ButtonLink, ExternalArrow } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 import type { WhiteHawkSectionData } from "@/data/white-hawk-section";
-import { HoverSwapButton } from "../ui/HoverSwapButton";
-import { SectionImageSeparator } from "../ui/SectionImageSeparator";
 
 interface WhiteHawkSectionProps {
   data: WhiteHawkSectionData;
 }
 
-function PlayIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="17"
-      height="20"
-      viewBox="0 0 17 20"
-      fill="none"
-    >
-      <path
-        d="M0.713381 19.0329C0.919164 19.1564 1.15238 19.2113 1.38561 19.2113C1.61883 19.2113 1.87948 19.1427 2.08527 19.0192L15.8041 10.7879C16.2157 10.5409 16.4764 10.0882 16.4764 9.60806C16.4764 9.1279 16.2294 8.67518 15.8041 8.42824L2.08527 0.196925C1.8768 0.070479 1.63815 0.00248046 1.39435 6.65838e-05C1.15054 -0.0023473 0.910588 0.0609128 0.699662 0.183206C0.274378 0.430146 0 0.882868 0 1.37675V17.8394C0 18.3333 0.260659 18.786 0.699662 19.0329H0.713381Z"
-        fill="#668399"
-      />
-    </svg>
-  );
-}
-
+/**
+ * 05 - White Hawk.
+ *
+ * Named here, sold on whitehawk.io. The CTA leaves the site, so it carries the
+ * external-destination indicator and opens in a new tab.
+ */
 export default function WhiteHawkSection({ data }: WhiteHawkSectionProps) {
   const { heading, description, features, cta, dashboardImage } = data;
-  const [showVideo, setShowVideo] = useState(false);
 
   return (
-    <>
-      {" "}
-      <SectionImageSeparator direction="top" />
-      <section
-        className="relative w-full overflow-hidden py-20 lg:py-24"
-        style={{
-          background:
-            "linear-gradient(180deg, #003859 0%, #001f33 20%, #001f33 80%, #003859 100%)",
-        }}
-      >
-        <div className="container flex w-full flex-col-reverse items-center justify-between gap-16 lg:flex-row lg:gap-16">
-          {/* Left: Content */}
-          <div className="flex lg:max-w-[520px] flex-col gap-8">
-            <div className="flex flex-col gap-4 items-center lg:items-start">
-              <h2 className="font-jakarta text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15] text-white">
-                {heading.line1}
-              </h2>
-              <h2 className="font-jakarta text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.15]">
-                <span className="text-white">{heading.line2} </span>
-                <span className="text-[#0087D7]">{heading.line3}</span>
-              </h2>
-            </div>
+    <section className="grid-bg sheen relative w-full overflow-hidden bg-navy py-16 text-white lg:py-24">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <span className="orb -left-[10%] top-[8%] h-[400px] w-[400px] bg-accent/30" />
+        <span
+          className="orb -right-[8%] bottom-[-16%] h-[360px] w-[360px] bg-[#38BDF8]/18"
+          style={{ animationDelay: "-8s" }}
+        />
+      </div>
 
-            <p className="font-jakarta text-center lg:text-start text-base font-normal leading-[1.8] text-white">
+      <div className="container relative z-10 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <Reveal y={14}>
+            <p className="eyebrow text-[#9bc4ff]">
+              Powered by White Hawk
+            </p>
+          </Reveal>
+
+          <Reveal delay={80} y={24}>
+            <h2 className="mt-3 max-w-[560px] text-[clamp(28px,3.6vw,40px)] font-extrabold leading-[1.08] tracking-[-0.03em] text-white">
+              {heading.line1}
+              {heading.line2}{" "}
+              <span className="text-gradient">{heading.line3}</span>
+            </h2>
+          </Reveal>
+
+          <Reveal delay={150} y={18}>
+            <p className="mt-4 max-w-[560px] text-[15px] leading-[1.7] text-[#9bb4e6]">
               {description}
             </p>
+          </Reveal>
 
-            <ul className="flex flex-col   gap-4">
-              {features.map((feature, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-3 font-jakarta text-sm leading-[1.5] text-white"
-                >
+          <ul className="mt-7 flex flex-col gap-3">
+            {features.map((feature, i) => (
+              <Reveal key={feature} delay={220 + i * 100} x={-14} y={0} as="li">
+                <span className="group flex items-start gap-3 rounded-[var(--r-md)] border border-white/10 bg-white/[0.04] p-3.5 text-[14px] leading-[1.5] text-white transition-colors duration-300 hover:border-white/25 hover:bg-white/[0.08]">
                   <span
-                    className="  flex h-5 w-5 shrink-0 items-center justify-center rounded-full"
-                    style={{
-                      background: "rgba(8, 145, 178, 0.2)",
-                    }}
+                    aria-hidden
+                    className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-accent text-[11px] font-bold text-white"
                   >
-                    <span
-                      className="h-2 w-2 rounded-full"
-                      style={{ background: "#0891b2" }}
-                    />
+                    &#10003;
                   </span>
                   {feature}
-                </li>
-              ))}
-            </ul>
+                </span>
+              </Reveal>
+            ))}
+          </ul>
 
-            <div>
-              <HoverSwapButton
-                key={cta.href}
+          <Reveal delay={560} y={16}>
+            <div className="mt-7">
+              <ButtonLink
                 href={cta.href}
-                label={cta.label}
-                hoverLabel={cta.hoverLabel}
-                variant={cta.variant as "cta" | "secondary"}
-                showChevrons={false}
-                className="px-6 py-[14px] text-[clamp(14px,1.1vw,24px)]  font-ano w-full lg:w-auto"
-              />
-
-              <p
-                className="font-jakarta text-xs font-normal leading-[1.75] mt-2"
-                style={{ color: "rgba(255, 255, 255, 0.7)" }}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="ghost-ondark"
+                size="lg"
               >
+                {cta.label}
+                <ExternalArrow />
+              </ButtonLink>
+              <p className="mt-2.5 text-[12px] text-[#9bb4e6]">
                 {cta.disclaimer}
               </p>
             </div>
-          </div>
+          </Reveal>
+        </div>
 
-          {/* Right: Dashboard mockup */}
-          <div className="relative w-full lg:max-w-[544px] shrink-0 overflow-hidden rounded-lg">
-            <div className="relative aspect-[544/356] w-full overflow-hidden rounded-lg">
+        <Reveal delay={200} y={30} scale={0.97}>
+          <div className="relative">
+            <span
+              aria-hidden
+              className="absolute -inset-6 rounded-[28px] bg-accent/25 blur-3xl"
+            />
+            <div className="float-soft relative aspect-16/10 w-full overflow-hidden rounded-[var(--r-lg)] border border-white/15 shadow-[0_30px_60px_-24px_rgba(0,0,0,0.6)]">
               <Image
                 src={dashboardImage}
-                alt="White Hawk Platform dashboard"
-                width={544}
-                height={356}
-                className="h-full w-full object-cover"
+                alt="The White Hawk platform dashboard"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                loading="lazy"
+                className="object-cover object-top"
               />
-              <div
-                className="absolute inset-0 opacity-60 flex items-center justify-center"
-                style={{
-                  background:
-                    "linear-gradient(180deg, #003859 -36.18%, rgba(0, 0, 0, 0.00) 31.91%, rgba(0, 0, 0, 0.00) 100%)",
-                }}
-              >
-                <button
-                  type="button"
-                  onClick={() => setShowVideo(true)}
-                  className="relative z-10 flex cursor-pointer items-center justify-center rounded-full bg-white px-4 py-3.5 opacity-100 transition-all hover:scale-110 hover:bg-white/90"
-                  aria-label="Play video"
-                >
-                  <PlayIcon />
-                </button>
-              </div>
             </div>
           </div>
-        </div>
-      </section>
-      {/* Video modal */}
-      {showVideo && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
-          onClick={() => setShowVideo(false)}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Video player"
-        >
-          <div
-            className="relative max-h-[90vh] w-full max-w-4xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              onClick={() => setShowVideo(false)}
-              className="absolute -top-10 right-0 text-white hover:text-red-500 hover:opacity-50 cursor-pointer"
-              aria-label="Close video"
-            >
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  d="M18 6L6 18M6 6l12 12"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-            <video
-              src={showVideo ? "/videos/whiehwk.mp4" : undefined}
-              controls
-              autoPlay
-              preload="none"
-              className="w-full rounded-lg"
-            />
-          </div>
-        </div>
-      )}
-      <SectionImageSeparator direction="bottom" />
-    </>
+        </Reveal>
+      </div>
+    </section>
   );
 }
