@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "whiteguard-website",
+  "compatibility_date": "2026-09-18",
+  // nodejs_compat is what lets the Node-runtime route handlers and the
+  // middleware run on workerd at all. Do not remove it.
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  // Keeps next/image optimisation working, which a static export would have
+  // cost us. Transformations are metered - see
+  // https://opennext.js.org/cloudflare/howtos/image
+  // If that is not wanted, drop this block and set images.unoptimized in
+  // next.config.ts instead.
+  "images": {
+    "binding": "IMAGES"
+  }
+  // Deliberately omitted vs the stock template: NEXT_INC_CACHE_R2_BUCKET and
+  // the WORKER_SELF_REFERENCE service binding. Both belong to the R2-backed
+  // incremental cache; this site uses the read-only static-assets cache
+  // instead, which needs no bucket. See open-next.config.ts.
+  //
+  // Note the ASSETS binding above is load-bearing for more than static files -
+  // the static-assets cache reads prerendered pages through it.
+}
